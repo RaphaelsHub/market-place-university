@@ -16,6 +16,7 @@
     <link rel="shortcut icon" href="assets/img/pngwing.com (11).png" type="image/x-icon">
 </head>
 
+<!--СТРАНИЦА Логи, ЗДЕСЬ ТОЛЬКО ВВОД И ПРОВЕРКА НА ТО СУЩЕСТВУЕТ ЛИ ТАКИЕ ДАННЫЕ УЖЕ-->
 <body>
 
     <div class="wrapper">
@@ -26,28 +27,24 @@
                 <nav class="navbar navbar-expand-lg bg-dark" data-bs-theme="dark">
                     <div class="container-fluid">
                         <!--Hidden menu + hidden buttons-->
-                        <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas"
-                            data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar" aria-expanded="false"
-                            aria-label="Toggle navigation">
+                        <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar"
+                            aria-controls="offcanvasNavbar" aria-expanded="false" aria-label="Toggle navigation">
                             <span class="navbar-toggler-icon"></span>
                         </button>
                         <div class="offcanvas offcanvas-start" id="offcanvasNavbar" tabindex="-1"
                             aria-labelledby="offcanvasNavbarLabel">
                             <div class="offcanvas-header">
                                 <h5 class="offcanvas-title" id="offcanvasNavbarLabel">Menu</h5>
-                                <button type="button" class="btn-close" data-bs-dismiss="offcanvas"
-                                    aria-label="Close"></button>
+                                <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
                             </div>
-
+            
                             <!--LOGO+HOME+CATALOG button-->
                             <div class="offcanvas-body">
                                 <ul class="navbar-nav">
-                                    <li class="nav-item"><a class="nav-link active" aria-current="page"
-                                            href="index.html">Home</a>
+                                    <li class="nav-item"><a class="nav-link active" aria-current="page" href="index.html">Home</a>
                                     </li>
-                                    <li class="nav-item dropdown"><a class="nav-link dropdown-toggle" href="#"
-                                            role="button" data-bs-toggle="dropdown" aria-expanded="false"
-                                            data-bs-auto-close="outside">Catalog</a>
+                                    <li class="nav-item dropdown"><a class="nav-link dropdown-toggle" href="#" role="button"
+                                            data-bs-toggle="dropdown" aria-expanded="false" data-bs-auto-close="outside">Catalog</a>
                                         <ul class="dropdown-menu dropdown-menu-end">
                                             <li><a class="dropdown-item" href="category.html">Computers</a></li>
                                             <li><a class="dropdown-item" href="category.html">Laptops</a></li>
@@ -58,35 +55,29 @@
                                 </ul>
                             </div>
                         </div>
-                        <!--Search-->
-                        <div class="container-fluid">
-                            <div class="row align-items-center">
-                                <div class="col-sm-6 mt-2 mt-md-0">
-                                    <form action="">
-                                        <div class="input-group">
-                                            <input type="text" class="form-control" name="s" placeholder="Searching..."
-                                                aria-label="Searching..." aria-describedby="button-search">
-                                            <button class="btn btn-outline-warning" type="submit" id="button-search">
-                                                <i class="fa-solid fa-magnifying-glass"></i>
-                                            </button>
-                                        </div>
-                                    </form>
-                                </div>
-                            </div>
-                        </div>
-
+            
+            
                         <div class="col-6 col-sm-4">
                             <div class="header-top-account d-flex justify-content-end">
+                                <!--Search-->
+                                <form action="">
+                                    <div class="input-group">
+                                        <input type="text" class="form-control" name="s" placeholder="Searching..."
+                                            aria-label="Searching..." aria-describedby="button-search">
+                                        <button class="btn btn-outline-warning" type="submit" id="button-search">
+                                            <i class="fa-solid fa-magnifying-glass"></i>
+                                        </button>
+                                    </div>
+                                </form>
                                 <!--BUTTON CART+FAVORITE-->
                                 <div>
-                                    <a href="#" class="btn p-1"> <i class="fa-solid fa-heart"></i></a>
-                                    <a href="#" class="btn p-1"> <i class="fa-solid fa-cart-shopping"></i></a>
+                                    <a href="cart.html" class="btn p-1"> <i class="fa-solid fa-cart-shopping"></i></a>
                                 </div>
                                 <!--LANGUAGE AND ENTER IN-->
                                 <div class="btn-group">
                                     <div class="dropdown">
-                                        <button class="btn btn-sm dropdown-toggle" type="button"
-                                            data-bs-toggle="dropdown" aria-expanded="false">
+                                        <button class="btn btn-sm dropdown-toggle" type="button" data-bs-toggle="dropdown"
+                                            aria-expanded="false">
                                             EN
                                         </button>
                                         <ul class="dropdown-menu">
@@ -94,29 +85,28 @@
                                                 <a class="dropdown-item" href="#">RU</a>
                                             </li>
                                             <li>
-                                                <a class="dropdown-item" href="#">DE</a>
+                                                <a class="dropdown-item" href="#">RO</a>
                                             </li>
                                         </ul>
                                     </div>
                                 </div>
                                 <div class="btn-group me-2">
                                     <div class="dropdown">
-                                        <button class="btn btn-sm dropdown-toggle" type="button"
-                                            data-bs-toggle="dropdown" aria-expanded="false">
+                                        <button class="btn btn-sm dropdown-toggle" type="button" data-bs-toggle="dropdown"
+                                            aria-expanded="false">
                                             Account
                                         </button>
                                         <ul class="dropdown-menu">
                                             <li>
-                                                <a class="dropdown-item" href="#">Sign In</a>
+                                                <a class="dropdown-item" href="login.html">Sign In</a>
                                             </li>
                                             <li>
-                                                <a class="dropdown-item" href="#">Sign Up</a>
+                                                <a class="dropdown-item" href="register.html">Sign Up</a>
                                             </li>
                                         </ul>
                                     </div>
                                 </div>
                             </div>
-                            <!-- ./header-top-account -->
                         </div>
                     </div>
                 </nav>
@@ -182,7 +172,11 @@
 
             </main>
 
+            <div class="row mb-5">
+                <div class="row mb-5">
 
+                </div>
+            </div>
             <!--FOOTER-->
             <footer class="footer" id="footer">
                 <div class="container-fluid">
