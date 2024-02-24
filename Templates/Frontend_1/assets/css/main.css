@@ -29,9 +29,7 @@ textarea {
     resize: none;
 }
 
-a:hover {
-    text-decoration: none;
-}
+
 
 img {
     max-width: 100%;
@@ -168,9 +166,7 @@ ul.social-icons a:hover {
     transition: all .3s;
 }
 
-.header-logo:hover {
-    color: var(--contrast-color);
-}
+
 
 .cart-buttons .btn {
     color: var(--contrast-color);
@@ -399,7 +395,7 @@ ul.social-icons a:hover {
 /* ============================= Footer ============================ */
 footer {
     background-color: var(--contrast-color);
-    padding: 50px 0;
+    padding:80px 0;
     color: #fff;
 }
 
