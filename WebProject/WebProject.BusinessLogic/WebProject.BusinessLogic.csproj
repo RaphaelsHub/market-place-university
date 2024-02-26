@@ -45,9 +45,11 @@
     <Compile Include="Core\AdminAPI.cs" />
     <Compile Include="Core\ModeratorAPI.cs" />
     <Compile Include="Core\UserAPI.cs" />
+    <Compile Include="Interfaces\IProduct.cs" />
     <Compile Include="Interfaces\ISession.cs" />
+    <Compile Include="MainBL\ProductBL.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="SessionBL.cs" />
+    <Compile Include="MainBL\SessionBL.cs" />
   </ItemGroup>
   <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
