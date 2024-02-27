@@ -6,9 +6,7 @@ using System.Threading.Tasks;
 
 namespace WebProject.BusinessLogic.Interfaces
 {
-    internal interface ISession
+    internal interface IAdministrator
     {
-        //User GetUserByUsername(string username); ???
-        //bool Authenticate(string username, string password); ???
     }
 }
