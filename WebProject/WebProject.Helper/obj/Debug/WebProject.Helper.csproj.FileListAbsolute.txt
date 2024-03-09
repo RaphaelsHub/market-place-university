@@ -1,0 +1,6 @@
+D:\Git_Web_Product\WebProduct\WebProject\WebProject.Helper\bin\Debug\WebProject.Helper.dll
+D:\Git_Web_Product\WebProduct\WebProject\WebProject.Helper\bin\Debug\WebProject.Helper.pdb
+D:\Git_Web_Product\WebProduct\WebProject\WebProject.Helper\obj\Debug\WebProject.Helper.csproj.AssemblyReference.cache
+D:\Git_Web_Product\WebProduct\WebProject\WebProject.Helper\obj\Debug\WebProject.Helper.csproj.CoreCompileInputs.cache
+D:\Git_Web_Product\WebProduct\WebProject\WebProject.Helper\obj\Debug\WebProject.Helper.dll
+D:\Git_Web_Product\WebProduct\WebProject\WebProject.Helper\obj\Debug\WebProject.Helper.pdb

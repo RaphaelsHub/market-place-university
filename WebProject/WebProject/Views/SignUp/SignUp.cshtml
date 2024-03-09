@@ -1,0 +1,106 @@
+﻿
+@{
+    ViewBag.Title = "SignUp";
+}
+
+<!doctype html>
+<html lang="en">
+
+<!--------------------------------------------------------------CONNECT REFERENCES-------------------------------------------------------------------------->
+@Html.Partial("~/Views/Partials/Ref.cshtml")
+
+<body>
+    <div class="wrapper">
+        <!--------------------------------------------------------------CONNECT HEADER-------------------------------------------------------------------------->
+        @Html.Partial("~/Views/Partials/Header.cshtml")
+
+        <!--------------------------------------------------------------MENU-------------------------------------------------------------------------->
+
+
+        <main class="main">
+
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-12">
+                        <nav class="breadcrumbs">
+                            <ul>
+                                <li><a href="index.html">Home</a></li>
+                                <li><span>Registration</span></li>
+                            </ul>
+                        </nav>
+                    </div>
+                </div>
+            </div>
+
+            <div class="container-fluid mb-3">
+                <div class="row">
+                    <div class="col-12">
+
+                        <div class="page-register bg-white p-3">
+                            <h1 class="section-title h3"><span>Registration</span></h1>
+
+                            <div class="row">
+                                <div class="col-md-6 offset-md-3">
+                                    <form action="" class="needs-validation" novalidate>
+                                        <div class="mb-3">
+                                            <label for="name" class="form-label required">Name</label>
+                                            <input type="text" class="form-control" id="name" placeholder="Name"
+                                                   required>
+                                            <div class="invalid-feedback">
+                                                Name is required
+                                            </div>
+                                        </div>
+
+                                        <div class="mb-3">
+                                            <label for="email" class="form-label required">Email</label>
+                                            <input type="email" class="form-control" id="email" placeholder="Email"
+                                                   required>
+                                            <div class="invalid-feedback">
+                                                Please, provide a valid email
+                                            </div>
+                                        </div>
+
+                                        <div class="mb-3">
+                                            <label for="phone" class="form-label required">Phone</label>
+                                            <input type="tel" class="form-control" id="phone" placeholder="Phone"
+                                                   required>
+                                            <div class="invalid-feedback">
+                                                Phone is required
+                                            </div>
+                                        </div>
+
+                                        <div class="mb-3">
+                                            <label for="password" class="form-label required">Password</label>
+                                            <input type="password" class="form-control" id="password"
+                                                   placeholder="Password" required>
+                                            <div class="invalid-feedback">
+                                                Password is required
+                                            </div>
+                                        </div>
+
+                                        <div class="mb-3">
+                                            <button type="submit" class="btn btn-warning">Registration</button>
+                                        </div>
+
+                                    </form>
+                                </div>
+                            </div>
+
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+
+        </main>
+
+        <!--------------------------------------------------------------CONNECT FOOTER-------------------------------------------------------------------------->
+        @Html.Partial("~/Views/Partials/Footer.cshtml")
+    </div>
+
+    <!--------------------------------------------------------------CONNECT SCROLL STUFF-------------------------------------------------------------------------->
+    @Html.Partial("~/Views/Partials/Scroll.cshtml")
+</body>
+
+</html>
+
