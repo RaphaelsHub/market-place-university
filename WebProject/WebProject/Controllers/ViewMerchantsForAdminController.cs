@@ -9,7 +9,7 @@ namespace WebProject.Controllers
     public class ViewMerchantsForAdminController : Controller
     {
         // GET: ViewMerchantsForAdmin
-        public ActionResult Index()
+        public ActionResult fASCi()
         {
             return View();
         }

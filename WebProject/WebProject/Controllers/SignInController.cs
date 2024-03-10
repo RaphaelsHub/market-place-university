@@ -6,10 +6,10 @@ using System.Web.Mvc;
 
 namespace WebProject.Controllers
 {
-    public class SighInController : Controller
+    public class SignInController : Controller
     {
         // GET: SighIn
-        public ActionResult SignIn()
+        public ActionResult Login()
         {
             return View();
         }

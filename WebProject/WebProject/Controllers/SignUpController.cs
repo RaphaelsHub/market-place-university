@@ -9,7 +9,7 @@ namespace WebProject.Controllers
     public class SignUpController : Controller
     {
         // GET: SignUp
-        public ActionResult Index()
+        public ActionResult Registration()
         {
             return View();
         }

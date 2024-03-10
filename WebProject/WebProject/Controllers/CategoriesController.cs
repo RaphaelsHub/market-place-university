@@ -9,7 +9,7 @@ namespace WebProject.Controllers
     public class CategoriesController : Controller
     {
         // GET: Categories
-        public ActionResult Index()
+        public ActionResult Items()
         {
             return View();
         }

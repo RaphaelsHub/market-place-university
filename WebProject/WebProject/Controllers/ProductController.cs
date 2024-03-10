@@ -9,7 +9,7 @@ namespace WebProject.Controllers
     public class ProductController : Controller
     {
         // GET: Product
-        public ActionResult Index()
+        public ActionResult Item()
         {
             return View();
         }

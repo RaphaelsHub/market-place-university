@@ -88,7 +88,6 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Content\Site.css" />
     <Content Include="FrontEndAssets\CSS\main.css" />
     <Content Include="FrontEndAssets\Html\cart.html" />
     <Content Include="FrontEndAssets\Html\category.html" />
@@ -97,17 +96,10 @@
     <Content Include="FrontEndAssets\Html\login.html" />
     <Content Include="FrontEndAssets\Html\product.html" />
     <Content Include="FrontEndAssets\Html\register.html" />
-    <Content Include="FrontEndAssets\Images\1660809813_1-kartinkin-net-p-fon-dlya-igrovogo-kompyutera-krasivo-1.jpg" />
-    <Content Include="FrontEndAssets\Images\EceQOF8XYAArTik.jpg" />
-    <Content Include="FrontEndAssets\Images\favicon.ico" />
-    <Content Include="FrontEndAssets\Images\laptops.jpg" />
-    <Content Include="FrontEndAssets\Images\pc.png" />
-    <Content Include="FrontEndAssets\Images\PCORDER.jpg" />
-    <Content Include="FrontEndAssets\Images\photo.png" />
-    <Content Include="FrontEndAssets\Images\pngwing.com %2811%29.png" />
-    <Content Include="FrontEndAssets\Images\pnones.jpg" />
-    <Content Include="FrontEndAssets\Images\tvs.jpg" />
-    <Content Include="FrontEndAssets\Images\tvvvs.png" />
+    <Content Include="FrontEndAssets\Images\emptyPhoto.png" />
+    <Content Include="FrontEndAssets\Images\Laptop.jpg" />
+    <Content Include="FrontEndAssets\Images\PC.jpg" />
+    <Content Include="FrontEndAssets\Images\tvs.png" />
     <Content Include="FrontEndAssets\Js\main.js" />
     <Content Include="FrontEndAssets\OwlCarousel2-2.3.4\.gitattributes" />
     <Content Include="FrontEndAssets\OwlCarousel2-2.3.4\.gitignore" />
@@ -239,13 +231,15 @@
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\OrderController.cs" />
     <Compile Include="Controllers\ProductController.cs" />
-    <Compile Include="Controllers\SighInController.cs" />
+    <Compile Include="Controllers\SignInController.cs" />
     <Compile Include="Controllers\SignUpController.cs" />
+    <Compile Include="Controllers\TestController.cs" />
     <Compile Include="Controllers\ViewMerchantsForAdminController.cs" />
     <Compile Include="Controllers\ViewProductsForAdminController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Models\ProductSale.cs" />
     <Compile Include="Models\LoginData.cs" />
     <Compile Include="Models\UserData.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -338,19 +332,18 @@
     <Content Include="FrontEndAssets\OwlCarousel2-2.3.4\src\scss\_video.scss" />
     <Content Include="FrontEndAssets\OwlCarousel2-2.3.4\_config.json" />
     <None Include="packages.config" />
-    <Content Include="Views\Home\Home.cshtml" />
-    <Content Include="Views\SighIn\SignIn.cshtml" />
-    <Content Include="Views\SignUp\SignUp.cshtml" />
-    <Content Include="Views\Product\Product.cshtml" />
-    <Content Include="Views\Categories\Catigories.cshtml" />
-    <Content Include="Views\Cart\Cart.cshtml" />
+    <Content Include="Views\Home\Index.cshtml" />
+    <Content Include="Views\SignIn\Login.cshtml" />
+    <Content Include="Views\SignUp\Registration.cshtml" />
+    <Content Include="Views\Product\Item.cshtml" />
+    <Content Include="Views\Categories\Items.cshtml" />
+    <Content Include="Views\Cart\Buy.cshtml" />
     <Content Include="Views\Partials\Footer.cshtml" />
     <Content Include="Views\Partials\Header.cshtml" />
     <Content Include="Views\Partials\Ref.cshtml" />
     <Content Include="Views\Partials\Scroll.cshtml" />
-    <Content Include="Views\_ViewStart.cshtml" />
-    <Content Include="Views\Shared\_Layout.cshtml" />
     <Content Include="Views\Order\Order.cshtml" />
+    <Content Include="Views\Partials\Products.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -363,6 +356,7 @@
     <Folder Include="Views\AddProduct\" />
     <Folder Include="Views\Delivery\" />
     <Folder Include="Views\EditProduct\" />
+    <Folder Include="Views\Test\" />
     <Folder Include="Views\ViewAllProductsForAdmin\" />
     <Folder Include="Views\ViewMerchantsForAdmin\" />
   </ItemGroup>

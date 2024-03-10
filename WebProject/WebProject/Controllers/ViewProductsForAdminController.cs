@@ -9,7 +9,7 @@ namespace WebProject.Controllers
     public class ViewProductsForAdminController : Controller
     {
         // GET: ViewAllProductsForAdmin
-        public ActionResult Index()
+        public ActionResult PumPum()
         {
             return View();
         }

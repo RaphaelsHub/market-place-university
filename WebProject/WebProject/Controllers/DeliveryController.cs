@@ -9,7 +9,7 @@ namespace WebProject.Controllers
     public class DeliveryController : Controller
     {
         // GET: Delivery
-        public ActionResult Index()
+        public ActionResult D()
         {
             return View();
         }
