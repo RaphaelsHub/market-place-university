@@ -223,19 +223,18 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="App_Start\RouteConfig.cs" />
-    <Compile Include="Controllers\AddProductController.cs" />
+    <Compile Include="Controllers\AdminAddProductController.cs" />
     <Compile Include="Controllers\CartController.cs" />
     <Compile Include="Controllers\CategoriesController.cs" />
-    <Compile Include="Controllers\DeliveryController.cs" />
-    <Compile Include="Controllers\EditProductController.cs" />
+    <Compile Include="Controllers\AdminDeliveryController.cs" />
+    <Compile Include="Controllers\AdminEditProductController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\OrderController.cs" />
     <Compile Include="Controllers\ProductController.cs" />
     <Compile Include="Controllers\SignInController.cs" />
     <Compile Include="Controllers\SignUpController.cs" />
     <Compile Include="Controllers\TestController.cs" />
-    <Compile Include="Controllers\ViewMerchantsForAdminController.cs" />
-    <Compile Include="Controllers\ViewProductsForAdminController.cs" />
+    <Compile Include="Controllers\AdminViewProductsController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -342,8 +341,10 @@
     <Content Include="Views\Partials\Header.cshtml" />
     <Content Include="Views\Partials\Ref.cshtml" />
     <Content Include="Views\Partials\Scroll.cshtml" />
-    <Content Include="Views\Order\Order.cshtml" />
+    <Content Include="Views\Order\MakeAnOrder.cshtml" />
     <Content Include="Views\Partials\Products.cshtml" />
+    <Content Include="Views\Partials\ProductCart.cshtml" />
+    <Content Include="Views\Partials\Categor.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -357,8 +358,7 @@
     <Folder Include="Views\Delivery\" />
     <Folder Include="Views\EditProduct\" />
     <Folder Include="Views\Test\" />
-    <Folder Include="Views\ViewAllProductsForAdmin\" />
-    <Folder Include="Views\ViewMerchantsForAdmin\" />
+    <Folder Include="Views\ViewAllProducts\" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

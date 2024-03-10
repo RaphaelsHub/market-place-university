@@ -6,10 +6,10 @@ using System.Web.Mvc;
 
 namespace WebProject.Controllers
 {
-    public class AddProductController : Controller
+    public class AdminViewProductsController : Controller
     {
-        // GET: AddProduct
-        public ActionResult Pro()
+        // GET: ViewAllProductsForAdmin
+        public ActionResult PumPum()
         {
             return View();
         }
