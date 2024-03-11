@@ -345,6 +345,11 @@
     <Content Include="Views\Partials\Products.cshtml" />
     <Content Include="Views\Partials\ProductCart.cshtml" />
     <Content Include="Views\Partials\Categor.cshtml" />
+    <Content Include="Views\Admin\AddProduct.cshtml" />
+    <Content Include="Views\Admin\ViewProductsAndDelete.cshtml" />
+    <Content Include="Views\Admin\EditProduct.cshtml" />
+    <Content Include="Views\Admin\EditStatuDelivery.cshtml" />
+    <Content Include="Views\Partials\AmountOfProductAndPriceCartOption.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -354,11 +359,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Views\AddProduct\" />
-    <Folder Include="Views\Delivery\" />
-    <Folder Include="Views\EditProduct\" />
-    <Folder Include="Views\Test\" />
-    <Folder Include="Views\ViewAllProducts\" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

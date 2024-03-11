@@ -40,7 +40,9 @@
 
                             <div class="row">
                                 <div class="col-md-6 offset-md-3">
+                                    <!--НАШИ ИМПУТЫ СОПОСТАВЛЯЮТСЯ С ПАРАМЕТРАМИ МЕТОДА КОТОРЫЙ ОН ПРИИМАЕТ-->
                                     <form action="@Url.Action("Login", "SignIn")" method="post" class="needs-validation" novalidate>
+                                        
                                         @if (!string.IsNullOrEmpty(ViewBag.ErrorMessage))
                                         {
                                             <div class="alert alert-danger" role="alert">

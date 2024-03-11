@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
+using System.Web.Security;
 
 namespace WebProject.Controllers
 {
@@ -18,23 +19,31 @@ namespace WebProject.Controllers
         [HttpPost]
         public ActionResult Login(string email, string password)
         {
-            // Предварительно заданные значения логина и пароля
+            //Рандомный емаил и пароль
             string validEmail = "user@example.com";
             string validPassword = "password";
 
-            // Проверяем введенные значения с предварительно заданными
+
             if (email == validEmail && password == validPassword)
             {
-                // Если логин и пароль верные, перенаправляем пользователя куда-то
-                // Например, на главную страницу
+                HomeController.IsAuthorized = true;
+                HomeController.IsAdmin = true;
                 return RedirectToAction("Index", "Home");
             }
             else
             {
-                // Если логин и/или пароль неверные, возвращаем обратно к форме входа
+                // Если логин и/или пароль неверные, возвращаем обратно к форме входаs
                 ViewBag.ErrorMessage = "Invalid email or password";
                 return View();
             }
         }
+
+        public ActionResult LogOut()
+        {
+            HomeController.IsAuthorized = false;
+            HomeController.IsAdmin = false;
+            return RedirectToAction("Index", "Home");
+        }
+
     }
 }
