@@ -40,12 +40,19 @@
 
                             <div class="row">
                                 <div class="col-md-6 offset-md-3">
-                                    <form action="" class="needs-validation" novalidate>
+                                    <!--НАШИ ИМПУТЫ СОПОСТАВЛЯЮТСЯ С ПАРАМЕТРАМИ МЕТОДА КОТОРЫЙ ОН ПРИИМАЕТ-->
+                                    <form action="@Url.Action("Login", "SignIn")" method="post" class="needs-validation" novalidate>
+                                        
+                                        @if (!string.IsNullOrEmpty(ViewBag.ErrorMessage))
+                                        {
+                                            <div class="alert alert-danger" role="alert">
+                                                @ViewBag.ErrorMessage
+                                            </div>
+                                        }
 
                                         <div class="mb-3">
                                             <label for="email" class="form-label required">Email</label>
-                                            <input type="email" class="form-control" id="email" placeholder="Email"
-                                                   required>
+                                            <input type="email" class="form-control" id="email" name="email" placeholder="Email" required>
                                             <div class="invalid-feedback">
                                                 Please, provide a valid email
                                             </div>
@@ -53,8 +60,7 @@
 
                                         <div class="mb-3">
                                             <label for="password" class="form-label required">Password</label>
-                                            <input type="password" class="form-control" id="password"
-                                                   placeholder="Password" required>
+                                            <input type="password" class="form-control" id="password" name="password" placeholder="Password" required>
                                             <div class="invalid-feedback">
                                                 Password is required
                                             </div>
@@ -63,7 +69,6 @@
                                         <div class="mb-3">
                                             <button type="submit" class="btn btn-warning">Login</button>
                                         </div>
-
                                     </form>
                                 </div>
                             </div>

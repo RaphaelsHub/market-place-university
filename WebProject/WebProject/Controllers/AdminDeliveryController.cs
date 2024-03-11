@@ -6,7 +6,7 @@ using System.Web.Mvc;
 
 namespace WebProject.Controllers
 {
-    public class DeliveryController : Controller
+    public class AdminDeliveryController : Controller
     {
         // GET: Delivery
         public ActionResult D()

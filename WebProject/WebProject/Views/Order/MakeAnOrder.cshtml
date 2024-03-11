@@ -22,7 +22,7 @@
                         <div class="col-12">
                             <nav class="breadcrumbs">
                                 <ul>
-                                    <li><a href="index.html">Home</a></li>
+                                    <li><a href="@Url.Action("Index","Home")">Home</a></li>
                                     <li><span>Checkout</span></li>
                                 </ul>
                             </nav>
@@ -104,49 +104,47 @@
                                                 </tr>
                                             </thead>
                                             <tbody>
-                                                <tr>
-                                                    <td>
-                                                        Product 1
-                                                        <small>($65) x 1</small>
-                                                    </td>
-                                                    <td class="text-end">$65</td>
-                                                </tr>
-                                                <tr>
-                                                    <td>
-                                                        Product 2 <small>($80) x 2</small>
-                                                    </td>
-                                                    <td class="text-end">$160</td>
-                                                </tr>
-                                                <tr>
-                                                    <td>
-                                                        Product 3 <small>($100) x 1</small>
-                                                    </td>
-                                                    <td class="text-end">$100</td>
-                                                </tr>
+                                                @Html.Partial("~/Views/Partials/AmountOfProductAndPriceCartOption.cshtml")
+                                                @Html.Partial("~/Views/Partials/AmountOfProductAndPriceCartOption.cshtml")
+                                                @Html.Partial("~/Views/Partials/AmountOfProductAndPriceCartOption.cshtml")
+                                                @Html.Partial("~/Views/Partials/AmountOfProductAndPriceCartOption.cshtml")
+                                                @Html.Partial("~/Views/Partials/AmountOfProductAndPriceCartOption.cshtml")
+                                                @Html.Partial("~/Views/Partials/AmountOfProductAndPriceCartOption.cshtml")
+                                                @Html.Partial("~/Views/Partials/AmountOfProductAndPriceCartOption.cshtml")
+                                                @Html.Partial("~/Views/Partials/AmountOfProductAndPriceCartOption.cshtml")
+                                                @Html.Partial("~/Views/Partials/AmountOfProductAndPriceCartOption.cshtml")
+                                                @Html.Partial("~/Views/Partials/AmountOfProductAndPriceCartOption.cshtml")
+                                                @Html.Partial("~/Views/Partials/AmountOfProductAndPriceCartOption.cshtml")
                                             </tbody>
                                             <tfoot>
                                                 <tr>
-                                                    <td colspan="2" class="text-end">$325</td>
+                                                    <td>
+                                                        Total price
+                                                    </td>
+                                                    <td class="text-end">$100</td>
                                                 </tr>
                                             </tfoot>
                                         </table>
                                     </div>
 
-                                    <div class="form-check">
-                                        <input name="payment-method" class="form-check-input" type="radio"
-                                               name="payment-method1" id="payment-method1" value="payment-method1" required>
-                                        <label class="form-check-label" for="payment-method1">
-                                            Card payment
-                                        </label>
+                                    <h5 class="section-title"><span>Enter your card creditinals</span></h5>
+
+                                    <div class="col-md-6">
+                                        <label for="card_number" class="form-label">Card Number</label>
+                                        <input type="text" id="card_number" name="card_number" class="form-control" placeholder="1234 5678 9012 3456" aria-label="Card Number" required pattern="\d*" oninput="restrictLetters(this)">
                                     </div>
 
-                                    <div class="form-check">
-                                        <input name="payment-method" class="form-check-input" type="radio"
-                                               name="payment-method2" id="payment-method2" value="payment-method2" required>
-                                        <label class="form-check-label" for="payment-method2">
-                                            Payment on delivery
-                                        </label>
+                                    <div class="col-md-6">
+                                        <label for="expiry_date" class="form-label">Expiry Date</label>
+                                        <input type="text" id="expiry_date" name="expiry_date" class="form-control" placeholder="MM/YY" aria-label="Expiry Date" required>
                                     </div>
+
+                                    <div class="col-md-6">
+                                        <label for="cvv" class="form-label">CVV</label>
+                                        <input type="text" id="cvv" name="cvv" class="form-control" placeholder="123" aria-label="CVV" required pattern="\d*" oninput="restrictLetters(this)">
+                                    </div>
+
+
 
                                     <div class="d-grid mt-3">
                                         <button type="submit" class="btn btn-warning">Checkout</button>

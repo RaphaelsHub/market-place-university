@@ -42,54 +42,100 @@
 
                 <div class="col-6 col-sm-4">
                     <div class="header-top-account d-flex justify-content-end">
-                        <!--Search-->
-                        <form action="">
+                        <!--
+                        <form action="@Url.Action("Search", "Home")" method="post">
                             <div class="input-group">
-                                <input type="text" class="form-control" name="s" placeholder="Searching..."
+                                <input type="text" class="form-control" name="searchQuery" placeholder="Searching..."
                                        aria-label="Searching..." aria-describedby="button-search">
                                 <button class="btn btn-outline-warning" type="submit" id="button-search">
                                     <i class="fa-solid fa-magnifying-glass"></i>
                                 </button>
                             </div>
                         </form>
+                          -->
+
                         <!--BUTTON CART+FAVORITE-->
                         <div>
                             <a href="@Url.Action("Buy","Cart")" class="btn p-1"> <i class="fa-solid fa-cart-shopping"></i></a>
                         </div>
-                        <!--LANGUAGE AND ENTER IN-->
-                        <div class="btn-group">
-                            <div class="dropdown">
-                                <button class="btn btn-sm dropdown-toggle" type="button"
-                                        data-bs-toggle="dropdown" aria-expanded="false">
-                                    EN
-                                </button>
-                                <ul class="dropdown-menu">
-                                    <li>
-                                        <a class="dropdown-item" href="#">RU</a>
-                                    </li>
-                                    <li>
-                                        <a class="dropdown-item" href="#">RO</a>
-                                    </li>
-                                </ul>
-                            </div>
-                        </div>
 
-                        <div class="btn-group me-2">
-                            <div class="dropdown">
-                                <button class="btn btn-sm dropdown-toggle" type="button"
-                                        data-bs-toggle="dropdown" aria-expanded="false">
-                                    Account
-                                </button>
-                                <ul class="dropdown-menu">
-                                    <li>
-                                        <a class="dropdown-item" href="@Url.Action("Login","SignIn")">Sign In</a>
-                                    </li>
-                                    <li>
-                                        <a class="dropdown-item" href="@Url.Action("Registration","SignUp")">Sign Up</a>
-                                    </li>
-                                </ul>
+
+                        <!--------------------------------------------------------------------------------------Обработать ситуацию если зашел админ или нет-------------------------------------------------------->
+                        <!--LANGUAGE AND ENTER IN-->
+                        @{
+                            bool isssAdmin = false;
+                        }
+
+                        @if (@ViewBag.IsAdmin ?? false)
+                        {
+                            <div class="btn-group">
+                                <div class="dropdown">
+                                    <button class="btn btn-sm dropdown-toggle" type="button"
+                                            data-bs-toggle="dropdown" aria-expanded="false">
+                                        Admin
+                                    </button>
+                                    <ul class="dropdown-menu">
+                                        <li>
+                                            <a class="dropdown-item" href="#">View Products</a>
+                                        </li>
+                                        <li>
+                                            <a class="dropdown-item" href="#">Add Products</a>
+                                        </li>
+                                        <li>
+                                            <a class="dropdown-item" href="#">Edit Products</a>
+                                        </li>
+                                        <li>
+                                            <a class="dropdown-item" href="#">Edit Status Delivery</a>
+                                        </li>
+                                    </ul>
+                                </div>
                             </div>
-                        </div>
+                        }
+                        else
+                        {
+                            <div class="btn-group">
+                                <div class="dropdown">
+                                    <button class="btn btn-sm" type="button">Delivery</button>
+                                </div>
+                            </div>
+                        }
+
+
+                        <!--------------------------------------------------------------------------------------Обработать ситуацию если пользователь вошел в систему или нет-------------------------------------------------------->
+
+                        @if (@ViewBag.isAuthorized?? false)
+                        {
+                            <div class="btn-group me-2">
+                                <div class="dropdown">
+                                    <button class="btn btn-sm dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                        Account
+                                    </button>
+                                    <ul class="dropdown-menu">
+                                        <li>
+                                            <a class="dropdown-item" href="@Url.Action("LogOut", "SignIn")">Log Out</a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        }
+                        else
+                        {
+                            <div class="btn-group me-2">
+                                <div class="dropdown">
+                                    <button class="btn btn-sm dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                        Account
+                                    </button>
+                                    <ul class="dropdown-menu">
+                                        <li>
+                                            <a class="dropdown-item" href="@Url.Action("Login", "SignIn")">Sign In</a>
+                                        </li>
+                                        <li>
+                                            <a class="dropdown-item" href="@Url.Action("Registration", "SignUp")">Sign Up</a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        }
                     </div>
                 </div>
             </div>
