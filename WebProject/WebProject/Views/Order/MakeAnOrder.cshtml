@@ -32,7 +32,7 @@
 
                 <div class="container-fluid">
 
-                    <form action="" class="needs-validation" novalidate>
+                    <form action="@Url.Action("MakeAnOrder","Order")" method="post" class="needs-validation" novalidate>
 
                         <div class="row">
 
@@ -42,49 +42,64 @@
                                     <h1 class="section-title h5"><span>Billing address</span></h1>
 
                                     <div class="row g-3">
+                                            <div class="col-md-6">
+                                                <label for="name" class="form-label">Name</label>
+                                                <input type="text" id="name" name="name" class="form-control"
+                                                       placeholder="John Doe" aria-label="Name" required>
+                                            </div>
 
-                                        <div class="col-md-6">
-                                            <label for="name" class="form-label">Name</label>
-                                            <input type="text" id="name" name="name" class="form-control"
-                                                   placeholder="John Doe" aria-label="Name" required>
-                                        </div>
+                                            <div class="col-md-6">
+                                                <label for="email" class="form-label">Email</label>
+                                                <input type="email" name="email" id="email" class="form-control"
+                                                       placeholder="doe@mail.com" aria-label="Email" required>
+                                            </div>
 
-                                        <div class="col-md-6">
-                                            <label for="email" class="form-label">Email</label>
-                                            <input type="email" name="email" id="email" class="form-control"
-                                                   placeholder="doe@mail.com" aria-label="Email" required>
-                                        </div>
+                                            <div class="col-md-6">
+                                                <label for="phone" class="form-label">Phone</label>
+                                                <input type="tel" name="phone" id="phone" class="form-control"
+                                                       placeholder="+123456789" aria-label="Phone" required>
+                                            </div>
 
-                                        <div class="col-md-6">
-                                            <label for="phone" class="form-label">Phone</label>
-                                            <input type="tel" name="phone" id="phone" class="form-control"
-                                                   placeholder="+123456789" aria-label="Phone" required>
-                                        </div>
+                                            <div class="col-md-6">
+                                                <label for="country" class="form-label">Country</label>
+                                                <select id="country" name="country" class="form-select" aria-label="Country"
+                                                        required></select>
+                                            </div>
 
-                                        <div class="col-md-6">
-                                            <label for="country" class="form-label">Country</label>
-                                            <select id="country" name="country" class="form-select" aria-label="Country"
-                                                    required></select>
-                                        </div>
+                                            <div class="col-md-6">
+                                                <label for="city" class="form-label">City</label>
+                                                <input type="text" name="city" id="city" class="form-control"
+                                                       placeholder="City name" aria-label="City" required>
+                                            </div>
 
-                                        <div class="col-md-6">
-                                            <label for="city" class="form-label">City</label>
-                                            <input type="text" name="city" id="city" class="form-control"
-                                                   placeholder="City name" aria-label="City" required>
-                                        </div>
+                                            <div class="col-md-6">
+                                                <label for="address" class="form-label">Address</label>
+                                                <input type="text" name="address" id="address" class="form-control"
+                                                       placeholder="Street, house num, flat num" aria-label="Address" required>
+                                            </div>
 
-                                        <div class="col-md-6">
-                                            <label for="address" class="form-label">Address</label>
-                                            <input type="text" name="address" id="address" class="form-control"
-                                                   placeholder="Street, house num, flat num" aria-label="Address" required>
-                                        </div>
+                                            <div class="col">
+                                                <label for="comment" class="form-label">Comment</label>
+                                                <textarea class="form-control" name="comment" id="comment" rows="3"
+                                                          placeholder="Order note..."></textarea>
+                                            </div>
 
-                                        <div class="col">
-                                            <label for="comment" class="form-label">Comment</label>
-                                            <textarea class="form-control" name="comment" id="comment" rows="3"
-                                                      placeholder="Order note..."></textarea>
-                                        </div>
+                                            <h5 class="section-title"><span>Enter your card creditinals</span></h5>
 
+                                            <div class="col-md-6">
+                                                <label for="CardNumber" class="form-label">Card Number</label>
+                                                <input type="text" id="CardNumber" name="CardNumber" class="form-control" placeholder="1234 5678 9012 3456" aria-label="Card Number" required pattern="\d*">
+                                            </div>
+
+                                            <div class="col-md-6">
+                                                <label for="Date" class="form-label">Expiry Date</label>
+                                                <input type="text" id="Date" name="Date" class="form-control" placeholder="MM/YY" aria-label="Expiry Date" required>
+                                            </div>
+
+                                            <div class="col-md-6">
+                                                <label for="CVV" class="form-label">CVV</label>
+                                                <input type="text" id="CVV" name="CVV" class="form-control" placeholder="123" aria-label="CVV" required pattern="\d*">
+                                            </div>
                                     </div>
 
                                 </div>
@@ -121,35 +136,15 @@
                                                     <td>
                                                         Total price
                                                     </td>
-                                                    <td class="text-end">$100</td>
+                                                    <td class="text-end">@ViewBag.valute@ViewBag.totalPrice</td>
                                                 </tr>
                                             </tfoot>
                                         </table>
                                     </div>
 
-                                    <h5 class="section-title"><span>Enter your card creditinals</span></h5>
-
-                                    <div class="col-md-6">
-                                        <label for="card_number" class="form-label">Card Number</label>
-                                        <input type="text" id="card_number" name="card_number" class="form-control" placeholder="1234 5678 9012 3456" aria-label="Card Number" required pattern="\d*" oninput="restrictLetters(this)">
-                                    </div>
-
-                                    <div class="col-md-6">
-                                        <label for="expiry_date" class="form-label">Expiry Date</label>
-                                        <input type="text" id="expiry_date" name="expiry_date" class="form-control" placeholder="MM/YY" aria-label="Expiry Date" required>
-                                    </div>
-
-                                    <div class="col-md-6">
-                                        <label for="cvv" class="form-label">CVV</label>
-                                        <input type="text" id="cvv" name="cvv" class="form-control" placeholder="123" aria-label="CVV" required pattern="\d*" oninput="restrictLetters(this)">
-                                    </div>
-
-
-
                                     <div class="d-grid mt-3">
                                         <button type="submit" class="btn btn-warning">Checkout</button>
                                     </div>
-
                                 </div>
 
                             </div>

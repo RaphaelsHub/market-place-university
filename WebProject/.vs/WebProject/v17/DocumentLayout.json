@@ -3,24 +3,24 @@
   "WorkspaceRootPath": "D:\\Git_Web_Product\\WebProduct\\WebProject\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{5F80B0C2-7F0F-4D1D-98CF-08C805A03522}|WebProject\\WebProject.csproj|d:\\git_web_product\\webproduct\\webproject\\webproject\\views\\signup\\registration.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{5F80B0C2-7F0F-4D1D-98CF-08C805A03522}|WebProject\\WebProject.csproj|solutionrelative:webproject\\views\\signup\\registration.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+      "AbsoluteMoniker": "D:0:0:{5F80B0C2-7F0F-4D1D-98CF-08C805A03522}|WebProject\\WebProject.csproj|d:\\git_web_product\\webproduct\\webproject\\webproject\\models\\ordermodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{5F80B0C2-7F0F-4D1D-98CF-08C805A03522}|WebProject\\WebProject.csproj|solutionrelative:webproject\\models\\ordermodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{5F80B0C2-7F0F-4D1D-98CF-08C805A03522}|WebProject\\WebProject.csproj|d:\\git_web_product\\webproduct\\webproject\\webproject\\controllers\\signupcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{5F80B0C2-7F0F-4D1D-98CF-08C805A03522}|WebProject\\WebProject.csproj|solutionrelative:webproject\\controllers\\signupcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{5F80B0C2-7F0F-4D1D-98CF-08C805A03522}|WebProject\\WebProject.csproj|d:\\git_web_product\\webproduct\\webproject\\webproject\\controllers\\ordercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{5F80B0C2-7F0F-4D1D-98CF-08C805A03522}|WebProject\\WebProject.csproj|solutionrelative:webproject\\controllers\\ordercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{5F80B0C2-7F0F-4D1D-98CF-08C805A03522}|WebProject\\WebProject.csproj|d:\\git_web_product\\webproduct\\webproject\\webproject\\controllers\\signincontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{5F80B0C2-7F0F-4D1D-98CF-08C805A03522}|WebProject\\WebProject.csproj|solutionrelative:webproject\\controllers\\signincontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{5F80B0C2-7F0F-4D1D-98CF-08C805A03522}|WebProject\\WebProject.csproj|d:\\git_web_product\\webproduct\\webproject\\webproject\\views\\order\\makeanorder.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{5F80B0C2-7F0F-4D1D-98CF-08C805A03522}|WebProject\\WebProject.csproj|solutionrelative:webproject\\views\\order\\makeanorder.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{5F80B0C2-7F0F-4D1D-98CF-08C805A03522}|WebProject\\WebProject.csproj|d:\\git_web_product\\webproduct\\webproject\\webproject\\dateaccesclasses\\checkifexistuser.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{5F80B0C2-7F0F-4D1D-98CF-08C805A03522}|WebProject\\WebProject.csproj|solutionrelative:webproject\\dateaccesclasses\\checkifexistuser.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{5F80B0C2-7F0F-4D1D-98CF-08C805A03522}|WebProject\\WebProject.csproj|d:\\git_web_product\\webproduct\\webproject\\webproject\\models\\cardcreditinals.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{5F80B0C2-7F0F-4D1D-98CF-08C805A03522}|WebProject\\WebProject.csproj|solutionrelative:webproject\\models\\cardcreditinals.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{5F80B0C2-7F0F-4D1D-98CF-08C805A03522}|WebProject\\WebProject.csproj|d:\\git_web_product\\webproduct\\webproject\\webproject\\views\\signin\\login.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{5F80B0C2-7F0F-4D1D-98CF-08C805A03522}|WebProject\\WebProject.csproj|solutionrelative:webproject\\views\\signin\\login.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+      "AbsoluteMoniker": "D:0:0:{5F80B0C2-7F0F-4D1D-98CF-08C805A03522}|WebProject\\WebProject.csproj|d:\\git_web_product\\webproduct\\webproject\\webproject\\models\\orderinfo.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{5F80B0C2-7F0F-4D1D-98CF-08C805A03522}|WebProject\\WebProject.csproj|solutionrelative:webproject\\models\\orderinfo.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -30,7 +30,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 322,
-          "SelectedChildIndex": 4,
+          "SelectedChildIndex": 1,
           "Children": [
             {
               "$type": "Bookmark",
@@ -38,67 +38,67 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "CheckIfExistUser.cs",
-              "DocumentMoniker": "D:\\Git_Web_Product\\WebProduct\\WebProject\\WebProject\\DateAccesClasses\\CheckIfExistUser.cs",
-              "RelativeDocumentMoniker": "WebProject\\DateAccesClasses\\CheckIfExistUser.cs",
-              "ToolTip": "D:\\Git_Web_Product\\WebProduct\\WebProject\\WebProject\\DateAccesClasses\\CheckIfExistUser.cs",
-              "RelativeToolTip": "WebProject\\DateAccesClasses\\CheckIfExistUser.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAABYAAAAIAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-03-12T16:37:23.056Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "Login.cshtml",
-              "DocumentMoniker": "D:\\Git_Web_Product\\WebProduct\\WebProject\\WebProject\\Views\\SignIn\\Login.cshtml",
-              "RelativeDocumentMoniker": "WebProject\\Views\\SignIn\\Login.cshtml",
-              "ToolTip": "D:\\Git_Web_Product\\WebProduct\\WebProject\\WebProject\\Views\\SignIn\\Login.cshtml",
-              "RelativeToolTip": "WebProject\\Views\\SignIn\\Login.cshtml",
-              "ViewState": "AQIAACEAAAAAAAAAAAAAAAAAAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2024-03-12T16:38:57.267Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "SignInController.cs",
-              "DocumentMoniker": "D:\\Git_Web_Product\\WebProduct\\WebProject\\WebProject\\Controllers\\SignInController.cs",
-              "RelativeDocumentMoniker": "WebProject\\Controllers\\SignInController.cs",
-              "ToolTip": "D:\\Git_Web_Product\\WebProduct\\WebProject\\WebProject\\Controllers\\SignInController.cs",
-              "RelativeToolTip": "WebProject\\Controllers\\SignInController.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAB4AAAAQAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-03-12T16:38:16.429Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
               "DocumentIndex": 0,
-              "Title": "Registration.cshtml",
-              "DocumentMoniker": "D:\\Git_Web_Product\\WebProduct\\WebProject\\WebProject\\Views\\SignUp\\Registration.cshtml",
-              "RelativeDocumentMoniker": "WebProject\\Views\\SignUp\\Registration.cshtml",
-              "ToolTip": "D:\\Git_Web_Product\\WebProduct\\WebProject\\WebProject\\Views\\SignUp\\Registration.cshtml",
-              "RelativeToolTip": "WebProject\\Views\\SignUp\\Registration.cshtml",
-              "ViewState": "AQIAAC8AAAAAAAAAAAAmwFYAAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2024-03-12T16:30:16.862Z",
+              "Title": "OrderModel.cs",
+              "DocumentMoniker": "D:\\Git_Web_Product\\WebProduct\\WebProject\\WebProject\\models\\OrderModel.cs",
+              "RelativeDocumentMoniker": "WebProject\\models\\OrderModel.cs",
+              "ToolTip": "D:\\Git_Web_Product\\WebProduct\\WebProject\\WebProject\\models\\OrderModel.cs",
+              "RelativeToolTip": "WebProject\\models\\OrderModel.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAsAAAAFAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-03-12T22:20:37.49Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 1,
-              "Title": "SignUpController.cs",
-              "DocumentMoniker": "D:\\Git_Web_Product\\WebProduct\\WebProject\\WebProject\\Controllers\\SignUpController.cs",
-              "RelativeDocumentMoniker": "WebProject\\Controllers\\SignUpController.cs",
-              "ToolTip": "D:\\Git_Web_Product\\WebProduct\\WebProject\\WebProject\\Controllers\\SignUpController.cs",
-              "RelativeToolTip": "WebProject\\Controllers\\SignUpController.cs",
-              "ViewState": "AQIAAAYAAAAAAAAAAAAAACoAAAABAAAA",
+              "Title": "OrderController.cs",
+              "DocumentMoniker": "D:\\Git_Web_Product\\WebProduct\\WebProject\\WebProject\\Controllers\\OrderController.cs",
+              "RelativeDocumentMoniker": "WebProject\\Controllers\\OrderController.cs",
+              "ToolTip": "D:\\Git_Web_Product\\WebProduct\\WebProject\\WebProject\\Controllers\\OrderController.cs",
+              "RelativeToolTip": "WebProject\\Controllers\\OrderController.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAABgAAAABAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-03-12T16:30:01.71Z",
+              "WhenOpened": "2024-03-12T22:19:38.237Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "CardCreditinals.cs",
+              "DocumentMoniker": "D:\\Git_Web_Product\\WebProduct\\WebProject\\WebProject\\models\\CardCreditinals.cs",
+              "RelativeDocumentMoniker": "WebProject\\models\\CardCreditinals.cs",
+              "ToolTip": "D:\\Git_Web_Product\\WebProduct\\WebProject\\WebProject\\models\\CardCreditinals.cs",
+              "RelativeToolTip": "WebProject\\models\\CardCreditinals.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAABcAAAAFAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-03-12T22:18:08.867Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "OrderInfo.cs",
+              "DocumentMoniker": "D:\\Git_Web_Product\\WebProduct\\WebProject\\WebProject\\models\\OrderInfo.cs",
+              "RelativeDocumentMoniker": "WebProject\\models\\OrderInfo.cs",
+              "ToolTip": "D:\\Git_Web_Product\\WebProduct\\WebProject\\WebProject\\models\\OrderInfo.cs",
+              "RelativeToolTip": "WebProject\\models\\OrderInfo.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-03-12T22:18:04.309Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "MakeAnOrder.cshtml",
+              "DocumentMoniker": "D:\\Git_Web_Product\\WebProduct\\WebProject\\WebProject\\Views\\Order\\MakeAnOrder.cshtml",
+              "RelativeDocumentMoniker": "WebProject\\Views\\Order\\MakeAnOrder.cshtml",
+              "ToolTip": "D:\\Git_Web_Product\\WebProduct\\WebProject\\WebProject\\Views\\Order\\MakeAnOrder.cshtml",
+              "RelativeToolTip": "WebProject\\Views\\Order\\MakeAnOrder.cshtml",
+              "ViewState": "AQIAAAkAAAAAAAAAAAAqwCIAAAA7AAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-03-12T20:10:53.963Z",
               "EditorCaption": ""
             }
           ]
