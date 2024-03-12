@@ -235,11 +235,13 @@
     <Compile Include="Controllers\SignUpController.cs" />
     <Compile Include="Controllers\TestController.cs" />
     <Compile Include="Controllers\AdminViewProductsController.cs" />
+    <Compile Include="DateAccesClasses\CheckIfExistUser.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Models\ProductSale.cs" />
     <Compile Include="Models\LoginData.cs" />
+    <Compile Include="Models\RegistrationData.cs" />
     <Compile Include="Models\UserData.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
