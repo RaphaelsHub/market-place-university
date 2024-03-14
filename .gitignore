@@ -1,0 +1,43 @@
+# Compiled files
+*.com
+*.class
+*.dll
+*.exe
+*.o
+*.so
+*.pdb
+
+# Packages
+*.7z
+*.dmg
+*.gz
+*.iso
+*.jar
+*.rar
+*.tar
+*.zip
+
+# Logs and databases
+*.log
+*.sql
+*.sqlite
+
+# Visual Studio files
+.vscode/
+*.suo
+*.ntvs*
+*.njsproj
+*.sln.docstates
+*.suo
+*.user
+*.userosscache
+*.sln.docstates
+#optional VS
+*.vsidx
+*.cache
+
+# ReSharper files
+_ReSharper*/
+
+# Entity Framework database schema
+*.edmx.diagram
