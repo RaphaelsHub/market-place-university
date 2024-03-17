@@ -1,4 +1,4 @@
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.Linq;
@@ -9,35 +9,25 @@ namespace WebProject.Models
     public class LoginData
     {
         [Required(ErrorMessage = "Enter Username")]
-        public string Username { get; set; }
+        public string Email { get; set; }
 
         [Required(ErrorMessage = "Enter Password")]
-        [DataType(DataType.Password)]
         public string Password { get; set; }
 
-        [Display(Name = "Remember Me")]
-        public bool RememberMe { get; set; }
+        public LoginData() { }
 
-        public string ForgotPasswordUrl { get; set; }
-
-        public string RegisterUrl { get; set; }
-
-        //public int PasswordExpirationDays { get; set; } ???
-        //public int MaxLoginAttempts { get; set; } ???
-
-        public string ErrorMessage { get; set; }
-       /*-----TRANSPORT THAT TO CONTROLLERS
-        public bool IsValidUser()
+        public LoginData(string email, string password)
         {
-            if (string.IsNullOrEmpty(Username)) return false;
-            //Probably here will be all verifying stuff with database
-            return true;
+            this.Email = email;    
+            this.Password = password;
         }
-        public bool IsValidPassword()
-        {
-            if (Password == null) return false;
-            //Probably here will be all verifying stuff with database
-            return true;
-        }*/ 
+
+        /**************************************************Модели не принимают эту информацию**********************************************/
+        //[Display(Name = "Remember Me")]
+        //public bool RememberMe { get; set; } нет такого функционала
+        //public string ForgotPasswordUrl { get; set; } - этот функционал мы не реализуем
+        //public string RegisterUrl { get; set; }  - не понял для чеего ????
+        //public int PasswordExpirationDays { get; set; } ??? тоже ссамое не понял
+        //public int MaxLoginAttempts { get; set; } ??? тоже самое не понял
     }
 }

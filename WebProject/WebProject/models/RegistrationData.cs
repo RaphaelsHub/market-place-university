@@ -13,9 +13,7 @@ namespace WebProject.Models
         public string Password { get; set; }
 
         // Конструктор без параметров
-        public RegistrationData()
-        {
-        }
+        public RegistrationData(){}
 
         // Конструктор с параметрами
         public RegistrationData(string name, string email, string phone, string password)

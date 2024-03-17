@@ -10,6 +10,7 @@ namespace WebProject.Models
         public string CardNumber { get; set; }
         public string Date { get; set; }
         public string CVV { get; set; }
+        public CardCreditinals() { }
 
         public CardCreditinals(string cardNumber, string date, string cvv)
         {
@@ -17,10 +18,6 @@ namespace WebProject.Models
             this.Date = date;
             this.CVV = cvv;
         }
-
-  
-            public CardCreditinals() { }
-
     }
 
 }

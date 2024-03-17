@@ -16,9 +16,13 @@ namespace WebProject.Controllers
         }
 
         [HttpPost]
-        public ActionResult MakeAnOrder(OrderModel model)
+        public ActionResult MakeAnOrder(OrderInfo orderInfo, CardCreditinals cardCreditinals)
         {
+            OrderModel orderModel = new OrderModel(orderInfo, cardCreditinals);
+            // Заказ валидация
             // Обработка заказа...
+
+
             return RedirectToAction("Index", "Home");
         }
     }

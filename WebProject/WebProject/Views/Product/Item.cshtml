@@ -61,18 +61,29 @@
                             <h1 class="section-title h3"><span>@ViewBag.productName</span></h1>
                             <div class="product-price">@ViewBag.typeOfValute@ViewBag.productPrice</div>
                             <p>Information about the product</p>
-                            
-    
-                            <!--ДОБАВЛЯЕМ В КОРЗИНУ И УКАЗЫВАКМ КОЛИЧЕСТВО-->
-                            <div class="product-add2cart">
+                            @{
+                                int amountOfProducts = ViewBag.amountOfAbleProducts;
+                            }
+
+                            <form action="@Url.Action("AddToCart", "Product")" method="post">
+                                <input type="hidden" name="productId" value="@ViewBag.productId" /> <!-- Здесь указывается ID товара -->
                                 <div class="input-group">
-                                    <input type="number" class="form-control" value="1" min="1">
-                                    <button class="btn btn-warning">
-                                        <i class="fas fa-shopping-cart"></i> Add to
-                                        cart
+                                    <input type="number" class="form-control" name="quantity" value="@(amountOfProducts == 0 ? "0" : "1")" min="1" @(amountOfProducts == 0 ? "readonly" : "")>
+                                    <button type="submit" class="btn btn-warning @(amountOfProducts == 0 ? "disabled" : "")">
+                                        <i class="fas fa-shopping-cart"></i> Add to cart
                                     </button>
                                 </div>
-                            </div>
+                                @if (amountOfProducts == 0)
+                                {
+                                    <div class="alert alert-warning mt-2" role="alert">
+                                        There are currently no products available.
+                                    </div>
+                                }
+                            </form>
+
+
+
+
 
                             <div class="row mt-3">
                                 <div class="col-lg-4 mb-2">
@@ -155,7 +166,7 @@
                                      aria-labelledby="features-tab" tabindex="0">
                                     <table class="table">
                                         <tbody>
-                                            @Html.Partial("~/Views/Partials/ProductDescription.cshtml")
+                                            @Html.Partial("~/Views/Partials/ProductFeatures.cshtml")
                                         </tbody>
                                     </table>
                                 </div>

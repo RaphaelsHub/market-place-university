@@ -25,6 +25,5 @@ namespace WebProject.Models
             Address = address;
             Comment = comment;
         }
-
     }
 }

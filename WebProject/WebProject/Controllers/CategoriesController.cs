@@ -12,6 +12,6 @@ namespace WebProject.Controllers
         public ActionResult Items()
         {
             return View();
-        }
+        } 
     }
 }

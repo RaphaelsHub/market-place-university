@@ -54,6 +54,12 @@ namespace WebProject
                url: "Order/{action}/{id}",
                defaults: new { controller = "Order", action = "MakeAnOrder", id = UrlParameter.Optional }
             );
+
+            routes.MapRoute(
+               name: "Admin",
+               url: "Admin/{action}/{id}",
+               defaults: new { controller = "AdminViewProducts", action = "ViewProducts", id = UrlParameter.Optional }
+            );
         }
     }
 }

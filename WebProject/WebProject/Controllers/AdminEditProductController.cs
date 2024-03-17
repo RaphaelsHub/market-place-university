@@ -9,7 +9,7 @@ namespace WebProject.Controllers
     public class AdminEditProductController : Controller
     {
         // GET: EditProduct
-        public ActionResult A()
+        public ActionResult EditProduct()
         {
             return View();
         }

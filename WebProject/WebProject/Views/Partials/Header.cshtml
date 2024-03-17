@@ -76,16 +76,10 @@
                                     </button>
                                     <ul class="dropdown-menu">
                                         <li>
-                                            <a class="dropdown-item" href="#">View Products</a>
+                                            <a class="dropdown-item" href="@Url.Action("ViewProducts","AdminViewProducts")">View Products</a>
                                         </li>
                                         <li>
-                                            <a class="dropdown-item" href="#">Add Products</a>
-                                        </li>
-                                        <li>
-                                            <a class="dropdown-item" href="#">Edit Products</a>
-                                        </li>
-                                        <li>
-                                            <a class="dropdown-item" href="#">Edit Status Delivery</a>
+                                            <a class="dropdown-item" href="@Url.Action("NewProduct","AdminAddProduct")">Add a Product</a>
                                         </li>
                                     </ul>
                                 </div>
@@ -130,7 +124,7 @@
                                             <a class="dropdown-item" href="@Url.Action("Login", "SignIn")">Sign In</a>
                                         </li>
                                         <li>
-                                            <a class="dropdown-item" href="@Url.Action("Registration1", "SignUp")">Sign Up</a>
+                                            <a class="dropdown-item" href="@Url.Action("Registration", "SignUp")">Sign Up</a>
                                         </li>
                                     </ul>
                                 </div>

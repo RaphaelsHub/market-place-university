@@ -4,6 +4,8 @@ using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 using System.Web.Security;
+using System.Web.UI.WebControls;
+using WebProject.Models;
 
 namespace WebProject.Controllers
 {
@@ -17,14 +19,14 @@ namespace WebProject.Controllers
 
 
         [HttpPost]
-        public ActionResult Login(string email, string password)
+        public ActionResult Login(LoginData loginData)
         {
             //Рандомный емаил и пароль
             string validEmail = "user@example.com";
             string validPassword = "password";
 
 
-            if (email == validEmail && password == validPassword)
+            if (loginData.Email == validEmail && loginData.Password == validPassword)
             {
                 HomeController.IsAuthorized = true;
                 HomeController.IsAdmin = true;

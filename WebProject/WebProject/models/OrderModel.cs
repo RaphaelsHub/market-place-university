@@ -9,5 +9,10 @@ namespace WebProject.Models
     {
         public OrderInfo OrderInfo { get; set; }
         public CardCreditinals CardCreditinals { get; set; }
+
+        public OrderModel(OrderInfo orderInfo, CardCreditinals cardCreditinals) { 
+            OrderInfo = orderInfo;
+            CardCreditinals = cardCreditinals;
+        }
     }
 }

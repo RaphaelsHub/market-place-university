@@ -34,6 +34,7 @@ namespace WebProject.Controllers
                 //запись в базу
                 HomeController.IsAuthorized = true;
 
+
                 // После успешной регистрации перенаправляем пользователя на главную страницу
                 return RedirectToAction("Index", "Home");
             }
