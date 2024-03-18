@@ -56,9 +56,21 @@ namespace WebProject
             );
 
             routes.MapRoute(
-               name: "Admin",
-               url: "Admin/{action}/{id}",
-               defaults: new { controller = "AdminViewProducts", action = "ViewProducts", id = UrlParameter.Optional }
+               name: "AllProducts",
+               url: "AllProducts/{action}/{id}",
+               defaults: new { controller = "AdminAllProducts", action = "ViewProducts", id = UrlParameter.Optional }
+            );
+            
+            routes.MapRoute(
+               name: "AddAProduct",
+               url: "AddAProduct/{action}/{id}",
+               defaults: new { controller = "AdminAddProduct", action = "NewProduct", id = UrlParameter.Optional }
+            ); 
+            
+            routes.MapRoute(
+               name: "Delivery",
+               url: "Delivery/{action}/{id}",
+               defaults: new { controller = "AdminDelivery", action = "EditDelivery", id = UrlParameter.Optional }
             );
         }
     }

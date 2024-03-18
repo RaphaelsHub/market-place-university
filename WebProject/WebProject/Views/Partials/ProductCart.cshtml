@@ -1,17 +1,7 @@
 ﻿<tr>
-    <td class="product-img-td">
-        <a href="#">
-            <img src="assets/img/products/3.jpg" alt="">
-        </a>
-    </td>
-    <td><a href="#" class="cart-content-title">Product 3</a></td>
-    <td>$100</td>
-    <td>
-        <input type="number" value="1" class="form-control cart-qty">
-    </td>
-    <td>
-        <button class="btn btn-danger">
-            <i class="fa-regular fa-circle-xmark"></i>
-        </button>
-    </td>
+    <td class="product-img-td"> <img src=@ViewBag.ProductPhoto alt=""></td>
+    <td>@ViewBag.ProductName</td>
+    <td>$@ViewBag.ProductPrice</td>
+    <td>@ViewBag.Amount</td>
+    <td><button class="btn btn-danger"><i class="fa-regular fa-circle-xmark"></i></button></td>
 </tr>

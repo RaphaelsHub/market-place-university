@@ -1,0 +1,75 @@
+﻿
+@{
+    ViewBag.Title = "ViewProducts";
+}
+
+<!doctype html>
+<html lang="en">
+
+<!--------------------------------------------------------------CONNECT REFERENCES-------------------------------------------------------------------------->
+@Html.Partial("~/Views/Partials/Ref.cshtml")
+
+<body>
+    <div class="wrapper">
+        <!--------------------------------------------------------------CONNECT HEADER-------------------------------------------------------------------------->
+        @Html.Partial("~/Views/Partials/Header.cshtml")
+
+        <!--------------------------------------------------------------MENU-------------------------------------------------------------------------->
+        <main class="main">
+
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-12">
+                        <nav class="breadcrumbs">
+                            <ul>
+                                <li><a href="@Url.Action("Index","Home")">Home</a></li>
+                                <li><span>Cart</span></li>
+                            </ul>
+                        </nav>
+                    </div>
+                </div>
+            </div>
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-lg-12 mb-3">
+                        <div class="cart-content p-3 h-100 bg-white">
+                            <div class="table-responsive">
+                                <table class="table align-middle table-hover">
+                                    <thead class="table-dark">
+                                        <tr>
+                                            <th>Photo</th>
+                                            <th>Product name</th>
+                                            <th>Price</th>
+                                            <th>Amount</th>
+                                            <th><i class="fas fa-pencil-alt"></i></th>
+                                            <th><i class="fa-regular fa-trash-can"></i></th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        @Html.Partial("~/Views/Partials/ViewProd.cshtml")
+                                        @Html.Partial("~/Views/Partials/ViewProd.cshtml")
+                                        @Html.Partial("~/Views/Partials/ViewProd.cshtml")
+                                        @Html.Partial("~/Views/Partials/ViewProd.cshtml")
+                                        @Html.Partial("~/Views/Partials/ViewProd.cshtml")
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </main>
+
+        <!--------------------------------------------------------------CONNECT FOOTER-------------------------------------------------------------------------->
+        @Html.Partial("~/Views/Partials/Footer.cshtml")
+    </div>
+
+    <!--------------------------------------------------------------CONNECT SCROLL STUFF-------------------------------------------------------------------------->
+    @Html.Partial("~/Views/Partials/Scroll.cshtml")
+</body>
+
+</html>
+
+
+

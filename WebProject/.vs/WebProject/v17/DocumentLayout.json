@@ -3,16 +3,12 @@
   "WorkspaceRootPath": "D:\\Git_Web_Product\\WebProduct\\WebProject\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{5F80B0C2-7F0F-4D1D-98CF-08C805A03522}|WebProject\\WebProject.csproj|d:\\git_web_product\\webproduct\\webproject\\webproject\\controllers\\adminviewproductscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{5F80B0C2-7F0F-4D1D-98CF-08C805A03522}|WebProject\\WebProject.csproj|solutionrelative:webproject\\controllers\\adminviewproductscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{5F80B0C2-7F0F-4D1D-98CF-08C805A03522}|WebProject\\WebProject.csproj|d:\\git_web_product\\webproduct\\webproject\\webproject\\views\\partials\\viewprod.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{5F80B0C2-7F0F-4D1D-98CF-08C805A03522}|WebProject\\WebProject.csproj|solutionrelative:webproject\\views\\partials\\viewprod.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{5F80B0C2-7F0F-4D1D-98CF-08C805A03522}|WebProject\\WebProject.csproj|d:\\git_web_product\\webproduct\\webproject\\webproject\\views\\partials\\header.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{5F80B0C2-7F0F-4D1D-98CF-08C805A03522}|WebProject\\WebProject.csproj|solutionrelative:webproject\\views\\partials\\header.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{5F80B0C2-7F0F-4D1D-98CF-08C805A03522}|WebProject\\WebProject.csproj|d:\\git_web_product\\webproduct\\webproject\\webproject\\app_start\\routeconfig.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{5F80B0C2-7F0F-4D1D-98CF-08C805A03522}|WebProject\\WebProject.csproj|solutionrelative:webproject\\app_start\\routeconfig.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{5F80B0C2-7F0F-4D1D-98CF-08C805A03522}|WebProject\\WebProject.csproj|d:\\git_web_product\\webproduct\\webproject\\webproject\\views\\adminallproducts\\viewproducts.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{5F80B0C2-7F0F-4D1D-98CF-08C805A03522}|WebProject\\WebProject.csproj|solutionrelative:webproject\\views\\adminallproducts\\viewproducts.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     }
   ],
   "DocumentGroupContainers": [
@@ -21,8 +17,8 @@
       "VerticalTabListWidth": 256,
       "DocumentGroups": [
         {
-          "DockedWidth": 259,
-          "SelectedChildIndex": 1,
+          "DockedWidth": 331,
+          "SelectedChildIndex": 2,
           "Children": [
             {
               "$type": "Bookmark",
@@ -30,47 +26,28 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "AdminViewProductsController.cs",
-              "DocumentMoniker": "D:\\Git_Web_Product\\WebProduct\\WebProject\\WebProject\\Controllers\\AdminViewProductsController.cs",
-              "RelativeDocumentMoniker": "WebProject\\Controllers\\AdminViewProductsController.cs",
-              "ToolTip": "D:\\Git_Web_Product\\WebProduct\\WebProject\\WebProject\\Controllers\\AdminViewProductsController.cs",
-              "RelativeToolTip": "WebProject\\Controllers\\AdminViewProductsController.cs",
-              "ViewState": "AQIAAAYAAAAAAAAAAAAAAAsAAAAfAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-03-17T19:33:16.539Z",
+              "DocumentIndex": 1,
+              "Title": "ViewProducts.cshtml",
+              "DocumentMoniker": "D:\\Git_Web_Product\\WebProduct\\WebProject\\WebProject\\Views\\AdminAllProducts\\ViewProducts.cshtml",
+              "RelativeDocumentMoniker": "WebProject\\Views\\AdminAllProducts\\ViewProducts.cshtml",
+              "ToolTip": "D:\\Git_Web_Product\\WebProduct\\WebProject\\WebProject\\Views\\AdminAllProducts\\ViewProducts.cshtml",
+              "RelativeToolTip": "WebProject\\Views\\AdminAllProducts\\ViewProducts.cshtml",
+              "ViewState": "AQIAABUAAAAAAAAAAAAAADQAAAAsAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-03-18T10:55:15.815Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "Header.cshtml",
-              "DocumentMoniker": "D:\\Git_Web_Product\\WebProduct\\WebProject\\WebProject\\Views\\Partials\\Header.cshtml",
-              "RelativeDocumentMoniker": "WebProject\\Views\\Partials\\Header.cshtml",
-              "ToolTip": "D:\\Git_Web_Product\\WebProduct\\WebProject\\WebProject\\Views\\Partials\\Header.cshtml",
-              "RelativeToolTip": "WebProject\\Views\\Partials\\Header.cshtml",
-              "ViewState": "AQIAADwAAAAAAAAAAAAAAE4AAACNAAAA",
+              "DocumentIndex": 0,
+              "Title": "ViewProd.cshtml",
+              "DocumentMoniker": "D:\\Git_Web_Product\\WebProduct\\WebProject\\WebProject\\Views\\Partials\\ViewProd.cshtml",
+              "RelativeDocumentMoniker": "WebProject\\Views\\Partials\\ViewProd.cshtml",
+              "ToolTip": "D:\\Git_Web_Product\\WebProduct\\WebProject\\WebProject\\Views\\Partials\\ViewProd.cshtml",
+              "RelativeToolTip": "WebProject\\Views\\Partials\\ViewProd.cshtml",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAgAAAAJAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2024-03-17T19:07:45.02Z",
-              "EditorCaption": ""
-            }
-          ]
-        },
-        {
-          "DockedWidth": 385,
-          "SelectedChildIndex": 0,
-          "Children": [
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "RouteConfig.cs",
-              "DocumentMoniker": "D:\\Git_Web_Product\\WebProduct\\WebProject\\WebProject\\App_Start\\RouteConfig.cs",
-              "RelativeDocumentMoniker": "WebProject\\App_Start\\RouteConfig.cs",
-              "ToolTip": "D:\\Git_Web_Product\\WebProduct\\WebProject\\WebProject\\App_Start\\RouteConfig.cs",
-              "RelativeToolTip": "WebProject\\App_Start\\RouteConfig.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAkAAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-03-17T19:15:35.295Z",
+              "WhenOpened": "2024-03-18T10:55:01.86Z",
               "EditorCaption": ""
             }
           ]

@@ -1,0 +1,100 @@
+﻿
+@{
+    ViewBag.Title = "NewProduct";
+}
+<!doctype html>
+<html lang="en">
+
+<!--------------------------------------------------------------CONNECT REFERENCES-------------------------------------------------------------------------->
+@Html.Partial("~/Views/Partials/Ref.cshtml")
+
+<body>
+    <div class="wrapper">
+        <!--------------------------------------------------------------CONNECT HEADER-------------------------------------------------------------------------->
+        @Html.Partial("~/Views/Partials/Header.cshtml")
+
+        <!--------------------------------------------------------------MENU-------------------------------------------------------------------------->
+        <main class="main">
+
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-12">
+                        <nav class="breadcrumbs">
+                            <ul>
+                                <li><a href="@Url.Action("Index","Home")">Home</a></li>
+                                <li><span>Cart</span></li>
+                            </ul>
+                        </nav>
+                    </div>
+                </div>
+            </div>
+
+
+            <div class="container-fluid">
+
+                <form action="@Url.Action("AddProduct","Prod")" method="post" class="needs-validation" novalidate>
+
+                    <div class="row">
+
+                        <div class="col-lg-12 mb-3">
+                            <div class="Checkout p-3 h-100 bg-white">
+
+                                <h5 class="section-title"><span>Add a product</span></h5>
+
+                                <div class="row g-3">
+
+                                    <div class="col-md-12">
+                                        <label for="image" class="form-label">Product Images</label>
+                                        <input type="file" id="image" name="image" class="form-control" accept="image/*" multiple required>
+                                        <div id="image-preview" class="mt-2"></div>
+                                    </div>
+
+
+                                    <div class="col-md-3">
+                                        <label for="Product name" class="form-label">Product name.</label>
+                                        <input type="text" id="name" name="name" class="form-control"
+                                               placeholder="Ryzen 5600Rx" aria-label="Name" required>
+                                    </div>
+
+                                    <div class="col-md-2">
+                                        <label for="email" class="form-label">Product price.</label>
+                                        <input type="email" name="email" id="email" class="form-control"
+                                               placeholder="999.38$" aria-label="Email" required>
+                                    </div>
+
+                                    <div class="col-md-2">
+                                        <label for="phone" class="form-label">Amount of able items.</label>
+                                        <input type="tel" name="phone" id="phone" class="form-control"
+                                               placeholder="10" aria-label="Phone" required>
+                                    </div>
+                                    <div class="col-md-12">
+                                        <label for="description" class="form-label">Product description.</label>
+                                        <textarea name="description" id="description" class="form-control" rows="4" placeholder="Product description" required></textarea>
+                                    </div>
+
+
+                                </div>
+
+                            </div>
+                        </div>
+
+                    </div>
+
+                </form>
+
+            </div>
+        </main>
+
+        <!--------------------------------------------------------------CONNECT FOOTER-------------------------------------------------------------------------->
+        @Html.Partial("~/Views/Partials/Footer.cshtml")
+    </div>
+
+    <!--------------------------------------------------------------CONNECT SCROLL STUFF-------------------------------------------------------------------------->
+    @Html.Partial("~/Views/Partials/Scroll.cshtml")
+</body>
+
+</html>
+
+
+
+

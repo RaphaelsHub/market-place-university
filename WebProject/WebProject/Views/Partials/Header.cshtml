@@ -62,9 +62,7 @@
 
                         <!--------------------------------------------------------------------------------------Обработать ситуацию если зашел админ или нет-------------------------------------------------------->
                         <!--LANGUAGE AND ENTER IN-->
-                        @{
-                            bool isssAdmin = false;
-                        }
+ 
 
                         @if (@ViewBag.IsAdmin ?? false)
                         {
@@ -76,10 +74,13 @@
                                     </button>
                                     <ul class="dropdown-menu">
                                         <li>
-                                            <a class="dropdown-item" href="@Url.Action("ViewProducts","AdminViewProducts")">View Products</a>
-                                        </li>
+                                            <a class="dropdown-item" href="@Url.Action("ViewProducts","AdminAllProducts")">View Products</a>
+                                        </li>                                        
                                         <li>
                                             <a class="dropdown-item" href="@Url.Action("NewProduct","AdminAddProduct")">Add a Product</a>
+                                        </li>                                        
+                                        <li>
+                                            <a class="dropdown-item" href="@Url.Action("EditDelivery","AdminDelivery")">View Delivery</a>
                                         </li>
                                     </ul>
                                 </div>

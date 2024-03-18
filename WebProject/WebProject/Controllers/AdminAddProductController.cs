@@ -8,7 +8,7 @@ namespace WebProject.Controllers
 {
     public class AdminAddProductController : Controller
     {
-        // GET: AddProduct
+        // GET: AdminAddProduct
         public ActionResult NewProduct()
         {
             return View();

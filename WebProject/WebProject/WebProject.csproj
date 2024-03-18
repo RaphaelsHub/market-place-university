@@ -88,6 +88,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Content\Site.css" />
     <Content Include="FrontEndAssets\CSS\main.css" />
     <Content Include="FrontEndAssets\Html\cart.html" />
     <Content Include="FrontEndAssets\Html\category.html" />
@@ -224,16 +225,15 @@
   <ItemGroup>
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Controllers\AdminAddProductController.cs" />
+    <Compile Include="Controllers\AdminAllProductsController.cs" />
+    <Compile Include="Controllers\AdminDeliveryController.cs" />
     <Compile Include="Controllers\CartController.cs" />
     <Compile Include="Controllers\CategoriesController.cs" />
-    <Compile Include="Controllers\AdminDeliveryController.cs" />
-    <Compile Include="Controllers\AdminEditProductController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\OrderController.cs" />
     <Compile Include="Controllers\ProductController.cs" />
     <Compile Include="Controllers\SignInController.cs" />
     <Compile Include="Controllers\SignUpController.cs" />
-    <Compile Include="Controllers\AdminViewProductsController.cs" />
     <Compile Include="DateAccesClasses\CheckIfExistUser.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -351,13 +351,14 @@
     <Content Include="Views\Partials\Products.cshtml" />
     <Content Include="Views\Partials\ProductCart.cshtml" />
     <Content Include="Views\Partials\Categor.cshtml" />
-    <Content Include="Views\Admin\NewProduct.cshtml" />
-    <Content Include="Views\Admin\ViewProducts.cshtml" />
-    <Content Include="Views\Admin\EditProduct.cshtml" />
-    <Content Include="Views\Admin\EditDelivery.cshtml" />
     <Content Include="Views\Partials\AmountOfProductAndPriceCartOption.cshtml" />
     <Content Include="Views\Partials\ProductFeatures.cshtml" />
     <Content Include="Views\Partials\PhotoObj.cshtml" />
+    <Content Include="Views\AdminAllProducts\ViewProducts.cshtml" />
+    <Content Include="Views\AdminAddProduct\NewProduct.cshtml" />
+    <Content Include="Views\AdminDelivery\EditDelivery.cshtml" />
+    <Content Include="Views\Partials\EdDelivery.cshtml" />
+    <Content Include="Views\Partials\ViewProd.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

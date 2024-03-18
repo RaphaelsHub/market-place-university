@@ -8,12 +8,12 @@
         </div>
         <div class="product-details">
             <h4>
-                <a href="@Url.Action("Item","Product")">Iphone</a>
+                <a href="@Url.Action("Item","Product")">@ViewBag.ProductName</a>
             </h4>
-            <p class="product-excerpt">Good Iphone</p>
+            <p class="product-excerpt">@ViewBag.Desciption</p>
             <div class="product-bottom-details d-flex justify-content-between">
                 <div class="product-price">
-                    30$
+                    @ViewBag.ProductPricce
                 </div>
                 <div class="product-links">
                     <a href="@Url.Action("Item","Product")" class="btn btn-outline-secondary add-to-cart">

@@ -8,7 +8,7 @@ namespace WebProject.Controllers
 {
     public class AdminDeliveryController : Controller
     {
-        // GET: Delivery
+        // GET: AdminDelivery
         public ActionResult EditDelivery()
         {
             return View();
