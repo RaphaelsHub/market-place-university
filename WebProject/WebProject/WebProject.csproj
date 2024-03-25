@@ -243,7 +243,7 @@
     <Compile Include="Models\OrderInfo.cs" />
     <Compile Include="Models\OrderModel.cs" />
     <Compile Include="Models\CartItem.cs" />
-    <Compile Include="Models\ProductSale.cs" />
+    <Compile Include="Models\Product.cs" />
     <Compile Include="Models\LoginData.cs" />
     <Compile Include="Models\RegistrationData.cs" />
     <Compile Include="Models\UserData.cs" />
@@ -368,6 +368,20 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\WebProject.BusinessLogic\WebProject.BusinessLogic.csproj">
+      <Project>{04a69f02-ce57-4dbb-a3c1-e5c262d3bd05}</Project>
+      <Name>WebProject.BusinessLogic</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\WebProject.Domain\WebProject.Domain.csproj">
+      <Project>{6b54e2b5-b484-41f4-a47b-8c4e70f663c1}</Project>
+      <Name>WebProject.Domain</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\WebProject.Helper\WebProject.Helper.csproj">
+      <Project>{0232bb97-a9df-4e75-8ca8-4cd944fdf2da}</Project>
+      <Name>WebProject.Helper</Name>
+    </ProjectReference>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

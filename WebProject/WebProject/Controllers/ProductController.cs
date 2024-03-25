@@ -10,11 +10,12 @@ namespace WebProject.Controllers
     public class ProductController : Controller
     {
         // GET: Product
-        public ActionResult Item()
+        [HttpPost]
+        public ActionResult Item(Product product)
         {
-            ViewBag.amountOfAbleProducts = 0;
-            return View();
+            return View(product);
         }
+        
         public ActionResult AddToCart(CartItem cartItem)
         {
             CartData cartData = new CartData();

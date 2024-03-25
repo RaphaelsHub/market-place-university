@@ -3,12 +3,16 @@
   "WorkspaceRootPath": "D:\\Git_Web_Product\\WebProduct\\WebProject\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{5F80B0C2-7F0F-4D1D-98CF-08C805A03522}|WebProject\\WebProject.csproj|d:\\git_web_product\\webproduct\\webproject\\webproject\\views\\partials\\viewprod.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{5F80B0C2-7F0F-4D1D-98CF-08C805A03522}|WebProject\\WebProject.csproj|solutionrelative:webproject\\views\\partials\\viewprod.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+      "AbsoluteMoniker": "D:0:0:{5F80B0C2-7F0F-4D1D-98CF-08C805A03522}|WebProject\\WebProject.csproj|d:\\git_web_product\\webproduct\\webproject\\webproject\\views\\home\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{5F80B0C2-7F0F-4D1D-98CF-08C805A03522}|WebProject\\WebProject.csproj|solutionrelative:webproject\\views\\home\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{5F80B0C2-7F0F-4D1D-98CF-08C805A03522}|WebProject\\WebProject.csproj|d:\\git_web_product\\webproduct\\webproject\\webproject\\views\\adminallproducts\\viewproducts.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{5F80B0C2-7F0F-4D1D-98CF-08C805A03522}|WebProject\\WebProject.csproj|solutionrelative:webproject\\views\\adminallproducts\\viewproducts.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+      "AbsoluteMoniker": "D:0:0:{5F80B0C2-7F0F-4D1D-98CF-08C805A03522}|WebProject\\WebProject.csproj|d:\\git_web_product\\webproduct\\webproject\\webproject\\controllers\\productcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{5F80B0C2-7F0F-4D1D-98CF-08C805A03522}|WebProject\\WebProject.csproj|solutionrelative:webproject\\controllers\\productcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{5F80B0C2-7F0F-4D1D-98CF-08C805A03522}|WebProject\\WebProject.csproj|d:\\git_web_product\\webproduct\\webproject\\webproject\\views\\product\\item.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{5F80B0C2-7F0F-4D1D-98CF-08C805A03522}|WebProject\\WebProject.csproj|solutionrelative:webproject\\views\\product\\item.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     }
   ],
   "DocumentGroupContainers": [
@@ -18,7 +22,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 331,
-          "SelectedChildIndex": 2,
+          "SelectedChildIndex": 3,
           "Children": [
             {
               "$type": "Bookmark",
@@ -26,28 +30,41 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "ViewProducts.cshtml",
-              "DocumentMoniker": "D:\\Git_Web_Product\\WebProduct\\WebProject\\WebProject\\Views\\AdminAllProducts\\ViewProducts.cshtml",
-              "RelativeDocumentMoniker": "WebProject\\Views\\AdminAllProducts\\ViewProducts.cshtml",
-              "ToolTip": "D:\\Git_Web_Product\\WebProduct\\WebProject\\WebProject\\Views\\AdminAllProducts\\ViewProducts.cshtml",
-              "RelativeToolTip": "WebProject\\Views\\AdminAllProducts\\ViewProducts.cshtml",
-              "ViewState": "AQIAABUAAAAAAAAAAAAAADQAAAAsAAAA",
+              "DocumentIndex": 2,
+              "Title": "Item.cshtml",
+              "DocumentMoniker": "D:\\Git_Web_Product\\WebProduct\\WebProject\\WebProject\\Views\\Product\\Item.cshtml",
+              "RelativeDocumentMoniker": "WebProject\\Views\\Product\\Item.cshtml",
+              "ToolTip": "D:\\Git_Web_Product\\WebProduct\\WebProject\\WebProject\\Views\\Product\\Item.cshtml",
+              "RelativeToolTip": "WebProject\\Views\\Product\\Item.cshtml",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAABIAAAA9AAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2024-03-18T10:55:15.815Z",
+              "WhenOpened": "2024-03-24T23:12:00.59Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "ProductController.cs",
+              "DocumentMoniker": "D:\\Git_Web_Product\\WebProduct\\WebProject\\WebProject\\Controllers\\ProductController.cs",
+              "RelativeDocumentMoniker": "WebProject\\Controllers\\ProductController.cs",
+              "ToolTip": "D:\\Git_Web_Product\\WebProduct\\WebProject\\WebProject\\Controllers\\ProductController.cs",
+              "RelativeToolTip": "WebProject\\Controllers\\ProductController.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAABEAAAAIAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-03-24T23:07:05.465Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 0,
-              "Title": "ViewProd.cshtml",
-              "DocumentMoniker": "D:\\Git_Web_Product\\WebProduct\\WebProject\\WebProject\\Views\\Partials\\ViewProd.cshtml",
-              "RelativeDocumentMoniker": "WebProject\\Views\\Partials\\ViewProd.cshtml",
-              "ToolTip": "D:\\Git_Web_Product\\WebProduct\\WebProject\\WebProject\\Views\\Partials\\ViewProd.cshtml",
-              "RelativeToolTip": "WebProject\\Views\\Partials\\ViewProd.cshtml",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAgAAAAJAAAA",
+              "Title": "Index.cshtml",
+              "DocumentMoniker": "D:\\Git_Web_Product\\WebProduct\\WebProject\\WebProject\\Views\\Home\\Index.cshtml",
+              "RelativeDocumentMoniker": "WebProject\\Views\\Home\\Index.cshtml",
+              "ToolTip": "D:\\Git_Web_Product\\WebProduct\\WebProject\\WebProject\\Views\\Home\\Index.cshtml",
+              "RelativeToolTip": "WebProject\\Views\\Home\\Index.cshtml",
+              "ViewState": "AQIAAEoAAAAAAAAAAAAcwGYAAAAiAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2024-03-18T10:55:01.86Z",
+              "WhenOpened": "2024-03-24T21:51:05.779Z",
               "EditorCaption": ""
             }
           ]
