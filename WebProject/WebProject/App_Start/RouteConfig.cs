@@ -37,11 +37,12 @@ namespace WebProject
                 defaults: new { controller = "SignUp", action = "Registration", id = UrlParameter.Optional }
             );
 
+
             routes.MapRoute(
-                name: "Product",
-                url: "Product/{action}/{id}",
-                defaults: new { controller = "Product", action = "Item", id = UrlParameter.Optional }
-            );
+    name: "ProductItem",
+    url: "Product/Item/{id}",
+    defaults: new { controller = "Product", action = "Item", id = UrlParameter.Optional }
+);
 
             routes.MapRoute(
                 name: "Categories",

@@ -7,13 +7,13 @@ namespace WebProject.Models
 {
     public class CartItem
     {
-        public int ProductId { get; set; } 
+        public int Id { get; set; } 
         public int Quantity { get; set; } 
 
         public CartItem() { }
         public CartItem(int productId, int quantity)
         {
-            ProductId = productId;
+            Id = productId;
             Quantity = quantity;
         }
     }

@@ -40,6 +40,7 @@ namespace WebProject.Controllers
             }
         }
 
+        [HttpPost]
         public ActionResult LogOut()
         {
             HomeController.IsAuthorized = false;

@@ -3,168 +3,114 @@
     ViewBag.Title = "Order";
 }
 
-    <!doctype html>
-    <html lang="en">
+<!doctype html>
+<html lang="en">
 
-    <!--------------------------------------------------------------CONNECT REFERENCES-------------------------------------------------------------------------->
-    @Html.Partial("~/Views/Partials/Ref.cshtml")
+<!--------------------------------------------------------------CONNECT REFERENCES-------------------------------------------------------------------------->
+@Html.Partial("~/Views/Partials/Ref.cshtml")
 
-    <body>
-        <div class="wrapper">
-            <!--------------------------------------------------------------CONNECT HEADER-------------------------------------------------------------------------->
-            @Html.Partial("~/Views/Partials/Header.cshtml")
+<body>
+    <div class="wrapper">
+        <!--------------------------------------------------------------CONNECT HEADER-------------------------------------------------------------------------->
+        @Html.Partial("~/Views/Partials/Header.cshtml")
 
-            <!--------------------------------------------------------------MENU-------------------------------------------------------------------------->
-            <main class="main">
+        <!--------------------------------------------------------------MENU-------------------------------------------------------------------------->
+        <main class="main">
 
-                <div class="container-fluid">
-                    <div class="row">
-                        <div class="col-12">
-                            <nav class="breadcrumbs">
-                                <ul>
-                                    <li><a href="@Url.Action("Index","Home")">Home</a></li>
-                                    <li><span>Checkout</span></li>
-                                </ul>
-                            </nav>
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-12">
+                        <nav class="breadcrumbs">
+                            <ul>
+                                <li><a href="@Url.Action("Index","Home")">Home</a></li>
+                                <li><span>Checkout</span></li>
+                            </ul>
+                        </nav>
+                    </div>
+                </div>
+            </div>
+
+            @model WebProject.Models.OrderModel
+
+        <div class="container-fluid">
+            @using (Html.BeginForm("MakeAnOrder", "Order", FormMethod.Post, new { @class = "needs-validation", @novalidate = "novalidate" }))
+            {
+                <div class="row">
+                    <div class="col-lg-12 mb-3">
+                        <div class="Checkout p-3 h-100 bg-white">
+                            <h1 class="section-title h5"><span>Billing address</span></h1>
+                            <div class="row g-3">
+                                <div class="col-md-6">
+                                    @Html.LabelFor(model => model.OrderInfo.Name, new { @class = "form-label required" })
+                                    @Html.TextBoxFor(model => model.OrderInfo.Name, new { @class = "form-control", placeholder = "John Doe" })
+                                    @Html.ValidationMessageFor(model => model.OrderInfo.Name, "", new { @class = "text-danger" })
+                                </div>
+                                <div class="col-md-6">
+                                    @Html.LabelFor(model => model.OrderInfo.Email, new { @class = "form-label required" })
+                                    @Html.TextBoxFor(model => model.OrderInfo.Email, new { @class = "form-control", placeholder = "doe@mail.com" })
+                                    @Html.ValidationMessageFor(model => model.OrderInfo.Email, "", new { @class = "text-danger" })
+                                </div>
+                                <div class="col-md-6">
+                                    @Html.LabelFor(model => model.OrderInfo.Phone, new { @class = "form-label required" })
+                                    @Html.TextBoxFor(model => model.OrderInfo.Phone, new { @class = "form-control", placeholder = "+123456789" })
+                                    @Html.ValidationMessageFor(model => model.OrderInfo.Phone, "", new { @class = "text-danger" })
+                                </div>
+                                <div class="col-md-6">
+                                    @Html.LabelFor(model => model.OrderInfo.Country, new { @class = "form-label required" })
+                                    @Html.TextBoxFor(model => model.OrderInfo.Country, new { @class = "form-control", placeholder = "Country" })
+                                    @Html.ValidationMessageFor(model => model.OrderInfo.Country, "", new { @class = "text-danger" })
+                                </div>
+                                <div class="col-md-6">
+                                    @Html.LabelFor(model => model.OrderInfo.City, new { @class = "form-label required" })
+                                    @Html.TextBoxFor(model => model.OrderInfo.City, new { @class = "form-control", placeholder = "City name" })
+                                    @Html.ValidationMessageFor(model => model.OrderInfo.City, "", new { @class = "text-danger" })
+                                </div>
+                                <div class="col-md-6">
+                                    @Html.LabelFor(model => model.OrderInfo.Address, new { @class = "form-label required" })
+                                    @Html.TextBoxFor(model => model.OrderInfo.Address, new { @class = "form-control", placeholder = "Street, house num, flat num" })
+                                    @Html.ValidationMessageFor(model => model.OrderInfo.Address, "", new { @class = "text-danger" })
+                                </div>
+                                <div class="col">
+                                    @Html.LabelFor(model => model.OrderInfo.Comment, new { @class = "form-label" })
+                                    @Html.TextAreaFor(model => model.OrderInfo.Comment, new { @class = "form-control", rows = "3", placeholder = "Order note..." })
+                                </div>
+
+                                <h5 class="section-title"><span>Enter your card credentials</span></h5>
+                                <div class="col-md-6">
+                                    @Html.LabelFor(model => model.CardCreditinals.CardNumber, new { @class = "form-label required" })
+                                    @Html.TextBoxFor(model => model.CardCreditinals.CardNumber, new { @class = "form-control", placeholder = "1234 5678 9012 3456" })
+                                    @Html.ValidationMessageFor(model => model.CardCreditinals.CardNumber, "", new { @class = "text-danger" })
+                                </div>
+                                <div class="col-md-6">
+                                    @Html.LabelFor(model => model.CardCreditinals.Date, new { @class = "form-label required" })
+                                    @Html.TextBoxFor(model => model.CardCreditinals.Date, new { @class = "form-control", placeholder = "MM/YY" })
+                                    @Html.ValidationMessageFor(model => model.CardCreditinals.Date, "", new { @class = "text-danger" })
+                                </div>
+                                <div class="col-md-6">
+                                    @Html.LabelFor(model => model.CardCreditinals.CVV, new { @class = "form-label required" })
+                                    @Html.TextBoxFor(model => model.CardCreditinals.CVV, new { @class = "form-control", placeholder = "123" })
+                                    @Html.ValidationMessageFor(model => model.CardCreditinals.CVV, "", new { @class = "text-danger" })
+                                </div>
+                                <div class="d-grid mt-3">
+                                    <button type="submit" class="btn btn-warning">Submit and confirm the order(Papa)</button>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
-
-                <div class="container-fluid">
-
-                    <form action="@Url.Action("MakeAnOrder","Order")" method="post" class="needs-validation" novalidate>
-
-                        <div class="row">
-
-                            <div class="col-lg-8 mb-3">
-                                <div class="Checkout p-3 h-100 bg-white">
-
-                                    <h1 class="section-title h5"><span>Billing address</span></h1>
-
-                                    <div class="row g-3">
-                                            <div class="col-md-6">
-                                                <label for="name" class="form-label">Name</label>
-                                                <input type="text" id="name" name="name" class="form-control"
-                                                       placeholder="John Doe" aria-label="Name" required>
-                                            </div>
-
-                                            <div class="col-md-6">
-                                                <label for="email" class="form-label">Email</label>
-                                                <input type="email" name="email" id="email" class="form-control"
-                                                       placeholder="doe@mail.com" aria-label="Email" required>
-                                            </div>
-
-                                            <div class="col-md-6">
-                                                <label for="phone" class="form-label">Phone</label>
-                                                <input type="tel" name="phone" id="phone" class="form-control"
-                                                       placeholder="+123456789" aria-label="Phone" required>
-                                            </div>
-
-                                            <div class="col-md-6">
-                                                <label for="country" class="form-label">Country</label>
-                                                <select id="country" name="country" class="form-select" aria-label="Country"
-                                                        required></select>
-                                            </div>
-
-                                            <div class="col-md-6">
-                                                <label for="city" class="form-label">City</label>
-                                                <input type="text" name="city" id="city" class="form-control"
-                                                       placeholder="City name" aria-label="City" required>
-                                            </div>
-
-                                            <div class="col-md-6">
-                                                <label for="address" class="form-label">Address</label>
-                                                <input type="text" name="address" id="address" class="form-control"
-                                                       placeholder="Street, house num, flat num" aria-label="Address" required>
-                                            </div>
-
-                                            <div class="col">
-                                                <label for="comment" class="form-label">Comment</label>
-                                                <textarea class="form-control" name="comment" id="comment" rows="3"
-                                                          placeholder="Order note..."></textarea>
-                                            </div>
-
-                                            <h5 class="section-title"><span>Enter your card creditinals</span></h5>
-
-                                            <div class="col-md-6">
-                                                <label for="CardNumber" class="form-label">Card Number</label>
-                                                <input type="text" id="CardNumber" name="CardNumber" class="form-control" placeholder="1234 5678 9012 3456" aria-label="Card Number" required pattern="\d*">
-                                            </div>
-
-                                            <div class="col-md-6">
-                                                <label for="Date" class="form-label">Expiry Date</label>
-                                                <input type="text" id="Date" name="Date" class="form-control" placeholder="MM/YY" aria-label="Expiry Date" required>
-                                            </div>
-
-                                            <div class="col-md-6">
-                                                <label for="CVV" class="form-label">CVV</label>
-                                                <input type="text" id="CVV" name="CVV" class="form-control" placeholder="123" aria-label="CVV" required pattern="\d*">
-                                            </div>
-                                    </div>
-
-                                </div>
-                            </div>
-
-                            <div class="col-lg-4 mb-3">
-
-                                <div class="cart-summary p-3 sidebar h-100">
-                                    <h5 class="section-title"><span>Order total</span></h5>
-
-                                    <div class="table-responsive">
-                                        <table class="table">
-                                            <thead>
-                                                <tr>
-                                                    <th>Product</th>
-                                                    <th class="text-end">Total</th>
-                                                </tr>
-                                            </thead>
-                                            <tbody>
-                                                @Html.Partial("~/Views/Partials/AmountOfProductAndPriceCartOption.cshtml")
-                                                @Html.Partial("~/Views/Partials/AmountOfProductAndPriceCartOption.cshtml")
-                                                @Html.Partial("~/Views/Partials/AmountOfProductAndPriceCartOption.cshtml")
-                                                @Html.Partial("~/Views/Partials/AmountOfProductAndPriceCartOption.cshtml")
-                                                @Html.Partial("~/Views/Partials/AmountOfProductAndPriceCartOption.cshtml")
-                                                @Html.Partial("~/Views/Partials/AmountOfProductAndPriceCartOption.cshtml")
-                                                @Html.Partial("~/Views/Partials/AmountOfProductAndPriceCartOption.cshtml")
-                                                @Html.Partial("~/Views/Partials/AmountOfProductAndPriceCartOption.cshtml")
-                                                @Html.Partial("~/Views/Partials/AmountOfProductAndPriceCartOption.cshtml")
-                                                @Html.Partial("~/Views/Partials/AmountOfProductAndPriceCartOption.cshtml")
-                                                @Html.Partial("~/Views/Partials/AmountOfProductAndPriceCartOption.cshtml")
-                                            </tbody>
-                                            <tfoot>
-                                                <tr>
-                                                    <td>
-                                                        Total price
-                                                    </td>
-                                                    <td class="text-end">@ViewBag.valute@ViewBag.totalPrice</td>
-                                                </tr>
-                                            </tfoot>
-                                        </table>
-                                    </div>
-
-                                    <div class="d-grid mt-3">
-                                        <button type="submit" class="btn btn-warning">Checkout</button>
-                                    </div>
-                                </div>
-
-                            </div>
-
-                        </div>
-
-                    </form>
-
-                </div>
-
-            </main>
-
-            <!--------------------------------------------------------------CONNECT FOOTER-------------------------------------------------------------------------->
-            @Html.Partial("~/Views/Partials/Footer.cshtml")
+            }
         </div>
 
-        <!--------------------------------------------------------------CONNECT SCROLL STUFF-------------------------------------------------------------------------->
-        @Html.Partial("~/Views/Partials/Scroll.cshtml")
-    </body>
+        </main>
+
+        <!--------------------------------------------------------------CONNECT FOOTER-------------------------------------------------------------------------->
+        @Html.Partial("~/Views/Partials/Footer.cshtml")
+    </div>
+
+    <!--------------------------------------------------------------CONNECT SCROLL STUFF-------------------------------------------------------------------------->
+    @Html.Partial("~/Views/Partials/Scroll.cshtml")
+</body>
 
 </html>
- 
+
 

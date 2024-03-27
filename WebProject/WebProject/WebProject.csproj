@@ -88,7 +88,6 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Content\Site.css" />
     <Content Include="FrontEndAssets\CSS\main.css" />
     <Content Include="FrontEndAssets\Html\cart.html" />
     <Content Include="FrontEndAssets\Html\category.html" />
@@ -348,12 +347,8 @@
     <Content Include="Views\Partials\Ref.cshtml" />
     <Content Include="Views\Partials\Scroll.cshtml" />
     <Content Include="Views\Order\MakeAnOrder.cshtml" />
-    <Content Include="Views\Partials\Products.cshtml" />
     <Content Include="Views\Partials\ProductCart.cshtml" />
     <Content Include="Views\Partials\Categor.cshtml" />
-    <Content Include="Views\Partials\AmountOfProductAndPriceCartOption.cshtml" />
-    <Content Include="Views\Partials\ProductFeatures.cshtml" />
-    <Content Include="Views\Partials\PhotoObj.cshtml" />
     <Content Include="Views\AdminAllProducts\ViewProducts.cshtml" />
     <Content Include="Views\AdminAddProduct\NewProduct.cshtml" />
     <Content Include="Views\AdminDelivery\EditDelivery.cshtml" />

@@ -1,23 +1,33 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
+using System.ComponentModel.DataAnnotations;
 
 namespace WebProject.Models
 {
     public class CardCreditinals
     {
+        [Display(Name = "Card Number")]
+        [Required(ErrorMessage = "Please enter the card number")]
+        [StringLength(16, MinimumLength = 16, ErrorMessage = "Card Number must be 16 characters long")]
         public string CardNumber { get; set; }
-        public string Date { get; set; }
+
+        [Display(Name = "Expiration Date")]
+        [Required(ErrorMessage = "Please enter the expiration date")]
+        [DataType(DataType.Date)]
+        public DateTime Date { get; set; }
+
+        [Display(Name = "CVV")]
+        [Required(ErrorMessage = "Please enter the CVV")]
+        [StringLength(3, MinimumLength = 3, ErrorMessage = "CVV must be 3 characters long")]
         public string CVV { get; set; }
+
+        // Constructors
         public CardCreditinals() { }
 
-        public CardCreditinals(string cardNumber, string date, string cvv)
+        public CardCreditinals(string cardNumber, DateTime date, string cvv)
         {
-            this.CardNumber = cardNumber;
-            this.Date = date;
-            this.CVV = cvv;
+            CardNumber = cardNumber;
+            Date = date;
+            CVV = cvv;
         }
     }
-
 }

@@ -9,19 +9,33 @@ namespace WebProject.Controllers
 {
     public class ProductController : Controller
     {
-        // GET: Product
-        [HttpPost]
-        public ActionResult Item(Product product)
+        /*
+        public ActionResult Item()
         {
-            return View(product);
+            return RedirectToAction("Index","Home");
         }
-        
+        */
+
+        // GET: Product
+        public ActionResult Item(int id)
+        {
+            // Здесь вы можете использовать переданный ID продукта для получения информации из базы данных или других источников
+            // Например:
+            // Product product = productService.GetProductById(id);
+            // return View(product);
+
+            var product = new HomeController().GetProducts();
+            return View(product[id-1]); // Временный пример вывода ID
+        }
+
+
+        [HttpPost]
         public ActionResult AddToCart(CartItem cartItem)
         {
-            CartData cartData = new CartData();
-            cartData.Items.Add(cartItem);
+            //Логика по передачи cartItem в domain для добавления в корзину
 
-            return RedirectToAction("Buy", "Cart");
+            TempData["Message"] = "Was added successfully";
+            return RedirectToAction("Item", new { id = cartItem.Id});
         }
     }
 }

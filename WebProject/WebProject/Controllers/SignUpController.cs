@@ -6,11 +6,21 @@ using System.Web.Helpers;
 using System.Web.Mvc;
 using WebProject.Models;
 using WebProject.DateAccesClasses;
+using System.EnterpriseServices;
 
 namespace WebProject.Controllers
 {
     public class SignUpController : Controller
     {
+        /*
+        private readonly IUserService _userService;
+
+        public SignUpController(IUserService userService)
+        {
+            _userService = userService;
+        }
+        */
+
         // GET: SignUp
         public ActionResult Registration()
         {
@@ -20,25 +30,12 @@ namespace WebProject.Controllers
         [HttpPost]
         public ActionResult Registration(RegistrationData registrationData)
         {
-            // Обработка введенных данных
-
-            bool userExists = CheckIfExistUser.Check(registrationData);
-
-            if (userExists)
+            if (ModelState.IsValid && true)
             {
-                ViewBag.ErrorMessage1 = "User with this email already exists.";
-                return View();
-            }
-            else
-            {
-                //запись в базу
-                HomeController.IsAuthorized = true;
-
-
-                // После успешной регистрации перенаправляем пользователя на главную страницу
                 return RedirectToAction("Index", "Home");
             }
+
+            return View(registrationData);
         }
     }
-
 }

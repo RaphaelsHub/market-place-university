@@ -15,15 +15,23 @@ namespace WebProject.Controllers
             return View();
         }
 
+      
         [HttpPost]
         public ActionResult MakeAnOrder(OrderInfo orderInfo, CardCreditinals cardCreditinals)
         {
-            OrderModel orderModel = new OrderModel(orderInfo, cardCreditinals);
-            // Заказ валидация
-            // Обработка заказа...
+            if (ModelState.IsValid)
+            {
+                OrderModel orderModel = new OrderModel(orderInfo, cardCreditinals);
+
+                // Здесь можно выполнить дополнительные операции, связанные с обработкой заказа 
 
 
-            return RedirectToAction("Index", "Home");
+
+                return RedirectToAction("Index", "Home");
+            }
+    
+            return View(new OrderModel(orderInfo, cardCreditinals));
         }
+
     }
 }

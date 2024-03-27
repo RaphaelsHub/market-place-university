@@ -8,26 +8,24 @@ namespace WebProject.Models
 {
     public class LoginData
     {
-        [Required(ErrorMessage = "Enter Username")]
+        [Required(ErrorMessage = "Please enter your email")]
+        [EmailAddress(ErrorMessage = "Please enter a valid email address")]
+        [Display(Name = "Email")]
         public string Email { get; set; }
 
-        [Required(ErrorMessage = "Enter Password")]
+        [Required(ErrorMessage = "Please enter your password")]
+        [DataType(DataType.Password)]
+        [Display(Name = "Password")]
+        [StringLength(100, MinimumLength = 8, ErrorMessage = "Password must be at least 8 characters long")]
         public string Password { get; set; }
 
+        //Constructors by default
         public LoginData() { }
 
         public LoginData(string email, string password)
         {
-            this.Email = email;    
-            this.Password = password;
+            Email = email;
+            Password = password;
         }
-
-        /**************************************************Модели не принимают эту информацию**********************************************/
-        //[Display(Name = "Remember Me")]
-        //public bool RememberMe { get; set; } нет такого функционала
-        //public string ForgotPasswordUrl { get; set; } - этот функционал мы не реализуем
-        //public string RegisterUrl { get; set; }  - не понял для чеего ????
-        //public int PasswordExpirationDays { get; set; } ??? тоже ссамое не понял
-        //public int MaxLoginAttempts { get; set; } ??? тоже самое не понял
     }
 }

@@ -71,32 +71,38 @@
                         </div>
 
                         <div class="row">
-                            @Html.Partial("~/Views/Partials/Products.cshtml")
-                            @Html.Partial("~/Views/Partials/Products.cshtml")
-                            @Html.Partial("~/Views/Partials/Products.cshtml")
-                            @Html.Partial("~/Views/Partials/Products.cshtml")
-                            @Html.Partial("~/Views/Partials/Products.cshtml")
-                            @Html.Partial("~/Views/Partials/Products.cshtml")
-                            @Html.Partial("~/Views/Partials/Products.cshtml")
-                            @Html.Partial("~/Views/Partials/Products.cshtml")
-                            @Html.Partial("~/Views/Partials/Products.cshtml")
-                            @Html.Partial("~/Views/Partials/Products.cshtml")
-                            @Html.Partial("~/Views/Partials/Products.cshtml")
-                            @Html.Partial("~/Views/Partials/Products.cshtml")
-                            @Html.Partial("~/Views/Partials/Products.cshtml")
-                            @Html.Partial("~/Views/Partials/Products.cshtml")
-                            @Html.Partial("~/Views/Partials/Products.cshtml")
-                            @Html.Partial("~/Views/Partials/Products.cshtml")
-                            @Html.Partial("~/Views/Partials/Products.cshtml")
-                            @Html.Partial("~/Views/Partials/Products.cshtml")
-                            @Html.Partial("~/Views/Partials/Products.cshtml")
-                            @Html.Partial("~/Views/Partials/Products.cshtml")
-                            @Html.Partial("~/Views/Partials/Products.cshtml")
-                            @Html.Partial("~/Views/Partials/Products.cshtml")
-                            @Html.Partial("~/Views/Partials/Products.cshtml")
-                            @Html.Partial("~/Views/Partials/Products.cshtml")
-                            @Html.Partial("~/Views/Partials/Products.cshtml")
-                            @Html.Partial("~/Views/Partials/Products.cshtml")
+                            <!-----------------------------------------------------Данные персонализации продукта---------------------------------------------------------->
+                            @foreach (var product in Model)
+                            {
+                                <div class="col-lg-3 col-md-4 col-sm-6 mb-3">
+                                    <div class="product-card">
+                                        <div class="product-thumb">
+                                            <!-- Ссылка для передачи ID продукта методом GET -->
+                                            <a href="@Url.Action("Item", "Product", new { id = product.Id })">
+                                                <img src="@product.PhotoUrl[0]" alt="@product.Name">
+                                            </a>
+                                        </div>
+                                        <div class="product-details">
+                                            <h4>
+                                                <!-- Ссылка для передачи ID продукта методом GET -->
+                                                <a href="@Url.Action("Item", "Product", new { id = product.Id })">@product.Name</a>
+                                            </h4>
+                                            <p class="product-excerpt">@product.ShortDescription</p>
+                                            <div class="product-bottom-details d-flex justify-content-between">
+                                                <div class="product-price">
+                                                    @product.Price.ToString("C") <!-- Форматирование цены -->
+                                                </div>
+                                                <div class="product-links">
+                                                    <!-- Ссылка для передачи ID продукта методом GET -->
+                                                    <a href="@Url.Action("Item", "Product", new { id = product.Id })" class="btn btn-outline-secondary add-to-cart">
+                                                        <i class="fas fa-shopping-cart"></i>
+                                                    </a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            }
                         </div>
                     </div>
                 </div>
