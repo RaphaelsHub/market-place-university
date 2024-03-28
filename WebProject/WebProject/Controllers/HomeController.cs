@@ -41,6 +41,12 @@ namespace WebProject.Controllers
             // Передаем список продуктов в представление
             return View(products);
         }
+
+        public ActionResult ThanksForOrder()
+        {
+            return View();
+        }
+
     }
 }
  

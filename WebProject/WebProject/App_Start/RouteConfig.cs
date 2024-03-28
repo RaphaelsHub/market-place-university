@@ -20,6 +20,12 @@ namespace WebProject
             );
 
             routes.MapRoute(
+                name: "ThanksManagement",
+                url: "Home/{action}/{id}",
+                defaults: new { controller = "Home", action = "ThanksForOrder", id = UrlParameter.Optional }
+            );
+
+            routes.MapRoute(
                 name: "CartManagement",
                 url: "Cart/{action}/{id}",
                 defaults: new { controller = "Cart", action = "Buy", id = UrlParameter.Optional }
@@ -39,10 +45,10 @@ namespace WebProject
 
 
             routes.MapRoute(
-    name: "ProductItem",
-    url: "Product/Item/{id}",
-    defaults: new { controller = "Product", action = "Item", id = UrlParameter.Optional }
-);
+                 name: "ProductItem",
+                url: "Product/Item/{id}",
+                defaults: new { controller = "Product", action = "Item", id = UrlParameter.Optional }
+            );
 
             routes.MapRoute(
                 name: "Categories",
@@ -61,13 +67,13 @@ namespace WebProject
                url: "AllProducts/{action}/{id}",
                defaults: new { controller = "AdminAllProducts", action = "ViewProducts", id = UrlParameter.Optional }
             );
-            
+
             routes.MapRoute(
                name: "AddAProduct",
                url: "AddAProduct/{action}/{id}",
                defaults: new { controller = "AdminAddProduct", action = "NewProduct", id = UrlParameter.Optional }
-            ); 
-            
+            );
+
             routes.MapRoute(
                name: "Delivery",
                url: "Delivery/{action}/{id}",

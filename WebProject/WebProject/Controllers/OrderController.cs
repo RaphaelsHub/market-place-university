@@ -27,7 +27,7 @@ namespace WebProject.Controllers
 
 
 
-                return RedirectToAction("Index", "Home");
+                return RedirectToAction("ThanksForOrder", "Home");
             }
     
             return View(new OrderModel(orderInfo, cardCreditinals));
