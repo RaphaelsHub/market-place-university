@@ -7,7 +7,7 @@
 <html lang="en">
 
 <!--------------------------------------------------------------CONNECT REFERENCES-------------------------------------------------------------------------->
-@Html.Partial("~/Views/Partials/Ref.cshtml")
+@Html.Partial("~/Views/Partials/References.cshtml")
 
 <body>
     <div class="wrapper">
@@ -18,25 +18,28 @@
         <main class="main">
 
             <!--------------------------------------------------------Thanks Page-------------------------------------------------------------->
-            <div class="container text-center">
-                <div class="row">
-                    <div class="col-md-6 offset-md-3">
-                        <div class="jumbotron">
-                            <h1 class="display-4">Thank You for Placing Your Order!</h1>
-                            <p class="lead">We appreciate your choosing NINJA::SHOP services. Our team will be in touch with you shortly.</p>
-                            <hr class="my-4">
-                            <p>Best Regards,</p>
-                            <p>NINJA::SHOP</p>
+            <div class="container-fluid d-flex justify-content-center align-items-center vh-100">
+                <div class="container text-center">
+                    <div class="row">
+                        <div class="col-md-6 offset-md-3">
+                            <div class="jumbotron">
+                                <h1 class="display-4">Thank You for Placing Your Order!</h1>
+                                <p class="lead">We appreciate your choosing NINJA::SHOP services. Our team will be in touch with you shortly.</p>
+                                <hr class="my-4">
+                                <p>Best Regards,</p>
+                                <p>NINJA::SHOP</p>
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
 
+
             <script>
                 $(document).ready(function () {
                     setTimeout(function () {
                         window.location.href = "/Home/Index"; // Редирект на /home/index после 5 секунд
-                    }, 30000); 
+                    }, 30000);
                 });
             </script>
 
@@ -46,9 +49,5 @@
         @Html.Partial("~/Views/Partials/Footer.cshtml")
     </div>
 
-    <!--------------------------------------------------------------CONNECT SCROLL STUFF-------------------------------------------------------------------------->
-    @Html.Partial("~/Views/Partials/Scroll.cshtml")
 </body>
-
 </html>
-

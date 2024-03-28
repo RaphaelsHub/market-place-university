@@ -27,12 +27,12 @@ namespace WebProject.Controllers
         }
 
 
-        static public bool IsAuthorized {  get; set; } = false;
-        static public bool IsAdmin {  get; set; } = false;
+        static public bool IsAuthorized { get; set; } = false;
+        static public bool IsAdmin { get; set; } = false;
         // GET: Home
         public ActionResult Index()
         {
-            ViewBag.IsAuthorized = IsAuthorized;    
+            ViewBag.IsAuthorized = IsAuthorized;
             ViewBag.IsAdmin = IsAdmin;
 
             // Получаем список продуктов с базы данных, сейчас тут тестовый вариант
@@ -47,6 +47,9 @@ namespace WebProject.Controllers
             return View();
         }
 
+        public ActionResult Error()
+        {
+            return View();
+        }
     }
 }
- 

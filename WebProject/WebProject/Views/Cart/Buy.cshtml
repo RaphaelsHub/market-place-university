@@ -6,7 +6,7 @@
 <html lang="en">
 
 <!--------------------------------------------------------------CONNECT REFERENCES-------------------------------------------------------------------------->
-@Html.Partial("~/Views/Partials/Ref.cshtml")
+@Html.Partial("~/Views/Partials/References.cshtml")
 
 <body>
     <div class="wrapper">
@@ -53,7 +53,13 @@
                                                 <td class="align-middle text-center">@product.Item1.Name</td>
                                                 <td class="align-middle text-center">@product.Item1.Price.ToString("C")</td>
                                                 <td class="align-middle text-center">@product.Item2</td>
-                                                <td class="align-middle text-center"><button class="btn btn-danger"><i class="fa-regular fa-circle-xmark"></i></button></td>
+                                                <td class="align-middle text-center">
+                                                    <form method="post" action="@Url.Action("DeleteItem", "Cart")">
+                                                        <input type="hidden" name="id" value="@product.Item1.Id" />
+                                                        <button type="submit" class="btn btn-danger"><i class="fa-regular fa-circle-xmark"></i></button>
+                                                    </form>
+
+                                                </td>
                                             </tr>
                                         }
                                     </tbody>
@@ -86,7 +92,7 @@
                             </div>
 
                             <div class="d-grid">
-                                <a href="@Url.Action("MakeAnOrder","Order")" class="btn btn-warning">Checkout</a>
+                                <a href="@Url.Action("MakeAnOrder","Cart")" class="btn btn-warning">Checkout</a>
                             </div>
 
                         </div>
@@ -101,10 +107,6 @@
         <!--------------------------------------------------------------CONNECT FOOTER-------------------------------------------------------------------------->
         @Html.Partial("~/Views/Partials/Footer.cshtml")
     </div>
-
-    <!--------------------------------------------------------------CONNECT SCROLL STUFF-------------------------------------------------------------------------->
-    @Html.Partial("~/Views/Partials/Scroll.cshtml")
 </body>
-
 </html>
 

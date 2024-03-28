@@ -23,6 +23,12 @@ namespace WebProject
                 name: "ThanksManagement",
                 url: "Home/{action}/{id}",
                 defaults: new { controller = "Home", action = "ThanksForOrder", id = UrlParameter.Optional }
+            );            
+            
+            routes.MapRoute(
+                name: "ErrorManagement",
+                url: "Home/{action}/{id}",
+                defaults: new { controller = "Home", action = "Error", id = UrlParameter.Optional }
             );
 
             routes.MapRoute(
@@ -32,17 +38,22 @@ namespace WebProject
             );
 
             routes.MapRoute(
-                name: "SignIn",
-                url: "SignIn/{action}/{id}",
-                defaults: new { controller = "SignIn", action = "Login", id = UrlParameter.Optional }
+               name: "OrderManagement",
+               url: "Cart/{action}/{id}",
+               defaults: new { controller = "Cart", action = "MakeAnOrder", id = UrlParameter.Optional }
+            );
+
+            routes.MapRoute(
+                name: "LoginManagement",
+                url: "Accaunt/{action}/{id}",
+                defaults: new { controller = "Accaunt", action = "Login", id = UrlParameter.Optional }
              );
 
             routes.MapRoute(
-                name: "SignUp",
-                url: "SignUp/{action}/{id}",
-                defaults: new { controller = "SignUp", action = "Registration", id = UrlParameter.Optional }
+                name: "RegistrationManagement",
+                url: "Accaunt/{action}/{id}",
+                defaults: new { controller = "Accaunt", action = "Registration", id = UrlParameter.Optional }
             );
-
 
             routes.MapRoute(
                  name: "ProductItem",
@@ -56,28 +67,23 @@ namespace WebProject
                 defaults: new { controller = "Categories", action = "Items", id = UrlParameter.Optional }
             );
 
-            routes.MapRoute(
-               name: "Order",
-               url: "Order/{action}/{id}",
-               defaults: new { controller = "Order", action = "MakeAnOrder", id = UrlParameter.Optional }
-            );
 
             routes.MapRoute(
                name: "AllProducts",
-               url: "AllProducts/{action}/{id}",
-               defaults: new { controller = "AdminAllProducts", action = "ViewProducts", id = UrlParameter.Optional }
+               url: "Admin/{action}/{id}",
+               defaults: new { controller = "Admin", action = "ViewProducts", id = UrlParameter.Optional }
             );
 
             routes.MapRoute(
                name: "AddAProduct",
-               url: "AddAProduct/{action}/{id}",
-               defaults: new { controller = "AdminAddProduct", action = "NewProduct", id = UrlParameter.Optional }
+               url: "Admin/{action}/{id}",
+               defaults: new { controller = "Admin", action = "NewProduct", id = UrlParameter.Optional }
             );
 
             routes.MapRoute(
                name: "Delivery",
-               url: "Delivery/{action}/{id}",
-               defaults: new { controller = "AdminDelivery", action = "EditDelivery", id = UrlParameter.Optional }
+               url: "Admin/{action}/{id}",
+               defaults: new { controller = "Admin", action = "EditDelivery", id = UrlParameter.Optional }
             );
         }
     }

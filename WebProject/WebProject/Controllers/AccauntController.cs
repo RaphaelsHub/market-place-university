@@ -9,7 +9,7 @@ using WebProject.Models;
 
 namespace WebProject.Controllers
 {
-    public class SignInController : Controller
+    public class AccauntController : Controller
     {
         // GET: SighIn
         public ActionResult Login()
@@ -40,13 +40,40 @@ namespace WebProject.Controllers
             }
         }
 
-        [HttpPost]
+        //[HttpPost]
         public ActionResult LogOut()
         {
             HomeController.IsAuthorized = false;
             HomeController.IsAdmin = false;
+
             return RedirectToAction("Index", "Home");
         }
 
+
+         /*
+        private readonly IUserService _userService;
+
+        public SignUpController(IUserService userService)
+        {
+        _userService = userService;
+        }
+        */
+
+        // GET: SignUp
+        public ActionResult Registration()
+        {
+            return View();
+        }
+
+        [HttpPost]
+        public ActionResult Registration(RegistrationData registrationData)
+        {
+            if (ModelState.IsValid && true)
+            {
+                return RedirectToAction("Index", "Home");
+            }
+
+            return View(registrationData);
+        }
     }
 }
