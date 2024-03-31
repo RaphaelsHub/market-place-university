@@ -49,7 +49,7 @@
                                         @foreach (var product in Model.productList)
                                         {
                                             <tr>
-                                                <td class="align-middle text-center"> <img src="@product.Item1.PhotoUrl[0]" alt=""></td>
+                                                <td class="align-middle text-center"> <img src="@product.Item1.PhotoUrl.First.Value" alt=""></td>
                                                 <td class="align-middle text-center">@product.Item1.Name</td>
                                                 <td class="align-middle text-center">@product.Item1.Price.ToString("C")</td>
                                                 <td class="align-middle text-center">@product.Item2</td>

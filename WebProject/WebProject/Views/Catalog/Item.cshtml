@@ -21,7 +21,7 @@
                     <nav class="breadcrumbs">
                         <ul>
                             <li><a href="@Url.Action("Index","Home")">Home</a></li>
-                            <li><a href="@Url.Action("Items","Categories")">Category</a></li>
+                            <li><a href="@Url.Action("Items","Catalog")">Category</a></li>
                             <li><span>@Model.Name</span></li>
                         </ul>
                     </nav>
@@ -34,29 +34,42 @@
                 <div class="col-md-5 col-lg-4 mb-3">
                     <div class="bg-white h-100 position-relative">
                         <!-- Добавляем класс position-relative -->
-                        <div id="carouselExampleFade" class="carousel carousel-dark slide carousel-fade">
-                            <div class="carousel-inner">
-                                @foreach (var obj in Model.PhotoUrl)
-                                {
-                                    <div class="carousel-item @(obj == Model.PhotoUrl[0] ? "active" : "")">
-                                        <!-- Добавляем класс "active" только для первого элемента -->
-                                        <img src="@obj" class="d-block w-100" alt="...">
-                                    </div>
-                                }
+                        @if (Model.PhotoUrl.Count == 1)
+                        {
+                            <img src="@Model.PhotoUrl.First.Value" class="d-block w-100" alt="...">
+                        }
+
+                        else if (Model.PhotoUrl.Count > 1)
+                        {
+                            <div id="carouselExampleFade" class="carousel carousel-dark slide carousel-fade">
+                                <div class="carousel-inner">
+                                    @foreach (var obj in Model.PhotoUrl)
+                                    {
+                                        <div class="carousel-item @(obj == Model.PhotoUrl.First.Value ? "active" : "")">
+                                            <img src="@obj" class="d-block w-100" alt="...">
+                                        </div>
+                                    }
+                                </div>
+
+                                <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleFade" data-bs-slide="prev">
+                                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                                    <span class="visually-hidden">Previous</span>
+                                </button>
+                                <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleFade" data-bs-slide="next">
+                                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                                    <span class="visually-hidden">Next</span>
+                                </button>
                             </div>
-                            <button class="carousel-control-prev" type="button"
-                                    data-bs-target="#carouselExampleFade" data-bs-slide="prev">
-                                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                                <span class="visually-hidden">Previous</span>
-                            </button>
-                            <button class="carousel-control-next" type="button"
-                                    data-bs-target="#carouselExampleFade" data-bs-slide="next">
-                                <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                                <span class="visually-hidden">Next</span>
-                            </button>
-                        </div>
+                        }
+                        else
+                        {
+                            <!-- Если нет фотографий, то загружаем определенную фотку с репозитория -->
+                            <img src="~/FrontEndAssets/Images/emptyPhoto.png" class="d-block w-100" alt="...">
+                        }
+
                     </div>
                 </div>
+
 
 
 
@@ -73,7 +86,7 @@
                             int availableQuantity = Model.Amount;
                         }
 
-                        @using (Html.BeginForm("AddToCart", "Product", FormMethod.Post))
+                        @using (Html.BeginForm("AddToCart", "Catalog", FormMethod.Post))
                         {
                             <input type="hidden" name="cartItem.Id" value="@Model.Id" />
                             <div class="input-group">

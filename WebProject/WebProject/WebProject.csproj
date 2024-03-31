@@ -226,10 +226,9 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Controllers\AdminController.cs" />
     <Compile Include="Controllers\CartController.cs" />
-    <Compile Include="Controllers\CategoriesController.cs" />
+    <Compile Include="Controllers\CatalogController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
-    <Compile Include="Controllers\ProductController.cs" />
-    <Compile Include="Controllers\AccauntController.cs" />
+    <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -333,24 +332,21 @@
     <Content Include="FrontEndAssets\OwlCarousel2-2.3.4\_config.json" />
     <None Include="packages.config" />
     <Content Include="Views\Home\Index.cshtml" />
-    <Content Include="Views\Accaunt\Login.cshtml" />
-    <Content Include="Views\Accaunt\Registration.cshtml" />
-    <Content Include="Views\Product\Item.cshtml" />
-    <Content Include="Views\Categories\Items.cshtml" />
+    <Content Include="Views\Account\Login.cshtml" />
+    <Content Include="Views\Account\Registration.cshtml" />
+    <Content Include="Views\Catalog\Item.cshtml" />
+    <Content Include="Views\Catalog\Items.cshtml" />
     <Content Include="Views\Cart\Buy.cshtml" />
     <Content Include="Views\Partials\Footer.cshtml" />
     <Content Include="Views\Partials\Header.cshtml" />
     <Content Include="Views\Partials\References.cshtml" />
     <Content Include="Views\Cart\MakeAnOrder.cshtml" />
-    <Content Include="Views\Partials\ProductCart.cshtml" />
-    <Content Include="Views\Partials\Categor.cshtml" />
     <Content Include="Views\Admin\ViewProducts.cshtml" />
     <Content Include="Views\Admin\NewProduct.cshtml" />
     <Content Include="Views\Admin\EditDelivery.cshtml" />
-    <Content Include="Views\Partials\EdDelivery.cshtml" />
-    <Content Include="Views\Partials\ViewProd.cshtml" />
     <Content Include="Views\Home\ThanksForOrder.cshtml" />
     <Content Include="Views\Home\Error.cshtml" />
+    <Content Include="Views\Cart\Delivery.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

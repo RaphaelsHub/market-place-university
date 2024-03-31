@@ -1,6 +1,6 @@
 ﻿
 @{
-    ViewBag.Title = "EditDelivery";
+    ViewBag.Title = "Delivery";
 }
 
 <!doctype html>
@@ -46,7 +46,6 @@
                                             <th>Phone</th>
                                             <th>Total Cost</th>
                                             <th>Status Delivery</th>
-                                            <th>Delete</th>
                                         </tr>
                                     </thead>
                                     <tbody>
@@ -59,13 +58,7 @@
                                             <td class="align-middle text-center">Zelelinsky 24.43</td>
                                             <td class="align-middle text-center">373 67 361 356</td>
                                             <td class="align-middle text-center">20$</td>
-                                            <td class="align-middle text-center"><button type="submit" class="btn btn-danger">Is comming in 17 days</button></td>                                 
-                                            <td class="align-middle text-center">
-                                                <form method="post" action="@Url.Action("DeleteItem", "Cart")">
-                                                    <input type="hidden" name="id" value="3" />
-                                                    <button type="submit" class="btn btn-danger"><i class="fa-regular fa-circle-xmark"></i></button>
-                                                </form>
-                                            </td>
+                                            <td class="align-middle text-center"><button type="submit" class="btn btn-danger">Is comming in 17 days</button></td>
                                         </tr>
                                     </tbody>
                                 </table>
@@ -82,6 +75,8 @@
     </div>
 </body>
 </html>
+
+
 
 
 

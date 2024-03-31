@@ -21,6 +21,11 @@ namespace WebProject.Controllers
             return View(listOfProducts);
         }
 
+        public ActionResult Delivery()
+        {
+            return View();
+        }
+
         // GET: Order
         public ActionResult MakeAnOrder()
         {

@@ -32,6 +32,7 @@
                 </div>
             </div>
 
+
             @model WebProject.Models.RegistrationData
 
             <div class="container-fluid mb-3">
@@ -41,7 +42,7 @@
                             <h1 class="section-title h3"><span>Registration</span></h1>
                             <div class="row">
                                 <div class="col-md-6 offset-md-3">
-                                    @using (Html.BeginForm("Registration", "Accaunt", FormMethod.Post, new { @class = "needs-validation", novalidate = "novalidate" }))
+                                    @using (Html.BeginForm("Registration", "Account", FormMethod.Post, new { @class = "needs-validation", novalidate = "novalidate" }))
                                     {
                                         <div class="mb-3">
                                             @Html.LabelFor(model => model.Name, new { @class = "form-label required" })

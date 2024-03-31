@@ -12,6 +12,23 @@ html,
 body {
     height: 100%;
 }
+.description-cell {
+    position: relative;
+    cursor: pointer;
+}
+
+.description-content {
+    display: none;
+    position: absolute;
+    background-color: white;
+    border: 1px solid #ccc;
+    padding: 10px;
+    z-index: 1000;
+}
+
+.description-cell:hover .description-content {
+    display: block;
+}
 
 .container {
     display: flex;
@@ -249,6 +266,7 @@ ul.social-icons a:hover {
 .carousel-caption {
     text-shadow: 0 0 2px rgba(0, 0, 0, 1);
 }
+
 
 .carousel-caption p {
     font-size: 1.5rem;
@@ -652,3 +670,14 @@ footer a:hover {
         padding-right: 8px;
     }
 }
+
+.
+
+    .carousel-item img {
+        max-height: 50px;
+        /* Устанавливаем максимальную высоту в 300px */
+        width: auto;
+        /* Автоматическое масштабирование ширины для сохранения соотношения сторон */
+        height: auto;
+        /* Автоматическое масштабирование высоты для сохранения соотношения сторон */
+    }

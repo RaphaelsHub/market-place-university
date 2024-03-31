@@ -8,7 +8,7 @@ namespace WebProject.Models
 {
     public class Product
     {
-        [Required(ErrorMessage = "Id is required.")]
+        //[Required(ErrorMessage = "Id is required.")]
         public int Id { get; set; }
 
         [Required(ErrorMessage = "Name is required.")]
@@ -18,13 +18,15 @@ namespace WebProject.Models
         public string Details { get; set; }
 
         [Required(ErrorMessage = "ShortDescription is required.")]
+        [StringLength(100, MinimumLength = 14, ErrorMessage = "Short Description must be at least 14 characters long")]
         public string ShortDescription { get; set; }
 
         [Required(ErrorMessage = "FullDescription is required.")]
+        [StringLength(200, MinimumLength = 20, ErrorMessage = "Full Description must be at least 20 characters long")]
         public string FullDescription { get; set; }
 
-        [Required(ErrorMessage = "PhotoUrl is required.")]
-        public string[] PhotoUrl { get; set; }
+        // [Required(ErrorMessage = "PhotoUrl is required.")]
+        public LinkedList<string> PhotoUrl { get; set; }
 
         [Required(ErrorMessage = "Price is required.")]
         public decimal Price { get; set; }

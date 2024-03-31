@@ -44,27 +44,33 @@ namespace WebProject
             );
 
             routes.MapRoute(
+               name: "DeliveryManagement",
+                url: "Delivery/{action}/{id}",
+                defaults: new { controller = "Cart", action = "Delivery", id = UrlParameter.Optional }
+            );
+
+            routes.MapRoute(
                 name: "LoginManagement",
                 url: "Accaunt/{action}/{id}",
-                defaults: new { controller = "Accaunt", action = "Login", id = UrlParameter.Optional }
+                defaults: new { controller = "Account", action = "Login", id = UrlParameter.Optional }
              );
 
             routes.MapRoute(
                 name: "RegistrationManagement",
                 url: "Accaunt/{action}/{id}",
-                defaults: new { controller = "Accaunt", action = "Registration", id = UrlParameter.Optional }
+                defaults: new { controller = "Account", action = "Registration", id = UrlParameter.Optional }
             );
 
             routes.MapRoute(
                  name: "ProductItem",
-                url: "Product/Item/{id}",
-                defaults: new { controller = "Product", action = "Item", id = UrlParameter.Optional }
+                url: "Catalog/Item/{id}",
+                defaults: new { controller = "Catalog", action = "Item", id = UrlParameter.Optional }
             );
 
             routes.MapRoute(
                 name: "Categories",
-                url: "Categories/{action}/{id}",
-                defaults: new { controller = "Categories", action = "Items", id = UrlParameter.Optional }
+                url: "Catalog/{action}/{id}",
+                defaults: new { controller = "Catalog", action = "Items", id = UrlParameter.Optional }
             );
 
 

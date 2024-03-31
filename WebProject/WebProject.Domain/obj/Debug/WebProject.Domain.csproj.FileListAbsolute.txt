@@ -4,3 +4,9 @@ D:\Git_Web_Product\WebProduct\WebProject\WebProject.Domain\obj\Debug\WebProject.
 D:\Git_Web_Product\WebProduct\WebProject\WebProject.Domain\obj\Debug\WebProject.Domain.csproj.CoreCompileInputs.cache
 D:\Git_Web_Product\WebProduct\WebProject\WebProject.Domain\obj\Debug\WebProject.Domain.dll
 D:\Git_Web_Product\WebProduct\WebProject\WebProject.Domain\obj\Debug\WebProject.Domain.pdb
+D:\WebProduct\WebProject\WebProject.Domain\bin\Debug\WebProject.Domain.dll
+D:\WebProduct\WebProject\WebProject.Domain\bin\Debug\WebProject.Domain.pdb
+D:\WebProduct\WebProject\WebProject.Domain\obj\Debug\WebProject.Domain.csproj.AssemblyReference.cache
+D:\WebProduct\WebProject\WebProject.Domain\obj\Debug\WebProject.Domain.csproj.CoreCompileInputs.cache
+D:\WebProduct\WebProject\WebProject.Domain\obj\Debug\WebProject.Domain.dll
+D:\WebProduct\WebProject\WebProject.Domain\obj\Debug\WebProject.Domain.pdb

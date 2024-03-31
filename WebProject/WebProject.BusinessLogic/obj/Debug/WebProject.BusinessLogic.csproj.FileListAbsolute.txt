@@ -4,3 +4,9 @@ D:\Git_Web_Product\WebProduct\WebProject\WebProject.BusinessLogic\obj\Debug\WebP
 D:\Git_Web_Product\WebProduct\WebProject\WebProject.BusinessLogic\obj\Debug\WebProject.BusinessLogic.csproj.CoreCompileInputs.cache
 D:\Git_Web_Product\WebProduct\WebProject\WebProject.BusinessLogic\obj\Debug\WebProject.BusinessLogic.dll
 D:\Git_Web_Product\WebProduct\WebProject\WebProject.BusinessLogic\obj\Debug\WebProject.BusinessLogic.pdb
+D:\WebProduct\WebProject\WebProject.BusinessLogic\bin\Debug\WebProject.BusinessLogic.dll
+D:\WebProduct\WebProject\WebProject.BusinessLogic\bin\Debug\WebProject.BusinessLogic.pdb
+D:\WebProduct\WebProject\WebProject.BusinessLogic\obj\Debug\WebProject.BusinessLogic.csproj.AssemblyReference.cache
+D:\WebProduct\WebProject\WebProject.BusinessLogic\obj\Debug\WebProject.BusinessLogic.csproj.CoreCompileInputs.cache
+D:\WebProduct\WebProject\WebProject.BusinessLogic\obj\Debug\WebProject.BusinessLogic.dll
+D:\WebProduct\WebProject\WebProject.BusinessLogic\obj\Debug\WebProject.BusinessLogic.pdb

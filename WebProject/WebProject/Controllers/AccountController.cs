@@ -9,7 +9,7 @@ using WebProject.Models;
 
 namespace WebProject.Controllers
 {
-    public class AccauntController : Controller
+    public class AccountController : Controller
     {
         // GET: SighIn
         public ActionResult Login()
@@ -70,6 +70,7 @@ namespace WebProject.Controllers
         {
             if (ModelState.IsValid && true)
             {
+                HomeController.IsAuthorized = true;
                 return RedirectToAction("Index", "Home");
             }
 
