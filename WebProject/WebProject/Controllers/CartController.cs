@@ -12,29 +12,29 @@ namespace WebProject.Controllers
 {
     public class CartController : Controller
     {
-        UserData user = new UserData();
-
         // GET: Cart
         public ActionResult Buy()
         {
-            return View(user);
+            return View(Check.ReturnUserData());
         }
 
         public ActionResult Delivery()
         {
-            return View(user);
+            return View(Check.ReturDel());
         }
 
         [HttpPost]
         public ActionResult AddToCart(CartItem cartItem)
         {
             TempData["Message"] = "Was added successfully";
+            Check.AddNewToCart(cartItem);
             return RedirectToAction("Item", "Catalog", new { id = cartItem.Id });
         }
 
         // GET: Order
         public ActionResult MakeAnOrder()
         {
+            var user = Check.ReturnUserData();
             if (user.Cart_User != null && user.Cart_User.productList != null && user.Cart_User.productList.Count != 0)
                 return View();
             else
@@ -47,7 +47,8 @@ namespace WebProject.Controllers
             if (ModelState.IsValid)
             {
                 OrderModel orderModel = new OrderModel(orderInfo, cardCreditinals);
-                // Здесь можно выполнить дополнительные операции, связанные с обработкой заказа 
+
+                Check.AddDel(orderModel);
 
                 return RedirectToAction("ThanksForOrder", "Home");
             }

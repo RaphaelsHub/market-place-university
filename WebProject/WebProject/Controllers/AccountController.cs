@@ -18,6 +18,7 @@ namespace WebProject.Controllers
         // GET: SighIn
         public ActionResult Login()
         {
+            Check.Init();
             return View();
         }
 
@@ -52,16 +53,6 @@ namespace WebProject.Controllers
 
             return RedirectToAction("Index", "Home");
         }
-
-
-         /*
-        private readonly IUserService _userService;
-
-        public SignUpController(IUserService userService)
-        {
-        _userService = userService;
-        }
-        */
 
         // GET: SignUp
         public ActionResult Registration()

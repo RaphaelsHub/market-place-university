@@ -13,26 +13,8 @@ namespace WebProject.Controllers
 {
     public class CatalogController : Controller
     {
-        // GET: Categories
-        public ActionResult Items()
-        {
-            return View();
-        }
-
-        // GET: Product
-        public ActionResult Item(int? id)
-        {
-            if (id.HasValue)
-            {
-                var product = new HomeController().GetProducts();
-                return View(product[id.Value - 1]); // Временный пример вывода ID
-            }
-            else
-            {
-                // Если id не указан, выполнить редирект
-                return RedirectToAction("Error", "Home");
-            }
-        }
+        // GET: Catalog
+        public ActionResult Items()=>View();
+        public ActionResult Item(int? id) => id.HasValue ? View(Check.FindProduct(id)) : (ActionResult)RedirectToAction("Error", "Home");
     }
-
 }

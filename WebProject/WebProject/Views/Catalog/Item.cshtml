@@ -92,8 +92,11 @@
                         {
                             <input type="hidden" name="cartItem.Id" value="@Model.Id" />
                             <div class="input-group">
-                                <input type="number" class="form-control mr-sm-2" name="cartItem.Quantity" value="1" min="1" max="@availableQuantity" style="width: 80px;">
-                                <button type="submit" class="btn btn-warning">
+                                @{
+                                    var defaultQuantity = availableQuantity > 0 ? 1 : 0;
+                                }
+                                <input type="number" class="form-control mr-sm-2" name="cartItem.Quantity" value="@defaultQuantity" min="0" max="@availableQuantity" style="width: 80px;">
+                                <button type="submit" class="btn btn-warning" @(availableQuantity == 0 ? "disabled" : "")>
                                     <i class="fas fa-shopping-cart"></i> Add to cart
                                 </button>
                             </div>
@@ -104,6 +107,8 @@
                                 </div>
                             }
                         }
+
+
 
                         @if (TempData["Message"] != null)
                         {
