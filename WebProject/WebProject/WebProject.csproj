@@ -88,7 +88,6 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Content\Site.css" />
     <Content Include="FrontEndAssets\CSS\main.css" />
     <Content Include="FrontEndAssets\Html\cart.html" />
     <Content Include="FrontEndAssets\Html\category.html" />
@@ -232,15 +231,17 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Models\CardCreditinals.cs" />
-    <Compile Include="Models\CartData.cs" />
-    <Compile Include="Models\OrderInfo.cs" />
-    <Compile Include="Models\OrderModel.cs" />
-    <Compile Include="Models\CartItem.cs" />
-    <Compile Include="Models\Product.cs" />
-    <Compile Include="Models\LoginData.cs" />
-    <Compile Include="Models\RegistrationData.cs" />
-    <Compile Include="Models\UserData.cs" />
+    <Compile Include="Models\Products\AllProducts.cs" />
+    <Compile Include="Models\Order\CardCreditinals.cs" />
+    <Compile Include="Models\Order\CartData.cs" />
+    <Compile Include="Models\Products\AllDeliveries.cs" />
+    <Compile Include="Models\Order\OrderInfo.cs" />
+    <Compile Include="Models\Order\OrderModel.cs" />
+    <Compile Include="Models\AddToCart\CartItem.cs" />
+    <Compile Include="Models\Products\Product.cs" />
+    <Compile Include="Models\Account\LoginData.cs" />
+    <Compile Include="Models\Account\RegistrationData.cs" />
+    <Compile Include="Models\Account\UserData.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

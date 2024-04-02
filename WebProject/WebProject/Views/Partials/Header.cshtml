@@ -29,32 +29,33 @@
                                    role="button" data-bs-toggle="dropdown" aria-expanded="false"
                                    data-bs-auto-close="outside">Catalog</a>
                                 <ul class="dropdown-menu dropdown-menu-end">
-                                    <li><a class="dropdown-item" href="@Url.Action("Items","Categories")">Computers</a></li>
-                                    <li><a class="dropdown-item" href="@Url.Action("Items","Categories")">Laptops</a></li>
-                                    <li><a class="dropdown-item" href="@Url.Action("Items","Categories")">Phones</a></li>
-                                    <li><a class="dropdown-item" href="@Url.Action("Items","Categories")">TVs</a></li>
+                                    <li><a class="dropdown-item" href="@Url.Action("Items","Catalog")">Computers</a></li>
+                                    <li><a class="dropdown-item" href="@Url.Action("Items","Catalog")">Laptops</a></li>
+                                    <li><a class="dropdown-item" href="@Url.Action("Items","Catalog")">Phones</a></li>
+                                    <li><a class="dropdown-item" href="@Url.Action("Items","Catalog")">TVs</a></li>
                                 </ul>
                             </li>
                         </ul>
                     </div>
                 </div>
 
+                @{
+                    bool isAuthorized = WebProject.Controllers.HomeController.IsAuthorized;
+                    bool isAdmin = WebProject.Controllers.HomeController.IsAdmin;
+                }
+
                 <div class="col-8 col-sm-4">
                     <div class="header-top-account d-flex justify-content-end">
-                        @if (@ViewBag.isAuthorized ?? false)
+                        @if (isAuthorized)
                         {
                             <button class="btn btn-sm" type="button" onclick="location.href='@Url.Action("Buy", "Cart")'"><i class="fa-solid fa-cart-shopping"></i> Buy</button>
                             <button class="btn btn-sm" type="button" onclick="location.href='@Url.Action("Delivery", "Cart")'">My Orders</button>
 
-                            if (@ViewBag.IsAdmin ?? false)
+                            if (isAdmin)
                             {
                                 <div class="btn-group">
                                     <div class="dropdown">
-                                        <button class="btn btn-sm dropdown-toggle" type="button"
-                                                data-bs-toggle="dropdown" aria-expanded="true">
-                                            Admin
-                                        </button>
-
+                                        <button class="btn btn-sm dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="true">Admin</button>
                                         <ul class="dropdown-menu">
                                             <li><a class="dropdown-item" href="@Url.Action("ViewProducts","Admin")">View Products</a></li>
                                             <li><a class="dropdown-item" href="@Url.Action("NewProduct","Admin")">Add a Product</a></li>
@@ -67,8 +68,8 @@
                         }
                         else
                         {
-                            <button class="btn btn-sm" type="button" onclick="location.href='@Url.Action("Registration", "Account")'">Sign Up</button>
-                            <button class="btn btn-sm" type="button" onclick="location.href='@Url.Action("Login", "Account")'">Sign In</button>
+                            <a class="btn btn-sm" href="@Url.Action("Registration", "Account")">Sign Up</a>
+                            <a class="btn btn-sm" href="@Url.Action("Login", "Account")">Sign In</a>
                         }
                     </div>
                 </div>

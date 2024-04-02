@@ -6,6 +6,10 @@ using System.Web.Mvc;
 using System.Web.Security;
 using System.Web.UI.WebControls;
 using WebProject.Models;
+using WebProject.Models.Account;
+using WebProject.Models.AddToCart;
+using WebProject.Models.Order;
+using WebProject.Models.Products;
 
 namespace WebProject.Controllers
 {

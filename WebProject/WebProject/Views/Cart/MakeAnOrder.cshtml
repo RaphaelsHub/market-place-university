@@ -30,7 +30,8 @@
                 </div>
             </div>
 
-            @model WebProject.Models.OrderModel
+            @model WebProject.Models.Order.OrderModel
+
 
             <div class="container-fluid">
                 @using (Html.BeginForm("MakeAnOrder", "Cart", FormMethod.Post, new { @class = "needs-validation", @novalidate = "novalidate" }))
@@ -106,7 +107,4 @@
         @Html.Partial("~/Views/Partials/Footer.cshtml")
     </div>
 </body>
-
 </html>
-
-

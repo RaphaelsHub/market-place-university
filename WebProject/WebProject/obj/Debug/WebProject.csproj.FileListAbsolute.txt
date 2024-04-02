@@ -214,3 +214,9 @@ D:\WebProduct\WebProject\WebProject\obj\Debug\WebProject.csproj.CoreCompileInput
 D:\WebProduct\WebProject\WebProject\obj\Debug\WebProject.csproj.Up2Date
 D:\WebProduct\WebProject\WebProject\obj\Debug\WebProject.dll
 D:\WebProduct\WebProject\WebProject\obj\Debug\WebProject.pdb
+D:\WebProduct\WebProject\WebProject\bin\WebProject.BusinessLogic.dll
+D:\WebProduct\WebProject\WebProject\bin\WebProject.Domain.dll
+D:\WebProduct\WebProject\WebProject\bin\WebProject.Helper.dll
+D:\WebProduct\WebProject\WebProject\bin\WebProject.BusinessLogic.pdb
+D:\WebProduct\WebProject\WebProject\bin\WebProject.Domain.pdb
+D:\WebProduct\WebProject\WebProject\bin\WebProject.Helper.pdb

@@ -2,7 +2,7 @@
 using System.ComponentModel.DataAnnotations;
 
 
-namespace WebProject.Models
+namespace WebProject.Models.Order
 {
     public class CardCreditinals
     {
@@ -20,15 +20,5 @@ namespace WebProject.Models
         [Required(ErrorMessage = "Please enter the CVV")]
         [StringLength(3, MinimumLength = 3, ErrorMessage = "CVV must be 3 characters long")]
         public string CVV { get; set; }
-
-        // Constructors
-        public CardCreditinals() { }
-
-        public CardCreditinals(string cardNumber, DateTime date, string cvv)
-        {
-            CardNumber = cardNumber;
-            Date = date;
-            CVV = cvv;
-        }
     }
 }

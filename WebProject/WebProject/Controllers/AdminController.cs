@@ -3,12 +3,17 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
+using WebProject.Models.Account;
+using WebProject.Models.AddToCart;
+using WebProject.Models.Order;
+using WebProject.Models.Products;
 using WebProject.Models;
 
 namespace WebProject.Controllers
 {
     public class AdminController : Controller
     {
+        UserData userData = new UserData();
         // GET: AdminAddProduct
         public ActionResult NewProduct()
         {
@@ -18,24 +23,17 @@ namespace WebProject.Controllers
         [HttpPost]
         public ActionResult NewProduct(Product product)
         {
-            bool d = ModelState.IsValid;
-
-            if (ModelState.IsValid)
-            {
-                return RedirectToAction("Index", "Home");
-            }
-            return View(product);
-  
+            return ModelState.IsValid ? (ActionResult)RedirectToAction("Index", "Home") : View(product);
         }
 
         public ActionResult ViewProducts()
         {
-            return View();
+            return View(userData);
         }
 
         public ActionResult EditDelivery()
         {
-            return View();
+            return View(userData);
         }
     }
 }

@@ -5,7 +5,7 @@ using System.Web;
 using System.ComponentModel.DataAnnotations;
 
 
-namespace WebProject.Models
+namespace WebProject.Models.Order
 {
     public class OrderInfo
     {
@@ -50,5 +50,6 @@ namespace WebProject.Models
             Address = address;
             Comment = comment;
         }
+
     }
 }

@@ -29,45 +29,59 @@
                     </div>
                 </div>
             </div>
+
+            @model WebProject.Models.Account.UserData
+
             <div class="container-fluid">
                 <div class="row">
                     <div class="col-lg-12 mb-3">
                         <div class="cart-content p-3 h-100 bg-white">
-                            <div class="table-responsive">
-                                <table class="table align-middle table-hover">
-                                    <thead class="table-dark">
-                                        <tr>
-                                            <th>ID Delivery</th>
-                                            <th>Name Surname</th>
-                                            <th>Email</th>
-                                            <th>Country</th>
-                                            <th>City</th>
-                                            <th>Address</th>
-                                            <th>Phone</th>
-                                            <th>Total Cost</th>
-                                            <th>Status Delivery</th>
-                                        </tr>
-                                    </thead>
-                                    <tbody>
-                                        <tr>
-                                            <td class="align-middle text-center">25235</td>
-                                            <td class="align-middle text-center">Pekel Alexandr</td>
-                                            <td class="align-middle text-center">spekel2003@gmail.com</td>
-                                            <td class="align-middle text-center">Moldova</td>
-                                            <td class="align-middle text-center">Chisinau</td>
-                                            <td class="align-middle text-center">Zelelinsky 24.43</td>
-                                            <td class="align-middle text-center">373 67 361 356</td>
-                                            <td class="align-middle text-center">20$</td>
-                                            <td class="align-middle text-center"><button type="submit" class="btn btn-danger">Is comming in 17 days</button></td>
-                                        </tr>
-                                    </tbody>
-                                </table>
-                            </div>
+                            @if (Model.Deliveries_User.AllOrders!=null && Model.Deliveries_User.AllOrders.Count>0)
+                            {
+                                <div class="table-responsive">
+                                    <table class="table align-middle table-hover">
+                                        <thead class="table-dark">
+                                            <tr>
+                                                <th>ID Delivery</th>
+                                                <th>Name Surname</th>
+                                                <th>Email</th>
+                                                <th>Country</th>
+                                                <th>City</th>
+                                                <th>Address</th>
+                                                <th>Phone</th>
+                                                <th>Total Cost</th>
+                                                <th>Status Delivery</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            @foreach (var obj in Model.Deliveries_User.AllOrders)
+                                            {
+                                                <tr>
+                                                    <td class="align-middle text-center">@obj.Id</td>
+                                                    <td class="align-middle text-center">@obj.OrderInfo.Name</td>
+                                                    <td class="align-middle text-center">@obj.OrderInfo.Email</td>
+                                                    <td class="align-middle text-center">@obj.OrderInfo.Country</td>
+                                                    <td class="align-middle text-center">@obj.OrderInfo.City</td>
+                                                    <td class="align-middle text-center">@obj.OrderInfo.Address</td>
+                                                    <td class="align-middle text-center">@obj.OrderInfo.Phone</td>
+                                                    <td class="align-middle text-center">@obj.CartData.FinalPrice.ToString("C")</td>
+                                                    <td class="align-middle text-center"><button type="submit" class="btn btn-danger">Is comming in 17 days</button></td><!--Здесь будет полключен другой сервис для изменения времени-->
+                                                </tr>
+                                            }
+                                        </tbody>
+                                    </table>
+                                </div>
+                            }
+                            else
+                            {
+                                <div class="text-center">
+                                    <h3>You haven't made any orders yet</h3>
+                                </div>
+                            }
                         </div>
                     </div>
                 </div>
             </div>
-
         </main>
 
         <!--------------------------------------------------------------CONNECT FOOTER-------------------------------------------------------------------------->

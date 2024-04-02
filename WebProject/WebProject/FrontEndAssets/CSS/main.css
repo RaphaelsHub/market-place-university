@@ -8,6 +8,7 @@
     --light-grey-color: #eee;
 }
 
+
 html,
 body {
     height: 100%;
@@ -671,13 +672,7 @@ footer a:hover {
     }
 }
 
-.
-
-    .carousel-item img {
-        max-height: 50px;
-        /* Устанавливаем максимальную высоту в 300px */
-        width: auto;
-        /* Автоматическое масштабирование ширины для сохранения соотношения сторон */
-        height: auto;
-        /* Автоматическое масштабирование высоты для сохранения соотношения сторон */
-    }
+#carousel.carousel .carousel-item img {
+    max-height: 700px; /* Установите максимальную высоту для изображений */
+    max-width: auto;
+}

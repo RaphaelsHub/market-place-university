@@ -1,11 +1,7 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
-using System.ComponentModel.DataAnnotations;
+﻿using System.ComponentModel.DataAnnotations;
  
 
-namespace WebProject.Models
+namespace WebProject.Models.Account
 {
     public class RegistrationData
     {
@@ -30,12 +26,5 @@ namespace WebProject.Models
         public string Password { get; set; }
 
         public RegistrationData() { }
-        public RegistrationData(string name, string email, string phone, string password)
-        {
-            Name = name;
-            Email = email;
-            Phone = phone;
-            Password = password;
-        }
     }
 }

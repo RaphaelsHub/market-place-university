@@ -1,10 +1,7 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
+﻿using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 
-namespace WebProject.Models
+namespace WebProject.Models.Products
 {
     public class Product
     {
@@ -25,13 +22,14 @@ namespace WebProject.Models
         [StringLength(200, MinimumLength = 20, ErrorMessage = "Full Description must be at least 20 characters long")]
         public string FullDescription { get; set; }
 
-        // [Required(ErrorMessage = "PhotoUrl is required.")]
-        public LinkedList<string> PhotoUrl { get; set; }
+        //[Required(ErrorMessage = "PhotoUrl is required.")]
+        public List<string> PhotoUrl { get; set; } = new List<string>(); // Создаем новый экземпляр при создании объекта Product
 
         [Required(ErrorMessage = "Price is required.")]
         public decimal Price { get; set; }
 
         [Required(ErrorMessage = "Amount is required.")]
         public int Amount { get; set; }
+
     }
 }

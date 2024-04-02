@@ -1,11 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Web;
-using System.Web.UI;
+using WebProject.Models.Products;
 
 
-namespace WebProject.Models
+namespace WebProject.Models.Order
 {
     public class CartData
     {
@@ -14,7 +12,7 @@ namespace WebProject.Models
         public decimal FinalPrice { get; set; }
 
         public List<Tuple<Product, int>> productList;
-
+   
         public CartData()
         {
             productList = new List<Tuple<Product, int>>();

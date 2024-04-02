@@ -12,7 +12,6 @@
     <div class="wrapper">
         <!--------------------------------------------------------------CONNECT HEADER-------------------------------------------------------------------------->
         @Html.Partial("~/Views/Partials/Header.cshtml")
-
         <!--------------------------------------------------------------MENU-------------------------------------------------------------------------->
         <main class="main">
             <div id="carousel" class="carousel slide carousel-fade">
@@ -75,8 +74,7 @@
                                     <div class="product-thumb">
                                         <!-- Ссылка для передачи ID продукта методом GET -->
                                         <a href="@Url.Action("Item", "Catalog", new { id = product.Id })">
-                                            <<img src="@product.PhotoUrl.First.Value" alt="@product.Name">
-
+                                            <img src="@product.PhotoUrl[0]" alt="@product.Name">
                                         </a>
                                     </div>
                                     <div class="product-details">

@@ -4,6 +4,10 @@ using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 using WebProject.Models;
+using WebProject.Models.Account;
+using WebProject.Models.AddToCart;
+using WebProject.Models.Order;
+using WebProject.Models.Products;
 
 namespace WebProject.Controllers
 {
@@ -28,13 +32,6 @@ namespace WebProject.Controllers
                 // Если id не указан, выполнить редирект
                 return RedirectToAction("Error", "Home");
             }
-        }
-
-        [HttpPost]
-        public ActionResult AddToCart(CartItem cartItem)
-        {
-            TempData["Message"] = "Was added successfully";
-            return RedirectToAction("Item", new { id = cartItem.Id });
         }
     }
 

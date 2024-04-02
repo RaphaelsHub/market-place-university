@@ -8,6 +8,7 @@
 <!--------------------------------------------------------------CONNECT REFERENCES-------------------------------------------------------------------------->
 @Html.Partial("~/Views/Partials/References.cshtml")
 
+<body>
 <div class="wrapper">
     <!--------------------------------------------------------------CONNECT HEADER-------------------------------------------------------------------------->
     @Html.Partial("~/Views/Partials/Header.cshtml")
@@ -36,30 +37,31 @@
                         <!-- Добавляем класс position-relative -->
                         @if (Model.PhotoUrl.Count == 1)
                         {
-                            <img src="@Model.PhotoUrl.First.Value" class="d-block w-100" alt="...">
+                            <img src="@Model.PhotoUrl[0]" class="d-block w-100" alt="...">
                         }
 
                         else if (Model.PhotoUrl.Count > 1)
                         {
-                            <div id="carouselExampleFade" class="carousel carousel-dark slide carousel-fade">
+                            <div id="carouselExampleFade" class="carousel carousel-dark slide carousel-fade" data-ride="carousel" data-interval="100">
                                 <div class="carousel-inner">
-                                    @foreach (var obj in Model.PhotoUrl)
+                                    @for (int i = 0; i < Model.PhotoUrl.Count; i++)
                                     {
-                                        <div class="carousel-item @(obj == Model.PhotoUrl.First.Value ? "active" : "")">
-                                            <img src="@obj" class="d-block w-100" alt="...">
+                                        <div class="carousel-item @(i == 0 ? "active" : "")">
+                                            <img src="@Model.PhotoUrl[i]" class="d-block w-100" alt="...">
                                         </div>
                                     }
                                 </div>
 
-                                <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleFade" data-bs-slide="prev">
-                                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                                    <span class="visually-hidden">Previous</span>
-                                </button>
-                                <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleFade" data-bs-slide="next">
-                                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                                    <span class="visually-hidden">Next</span>
-                                </button>
-                            </div>
+
+                            <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleFade" data-bs-slide="prev">
+                                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                                <span class="visually-hidden">Previous</span>
+                            </button>
+                            <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleFade" data-bs-slide="next">
+                                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                                <span class="visually-hidden">Next</span>
+                            </button>
+                        </div>
                         }
                         else
                         {
@@ -86,7 +88,7 @@
                             int availableQuantity = Model.Amount;
                         }
 
-                        @using (Html.BeginForm("AddToCart", "Catalog", FormMethod.Post))
+                        @using (Html.BeginForm("AddToCart", "Cart", FormMethod.Post))
                         {
                             <input type="hidden" name="cartItem.Id" value="@Model.Id" />
                             <div class="input-group">
@@ -214,4 +216,5 @@
     <!--------------------------------------------------------------CONNECT FOOTER-------------------------------------------------------------------------->
     @Html.Partial("~/Views/Partials/Footer.cshtml")
 </div>
+</body>
 </html>

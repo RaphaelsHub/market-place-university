@@ -1,11 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel.DataAnnotations;
-using System.Linq;
-using System.Web;
-
-
-namespace WebProject.Models
+﻿using System.ComponentModel.DataAnnotations;
+ 
+namespace WebProject.Models.Account
 {
     public class LoginData
     {
@@ -22,11 +17,5 @@ namespace WebProject.Models
 
         //Constructors by default
         public LoginData() { }
-
-        public LoginData(string email, string password)
-        {
-            Email = email;
-            Password = password;
-        }
     }
 }
