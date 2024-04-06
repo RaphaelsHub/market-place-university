@@ -220,3 +220,5 @@ D:\WebProduct\WebProject\WebProject\bin\WebProject.Helper.dll
 D:\WebProduct\WebProject\WebProject\bin\WebProject.BusinessLogic.pdb
 D:\WebProduct\WebProject\WebProject\bin\WebProject.Domain.pdb
 D:\WebProduct\WebProject\WebProject\bin\WebProject.Helper.pdb
+D:\WebProduct\WebProject\WebProject\bin\WebProject.ModelAccesLayer.dll
+D:\WebProduct\WebProject\WebProject\bin\WebProject.ModelAccesLayer.pdb

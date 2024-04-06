@@ -30,16 +30,16 @@
                 </div>
             </div>
 
-            @model WebProject.Models.Account.UserData
+            @model WebProject.ModelAccessLayer.Model.UserData
             @{
-                var obj = Model.Products_Admin;
+                var obj = Model.ProductsAdmin;
             }
 
             <div class="container-fluid">
                 <div class="row">
                     <div class="col-lg-12 mb-3">
                         <div class="cart-content p-3 h-100 bg-white">
-                            @if (obj != null && obj.products != null && obj.products.Count > 0)
+                            @if (obj != null && obj.Products != null && obj.Products.Count > 0)
                             {
                                 <div class="table-responsive">
                                     <table class="table table-hover">
@@ -56,7 +56,7 @@
                                             </tr>
                                         </thead>
                                         <tbody>
-                                            @foreach (var obj1 in obj.products)
+                                            @foreach (var obj1 in obj.Products)
                                             {
                                                 <tr class="item-row" data-description="Very speed speed speed speed compudacter">
                                                     <td class="align-middle text-center"> <img src="@obj1.PhotoUrl[0]" alt=""></td>

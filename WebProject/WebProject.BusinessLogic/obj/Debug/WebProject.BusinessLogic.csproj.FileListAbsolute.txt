@@ -10,3 +10,8 @@ D:\WebProduct\WebProject\WebProject.BusinessLogic\obj\Debug\WebProject.BusinessL
 D:\WebProduct\WebProject\WebProject.BusinessLogic\obj\Debug\WebProject.BusinessLogic.csproj.CoreCompileInputs.cache
 D:\WebProduct\WebProject\WebProject.BusinessLogic\obj\Debug\WebProject.BusinessLogic.dll
 D:\WebProduct\WebProject\WebProject.BusinessLogic\obj\Debug\WebProject.BusinessLogic.pdb
+D:\WebProduct\WebProject\WebProject.BusinessLogic\bin\Debug\WebProject.ModelAccesLayer.dll
+D:\WebProduct\WebProject\WebProject.BusinessLogic\bin\Debug\WebProject.ModelAccesLayer.pdb
+D:\WebProduct\WebProject\WebProject.BusinessLogic\obj\Debug\WebProje.ADEFDFFC.Up2Date
+D:\WebProduct\WebProject\WebProject.BusinessLogic\bin\Debug\WebProject.Domain.dll
+D:\WebProduct\WebProject\WebProject.BusinessLogic\bin\Debug\WebProject.Domain.pdb

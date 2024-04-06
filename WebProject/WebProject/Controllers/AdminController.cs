@@ -3,17 +3,14 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
-using WebProject.Models.Account;
-using WebProject.Models.AddToCart;
-using WebProject.Models.Order;
-using WebProject.Models.Products;
-using WebProject.Models;
+using WebProject.BusinessLogic.MainBL;
+using WebProject.ModelAccessLayer.Model;
+
 
 namespace WebProject.Controllers
 {
     public class AdminController : Controller
     {
-        UserData userData = new UserData();
         // GET: AdminAddProduct
         public ActionResult NewProduct()
         {
@@ -23,17 +20,35 @@ namespace WebProject.Controllers
         [HttpPost]
         public ActionResult NewProduct(Product product)
         {
-            return ModelState.IsValid ? (ActionResult)RedirectToAction("Index", "Home") : View(product);
+            if (ModelState.IsValid)
+            {
+                AccountController.admin.AddProduct(product);
+
+                return RedirectToAction("Index", "Home");
+            }
+            else
+                return View(product);
         }
 
         public ActionResult ViewProducts()
         {
+            UserData userData = new UserData();
+            userData.ProductsAdmin = AccountController.admin.GetAllProducts();
+
             return View(userData);
         }
 
-        public ActionResult EditDelivery()
+        public ActionResult ViewDelivery()
         {
+            UserData userData = new UserData();
+            userData.ProductsAdmin = AccountController.admin.GetAllProducts();
+
             return View(userData);
+        }
+
+        public ActionResult DeleteProduct()
+        {
+            return View();
         }
     }
 }

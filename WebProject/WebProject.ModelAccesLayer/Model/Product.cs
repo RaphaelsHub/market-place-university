@@ -1,11 +1,14 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
 using System.ComponentModel.DataAnnotations;
 
-namespace WebProject.Models.Products
+namespace WebProject.ModelAccessLayer.Model
 {
     public class Product
     {
-        //[Required(ErrorMessage = "Id is required.")]
         public int Id { get; set; }
 
         [Required(ErrorMessage = "Name is required.")]
@@ -30,6 +33,5 @@ namespace WebProject.Models.Products
 
         [Required(ErrorMessage = "Amount is required.")]
         public int Amount { get; set; }
-
     }
 }

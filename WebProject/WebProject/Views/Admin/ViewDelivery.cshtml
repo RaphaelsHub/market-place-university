@@ -30,9 +30,9 @@
                 </div>
             </div>
 
-            @model WebProject.Models.Account.UserData
+            @model WebProject.ModelAccessLayer.Model.UserData
             @{ 
-                var a = Model.Deliveries_Admin;
+                var a = Model.DeliveriesAdmin;
             }
 
             <div class="container-fluid">
@@ -60,7 +60,7 @@
                                         <tbody>
 
 
-                                            @foreach (var obj in Model.Deliveries_Admin.AllOrders)
+                                            @foreach (var obj in Model.DeliveriesAdmin.AllOrders)
                                             {
                                                 <tr>
                                                     <td class="align-middle text-center">@obj.Id</td>

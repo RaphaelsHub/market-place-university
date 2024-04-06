@@ -89,7 +89,7 @@ namespace WebProject
             routes.MapRoute(
                name: "Delivery",
                url: "Admin/{action}/{id}",
-               defaults: new { controller = "Admin", action = "EditDelivery", id = UrlParameter.Optional }
+               defaults: new { controller = "Admin", action = "ViewDelivery", id = UrlParameter.Optional }
             );
         }
     }

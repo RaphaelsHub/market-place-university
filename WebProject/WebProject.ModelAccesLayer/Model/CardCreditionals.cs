@@ -1,10 +1,14 @@
 ﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
 using System.ComponentModel.DataAnnotations;
 
 
-namespace WebProject.Models.Order
+namespace WebProject.ModelAccessLayer.Model
 {
-    public class CardCreditinals
+    public class CardCreditionals
     {
         [Display(Name = "Card Number")]
         [Required(ErrorMessage = "Please enter the card number")]

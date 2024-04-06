@@ -4,10 +4,12 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace WebProject.BusinessLogic
+namespace WebProject.Domain.Enum
 {
-    internal class SessionBL
+    public enum StatusUser
     {
-
+        Unknown = 0,
+        User= 1,
+        Admin = 2
     }
 }

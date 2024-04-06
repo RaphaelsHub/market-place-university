@@ -5,71 +5,74 @@ using System.Web;
 using System.Web.Mvc;
 using System.Web.Security;
 using System.Web.UI.WebControls;
-using WebProject.Models;
-using WebProject.Models.Account;
-using WebProject.Models.AddToCart;
-using WebProject.Models.Order;
-using WebProject.Models.Products;
+using WebProject.BusinessLogic.MainBL;
+using WebProject.ModelAccessLayer.Model;
 
 namespace WebProject.Controllers
 {
     public class AccountController : Controller
     {
-        // GET: SighIn
-        public ActionResult Login()
+        static public UserData userData = null;
+        static public AdminBL admin = null;
+        static public UserBL user = null;
+        static public GuestBL guest = null;
+
+        public AccountController()
         {
-            Check.Init();
-            return View();
+            admin = new AdminBL();
+            user = new UserBL();
+            guest = new GuestBL();
         }
 
+        // GET: SighIn
+        public ActionResult Login() => View();
+        // GET: SignUp
+        public ActionResult Registration() => View();
 
         [HttpPost]
         public ActionResult Login(LoginData loginData)
         {
-            //Рандомный емаил и пароль
-            string validEmail = "user@example.com";
-            string validPassword = "password";
+            userData = guest.Login(loginData);
 
 
-            if (loginData.Email == validEmail && loginData.Password == validPassword)
+            if (ModelState.IsValid && !(userData != null))
             {
+                //Add To Saccion data
+                //Open Cookies
                 HomeController.IsAuthorized = true;
-                HomeController.IsAdmin = true;
-                return RedirectToAction("Index", "Home");
+                return RedirectToAction("Index", "Home"); // Возвращаем перенаправление
             }
             else
             {
-                // Если логин и/или пароль неверные, возвращаем обратно к форме входаs
                 ViewBag.ErrorMessage = "Invalid email or password";
-                return View();
+                return View(); // Возвращаем представление
             }
-        }
-
-        //[HttpPost]
-        public ActionResult LogOut()
-        {
-            HomeController.IsAuthorized = false;
-            HomeController.IsAdmin = false;
-
-            return RedirectToAction("Index", "Home");
-        }
-
-        // GET: SignUp
-        public ActionResult Registration()
-        {
-            return View();
         }
 
         [HttpPost]
         public ActionResult Registration(RegistrationData registrationData)
         {
-            if (ModelState.IsValid && true)
+            userData = guest.Register(registrationData);
+
+            if (ModelState.IsValid && !(userData != null))
             {
+                //Add To Saccion data
+                //Open Cookies
                 HomeController.IsAuthorized = true;
                 return RedirectToAction("Index", "Home");
             }
 
             return View(registrationData);
+        }
+
+        //[HttpPost]
+        public ActionResult LogOut()
+        {
+            user.Logout(userData);
+            //CloseCookies Cookies
+            //Delete seccionData
+            HomeController.IsAuthorized = false;
+            return RedirectToAction("Index", "Home");
         }
     }
 }
