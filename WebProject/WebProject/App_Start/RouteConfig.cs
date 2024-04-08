@@ -102,6 +102,12 @@ namespace WebProject
                name: "Delivery",
                url: "Admin/{action}/{id}",
                defaults: new { controller = "Admin", action = "ViewDelivery", id = UrlParameter.Optional }
+            );           
+            
+            routes.MapRoute(
+               name: "Edit",
+               url: "Admin/{action}/{id}",
+               defaults: new { controller = "Admin", action = "EditProduct", id = UrlParameter.Optional }
             );
         }
     }

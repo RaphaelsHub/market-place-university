@@ -32,6 +32,7 @@
             @model WebProject.ModelAccessLayer.Model.UserData
 
 
+
             @if (Model != null && Model.CartUser != null && Model.CartUser.productList != null && Model.CartUser.productList.Count > 0)
             {
                 <div class="container-fluid">
@@ -50,21 +51,29 @@
                                             </tr>
                                         </thead>
                                         <tbody>
-                                            @for (int i = 0; i < Model.CartUser.productList.Count; i++)
-                                            {
-                                                var obj = Model.CartUser.productList[i];
-                                                <tr>
-                                                    <td class="align-middle text-center"> <img src="@obj.Item1.PhotoUrl[0]" alt=""></td>
-                                                    <td class="align-middle text-center">@obj.Item1.Name</td>
-                                                    <td class="align-middle text-center">@obj.Item1.Price.ToString("C")</td>
-                                                    <td class="align-middle text-center">@obj.Item2</td>
-                                                    <td class="align-middle text-center">
-                                                        <form method="post" action="@Url.Action("DeleteItem", "Cart")">
-                                                            <input type="hidden" name="id" value="@obj.Item1.Id" />
-                                                            <button type="submit" class="btn btn-danger">Delete</button>
-                                                        </form>
-                                                    </td>
-                                                </tr>
+                                            @{
+                                                for (int i = 0; i < Model.CartUser.productList.Count; i++)
+                                                {
+                                                    var obj = Model.CartUser.productList[i];
+
+                                                    <tr>
+                                                        <td class="align-middle text-center"> <img src="@obj.Item1.PhotoUrl[0]" alt=""></td>
+                                                        <td class="align-middle text-center">@obj.Item1.Name</td>
+                                                        <td class="align-middle text-center">@obj.Item1.Price.ToString("C")</td>
+                                                        <td class="align-middle text-center">@obj.Item2</td>
+                                                        <td class="align-middle text-center">
+                                                            @using (Html.BeginForm("DeleteCartItem", "Cart", FormMethod.Post))
+                                                            {
+                                                                <input type="hidden" name="cartItem.Id" value="@obj.Item1.Id" />
+                                                                <input type="hidden" name="cartItem.Id_User" value="@Model.IdUser" />
+                                                                <div class="input-group">
+                                                                    <input type="number" class="form-control mr-sm-2" name="cartItem.Quantity">
+                                                                    <button type="submit" class="btn btn-danger">Delete</button>
+                                                                </div>
+                                                            }
+                                                        </td>
+                                                    </tr>
+                                                }
                                             }
                                         </tbody>
                                     </table>

@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using WebProject.ModelAccessLayer.Model;
-
+using WebProject.Domain.Enum;
 
 namespace WebProject.BusinessLogic.Interfaces
 {
@@ -16,6 +16,7 @@ namespace WebProject.BusinessLogic.Interfaces
         Product GetProductById(int id);
         AllProducts GetProductByName(string text_search);
         AllCategories GetCategoriesView();
-        Category GetCategoriesCatalog(int idCategory, int idSubCategory);
+        Category GetCategoriesCatalog(int idChildCategory);
+        Category GetCategoriesCatalog(int idChildCategory, SortBy sortBy);
     }
 }

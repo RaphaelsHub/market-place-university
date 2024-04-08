@@ -11,6 +11,7 @@ namespace WebProject.BusinessLogic.Interfaces
     {
         UserData SynchronizeWithDb(UserData userData);
         bool AddToCart(CartItem cartItem);
+        bool DeleteFromCart(CartItem cartItem);
         CartData ViewCart();
         bool ProcessOrder(OrderModel orderModel);
         AllDeliveries ViewOrders();

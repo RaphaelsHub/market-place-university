@@ -71,10 +71,10 @@
                                                     <td class="align-middle text-center">@obj.OrderInfo.Address</td>
                                                     <td class="align-middle text-center">@obj.OrderInfo.Phone</td>
                                                     <td class="align-middle text-center">@obj.CartData.FinalPrice.ToString("C")</td>
-                                                    <td class="align-middle text-center"><button type="submit" class="btn btn-danger">Is comming in 17 days</button></td>
+                                                    <td class="align-middle text-center"><button type="submit" class="btn btn-danger">Status: @obj.StatusDelivery.ToString()</button></td>
                                                     <td class="align-middle text-center">
-                                                        <form method="post" action="@Url.Action("DeleteItem", "Cart")">
-                                                            <input type="hidden" name="id" value="3" />
+                                                        <form method="post" action="@Url.Action("DeleteDelivery", "Admin")">
+                                                            <input type="hidden" name="id" value="@obj.Id" />
                                                             <button type="submit" class="btn btn-danger"><i class="fa-regular fa-circle-xmark"></i></button>
                                                         </form>
                                                     </td>

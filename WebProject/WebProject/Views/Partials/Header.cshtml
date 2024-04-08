@@ -46,7 +46,7 @@
                                                                 foreach (var subcategory in category.Subcategories)
                                                                 {
                                                                     <li class="dropdown-item">
-                                                                        <a class="dropdown-item" href="@Url.Action("Items", "Catalog", new { idCategory = category.IdCategory, idSubCategory = subcategory.IdCategory })">@subcategory.Name</a>
+                                                                        <a class="dropdown-item" href="@Url.Action("Items", "Catalog", new {idChildCategory = subcategory.IdCategory })">@subcategory.Name</a>
                                                                     </li>
                                                                 }
                                                             }

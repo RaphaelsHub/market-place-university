@@ -45,6 +45,7 @@
     <Compile Include="Entities\User\UserData.cs" />
     <Compile Include="Enum\SortBy.cs" />
     <Compile Include="Enum\Status.cs" />
+    <Compile Include="Enum\StatusDelivery.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup />

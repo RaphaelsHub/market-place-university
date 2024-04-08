@@ -11,10 +11,10 @@ namespace WebProject.BusinessLogic.Interfaces
     public interface IAdmin
     {
         bool AddProduct(Product product);
-        bool DeleteProduct(Product product);
         bool EditProduct(Product updatedProduct);
         AllProducts GetAllProducts();
         AllDeliveries GetAllActiveOrder();
-        bool DeleteOrderModel(OrderModel orderModel);
+        bool DeleteProduct(int idProduct);
+        bool DeleteOrderModel(int idOrder);
     }
 }

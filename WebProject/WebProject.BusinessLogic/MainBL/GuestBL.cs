@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using WebProject.BusinessLogic.Interfaces;
+using WebProject.Domain.Enum;
 using WebProject.ModelAccessLayer.Model;
 
 namespace WebProject.BusinessLogic.MainBL
@@ -53,7 +54,14 @@ namespace WebProject.BusinessLogic.MainBL
             return categories;
         }
 
-        public Category GetCategoriesCatalog(int idCategory, int idSubCategory)
+        public Category GetCategoriesCatalog(int idChildCategory)
+        {
+            Category category = null;
+
+            return category;
+        }
+
+        public Category GetCategoriesCatalog(int idChildCategory, SortBy sortBy)
         {
             Category category = null;
 

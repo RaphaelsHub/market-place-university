@@ -15,12 +15,12 @@ namespace WebProject.BusinessLogic.MainBL
             return true;
         }
 
-        public bool DeleteOrderModel(OrderModel orderModel)
+        public bool DeleteOrderModel(int IdOrder)
         {
             return true;
         }
 
-        public bool DeleteProduct(Product product)
+        public bool DeleteProduct(int id)
         {
             return true;
         }

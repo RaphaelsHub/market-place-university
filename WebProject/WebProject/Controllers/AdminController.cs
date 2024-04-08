@@ -16,18 +16,6 @@ namespace WebProject.Controllers
         {
             return View();
         }
-        [HttpPost]
-        public ActionResult NewProduct(Product product)
-        {
-            if (ModelState.IsValid)
-            {
-                AccountController.admin.AddProduct(product);
-
-                return RedirectToAction("Index", "Home");
-            }
-            else
-                return View(product);
-        }
         public ActionResult ViewProducts()
         {
             UserData userData = new UserData();
@@ -42,13 +30,53 @@ namespace WebProject.Controllers
 
             return View(userData);
         }
-        public ActionResult DeleteProduct()
+        
+        [HttpPost]
+        public ActionResult NewProduct(Product product)
         {
-            return View();
+            if (ModelState.IsValid)
+            {
+                AccountController.admin.AddProduct(product);
+
+                return RedirectToAction("Index", "Home");
+            }
+            else
+                return View(product);
         }
-        public ActionResult DeleteDelivery()
+        
+        [HttpPost]
+        public ActionResult EditProduct(int id)
         {
-            return View();
+            Product editProduct =  AccountController.guest.GetProductById(id);
+
+            return View(editProduct);
+        }
+
+        [HttpPost]
+        public ActionResult ReplaceProduct(Product product) 
+        {
+            if (ModelState.IsValid)
+            {
+                AccountController.admin.EditProduct(product);
+
+                return RedirectToAction("ViewProducts", "Admin");
+            }
+            else
+                return RedirectToAction("EditProduct","Admin",product.Id);
+        }
+
+        [HttpPost]
+        public ActionResult DeleteProduct(int id)
+        {
+            AccountController.admin.DeleteProduct(id);
+            return RedirectToAction("ViewProducts", "Admin");
+        }
+        
+        [HttpPost]
+        public ActionResult DeleteDelivery(int id)
+        {
+            AccountController.admin.DeleteOrderModel(id);   
+            return RedirectToAction("ViewDelivery","Admin");
         }
     }
 }

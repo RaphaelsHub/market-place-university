@@ -339,6 +339,7 @@
     <Content Include="Views\Cart\Delivery.cshtml" />
     <Content Include="Views\Home\Error404.cshtml" />
     <Content Include="Views\Home\Search.cshtml" />
+    <Content Include="Views\Admin\EditProduct.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

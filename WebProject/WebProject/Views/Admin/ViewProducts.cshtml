@@ -67,15 +67,15 @@
                                                     <td class="align-middle text-center">@obj1.Amount</td>
 
                                                     <td class="align-middle text-center">
-                                                        <form method="post" action="@Url.Action("DeleteItem", "Cart")">
-                                                            <input type="hidden" name="id" value="3" />
+                                                        <form method="post" action="@Url.Action("EditProduct", "Admin")">
+                                                            <input type="hidden" name="id" value="@obj1.Id" />
                                                             <button type="submit" class="btn btn-danger">Edit</button>
                                                         </form>
                                                     </td>
 
                                                     <td class="align-middle text-center">
-                                                        <form method="post" action="@Url.Action("DeleteItem", "Cart")">
-                                                            <input type="hidden" name="id" value="3" />
+                                                        <form method="post" action="@Url.Action("DeleteProduct", "Admin")">
+                                                            <input type="hidden" name="id" value="@obj1.Id" />
                                                             <button type="submit" class="btn btn-danger">Delete</button>
                                                         </form>
                                                     </td>

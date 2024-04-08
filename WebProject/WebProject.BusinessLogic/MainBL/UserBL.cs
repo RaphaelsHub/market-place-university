@@ -15,6 +15,11 @@ namespace WebProject.BusinessLogic.MainBL
             return true;
         }
 
+        public bool DeleteFromCart(CartItem cartItem)
+        {
+            return true;
+        }
+
         public bool Logout(UserData userData)
         {
             return true;

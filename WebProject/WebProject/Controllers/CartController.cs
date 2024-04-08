@@ -37,6 +37,7 @@ namespace WebProject.Controllers
         {
             TempData["Message"] = "Was added successfully";
 
+            cartItem.Id_User = AccountController.userData.IdUser;
             AccountController.user.AddToCart(cartItem);
 
             return RedirectToAction("Item", "Catalog", new { id = cartItem.Id });
@@ -57,6 +58,13 @@ namespace WebProject.Controllers
                 return RedirectToAction("ThanksForOrder", "Home");
             }
             return View(new OrderModel(orderInfo, cardCreditinals));
+        }
+
+        [HttpPost]
+        public ActionResult DeleteCartItem(CartItem cartItem)
+        {
+           AccountController.user.DeleteFromCart(cartItem);
+            return RedirectToAction("Buy", "Cart");
         }
     }
 }

@@ -12,11 +12,11 @@ namespace WebProject.Controllers
     {
         // GET: Catalog
 
-        public ActionResult Items(int? idCategory, int? idSubCategory)
+        public ActionResult Items(int? idChildCategory)
         {
-            if (idCategory.HasValue && idSubCategory.HasValue)
+            if (idChildCategory.HasValue)
             {
-                Category category = AccountController.guest.GetCategoriesCatalog(idCategory.Value, idSubCategory.Value);
+                Category category = AccountController.guest.GetCategoriesCatalog(idChildCategory.Value);
                 return View(category);
             }
             else

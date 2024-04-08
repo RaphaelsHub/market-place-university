@@ -15,7 +15,9 @@
 
         <!--------------------------------------------------------------MENU-------------------------------------------------------------------------->
         <main class="main">
+
             @model WebProject.ModelAccessLayer.Model.Product
+
             @if (Model != null)
             {
                 <div class="container-fluid">
@@ -74,11 +76,6 @@
                             </div>
                         </div>
 
-
-
-
-
-
                         <div class="col-md-7 col-lg-8 mb-3">
                             <div class="bg-white product-content p-3 h-100">
                                 <!--МЕНЯЕМ ТОЛЬКО ИМЯ, ЦЕНУ, описание-->
@@ -88,27 +85,38 @@
 
                                 @{
                                     int availableQuantity = Model.Amount;
+                                    bool IsAunthificated = WebProject.Controllers.HomeController.IsAuthorized;
                                 }
 
-                                @using (Html.BeginForm("AddToCart", "Cart", FormMethod.Post))
+                                @if (IsAunthificated)
                                 {
-                                    <input type="hidden" name="cartItem.Id" value="@Model.Id" />
-                                    <div class="input-group">
-                                        @{
-                                            var defaultQuantity = availableQuantity > 0 ? 1 : 0;
-                                        }
-                                        <input type="number" class="form-control mr-sm-2" name="cartItem.Quantity" value="@defaultQuantity" min="0" max="@availableQuantity" style="width: 80px;">
-                                        <button type="submit" class="btn btn-warning" @(availableQuantity == 0 ? "disabled" : "")>
-                                            <i class="fas fa-shopping-cart"></i> Add to cart
-                                        </button>
-                                    </div>
-                                    if (availableQuantity == 0)
+                                    @using (Html.BeginForm("AddToCart", "Cart", FormMethod.Post))
                                     {
-                                        <div class="alert alert-warning ml-sm-2 mt-2" role="alert">
-                                            There are currently no products available.
+                                        <input type="hidden" name="cartItem.Id" value="@Model.Id" />
+                                        <div class="input-group">
+                                            @{
+                                                var defaultQuantity = availableQuantity > 0 ? 1 : 0;
+                                            }
+                                            <input type="number" class="form-control mr-sm-2" name="cartItem.Quantity" value="@defaultQuantity" min="0" max="@availableQuantity" style="width: 80px;">
+                                            <button type="submit" class="btn btn-warning" @(availableQuantity == 0 ? "disabled" : "")>
+                                                <i class="fas fa-shopping-cart"></i> Add to cart
+                                            </button>
                                         </div>
+                                        if (availableQuantity == 0)
+                                        {
+                                            <div class="alert alert-warning ml-sm-2 mt-2" role="alert">
+                                                There are currently no products available.
+                                            </div>
+                                        }
                                     }
                                 }
+                                else
+                                {
+                                    <a href="@Url.Action("Login", "Account")" class="btn btn-warning">
+                                        <i class="fas fa-sign-in-alt"></i> Login to add to cart
+                                    </a>
+                                }
+
 
 
 

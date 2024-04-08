@@ -60,7 +60,7 @@
                                    <td class="align-middle text-center">@obj.OrderInfo.Address</td>
                                    <td class="align-middle text-center">@obj.OrderInfo.Phone</td>
                                    <td class="align-middle text-center">@obj.CartData.FinalPrice.ToString("C")</td>
-                                   <td class="align-middle text-center"><button type="submit" class="btn btn-danger">Is comming in 17 days</button></td><!--Здесь будет полключен другой сервис для изменения времени-->
+                                   <td class="align-middle text-center"><button type="submit" class="btn btn-danger">Status: @obj.StatusDelivery.ToString()</button></td><!--Здесь будет полключен другой сервис для изменения времени-->
                                </tr>
                            }
                        </tbody>
