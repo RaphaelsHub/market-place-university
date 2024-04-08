@@ -15,19 +15,19 @@ namespace WebProject.BusinessLogic.MainBL
             return true;
         }
 
-        public void DeleteOrderModel(OrderModel orderModel)
+        public bool DeleteOrderModel(OrderModel orderModel)
         {
-            throw new NotImplementedException();
+            return true;
         }
 
-        public void DeleteProduct(Product product)
+        public bool DeleteProduct(Product product)
         {
-            throw new NotImplementedException();
+            return true;
         }
 
-        public void EditProduct(Product updatedProduct)
+        public bool EditProduct(Product updatedProduct)
         {
-            throw new NotImplementedException();
+            return true;
         }
 
         public AllDeliveries GetAllActiveOrder()

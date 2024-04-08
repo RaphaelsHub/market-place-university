@@ -17,16 +17,29 @@ namespace WebProject.Controllers
     {
         static public bool IsAuthorized { get; set; }
         static public bool IsAdmin { get; set; }
-
+        static public AllCategories allCategories { get; set; }
         // GET: Home
         public ActionResult Index()
         {
             AccountController account = new AccountController();
             AllProducts allProducts = AccountController.guest.GetAllProducts();
+            allCategories = AccountController.guest.GetCategoriesView();
 
             return View(allProducts);
         }
+        public ActionResult Search(string text)
+        {
+            AllProducts searchResults = null;
+            if (text == null)
+            {
+                return View(searchResults);
+            }
+            searchResults = AccountController.guest.GetProductByName(text);
+
+            return View(searchResults);
+        }
         public ActionResult ThanksForOrder() => View();
         public ActionResult Error() => View();
+        public ActionResult Error404() => View();
     }
 }

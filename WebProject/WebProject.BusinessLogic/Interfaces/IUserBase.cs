@@ -14,6 +14,6 @@ namespace WebProject.BusinessLogic.Interfaces
         CartData ViewCart();
         bool ProcessOrder(OrderModel orderModel);
         AllDeliveries ViewOrders();
-        void Logout(UserData userData);
+        bool Logout(UserData userData);
     }
 }

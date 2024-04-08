@@ -14,61 +14,20 @@
         @Html.Partial("~/Views/Partials/Header.cshtml")
         <!--------------------------------------------------------------MENU-------------------------------------------------------------------------->
         <main class="main">
-            <div id="carousel" class="carousel slide carousel-fade">
-                <div class="carousel-indicators">
-                    <button type="button" data-bs-target="#carousel" data-bs-slide-to="0" class="active"
-                            aria-current="true" aria-label="Slide 1"></button>
-                    <button type="button" data-bs-target="#carousel" data-bs-slide-to="1"
-                            aria-label="Slide 2"></button>
-                    <button type="button" data-bs-target="#carousel" data-bs-slide-to="2"
-                            aria-label="Slide 3"></button>
-                </div>
-                <div class="carousel-inner h-25">
-                    <!-- Здесь добавлен класс h-50 для уменьшения высоты карусели до 50% -->
-                    <div class="carousel-item active">
-                        <img src="~/FrontEndAssets/Images/Laptop.jpg"
-                             class="d-block w-100" alt="...">
-                        <div class="carousel-caption d-none d-md-block">
-
-                        </div>
-                    </div>
-                    <div class="carousel-item">
-                        <img src="~/FrontEndAssets/Images/Laptop.jpg" class="d-block w-100" alt="...">
-                        <div class="carousel-caption d-none d-md-block">
-                        </div>
-                    </div>
-                    <div class="carousel-item">
-                        <img src="~/FrontEndAssets/Images/Laptop.jpg" class="d-block w-100" alt="...">
-                        <div class="carousel-caption d-none d-md-block">
-                        </div>
-                    </div>
-                </div>
-                <button class="carousel-control-prev" type="button" data-bs-target="#carousel" data-bs-slide="prev">
-                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                    <span class="visually-hidden">Previous</span>
-                </button>
-                <button class="carousel-control-next" type="button" data-bs-target="#carousel" data-bs-slide="next">
-                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                    <span class="visually-hidden">Next</span>
-                </button>
-            </div>
-
-
             <!--OUR PRODUCTS-->
             <section class="featured-products">
                 <div class="container-fluid">
                     <div class="row mb-5">
                         <div class="col-12">
                             <h2 class="section-title">
-                                <span>Our products</span>
+                                <span>Searched products</span>
                             </h2>
                         </div>
                     </div>
 
                     <div class="row">
-                        <!-----------------------------------------------------Данные персонализации продукта---------------------------------------------------------->
-
-                        @if (Model != null)
+                        <!-- Данные персонализации продукта -->
+                        @if (Model != null && Model.Products.Any())
                         {
                             foreach (var product in Model.Products)
                             {
@@ -102,7 +61,18 @@
                                 </div>
                             }
                         }
+                        else
+                        {
+                            <div class="col-12 text-center">
+                                <div class="jumbotron">
+                                    <h1>Products are not founded!</h1>
+                                </div>
+                            </div>
+                        }
+
+
                     </div>
+
                 </div>
             </section>
 

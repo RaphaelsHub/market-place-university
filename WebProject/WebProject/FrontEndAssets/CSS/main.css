@@ -13,11 +13,53 @@ html,
 body {
     height: 100%;
 }
+<style >
+.not-found-message {
+    font-size: 20px; /* Adjust the font size as needed */
+}
+
+</style >
+
+
 .description-cell {
     position: relative;
     cursor: pointer;
 }
+.arrow-down::after {
+    content: "\25BC"; /* Код символа стрелки вниз */
+    margin-left: 5px;
+}
 
+.subcategory-list {
+    display: none;
+}
+
+.arrow-down::after {
+    content: "\25BC"; /* Код символа стрелки вниз */
+    margin-left: 2px;
+}
+
+.subcategory-list {
+    display: none;
+    margin-top: 1px; /* Уменьшение верхнего отступа между списком подкатегорий */
+    padding-left: 0; /* Удаление отступа слева для вложенного списка */
+}
+
+    .subcategory-list .dropdown-item {
+        margin-bottom: 1px; /* Уменьшение вертикального отступа между элементами списка */
+    }
+ 
+
+.subcategory-list {
+    display: none;
+    margin: 0; /* Удаление всех отступов */
+    padding: 0; /* Удаление всех отступов */
+}
+
+    .subcategory-list .dropdown-item {
+        padding: 0; /* Удаление всех отступов */
+        text-align: center;
+    }
 .description-content {
     display: none;
     position: absolute;

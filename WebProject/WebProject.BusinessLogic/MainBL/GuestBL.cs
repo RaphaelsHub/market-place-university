@@ -37,5 +37,27 @@ namespace WebProject.BusinessLogic.MainBL
             Product product = null;
             return product;
         }
+
+        public AllProducts GetProductByName(string text_search)
+        {
+            AllProducts product = null;
+
+            return product;
+        }
+
+        public AllCategories GetCategoriesView()
+        {
+            AllCategories categories = null;
+            // для view мне нужны только дети и родитель с именем и продуктами 
+            // иннициализировать только имена и id их, если что можем именами оперировать вдруг у вас не получится
+            return categories;
+        }
+
+        public Category GetCategoriesCatalog(int idCategory, int idSubCategory)
+        {
+            Category category = null;
+
+            return category;
+        }
     }
 }

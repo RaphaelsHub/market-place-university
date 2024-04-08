@@ -10,19 +10,33 @@ namespace WebProject.Controllers
 {
     public class CatalogController : Controller
     {
-        Product product=null;
         // GET: Catalog
-        public ActionResult Items()=>View();
-        public ActionResult Item(int? id)
+
+        public ActionResult Items(int? idCategory, int? idSubCategory)
         {
-            if(id.HasValue)
+            if (idCategory.HasValue && idSubCategory.HasValue)
             {
-                Product product = AccountController.guest.GetProductById(id.Value);
-                return View(product);
+                Category category = AccountController.guest.GetCategoriesCatalog(idCategory.Value, idSubCategory.Value);
+                return View(category);
             }
             else
             {
-                return RedirectToAction("Error", "Home");
+                return RedirectToAction("Error404", "Home");
+            }
+        }
+        public ActionResult Item(int? id)
+        {
+            if (id.HasValue)
+            {
+                Product product = AccountController.guest.GetProductById(id.Value);
+                if (product != null)
+                    return View(product);
+                else
+                    return RedirectToAction("Error", "Home");
+            }
+            else
+            {
+                return RedirectToAction("Error404", "Home");
             }
         }
     }

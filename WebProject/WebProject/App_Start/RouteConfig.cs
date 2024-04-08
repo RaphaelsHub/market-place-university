@@ -29,6 +29,18 @@ namespace WebProject
                 name: "ErrorManagement",
                 url: "Home/{action}/{id}",
                 defaults: new { controller = "Home", action = "Error", id = UrlParameter.Optional }
+            );            
+            
+            routes.MapRoute(
+                name: "Error404Management",
+                url: "Home/{action}/{id}",
+                defaults: new { controller = "Home", action = "Error404", id = UrlParameter.Optional }
+            );            
+            
+            routes.MapRoute(
+                name: "SearchManagement",
+                url: "Home/{action}/{id}",
+                defaults: new { controller = "Home", action = "Search", id = UrlParameter.Optional }
             );
 
             routes.MapRoute(
@@ -69,8 +81,8 @@ namespace WebProject
 
             routes.MapRoute(
                 name: "Categories",
-                url: "Catalog/{action}/{id}",
-                defaults: new { controller = "Catalog", action = "Items", id = UrlParameter.Optional }
+                url: "Catalog/{action}/{id}/{id1}",
+                defaults: new { controller = "Catalog", action = "Items", id = UrlParameter.Optional, id1=UrlParameter.Optional }
             );
 
 

@@ -16,7 +16,6 @@ namespace WebProject.Controllers
         {
             return View();
         }
-
         [HttpPost]
         public ActionResult NewProduct(Product product)
         {
@@ -29,7 +28,6 @@ namespace WebProject.Controllers
             else
                 return View(product);
         }
-
         public ActionResult ViewProducts()
         {
             UserData userData = new UserData();
@@ -37,7 +35,6 @@ namespace WebProject.Controllers
 
             return View(userData);
         }
-
         public ActionResult ViewDelivery()
         {
             UserData userData = new UserData();
@@ -45,8 +42,11 @@ namespace WebProject.Controllers
 
             return View(userData);
         }
-
         public ActionResult DeleteProduct()
+        {
+            return View();
+        }
+        public ActionResult DeleteDelivery()
         {
             return View();
         }

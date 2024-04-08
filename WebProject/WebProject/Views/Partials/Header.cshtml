@@ -16,27 +16,68 @@
                         <button type="button" class="btn-close" data-bs-dismiss="offcanvas"
                                 aria-label="Close"></button>
                     </div>
-
                     <!-- LOGO + HOME + CATALOG button -->
                     <div class="offcanvas-body">
                         <ul class="navbar-nav">
                             <li class="nav-item">
-                                <a class="nav-link active" aria-current="page"
-                                   href="@Url.Action("Index","Home")">Home</a>
+                                <a class="nav-link active" aria-current="page" href="@Url.Action("Index","Home")">Home</a>
                             </li>
                             <li class="nav-item dropdown">
-                                <a class="nav-link dropdown-toggle" href="#"
-                                   role="button" data-bs-toggle="dropdown" aria-expanded="false"
-                                   data-bs-auto-close="outside">Catalog</a>
-                                <ul class="dropdown-menu dropdown-menu-end">
-                                    <li><a class="dropdown-item" href="@Url.Action("Items","Catalog")">Computers</a></li>
-                                    <li><a class="dropdown-item" href="@Url.Action("Items","Catalog")">Laptops</a></li>
-                                    <li><a class="dropdown-item" href="@Url.Action("Items","Catalog")">Phones</a></li>
-                                    <li><a class="dropdown-item" href="@Url.Action("Items","Catalog")">TVs</a></li>
-                                </ul>
+                                <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false" data-bs-auto-close="outside">Catalog</a>
+
+                                @{
+                                    var mod = WebProject.Controllers.HomeController.allCategories;
+                                }
+
+                                @if (mod != null)
+                                {
+                                    if (mod.Categories != null && mod.Categories.Any())
+                                    {
+                                        <ul id="subcategoriesDropdown" class="dropdown-menu dropdown-menu-end">
+                                            @foreach (var category in mod.Categories)
+                                            {
+                                                if (category != null)
+                                                {
+                                                    <li>
+                                                        <a class="dropdown-item arrow-down" href="javascript:void(0);" onclick="toggleSubcategories(this)">@category.Name</a>
+                                                        <ul class="subcategory-list">
+                                                            @if (category.Subcategories != null && category.Subcategories.Any())
+                                                            {
+                                                                foreach (var subcategory in category.Subcategories)
+                                                                {
+                                                                    <li class="dropdown-item">
+                                                                        <a class="dropdown-item" href="@Url.Action("Items", "Catalog", new { idCategory = category.IdCategory, idSubCategory = subcategory.IdCategory })">@subcategory.Name</a>
+                                                                    </li>
+                                                                }
+                                                            }
+                                                        </ul>
+                                                    </li>
+                                                }
+                                            }
+                                        </ul>
+                                    }
+                                }
+
                             </li>
                         </ul>
                     </div>
+
+                    <script>
+                        // Скрыть все подкатегории при загрузке страницы
+                        document.querySelectorAll('.subcategory-list').forEach((sublist) => {
+                            sublist.style.display = 'none';
+                        });
+
+                        function toggleSubcategories(element) {
+                            var subcategories = element.nextElementSibling;
+                            if (subcategories.style.display === 'none') {
+                                subcategories.style.display = 'block';
+                            } else {
+                                subcategories.style.display = 'none';
+                            }
+                        }
+                    </script>
+
                 </div>
 
                 @{
@@ -46,6 +87,29 @@
 
                 <div class="col-8 col-sm-4">
                     <div class="header-top-account d-flex justify-content-end">
+                        <form id="searchForm" action="@Url.Action("Search", "Home")" method="get" onsubmit="return validateSearchForm()">
+                            <div class="input-group">
+                                <input type="text" class="form-control" name="text" id="searchInput" placeholder="Searching..." aria-label="Searching..." aria-describedby="button-search">
+                                <button class="btn btn-outline-warning" type="submit" id="button-search">
+                                    <i class="fa-solid fa-magnifying-glass"></i>
+                                </button>
+                            </div>
+                        </form>
+
+                        <script>
+                            function validateSearchForm() {
+                                var searchText = document.getElementById("searchInput").value.trim();
+                                if (searchText === "") {
+                                    alert("Please enter a search term.");
+                                    return false; // Отменяем отправку формы, если строка пуста
+                                }
+                                return true; // Разрешаем отправку формы, если строка не пуста
+                            }
+                        </script>
+
+
+                        <div id="searchResults" class="mt-2"></div>
+
                         @if (isAuthorized)
                         {
                             <button class="btn btn-sm" type="button" onclick="location.href='@Url.Action("Buy", "Cart")'"><i class="fa-solid fa-cart-shopping"></i> Buy</button>
@@ -76,4 +140,5 @@
             </div>
         </nav>
     </div>
+
 </header>

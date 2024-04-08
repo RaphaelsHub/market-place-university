@@ -1,7 +1,32 @@
 {
   "Version": 1,
   "WorkspaceRootPath": "D:\\WebProduct\\WebProject\\",
-  "Documents": [],
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{5F80B0C2-7F0F-4D1D-98CF-08C805A03522}|WebProject\\WebProject.csproj|d:\\webproduct\\webproject\\webproject\\controllers\\admincontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{5F80B0C2-7F0F-4D1D-98CF-08C805A03522}|WebProject\\WebProject.csproj|solutionrelative:webproject\\controllers\\admincontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{04A69F02-CE57-4DBB-A3C1-E5C262D3BD05}|WebProject.BusinessLogic\\WebProject.BusinessLogic.csproj|d:\\webproduct\\webproject\\webproject.businesslogic\\businesslogic.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{04A69F02-CE57-4DBB-A3C1-E5C262D3BD05}|WebProject.BusinessLogic\\WebProject.BusinessLogic.csproj|solutionrelative:webproject.businesslogic\\businesslogic.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{04A69F02-CE57-4DBB-A3C1-E5C262D3BD05}|WebProject.BusinessLogic\\WebProject.BusinessLogic.csproj|d:\\webproduct\\webproject\\webproject.businesslogic\\mainbl\\userbl.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{04A69F02-CE57-4DBB-A3C1-E5C262D3BD05}|WebProject.BusinessLogic\\WebProject.BusinessLogic.csproj|solutionrelative:webproject.businesslogic\\mainbl\\userbl.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{04A69F02-CE57-4DBB-A3C1-E5C262D3BD05}|WebProject.BusinessLogic\\WebProject.BusinessLogic.csproj|d:\\webproduct\\webproject\\webproject.businesslogic\\mainbl\\guestbl.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{04A69F02-CE57-4DBB-A3C1-E5C262D3BD05}|WebProject.BusinessLogic\\WebProject.BusinessLogic.csproj|solutionrelative:webproject.businesslogic\\mainbl\\guestbl.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A50BE0B8-E1E8-4D7A-A2F1-5BED10251FD0}|WebProject.ModelAccesLayer\\WebProject.ModelAccessLayer.csproj|d:\\webproduct\\webproject\\webproject.modelacceslayer\\model\\allcategories.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A50BE0B8-E1E8-4D7A-A2F1-5BED10251FD0}|WebProject.ModelAccesLayer\\WebProject.ModelAccessLayer.csproj|solutionrelative:webproject.modelacceslayer\\model\\allcategories.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A50BE0B8-E1E8-4D7A-A2F1-5BED10251FD0}|WebProject.ModelAccesLayer\\WebProject.ModelAccessLayer.csproj|d:\\webproduct\\webproject\\webproject.modelacceslayer\\model\\category.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A50BE0B8-E1E8-4D7A-A2F1-5BED10251FD0}|WebProject.ModelAccesLayer\\WebProject.ModelAccessLayer.csproj|solutionrelative:webproject.modelacceslayer\\model\\category.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
   "DocumentGroupContainers": [
     {
       "Orientation": 0,
@@ -9,11 +34,89 @@
       "DocumentGroups": [
         {
           "DockedWidth": 147,
-          "SelectedChildIndex": -1,
+          "SelectedChildIndex": 1,
           "Children": [
             {
               "$type": "Bookmark",
               "Name": "ST:128:0:{116d2292-e37d-41cd-a077-ebacac4c8cc4}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "AdminController.cs",
+              "DocumentMoniker": "D:\\WebProduct\\WebProject\\WebProject\\Controllers\\AdminController.cs",
+              "RelativeDocumentMoniker": "WebProject\\Controllers\\AdminController.cs",
+              "ToolTip": "D:\\WebProduct\\WebProject\\WebProject\\Controllers\\AdminController.cs",
+              "RelativeToolTip": "WebProject\\Controllers\\AdminController.cs",
+              "ViewState": "AQIAAAYAAAAAAAAAAAAAABcAAAAiAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-04-08T19:16:33.792Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "UserBL.cs",
+              "DocumentMoniker": "D:\\WebProduct\\WebProject\\WebProject.BusinessLogic\\MainBL\\UserBL.cs",
+              "RelativeDocumentMoniker": "WebProject.BusinessLogic\\MainBL\\UserBL.cs",
+              "ToolTip": "D:\\WebProduct\\WebProject\\WebProject.BusinessLogic\\MainBL\\UserBL.cs",
+              "RelativeToolTip": "WebProject.BusinessLogic\\MainBL\\UserBL.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-04-08T19:15:43.782Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "BusinessLogic.cs",
+              "DocumentMoniker": "D:\\WebProduct\\WebProject\\WebProject.BusinessLogic\\BusinessLogic.cs",
+              "RelativeDocumentMoniker": "WebProject.BusinessLogic\\BusinessLogic.cs",
+              "ToolTip": "D:\\WebProduct\\WebProject\\WebProject.BusinessLogic\\BusinessLogic.cs",
+              "RelativeToolTip": "WebProject.BusinessLogic\\BusinessLogic.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAkAAAAFAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-04-08T19:15:27.13Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "GuestBL.cs",
+              "DocumentMoniker": "D:\\WebProduct\\WebProject\\WebProject.BusinessLogic\\MainBL\\GuestBL.cs",
+              "RelativeDocumentMoniker": "WebProject.BusinessLogic\\MainBL\\GuestBL.cs",
+              "ToolTip": "D:\\WebProduct\\WebProject\\WebProject.BusinessLogic\\MainBL\\GuestBL.cs",
+              "RelativeToolTip": "WebProject.BusinessLogic\\MainBL\\GuestBL.cs",
+              "ViewState": "AQIAACYAAAAAAAAAAAAIwCcAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-04-08T19:13:57.582Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "Category.cs",
+              "DocumentMoniker": "D:\\WebProduct\\WebProject\\WebProject.ModelAccesLayer\\Model\\Category.cs",
+              "RelativeDocumentMoniker": "WebProject.ModelAccesLayer\\Model\\Category.cs",
+              "ToolTip": "D:\\WebProduct\\WebProject\\WebProject.ModelAccesLayer\\Model\\Category.cs",
+              "RelativeToolTip": "WebProject.ModelAccesLayer\\Model\\Category.cs",
+              "ViewState": "AQIAAAYAAAAAAAAAAAAAABMAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-04-08T18:55:41.529Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "AllCategories.cs",
+              "DocumentMoniker": "D:\\WebProduct\\WebProject\\WebProject.ModelAccesLayer\\Model\\AllCategories.cs",
+              "RelativeDocumentMoniker": "WebProject.ModelAccesLayer\\Model\\AllCategories.cs",
+              "ToolTip": "D:\\WebProduct\\WebProject\\WebProject.ModelAccesLayer\\Model\\AllCategories.cs",
+              "RelativeToolTip": "WebProject.ModelAccesLayer\\Model\\AllCategories.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAkAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-04-08T18:55:04.548Z",
+              "EditorCaption": ""
             }
           ]
         }

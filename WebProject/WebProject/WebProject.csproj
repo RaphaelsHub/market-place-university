@@ -337,6 +337,8 @@
     <Content Include="Views\Home\ThanksForOrder.cshtml" />
     <Content Include="Views\Home\Error.cshtml" />
     <Content Include="Views\Cart\Delivery.cshtml" />
+    <Content Include="Views\Home\Error404.cshtml" />
+    <Content Include="Views\Home\Search.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

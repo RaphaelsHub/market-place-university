@@ -14,5 +14,8 @@ namespace WebProject.BusinessLogic.Interfaces
         UserData Login(LoginData loginData);
         AllProducts GetAllProducts();
         Product GetProductById(int id);
+        AllProducts GetProductByName(string text_search);
+        AllCategories GetCategoriesView();
+        Category GetCategoriesCatalog(int idCategory, int idSubCategory);
     }
 }

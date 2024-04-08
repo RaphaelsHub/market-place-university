@@ -15,9 +15,9 @@ namespace WebProject.BusinessLogic.MainBL
             return true;
         }
 
-        public void Logout(UserData userData)
+        public bool Logout(UserData userData)
         {
-            return;
+            return true;
         }
 
         public bool ProcessOrder(OrderModel orderModel)
