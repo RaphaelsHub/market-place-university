@@ -1,30 +1,11 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Security.Principal;
-using System.Web;
-using System.Web.Mvc;
-using System.Web.Security;
-using System.Web.UI.WebControls;
-using WebProject.BusinessLogic.MainBL;
-using WebProject.Domain.Enum;
+﻿using System.Web.Mvc;
 using WebProject.ModelAccessLayer.Model;
 
 namespace WebProject.Controllers
 {
     public class AccountController : Controller
     {
-        static public UserData userData = null;
-        static public AdminBL admin = null;
-        static public UserBL user = null;
-        static public GuestBL guest = null;
-
-        public AccountController()
-        {
-            admin = new AdminBL();
-            user = new UserBL();
-            guest = new GuestBL();
-        }
+        readonly BusinessLogic.BusinessLogic businessLogic = new BusinessLogic.BusinessLogic();
 
         // GET: SighIn
         public ActionResult Login()
@@ -48,26 +29,28 @@ namespace WebProject.Controllers
         [HttpPost]
         public ActionResult Login(LoginData loginData)
         {
-            UserData userData = new UserData();
+            UserData userData = businessLogic.GuestBL.Login(loginData);
 
             if (ModelState.IsValid && userData != null)
             {
                 userData.StatusUser = Domain.Enum.StatusUser.Admin;
-                ;
+
                 Session["UserData"] = userData;
 
                 return RedirectToAction("Index", "Home");
             }
-
-            ViewBag.ErrorMessage = "Invalid email or password";
-            return View();
+            else
+            {
+                ViewBag.ErrorMessage = "Invalid email or password";
+                return View();
+            }
 
         }
 
         [HttpPost]
         public ActionResult Registration(RegistrationData registrationData)
         {
-            UserData userData = new UserData();
+            UserData userData = businessLogic.GuestBL.Register(registrationData);
 
             if (ModelState.IsValid && userData != null)
             {
@@ -75,13 +58,17 @@ namespace WebProject.Controllers
 
                 return RedirectToAction("Index", "Home");
             }
-            return View(registrationData);
+            else
+            {
+
+                return View(registrationData);
+            }
 
         }
 
         public ActionResult LogOut()
         {
-            if (user.Logout(userData))
+            if (businessLogic.UserBL.Logout((UserData)Session["UserData"]))
                 Session.Remove("UserData");
 
             return RedirectToAction("Index", "Home");

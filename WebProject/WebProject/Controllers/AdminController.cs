@@ -12,6 +12,7 @@ namespace WebProject.Controllers
 {
     public class AdminController : Controller
     {
+        readonly BusinessLogic.BusinessLogic businessLogic = new BusinessLogic.BusinessLogic();
         // GET: AdminAddProduct
         public ActionResult NewProduct()
         {
@@ -44,8 +45,7 @@ namespace WebProject.Controllers
 
             if (ModelState.IsValid)
             {
-                Console.WriteLine("All Good");
-                AccountController.admin.AddProduct(product);
+                businessLogic.AdminBL.AddProduct(product);
 
                 return RedirectToAction("Index", "Home");
             }
@@ -59,9 +59,7 @@ namespace WebProject.Controllers
             if (Session["UserData"] == null || ((UserData)Session["UserData"]).StatusUser != StatusUser.Admin)
                 return RedirectToAction("Index", "Home");
 
-            Product editProduct = AccountController.guest.GetProductById(id);
-
-            return View(editProduct);
+            return View(businessLogic.ProductBL.GetProductById(id));
         }
 
         [HttpPost]
@@ -72,7 +70,7 @@ namespace WebProject.Controllers
 
             if (ModelState.IsValid)
             {
-                AccountController.admin.EditProduct(product);
+                businessLogic.AdminBL.EditProduct(product);
 
                 return RedirectToAction("ViewProducts", "Admin");
             }
@@ -86,7 +84,8 @@ namespace WebProject.Controllers
             if (Session["UserData"] == null || ((UserData)Session["UserData"]).StatusUser != StatusUser.Admin)
                 return RedirectToAction("Index", "Home");
 
-            AccountController.admin.DeleteProduct(id);
+            businessLogic.AdminBL.DeleteProduct(id);
+
             return RedirectToAction("ViewProducts", "Admin");
         }
 
@@ -96,7 +95,7 @@ namespace WebProject.Controllers
             if (Session["UserData"] == null || ((UserData)Session["UserData"]).StatusUser != StatusUser.Admin)
                 return RedirectToAction("Index", "Home");
 
-            AccountController.admin.DeleteOrderModel(id);
+            businessLogic.AdminBL.DeleteOrderModel(id);
             return RedirectToAction("ViewDelivery", "Admin");
         }
     }

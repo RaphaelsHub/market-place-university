@@ -15,6 +15,8 @@ namespace WebProject.Controllers
 {
     public class HomeController : Controller
     {
+        readonly BusinessLogic.BusinessLogic businessLogic = new BusinessLogic.BusinessLogic();
+
         static public AllCategories allCategories { get; set; }
 
         // GET: Home
@@ -23,17 +25,15 @@ namespace WebProject.Controllers
         public ActionResult Error404() => View();
         public ActionResult Index()
         {
-            AccountController account = new AccountController();
-            AllProducts allProducts = AccountController.guest.GetAllProducts();
-            allCategories = AccountController.guest.GetCategoriesView();
+            allCategories = businessLogic.ProductBL.GetCategoriesView();
 
-            return View(allProducts);
+            return View(businessLogic.ProductBL.GetAllProducts());
         }
         public ActionResult Search(string text)
         {
             AllProducts searchResults = null;
 
-            return (text == null) ? View(searchResults) : View(AccountController.guest.GetProductByName(text));
+            return (text == null) ? View(searchResults) : View(businessLogic.ProductBL.GetProductByName(text));
         }
     }
 }

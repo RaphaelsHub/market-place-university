@@ -7,7 +7,7 @@ using WebProject.ModelAccessLayer.Model;
 
 namespace WebProject.BusinessLogic.Interfaces
 {
-    public interface IUserBase
+    internal interface IUserBase
     {
         UserData SynchronizeWithDb(UserData userData);
         bool AddToCart(CartItem cartItem);

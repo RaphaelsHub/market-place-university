@@ -8,7 +8,7 @@ using WebProject.ModelAccessLayer.Model;
 
 namespace WebProject.BusinessLogic.Interfaces
 {
-    public interface IAdmin
+    internal interface IAdmin
     {
         bool AddProduct(Product product);
         bool EditProduct(Product updatedProduct);

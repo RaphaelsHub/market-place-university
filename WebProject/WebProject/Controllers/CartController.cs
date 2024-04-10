@@ -13,6 +13,8 @@ namespace WebProject.Controllers
 {
     public class CartController : Controller
     {
+        readonly BusinessLogic.BusinessLogic businessLogic = new BusinessLogic.BusinessLogic();
+
         // GET: Cart
         public ActionResult Buy()
         {
@@ -43,7 +45,7 @@ namespace WebProject.Controllers
 
             cartItem.Id_User = ((UserData)Session["UserData"]).IdUser;
 
-            AccountController.user.AddToCart(cartItem);
+            businessLogic.UserBL.AddToCart(cartItem);
 
             TempData["Message"] = "Was added successfully";
 
@@ -60,7 +62,7 @@ namespace WebProject.Controllers
             {
                 OrderModel orderModel = new OrderModel(orderInfo, cardCreditinals);
 
-                AccountController.user.ProcessOrder(orderModel);
+                businessLogic.UserBL.ProcessOrder(orderModel);
 
                 return RedirectToAction("ThanksForOrder", "Home");
             }
@@ -73,7 +75,7 @@ namespace WebProject.Controllers
             if (Session["UserData"] == null)
                 return RedirectToAction("Index", "Home");
 
-            AccountController.user.DeleteFromCart(cartItem);
+            businessLogic.UserBL.DeleteFromCart(cartItem);
             return RedirectToAction("Buy", "Cart");
         }
     }

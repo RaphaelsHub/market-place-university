@@ -1,7 +1,32 @@
 {
   "Version": 1,
   "WorkspaceRootPath": "D:\\WebProduct\\WebProject\\",
-  "Documents": [],
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{5F80B0C2-7F0F-4D1D-98CF-08C805A03522}|WebProject\\WebProject.csproj|d:\\webproduct\\webproject\\webproject\\controllers\\admincontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{5F80B0C2-7F0F-4D1D-98CF-08C805A03522}|WebProject\\WebProject.csproj|solutionrelative:webproject\\controllers\\admincontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{5F80B0C2-7F0F-4D1D-98CF-08C805A03522}|WebProject\\WebProject.csproj|d:\\webproduct\\webproject\\webproject\\controllers\\accountcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{5F80B0C2-7F0F-4D1D-98CF-08C805A03522}|WebProject\\WebProject.csproj|solutionrelative:webproject\\controllers\\accountcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{5F80B0C2-7F0F-4D1D-98CF-08C805A03522}|WebProject\\WebProject.csproj|d:\\webproduct\\webproject\\webproject\\controllers\\homecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{5F80B0C2-7F0F-4D1D-98CF-08C805A03522}|WebProject\\WebProject.csproj|solutionrelative:webproject\\controllers\\homecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{5F80B0C2-7F0F-4D1D-98CF-08C805A03522}|WebProject\\WebProject.csproj|d:\\webproduct\\webproject\\webproject\\controllers\\catalogcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{5F80B0C2-7F0F-4D1D-98CF-08C805A03522}|WebProject\\WebProject.csproj|solutionrelative:webproject\\controllers\\catalogcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{5F80B0C2-7F0F-4D1D-98CF-08C805A03522}|WebProject\\WebProject.csproj|d:\\webproduct\\webproject\\webproject\\controllers\\cartcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{5F80B0C2-7F0F-4D1D-98CF-08C805A03522}|WebProject\\WebProject.csproj|solutionrelative:webproject\\controllers\\cartcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{04A69F02-CE57-4DBB-A3C1-E5C262D3BD05}|WebProject.BusinessLogic\\WebProject.BusinessLogic.csproj|d:\\webproduct\\webproject\\webproject.businesslogic\\mainbl\\adminbl.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{04A69F02-CE57-4DBB-A3C1-E5C262D3BD05}|WebProject.BusinessLogic\\WebProject.BusinessLogic.csproj|solutionrelative:webproject.businesslogic\\mainbl\\adminbl.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
   "DocumentGroupContainers": [
     {
       "Orientation": 0,
@@ -9,11 +34,89 @@
       "DocumentGroups": [
         {
           "DockedWidth": 147,
-          "SelectedChildIndex": -1,
+          "SelectedChildIndex": 2,
           "Children": [
             {
               "$type": "Bookmark",
               "Name": "ST:128:0:{116d2292-e37d-41cd-a077-ebacac4c8cc4}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "CartController.cs",
+              "DocumentMoniker": "D:\\WebProduct\\WebProject\\WebProject\\Controllers\\CartController.cs",
+              "RelativeDocumentMoniker": "WebProject\\Controllers\\CartController.cs",
+              "ToolTip": "D:\\WebProduct\\WebProject\\WebProject\\Controllers\\CartController.cs",
+              "RelativeToolTip": "WebProject\\Controllers\\CartController.cs",
+              "ViewState": "AQIAAAkAAAAAAAAAAAAiwA8AAAAwAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-04-10T11:38:31.637Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "AdminController.cs",
+              "DocumentMoniker": "D:\\WebProduct\\WebProject\\WebProject\\Controllers\\AdminController.cs",
+              "RelativeDocumentMoniker": "WebProject\\Controllers\\AdminController.cs",
+              "ToolTip": "D:\\WebProduct\\WebProject\\WebProject\\Controllers\\AdminController.cs",
+              "RelativeToolTip": "WebProject\\Controllers\\AdminController.cs",
+              "ViewState": "AQIAAAwAAAAAAAAAAAAuwB0AAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-04-10T11:29:59.079Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "CatalogController.cs",
+              "DocumentMoniker": "D:\\WebProduct\\WebProject\\WebProject\\Controllers\\CatalogController.cs",
+              "RelativeDocumentMoniker": "WebProject\\Controllers\\CatalogController.cs",
+              "ToolTip": "D:\\WebProduct\\WebProject\\WebProject\\Controllers\\CatalogController.cs",
+              "RelativeToolTip": "WebProject\\Controllers\\CatalogController.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAwAAAAxAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-04-10T11:39:54.12Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "AdminBL.cs",
+              "DocumentMoniker": "D:\\WebProduct\\WebProject\\WebProject.BusinessLogic\\MainBL\\AdminBL.cs",
+              "RelativeDocumentMoniker": "WebProject.BusinessLogic\\MainBL\\AdminBL.cs",
+              "ToolTip": "D:\\WebProduct\\WebProject\\WebProject.BusinessLogic\\MainBL\\AdminBL.cs",
+              "RelativeToolTip": "WebProject.BusinessLogic\\MainBL\\AdminBL.cs",
+              "ViewState": "AQIAABgAAAAAAAAAAAAAACkAAAAdAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-04-10T11:53:37.173Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "HomeController.cs",
+              "DocumentMoniker": "D:\\WebProduct\\WebProject\\WebProject\\Controllers\\HomeController.cs",
+              "RelativeDocumentMoniker": "WebProject\\Controllers\\HomeController.cs",
+              "ToolTip": "D:\\WebProduct\\WebProject\\WebProject\\Controllers\\HomeController.cs",
+              "RelativeToolTip": "WebProject\\Controllers\\HomeController.cs",
+              "ViewState": "AQIAABMAAAAAAAAAAAArwBoAAAAJAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-04-10T11:41:29.325Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "AccountController.cs",
+              "DocumentMoniker": "D:\\WebProduct\\WebProject\\WebProject\\Controllers\\AccountController.cs",
+              "RelativeDocumentMoniker": "WebProject\\Controllers\\AccountController.cs",
+              "ToolTip": "D:\\WebProduct\\WebProject\\WebProject\\Controllers\\AccountController.cs",
+              "RelativeToolTip": "WebProject\\Controllers\\AccountController.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAA0AAAAeAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-04-10T11:06:36.644Z",
+              "EditorCaption": ""
             }
           ]
         }

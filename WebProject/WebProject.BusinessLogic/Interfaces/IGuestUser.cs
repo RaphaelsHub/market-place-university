@@ -8,15 +8,9 @@ using WebProject.Domain.Enum;
 
 namespace WebProject.BusinessLogic.Interfaces
 {
-    public interface IGuestUser
+    internal interface IGuestUser
     {
         UserData Register(RegistrationData registrationData);
         UserData Login(LoginData loginData);
-        AllProducts GetAllProducts();
-        Product GetProductById(int id);
-        AllProducts GetProductByName(string text_search);
-        AllCategories GetCategoriesView();
-        Category GetCategoriesCatalog(int idChildCategory);
-        Category GetCategoriesCatalog(int idChildCategory, SortBy sortBy);
     }
 }

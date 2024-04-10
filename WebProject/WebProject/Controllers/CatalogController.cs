@@ -10,13 +10,14 @@ namespace WebProject.Controllers
 {
     public class CatalogController : Controller
     {
+        readonly BusinessLogic.BusinessLogic businessLogic = new BusinessLogic.BusinessLogic();
+
         // GET: Catalog
-        [AllowAnonymous]
         public ActionResult Items(int? idChildCategory)
         {
             if (idChildCategory.HasValue)
             {
-                Category category = AccountController.guest.GetCategoriesCatalog(idChildCategory.Value);
+                Category category = businessLogic.ProductBL.GetCategoriesCatalog(idChildCategory.Value); 
                 return View(category);
             }
             else
@@ -24,12 +25,11 @@ namespace WebProject.Controllers
                 return RedirectToAction("Error404", "Home");
             }
         }
-        [AllowAnonymous]
         public ActionResult Item(int? id)
         {
             if (id.HasValue)
             {
-                Product product = AccountController.guest.GetProductById(id.Value);
+                Product product = businessLogic.ProductBL.GetProductById(id.Value);
                 if (product != null)
                     return View(product);
                 else

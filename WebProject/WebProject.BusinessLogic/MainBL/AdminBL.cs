@@ -32,18 +32,14 @@ namespace WebProject.BusinessLogic.MainBL
 
         public AllDeliveries GetAllActiveOrder()
         {
-            AllDeliveries a = null;
-
-            a = new AllDeliveries();
+            AllDeliveries a = new AllDeliveries();
 
             return a;
         }
 
         public AllProducts GetAllProducts()
         {
-            AllProducts a = null;
-
-            a= new AllProducts();
+            AllProducts a  = new AllProducts();
 
             return a;
         }
