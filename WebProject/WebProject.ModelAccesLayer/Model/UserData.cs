@@ -16,7 +16,7 @@ namespace WebProject.ModelAccessLayer.Model
         public AllDeliveries DeliveriesUser { get; set; }
         public AllProducts ProductsAdmin { get; set; }
         public AllDeliveries DeliveriesAdmin { get; set; }
-        public StatusUser StatusUser { get; set; }
+        public StatusUser StatusUser { get; set; } = StatusUser.Unknown;
         public bool IsAuthorized { get; set; }
 
         public UserData()

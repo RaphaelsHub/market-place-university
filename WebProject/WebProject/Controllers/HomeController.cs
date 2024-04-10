@@ -15,10 +15,12 @@ namespace WebProject.Controllers
 {
     public class HomeController : Controller
     {
-        static public bool IsAuthorized { get; set; }
-        static public bool IsAdmin { get; set; }
         static public AllCategories allCategories { get; set; }
+
         // GET: Home
+        public ActionResult ThanksForOrder() => View();
+        public ActionResult Error() => View();
+        public ActionResult Error404() => View();
         public ActionResult Index()
         {
             AccountController account = new AccountController();
@@ -30,16 +32,9 @@ namespace WebProject.Controllers
         public ActionResult Search(string text)
         {
             AllProducts searchResults = null;
-            if (text == null)
-            {
-                return View(searchResults);
-            }
-            searchResults = AccountController.guest.GetProductByName(text);
 
-            return View(searchResults);
+            return (text == null) ? View(searchResults) : View(AccountController.guest.GetProductByName(text));
         }
-        public ActionResult ThanksForOrder() => View();
-        public ActionResult Error() => View();
-        public ActionResult Error404() => View();
     }
 }
+

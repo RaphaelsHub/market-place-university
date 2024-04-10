@@ -16,39 +16,46 @@ namespace WebProject.Controllers
         // GET: Cart
         public ActionResult Buy()
         {
-            CartData cartData = null;
-
-            AccountController.user.ViewCart();
-            
-            return View(cartData);
+            if (Session["UserData"] != null)
+                return View((UserData)Session["UserData"]);
+            return RedirectToAction("Index", "Home");
         }
-
+        public ActionResult MakeAnOrder()
+        {
+            if (Session["UserData"] != null)
+                return View();
+            return RedirectToAction("Index", "Home");
+        }
         public ActionResult Delivery()
         {
-            AllDeliveries allDeliveries = null;
-
-            allDeliveries = AccountController.user.ViewOrders();
-
-            return View(allDeliveries);
+            if (Session["UserData"] != null)
+                return View((UserData)Session["UserData"]);
+            return RedirectToAction("Index", "Home");
         }
 
+
+        //в бизнес ложик обмен данными
         [HttpPost]
         public ActionResult AddToCart(CartItem cartItem)
         {
-            TempData["Message"] = "Was added successfully";
+            if (Session["UserData"] == null)
+                return RedirectToAction("Login","Account");
 
-            cartItem.Id_User = AccountController.userData.IdUser;
+            cartItem.Id_User = ((UserData)Session["UserData"]).IdUser;
+
             AccountController.user.AddToCart(cartItem);
+
+            TempData["Message"] = "Was added successfully";
 
             return RedirectToAction("Item", "Catalog", new { id = cartItem.Id });
         }
 
-        // GET: Order
-        public ActionResult MakeAnOrder() => View();
-
         [HttpPost]
         public ActionResult MakeAnOrder(OrderInfo orderInfo, CardCreditionals cardCreditinals)
         {
+            if (Session["UserData"] == null)
+                return RedirectToAction("Index", "Home");
+
             if (ModelState.IsValid)
             {
                 OrderModel orderModel = new OrderModel(orderInfo, cardCreditinals);
@@ -63,7 +70,10 @@ namespace WebProject.Controllers
         [HttpPost]
         public ActionResult DeleteCartItem(CartItem cartItem)
         {
-           AccountController.user.DeleteFromCart(cartItem);
+            if (Session["UserData"] == null)
+                return RedirectToAction("Index", "Home");
+
+            AccountController.user.DeleteFromCart(cartItem);
             return RedirectToAction("Buy", "Cart");
         }
     }

@@ -11,7 +11,7 @@ namespace WebProject.Controllers
     public class CatalogController : Controller
     {
         // GET: Catalog
-
+        [AllowAnonymous]
         public ActionResult Items(int? idChildCategory)
         {
             if (idChildCategory.HasValue)
@@ -24,6 +24,7 @@ namespace WebProject.Controllers
                 return RedirectToAction("Error404", "Home");
             }
         }
+        [AllowAnonymous]
         public ActionResult Item(int? id)
         {
             if (id.HasValue)

@@ -1,11 +1,13 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Security.Principal;
 using System.Web;
 using System.Web.Mvc;
 using System.Web.Security;
 using System.Web.UI.WebControls;
 using WebProject.BusinessLogic.MainBL;
+using WebProject.Domain.Enum;
 using WebProject.ModelAccessLayer.Model;
 
 namespace WebProject.Controllers
@@ -25,53 +27,63 @@ namespace WebProject.Controllers
         }
 
         // GET: SighIn
-        public ActionResult Login() => View();
+        public ActionResult Login()
+        {
+            if (Session["UserData"] == null)
+                return View();
+            else
+                return RedirectToAction("Index", "Home");
+        }
+
         // GET: SignUp
-        public ActionResult Registration() => View();
+        public ActionResult Registration()
+        {
+            if (Session["UserData"] == null)
+                return View();
+            else
+                return RedirectToAction("Index", "Home");
+        }
+
 
         [HttpPost]
         public ActionResult Login(LoginData loginData)
         {
-            userData = guest.Login(loginData);
+            UserData userData = new UserData();
 
+            if (ModelState.IsValid && userData != null)
+            {
+                userData.StatusUser = Domain.Enum.StatusUser.Admin;
+                ;
+                Session["UserData"] = userData;
 
-            if (ModelState.IsValid && !(userData != null))
-            {
-                //Add To Saccion data
-                //Open Cookies
-                HomeController.IsAuthorized = true;
-                return RedirectToAction("Index", "Home"); // Возвращаем перенаправление
+                return RedirectToAction("Index", "Home");
             }
-            else
-            {
-                ViewBag.ErrorMessage = "Invalid email or password";
-                return View(); // Возвращаем представление
-            }
+
+            ViewBag.ErrorMessage = "Invalid email or password";
+            return View();
+
         }
 
         [HttpPost]
         public ActionResult Registration(RegistrationData registrationData)
         {
-            userData = guest.Register(registrationData);
+            UserData userData = new UserData();
 
-            if (ModelState.IsValid && !(userData != null))
+            if (ModelState.IsValid && userData != null)
             {
-                //Add To Saccion data
-                //Open Cookies
-                HomeController.IsAuthorized = true;
+                Session["UserData"] = userData;
+
                 return RedirectToAction("Index", "Home");
             }
-
             return View(registrationData);
+
         }
 
-        //[HttpPost]
         public ActionResult LogOut()
         {
-            user.Logout(userData);
-            //CloseCookies Cookies
-            //Delete seccionData
-            HomeController.IsAuthorized = false;
+            if (user.Logout(userData))
+                Session.Remove("UserData");
+
             return RedirectToAction("Index", "Home");
         }
     }

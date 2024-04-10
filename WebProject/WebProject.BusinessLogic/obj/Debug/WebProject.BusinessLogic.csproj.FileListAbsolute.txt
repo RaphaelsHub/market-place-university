@@ -15,3 +15,5 @@ D:\WebProduct\WebProject\WebProject.BusinessLogic\bin\Debug\WebProject.ModelAcce
 D:\WebProduct\WebProject\WebProject.BusinessLogic\obj\Debug\WebProje.ADEFDFFC.Up2Date
 D:\WebProduct\WebProject\WebProject.BusinessLogic\bin\Debug\WebProject.Domain.dll
 D:\WebProduct\WebProject\WebProject.BusinessLogic\bin\Debug\WebProject.Domain.pdb
+D:\WebProduct\WebProject\WebProject.BusinessLogic\bin\Debug\WebProject.Helper.dll
+D:\WebProduct\WebProject\WebProject.BusinessLogic\bin\Debug\WebProject.Helper.pdb
