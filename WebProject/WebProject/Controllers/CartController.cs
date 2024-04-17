@@ -7,8 +7,6 @@ using WebProject.BusinessLogic.Interfaces;
 using WebProject.BusinessLogic.MainBL;
 
 
-
-
 namespace WebProject.Controllers
 {
     public class CartController : Controller
@@ -22,12 +20,14 @@ namespace WebProject.Controllers
                 return View((UserData)Session["UserData"]);
             return RedirectToAction("Index", "Home");
         }
+
         public ActionResult MakeAnOrder()
         {
             if (Session["UserData"] != null)
                 return View();
             return RedirectToAction("Index", "Home");
         }
+
         public ActionResult Delivery()
         {
             if (Session["UserData"] != null)
@@ -41,11 +41,15 @@ namespace WebProject.Controllers
         public ActionResult AddToCart(CartItem cartItem)
         {
             if (Session["UserData"] == null)
-                return RedirectToAction("Login","Account");
+                return RedirectToAction("Login", "Account");
 
             cartItem.Id_User = ((UserData)Session["UserData"]).IdUser;
 
-            businessLogic.UserBL.AddToCart(cartItem);
+
+            if (((UserData)Session["UserData"]).StatusUser == StatusUser.Admin)
+                businessLogic.AdminBL.AddToCart(cartItem);
+            else
+                businessLogic.UserBL.AddToCart(cartItem);
 
             TempData["Message"] = "Was added successfully";
 
@@ -62,10 +66,14 @@ namespace WebProject.Controllers
             {
                 OrderModel orderModel = new OrderModel(orderInfo, cardCreditinals);
 
-                businessLogic.UserBL.ProcessOrder(orderModel);
+                if (((UserData)Session["UserData"]).StatusUser == StatusUser.Admin)
+                    businessLogic.AdminBL.ProcessOrder(orderModel);
+                else
+                    businessLogic.UserBL.ProcessOrder(orderModel);
 
                 return RedirectToAction("ThanksForOrder", "Home");
             }
+
             return View(new OrderModel(orderInfo, cardCreditinals));
         }
 
@@ -75,7 +83,12 @@ namespace WebProject.Controllers
             if (Session["UserData"] == null)
                 return RedirectToAction("Index", "Home");
 
-            businessLogic.UserBL.DeleteFromCart(cartItem);
+
+            if (((UserData)Session["UserData"]).StatusUser == StatusUser.Admin)
+                businessLogic.AdminBL.DeleteFromCart(cartItem);
+            else
+                businessLogic.UserBL.DeleteFromCart(cartItem);
+            
             return RedirectToAction("Buy", "Cart");
         }
     }

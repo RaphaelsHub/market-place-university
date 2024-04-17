@@ -7,3 +7,12 @@ D:\WebProduct\WebProject\WebProject.ModelAccesLayer\obj\Debug\WebProject.ModelAc
 D:\WebProduct\WebProject\WebProject.ModelAccesLayer\obj\Debug\WebProje.68DD171D.Up2Date
 D:\WebProduct\WebProject\WebProject.ModelAccesLayer\obj\Debug\WebProject.ModelAccesLayer.dll
 D:\WebProduct\WebProject\WebProject.ModelAccesLayer\obj\Debug\WebProject.ModelAccesLayer.pdb
+D:\Repositories\MarketPlaceWebUniversity\WebProject\WebProject.ModelAccesLayer\bin\Debug\WebProject.ModelAccesLayer.dll
+D:\Repositories\MarketPlaceWebUniversity\WebProject\WebProject.ModelAccesLayer\bin\Debug\WebProject.ModelAccesLayer.pdb
+D:\Repositories\MarketPlaceWebUniversity\WebProject\WebProject.ModelAccesLayer\bin\Debug\WebProject.Domain.dll
+D:\Repositories\MarketPlaceWebUniversity\WebProject\WebProject.ModelAccesLayer\bin\Debug\WebProject.Domain.pdb
+D:\Repositories\MarketPlaceWebUniversity\WebProject\WebProject.ModelAccesLayer\obj\Debug\WebProject.ModelAccessLayer.csproj.AssemblyReference.cache
+D:\Repositories\MarketPlaceWebUniversity\WebProject\WebProject.ModelAccesLayer\obj\Debug\WebProject.ModelAccessLayer.csproj.CoreCompileInputs.cache
+D:\Repositories\MarketPlaceWebUniversity\WebProject\WebProject.ModelAccesLayer\obj\Debug\WebProje.68DD171D.Up2Date
+D:\Repositories\MarketPlaceWebUniversity\WebProject\WebProject.ModelAccesLayer\obj\Debug\WebProject.ModelAccesLayer.dll
+D:\Repositories\MarketPlaceWebUniversity\WebProject\WebProject.ModelAccesLayer\obj\Debug\WebProject.ModelAccesLayer.pdb

@@ -14,10 +14,9 @@ namespace WebProject.ModelAccessLayer.Model
         public string NameUser { get; set; }
         public CartData CartUser { get; set; }
         public AllDeliveries DeliveriesUser { get; set; }
-        public AllProducts ProductsAdmin { get; set; }
-        public AllDeliveries DeliveriesAdmin { get; set; }
         public StatusUser StatusUser { get; set; } = StatusUser.Unknown;
-        public bool IsAuthorized { get; set; }
+        public AllProducts ProductsAdmin { get; set; } // ПРИ ЛОГИНЕ НЕ НАДО ВООБЩЕ ТРОАГАТЬ ЭТИ ЧАСТИ 
+        public AllDeliveries DeliveriesAdmin { get; set; } //ЭТО ТОЖЕ!
 
         public UserData()
         {

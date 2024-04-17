@@ -17,3 +17,16 @@ D:\WebProduct\WebProject\WebProject.BusinessLogic\bin\Debug\WebProject.Domain.dl
 D:\WebProduct\WebProject\WebProject.BusinessLogic\bin\Debug\WebProject.Domain.pdb
 D:\WebProduct\WebProject\WebProject.BusinessLogic\bin\Debug\WebProject.Helper.dll
 D:\WebProduct\WebProject\WebProject.BusinessLogic\bin\Debug\WebProject.Helper.pdb
+D:\Repositories\MarketPlaceWebUniversity\WebProject\WebProject.BusinessLogic\bin\Debug\WebProject.BusinessLogic.dll
+D:\Repositories\MarketPlaceWebUniversity\WebProject\WebProject.BusinessLogic\bin\Debug\WebProject.BusinessLogic.pdb
+D:\Repositories\MarketPlaceWebUniversity\WebProject\WebProject.BusinessLogic\bin\Debug\WebProject.Domain.dll
+D:\Repositories\MarketPlaceWebUniversity\WebProject\WebProject.BusinessLogic\bin\Debug\WebProject.Helper.dll
+D:\Repositories\MarketPlaceWebUniversity\WebProject\WebProject.BusinessLogic\bin\Debug\WebProject.ModelAccesLayer.dll
+D:\Repositories\MarketPlaceWebUniversity\WebProject\WebProject.BusinessLogic\bin\Debug\WebProject.Domain.pdb
+D:\Repositories\MarketPlaceWebUniversity\WebProject\WebProject.BusinessLogic\bin\Debug\WebProject.Helper.pdb
+D:\Repositories\MarketPlaceWebUniversity\WebProject\WebProject.BusinessLogic\bin\Debug\WebProject.ModelAccesLayer.pdb
+D:\Repositories\MarketPlaceWebUniversity\WebProject\WebProject.BusinessLogic\obj\Debug\WebProject.BusinessLogic.csproj.AssemblyReference.cache
+D:\Repositories\MarketPlaceWebUniversity\WebProject\WebProject.BusinessLogic\obj\Debug\WebProject.BusinessLogic.csproj.CoreCompileInputs.cache
+D:\Repositories\MarketPlaceWebUniversity\WebProject\WebProject.BusinessLogic\obj\Debug\WebProje.ADEFDFFC.Up2Date
+D:\Repositories\MarketPlaceWebUniversity\WebProject\WebProject.BusinessLogic\obj\Debug\WebProject.BusinessLogic.dll
+D:\Repositories\MarketPlaceWebUniversity\WebProject\WebProject.BusinessLogic\obj\Debug\WebProject.BusinessLogic.pdb

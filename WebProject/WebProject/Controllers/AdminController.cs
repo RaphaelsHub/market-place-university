@@ -24,14 +24,21 @@ namespace WebProject.Controllers
         public ActionResult ViewProducts()
         {
             if (Session["UserData"] != null && ((UserData)Session["UserData"]).StatusUser == StatusUser.Admin)
+            {
+                ((UserData)Session["UserData"]).ProductsAdmin = businessLogic.AdminBL.GetAllProducts();
                 return View((UserData)Session["UserData"]);
+            }
             return RedirectToAction("Index", "Home");
         }
 
         public ActionResult ViewDelivery()
         {
             if (Session["UserData"] != null && ((UserData)Session["UserData"]).StatusUser == StatusUser.Admin)
+            {
+                ((UserData)Session["UserData"]).DeliveriesUser = businessLogic.AdminBL.GetAllActiveOrder();
+                
                 return View((UserData)Session["UserData"]);
+            }
             return RedirectToAction("Index", "Home");
         }
 

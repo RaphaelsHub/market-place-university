@@ -12,7 +12,7 @@ namespace WebProject.BusinessLogic.Interfaces
     {
         AllProducts GetAllProducts();
         Product GetProductById(int id);
-        AllProducts GetProductByName(string text_search);
+        AllProducts GetProductByName(string textSearch);
         AllCategories GetCategoriesView();
         Category GetCategoriesCatalog(int idChildCategory);
         Category GetCategoriesCatalog(int idChildCategory, SortBy sortBy);

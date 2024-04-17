@@ -44,7 +44,6 @@ namespace WebProject.Controllers
                 ViewBag.ErrorMessage = "Invalid email or password";
                 return View();
             }
-
         }
 
         [HttpPost]
@@ -60,16 +59,13 @@ namespace WebProject.Controllers
             }
             else
             {
-
                 return View(registrationData);
             }
-
         }
 
         public ActionResult LogOut()
         {
-            if (businessLogic.UserBL.Logout((UserData)Session["UserData"]))
-                Session.Remove("UserData");
+            Session.Remove("UserData");
 
             return RedirectToAction("Index", "Home");
         }

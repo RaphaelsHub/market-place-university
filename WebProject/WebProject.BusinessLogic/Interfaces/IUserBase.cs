@@ -9,12 +9,10 @@ namespace WebProject.BusinessLogic.Interfaces
 {
     internal interface IUserBase
     {
-        UserData SynchronizeWithDb(UserData userData);
         bool AddToCart(CartItem cartItem);
         bool DeleteFromCart(CartItem cartItem);
-        CartData ViewCart();
         bool ProcessOrder(OrderModel orderModel);
-        AllDeliveries ViewOrders();
-        bool Logout(UserData userData);
+        CartData ViewCart(int indexUser);
+        AllDeliveries ViewOrders(int indexUser);
     }
 }

@@ -20,33 +20,19 @@ namespace WebProject.BusinessLogic.MainBL
             return true;
         }
 
-        public bool Logout(UserData userData)
-        {
-            return true;
-        }
-
         public bool ProcessOrder(OrderModel orderModel)
         {
             return true;
         }
 
-        public UserData SynchronizeWithDb(UserData userData)
+        public CartData ViewCart(int indexUser)
         {
-            throw new NotImplementedException();
+            return null;
         }
 
-        public CartData ViewCart()
+        public AllDeliveries ViewOrders(int indexUser)
         {
-            CartData cartData = null;
-
-            return cartData;
-        }
-
-       public AllDeliveries ViewOrders()
-        {
-            AllDeliveries deliveries = null;
-
-            return deliveries;
+            return null;
         }
     }
 }
