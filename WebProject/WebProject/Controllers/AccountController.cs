@@ -5,7 +5,7 @@ namespace WebProject.Controllers
 {
     public class AccountController : Controller
     {
-        readonly BusinessLogic.BusinessLogic businessLogic = new BusinessLogic.BusinessLogic();
+        readonly BusinessLogic.BusinessLogic _businessLogic = new BusinessLogic.BusinessLogic();
 
         // GET: SighIn
         public ActionResult Login()
@@ -29,7 +29,7 @@ namespace WebProject.Controllers
         [HttpPost]
         public ActionResult Login(LoginData loginData)
         {
-            UserData userData = businessLogic.GuestBL.Login(loginData);
+            UserData userData = _businessLogic.GuestBL.Login(loginData);
 
             if (ModelState.IsValid && userData != null)
             {
@@ -49,7 +49,7 @@ namespace WebProject.Controllers
         [HttpPost]
         public ActionResult Registration(RegistrationData registrationData)
         {
-            UserData userData = businessLogic.GuestBL.Register(registrationData);
+            UserData userData = _businessLogic.GuestBL.Register(registrationData);
 
             if (ModelState.IsValid && userData != null)
             {

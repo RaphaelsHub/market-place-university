@@ -1,11 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Runtime.Remoting.Messaging;
-using System.Web;
-using System.Web.Mvc;
-using WebProject.BusinessLogic.Interfaces;
-using WebProject.BusinessLogic.MainBL;
+﻿using System.Web.Mvc;
 using WebProject.ModelAccessLayer.Model;
 
 
@@ -15,9 +8,9 @@ namespace WebProject.Controllers
 {
     public class HomeController : Controller
     {
-        readonly BusinessLogic.BusinessLogic businessLogic = new BusinessLogic.BusinessLogic();
+        readonly BusinessLogic.BusinessLogic _businessLogic = new BusinessLogic.BusinessLogic();
 
-        static public AllCategories allCategories { get; set; }
+        public static AllCategories AllCategories { get; private set; }
 
         // GET: Home
         public ActionResult ThanksForOrder() => View();
@@ -25,15 +18,15 @@ namespace WebProject.Controllers
         public ActionResult Error404() => View();
         public ActionResult Index()
         {
-            allCategories = businessLogic.ProductBL.GetCategoriesView();
+            AllCategories = _businessLogic.ProductBL.GetCategoriesView();
 
-            return View(businessLogic.ProductBL.GetAllProducts());
+            return View(_businessLogic.ProductBL.GetAllProducts());
         }
         public ActionResult Search(string text)
         {
-            AllProducts searchResults = null;
+            AllProducts searchResults = _businessLogic.ProductBL.GetProductByName(text);
 
-            return (text == null) ? View(searchResults) : View(businessLogic.ProductBL.GetProductByName(text));
+            return (text == null) ? View(searchResults) : View(_businessLogic.ProductBL.GetProductByName(text));
         }
     }
 }

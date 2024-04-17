@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
-using System.Web.Mvc;
+﻿using System.Web.Mvc;
 using WebProject.ModelAccessLayer.Model;
 
 
@@ -10,14 +6,14 @@ namespace WebProject.Controllers
 {
     public class CatalogController : Controller
     {
-        readonly BusinessLogic.BusinessLogic businessLogic = new BusinessLogic.BusinessLogic();
+        readonly BusinessLogic.BusinessLogic _businessLogic = new BusinessLogic.BusinessLogic();
 
         // GET: Catalog
         public ActionResult Items(int? idChildCategory)
         {
             if (idChildCategory.HasValue)
             {
-                Category category = businessLogic.ProductBL.GetCategoriesCatalog(idChildCategory.Value); 
+                Category category = _businessLogic.ProductBL.GetCategoriesCatalog(idChildCategory.Value); 
                 return View(category);
             }
             else
@@ -29,7 +25,7 @@ namespace WebProject.Controllers
         {
             if (id.HasValue)
             {
-                Product product = businessLogic.ProductBL.GetProductById(id.Value);
+                Product product = _businessLogic.ProductBL.GetProductById(id.Value);
                 if (product != null)
                     return View(product);
                 else

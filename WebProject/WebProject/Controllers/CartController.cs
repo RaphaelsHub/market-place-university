@@ -1,17 +1,13 @@
-﻿using System.Net.NetworkInformation;
-using System.Reflection;
-using System.Web.Mvc;
+﻿using System.Web.Mvc;
 using WebProject.ModelAccessLayer.Model;
 using WebProject.Domain.Enum;
-using WebProject.BusinessLogic.Interfaces;
-using WebProject.BusinessLogic.MainBL;
 
 
 namespace WebProject.Controllers
 {
     public class CartController : Controller
     {
-        readonly BusinessLogic.BusinessLogic businessLogic = new BusinessLogic.BusinessLogic();
+        readonly BusinessLogic.BusinessLogic _businessLogic = new BusinessLogic.BusinessLogic();
 
         // GET: Cart
         public ActionResult Buy()
@@ -47,9 +43,9 @@ namespace WebProject.Controllers
 
 
             if (((UserData)Session["UserData"]).StatusUser == StatusUser.Admin)
-                businessLogic.AdminBL.AddToCart(cartItem);
+                _businessLogic.AdminBL.AddToCart(cartItem);
             else
-                businessLogic.UserBL.AddToCart(cartItem);
+                _businessLogic.UserBL.AddToCart(cartItem);
 
             TempData["Message"] = "Was added successfully";
 
@@ -67,9 +63,9 @@ namespace WebProject.Controllers
                 OrderModel orderModel = new OrderModel(orderInfo, cardCreditinals);
 
                 if (((UserData)Session["UserData"]).StatusUser == StatusUser.Admin)
-                    businessLogic.AdminBL.ProcessOrder(orderModel);
+                    _businessLogic.AdminBL.ProcessOrder(orderModel);
                 else
-                    businessLogic.UserBL.ProcessOrder(orderModel);
+                    _businessLogic.UserBL.ProcessOrder(orderModel);
 
                 return RedirectToAction("ThanksForOrder", "Home");
             }
@@ -85,9 +81,9 @@ namespace WebProject.Controllers
 
 
             if (((UserData)Session["UserData"]).StatusUser == StatusUser.Admin)
-                businessLogic.AdminBL.DeleteFromCart(cartItem);
+                _businessLogic.AdminBL.DeleteFromCart(cartItem);
             else
-                businessLogic.UserBL.DeleteFromCart(cartItem);
+                _businessLogic.UserBL.DeleteFromCart(cartItem);
             
             return RedirectToAction("Buy", "Cart");
         }
