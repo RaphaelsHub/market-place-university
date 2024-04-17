@@ -30,3 +30,16 @@ D:\Repositories\MarketPlaceWebUniversity\WebProject\WebProject.BusinessLogic\obj
 D:\Repositories\MarketPlaceWebUniversity\WebProject\WebProject.BusinessLogic\obj\Debug\WebProje.ADEFDFFC.Up2Date
 D:\Repositories\MarketPlaceWebUniversity\WebProject\WebProject.BusinessLogic\obj\Debug\WebProject.BusinessLogic.dll
 D:\Repositories\MarketPlaceWebUniversity\WebProject\WebProject.BusinessLogic\obj\Debug\WebProject.BusinessLogic.pdb
+C:\!univer\!Project\WebProduct\WebProject\WebProject.BusinessLogic\bin\Debug\WebProject.BusinessLogic.dll
+C:\!univer\!Project\WebProduct\WebProject\WebProject.BusinessLogic\bin\Debug\WebProject.BusinessLogic.pdb
+C:\!univer\!Project\WebProduct\WebProject\WebProject.BusinessLogic\bin\Debug\WebProject.Domain.dll
+C:\!univer\!Project\WebProduct\WebProject\WebProject.BusinessLogic\bin\Debug\WebProject.Helper.dll
+C:\!univer\!Project\WebProduct\WebProject\WebProject.BusinessLogic\bin\Debug\WebProject.ModelAccesLayer.dll
+C:\!univer\!Project\WebProduct\WebProject\WebProject.BusinessLogic\bin\Debug\WebProject.Domain.pdb
+C:\!univer\!Project\WebProduct\WebProject\WebProject.BusinessLogic\bin\Debug\WebProject.Helper.pdb
+C:\!univer\!Project\WebProduct\WebProject\WebProject.BusinessLogic\bin\Debug\WebProject.ModelAccesLayer.pdb
+C:\!univer\!Project\WebProduct\WebProject\WebProject.BusinessLogic\obj\Debug\WebProject.BusinessLogic.csproj.AssemblyReference.cache
+C:\!univer\!Project\WebProduct\WebProject\WebProject.BusinessLogic\obj\Debug\WebProject.BusinessLogic.csproj.CoreCompileInputs.cache
+C:\!univer\!Project\WebProduct\WebProject\WebProject.BusinessLogic\obj\Debug\WebProject.BusinessLogic.csproj.CopyComplete
+C:\!univer\!Project\WebProduct\WebProject\WebProject.BusinessLogic\obj\Debug\WebProject.BusinessLogic.dll
+C:\!univer\!Project\WebProduct\WebProject\WebProject.BusinessLogic\obj\Debug\WebProject.BusinessLogic.pdb
