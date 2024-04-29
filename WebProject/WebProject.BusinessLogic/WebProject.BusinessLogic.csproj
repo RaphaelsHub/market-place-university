@@ -44,6 +44,8 @@
   <ItemGroup>
     <Compile Include="BusinessLogic.cs" />
     <Compile Include="Core\Levels\AdminAPI.cs" />
+    <Compile Include="Core\Levels\GeneralResponse\DataResponse.cs" />
+    <Compile Include="Core\Levels\GeneralResponse\ResponseUserStatus.cs" />
     <Compile Include="Core\Levels\ModeratorAPI.cs" />
     <Compile Include="Core\Levels\ProductResponse\PageInfo.cs" />
     <Compile Include="Core\Levels\UserAPI.cs" />

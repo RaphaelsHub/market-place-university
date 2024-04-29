@@ -16,3 +16,9 @@ D:\Repositories\MarketPlaceWebUniversity\WebProject\WebProject.Domain\obj\Debug\
 D:\Repositories\MarketPlaceWebUniversity\WebProject\WebProject.Domain\obj\Debug\WebProject.Domain.csproj.CoreCompileInputs.cache
 D:\Repositories\MarketPlaceWebUniversity\WebProject\WebProject.Domain\obj\Debug\WebProject.Domain.dll
 D:\Repositories\MarketPlaceWebUniversity\WebProject\WebProject.Domain\obj\Debug\WebProject.Domain.pdb
+D:\!Univer\Univer_4th_sem\!Project\WebProduct\WebProject\WebProject.Domain\bin\Debug\WebProject.Domain.dll
+D:\!Univer\Univer_4th_sem\!Project\WebProduct\WebProject\WebProject.Domain\bin\Debug\WebProject.Domain.pdb
+D:\!Univer\Univer_4th_sem\!Project\WebProduct\WebProject\WebProject.Domain\obj\Debug\WebProject.Domain.csproj.AssemblyReference.cache
+D:\!Univer\Univer_4th_sem\!Project\WebProduct\WebProject\WebProject.Domain\obj\Debug\WebProject.Domain.csproj.CoreCompileInputs.cache
+D:\!Univer\Univer_4th_sem\!Project\WebProduct\WebProject\WebProject.Domain\obj\Debug\WebProject.Domain.dll
+D:\!Univer\Univer_4th_sem\!Project\WebProduct\WebProject\WebProject.Domain\obj\Debug\WebProject.Domain.pdb

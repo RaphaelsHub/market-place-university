@@ -42,12 +42,14 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Entities\User\UserData.cs" />
+    <Compile Include="Entities\DBModels\UserEF.cs" />
     <Compile Include="Enum\SortBy.cs" />
     <Compile Include="Enum\StatusUser.cs" />
     <Compile Include="Enum\StatusDelivery.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Folder Include="Entities\User\" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
