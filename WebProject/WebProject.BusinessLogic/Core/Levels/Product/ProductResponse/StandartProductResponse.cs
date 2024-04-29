@@ -8,7 +8,8 @@ namespace WebProject.BusinessLogic.Core.Levels.Product.ProductResponse
 {
     public class StandartProductResponse
     {
-        public bool Status { get; set; }
+        //public ProductData Data { get; set; }
+        public bool IsExist { get; set; }
         public string ResponseMessage { get; set; }
     }
 }
