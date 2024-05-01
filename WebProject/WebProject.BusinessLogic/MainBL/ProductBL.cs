@@ -6,10 +6,14 @@ using System.Threading.Tasks;
 using WebProject.BusinessLogic.Interfaces;
 using WebProject.Domain.Enum;
 using WebProject.ModelAccessLayer.Model;
+using WebProject.BusinessLogic.Core.Levels;
+using WebProject.Domain.Entities.User;
+using WebProject.Domain.Entities.DBModels;
+//using WebProject.ModelAccessLayer.Model;
 
 namespace WebProject.BusinessLogic.MainBL
 {
-    public class ProductBL : IProduct
+    public class ProductBL : ProductAPI, IProduct
     {
         public ProductBL()
         {
@@ -51,5 +55,23 @@ namespace WebProject.BusinessLogic.MainBL
 
             return category;
         }
+        
+        //Convert metods
+        static private Product ConvertProduct(ProductDataEF data)
+        {
+            return new Product
+            {
+                Id = data.Id,
+                Name = data.Name,
+                Details = data.Details,
+                filter = null, // По вопросам к Саше или Ивану
+                ShortDescription = data.ShortDescription,
+                FullDescription = data.FullDescription,
+                PhotoUrl = data.GetPhotos(),
+                Price = data.Price,
+                Amount = data.Amount
+            };
+        }
+    
     }
 }

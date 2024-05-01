@@ -34,5 +34,23 @@ namespace WebProject.Domain.Entities.DBModels
 
         [ForeignKey("AdminId")]
         public virtual UserEF Owner { get; set; }
+
+        public List<string> GetPhotos()
+        {
+            return new List<string>(PhotoUrls.Split(' '));
+        }
+
+        public bool SetPhotos(List<string> listData)
+        {
+            string photoUrls = "";
+            foreach (string photoUrl in listData)
+                photoUrls += photoUrl + " ";
+            if(photoUrls != "")
+            {
+                PhotoUrls = photoUrls;
+                return true;
+            }
+            return false;
+        }
     }
 }
