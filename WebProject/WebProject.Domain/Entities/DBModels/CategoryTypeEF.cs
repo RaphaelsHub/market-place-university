@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 namespace WebProject.Domain.Entities.DBModels
 {
     //мега крутая рекурсивная архитектура
-    //дэ факто архитектура дерева
+    //дэ факто архитектура наследования ввиде дерева
     public class CategoryTypeEF
     {
         //[Key]
