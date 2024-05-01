@@ -22,3 +22,9 @@ D:\!Univer\Univer_4th_sem\!Project\WebProduct\WebProject\WebProject.Domain\obj\D
 D:\!Univer\Univer_4th_sem\!Project\WebProduct\WebProject\WebProject.Domain\obj\Debug\WebProject.Domain.csproj.CoreCompileInputs.cache
 D:\!Univer\Univer_4th_sem\!Project\WebProduct\WebProject\WebProject.Domain\obj\Debug\WebProject.Domain.dll
 D:\!Univer\Univer_4th_sem\!Project\WebProduct\WebProject\WebProject.Domain\obj\Debug\WebProject.Domain.pdb
+D:\!Univer\Univer_4th_sem\!Project\WebProduct\WebProject\WebProject.Domain\bin\Debug\WebProject.Domain.dll.config
+D:\!Univer\Univer_4th_sem\!Project\WebProduct\WebProject\WebProject.Domain\bin\Debug\EntityFramework.dll
+D:\!Univer\Univer_4th_sem\!Project\WebProduct\WebProject\WebProject.Domain\bin\Debug\EntityFramework.SqlServer.dll
+D:\!Univer\Univer_4th_sem\!Project\WebProduct\WebProject\WebProject.Domain\bin\Debug\EntityFramework.xml
+D:\!Univer\Univer_4th_sem\!Project\WebProduct\WebProject\WebProject.Domain\bin\Debug\EntityFramework.SqlServer.xml
+D:\!Univer\Univer_4th_sem\!Project\WebProduct\WebProject\WebProject.Domain\obj\Debug\WebProject.Domain.csproj.CopyComplete
