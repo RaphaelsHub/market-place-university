@@ -55,6 +55,7 @@
     <Compile Include="BusinessLogic.cs" />
     <Compile Include="Core\Levels\AdminAPI.cs" />
     <Compile Include="Core\Levels\GeneralResponse\DataResponse.cs" />
+    <Compile Include="Core\Levels\GeneralResponse\OrderInfoReqest.cs" />
     <Compile Include="Core\Levels\GeneralResponse\PageInfo.cs" />
     <Compile Include="Core\Levels\GeneralResponse\PriceRange.cs" />
     <Compile Include="Core\Levels\GeneralResponse\ResponseUserStatus.cs" />

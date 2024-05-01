@@ -99,7 +99,26 @@ namespace WebProject.BusinessLogic.Core
 
         }
         
-        internal DataResponse<OrderEF> ProcessUserOrder(int indexUser)
+        internal StandartResponse UpdateOrderInfo(OrderInfoReqest updated)
+        {
+            using (var db = new Context())
+            {
+                OrderEF findOrder = db.Orders.FirstOrDefault(or => or.Order_Id == updated.OrderId);
+                if (findOrder != null)
+                {
+                    findOrder.Name = updated.Name;
+                    findOrder.Email = updated.Email;
+                    findOrder.Phone = updated.Phone;
+                    findOrder.Country = updated.Country;
+                    findOrder.City = updated.City;
+                    findOrder.Address = updated.Address;
+                    findOrder.Comment = updated.Comment;
+                    db.SaveChanges();
+                }
+            }
+            return new StandartResponse();
+        }
+        internal DataResponse<OrderEF> ProcessUserOrder(int indexUser, OrderInfoReqest orderInfo)
         {
             var superAdmin = GetSuperAdmin();
             using (var db = new Context())
@@ -119,6 +138,15 @@ namespace WebProject.BusinessLogic.Core
                     userFromDb.CartItems.Clear();
                     userFromDb.Orders.Add(newOrder);
                     superAdmin.Orders.Add(newOrder);
+
+                    newOrder.Name = orderInfo.Name;
+                    newOrder.Email = orderInfo.Email;
+                    newOrder.Phone = orderInfo.Phone;
+                    newOrder.Country = orderInfo.Country;
+                    newOrder.City = orderInfo.City;
+                    newOrder.Address = orderInfo.Address;
+                    newOrder.Comment = orderInfo.Comment;
+
                     db.SaveChanges();
 
                     return new DataResponse<OrderEF> { Data = newOrder, IsExist = true };
@@ -215,7 +243,7 @@ namespace WebProject.BusinessLogic.Core
 
         internal StandartResponse SuperAdminAddProductData(ProductDataEF ProductData)
         {
-            return new StandartResponse();
+            return new StandartResponse(); // ретурнит ваня
         }
         internal StandartResponse SuperAdminEditProductData(ProductDataEF updatedProductData)
         {
