@@ -95,7 +95,7 @@ namespace WebProject.BusinessLogic.Core.Levels
             }
         }
 
-        public DataResponse<UserEF> CheckLogin(LoginData data)
+        internal DataResponse<UserEF> CheckLogin(LoginData data)
         {
             using (var db = new Context())
             {
@@ -116,7 +116,7 @@ namespace WebProject.BusinessLogic.Core.Levels
             }
         }
 
-        public DataResponse<UserEF> RegistrateUser(RegistrationData data)
+        internal DataResponse<UserEF> RegistrateUser(RegistrationData data)
         {
             using (var db = new Context())
             {
