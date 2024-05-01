@@ -49,22 +49,31 @@ namespace WebProject.BusinessLogic.MainBL
         }
         public AllCategories GetCategoriesView()
         {
-            AllCategories categories = null;
-            // для view мне нужны только дети и родитель с именем и продуктами 
-            // иннициализировать только имена и id их, если что можем именами оперировать вдруг у вас не получится
-            return categories;
+            var baseCategory = GetBaseCategory();
+            return ConvertAllCategories(baseCategory.Data.ChildCategories); //all base.ChildCategories -> real basic Categories
         }
         public Category GetCategoriesCatalog(int idChildCategory)
         {
-            Category category = null;
+            var categoryResponse = GetCategoryById(idChildCategory);
+            if (categoryResponse.IsExist == false) // если категории не существует
+            {
+                return null;
+            }
+
+            var productsResponse = GetProductsByCategory(categoryResponse.Data);
+            var category = ConvertCategory(categoryResponse.Data);
+
+            if (productsResponse.IsExist == true) // если у категории есть продукты
+            {
+                var productList = ConvertAllProducts(productsResponse.Data);
+                category.Products = productList.Products;
+            }
 
             return category;
         }
         public Category GetCategoriesCatalog(int idChildCategory, SortBy sortBy)
         {
-            Category category = null;
-
-            return category;
+            return GetCategoriesCatalog(idChildCategory); //как будет не всё равно
         }
         
         //Convert metods
@@ -83,7 +92,7 @@ namespace WebProject.BusinessLogic.MainBL
                 Amount = data.Amount
             };
         }
-    
+        
         static private AllProducts ConvertAllProducts(List<ProductDataEF> listData)
         {
             var allProductList = new List<Product>();
@@ -101,10 +110,12 @@ namespace WebProject.BusinessLogic.MainBL
             var filters = new List<Feature>(); // По вопросам к Саше или Ивану
             var childrens = new List<Category>();
 
-            foreach (CategoryTypeEF child in data.ChildCategories)
-            {
-                childrens.Add(ConvertCategory(child)); // рекурсивное чудо юдо (при очень большой бд ебанёт)
-            }
+            if (data.ChildCategories != null)
+                foreach (CategoryTypeEF child in data.ChildCategories)
+                {
+                    childrens.Add(ConvertCategory(child)); // рекурсивное чудо юдо (при очень большой бд ебанёт)
+                }
+
             return new Category
             {
                 IdCategory = data.CategoryTypeId,
@@ -113,6 +124,16 @@ namespace WebProject.BusinessLogic.MainBL
                 Products = prods,
                 Filters = filters
             };
+        }
+
+        static private AllCategories ConvertAllCategories(ICollection<CategoryTypeEF> categories) 
+        {
+            var allCategories = new List<Category>();
+            foreach (CategoryTypeEF category in categories)
+            {
+                allCategories.Add(ConvertCategory(category));
+            }
+            return new AllCategories { Categories = allCategories };    
         }
     }
 }

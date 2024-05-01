@@ -18,6 +18,7 @@ namespace WebProject.BusinessLogic.Core.Levels
         {
             return GetCategoryByName("Base");
         }    
+
         internal DataResponse<CategoryTypeEF> GetCategoryByName(string name)
         {
             using (var db = new Context())
