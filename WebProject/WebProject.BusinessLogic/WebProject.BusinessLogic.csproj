@@ -59,6 +59,7 @@
     <Compile Include="Core\Levels\GeneralResponse\PriceRange.cs" />
     <Compile Include="Core\Levels\GeneralResponse\ResponseUserStatus.cs" />
     <Compile Include="Core\Levels\GeneralResponse\StandartResponse.cs" />
+    <Compile Include="Core\Levels\GuestAPI.cs" />
     <Compile Include="Core\Levels\ModeratorAPI.cs" />
     <Compile Include="Core\Levels\ProductAPI.cs" />
     <Compile Include="Core\Levels\UserAPI.cs" />

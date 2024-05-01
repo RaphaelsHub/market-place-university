@@ -14,6 +14,7 @@ namespace WebProject.Domain
     {
         public class Context : DbContext
         {
+            public DbSet<UserEF> Users { get; set; }
             public DbSet<ProductDataEF> Products { get; set; }
             public DbSet<CategoryTypeEF> CategoryTypes { get; set; }
             public Context() : base(Constants.SqlConnectionSQLServer) //подключение к mdl3.bayracraft.co.in

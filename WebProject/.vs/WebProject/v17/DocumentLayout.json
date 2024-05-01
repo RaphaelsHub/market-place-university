@@ -1,29 +1,57 @@
 {
   "Version": 1,
-  "WorkspaceRootPath": "D:\\WebProduct\\WebProject\\",
+  "WorkspaceRootPath": "C:\\Users\\Chiril\\Documents\\GitHub\\WebProduct\\WebProject\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{5F80B0C2-7F0F-4D1D-98CF-08C805A03522}|WebProject\\WebProject.csproj|d:\\webproduct\\webproject\\webproject\\controllers\\admincontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{04A69F02-CE57-4DBB-A3C1-E5C262D3BD05}|WebProject.BusinessLogic\\WebProject.BusinessLogic.csproj|c:\\users\\chiril\\documents\\github\\webproduct\\webproject\\webproject.businesslogic\\core\\levels\\guestapi.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{04A69F02-CE57-4DBB-A3C1-E5C262D3BD05}|WebProject.BusinessLogic\\WebProject.BusinessLogic.csproj|solutionrelative:webproject.businesslogic\\core\\levels\\guestapi.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{6B54E2B5-B484-41F4-A47B-8C4E70F663C1}|WebProject.Domain\\WebProject.Domain.csproj|c:\\users\\chiril\\documents\\github\\webproduct\\webproject\\webproject.domain\\db.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{6B54E2B5-B484-41F4-A47B-8C4E70F663C1}|WebProject.Domain\\WebProject.Domain.csproj|solutionrelative:webproject.domain\\db.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{6B54E2B5-B484-41F4-A47B-8C4E70F663C1}|WebProject.Domain\\WebProject.Domain.csproj|c:\\users\\chiril\\documents\\github\\webproduct\\webproject\\webproject.domain\\entities\\dbmodels\\useref.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{6B54E2B5-B484-41F4-A47B-8C4E70F663C1}|WebProject.Domain\\WebProject.Domain.csproj|solutionrelative:webproject.domain\\entities\\dbmodels\\useref.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{04A69F02-CE57-4DBB-A3C1-E5C262D3BD05}|WebProject.BusinessLogic\\WebProject.BusinessLogic.csproj|c:\\users\\chiril\\documents\\github\\webproduct\\webproject\\webproject.businesslogic\\core\\levels\\productapi.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{04A69F02-CE57-4DBB-A3C1-E5C262D3BD05}|WebProject.BusinessLogic\\WebProject.BusinessLogic.csproj|solutionrelative:webproject.businesslogic\\core\\levels\\productapi.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{04A69F02-CE57-4DBB-A3C1-E5C262D3BD05}|WebProject.BusinessLogic\\WebProject.BusinessLogic.csproj|c:\\users\\chiril\\documents\\github\\webproduct\\webproject\\webproject.businesslogic\\core\\levels\\userapi.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{04A69F02-CE57-4DBB-A3C1-E5C262D3BD05}|WebProject.BusinessLogic\\WebProject.BusinessLogic.csproj|solutionrelative:webproject.businesslogic\\core\\levels\\userapi.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{04A69F02-CE57-4DBB-A3C1-E5C262D3BD05}|WebProject.BusinessLogic\\WebProject.BusinessLogic.csproj|c:\\users\\chiril\\documents\\github\\webproduct\\webproject\\webproject.businesslogic\\core\\levels\\adminapi.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{04A69F02-CE57-4DBB-A3C1-E5C262D3BD05}|WebProject.BusinessLogic\\WebProject.BusinessLogic.csproj|solutionrelative:webproject.businesslogic\\core\\levels\\adminapi.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{04A69F02-CE57-4DBB-A3C1-E5C262D3BD05}|WebProject.BusinessLogic\\WebProject.BusinessLogic.csproj|c:\\users\\chiril\\documents\\github\\webproduct\\webproject\\webproject.businesslogic\\core\\levels\\moderatorapi.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{04A69F02-CE57-4DBB-A3C1-E5C262D3BD05}|WebProject.BusinessLogic\\WebProject.BusinessLogic.csproj|solutionrelative:webproject.businesslogic\\core\\levels\\moderatorapi.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{5F80B0C2-7F0F-4D1D-98CF-08C805A03522}|WebProject\\WebProject.csproj|c:\\users\\chiril\\documents\\github\\webproduct\\webproject\\webproject\\controllers\\admincontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{5F80B0C2-7F0F-4D1D-98CF-08C805A03522}|WebProject\\WebProject.csproj|solutionrelative:webproject\\controllers\\admincontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{5F80B0C2-7F0F-4D1D-98CF-08C805A03522}|WebProject\\WebProject.csproj|d:\\webproduct\\webproject\\webproject\\controllers\\accountcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{5F80B0C2-7F0F-4D1D-98CF-08C805A03522}|WebProject\\WebProject.csproj|C:\\Users\\Chiril\\Documents\\GitHub\\WebProduct\\WebProject\\webproject\\controllers\\accountcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{5F80B0C2-7F0F-4D1D-98CF-08C805A03522}|WebProject\\WebProject.csproj|solutionrelative:webproject\\controllers\\accountcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{5F80B0C2-7F0F-4D1D-98CF-08C805A03522}|WebProject\\WebProject.csproj|d:\\webproduct\\webproject\\webproject\\controllers\\homecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{5F80B0C2-7F0F-4D1D-98CF-08C805A03522}|WebProject\\WebProject.csproj|C:\\Users\\Chiril\\Documents\\GitHub\\WebProduct\\WebProject\\webproject\\controllers\\homecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{5F80B0C2-7F0F-4D1D-98CF-08C805A03522}|WebProject\\WebProject.csproj|solutionrelative:webproject\\controllers\\homecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{5F80B0C2-7F0F-4D1D-98CF-08C805A03522}|WebProject\\WebProject.csproj|d:\\webproduct\\webproject\\webproject\\controllers\\catalogcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{5F80B0C2-7F0F-4D1D-98CF-08C805A03522}|WebProject\\WebProject.csproj|C:\\Users\\Chiril\\Documents\\GitHub\\WebProduct\\WebProject\\webproject\\controllers\\catalogcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{5F80B0C2-7F0F-4D1D-98CF-08C805A03522}|WebProject\\WebProject.csproj|solutionrelative:webproject\\controllers\\catalogcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{5F80B0C2-7F0F-4D1D-98CF-08C805A03522}|WebProject\\WebProject.csproj|d:\\webproduct\\webproject\\webproject\\controllers\\cartcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{5F80B0C2-7F0F-4D1D-98CF-08C805A03522}|WebProject\\WebProject.csproj|C:\\Users\\Chiril\\Documents\\GitHub\\WebProduct\\WebProject\\webproject\\controllers\\cartcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{5F80B0C2-7F0F-4D1D-98CF-08C805A03522}|WebProject\\WebProject.csproj|solutionrelative:webproject\\controllers\\cartcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{04A69F02-CE57-4DBB-A3C1-E5C262D3BD05}|WebProject.BusinessLogic\\WebProject.BusinessLogic.csproj|d:\\webproduct\\webproject\\webproject.businesslogic\\mainbl\\adminbl.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{04A69F02-CE57-4DBB-A3C1-E5C262D3BD05}|WebProject.BusinessLogic\\WebProject.BusinessLogic.csproj|C:\\Users\\Chiril\\Documents\\GitHub\\WebProduct\\WebProject\\webproject.businesslogic\\mainbl\\adminbl.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{04A69F02-CE57-4DBB-A3C1-E5C262D3BD05}|WebProject.BusinessLogic\\WebProject.BusinessLogic.csproj|solutionrelative:webproject.businesslogic\\mainbl\\adminbl.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
@@ -33,8 +61,8 @@
       "VerticalTabListWidth": 256,
       "DocumentGroups": [
         {
-          "DockedWidth": 147,
-          "SelectedChildIndex": 2,
+          "DockedWidth": 200,
+          "SelectedChildIndex": 3,
           "Children": [
             {
               "$type": "Bookmark",
@@ -42,11 +70,102 @@
             },
             {
               "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "UserEF.cs",
+              "DocumentMoniker": "C:\\Users\\Chiril\\Documents\\GitHub\\WebProduct\\WebProject\\WebProject.Domain\\Entities\\DBModels\\UserEF.cs",
+              "RelativeDocumentMoniker": "WebProject.Domain\\Entities\\DBModels\\UserEF.cs",
+              "ToolTip": "C:\\Users\\Chiril\\Documents\\GitHub\\WebProduct\\WebProject\\WebProject.Domain\\Entities\\DBModels\\UserEF.cs",
+              "RelativeToolTip": "WebProject.Domain\\Entities\\DBModels\\UserEF.cs",
+              "ViewState": "AQIAAAYAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-05-01T08:05:32.606Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "DB.cs",
+              "DocumentMoniker": "C:\\Users\\Chiril\\Documents\\GitHub\\WebProduct\\WebProject\\WebProject.Domain\\DB.cs",
+              "RelativeDocumentMoniker": "WebProject.Domain\\DB.cs",
+              "ToolTip": "C:\\Users\\Chiril\\Documents\\GitHub\\WebProduct\\WebProject\\WebProject.Domain\\DB.cs",
+              "RelativeToolTip": "WebProject.Domain\\DB.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAABAAAAA0AAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-05-01T08:05:17.194Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "GuestAPI.cs",
+              "DocumentMoniker": "C:\\Users\\Chiril\\Documents\\GitHub\\WebProduct\\WebProject\\WebProject.BusinessLogic\\Core\\Levels\\GuestAPI.cs",
+              "RelativeDocumentMoniker": "WebProject.BusinessLogic\\Core\\Levels\\GuestAPI.cs",
+              "ToolTip": "C:\\Users\\Chiril\\Documents\\GitHub\\WebProduct\\WebProject\\WebProject.BusinessLogic\\Core\\Levels\\GuestAPI.cs",
+              "RelativeToolTip": "WebProject.BusinessLogic\\Core\\Levels\\GuestAPI.cs",
+              "ViewState": "AQIAAEsAAAAAAAAAAAAowHcAAAAJAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-05-01T08:03:50.705Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "ProductAPI.cs",
+              "DocumentMoniker": "C:\\Users\\Chiril\\Documents\\GitHub\\WebProduct\\WebProject\\WebProject.BusinessLogic\\Core\\Levels\\ProductAPI.cs",
+              "RelativeDocumentMoniker": "WebProject.BusinessLogic\\Core\\Levels\\ProductAPI.cs",
+              "ToolTip": "C:\\Users\\Chiril\\Documents\\GitHub\\WebProduct\\WebProject\\WebProject.BusinessLogic\\Core\\Levels\\ProductAPI.cs",
+              "RelativeToolTip": "WebProject.BusinessLogic\\Core\\Levels\\ProductAPI.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAACAAAAAVAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-05-01T07:59:40.264Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
               "DocumentIndex": 4,
+              "Title": "UserAPI.cs",
+              "DocumentMoniker": "C:\\Users\\Chiril\\Documents\\GitHub\\WebProduct\\WebProject\\WebProject.BusinessLogic\\Core\\Levels\\UserAPI.cs",
+              "RelativeDocumentMoniker": "WebProject.BusinessLogic\\Core\\Levels\\UserAPI.cs",
+              "ToolTip": "C:\\Users\\Chiril\\Documents\\GitHub\\WebProduct\\WebProject\\WebProject.BusinessLogic\\Core\\Levels\\UserAPI.cs",
+              "RelativeToolTip": "WebProject.BusinessLogic\\Core\\Levels\\UserAPI.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-05-01T07:59:38.227Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "AdminAPI.cs",
+              "DocumentMoniker": "C:\\Users\\Chiril\\Documents\\GitHub\\WebProduct\\WebProject\\WebProject.BusinessLogic\\Core\\Levels\\AdminAPI.cs",
+              "RelativeDocumentMoniker": "WebProject.BusinessLogic\\Core\\Levels\\AdminAPI.cs",
+              "ToolTip": "C:\\Users\\Chiril\\Documents\\GitHub\\WebProduct\\WebProject\\WebProject.BusinessLogic\\Core\\Levels\\AdminAPI.cs",
+              "RelativeToolTip": "WebProject.BusinessLogic\\Core\\Levels\\AdminAPI.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-05-01T07:59:37.027Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "ModeratorAPI.cs",
+              "DocumentMoniker": "C:\\Users\\Chiril\\Documents\\GitHub\\WebProduct\\WebProject\\WebProject.BusinessLogic\\Core\\Levels\\ModeratorAPI.cs",
+              "RelativeDocumentMoniker": "WebProject.BusinessLogic\\Core\\Levels\\ModeratorAPI.cs",
+              "ToolTip": "C:\\Users\\Chiril\\Documents\\GitHub\\WebProduct\\WebProject\\WebProject.BusinessLogic\\Core\\Levels\\ModeratorAPI.cs",
+              "RelativeToolTip": "WebProject.BusinessLogic\\Core\\Levels\\ModeratorAPI.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-05-01T07:59:34.933Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 11,
               "Title": "CartController.cs",
-              "DocumentMoniker": "D:\\WebProduct\\WebProject\\WebProject\\Controllers\\CartController.cs",
+              "DocumentMoniker": "C:\\Users\\Chiril\\Documents\\GitHub\\WebProduct\\WebProject\\WebProject\\Controllers\\CartController.cs",
               "RelativeDocumentMoniker": "WebProject\\Controllers\\CartController.cs",
-              "ToolTip": "D:\\WebProduct\\WebProject\\WebProject\\Controllers\\CartController.cs",
+              "ToolTip": "C:\\Users\\Chiril\\Documents\\GitHub\\WebProduct\\WebProject\\WebProject\\Controllers\\CartController.cs",
               "RelativeToolTip": "WebProject\\Controllers\\CartController.cs",
               "ViewState": "AQIAAAkAAAAAAAAAAAAiwA8AAAAwAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
@@ -55,11 +174,11 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 7,
               "Title": "AdminController.cs",
-              "DocumentMoniker": "D:\\WebProduct\\WebProject\\WebProject\\Controllers\\AdminController.cs",
+              "DocumentMoniker": "C:\\Users\\Chiril\\Documents\\GitHub\\WebProduct\\WebProject\\WebProject\\Controllers\\AdminController.cs",
               "RelativeDocumentMoniker": "WebProject\\Controllers\\AdminController.cs",
-              "ToolTip": "D:\\WebProduct\\WebProject\\WebProject\\Controllers\\AdminController.cs",
+              "ToolTip": "C:\\Users\\Chiril\\Documents\\GitHub\\WebProduct\\WebProject\\WebProject\\Controllers\\AdminController.cs",
               "RelativeToolTip": "WebProject\\Controllers\\AdminController.cs",
               "ViewState": "AQIAAAwAAAAAAAAAAAAuwB0AAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
@@ -68,11 +187,11 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 10,
               "Title": "CatalogController.cs",
-              "DocumentMoniker": "D:\\WebProduct\\WebProject\\WebProject\\Controllers\\CatalogController.cs",
+              "DocumentMoniker": "C:\\Users\\Chiril\\Documents\\GitHub\\WebProduct\\WebProject\\WebProject\\Controllers\\CatalogController.cs",
               "RelativeDocumentMoniker": "WebProject\\Controllers\\CatalogController.cs",
-              "ToolTip": "D:\\WebProduct\\WebProject\\WebProject\\Controllers\\CatalogController.cs",
+              "ToolTip": "C:\\Users\\Chiril\\Documents\\GitHub\\WebProduct\\WebProject\\WebProject\\Controllers\\CatalogController.cs",
               "RelativeToolTip": "WebProject\\Controllers\\CatalogController.cs",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAAwAAAAxAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
@@ -81,11 +200,11 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
+              "DocumentIndex": 12,
               "Title": "AdminBL.cs",
-              "DocumentMoniker": "D:\\WebProduct\\WebProject\\WebProject.BusinessLogic\\MainBL\\AdminBL.cs",
+              "DocumentMoniker": "C:\\Users\\Chiril\\Documents\\GitHub\\WebProduct\\WebProject\\WebProject.BusinessLogic\\MainBL\\AdminBL.cs",
               "RelativeDocumentMoniker": "WebProject.BusinessLogic\\MainBL\\AdminBL.cs",
-              "ToolTip": "D:\\WebProduct\\WebProject\\WebProject.BusinessLogic\\MainBL\\AdminBL.cs",
+              "ToolTip": "C:\\Users\\Chiril\\Documents\\GitHub\\WebProduct\\WebProject\\WebProject.BusinessLogic\\MainBL\\AdminBL.cs",
               "RelativeToolTip": "WebProject.BusinessLogic\\MainBL\\AdminBL.cs",
               "ViewState": "AQIAABgAAAAAAAAAAAAAACkAAAAdAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
@@ -94,11 +213,11 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 9,
               "Title": "HomeController.cs",
-              "DocumentMoniker": "D:\\WebProduct\\WebProject\\WebProject\\Controllers\\HomeController.cs",
+              "DocumentMoniker": "C:\\Users\\Chiril\\Documents\\GitHub\\WebProduct\\WebProject\\WebProject\\Controllers\\HomeController.cs",
               "RelativeDocumentMoniker": "WebProject\\Controllers\\HomeController.cs",
-              "ToolTip": "D:\\WebProduct\\WebProject\\WebProject\\Controllers\\HomeController.cs",
+              "ToolTip": "C:\\Users\\Chiril\\Documents\\GitHub\\WebProduct\\WebProject\\WebProject\\Controllers\\HomeController.cs",
               "RelativeToolTip": "WebProject\\Controllers\\HomeController.cs",
               "ViewState": "AQIAABMAAAAAAAAAAAArwBoAAAAJAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
@@ -107,16 +226,26 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 8,
               "Title": "AccountController.cs",
-              "DocumentMoniker": "D:\\WebProduct\\WebProject\\WebProject\\Controllers\\AccountController.cs",
+              "DocumentMoniker": "C:\\Users\\Chiril\\Documents\\GitHub\\WebProduct\\WebProject\\WebProject\\Controllers\\AccountController.cs",
               "RelativeDocumentMoniker": "WebProject\\Controllers\\AccountController.cs",
-              "ToolTip": "D:\\WebProduct\\WebProject\\WebProject\\Controllers\\AccountController.cs",
+              "ToolTip": "C:\\Users\\Chiril\\Documents\\GitHub\\WebProduct\\WebProject\\WebProject\\Controllers\\AccountController.cs",
               "RelativeToolTip": "WebProject\\Controllers\\AccountController.cs",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAA0AAAAeAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-04-10T11:06:36.644Z",
               "EditorCaption": ""
+            }
+          ]
+        },
+        {
+          "DockedWidth": 741,
+          "SelectedChildIndex": -1,
+          "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{d78612c7-9962-4b83-95d9-268046dad23a}"
             }
           ]
         }

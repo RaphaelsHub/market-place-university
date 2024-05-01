@@ -28,3 +28,7 @@ D:\!Univer\Univer_4th_sem\!Project\WebProduct\WebProject\WebProject.Domain\bin\D
 D:\!Univer\Univer_4th_sem\!Project\WebProduct\WebProject\WebProject.Domain\bin\Debug\EntityFramework.xml
 D:\!Univer\Univer_4th_sem\!Project\WebProduct\WebProject\WebProject.Domain\bin\Debug\EntityFramework.SqlServer.xml
 D:\!Univer\Univer_4th_sem\!Project\WebProduct\WebProject\WebProject.Domain\obj\Debug\WebProject.Domain.csproj.CopyComplete
+C:\Users\Chiril\Documents\GitHub\WebProduct\WebProject\WebProject.Domain\obj\Debug\WebProject.Domain.csproj.AssemblyReference.cache
+C:\Users\Chiril\Documents\GitHub\WebProduct\WebProject\WebProject.Domain\obj\Debug\WebProject.Domain.csproj.CoreCompileInputs.cache
+C:\Users\Chiril\Documents\GitHub\WebProduct\WebProject\WebProject.Domain\obj\Debug\WebProject.Domain.dll
+C:\Users\Chiril\Documents\GitHub\WebProduct\WebProject\WebProject.Domain\obj\Debug\WebProject.Domain.pdb
