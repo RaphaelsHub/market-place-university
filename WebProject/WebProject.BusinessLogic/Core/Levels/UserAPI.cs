@@ -139,6 +139,8 @@ namespace WebProject.BusinessLogic.Core
                     userFromDb.Orders.Add(newOrder);
                     superAdmin.Orders.Add(newOrder);
 
+                    //orderInfo.OrderId = newOrder.Order_Id; //OrderInfoReqest в EF моделях не нужно
+
                     newOrder.Name = orderInfo.Name;
                     newOrder.Email = orderInfo.Email;
                     newOrder.Phone = orderInfo.Phone;
