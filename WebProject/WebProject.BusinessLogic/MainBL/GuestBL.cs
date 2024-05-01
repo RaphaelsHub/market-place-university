@@ -7,6 +7,7 @@ using System.Threading.Tasks;
 using WebProject.BusinessLogic.Core.Levels;
 using WebProject.BusinessLogic.Interfaces;
 using WebProject.Domain.Entities.DBModels;
+using WebProject.Domain.Entities.User;
 using WebProject.Domain.Enum;
 using WebProject.ModelAccessLayer.Model;
 
@@ -16,33 +17,65 @@ namespace WebProject.BusinessLogic.MainBL
     {
         public UserData Login(LoginData loginData)
         {
-            var result = CheckLogin(loginData);
-            if (!result.IsExist) 
+            var responseResult = CheckLogin(loginData);
+            if (!responseResult.IsExist) 
             {
                 return null;
             }
-            var userDataEF = result.Data;
-            var tmp = new UserData
-            {
-                IdUser = userDataEF.Id,
-                NameUser = userDataEF.Name,
-                CartUser = GenerateCartData(userDataEF.CartItems),
 
-            };
-
-
-            UserData userData = new UserData();
-            return userData;
+            return GenerateUserLoginData(responseResult.Data);
         }
 
         public UserData Register(RegistrationData registrationData)
         {
-            UserData userData = new UserData();
+            var responseResult = RegistrateUser(registrationData);
 
-            return userData;
+            if (!responseResult.IsExist)
+            {
+                return null;
+            }
+
+            return GenerateUserLoginData(responseResult.Data);
         }
 
-        private OrderModel GetOrder(OrderEF data)
+
+        //преобразования EntityFramework моделей в ASP.Net модели
+        static private UserData GenerateUserLoginData(UserEF data)
+        {
+            return new UserData
+            {
+                IdUser = data.Id,
+                NameUser = data.Name,
+                CartUser = GenerateCartData(data.CartItems),
+                DeliveriesUser = GenerateDeliveries(data.Orders)
+                //ProductsAdmin не заполняется
+                //DeliveriesAdmin не заполняется
+                //причину не заполнения смотреть -> WebProject.ModelAccessLayer.Model.UserData
+            };
+        }
+
+        static private Dictionary<string, StatusDelivery> StatusDeliveryDictionary = new Dictionary<string, StatusDelivery>
+        {
+            {"Pending", StatusDelivery.Pending},                // Ожидание
+            {"Processing" , StatusDelivery.Processing},         // Обработка
+            {"Shipped" , StatusDelivery.Shipped},               // Отправлено
+            {"OutForDelivery" , StatusDelivery.OutForDelivery },// В пути
+            {"Delivered" , StatusDelivery.Delivered },          // Доставлено
+            {"Returned" , StatusDelivery.Returned },            // Возвращено
+            {"Canceled" , StatusDelivery.Canceled }             // Отменено
+        };
+        static private StatusDelivery GenerateStatusDelivery(string RawOrderStatusEF)
+        {
+            if (GuestBL.StatusDeliveryDictionary.TryGetValue(RawOrderStatusEF, out StatusDelivery result))
+            {
+                return result;
+            }
+            else
+            {
+                return 0; //нужно придумать возврат некоректных данных
+            }
+        }
+        static private OrderModel GenerateOrderModel(OrderEF data)
         {
             var orderInfo = new OrderInfo
             { 
@@ -59,7 +92,7 @@ namespace WebProject.BusinessLogic.MainBL
             var cardCred = new CardCreditionals();
             var cartData = GenerateCartData(data.CartItems);
 
-            var StatusDelivery = WebProject.Domain.Enum.StatusDelivery.Pending;
+            var StatusDelivery = GenerateStatusDelivery(data.StatusDelivery);
 
             return new OrderModel
             {
@@ -71,11 +104,20 @@ namespace WebProject.BusinessLogic.MainBL
             };
 
         }
-        private AllDeliveries GetDeliveries(ICollection<OrderEF> orders)
+        static private AllDeliveries GenerateDeliveries(ICollection<OrderEF> orders)
         {
+            var deliverisList = new List<OrderModel>();
 
+            foreach (var order in orders)
+            {
+                deliverisList.Add(GenerateOrderModel(order));
+            }
+            return new AllDeliveries
+            {
+                AllOrders = deliverisList
+            };
         }
-        private Product GenerateProduct(ProductDataEF data)
+        static private Product GenerateProduct(ProductDataEF data)
         {
             return new Product
             {
@@ -90,8 +132,7 @@ namespace WebProject.BusinessLogic.MainBL
                 PhotoUrl = null // написать ване
             };
         }
-
-        private CartData GenerateCartData(ICollection<CartItemEF> userCart)
+        static private CartData GenerateCartData(ICollection<CartItemEF> userCart)
         {
             List<Tuple<Product, int>> productList = new List<Tuple<Product, int>>();
             decimal sumPrice = 0;
