@@ -14,7 +14,7 @@ namespace WebProject.Domain.Entities.DBModels
     //дэ факто архитектура наследования ввиде дерева
     public class CategoryTypeEF
     {
-        //[Key]
+        [Key]
         public int CategoryTypeId { get; set; }
         public string CategoryName { get; set; }
 
@@ -25,7 +25,7 @@ namespace WebProject.Domain.Entities.DBModels
         // Навигационное свойство на родительскую категорию
         public int? ParentCategoryId { get; set; }
 
-        //[ForeignKey("ParentCategoryId")]
+        [ForeignKey("ParentCategoryId")]
         public virtual CategoryTypeEF ParentCategory { get; set; }
 
         // Коллекция дочерних категорий
