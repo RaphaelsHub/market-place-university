@@ -14,6 +14,79 @@ namespace WebProject.BusinessLogic.Core.Levels
     public class ProductAPI
     {
         //public ProductDataAPI() { }
+        internal DataResponse<CategoryTypeEF> GetBaseCategory()
+        {
+            return GetCategoryByName("Base");
+        }    
+        internal DataResponse<CategoryTypeEF> GetCategoryByName(string name)
+        {
+            using (var db = new Context())
+            {
+                try
+                {
+                    var category = db.CategoryTypes.FirstOrDefault(p => p.CategoryName == name);
+
+                    string resp = "";
+                    if (category == null)
+                    {
+                        resp = $"There is no CategoryType with this name: {name}";
+                    }
+
+                    return new DataResponse<CategoryTypeEF>
+                    {
+                        Data = category,
+                        IsExist = (category != null),
+                        ResponseMessage = resp
+
+                    };
+                }
+                catch (Exception ex)
+                {
+                    return new DataResponse<CategoryTypeEF>
+                    {
+                        Data = null,
+                        IsExist = false,
+                        ResponseMessage = "Unexpected error: " + ex.Message
+                    };
+                }
+            }
+
+        }
+
+        internal DataResponse<CategoryTypeEF> GetCategoryById(int id)
+        {
+            using (var db = new Context())
+            {
+                try
+                {
+                    var category = db.CategoryTypes.FirstOrDefault(p => p.CategoryTypeId == id);
+
+                    string resp = "";
+                    if (category == null)
+                    {
+                        resp = $"There is no CategoryType with this id: {id}";
+                    }
+
+                    return new DataResponse<CategoryTypeEF>
+                    {
+                        Data = category,
+                        IsExist = (category != null),
+                        ResponseMessage = resp
+
+                    };
+                }
+                catch (Exception ex)
+                {
+                    return new DataResponse<CategoryTypeEF>
+                    {
+                        Data = null,
+                        IsExist = false,
+                        ResponseMessage = "Unexpected error: " + ex.Message
+                    };
+                }
+            }
+
+        }
 
         internal DataResponse<ProductDataEF> GetSingleProductData(int id)
         {
