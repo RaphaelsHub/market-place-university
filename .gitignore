@@ -41,3 +41,6 @@ _ReSharper*/
 
 # Entity Framework database schema
 *.edmx.diagram
+
+# Constants for connecting to MSSQL server
+Constants.cs
