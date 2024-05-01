@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -41,19 +42,39 @@ namespace WebProject.BusinessLogic.MainBL
             return userData;
         }
 
-        //private OrderModel GetOrder(OrderEF data)
-        //{
-        //    return new OrderModel
-        //    { 
-        //        Id = data.Order_Id,
-        //        OrderInfo = data
-        //    };
+        private OrderModel GetOrder(OrderEF data)
+        {
+            var orderInfo = new OrderInfo
+            { 
+                UserId = data.UserId,
 
-        //}
-        //private AllDeliveries GetDeliveries(ICollection<OrderEF> orders)
-        //{
-            
-        //}
+                Name = data.Name,
+                Email = data.Email,
+                Phone = data.Phone,
+                Country = data.Country,
+                City = data.City,
+                Address = data.Address,
+                Comment = data.Comment,
+            };
+            var cardCred = new CardCreditionals();
+            var cartData = GenerateCartData(data.CartItems);
+
+            var StatusDelivery = WebProject.Domain.Enum.StatusDelivery.Pending;
+
+            return new OrderModel
+            {
+                Id = data.Order_Id,
+                OrderInfo = orderInfo,
+                CardCreditinals = cardCred,
+                CartData = cartData,
+                StatusDelivery = StatusDelivery
+            };
+
+        }
+        private AllDeliveries GetDeliveries(ICollection<OrderEF> orders)
+        {
+
+        }
         private Product GenerateProduct(ProductDataEF data)
         {
             return new Product

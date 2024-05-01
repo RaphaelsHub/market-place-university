@@ -33,5 +33,6 @@ namespace WebProject.Domain.Entities.DBModels
         public string City { get; set; }
         public string Address { get; set; }
         public string Comment { get; set; }
+        public string StatusDelivery { get; set; }
     }
 }

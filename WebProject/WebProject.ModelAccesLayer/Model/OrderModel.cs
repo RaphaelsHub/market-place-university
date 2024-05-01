@@ -15,7 +15,7 @@ namespace WebProject.ModelAccessLayer.Model
         public CartData CartData { get; set; }
         public StatusDelivery StatusDelivery { get; set; } = StatusDelivery.Pending;
         
-
+        public OrderModel() { } //Chiril
 
         public OrderModel(OrderInfo orderInfo, CardCreditionals cardCreditinals, CartData cartData)
         {

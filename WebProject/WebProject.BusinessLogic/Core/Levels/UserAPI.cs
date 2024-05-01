@@ -9,6 +9,7 @@ using WebProject.BusinessLogic.Core.Levels.GeneralResponse;
 using WebProject.Domain.Entities.DBModels;
 using WebProject.Domain.Entities.User;
 using WebProject.Domain;
+using WebProject.ModelAccessLayer.Model;
 
 namespace WebProject.BusinessLogic.Core
 {
@@ -113,7 +114,13 @@ namespace WebProject.BusinessLogic.Core
                     findOrder.City = updated.City;
                     findOrder.Address = updated.Address;
                     findOrder.Comment = updated.Comment;
+                    findOrder.StatusDelivery = updated.StatusDelivery;
                     db.SaveChanges();
+                    return new StandartResponse { Status = true };
+                }
+                else
+                {
+                    return new StandartResponse { Status = false, ResponseMessage = "Cant find order with id = updated.OrderId" };
                 }
             }
             return new StandartResponse();
@@ -148,6 +155,7 @@ namespace WebProject.BusinessLogic.Core
                     newOrder.City = orderInfo.City;
                     newOrder.Address = orderInfo.Address;
                     newOrder.Comment = orderInfo.Comment;
+                    newOrder.StatusDelivery = orderInfo.StatusDelivery;
 
                     db.SaveChanges();
 

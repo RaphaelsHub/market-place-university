@@ -24,5 +24,7 @@ namespace WebProject.BusinessLogic.Core.Levels.GeneralResponse
 
         public string Comment { get; set; }
 
+        public string StatusDelivery { get; set; }
+
     }
 }
