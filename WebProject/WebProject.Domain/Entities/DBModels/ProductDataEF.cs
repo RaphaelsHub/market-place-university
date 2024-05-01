@@ -4,12 +4,16 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using WebProject.Domain.Entities.User;
+using System.ComponentModel.DataAnnotations.Schema;
+using System.ComponentModel.DataAnnotations;
+
+
 
 namespace WebProject.Domain.Entities.DBModels
 {
     public class ProductDataEF
     {
-        //[Key]
+        [Key]
         public int Id { get; set; }
         public int CategoryId { get; set; }
         public int AdminId { get; set; }
@@ -22,11 +26,11 @@ namespace WebProject.Domain.Entities.DBModels
         public int Amount { get; set; }
 
         // Навигационное свойство для связи с категорией товара
-        //[ForeignKey("CategoryId")]
-        //public virtual CategoryTypeEF Category { get; set; }
+        [ForeignKey("CategoryId")]
+        public virtual CategoryTypeEF Category { get; set; }
 
 
-        //[ForeignKey("AdminId")]
-        //public virtual UserEF Owner { get; set; }
+        [ForeignKey("AdminId")]
+        public virtual UserEF Owner { get; set; }
     }
 }
