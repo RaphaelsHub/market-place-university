@@ -15,7 +15,7 @@ namespace WebProject.BusinessLogic.Core.Levels
     {
         //public ProductDataAPI() { }
 
-        internal DataResponse<ProductDataEF> ProductDataGetSingleProductData(int id)
+        internal DataResponse<ProductDataEF> GetSingleProductData(int id)
         {
             using (var db = new Context())
             {
@@ -158,7 +158,7 @@ namespace WebProject.BusinessLogic.Core.Levels
 
         internal StandartResponse DeleteProductDataByID(int id)
         {
-            var prodResponse = ProductDataGetSingleProductData(id);
+            var prodResponse = GetSingleProductData(id);
             if (prodResponse.IsExist == false)
             {
                 return new StandartResponse
