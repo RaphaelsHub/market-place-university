@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace WebProject.BusinessLogic.Core
 {
-    internal class AdminAPI
+    internal class AdminAPI //unnecessary
     {
     }
 }
