@@ -8,7 +8,7 @@ using WebProject.BusinessLogic.Core.Levels.GeneralResponse;
 
 namespace WebProject.BusinessLogic.Core.Levels
 {
-    internal class ProductAPI
+    public class ProductAPI
     {
     }
 }
