@@ -98,7 +98,8 @@ namespace WebProject.BusinessLogic.Core
             }
 
         }
-        internal StandartResponse ProcessUserOrder(int indexUser)
+        
+        internal DataResponse<OrderEF> ProcessUserOrder(int indexUser)
         {
             var superAdmin = GetSuperAdmin();
             using (var db = new Context())
@@ -110,7 +111,7 @@ namespace WebProject.BusinessLogic.Core
                 {
                     if (userFromDb.CartItems.Count() <= 0)
                     {
-                        return new StandartResponse { Status = false, ResponseMessage = "User dont have any item in cart" };
+                        return new DataResponse<OrderEF> { Data = null, IsExist = false, ResponseMessage = "User dont have any item in cart" };
                     }
 
                     OrderEF newOrder = new OrderEF { User = userFromDb, Admin = superAdmin, OrderDate = DateTime.Now, CartItems = userFromDb.CartItems };
@@ -120,15 +121,14 @@ namespace WebProject.BusinessLogic.Core
                     superAdmin.Orders.Add(newOrder);
                     db.SaveChanges();
 
-                    // Возвращаем обновленный объект UserData
-                    return new StandartResponse { Status = true };
+                    return new DataResponse<OrderEF> { Data = newOrder, IsExist = true };
 
                 }
                 else
                 {
                     // Если пользователя с указанным Id не найдено в базе данных,
                     // возможно, стоит сгенерировать исключение или выполнить другое действие по обработке этой ситуации
-                    return new StandartResponse { Status = false, ResponseMessage = "User not found in database." };
+                    return new DataResponse<OrderEF> { Data = null, IsExist = false, ResponseMessage = "User not found in database." };
                 }
             }
         }

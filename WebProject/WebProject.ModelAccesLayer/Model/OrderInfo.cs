@@ -38,6 +38,8 @@ namespace WebProject.ModelAccessLayer.Model
         [Display(Name = "Comment(Optional)")]
         public string Comment { get; set; }
 
+        public int UserId { get; set; }
+
         public OrderInfo() { }
 
         public OrderInfo(string name, string email, string phone, string country, string city, string address, string comment)
