@@ -42,6 +42,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Constants.cs" />
+    <Compile Include="Entities\DBModels\AdminEF.cs" />
+    <Compile Include="Entities\DBModels\CartItemEF.cs" />
+    <Compile Include="Entities\DBModels\CategoryTypeEF.cs" />
+    <Compile Include="Entities\DBModels\OrderEF.cs" />
+    <Compile Include="Entities\DBModels\ProductDataEF.cs" />
     <Compile Include="Entities\DBModels\UserEF.cs" />
     <Compile Include="Enum\SortBy.cs" />
     <Compile Include="Enum\StatusUser.cs" />

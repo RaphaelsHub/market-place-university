@@ -45,9 +45,12 @@
     <Compile Include="BusinessLogic.cs" />
     <Compile Include="Core\Levels\AdminAPI.cs" />
     <Compile Include="Core\Levels\GeneralResponse\DataResponse.cs" />
+    <Compile Include="Core\Levels\GeneralResponse\PageInfo.cs" />
+    <Compile Include="Core\Levels\GeneralResponse\PriceRange.cs" />
     <Compile Include="Core\Levels\GeneralResponse\ResponseUserStatus.cs" />
+    <Compile Include="Core\Levels\GeneralResponse\StandartResponse.cs" />
     <Compile Include="Core\Levels\ModeratorAPI.cs" />
-    <Compile Include="Core\Levels\ProductResponse\PageInfo.cs" />
+    <Compile Include="Core\Levels\ProductAPI.cs" />
     <Compile Include="Core\Levels\UserAPI.cs" />
     <Compile Include="Interfaces\IAdmin.cs" />
     <Compile Include="Interfaces\IGuestUser.cs" />
