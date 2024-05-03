@@ -81,3 +81,9 @@ C:\Users\Chiril\Documents\GitHub\WebProduct\WebProject\WebProject.BusinessLogic\
 C:\Users\Chiril\Documents\GitHub\WebProduct\WebProject\WebProject.BusinessLogic\bin\Debug\EntityFramework.xml
 C:\Users\Chiril\Documents\GitHub\WebProduct\WebProject\WebProject.BusinessLogic\bin\Debug\EntityFramework.SqlServer.xml
 C:\Users\Chiril\Documents\GitHub\WebProduct\WebProject\WebProject.BusinessLogic\obj\Debug\WebProje.ADEFDFFC.Up2Date
+C:\!univer\!Project\WebProduct\WebProject\WebProject.BusinessLogic\bin\Debug\WebProject.BusinessLogic.dll.config
+C:\!univer\!Project\WebProduct\WebProject\WebProject.BusinessLogic\bin\Debug\EntityFramework.dll
+C:\!univer\!Project\WebProduct\WebProject\WebProject.BusinessLogic\bin\Debug\EntityFramework.SqlServer.dll
+C:\!univer\!Project\WebProduct\WebProject\WebProject.BusinessLogic\bin\Debug\WebProject.Domain.dll.config
+C:\!univer\!Project\WebProduct\WebProject\WebProject.BusinessLogic\bin\Debug\EntityFramework.xml
+C:\!univer\!Project\WebProduct\WebProject\WebProject.BusinessLogic\bin\Debug\EntityFramework.SqlServer.xml

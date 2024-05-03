@@ -32,3 +32,15 @@ C:\Users\Chiril\Documents\GitHub\WebProduct\WebProject\WebProject.Domain\obj\Deb
 C:\Users\Chiril\Documents\GitHub\WebProduct\WebProject\WebProject.Domain\obj\Debug\WebProject.Domain.csproj.CoreCompileInputs.cache
 C:\Users\Chiril\Documents\GitHub\WebProduct\WebProject\WebProject.Domain\obj\Debug\WebProject.Domain.dll
 C:\Users\Chiril\Documents\GitHub\WebProduct\WebProject\WebProject.Domain\obj\Debug\WebProject.Domain.pdb
+C:\!univer\!Project\WebProduct\WebProject\WebProject.Domain\bin\Debug\WebProject.Domain.dll.config
+C:\!univer\!Project\WebProduct\WebProject\WebProject.Domain\bin\Debug\WebProject.Domain.dll
+C:\!univer\!Project\WebProduct\WebProject\WebProject.Domain\bin\Debug\WebProject.Domain.pdb
+C:\!univer\!Project\WebProduct\WebProject\WebProject.Domain\bin\Debug\EntityFramework.dll
+C:\!univer\!Project\WebProduct\WebProject\WebProject.Domain\bin\Debug\EntityFramework.SqlServer.dll
+C:\!univer\!Project\WebProduct\WebProject\WebProject.Domain\bin\Debug\EntityFramework.xml
+C:\!univer\!Project\WebProduct\WebProject\WebProject.Domain\bin\Debug\EntityFramework.SqlServer.xml
+C:\!univer\!Project\WebProduct\WebProject\WebProject.Domain\obj\Debug\WebProject.Domain.csproj.AssemblyReference.cache
+C:\!univer\!Project\WebProduct\WebProject\WebProject.Domain\obj\Debug\WebProject.Domain.csproj.CoreCompileInputs.cache
+C:\!univer\!Project\WebProduct\WebProject\WebProject.Domain\obj\Debug\WebProject.Domain.csproj.CopyComplete
+C:\!univer\!Project\WebProduct\WebProject\WebProject.Domain\obj\Debug\WebProject.Domain.dll
+C:\!univer\!Project\WebProduct\WebProject\WebProject.Domain\obj\Debug\WebProject.Domain.pdb

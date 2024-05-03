@@ -38,3 +38,15 @@ C:\Users\Chiril\Documents\GitHub\WebProduct\WebProject\WebProject.ModelAccesLaye
 C:\Users\Chiril\Documents\GitHub\WebProduct\WebProject\WebProject.ModelAccesLayer\obj\Debug\WebProje.68DD171D.Up2Date
 C:\Users\Chiril\Documents\GitHub\WebProduct\WebProject\WebProject.ModelAccesLayer\obj\Debug\WebProject.ModelAccesLayer.dll
 C:\Users\Chiril\Documents\GitHub\WebProduct\WebProject\WebProject.ModelAccesLayer\obj\Debug\WebProject.ModelAccesLayer.pdb
+C:\!univer\!Project\WebProduct\WebProject\WebProject.ModelAccesLayer\bin\Debug\WebProject.ModelAccesLayer.dll
+C:\!univer\!Project\WebProduct\WebProject\WebProject.ModelAccesLayer\bin\Debug\WebProject.ModelAccesLayer.pdb
+C:\!univer\!Project\WebProduct\WebProject\WebProject.ModelAccesLayer\bin\Debug\WebProject.Domain.dll
+C:\!univer\!Project\WebProduct\WebProject\WebProject.ModelAccesLayer\bin\Debug\EntityFramework.dll
+C:\!univer\!Project\WebProduct\WebProject\WebProject.ModelAccesLayer\bin\Debug\WebProject.Domain.pdb
+C:\!univer\!Project\WebProduct\WebProject\WebProject.ModelAccesLayer\bin\Debug\WebProject.Domain.dll.config
+C:\!univer\!Project\WebProduct\WebProject\WebProject.ModelAccesLayer\bin\Debug\EntityFramework.xml
+C:\!univer\!Project\WebProduct\WebProject\WebProject.ModelAccesLayer\obj\Debug\WebProject.ModelAccessLayer.csproj.AssemblyReference.cache
+C:\!univer\!Project\WebProduct\WebProject\WebProject.ModelAccesLayer\obj\Debug\WebProject.ModelAccessLayer.csproj.CoreCompileInputs.cache
+C:\!univer\!Project\WebProduct\WebProject\WebProject.ModelAccesLayer\obj\Debug\WebProject.ModelAccessLayer.csproj.CopyComplete
+C:\!univer\!Project\WebProduct\WebProject\WebProject.ModelAccesLayer\obj\Debug\WebProject.ModelAccesLayer.dll
+C:\!univer\!Project\WebProduct\WebProject\WebProject.ModelAccesLayer\obj\Debug\WebProject.ModelAccesLayer.pdb

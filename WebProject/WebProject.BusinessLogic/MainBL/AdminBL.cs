@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using WebProject.BusinessLogic.Core;
+using WebProject.BusinessLogic.Core.Levels;
 using WebProject.BusinessLogic.Interfaces;
 using WebProject.ModelAccessLayer.Model;
 
@@ -10,6 +12,8 @@ namespace WebProject.BusinessLogic.MainBL
 {
     public class AdminBL : IAdmin, IUserBase
     {
+        static private UserAPI _userAPI = new UserAPI();
+        static private ProductAPI _productAPI = new ProductAPI();
         public bool AddProduct(Product product)
         {
             return true;
