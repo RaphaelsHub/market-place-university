@@ -73,7 +73,25 @@ namespace WebProject.BusinessLogic.MainBL
         }
         public Category GetCategoriesCatalog(int idChildCategory, SortBy sortBy)
         {
-            return GetCategoriesCatalog(idChildCategory); //как будет не всё равно
+            var unsortedCategory = GetCategoriesCatalog(idChildCategory);
+            switch (sortBy)
+            {
+                case SortBy.Low:
+                    unsortedCategory.Products.Sort((x, y) => x.Price.CompareTo(y.Price));
+                    break;
+                case SortBy.High:
+                    unsortedCategory.Products.Sort((x, y) => y.Price.CompareTo(x.Price));
+                    break;
+                case SortBy.AZ :
+                    unsortedCategory.Products.Sort((x, y) => x.Name.CompareTo(y.Name));
+                    break;
+                case SortBy.ZA :
+                    unsortedCategory.Products.Sort((x, y) => y.Name.CompareTo(x.Name));
+                    break;
+                case SortBy.None: break;
+            }
+            unsortedCategory.SortBy = sortBy;
+            return unsortedCategory;
         }
         
         //Convert metods
