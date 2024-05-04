@@ -251,10 +251,6 @@ namespace WebProject.BusinessLogic.Core
             }
         }
 
-        internal StandartResponse SuperAdminAddProductData(ProductDataEF ProductData)
-        {
-            return new StandartResponse(); // ретурнит ваня
-        }
         internal StandartResponse SuperAdminEditProductData(ProductDataEF updatedProductData)
         {
             using (var db = new Context())
