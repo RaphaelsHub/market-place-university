@@ -14,7 +14,7 @@ using WebProject.Domain.Enum;
 
 namespace WebProject.BusinessLogic.MainBL
 {
-    public class AdminBL : IAdmin, IUserBase
+    public class AdminBL : UserBL, IAdmin, IUserBase
     {
         static private UserAPI _userAPI = new UserAPI();
         static private ProductAPI _productAPI = new ProductAPI();
@@ -22,25 +22,30 @@ namespace WebProject.BusinessLogic.MainBL
         {
             var productEF = ConvertProductDataEF(product);
             productEF.Owner = _userAPI.GetSuperAdmin();
-            return true;
+            var response = _productAPI.AddProductDataToDB(productEF);
+            return response.Status; // response.Status (true -> added to DB, false -> cant added to DB)
         }
 
-        public bool DeleteOrderModel(int idOrder)
+        public bool DeleteOrderModel(int idOrder) 
         {
             return true;
         }
 
         public bool DeleteProduct(int id)
         {
-            return true;
+            var response = _productAPI.DeleteProductDataByID(id);
+            return response.Status; // response.Status (true -> deleted from DB, false -> cant deleted from DB)
         }
 
         public bool EditProduct(Product updatedProduct)
         {
-            return true;
+            var productEF = ConvertProductDataEF(updatedProduct);
+            productEF.Id = updatedProduct.Id;
+            var response = _productAPI.ModifyProductData(productEF);
+            return response.Status;// response.Status (true -> prod is updated, false -> prod cant updated)
         }
 
-        public AllDeliveries GetAllActiveOrder()
+        public AllDeliveries GetAllActiveOrder() 
         {
             AllDeliveries a = new AllDeliveries();
 
@@ -54,9 +59,11 @@ namespace WebProject.BusinessLogic.MainBL
             return a;
         }
 
-        public bool AddToCart(CartItem cartItem)
+        // Metods from UserBL? unessesary to change
+
+        /*public bool AddToCart(CartItem cartItem)
         {
-            return true;
+            return false;
         }
 
         public bool DeleteFromCart(CartItem cartItem)
@@ -78,7 +85,7 @@ namespace WebProject.BusinessLogic.MainBL
         public AllDeliveries ViewOrders(int indexUser)
         {
             return null;
-        }
+        } */
     
         //Convert
         static private ProductDataEF ConvertProductDataEF(Product product)
