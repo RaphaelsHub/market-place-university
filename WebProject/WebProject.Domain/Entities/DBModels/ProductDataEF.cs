@@ -33,7 +33,7 @@ namespace WebProject.Domain.Entities.DBModels
 
 
         [ForeignKey("AdminId")]
-        public virtual UserEF Owner { get; set; }
+        public virtual AdminEF Owner { get; set; }
 
         public List<string> GetPhotos()
         {

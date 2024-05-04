@@ -20,6 +20,8 @@ namespace WebProject.BusinessLogic.MainBL
         static private ProductAPI _productAPI = new ProductAPI();
         public bool AddProduct(Product product)
         {
+            var productEF = ConvertProductDataEF(product);
+            productEF.
             return true;
         }
 
