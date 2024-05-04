@@ -91,7 +91,7 @@ namespace WebProject.BusinessLogic.Core
             }
         }
 
-        private AdminEF GetSuperAdmin()
+        internal AdminEF GetSuperAdmin()
         {
             using (var db = new Context())
             {

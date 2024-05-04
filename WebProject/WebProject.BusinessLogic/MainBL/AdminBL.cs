@@ -21,7 +21,7 @@ namespace WebProject.BusinessLogic.MainBL
         public bool AddProduct(Product product)
         {
             var productEF = ConvertProductDataEF(product);
-            productEF.
+            productEF.Owner = _userAPI.GetSuperAdmin();
             return true;
         }
 
