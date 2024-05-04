@@ -28,7 +28,8 @@ namespace WebProject.BusinessLogic.MainBL
 
         public bool DeleteOrderModel(int idOrder) 
         {
-            return true;
+            var response = _userAPI.SuperAdminDeleteOrderModel(idOrder);
+            return response.Status; // response.Status (true -> deleted from DB, false -> cant deleted from DB)
         }
 
         public bool DeleteProduct(int id)
