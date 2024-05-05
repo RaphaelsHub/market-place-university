@@ -40,6 +40,32 @@ namespace WebProject.BusinessLogic.Core
             }
         }
 
+        internal DataResponse<CartItemEF> FindCartItemEF(int productId, int userId)
+        {
+            using (var db = new Context())
+            {
+                //не проверяю принадлежность к админу потому что SuperAdmin
+                var userDB = db.Users.FirstOrDefault(u => u.Id == userId);
+
+                if (userDB != null)
+                {
+                    var cartItemDB = userDB.CartItems.FirstOrDefault(i => i.ProductId == productId);
+                    if(cartItemDB != null)
+                    {
+                        return new DataResponse<CartItemEF> { Data = cartItemDB, IsExist = true};
+                    }
+                    else
+                    {
+                        return new DataResponse<CartItemEF> { Data = null, IsExist = false, ResponseMessage = "This CartItemEF dont exist" };
+                    }
+                }
+                else
+                {
+                    return new DataResponse<CartItemEF> { Data = null, IsExist = false, ResponseMessage = "This User with userId dont exist" };
+                }
+
+            }
+        }
         internal StandartResponse AddToUserCart(CartItemEF cartItem)
         {
             using (var db = new Context())

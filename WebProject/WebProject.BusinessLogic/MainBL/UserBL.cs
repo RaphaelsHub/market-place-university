@@ -3,15 +3,18 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using WebProject.BusinessLogic.Core;
 using WebProject.BusinessLogic.Interfaces;
+using WebProject.Domain.Entities.DBModels;
 using WebProject.ModelAccessLayer.Model;
 
 namespace WebProject.BusinessLogic.MainBL
 {
-    public class UserBL : IUserBase
+    public class UserBL : UserAPI, IUserBase
     {
         public bool AddToCart(CartItem cartItem)
         {
+
             return true;
         }
 
