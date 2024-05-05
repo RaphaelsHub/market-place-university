@@ -184,10 +184,6 @@ namespace WebProject.BusinessLogic.Core
                     OrderEF newOrder = new OrderEF { User = userFromDb, Admin = superAdmin, OrderDate = DateTime.Now, CartItems = userFromDb.CartItems };
                     // Обновляем данные пользователя в объекте UserData
                     userFromDb.CartItems.Clear();
-                    userFromDb.Orders.Add(newOrder);
-                    superAdmin.Orders.Add(newOrder);
-
-                    //orderInfo.OrderId = newOrder.Order_Id; //OrderInfoReqest в EF моделях не нужно
 
                     newOrder.Name = orderInfo.Name;
                     newOrder.Email = orderInfo.Email;
@@ -197,6 +193,9 @@ namespace WebProject.BusinessLogic.Core
                     newOrder.Address = orderInfo.Address;
                     newOrder.Comment = orderInfo.Comment;
                     newOrder.StatusDelivery = orderInfo.StatusDelivery;
+
+                    userFromDb.Orders.Add(newOrder);
+                    superAdmin.Orders.Add(newOrder);
 
                     db.SaveChanges();
 
