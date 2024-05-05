@@ -56,7 +56,7 @@ namespace WebProject.BusinessLogic.Core
                 }
             }
         }
-        internal DataResponse<CartItemEF> FindCartItemEF(int idOrder, int indexUser)
+        internal DataResponse<CartItemEF> FindCartItemEF(int idProduct, int indexUser)
         {
             using (var db = new Context())
             {
@@ -64,7 +64,7 @@ namespace WebProject.BusinessLogic.Core
 
                 if (userDB != null)
                 {
-                    var cartItemDB = userDB.CartItems.FirstOrDefault(i => i.ProductId == idOrder);
+                    var cartItemDB = userDB.CartItems.FirstOrDefault(i => i.ProductId == idProduct);
                     if(cartItemDB != null)
                     {
                         return new DataResponse<CartItemEF> { Data = cartItemDB, IsExist = true};
