@@ -40,16 +40,31 @@ namespace WebProject.BusinessLogic.Core
             }
         }
 
-        internal DataResponse<CartItemEF> FindCartItemEF(int productId, int userId)
+        internal DataResponse<UserEF> FindUserEF(int indexUser)
         {
             using (var db = new Context())
             {
-                //не проверяю принадлежность к админу потому что SuperAdmin
-                var userDB = db.Users.FirstOrDefault(u => u.Id == userId);
+                var userDB = db.Users.FirstOrDefault(u => u.Id == indexUser);
 
                 if (userDB != null)
                 {
-                    var cartItemDB = userDB.CartItems.FirstOrDefault(i => i.ProductId == productId);
+                    return new DataResponse<UserEF> { Data = userDB, IsExist = true};
+                }
+                else
+                {
+                    return new DataResponse<UserEF> { Data = null, IsExist = false, ResponseMessage = "This User with userId dont exist" };
+                }
+            }
+        }
+        internal DataResponse<CartItemEF> FindCartItemEF(int idOrder, int indexUser)
+        {
+            using (var db = new Context())
+            {
+                var userDB = db.Users.FirstOrDefault(u => u.Id == indexUser);
+
+                if (userDB != null)
+                {
+                    var cartItemDB = userDB.CartItems.FirstOrDefault(i => i.ProductId == idOrder);
                     if(cartItemDB != null)
                     {
                         return new DataResponse<CartItemEF> { Data = cartItemDB, IsExist = true};
@@ -61,7 +76,7 @@ namespace WebProject.BusinessLogic.Core
                 }
                 else
                 {
-                    return new DataResponse<CartItemEF> { Data = null, IsExist = false, ResponseMessage = "This User with userId dont exist" };
+                    return new DataResponse<CartItemEF> { Data = null, IsExist = false, ResponseMessage = "This User with indexUser dont exist" };
                 }
 
             }
