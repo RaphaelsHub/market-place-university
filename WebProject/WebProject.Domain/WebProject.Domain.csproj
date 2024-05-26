@@ -44,6 +44,8 @@
     <Reference Include="System" />
     <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -52,8 +54,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Constants.cs" />
-    <Compile Include="DB.cs" />
+    <Compile Include="Context.cs" />
     <Compile Include="Entities\DBModels\AdminEF.cs" />
     <Compile Include="Entities\DBModels\CartItemEF.cs" />
     <Compile Include="Entities\DBModels\CategoryTypeEF.cs" />
@@ -63,11 +64,10 @@
     <Compile Include="Enum\SortBy.cs" />
     <Compile Include="Enum\StatusUser.cs" />
     <Compile Include="Enum\StatusDelivery.cs" />
+    <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Entities\User\" />
-  </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
     <None Include="App.config" />
     <None Include="packages.config" />

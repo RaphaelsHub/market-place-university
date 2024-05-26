@@ -1,5 +1,12 @@
-﻿using System.Web.Mvc;
+﻿using System.Runtime.Remoting.Contexts;
+using System.Web.Mvc;
 using WebProject.ModelAccessLayer.Model;
+using WebProject.Domain.Entities;
+using WebProject.Domain.Entities.User;
+using System;
+using WebProject.Domain;
+using System.Data.Entity;
+using System.Linq;
 
 
 
@@ -18,6 +25,38 @@ namespace WebProject.Controllers
         public ActionResult Error404() => View();
         public ActionResult Index()
         {
+            /*
+            using (var dbContext = new Domain.Context())
+            {
+                UserEF A = new UserEF()
+                {
+                    Name = "Alex",
+                    Email = "Spekel2003@gmail.com",
+                    PhoneNumber = "37367361356",
+                    Password = "password",
+                    LogTime = DateTime.Now,
+                    RegTime = DateTime.Now,
+                };
+                dbContext.Users.Add(A);
+                dbContext.SaveChanges();
+
+            };
+            using (var dbContext = new Domain.Context())
+            {
+                var z = dbContext.Users.Take(10).ToList();
+
+
+                if (z != null)
+                {
+                    foreach (var item in z)
+                        Console.WriteLine($"Hello, World! Id: {item.Id}, Name: {item.Name}");
+                }
+                else
+                {
+                    Console.WriteLine("No entities found.");
+                }
+            };
+            */
             AllCategories = _businessLogic.ProductBL.GetCategoriesView();
 
             return View(_businessLogic.ProductBL.GetAllProducts());

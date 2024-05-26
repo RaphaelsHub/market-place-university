@@ -42,6 +42,8 @@ namespace WebProject.BusinessLogic.MainBL
         //преобразования EntityFramework моделей в ASP.Net модели
         static private UserData GenerateUserLoginData(UserEF data)
         {
+            if (data == null)
+                return null;
             return new UserData
             {
                 IdUser = data.Id,
@@ -106,6 +108,9 @@ namespace WebProject.BusinessLogic.MainBL
         }
         static private AllDeliveries GenerateDeliveries(ICollection<OrderEF> orders)
         {
+            if(orders == null)
+                return null;
+
             var deliverisList = new List<OrderModel>();
 
             foreach (var order in orders)
@@ -134,6 +139,9 @@ namespace WebProject.BusinessLogic.MainBL
         }
         static private CartData GenerateCartData(ICollection<CartItemEF> userCart)
         {
+          
+            if (userCart== null)
+                return null;
             List<Tuple<Product, int>> productList = new List<Tuple<Product, int>>();
             decimal sumPrice = 0;
             decimal deliveryPrice = 0;
@@ -147,7 +155,9 @@ namespace WebProject.BusinessLogic.MainBL
                 sumPrice += cartItem.Product.Price * cartItem.Quantity;
                 productList.Add(par);
             }
+
             finalPrice = sumPrice + deliveryPrice;
+
             return new CartData
             { 
                 SumPrice = sumPrice,

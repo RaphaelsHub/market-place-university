@@ -44,3 +44,9 @@ C:\!univer\!Project\WebProduct\WebProject\WebProject.Domain\obj\Debug\WebProject
 C:\!univer\!Project\WebProduct\WebProject\WebProject.Domain\obj\Debug\WebProject.Domain.csproj.CopyComplete
 C:\!univer\!Project\WebProduct\WebProject\WebProject.Domain\obj\Debug\WebProject.Domain.dll
 C:\!univer\!Project\WebProduct\WebProject\WebProject.Domain\obj\Debug\WebProject.Domain.pdb
+D:\Repositories\MarketPlaceWebUniversity\WebProject\WebProject.Domain\bin\Debug\WebProject.Domain.dll.config
+D:\Repositories\MarketPlaceWebUniversity\WebProject\WebProject.Domain\bin\Debug\EntityFramework.dll
+D:\Repositories\MarketPlaceWebUniversity\WebProject\WebProject.Domain\bin\Debug\EntityFramework.SqlServer.dll
+D:\Repositories\MarketPlaceWebUniversity\WebProject\WebProject.Domain\bin\Debug\EntityFramework.xml
+D:\Repositories\MarketPlaceWebUniversity\WebProject\WebProject.Domain\bin\Debug\EntityFramework.SqlServer.xml
+D:\Repositories\MarketPlaceWebUniversity\WebProject\WebProject.Domain\obj\Debug\WebProje.59F0A004.Up2Date

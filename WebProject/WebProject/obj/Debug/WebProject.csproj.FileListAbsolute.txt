@@ -284,11 +284,9 @@ D:\Repositories\MarketPlaceWebUniversity\WebProject\WebProject\bin\System.Web.We
 D:\Repositories\MarketPlaceWebUniversity\WebProject\WebProject\bin\System.Web.Webpages.Razor.dll
 D:\Repositories\MarketPlaceWebUniversity\WebProject\WebProject\bin\WebProject.BusinessLogic.dll
 D:\Repositories\MarketPlaceWebUniversity\WebProject\WebProject\bin\WebProject.Domain.dll
-D:\Repositories\MarketPlaceWebUniversity\WebProject\WebProject\bin\WebProject.Helper.dll
 D:\Repositories\MarketPlaceWebUniversity\WebProject\WebProject\bin\WebProject.ModelAccesLayer.dll
 D:\Repositories\MarketPlaceWebUniversity\WebProject\WebProject\bin\WebProject.BusinessLogic.pdb
 D:\Repositories\MarketPlaceWebUniversity\WebProject\WebProject\bin\WebProject.Domain.pdb
-D:\Repositories\MarketPlaceWebUniversity\WebProject\WebProject\bin\WebProject.Helper.pdb
 D:\Repositories\MarketPlaceWebUniversity\WebProject\WebProject\bin\WebProject.ModelAccesLayer.pdb
 D:\Repositories\MarketPlaceWebUniversity\WebProject\WebProject\bin\System.Web.Razor.xml
 D:\Repositories\MarketPlaceWebUniversity\WebProject\WebProject\bin\System.Web.Webpages.xml
@@ -302,3 +300,9 @@ D:\Repositories\MarketPlaceWebUniversity\WebProject\WebProject\obj\Debug\WebProj
 D:\Repositories\MarketPlaceWebUniversity\WebProject\WebProject\obj\Debug\WebProject.csproj.Up2Date
 D:\Repositories\MarketPlaceWebUniversity\WebProject\WebProject\obj\Debug\WebProject.dll
 D:\Repositories\MarketPlaceWebUniversity\WebProject\WebProject\obj\Debug\WebProject.pdb
+D:\Repositories\MarketPlaceWebUniversity\WebProject\WebProject\bin\EntityFramework.dll
+D:\Repositories\MarketPlaceWebUniversity\WebProject\WebProject\bin\EntityFramework.SqlServer.dll
+D:\Repositories\MarketPlaceWebUniversity\WebProject\WebProject\bin\WebProject.BusinessLogic.dll.config
+D:\Repositories\MarketPlaceWebUniversity\WebProject\WebProject\bin\WebProject.Domain.dll.config
+D:\Repositories\MarketPlaceWebUniversity\WebProject\WebProject\bin\EntityFramework.xml
+D:\Repositories\MarketPlaceWebUniversity\WebProject\WebProject\bin\EntityFramework.SqlServer.xml

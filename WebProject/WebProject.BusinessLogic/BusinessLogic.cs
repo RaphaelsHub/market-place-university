@@ -1,11 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using WebProject.BusinessLogic.Interfaces;
-using WebProject.BusinessLogic.MainBL;
+﻿using WebProject.BusinessLogic.MainBL;
 
 namespace WebProject.BusinessLogic
 {

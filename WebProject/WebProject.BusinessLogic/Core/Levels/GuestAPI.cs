@@ -4,9 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using WebProject.BusinessLogic.Core.Levels.GeneralResponse;
+using WebProject.Domain;
 using WebProject.Domain.Entities.User;
 using WebProject.ModelAccessLayer.Model;
-using static WebProject.Domain.DB;
 
 namespace WebProject.BusinessLogic.Core.Levels
 {
@@ -145,7 +145,7 @@ namespace WebProject.BusinessLogic.Core.Levels
                     NewUser.PhoneNumber = data.Phone;
                     db.Users.Add(NewUser);
                     db.SaveChanges();
-                    return new DataResponse<UserEF> { Data = null, IsExist = false, ResponseMessage = "User created" };
+                    return new DataResponse<UserEF> { Data = NewUser, IsExist = true, ResponseMessage = "User created" };
                 }
             }
         }

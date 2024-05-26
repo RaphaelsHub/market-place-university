@@ -20,10 +20,8 @@ D:\WebProduct\WebProject\WebProject.BusinessLogic\bin\Debug\WebProject.Helper.pd
 D:\Repositories\MarketPlaceWebUniversity\WebProject\WebProject.BusinessLogic\bin\Debug\WebProject.BusinessLogic.dll
 D:\Repositories\MarketPlaceWebUniversity\WebProject\WebProject.BusinessLogic\bin\Debug\WebProject.BusinessLogic.pdb
 D:\Repositories\MarketPlaceWebUniversity\WebProject\WebProject.BusinessLogic\bin\Debug\WebProject.Domain.dll
-D:\Repositories\MarketPlaceWebUniversity\WebProject\WebProject.BusinessLogic\bin\Debug\WebProject.Helper.dll
 D:\Repositories\MarketPlaceWebUniversity\WebProject\WebProject.BusinessLogic\bin\Debug\WebProject.ModelAccesLayer.dll
 D:\Repositories\MarketPlaceWebUniversity\WebProject\WebProject.BusinessLogic\bin\Debug\WebProject.Domain.pdb
-D:\Repositories\MarketPlaceWebUniversity\WebProject\WebProject.BusinessLogic\bin\Debug\WebProject.Helper.pdb
 D:\Repositories\MarketPlaceWebUniversity\WebProject\WebProject.BusinessLogic\bin\Debug\WebProject.ModelAccesLayer.pdb
 D:\Repositories\MarketPlaceWebUniversity\WebProject\WebProject.BusinessLogic\obj\Debug\WebProject.BusinessLogic.csproj.AssemblyReference.cache
 D:\Repositories\MarketPlaceWebUniversity\WebProject\WebProject.BusinessLogic\obj\Debug\WebProject.BusinessLogic.csproj.CoreCompileInputs.cache
@@ -87,3 +85,9 @@ C:\!univer\!Project\WebProduct\WebProject\WebProject.BusinessLogic\bin\Debug\Ent
 C:\!univer\!Project\WebProduct\WebProject\WebProject.BusinessLogic\bin\Debug\WebProject.Domain.dll.config
 C:\!univer\!Project\WebProduct\WebProject\WebProject.BusinessLogic\bin\Debug\EntityFramework.xml
 C:\!univer\!Project\WebProduct\WebProject\WebProject.BusinessLogic\bin\Debug\EntityFramework.SqlServer.xml
+D:\Repositories\MarketPlaceWebUniversity\WebProject\WebProject.BusinessLogic\bin\Debug\WebProject.BusinessLogic.dll.config
+D:\Repositories\MarketPlaceWebUniversity\WebProject\WebProject.BusinessLogic\bin\Debug\EntityFramework.dll
+D:\Repositories\MarketPlaceWebUniversity\WebProject\WebProject.BusinessLogic\bin\Debug\EntityFramework.SqlServer.dll
+D:\Repositories\MarketPlaceWebUniversity\WebProject\WebProject.BusinessLogic\bin\Debug\WebProject.Domain.dll.config
+D:\Repositories\MarketPlaceWebUniversity\WebProject\WebProject.BusinessLogic\bin\Debug\EntityFramework.xml
+D:\Repositories\MarketPlaceWebUniversity\WebProject\WebProject.BusinessLogic\bin\Debug\EntityFramework.SqlServer.xml

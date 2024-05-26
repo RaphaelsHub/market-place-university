@@ -6,8 +6,8 @@ using System.Threading.Tasks;
 using WebProject.BusinessLogic.Core.Levels.Product;
 using WebProject.BusinessLogic.Core.Levels.GeneralResponse;
 using WebProject.Domain.Entities.DBModels;
-using static WebProject.Domain.DB;
 using System.Data.Entity;
+using WebProject.Domain;
 
 namespace WebProject.BusinessLogic.Core.Levels
 {

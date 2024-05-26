@@ -17,7 +17,7 @@ namespace WebProject.BusinessLogic.MainBL
     public class ProductBL : ProductAPI, IProduct
     {
         //public ProductBL() { }
-        public AllProducts GetAllProducts()
+        public new AllProducts GetAllProducts()
         {
             var AllProductsResponse = base.GetAllProducts();
             if (AllProductsResponse.IsExist == false)
@@ -50,7 +50,8 @@ namespace WebProject.BusinessLogic.MainBL
         public AllCategories GetCategoriesView()
         {
             var baseCategory = GetBaseCategory();
-            return ConvertAllCategories(baseCategory.Data.ChildCategories); //all base.ChildCategories -> real basic Categories
+            return null;
+            //return ConvertAllCategories(baseCategory.Data.ChildCategories); //all base.ChildCategories -> real basic Categories
         }
         public Category GetCategoriesCatalog(int idChildCategory)
         {

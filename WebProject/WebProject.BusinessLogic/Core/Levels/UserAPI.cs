@@ -1,15 +1,10 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using static WebProject.Domain.DB;
-using System.Data.Entity;
 using WebProject.BusinessLogic.Core.Levels.GeneralResponse;
 using WebProject.Domain.Entities.DBModels;
 using WebProject.Domain.Entities.User;
 using WebProject.Domain;
-using WebProject.ModelAccessLayer.Model;
 
 namespace WebProject.BusinessLogic.Core
 {
@@ -136,7 +131,7 @@ namespace WebProject.BusinessLogic.Core
         {
             using (var db = new Context())
             {
-                return db.Admins.FirstOrDefault(u => u.Id == Constants.SupedAdminID);
+                return db.Admins.FirstOrDefault(u => u.Id == 0);
             }
 
         }
@@ -164,7 +159,6 @@ namespace WebProject.BusinessLogic.Core
                     return new StandartResponse { Status = false, ResponseMessage = "Cant find order with id = updated.OrderId" };
                 }
             }
-            return new StandartResponse();
         }
         internal DataResponse<OrderEF> ProcessUserOrder(int indexUser, OrderInfoReqest orderInfo)
         {
@@ -384,7 +378,6 @@ namespace WebProject.BusinessLogic.Core
                 }
 
             }
-            return new DataResponse<ProductDataEF> { Data = null, IsExist = false, ResponseMessage = "This ProductData dont exist" };
         }
 
         private bool FindAnyProductDataReferenseInOrders(int idProductData, Context db)

@@ -79,10 +79,6 @@
       <Project>{6b54e2b5-b484-41f4-a47b-8c4e70f663c1}</Project>
       <Name>WebProject.Domain</Name>
     </ProjectReference>
-    <ProjectReference Include="..\WebProject.Helper\WebProject.Helper.csproj">
-      <Project>{0232bb97-a9df-4e75-8ca8-4cd944fdf2da}</Project>
-      <Name>WebProject.Helper</Name>
-    </ProjectReference>
     <ProjectReference Include="..\WebProject.ModelAccesLayer\WebProject.ModelAccessLayer.csproj">
       <Project>{a50be0b8-e1e8-4d7a-a2f1-5bed10251fd0}</Project>
       <Name>WebProject.ModelAccessLayer</Name>
