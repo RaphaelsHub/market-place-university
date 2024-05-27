@@ -446,7 +446,7 @@ namespace WebProject.BusinessLogic.Core.Levels
             var BigPage = new PageInfo
             {
                 PageIndex = 0,
-                ProductsPerPage = uint.MaxValue
+                ProductsPerPage = int.MaxValue
             };
             return GetProductsOnPages(BigPage);
         }

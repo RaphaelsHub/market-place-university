@@ -20,8 +20,15 @@ namespace WebProject.BusinessLogic.MainBL
         static private ProductAPI _productAPI = new ProductAPI();
         public bool AddProduct(Product product)
         {
+            _productAPI.CreateBaseCategory();
             var productEF = ConvertProductDataEF(product);
             productEF.Owner = _userAPI.GetSuperAdmin();
+
+            var baseCategoryResponse = _productAPI.GetBaseCategory();
+            if (baseCategoryResponse.IsExist == false)
+                return false;
+            productEF.Category = baseCategoryResponse.Data;
+
             var response = _productAPI.AddProductDataToDB(productEF);
             return response.Status; // response.Status (true -> added to DB, false -> cant added to DB)
         }
@@ -55,9 +62,8 @@ namespace WebProject.BusinessLogic.MainBL
 
         public AllProducts GetAllProducts()
         {
-            AllProducts a = new AllProducts();
-
-            return a;
+            var prodBL = new ProductBL();
+            return prodBL.GetAllProducts();
         }
 
         // Metods from UserBL? unessesary to change

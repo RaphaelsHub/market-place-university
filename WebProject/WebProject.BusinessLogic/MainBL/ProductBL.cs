@@ -24,7 +24,6 @@ namespace WebProject.BusinessLogic.MainBL
             { 
                 return null; 
             }
-
             return ConvertAllProducts(AllProductsResponse.Data);
         }
         public Product GetProductById(int id)
