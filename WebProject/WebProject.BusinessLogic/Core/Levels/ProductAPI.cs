@@ -397,7 +397,7 @@ namespace WebProject.BusinessLogic.Core.Levels
         {
             return (
                 prod.Name != null &&
-                prod.Category != null &&
+                //prod.Category != null &&
                 prod.Details != null &&
                 prod.ShortDescription != null &&
                 prod.Price > 0

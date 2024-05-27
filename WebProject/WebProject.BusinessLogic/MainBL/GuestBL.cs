@@ -4,6 +4,7 @@ using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using WebProject.BusinessLogic.Core;
 using WebProject.BusinessLogic.Core.Levels;
 using WebProject.BusinessLogic.Interfaces;
 using WebProject.Domain.Entities.DBModels;
@@ -22,7 +23,8 @@ namespace WebProject.BusinessLogic.MainBL
             {
                 return null;
             }
-
+            var uAPi = new UserAPI();
+            var isAdmin = uAPi.SetSuperAdmin(responseResult.Data);
             return GenerateUserLoginData(responseResult.Data);
         }
 
@@ -34,22 +36,28 @@ namespace WebProject.BusinessLogic.MainBL
             {
                 return null;
             }
-
             return GenerateUserLoginData(responseResult.Data);
         }
-
 
         //преобразования EntityFramework моделей в ASP.Net модели
         static private UserData GenerateUserLoginData(UserEF data)
         {
             if (data == null)
                 return null;
+            var uAPi = new UserAPI();
+            var superAdmin = uAPi.GetSuperAdmin();
+
+            StatusUser userStatus = StatusUser.User;
+            if (superAdmin != null && data.Id == superAdmin.UserId)
+                userStatus = StatusUser.Admin;
+
             return new UserData
             {
                 IdUser = data.Id,
                 NameUser = data.Name,
                 CartUser = GenerateCartData(data.CartItems),
-                DeliveriesUser = GenerateDeliveries(data.Orders)
+                DeliveriesUser = GenerateDeliveries(data.Orders),
+                StatusUser = userStatus,
                 //ProductsAdmin не заполняется
                 //DeliveriesAdmin не заполняется
                 //причину не заполнения смотреть -> WebProject.ModelAccessLayer.Model.UserData

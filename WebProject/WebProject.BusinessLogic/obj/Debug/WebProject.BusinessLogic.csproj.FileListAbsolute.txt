@@ -47,11 +47,9 @@ D:\!Univer\Univer_4th_sem\!Project\WebProduct\WebProject\WebProject.BusinessLogi
 D:\!Univer\Univer_4th_sem\!Project\WebProduct\WebProject\WebProject.BusinessLogic\bin\Debug\EntityFramework.dll
 D:\!Univer\Univer_4th_sem\!Project\WebProduct\WebProject\WebProject.BusinessLogic\bin\Debug\EntityFramework.SqlServer.dll
 D:\!Univer\Univer_4th_sem\!Project\WebProduct\WebProject\WebProject.BusinessLogic\bin\Debug\WebProject.Domain.dll
-D:\!Univer\Univer_4th_sem\!Project\WebProduct\WebProject\WebProject.BusinessLogic\bin\Debug\WebProject.Helper.dll
 D:\!Univer\Univer_4th_sem\!Project\WebProduct\WebProject\WebProject.BusinessLogic\bin\Debug\WebProject.ModelAccesLayer.dll
 D:\!Univer\Univer_4th_sem\!Project\WebProduct\WebProject\WebProject.BusinessLogic\bin\Debug\WebProject.Domain.pdb
 D:\!Univer\Univer_4th_sem\!Project\WebProduct\WebProject\WebProject.BusinessLogic\bin\Debug\WebProject.Domain.dll.config
-D:\!Univer\Univer_4th_sem\!Project\WebProduct\WebProject\WebProject.BusinessLogic\bin\Debug\WebProject.Helper.pdb
 D:\!Univer\Univer_4th_sem\!Project\WebProduct\WebProject\WebProject.BusinessLogic\bin\Debug\WebProject.ModelAccesLayer.pdb
 D:\!Univer\Univer_4th_sem\!Project\WebProduct\WebProject\WebProject.BusinessLogic\bin\Debug\EntityFramework.xml
 D:\!Univer\Univer_4th_sem\!Project\WebProduct\WebProject\WebProject.BusinessLogic\bin\Debug\EntityFramework.SqlServer.xml

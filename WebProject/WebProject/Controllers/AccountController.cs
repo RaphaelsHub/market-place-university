@@ -30,11 +30,9 @@ namespace WebProject.Controllers
         public ActionResult Login(LoginData loginData)
         {
             UserData userData = _businessLogic.GuestBL.Login(loginData);
-
+             
             if (ModelState.IsValid && userData != null)
             {
-                userData.StatusUser = Domain.Enum.StatusUser.Admin;
-
                 Session["UserData"] = userData;
 
                 return RedirectToAction("Index", "Home");

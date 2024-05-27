@@ -131,11 +131,29 @@ namespace WebProject.BusinessLogic.Core
         {
             using (var db = new Context())
             {
-                return db.Admins.FirstOrDefault(u => u.Id == 0);
+                return db.Admins.FirstOrDefault();
             }
-
         }
-        
+
+        internal StandartResponse SetSuperAdmin(UserEF admin)
+        {
+            using (var db = new Context())
+            {
+                var superAdmin = db.Admins.FirstOrDefault();
+                if (superAdmin == null)
+                {
+                    var newSuperAdmin = new AdminEF
+                    {
+                        UserId = admin.Id
+                    };
+                    db.Admins.Add(newSuperAdmin);
+                    db.SaveChanges();
+                    return new StandartResponse { Status = true };
+                }
+                return new StandartResponse { Status = false, ResponseMessage = "SetSuperAdmin already exist" };
+            }
+        }
+
         internal StandartResponse UpdateOrderInfo(OrderInfoReqest updated)
         {
             using (var db = new Context())
