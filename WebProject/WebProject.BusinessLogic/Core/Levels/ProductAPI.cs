@@ -374,12 +374,21 @@ namespace WebProject.BusinessLogic.Core.Levels
             {
                 try
                 {
-                    db.Entry(updatedProductData).State = EntityState.Modified; // Setting an object state for Modify (Update)
-                    var entry = db.Entry(updatedProductData);
+                    var existingProductData = db.Products.FirstOrDefault(p => p.Name == updatedProductData.Name);
 
-                    if (entry.State == EntityState.Modified)
+                    if (existingProductData != null)
                     {
+                        existingProductData.Name = updatedProductData.Name;
+                        existingProductData.PhotoUrls = updatedProductData.PhotoUrls;
+                        existingProductData.Amount = updatedProductData.Amount;
+                        existingProductData.Price = updatedProductData.Price;
+                        existingProductData.Details = updatedProductData.Details;
+                        existingProductData.ShortDescription = updatedProductData.ShortDescription;
+                        existingProductData.FullDescription = updatedProductData.FullDescription;
+                        existingProductData.Details = updatedProductData.Details;
+
                         db.SaveChanges();
+
                         return new StandartResponse
                         {
                             Status = true,
@@ -405,6 +414,7 @@ namespace WebProject.BusinessLogic.Core.Levels
                 }
             }
         }
+
 
         internal DataResponse<List<ProductDataEF>> GetProductsOnPages(PageInfo currentPage)
         {

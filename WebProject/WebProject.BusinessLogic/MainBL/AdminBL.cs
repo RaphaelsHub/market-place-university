@@ -48,7 +48,6 @@ namespace WebProject.BusinessLogic.MainBL
         public bool EditProduct(Product updatedProduct)
         {
             var productEF = ConvertProductDataEF(updatedProduct);
-            productEF.Id = updatedProduct.Id;
             var response = _productAPI.ModifyProductData(productEF);
             return response.Status;// response.Status (true -> prod is updated, false -> prod cant updated)
         }
