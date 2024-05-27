@@ -8,16 +8,118 @@ using WebProject.BusinessLogic.Core.Levels.GeneralResponse;
 using WebProject.Domain.Entities.DBModels;
 using System.Data.Entity;
 using WebProject.Domain;
+using System.Xml.Linq;
+
 
 namespace WebProject.BusinessLogic.Core.Levels
 {
     public class ProductAPI
     {
+        internal const int withoutParentCategory = -1;
         //public ProductDataAPI() { }
         internal DataResponse<CategoryTypeEF> GetBaseCategory()
         {
             return GetCategoryByName("Base");
-        }    
+        }  
+        
+        internal StandartResponse CreateBaseCategory()
+        {
+            var BaseCategoryResponse = GetBaseCategory();
+            using (var db = new Context())
+            {
+                try
+                {
+                    if (BaseCategoryResponse.IsExist == true)
+                        return new StandartResponse
+                        {
+                            Status = false,
+                            ResponseMessage = "BaseCategory already exist"
+                        };
+
+                    var newBaseCategory = new CategoryTypeEF { CategoryName = "Base" };
+                    db.CategoryTypes.Add(newBaseCategory);
+                    db.SaveChanges();
+
+                    return new StandartResponse
+                    {
+                        Status = true,
+                        ResponseMessage = "BaseCategory created"
+                    };
+                }
+                catch (Exception ex)
+                {
+                    return new StandartResponse
+                    {
+                        Status = false,
+                        ResponseMessage = "Unexpected error: " + ex.Message
+                    };
+                }
+            }
+        }
+
+        internal DataResponse<CategoryTypeEF> CreateCategory(string name, int parrentId = ProductAPI.withoutParentCategory)
+        {
+            var sameNameCategory = GetCategoryByName(name);
+            if (sameNameCategory.IsExist == true)
+                return new DataResponse<CategoryTypeEF>
+                {
+                    Data = sameNameCategory.Data,
+                    IsExist = true,
+                    ResponseMessage = $"Category with name: {name} already exist"
+                };
+
+            if (parrentId == ProductAPI.withoutParentCategory)
+            {
+                var baseCategoryResponse = GetBaseCategory();
+                if(baseCategoryResponse.IsExist == true)
+                    parrentId = baseCategoryResponse.Data.CategoryTypeId;
+                else
+                    return new DataResponse<CategoryTypeEF>
+                    {
+                        Data = null,
+                        IsExist = false,
+                        ResponseMessage = "Dont exist Base category"
+                    };
+            }
+            else
+            {
+                var parrentResponse = GetCategoryById(parrentId);
+                if (parrentResponse.IsExist == false)
+                    return new DataResponse<CategoryTypeEF>
+                    {
+                        Data = null,
+                        IsExist = false,
+                        ResponseMessage = "Dont exist parrent category"
+                    };
+
+            }
+
+            using (var db = new Context())
+            {
+                try
+                {
+                    var newCategory = new CategoryTypeEF { CategoryName = name, ParentCategoryId = parrentId };
+                    db.CategoryTypes.Add(newCategory);
+                    db.SaveChanges();
+
+                    return new DataResponse<CategoryTypeEF>
+                    {
+                        Data = newCategory,
+                        IsExist = true,
+                        ResponseMessage = $"Category with name:{name} created"
+                    };
+                }
+                catch (Exception ex)
+                {
+                    return new DataResponse<CategoryTypeEF>
+                    {
+                        Data = null,
+                        IsExist = false,
+                        ResponseMessage = "Unexpected error: " + ex.Message
+                    };
+                }
+            }
+        }
 
         internal DataResponse<CategoryTypeEF> GetCategoryByName(string name)
         {
