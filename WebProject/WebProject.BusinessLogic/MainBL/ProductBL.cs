@@ -36,6 +36,15 @@ namespace WebProject.BusinessLogic.MainBL
 
             return ConvertProduct(responseProd.Data);
         }
+        public new Product GetSingleProductByName(string name)
+        {
+            var responseProd = base.GetSingleProductByName(name);
+            if (responseProd.IsExist == false)
+            {
+                return null;
+            }
+            return ConvertProduct(responseProd.Data);
+        }
         public AllProducts GetProductByName(string text_search)
         {
             var AllProductsResponse = base.GetProductsByName(text_search);

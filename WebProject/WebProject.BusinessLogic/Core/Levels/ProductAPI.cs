@@ -332,6 +332,38 @@ namespace WebProject.BusinessLogic.Core.Levels
             }
         }
 
+        internal DataResponse<ProductDataEF> GetSingleProductByName(string name)
+        {
+            using (var dbContext = new Context())
+            {
+                try
+                {
+                    var ProductsWithName = dbContext.Products.FirstOrDefault(p => p.Name == name);
+
+                    string resp = "";
+                    if (ProductsWithName == null)
+                    {
+                        resp = $"There is no ProductData with name: {name}";
+                    }
+
+                    return new DataResponse<ProductDataEF>
+                    {
+                        Data = ProductsWithName,
+                        IsExist = (ProductsWithName != null),
+                        ResponseMessage = resp
+                    };
+                }
+                catch (Exception ex)
+                {
+                    return new DataResponse<ProductDataEF>
+                    {
+                        Data = null,
+                        IsExist = false,
+                        ResponseMessage = "Unexpected error: " + ex.Message
+                    };
+                }
+            }
+        }
         internal StandartResponse DeleteProductDataByID(int id)
         {
             var prodResponse = GetSingleProductData(id);
