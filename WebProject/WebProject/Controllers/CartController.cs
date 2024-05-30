@@ -12,7 +12,7 @@ namespace WebProject.Controllers
         public ActionResult Buy()
         {
             if (Session["UserData"] != null && _businessLogic.User is IRegistered)
-                return View((UserData)Session["UserData"]);
+                return View(((UserData)Session["UserData"]).CartUser);
             return RedirectToAction("Index", "Home");
         }
 

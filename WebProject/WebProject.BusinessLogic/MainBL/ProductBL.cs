@@ -111,7 +111,6 @@ namespace WebProject.BusinessLogic.MainBL
                 Id = data.Id,
                 Name = data.Name,
                 Details = data.Details,
-                filter = null, // По вопросам к Саше или Ивану
                 ShortDescription = data.ShortDescription,
                 FullDescription = data.FullDescription,
                 PhotoUrl = data.GetPhotos(),

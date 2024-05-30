@@ -215,20 +215,23 @@
                                 <tbody>
 
 
-                                    @if (Model.filter != null && Model.filter.Count > 0)
+                                    @if (Model.AllCategories != null && Model.AllCategories.Categories != null && Model.AllCategories.Categories.Count > 0)
                                     {
-                                        foreach (var b in Model.filter)
+                                        foreach (var b in Model.AllCategories.Categories)
                                         {
+                                            foreach (var c in b.Filters)
+                                            {
                                             <tr>
-                                                <th scope="row">@b.NameFilter</th>
+                                                <th scope="row">@c.NameFilter</th>
                                                 <td>
-                                                    @foreach (var c in b.Parameters)
+                                                    @foreach (var d in c.Parameters)
 
                                                     {
-                                                        @c
+                                                        @d
                                                     }
                                                 </td>
                                             </tr>
+                                            }
                                         }
                                     }
                                 </tbody>

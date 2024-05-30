@@ -89,7 +89,6 @@ namespace WebProject.BusinessLogic.MainBL
                 Id = data.Id,
                 Name = data.Name,
                 Details = data.Details,
-                filter = null, // По вопросам к Саше или Ивану
                 ShortDescription = data.ShortDescription,
                 FullDescription = data.FullDescription,
                 PhotoUrl = data.GetPhotos(),
@@ -131,7 +130,6 @@ namespace WebProject.BusinessLogic.MainBL
                 ShortDescription = data.ShortDescription,
                 Amount = data.Amount,
                 Price = data.Price,
-                filter = null,
                 PhotoUrl = null // написать ване
             };
         }

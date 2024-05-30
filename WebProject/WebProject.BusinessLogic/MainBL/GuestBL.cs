@@ -142,7 +142,6 @@ namespace WebProject.BusinessLogic.MainBL
                 ShortDescription = data.ShortDescription,
                 Amount = data.Amount,
                 Price = data.Price,
-                filter = null,
                 PhotoUrl = null // написать ване
             };
         }
