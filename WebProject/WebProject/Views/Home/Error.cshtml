@@ -1,50 +1,30 @@
 ﻿@{
     ViewBag.Title = "Error";
+    Layout = "~/Views/Shared/_Layout.cshtml";
 }
-<!doctype html>
-<html lang="en">
 
-<!--------------------------------------------------------------CONNECT REFERENCES-------------------------------------------------------------------------->
-@Html.Partial("~/Views/Partials/References.cshtml")
-
-<body>
-    <div class="wrapper">
-        <!--------------------------------------------------------------CONNECT HEADER-------------------------------------------------------------------------->
-        @Html.Partial("~/Views/Partials/Header.cshtml")
-
-        <!--------------------------------------------------------------BODY-------------------------------------------------------------------------->
-        <main class="main">
-
-            <!--------------------------------------------------------Thanks Page-------------------------------------------------------------->
-            <div class="container-fluid d-flex justify-content-center align-items-center vh-100">
-                <div class="container text-center">
-                    <div class="row">
-                        <div class="col-md-6 offset-md-3">
-                            <div class="jumbotron">
-                                <h1 class="display-4">Unexpected Error 433</h1>
-                                <p class="lead">We apologize for the inconvenience, but it seems an unexpected error (433) has occurred during processing your request. Our team of experts has been notified and is diligently working to resolve this issue.</p>
-                                <hr class="my-4">
-                                <p>Please rest assured that we are doing everything possible to rectify the situation.</p>
-                                <p>Thank you for your patience and understanding.</p>
-                            </div>
-                        </div>
-                    </div>
+<!--------------------------------------------------------Error Page-------------------------------------------------------------->
+<div class="container-fluid d-flex justify-content-center align-items-center vh-100">
+    <div class="container text-center">
+        <div class="row">
+            <div class="col-md-6 offset-md-3">
+                <div class="jumbotron">
+                    <h1 class="display-4">Unexpected Error 433</h1>
+                    <p class="lead">We apologize for the inconvenience, but it seems an unexpected error (433) has occurred during processing your request. Our team of experts has been notified and is diligently working to resolve this issue.</p>
+                    <hr class="my-4">
+                    <p>Please rest assured that we are doing everything possible to rectify the situation.</p>
+                    <p>Thank you for your patience and understanding.</p>
                 </div>
             </div>
-
-
-            <script>
-                $(document).ready(function () {
-                    setTimeout(function () {
-                        window.location.href = "/Home/Index"; 
-                    }, 30000);
-                });
-            </script>
-
-        </main>
-
-        <!--------------------------------------------------------------CONNECT FOOTER-------------------------------------------------------------------------->
-        @Html.Partial("~/Views/Partials/Footer.cshtml")
+        </div>
     </div>
-</body>
-</html>
+</div>
+
+
+<script>
+    $(document).ready(function () {
+        setTimeout(function () {
+            window.location.href = "/Home/Index";
+        }, 30000);
+    });
+</script>
