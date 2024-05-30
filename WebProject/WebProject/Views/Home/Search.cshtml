@@ -1,85 +1,62 @@
-﻿
-@{
+﻿@{
     ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
 }
-<!doctype html>
-<html lang="en">
+<!--OUR PRODUCTS-->
+<section class="featured-products">
+    <div class="container-fluid">
+        <div class="row mb-5">
+            <div class="col-12">
+                <h2 class="section-title">
+                    <span>Searched products</span>
+                </h2>
+            </div>
+        </div>
 
-<!--------------------------------------------------------------CONNECT REFERENCES-------------------------------------------------------------------------->
-@Html.Partial("~/Views/Partials/References.cshtml")
-
-<body>
-    <div class="wrapper">
-        <!--------------------------------------------------------------CONNECT HEADER-------------------------------------------------------------------------->
-        @Html.Partial("~/Views/Partials/Header.cshtml")
-        <!--------------------------------------------------------------MENU-------------------------------------------------------------------------->
-        <main class="main">
-            <!--OUR PRODUCTS-->
-            <section class="featured-products">
-                <div class="container-fluid">
-                    <div class="row mb-5">
-                        <div class="col-12">
-                            <h2 class="section-title">
-                                <span>Searched products</span>
-                            </h2>
-                        </div>
-                    </div>
-
-                    <div class="row">
-                        <!-- Данные персонализации продукта -->
-                        @if (Model != null && Model.Products.Any())
-                        {
-                            foreach (var product in Model.Products)
-                            {
-                                <div class="col-lg-3 col-md-4 col-sm-6 mb-3">
-                                    <div class="product-card">
-                                        <div class="product-thumb">
-                                            <!-- Ссылка для передачи ID продукта методом GET -->
-                                            <a href="@Url.Action("Item", "Catalog", new { id = product.Id })">
-                                                <img src="@product.PhotoUrl[0]" alt="@product.Name">
-                                            </a>
-                                        </div>
-                                        <div class="product-details">
-                                            <h4>
-                                                <!-- Ссылка для передачи ID продукта методом GET -->
-                                                <a href="@Url.Action("Item", "Catalog", new { id = product.Id })">@product.Name</a>
-                                            </h4>
-                                            <p class="product-excerpt">@product.ShortDescription</p>
-                                            <div class="product-bottom-details d-flex justify-content-between">
-                                                <div class="product-price">
-                                                    @product.Price.ToString("C") <!-- Форматирование цены -->
-                                                </div>
-                                                <div class="product-links">
-                                                    <!-- Ссылка для передачи ID продукта методом GET -->
-                                                    <a href="@Url.Action("Item", "Catalog", new { id = product.Id })" class="btn btn-outline-secondary add-to-cart">
-                                                        <i class="fas fa-shopping-cart"></i>
-                                                    </a>
-                                                </div>
-                                            </div>
-                                        </div>
+        <div class="row">
+            <!-- Данные персонализации продукта -->
+            @if (Model?.Products?.Any() == true)
+            {
+                foreach (var product in Model.Products)
+                {
+                    <div class="col-lg-3 col-md-4 col-sm-6 mb-3">
+                        <div class="product-card">
+                            <div class="product-thumb">
+                                <!-- Ссылка для передачи ID продукта методом GET -->
+                                <a href="@Url.Action("Item", "Catalog", new { id = product.Id })">
+                                    <img src="@product.PhotoUrl.FirstOrDefault()" alt="@product.Name" class="img-fluid">
+                                </a>
+                            </div>
+                            <div class="product-details">
+                                <h4>
+                                    <!-- Ссылка для передачи ID продукта методом GET -->
+                                    <a href="@Url.Action("Item", "Catalog", new { id = product.Id })">@product.Name</a>
+                                </h4>
+                                <p class="product-excerpt">@product.ShortDescription</p>
+                                <div class="product-bottom-details d-flex justify-content-between">
+                                    <div class="product-price">
+                                        @product.Price.ToString("C") <!-- Форматирование цены -->
+                                    </div>
+                                    <div class="product-links">
+                                        <!-- Ссылка для передачи ID продукта методом GET -->
+                                        <a href="@Url.Action("Item", "Catalog", new { id = product.Id })" class="btn btn-outline-secondary add-to-cart">
+                                            <i class="fas fa-shopping-cart"></i>
+                                        </a>
                                     </div>
                                 </div>
-                            }
-                        }
-                        else
-                        {
-                            <div class="col-12 text-center">
-                                <div class="jumbotron">
-                                    <h1>Products are not founded!</h1>
-                                </div>
                             </div>
-                        }
-
-
+                        </div>
                     </div>
-
+                }
+            }
+            else
+            {
+                <div class="col-12 text-center">
+                    <div class="jumbotron">
+                        <h1>Products are not found!</h1>
+                    </div>
                 </div>
-            </section>
-
-        </main>
-
-        <!--------------------------------------------------------------CONNECT FOOTER-------------------------------------------------------------------------->
-        @Html.Partial("~/Views/Partials/Footer.cshtml")
+            }
+        </div>
     </div>
-</body>
-</html>
+</section>

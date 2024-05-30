@@ -95,6 +95,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Content\Site.css" />
     <Content Include="FrontEndAssets\CSS\main.css" />
     <Content Include="FrontEndAssets\Html\cart.html" />
     <Content Include="FrontEndAssets\Html\category.html" />
@@ -339,7 +340,6 @@
     <Content Include="Views\Cart\Buy.cshtml" />
     <Content Include="Views\Partials\Footer.cshtml" />
     <Content Include="Views\Partials\Header.cshtml" />
-    <Content Include="Views\Partials\References.cshtml" />
     <Content Include="Views\Cart\MakeAnOrder.cshtml" />
     <Content Include="Views\Admin\ViewProducts.cshtml" />
     <Content Include="Views\Admin\NewProduct.cshtml" />
@@ -350,6 +350,8 @@
     <Content Include="Views\Home\Error404.cshtml" />
     <Content Include="Views\Home\Search.cshtml" />
     <Content Include="Views\Admin\EditProduct.cshtml" />
+    <Content Include="Views\_ViewStart.cshtml" />
+    <Content Include="Views\Shared\_Layout.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

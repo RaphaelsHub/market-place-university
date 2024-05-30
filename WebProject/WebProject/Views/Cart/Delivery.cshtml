@@ -1,90 +1,64 @@
-﻿
-@{
+﻿@{
     ViewBag.Title = "Delivery";
+    Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<!doctype html>
-<html lang="en">
-
-<!--------------------------------------------------------------CONNECT REFERENCES-------------------------------------------------------------------------->
-@Html.Partial("~/Views/Partials/References.cshtml")
-
-<body>
-    <div class="wrapper">
-        <!--------------------------------------------------------------CONNECT HEADER-------------------------------------------------------------------------->
-        @Html.Partial("~/Views/Partials/Header.cshtml")
-
-        <!--------------------------------------------------------------MENU-------------------------------------------------------------------------->
-        <main class="main">
-
-            <div class="container-fluid">
-                <div class="row">
-                    <div class="col-12">
-                        <nav class="breadcrumbs">
-                            <ul>
-                                <li><a href="@Url.Action("Index","Home")">Home</a></li>
-                                <li><span>Delivery</span></li>
-                            </ul>
-                        </nav>
-                    </div>
-                </div>
-            </div>
-            @model WebProject.ModelAccessLayer.Model.UserData
-
-            @if (Model != null && Model.DeliveriesUser != null && Model.DeliveriesUser.AllOrders != null && Model.DeliveriesUser.AllOrders.Count > 0)
-            {
-               <div class="table-responsive">
-                   <table class="table align-middle table-hover">
-                       <thead class="table-dark">
-                           <tr>
-                               <th>ID Delivery</th>
-                               <th>Name Surname</th>
-                               <th>Email</th>
-                               <th>Country</th>
-                               <th>City</th>
-                               <th>Address</th>
-                               <th>Phone</th>
-                               <th>Total Cost</th>
-                               <th>Status Delivery</th>
-                           </tr>
-                       </thead>
-                       <tbody>
-                           @foreach (var obj in Model.DeliveriesUser.AllOrders)
-                           {
-                               <tr>
-                                   <td class="align-middle text-center">@obj.Id</td>
-                                   <td class="align-middle text-center">@obj.OrderInfo.Name</td>
-                                   <td class="align-middle text-center">@obj.OrderInfo.Email</td>
-                                   <td class="align-middle text-center">@obj.OrderInfo.Country</td>
-                                   <td class="align-middle text-center">@obj.OrderInfo.City</td>
-                                   <td class="align-middle text-center">@obj.OrderInfo.Address</td>
-                                   <td class="align-middle text-center">@obj.OrderInfo.Phone</td>
-                                   <td class="align-middle text-center">@obj.CartData.FinalPrice.ToString("C")</td>
-                                   <td class="align-middle text-center"><button type="submit" class="btn btn-danger">Status: @obj.StatusDelivery.ToString()</button></td><!--Здесь будет полключен другой сервис для изменения времени-->
-                               </tr>
-                           }
-                       </tbody>
-                   </table>
-               </div>
-            }
-            else
-            {
-                <div class="text-center">
-                    <h3>You haven't made any orders yet</h3>
-                </div>
-            }
-
-  
-        </main>
-
-        <!--------------------------------------------------------------CONNECT FOOTER-------------------------------------------------------------------------->
-        @Html.Partial("~/Views/Partials/Footer.cshtml")
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-12">
+            <nav class="breadcrumbs">
+                <ul>
+                    <li><a href="@Url.Action("Index","Home")">Home</a></li>
+                    <li><span>Delivery</span></li>
+                </ul>
+            </nav>
+        </div>
     </div>
-</body>
-</html>
+</div>
 
+@model WebProject.ModelAccessLayer.Model.UserData
 
-
-
-
-
+@if (Model?.DeliveriesUser?.AllOrders?.Any() ?? false)
+{
+    <div class="table-responsive">
+        <table class="table align-middle table-hover">
+            <thead class="table-dark">
+                <tr>
+                    <th>ID Delivery</th>
+                    <th>Name Surname</th>
+                    <th>Email</th>
+                    <th>Country</th>
+                    <th>City</th>
+                    <th>Address</th>
+                    <th>Phone</th>
+                    <th>Total Cost</th>
+                    <th>Status Delivery</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var order in Model.DeliveriesUser.AllOrders)
+                {
+                    <tr>
+                        <td class="align-middle text-center">@order.Id</td>
+                        <td class="align-middle text-center">@order.OrderInfo.Name</td>
+                        <td class="align-middle text-center">@order.OrderInfo.Email</td>
+                        <td class="align-middle text-center">@order.OrderInfo.Country</td>
+                        <td class="align-middle text-center">@order.OrderInfo.City</td>
+                        <td class="align-middle text-center">@order.OrderInfo.Address</td>
+                        <td class="align-middle text-center">@order.OrderInfo.Phone</td>
+                        <td class="align-middle text-center">@order.CartData.FinalPrice.ToString("C")</td>
+                        <td class="align-middle text-center">
+                            <button type="submit" class="btn btn-danger">Status: @order.StatusDelivery.ToString()</button>
+                        </td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+}
+else
+{
+    <div class="text-center">
+        <h3>You haven't made any orders yet</h3>
+    </div>
+}

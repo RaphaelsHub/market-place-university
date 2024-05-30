@@ -1,21 +1,9 @@
 ﻿
 @{
-    ViewBag.Title = "MakeAnOrder11";
+    ViewBag.Title = "MakeAnOrder";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+
 }
-
-<!doctype html>
-<html lang="en">
-
-<!--------------------------------------------------------------CONNECT REFERENCES-------------------------------------------------------------------------->
-@Html.Partial("~/Views/Partials/References.cshtml")
-
-<body>
-    <div class="wrapper">
-        <!--------------------------------------------------------------CONNECT HEADER-------------------------------------------------------------------------->
-        @Html.Partial("~/Views/Partials/Header.cshtml")
-
-        <!--------------------------------------------------------------MENU-------------------------------------------------------------------------->
-        <main class="main">
 
             <div class="container-fluid">
                 <div class="row">
@@ -100,10 +88,14 @@
                     </div>
                 }
             </div>
-        </main>
 
-        <!--------------------------------------------------------------CONNECT FOOTER-------------------------------------------------------------------------->
-        @Html.Partial("~/Views/Partials/Footer.cshtml")
-    </div>
-</body>
-</html>
+            <script>
+    function formValid() {
+        var form = document.querySelector('.needs-validation');
+        if (!form.checkValidity()) {
+            form.classList.add('was-validated');
+            return false;
+        }
+        return true;
+    }
+            </script>

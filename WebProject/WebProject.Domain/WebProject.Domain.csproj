@@ -64,7 +64,6 @@
     <Compile Include="Enum\SortBy.cs" />
     <Compile Include="Enum\StatusUser.cs" />
     <Compile Include="Enum\StatusDelivery.cs" />
-    <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup />

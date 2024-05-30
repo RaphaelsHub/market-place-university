@@ -1,109 +1,91 @@
 ﻿
 @{
     ViewBag.Title = "ViewProducts";
+    Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<!doctype html>
-<html lang="en">
 
-<!--------------------------------------------------------------CONNECT REFERENCES-------------------------------------------------------------------------->
-@Html.Partial("~/Views/Partials/References.cshtml")
-
-<body>
-    <div class="wrapper">
-        <!--------------------------------------------------------------CONNECT HEADER-------------------------------------------------------------------------->
-        @Html.Partial("~/Views/Partials/Header.cshtml")
-
-        <!--------------------------------------------------------------MENU-------------------------------------------------------------------------->
-        <main class="main">
-
-            <div class="container-fluid">
-                <div class="row">
-                    <div class="col-12">
-                        <nav class="breadcrumbs">
-                            <ul>
-                                <li><a href="@Url.Action("Index","Home")">Home</a></li>
-                                <li><span>Cart</span></li>
-                            </ul>
-                        </nav>
-                    </div>
-                </div>
-            </div>
-
-            @model WebProject.ModelAccessLayer.Model.UserData
-            @{
-                var obj = Model.ProductsAdmin;
-            }
-
-            <div class="container-fluid">
-                <div class="row">
-                    <div class="col-lg-12 mb-3">
-                        <div class="cart-content p-3 h-100 bg-white">
-                            @if (obj != null && obj.Products != null && obj.Products.Count > 0)
-                            {
-                                <div class="table-responsive">
-                                    <table class="table table-hover">
-                                        <thead class="table-dark">
-                                            <tr>
-                                                <th class="text-center">Photo</th>
-                                                <th class="text-center">ID</th>
-                                                <th class="text-center">Product name</th>
-                                                <th class="text-center">Short Description</th>
-                                                <th class="text-center">Price</th>
-                                                <th class="text-center">Amount</th>
-                                                <th class="text-center"><i class="fa-solid fa-edit"></i></th>
-                                                <th class="text-center"><i class="fa-regular fa-trash-can"></i></th>
-                                            </tr>
-                                        </thead>
-                                        <tbody>
-                                            @foreach (var obj1 in obj.Products)
-                                            {
-                                                <tr class="item-row" data-description="Very speed speed speed speed compudacter">
-                                                    <td class="align-middle text-center"> <img src="@obj1.PhotoUrl[0]" alt=""></td>
-                                                    <td class="align-middle text-center">@obj1.Id</td>
-                                                    <td class="align-middle text-center">@obj1.Name</td>
-                                                    <td class="align-middle text-center description-cell">@obj1.ShortDescription</td>
-                                                    <td class="align-middle text-center">@obj1.Price.ToString("C")</td>
-                                                    <td class="align-middle text-center">@obj1.Amount</td>
-
-                                                    <td class="align-middle text-center">
-                                                        <form method="post" action="@Url.Action("EditProduct", "Admin")">
-                                                            <input type="hidden" name="id" value="@obj1.Id" />
-                                                            <button type="submit" class="btn btn-danger">Edit</button>
-                                                        </form>
-                                                    </td>
-
-                                                    <td class="align-middle text-center">
-                                                        <form method="post" action="@Url.Action("DeleteProduct", "Admin")">
-                                                            <input type="hidden" name="id" value="@obj1.Id" />
-                                                            <button type="submit" class="btn btn-danger">Delete</button>
-                                                        </form>
-                                                    </td>
-                                                </tr>
-                                            }
-
-                                        </tbody>
-                                    </table>
-                                </div>
-                            }
-                            else
-                            {
-                                <div class="text-center">
-                                    <h3>There are no products on your site and DB.</h3>
-                                </div>
-                            }
-
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </main>
-
-        <!--------------------------------------------------------------CONNECT FOOTER-------------------------------------------------------------------------->
-        @Html.Partial("~/Views/Partials/Footer.cshtml")
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-12">
+            <nav class="breadcrumbs">
+                <ul>
+                    <li><a href="@Url.Action("Index","Home")">Home</a></li>
+                    <li><span>Cart</span></li>
+                </ul>
+            </nav>
+        </div>
     </div>
-</body>
-</html>
+</div>
+
+@model WebProject.ModelAccessLayer.Model.UserData
+@{
+    var obj = Model.ProductsAdmin;
+}
+
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-lg-12 mb-3">
+            <div class="cart-content p-3 h-100 bg-white">
+                @if (obj != null && obj.Products != null && obj.Products.Count > 0)
+                {
+                    <div class="table-responsive">
+                        <table class="table table-hover">
+                            <thead class="table-dark">
+                                <tr>
+                                    <th class="text-center">Photo</th>
+                                    <th class="text-center">ID</th>
+                                    <th class="text-center">Product name</th>
+                                    <th class="text-center">Short Description</th>
+                                    <th class="text-center">Price</th>
+                                    <th class="text-center">Amount</th>
+                                    <th class="text-center"><i class="fa-solid fa-edit"></i></th>
+                                    <th class="text-center"><i class="fa-regular fa-trash-can"></i></th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                @foreach (var obj1 in obj.Products)
+                                {
+                                    <tr class="item-row" data-description="Very speed speed speed speed compudacter">
+                                        <td class="align-middle text-center"> <img src="@obj1.PhotoUrl[0]" alt=""></td>
+                                        <td class="align-middle text-center">@obj1.Id</td>
+                                        <td class="align-middle text-center">@obj1.Name</td>
+                                        <td class="align-middle text-center description-cell">@obj1.ShortDescription</td>
+                                        <td class="align-middle text-center">@obj1.Price.ToString("C")</td>
+                                        <td class="align-middle text-center">@obj1.Amount</td>
+
+                                        <td class="align-middle text-center">
+                                            <form method="post" action="@Url.Action("EditProduct", "Admin")">
+                                                <input type="hidden" name="id" value="@obj1.Id" />
+                                                <button type="submit" class="btn btn-danger">Edit</button>
+                                            </form>
+                                        </td>
+
+                                        <td class="align-middle text-center">
+                                            <form method="post" action="@Url.Action("DeleteProduct", "Admin")">
+                                                <input type="hidden" name="id" value="@obj1.Id" />
+                                                <button type="submit" class="btn btn-danger">Delete</button>
+                                            </form>
+                                        </td>
+                                    </tr>
+                                }
+
+                            </tbody>
+                        </table>
+                    </div>
+                }
+                else
+                {
+                    <div class="text-center">
+                        <h3>There are no products on your site and DB.</h3>
+                    </div>
+                }
+
+            </div>
+        </div>
+    </div>
+</div>
+
 
 
 
