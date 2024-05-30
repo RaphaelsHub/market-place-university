@@ -3,67 +3,27 @@ using WebProject.ModelAccessLayer.Model;
 
 namespace WebProject.Controllers
 {
-    public class AccountController : Controller
+    public class AccountController : BaseController
     {
-        readonly BusinessLogic.BusinessLogic _businessLogic = new BusinessLogic.BusinessLogic();
-
         // GET: SighIn
-        public ActionResult Login()
-        {
-            if (Session["UserData"] == null)
-                return View();
-            else
-                return RedirectToAction("Index", "Home");
-        }
+        public ActionResult Login() => CheckSessionAndReturnView("Login");
 
         // GET: SignUp
-        public ActionResult Registration()
-        {
-            if (Session["UserData"] == null)
-                return View();
-            else
-                return RedirectToAction("Index", "Home");
-        }
+        public ActionResult Registration() => CheckSessionAndReturnView("Registration");
+
+        [HttpPost]
+        public ActionResult Login(LoginData loginData) => HandleUserAuthentication(loginData);
 
 
         [HttpPost]
-        public ActionResult Login(LoginData loginData)
-        {
-            UserData userData = _businessLogic.GuestBL.Login(loginData);
-             
-            if (ModelState.IsValid && userData != null)
-            {
-                Session["UserData"] = userData;
+        public ActionResult Registration(RegistrationData registrationData) => HandleUserAuthentication(registrationData);
 
-                return RedirectToAction("Index", "Home");
-            }
-            else
-            {
-                ViewBag.ErrorMessage = "Invalid email or password";
-                return View();
-            }
-        }
-
-        [HttpPost]
-        public ActionResult Registration(RegistrationData registrationData)
-        {
-            UserData userData = _businessLogic.GuestBL.Register(registrationData);
-
-            if (ModelState.IsValid && userData != null)
-            {
-                Session["UserData"] = userData;
-
-                return RedirectToAction("Index", "Home");
-            }
-            else
-            {
-                return View(registrationData);
-            }
-        }
 
         public ActionResult LogOut()
         {
             Session.Remove("UserData");
+
+            _businessLogic.User = new GuestUserBL();
 
             return RedirectToAction("Index", "Home");
         }

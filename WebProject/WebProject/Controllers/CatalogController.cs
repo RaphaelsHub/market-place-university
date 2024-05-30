@@ -4,16 +4,14 @@ using WebProject.ModelAccessLayer.Model;
 
 namespace WebProject.Controllers
 {
-    public class CatalogController : Controller
+    public class CatalogController : BaseController
     {
-        readonly BusinessLogic.BusinessLogic _businessLogic = new BusinessLogic.BusinessLogic();
-
         // GET: Catalog
         public ActionResult Items(int? idChildCategory)
         {
             if (idChildCategory.HasValue)
             {
-                Category category = _businessLogic.ProductBL.GetCategoriesCatalog(idChildCategory.Value); 
+                Category category = _businessLogic.User.GetCategoriesCatalog(idChildCategory.Value);
                 return View(category);
             }
             else
@@ -25,7 +23,8 @@ namespace WebProject.Controllers
         {
             if (id.HasValue)
             {
-                Product product = _businessLogic.ProductBL.GetProductById(id.Value);
+                Product product = _businessLogic.User.GetProductById(id.Value);
+
                 if (product != null)
                     return View(product);
                 else
