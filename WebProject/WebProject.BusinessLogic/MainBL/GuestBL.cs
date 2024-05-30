@@ -14,23 +14,27 @@ using WebProject.ModelAccessLayer.Model;
 
 namespace WebProject.BusinessLogic.MainBL
 {
-    public class GuestBL : GuestAPI, IGuestUser
+    public class GuestBL : UserBaseBL, IGuest
     {
+        //
+        private readonly UserGuestAPI _guestAPI = new UserGuestAPI();
+
+
         public UserData Login(LoginData loginData)
         {
-            var responseResult = CheckLogin(loginData);
+            var responseResult = _guestAPI.CheckLogin(loginData);
             if (!responseResult.IsExist) 
             {
                 return null;
             }
-            var uAPi = new UserAPI();
+            var uAPi = new UserRegisteredAPI();
             var isAdmin = uAPi.SetSuperAdmin(responseResult.Data);
             return GenerateUserLoginData(responseResult.Data);
         }
 
         public UserData Register(RegistrationData registrationData)
         {
-            var responseResult = RegistrateUser(registrationData);
+            var responseResult = _guestAPI.RegistrateUser(registrationData);
 
             if (!responseResult.IsExist)
             {
@@ -40,11 +44,11 @@ namespace WebProject.BusinessLogic.MainBL
         }
 
         //преобразования EntityFramework моделей в ASP.Net модели
-        static private UserData GenerateUserLoginData(UserEF data)
+        private static UserData GenerateUserLoginData(UserEF data)
         {
             if (data == null)
                 return null;
-            var uAPi = new UserAPI();
+            var uAPi = new UserRegisteredAPI();
             var superAdmin = uAPi.GetSuperAdmin();
 
             StatusUser userStatus = StatusUser.User;
@@ -63,8 +67,7 @@ namespace WebProject.BusinessLogic.MainBL
                 //причину не заполнения смотреть -> WebProject.ModelAccessLayer.Model.UserData
             };
         }
-
-        static private Dictionary<string, StatusDelivery> StatusDeliveryDictionary = new Dictionary<string, StatusDelivery>
+        private static Dictionary<string, StatusDelivery> StatusDeliveryDictionary = new Dictionary<string, StatusDelivery>
         {
             {"Pending", StatusDelivery.Pending},                // Ожидание
             {"Processing" , StatusDelivery.Processing},         // Обработка
@@ -74,7 +77,7 @@ namespace WebProject.BusinessLogic.MainBL
             {"Returned" , StatusDelivery.Returned },            // Возвращено
             {"Canceled" , StatusDelivery.Canceled }             // Отменено
         };
-        static private StatusDelivery GenerateStatusDelivery(string RawOrderStatusEF)
+        private static StatusDelivery GenerateStatusDelivery(string RawOrderStatusEF)
         {
             if (GuestBL.StatusDeliveryDictionary.TryGetValue(RawOrderStatusEF, out StatusDelivery result))
             {
@@ -85,7 +88,7 @@ namespace WebProject.BusinessLogic.MainBL
                 return 0; //нужно придумать возврат некоректных данных
             }
         }
-        static private OrderModel GenerateOrderModel(OrderEF data)
+        private static OrderModel GenerateOrderModel(OrderEF data)
         {
             var orderInfo = new OrderInfo
             { 
@@ -99,7 +102,6 @@ namespace WebProject.BusinessLogic.MainBL
                 Address = data.Address,
                 Comment = data.Comment,
             };
-            var cardCred = new CardCreditionals();
             var cartData = GenerateCartData(data.CartItems);
 
             var StatusDelivery = GenerateStatusDelivery(data.StatusDelivery);
@@ -108,13 +110,12 @@ namespace WebProject.BusinessLogic.MainBL
             {
                 Id = data.Order_Id,
                 OrderInfo = orderInfo,
-                CardCreditinals = cardCred,
                 CartData = cartData,
                 StatusDelivery = StatusDelivery
             };
 
         }
-        static private AllDeliveries GenerateDeliveries(ICollection<OrderEF> orders)
+        private static AllDeliveries GenerateDeliveries(ICollection<OrderEF> orders)
         {
             if(orders == null)
                 return null;
@@ -130,7 +131,7 @@ namespace WebProject.BusinessLogic.MainBL
                 AllOrders = deliverisList
             };
         }
-        static private Product GenerateProduct(ProductDataEF data)
+        private static Product GenerateProduct(ProductDataEF data)
         {
             return new Product
             {
@@ -145,7 +146,7 @@ namespace WebProject.BusinessLogic.MainBL
                 PhotoUrl = null // написать ване
             };
         }
-        static private CartData GenerateCartData(ICollection<CartItemEF> userCart)
+        private static CartData GenerateCartData(ICollection<CartItemEF> userCart)
         {
           
             if (userCart== null)

@@ -14,16 +14,17 @@ using WebProject.ModelAccessLayer.Model;
 
 namespace WebProject.BusinessLogic.MainBL
 {
-    public class UserBL : UserAPI, IUserBase
+    public class UserBL : UserBaseBL, IRegistered
     {
+        UserRegisteredAPI _userRegisteredApi = new UserRegisteredAPI();
+
         public bool AddToCart(CartItem cartItem)
         {
-            var responseUser = FindUserEF(cartItem.Id_User);
+            var responseUser = _userRegisteredApi.FindUserEF(cartItem.Id_User);
             if (responseUser.IsExist == false)
                 return false;
 
-            var prodAPI = new ProductAPI();
-            var responseProduct = prodAPI.GetSingleProductData(cartItem.Id);
+            var responseProduct = GetSingleProductData(cartItem.Id);
             if (responseProduct.IsExist == false)
                 return false;
 
@@ -37,7 +38,8 @@ namespace WebProject.BusinessLogic.MainBL
                 Quantity = cartItem.Quantity
             };
 
-            var finalResponse = AddToUserCart(newCartItemEF);
+            var finalResponse =_userRegisteredApi.AddToUserCart(newCartItemEF);
+
             if(finalResponse.Status == false) 
                 return false;
 
@@ -46,11 +48,11 @@ namespace WebProject.BusinessLogic.MainBL
         
         public bool DeleteFromCart(CartItem cartItem)
         {
-            var deletedCartItemEFResponse = FindCartItemEF(cartItem.Id, cartItem.Id_User);
+            var deletedCartItemEFResponse = _userRegisteredApi.FindCartItemEF(cartItem.Id, cartItem.Id_User);
             if (deletedCartItemEFResponse.IsExist == false)
                 return false;
 
-            var response = DeleteFromUserCart(deletedCartItemEFResponse.Data);
+            var response = _userRegisteredApi.DeleteFromUserCart(deletedCartItemEFResponse.Data);
             if (response.Status == false) 
                 return false;
 
@@ -60,7 +62,7 @@ namespace WebProject.BusinessLogic.MainBL
         public bool ProcessOrder(OrderModel orderModel)
         {
             var orderInfoReqest = GenerateEFOrderInfo(orderModel);
-            var response = ProcessUserOrder(orderModel.OrderInfo.UserId, orderInfoReqest);
+            var response = _userRegisteredApi.ProcessUserOrder(orderModel.OrderInfo.UserId, orderInfoReqest);
             if (response.IsExist == false) 
                 return false;
 
@@ -69,7 +71,7 @@ namespace WebProject.BusinessLogic.MainBL
 
         public CartData ViewCart(int indexUser)
         {
-            var response = ViewUserCart(indexUser);
+            var response = _userRegisteredApi.ViewUserCart(indexUser);
             if(response.IsExist == false) 
                 return null;
 
@@ -78,7 +80,7 @@ namespace WebProject.BusinessLogic.MainBL
 
         public AllDeliveries ViewOrders(int indexUser)
         {
-            var response = ViewUserOrders(indexUser);
+            var response = _userRegisteredApi.ViewUserOrders(indexUser);
             if(response.IsExist == false) 
                 return null;
 
@@ -190,7 +192,6 @@ namespace WebProject.BusinessLogic.MainBL
                 Address = data.Address,
                 Comment = data.Comment,
             };
-            var cardCred = new CardCreditionals();
             var cartData = GenerateCartData(data.CartItems);
 
             var StatusDelivery = GenerateStatusDelivery(data.StatusDelivery);
@@ -199,7 +200,6 @@ namespace WebProject.BusinessLogic.MainBL
             {
                 Id = data.Order_Id,
                 OrderInfo = orderInfo,
-                CardCreditinals = cardCred,
                 CartData = cartData,
                 StatusDelivery = StatusDelivery
             };

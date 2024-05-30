@@ -6,6 +6,7 @@ using System.Web.Mvc;
 using System.Web.Routing;
 using System.Web.Security;
 using System.Web.SessionState;
+using WebProject.App_Start;
 
 namespace WebProject
 {
@@ -16,6 +17,7 @@ namespace WebProject
             // Code that runs on application startup
            AreaRegistration.RegisterAllAreas();
            RouteConfig.RegisterRoutes(RouteTable.Routes);
+            //BundleConfig.RegisterBundles(BundleTable.Bundles);// Bundle config registration ﻿using System.Web.Optimization - need to install
         }
     }
 }

@@ -8,7 +8,7 @@ using WebProject.Domain.Enum;
 
 namespace WebProject.BusinessLogic.Interfaces
 {
-    internal interface IProduct
+    public interface IProduct
     {
         AllProducts GetAllProducts();
         Product GetProductById(int id);

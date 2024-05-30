@@ -3,20 +3,40 @@
   "WorkspaceRootPath": "D:\\Repositories\\MarketPlaceWebUniversity\\WebProject\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{04A69F02-CE57-4DBB-A3C1-E5C262D3BD05}|WebProject.BusinessLogic\\WebProject.BusinessLogic.csproj|D:\\Repositories\\MarketPlaceWebUniversity\\WebProject\\webproject.businesslogic\\mainbl\\guestbl.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{04A69F02-CE57-4DBB-A3C1-E5C262D3BD05}|WebProject.BusinessLogic\\WebProject.BusinessLogic.csproj|solutionrelative:webproject.businesslogic\\mainbl\\guestbl.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{5F80B0C2-7F0F-4D1D-98CF-08C805A03522}|WebProject\\WebProject.csproj|d:\\repositories\\marketplacewebuniversity\\webproject\\webproject\\frontendassets\\owlcarousel\\owl.carousel.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}",
+      "RelativeMoniker": "D:0:0:{5F80B0C2-7F0F-4D1D-98CF-08C805A03522}|WebProject\\WebProject.csproj|solutionrelative:webproject\\frontendassets\\owlcarousel\\owl.carousel.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{04A69F02-CE57-4DBB-A3C1-E5C262D3BD05}|WebProject.BusinessLogic\\WebProject.BusinessLogic.csproj|d:\\repositories\\marketplacewebuniversity\\webproject\\webproject.businesslogic\\mainbl\\adminbl.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{04A69F02-CE57-4DBB-A3C1-E5C262D3BD05}|WebProject.BusinessLogic\\WebProject.BusinessLogic.csproj|solutionrelative:webproject.businesslogic\\mainbl\\adminbl.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{5F80B0C2-7F0F-4D1D-98CF-08C805A03522}|WebProject\\WebProject.csproj|d:\\repositories\\marketplacewebuniversity\\webproject\\webproject\\frontendassets\\owlcarousel\\owl.theme.default.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}",
+      "RelativeMoniker": "D:0:0:{5F80B0C2-7F0F-4D1D-98CF-08C805A03522}|WebProject\\WebProject.csproj|solutionrelative:webproject\\frontendassets\\owlcarousel\\owl.theme.default.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{5F80B0C2-7F0F-4D1D-98CF-08C805A03522}|WebProject\\WebProject.csproj|d:\\repositories\\marketplacewebuniversity\\webproject\\webproject\\controllers\\admincontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{5F80B0C2-7F0F-4D1D-98CF-08C805A03522}|WebProject\\WebProject.csproj|solutionrelative:webproject\\controllers\\admincontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{5F80B0C2-7F0F-4D1D-98CF-08C805A03522}|WebProject\\WebProject.csproj|d:\\repositories\\marketplacewebuniversity\\webproject\\webproject\\frontendassets\\owlcarousel\\owl.carousel.min.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}",
+      "RelativeMoniker": "D:0:0:{5F80B0C2-7F0F-4D1D-98CF-08C805A03522}|WebProject\\WebProject.csproj|solutionrelative:webproject\\frontendassets\\owlcarousel\\owl.carousel.min.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{5F80B0C2-7F0F-4D1D-98CF-08C805A03522}|WebProject\\WebProject.csproj|d:\\repositories\\marketplacewebuniversity\\webproject\\webproject\\controllers\\accountcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{5F80B0C2-7F0F-4D1D-98CF-08C805A03522}|WebProject\\WebProject.csproj|solutionrelative:webproject\\controllers\\accountcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{5F80B0C2-7F0F-4D1D-98CF-08C805A03522}|WebProject\\WebProject.csproj|d:\\repositories\\marketplacewebuniversity\\webproject\\webproject\\frontendassets\\owlcarousel\\owl.carousel.min.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}",
+      "RelativeMoniker": "D:0:0:{5F80B0C2-7F0F-4D1D-98CF-08C805A03522}|WebProject\\WebProject.csproj|solutionrelative:webproject\\frontendassets\\owlcarousel\\owl.carousel.min.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{5F80B0C2-7F0F-4D1D-98CF-08C805A03522}|WebProject\\WebProject.csproj|d:\\repositories\\marketplacewebuniversity\\webproject\\webproject\\frontendassets\\owlcarousel\\owl.theme.green.min.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}",
+      "RelativeMoniker": "D:0:0:{5F80B0C2-7F0F-4D1D-98CF-08C805A03522}|WebProject\\WebProject.csproj|solutionrelative:webproject\\frontendassets\\owlcarousel\\owl.theme.green.min.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{5F80B0C2-7F0F-4D1D-98CF-08C805A03522}|WebProject\\WebProject.csproj|d:\\repositories\\marketplacewebuniversity\\webproject\\webproject\\frontendassets\\owlcarousel\\owl.theme.green.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}",
+      "RelativeMoniker": "D:0:0:{5F80B0C2-7F0F-4D1D-98CF-08C805A03522}|WebProject\\WebProject.csproj|solutionrelative:webproject\\frontendassets\\owlcarousel\\owl.theme.green.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{5F80B0C2-7F0F-4D1D-98CF-08C805A03522}|WebProject\\WebProject.csproj|d:\\repositories\\marketplacewebuniversity\\webproject\\webproject\\frontendassets\\owlcarousel\\owl.theme.default.min.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}",
+      "RelativeMoniker": "D:0:0:{5F80B0C2-7F0F-4D1D-98CF-08C805A03522}|WebProject\\WebProject.csproj|solutionrelative:webproject\\frontendassets\\owlcarousel\\owl.theme.default.min.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{5F80B0C2-7F0F-4D1D-98CF-08C805A03522}|WebProject\\WebProject.csproj|d:\\repositories\\marketplacewebuniversity\\webproject\\webproject\\frontendassets\\owlcarousel\\owl.carousel.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}",
+      "RelativeMoniker": "D:0:0:{5F80B0C2-7F0F-4D1D-98CF-08C805A03522}|WebProject\\WebProject.csproj|solutionrelative:webproject\\frontendassets\\owlcarousel\\owl.carousel.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{5F80B0C2-7F0F-4D1D-98CF-08C805A03522}|WebProject\\WebProject.csproj|d:\\repositories\\marketplacewebuniversity\\webproject\\webproject\\frontendassets\\js\\main.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}",
+      "RelativeMoniker": "D:0:0:{5F80B0C2-7F0F-4D1D-98CF-08C805A03522}|WebProject\\WebProject.csproj|solutionrelative:webproject\\frontendassets\\js\\main.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}"
     }
   ],
   "DocumentGroupContainers": [
@@ -26,7 +46,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 235,
-          "SelectedChildIndex": 4,
+          "SelectedChildIndex": 5,
           "Children": [
             {
               "$type": "Bookmark",
@@ -34,54 +54,119 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "AdminBL.cs",
-              "DocumentMoniker": "D:\\Repositories\\MarketPlaceWebUniversity\\WebProject\\WebProject.BusinessLogic\\MainBL\\AdminBL.cs",
-              "RelativeDocumentMoniker": "WebProject.BusinessLogic\\MainBL\\AdminBL.cs",
-              "ToolTip": "D:\\Repositories\\MarketPlaceWebUniversity\\WebProject\\WebProject.BusinessLogic\\MainBL\\AdminBL.cs",
-              "RelativeToolTip": "WebProject.BusinessLogic\\MainBL\\AdminBL.cs",
-              "ViewState": "AQIAAB4AAAAAAAAAAAAowAAAAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-05-27T10:18:08.689Z",
+              "DocumentIndex": 4,
+              "Title": "owl.theme.green.min.css",
+              "DocumentMoniker": "D:\\Repositories\\MarketPlaceWebUniversity\\WebProject\\WebProject\\FrontEndAssets\\owlcarousel\\owl.theme.green.min.css",
+              "RelativeDocumentMoniker": "WebProject\\FrontEndAssets\\owlcarousel\\owl.theme.green.min.css",
+              "ToolTip": "D:\\Repositories\\MarketPlaceWebUniversity\\WebProject\\WebProject\\FrontEndAssets\\owlcarousel\\owl.theme.green.min.css",
+              "RelativeToolTip": "WebProject\\FrontEndAssets\\owlcarousel\\owl.theme.green.min.css",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAUAAABqAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003000|",
+              "WhenOpened": "2024-05-30T02:12:14.231Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "AdminController.cs",
-              "DocumentMoniker": "D:\\Repositories\\MarketPlaceWebUniversity\\WebProject\\WebProject\\Controllers\\AdminController.cs",
-              "RelativeDocumentMoniker": "WebProject\\Controllers\\AdminController.cs",
-              "ToolTip": "D:\\Repositories\\MarketPlaceWebUniversity\\WebProject\\WebProject\\Controllers\\AdminController.cs",
-              "RelativeToolTip": "WebProject\\Controllers\\AdminController.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAA0AAABOAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-05-27T10:17:14.538Z",
+              "DocumentIndex": 1,
+              "Title": "owl.theme.default.css",
+              "DocumentMoniker": "D:\\Repositories\\MarketPlaceWebUniversity\\WebProject\\WebProject\\FrontEndAssets\\owlcarousel\\owl.theme.default.css",
+              "RelativeDocumentMoniker": "WebProject\\FrontEndAssets\\owlcarousel\\owl.theme.default.css",
+              "ToolTip": "D:\\Repositories\\MarketPlaceWebUniversity\\WebProject\\WebProject\\FrontEndAssets\\owlcarousel\\owl.theme.default.css",
+              "RelativeToolTip": "WebProject\\FrontEndAssets\\owlcarousel\\owl.theme.default.css",
+              "ViewState": "AQIAADkAAAAAAAAAAAAAADkAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003000|",
+              "WhenOpened": "2024-05-30T02:11:34.234Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 3,
-              "Title": "AccountController.cs",
-              "DocumentMoniker": "D:\\Repositories\\MarketPlaceWebUniversity\\WebProject\\WebProject\\Controllers\\AccountController.cs",
-              "RelativeDocumentMoniker": "WebProject\\Controllers\\AccountController.cs",
-              "ToolTip": "D:\\Repositories\\MarketPlaceWebUniversity\\WebProject\\WebProject\\Controllers\\AccountController.cs",
-              "RelativeToolTip": "WebProject\\Controllers\\AccountController.cs",
-              "ViewState": "AQIAAB0AAAAAAAAAAAA9wDMAAAAMAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-05-27T09:43:54.356Z",
+              "Title": "owl.carousel.min.js",
+              "DocumentMoniker": "D:\\Repositories\\MarketPlaceWebUniversity\\WebProject\\WebProject\\FrontEndAssets\\owlcarousel\\owl.carousel.min.js",
+              "RelativeDocumentMoniker": "WebProject\\FrontEndAssets\\owlcarousel\\owl.carousel.min.js",
+              "ToolTip": "D:\\Repositories\\MarketPlaceWebUniversity\\WebProject\\WebProject\\FrontEndAssets\\owlcarousel\\owl.carousel.min.js",
+              "RelativeToolTip": "WebProject\\FrontEndAssets\\owlcarousel\\owl.carousel.min.js",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001646|",
+              "WhenOpened": "2024-05-30T02:11:32.451Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "owl.carousel.min.css",
+              "DocumentMoniker": "D:\\Repositories\\MarketPlaceWebUniversity\\WebProject\\WebProject\\FrontEndAssets\\owlcarousel\\owl.carousel.min.css",
+              "RelativeDocumentMoniker": "WebProject\\FrontEndAssets\\owlcarousel\\owl.carousel.min.css",
+              "ToolTip": "D:\\Repositories\\MarketPlaceWebUniversity\\WebProject\\WebProject\\FrontEndAssets\\owlcarousel\\owl.carousel.min.css",
+              "RelativeToolTip": "WebProject\\FrontEndAssets\\owlcarousel\\owl.carousel.min.css",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003000|",
+              "WhenOpened": "2024-05-30T02:11:30.26Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 0,
-              "Title": "GuestBL.cs",
-              "DocumentMoniker": "D:\\Repositories\\MarketPlaceWebUniversity\\WebProject\\WebProject.BusinessLogic\\MainBL\\GuestBL.cs",
-              "RelativeDocumentMoniker": "WebProject.BusinessLogic\\MainBL\\GuestBL.cs",
-              "ToolTip": "D:\\Repositories\\MarketPlaceWebUniversity\\WebProject\\WebProject.BusinessLogic\\MainBL\\GuestBL.cs",
-              "RelativeToolTip": "WebProject.BusinessLogic\\MainBL\\GuestBL.cs",
-              "ViewState": "AQIAAA4AAAAAAAAAAAAhwCUAAAAlAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-05-26T01:33:54.868Z",
+              "Title": "owl.carousel.js",
+              "DocumentMoniker": "D:\\Repositories\\MarketPlaceWebUniversity\\WebProject\\WebProject\\FrontEndAssets\\owlcarousel\\owl.carousel.js",
+              "RelativeDocumentMoniker": "WebProject\\FrontEndAssets\\owlcarousel\\owl.carousel.js",
+              "ToolTip": "D:\\Repositories\\MarketPlaceWebUniversity\\WebProject\\WebProject\\FrontEndAssets\\owlcarousel\\owl.carousel.js",
+              "RelativeToolTip": "WebProject\\FrontEndAssets\\owlcarousel\\owl.carousel.js",
+              "ViewState": "AQIAALgBAAAAAAAAAAAAAMABAAAzAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001646|",
+              "WhenOpened": "2024-05-30T02:10:14.007Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "owl.theme.default.min.css",
+              "DocumentMoniker": "D:\\Repositories\\MarketPlaceWebUniversity\\WebProject\\WebProject\\FrontEndAssets\\owlcarousel\\owl.theme.default.min.css",
+              "RelativeDocumentMoniker": "WebProject\\FrontEndAssets\\owlcarousel\\owl.theme.default.min.css",
+              "ToolTip": "D:\\Repositories\\MarketPlaceWebUniversity\\WebProject\\WebProject\\FrontEndAssets\\owlcarousel\\owl.theme.default.min.css",
+              "RelativeToolTip": "WebProject\\FrontEndAssets\\owlcarousel\\owl.theme.default.min.css",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003000|",
+              "WhenOpened": "2024-05-30T02:11:51.789Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "owl.theme.green.css",
+              "DocumentMoniker": "D:\\Repositories\\MarketPlaceWebUniversity\\WebProject\\WebProject\\FrontEndAssets\\owlcarousel\\owl.theme.green.css",
+              "RelativeDocumentMoniker": "WebProject\\FrontEndAssets\\owlcarousel\\owl.theme.green.css",
+              "ToolTip": "D:\\Repositories\\MarketPlaceWebUniversity\\WebProject\\WebProject\\FrontEndAssets\\owlcarousel\\owl.theme.green.css",
+              "RelativeToolTip": "WebProject\\FrontEndAssets\\owlcarousel\\owl.theme.green.css",
+              "ViewState": "AQIAABcAAAAAAAAAAAAYwDkAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003000|",
+              "WhenOpened": "2024-05-30T02:11:53.94Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "owl.carousel.css",
+              "DocumentMoniker": "D:\\Repositories\\MarketPlaceWebUniversity\\WebProject\\WebProject\\FrontEndAssets\\owlcarousel\\owl.carousel.css",
+              "RelativeDocumentMoniker": "WebProject\\FrontEndAssets\\owlcarousel\\owl.carousel.css",
+              "ToolTip": "D:\\Repositories\\MarketPlaceWebUniversity\\WebProject\\WebProject\\FrontEndAssets\\owlcarousel\\owl.carousel.css",
+              "RelativeToolTip": "WebProject\\FrontEndAssets\\owlcarousel\\owl.carousel.css",
+              "ViewState": "AQIAAKYAAAAAAAAAAAAgwM4AAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003000|",
+              "WhenOpened": "2024-05-30T02:09:50.536Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "main.js",
+              "DocumentMoniker": "D:\\Repositories\\MarketPlaceWebUniversity\\WebProject\\WebProject\\FrontEndAssets\\Js\\main.js",
+              "RelativeDocumentMoniker": "WebProject\\FrontEndAssets\\Js\\main.js",
+              "ToolTip": "D:\\Repositories\\MarketPlaceWebUniversity\\WebProject\\WebProject\\FrontEndAssets\\Js\\main.js",
+              "RelativeToolTip": "WebProject\\FrontEndAssets\\Js\\main.js",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAwAAAD3AwAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001646|",
+              "WhenOpened": "2024-05-30T02:08:40.402Z",
               "EditorCaption": ""
             }
           ]
