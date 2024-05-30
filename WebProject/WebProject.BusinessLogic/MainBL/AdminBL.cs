@@ -27,7 +27,7 @@ namespace WebProject.BusinessLogic.MainBL
             return a;
         }
 
-        public new AllProducts GetAllProducts() => GetAllProducts();
+        public new AllProducts GetAllProducts() => base.GetAllProducts();
 
         public bool AddProduct(Product product)
         {
