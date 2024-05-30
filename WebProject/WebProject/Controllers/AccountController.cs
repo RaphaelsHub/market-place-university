@@ -1,5 +1,6 @@
 ﻿using System.Web.Mvc;
 using WebProject.ModelAccessLayer.Model;
+using WebProject.BusinessLogic.MainBL;
 
 namespace WebProject.Controllers
 {
@@ -23,7 +24,7 @@ namespace WebProject.Controllers
         {
             Session.Remove("UserData");
 
-            _businessLogic.User = new GuestUserBL();
+            _businessLogic.User = new GuestBL();
 
             return RedirectToAction("Index", "Home");
         }

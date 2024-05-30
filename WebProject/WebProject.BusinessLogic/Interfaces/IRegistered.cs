@@ -7,7 +7,7 @@ using WebProject.ModelAccessLayer.Model;
 
 namespace WebProject.BusinessLogic.Interfaces
 {
-    internal interface IUserBase
+    public interface IRegistered
     {
         bool AddToCart(CartItem cartItem);
         bool DeleteFromCart(CartItem cartItem);

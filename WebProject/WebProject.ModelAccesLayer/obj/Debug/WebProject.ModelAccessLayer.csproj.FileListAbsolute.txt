@@ -51,3 +51,5 @@ C:\!univer\!Project\WebProduct\WebProject\WebProject.ModelAccesLayer\obj\Debug\W
 C:\!univer\!Project\WebProduct\WebProject\WebProject.ModelAccesLayer\obj\Debug\WebProject.ModelAccesLayer.dll
 C:\!univer\!Project\WebProduct\WebProject\WebProject.ModelAccesLayer\obj\Debug\WebProject.ModelAccesLayer.pdb
 D:\Repositories\MarketPlaceWebUniversity\WebProject\WebProject.ModelAccesLayer\bin\Debug\WebProject.Domain.dll.config
+D:\Repositories\MarketPlaceWebUniversity\WebProject\WebProject.ModelAccesLayer\bin\Debug\EntityFramework.dll
+D:\Repositories\MarketPlaceWebUniversity\WebProject\WebProject.ModelAccesLayer\bin\Debug\EntityFramework.xml

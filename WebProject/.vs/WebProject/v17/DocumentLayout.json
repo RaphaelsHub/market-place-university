@@ -3,24 +3,36 @@
   "WorkspaceRootPath": "D:\\Repositories\\MarketPlaceWebUniversity\\WebProject\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{5F80B0C2-7F0F-4D1D-98CF-08C805A03522}|WebProject\\WebProject.csproj|d:\\repositories\\marketplacewebuniversity\\webproject\\webproject\\controllers\\basecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{5F80B0C2-7F0F-4D1D-98CF-08C805A03522}|WebProject\\WebProject.csproj|solutionrelative:webproject\\controllers\\basecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{04A69F02-CE57-4DBB-A3C1-E5C262D3BD05}|WebProject.BusinessLogic\\WebProject.BusinessLogic.csproj|d:\\repositories\\marketplacewebuniversity\\webproject\\webproject.businesslogic\\core\\levels\\guestapi.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{04A69F02-CE57-4DBB-A3C1-E5C262D3BD05}|WebProject.BusinessLogic\\WebProject.BusinessLogic.csproj|solutionrelative:webproject.businesslogic\\core\\levels\\guestapi.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{04A69F02-CE57-4DBB-A3C1-E5C262D3BD05}|WebProject.BusinessLogic\\WebProject.BusinessLogic.csproj|D:\\Repositories\\MarketPlaceWebUniversity\\WebProject\\webproject.businesslogic\\mainbl\\guestbl.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{04A69F02-CE57-4DBB-A3C1-E5C262D3BD05}|WebProject.BusinessLogic\\WebProject.BusinessLogic.csproj|d:\\repositories\\marketplacewebuniversity\\webproject\\webproject.businesslogic\\mainbl\\guestbl.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{04A69F02-CE57-4DBB-A3C1-E5C262D3BD05}|WebProject.BusinessLogic\\WebProject.BusinessLogic.csproj|solutionrelative:webproject.businesslogic\\mainbl\\guestbl.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{5F80B0C2-7F0F-4D1D-98CF-08C805A03522}|WebProject\\WebProject.csproj|D:\\Repositories\\MarketPlaceWebUniversity\\WebProject\\webproject\\controllers\\accountcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{5F80B0C2-7F0F-4D1D-98CF-08C805A03522}|WebProject\\WebProject.csproj|solutionrelative:webproject\\controllers\\accountcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{04A69F02-CE57-4DBB-A3C1-E5C262D3BD05}|WebProject.BusinessLogic\\WebProject.BusinessLogic.csproj|d:\\repositories\\marketplacewebuniversity\\webproject\\webproject.businesslogic\\mainbl\\adminbl.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{04A69F02-CE57-4DBB-A3C1-E5C262D3BD05}|WebProject.BusinessLogic\\WebProject.BusinessLogic.csproj|solutionrelative:webproject.businesslogic\\mainbl\\adminbl.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{5F80B0C2-7F0F-4D1D-98CF-08C805A03522}|WebProject\\WebProject.csproj|D:\\Repositories\\MarketPlaceWebUniversity\\WebProject\\webproject\\controllers\\homecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{5F80B0C2-7F0F-4D1D-98CF-08C805A03522}|WebProject\\WebProject.csproj|d:\\repositories\\marketplacewebuniversity\\webproject\\webproject\\controllers\\homecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{5F80B0C2-7F0F-4D1D-98CF-08C805A03522}|WebProject\\WebProject.csproj|solutionrelative:webproject\\controllers\\homecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{04A69F02-CE57-4DBB-A3C1-E5C262D3BD05}|WebProject.BusinessLogic\\WebProject.BusinessLogic.csproj|d:\\repositories\\marketplacewebuniversity\\webproject\\webproject.businesslogic\\mainbl\\userbl.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{04A69F02-CE57-4DBB-A3C1-E5C262D3BD05}|WebProject.BusinessLogic\\WebProject.BusinessLogic.csproj|solutionrelative:webproject.businesslogic\\mainbl\\userbl.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{04A69F02-CE57-4DBB-A3C1-E5C262D3BD05}|WebProject.BusinessLogic\\WebProject.BusinessLogic.csproj|d:\\repositories\\marketplacewebuniversity\\webproject\\webproject.businesslogic\\core\\levels\\productapi.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{04A69F02-CE57-4DBB-A3C1-E5C262D3BD05}|WebProject.BusinessLogic\\WebProject.BusinessLogic.csproj|solutionrelative:webproject.businesslogic\\core\\levels\\productapi.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{5F80B0C2-7F0F-4D1D-98CF-08C805A03522}|WebProject\\WebProject.csproj|d:\\repositories\\marketplacewebuniversity\\webproject\\webproject\\controllers\\cartcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{5F80B0C2-7F0F-4D1D-98CF-08C805A03522}|WebProject\\WebProject.csproj|solutionrelative:webproject\\controllers\\cartcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A50BE0B8-E1E8-4D7A-A2F1-5BED10251FD0}|WebProject.ModelAccesLayer\\WebProject.ModelAccessLayer.csproj|d:\\repositories\\marketplacewebuniversity\\webproject\\webproject.modelacceslayer\\model\\ordermodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A50BE0B8-E1E8-4D7A-A2F1-5BED10251FD0}|WebProject.ModelAccesLayer\\WebProject.ModelAccessLayer.csproj|solutionrelative:webproject.modelacceslayer\\model\\ordermodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{5F80B0C2-7F0F-4D1D-98CF-08C805A03522}|WebProject\\WebProject.csproj|d:\\repositories\\marketplacewebuniversity\\webproject\\webproject\\controllers\\basecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{5F80B0C2-7F0F-4D1D-98CF-08C805A03522}|WebProject\\WebProject.csproj|solutionrelative:webproject\\controllers\\basecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -39,64 +51,106 @@
             {
               "$type": "Document",
               "DocumentIndex": 0,
-              "Title": "BaseController.cs",
-              "DocumentMoniker": "D:\\Repositories\\MarketPlaceWebUniversity\\WebProject\\WebProject\\Controllers\\BaseController.cs",
-              "RelativeDocumentMoniker": "WebProject\\Controllers\\BaseController.cs",
-              "ToolTip": "D:\\Repositories\\MarketPlaceWebUniversity\\WebProject\\WebProject\\Controllers\\BaseController.cs",
-              "RelativeToolTip": "WebProject\\Controllers\\BaseController.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-05-30T00:47:19.37Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "GuestAPI.cs",
-              "DocumentMoniker": "D:\\Repositories\\MarketPlaceWebUniversity\\WebProject\\WebProject.BusinessLogic\\Core\\Levels\\GuestAPI.cs",
-              "RelativeDocumentMoniker": "WebProject.BusinessLogic\\Core\\Levels\\GuestAPI.cs",
-              "ToolTip": "D:\\Repositories\\MarketPlaceWebUniversity\\WebProject\\WebProject.BusinessLogic\\Core\\Levels\\GuestAPI.cs",
-              "RelativeToolTip": "WebProject.BusinessLogic\\Core\\Levels\\GuestAPI.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAABAAAAATAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-05-26T01:50:58.591Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "AccountController.cs",
-              "DocumentMoniker": "D:\\Repositories\\MarketPlaceWebUniversity\\WebProject\\WebProject\\Controllers\\AccountController.cs",
-              "RelativeDocumentMoniker": "WebProject\\Controllers\\AccountController.cs",
-              "ToolTip": "D:\\Repositories\\MarketPlaceWebUniversity\\WebProject\\WebProject\\Controllers\\AccountController.cs",
-              "RelativeToolTip": "WebProject\\Controllers\\AccountController.cs",
-              "ViewState": "AQIAACUAAAAAAAAAAIAwwDMAAAAMAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-05-26T01:36:29.927Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "HomeController.cs",
-              "DocumentMoniker": "D:\\Repositories\\MarketPlaceWebUniversity\\WebProject\\WebProject\\Controllers\\HomeController.cs",
-              "RelativeDocumentMoniker": "WebProject\\Controllers\\HomeController.cs",
-              "ToolTip": "D:\\Repositories\\MarketPlaceWebUniversity\\WebProject\\WebProject\\Controllers\\HomeController.cs",
-              "RelativeToolTip": "WebProject\\Controllers\\HomeController.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-05-26T01:36:25.401Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
               "Title": "GuestBL.cs",
               "DocumentMoniker": "D:\\Repositories\\MarketPlaceWebUniversity\\WebProject\\WebProject.BusinessLogic\\MainBL\\GuestBL.cs",
               "RelativeDocumentMoniker": "WebProject.BusinessLogic\\MainBL\\GuestBL.cs",
               "ToolTip": "D:\\Repositories\\MarketPlaceWebUniversity\\WebProject\\WebProject.BusinessLogic\\MainBL\\GuestBL.cs",
               "RelativeToolTip": "WebProject.BusinessLogic\\MainBL\\GuestBL.cs",
-              "ViewState": "AQIAABAAAAAAAAAAAAApwB4AAAAMAAAA",
+              "ViewState": "AQIAACIAAAAAAAAAAAAxwHAAAAAkAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-05-26T01:33:54.868Z"
+              "WhenOpened": "2024-05-30T01:49:02.486Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "AdminBL.cs",
+              "DocumentMoniker": "D:\\Repositories\\MarketPlaceWebUniversity\\WebProject\\WebProject.BusinessLogic\\MainBL\\AdminBL.cs",
+              "RelativeDocumentMoniker": "WebProject.BusinessLogic\\MainBL\\AdminBL.cs",
+              "ToolTip": "D:\\Repositories\\MarketPlaceWebUniversity\\WebProject\\WebProject.BusinessLogic\\MainBL\\AdminBL.cs",
+              "RelativeToolTip": "WebProject.BusinessLogic\\MainBL\\AdminBL.cs",
+              "ViewState": "AQIAAK8AAAAAAAAAAAAQwMIAAAAkAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-05-30T01:48:53.805Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "UserBL.cs",
+              "DocumentMoniker": "D:\\Repositories\\MarketPlaceWebUniversity\\WebProject\\WebProject.BusinessLogic\\MainBL\\UserBL.cs",
+              "RelativeDocumentMoniker": "WebProject.BusinessLogic\\MainBL\\UserBL.cs",
+              "ToolTip": "D:\\Repositories\\MarketPlaceWebUniversity\\WebProject\\WebProject.BusinessLogic\\MainBL\\UserBL.cs",
+              "RelativeToolTip": "WebProject.BusinessLogic\\MainBL\\UserBL.cs",
+              "ViewState": "AQIAAHoAAAAAAAAAAAAUwMoAAAAkAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-05-30T01:48:08.13Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "ProductAPI.cs",
+              "DocumentMoniker": "D:\\Repositories\\MarketPlaceWebUniversity\\WebProject\\WebProject.BusinessLogic\\Core\\Levels\\ProductAPI.cs",
+              "RelativeDocumentMoniker": "WebProject.BusinessLogic\\Core\\Levels\\ProductAPI.cs",
+              "ToolTip": "D:\\Repositories\\MarketPlaceWebUniversity\\WebProject\\WebProject.BusinessLogic\\Core\\Levels\\ProductAPI.cs",
+              "RelativeToolTip": "WebProject.BusinessLogic\\Core\\Levels\\ProductAPI.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAgAAAASAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-05-30T01:47:43.925Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "HomeController.cs",
+              "DocumentMoniker": "D:\\Repositories\\MarketPlaceWebUniversity\\WebProject\\WebProject\\Controllers\\HomeController.cs",
+              "RelativeDocumentMoniker": "WebProject\\Controllers\\HomeController.cs",
+              "ToolTip": "D:\\Repositories\\MarketPlaceWebUniversity\\WebProject\\WebProject\\Controllers\\HomeController.cs",
+              "RelativeToolTip": "WebProject\\Controllers\\HomeController.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAcAAAASAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-05-30T01:45:47.402Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "OrderModel.cs",
+              "DocumentMoniker": "D:\\Repositories\\MarketPlaceWebUniversity\\WebProject\\WebProject.ModelAccesLayer\\Model\\OrderModel.cs",
+              "RelativeDocumentMoniker": "WebProject.ModelAccesLayer\\Model\\OrderModel.cs",
+              "ToolTip": "D:\\Repositories\\MarketPlaceWebUniversity\\WebProject\\WebProject.ModelAccesLayer\\Model\\OrderModel.cs",
+              "RelativeToolTip": "WebProject.ModelAccesLayer\\Model\\OrderModel.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAABUAAAAmAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-05-30T01:42:06.796Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "CartController.cs",
+              "DocumentMoniker": "D:\\Repositories\\MarketPlaceWebUniversity\\WebProject\\WebProject\\Controllers\\CartController.cs",
+              "RelativeDocumentMoniker": "WebProject\\Controllers\\CartController.cs",
+              "ToolTip": "D:\\Repositories\\MarketPlaceWebUniversity\\WebProject\\WebProject\\Controllers\\CartController.cs",
+              "RelativeToolTip": "WebProject\\Controllers\\CartController.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAADsAAAANAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-05-30T01:39:53.3Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "BaseController.cs",
+              "DocumentMoniker": "D:\\Repositories\\MarketPlaceWebUniversity\\WebProject\\WebProject\\Controllers\\BaseController.cs",
+              "RelativeDocumentMoniker": "WebProject\\Controllers\\BaseController.cs",
+              "ToolTip": "D:\\Repositories\\MarketPlaceWebUniversity\\WebProject\\WebProject\\Controllers\\BaseController.cs",
+              "RelativeToolTip": "WebProject\\Controllers\\BaseController.cs",
+              "ViewState": "AQIAABwAAAAAAAAAAAAgwAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-05-30T01:39:28.069Z",
+              "EditorCaption": ""
             }
           ]
         },

@@ -8,7 +8,7 @@ using WebProject.Domain;
 
 namespace WebProject.BusinessLogic.Core
 {
-    public class UserAPI
+    public class UserRegisteredAPI
     {
         internal DataResponse<UserEF> ResetUser(UserEF userData)
         {

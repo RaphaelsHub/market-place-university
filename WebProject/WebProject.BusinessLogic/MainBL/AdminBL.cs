@@ -14,85 +14,59 @@ using WebProject.Domain.Enum;
 
 namespace WebProject.BusinessLogic.MainBL
 {
-    public class AdminBL : UserBL, IAdmin, IUserBase
+    public class AdminBL : UserBaseBL, IAdmin
     {
-        static private UserAPI _userAPI = new UserAPI();
-        static private ProductAPI _productAPI = new ProductAPI();
-        public bool AddProduct(Product product)
-        {
-            _productAPI.CreateBaseCategory();
-            var productEF = ConvertProductDataEF(product);
-            productEF.Owner = _userAPI.GetSuperAdmin();
+        private readonly UserRegisteredAPI _userAPI = new UserRegisteredAPI();
+        //static private ProductAPI _productAPI = new ProductAPI(); нет нужнды испольлзовать UserBase уже наследует этот класс, использую это на фронте.
 
-            var baseCategoryResponse = _productAPI.GetBaseCategory();
-            if (baseCategoryResponse.IsExist == false)
-                return false;
-            productEF.Category = baseCategoryResponse.Data;
-
-            var response = _productAPI.AddProductDataToDB(productEF);
-            return response.Status; // response.Status (true -> added to DB, false -> cant added to DB)
-        }
-
-        public bool DeleteOrderModel(int idOrder) 
-        {
-            var response = _userAPI.SuperAdminDeleteOrderModel(idOrder);
-            return response.Status; // response.Status (true -> deleted from DB, false -> cant deleted from DB)
-        }
-
-        public bool DeleteProduct(int id)
-        {
-            var response = _productAPI.DeleteProductDataByID(id);
-            return response.Status; // response.Status (true -> deleted from DB, false -> cant deleted from DB)
-        }
-
-        public bool EditProduct(Product updatedProduct)
-        {
-            var productEF = ConvertProductDataEF(updatedProduct);
-            var response = _productAPI.ModifyProductData(productEF);
-            return response.Status;// response.Status (true -> prod is updated, false -> prod cant updated)
-        }
-
-        public AllDeliveries GetAllActiveOrder() 
+        //НУЖНО РЕАЛИЗОВАТЬ ЭТО ПОЛУЧЕНИЯ СПИСКА ВСЕХ ЗАКАЗОВ ДЛЯ АДМИНА
+        public AllDeliveries GetAllActiveOrder()
         {
             AllDeliveries a = new AllDeliveries();
 
             return a;
         }
 
-        public AllProducts GetAllProducts()
+        public new AllProducts GetAllProducts() => GetAllProducts();
+
+        public bool AddProduct(Product product)
         {
-            var prodBL = new ProductBL();
-            return prodBL.GetAllProducts();
+            CreateBaseCategory();
+            var productEF = ConvertProductDataEF(product);
+            productEF.Owner = _userAPI.GetSuperAdmin();
+
+            var baseCategoryResponse = GetBaseCategory();
+            if (baseCategoryResponse.IsExist == false)
+                return false;
+            productEF.Category = baseCategoryResponse.Data;
+
+            var response = AddProductDataToDB(productEF);
+            return response.Status; // response.Status (true -> added to DB, false -> cant added to DB)
         }
 
-        // Metods from UserBL? unessesary to change
+        // response.Status (true -> deleted from DB, false -> cant deleted from DB)
+        public bool DeleteOrderModel(int idOrder) => _userAPI.SuperAdminDeleteOrderModel(idOrder).Status; 
 
-        /*public bool AddToCart(CartItem cartItem)
+        public bool DeleteProduct(int id) => DeleteProductDataByID(id).Status;
+
+        public bool EditProduct(Product updatedProduct)
         {
-            return false;
+            var productEF = ConvertProductDataEF(updatedProduct);
+            var response = ModifyProductData(productEF);
+            return response.Status;// response.Status (true -> prod is updated, false -> prod cant updated)
         }
 
-        public bool DeleteFromCart(CartItem cartItem)
-        {
-            return true;
-        }
+        public bool AddToCart(CartItem cartItem) => this is IRegistered user && user.AddToCart(cartItem);
 
-        public bool ProcessOrder(OrderModel orderModel)
-        {
-            return true;
-        }
+        public bool DeleteFromCart(CartItem cartItem) => this is IRegistered user && user.DeleteFromCart(cartItem);
+
+        public bool ProcessOrder(OrderModel orderModel) => this is IRegistered user && user.ProcessOrder(orderModel);
+
+        public CartData ViewCart(int indexUser) => this is IRegistered user ? user.ViewCart(indexUser) : null;
+
+        public AllDeliveries ViewOrders(int indexUser) => this is IRegistered user ? user.ViewOrders(indexUser) : null;
 
 
-        public CartData ViewCart(int indexUser)
-        {
-            return null;
-        }
-
-        public AllDeliveries ViewOrders(int indexUser)
-        {
-            return null;
-        } */
-    
         //Convert
         static private ProductDataEF ConvertProductDataEF(Product product)
         {
@@ -108,7 +82,6 @@ namespace WebProject.BusinessLogic.MainBL
             productEF.SetPhotos(product.PhotoUrl);
             return productEF;
         }
-
         static private Product ConvertProduct(ProductDataEF data)
         {
             return new Product
@@ -124,7 +97,6 @@ namespace WebProject.BusinessLogic.MainBL
                 Amount = data.Amount
             };
         }
-
         static private AllProducts ConvertAllProducts(List<ProductDataEF> listData)
         {
             var allProductList = new List<Product>();
@@ -212,7 +184,6 @@ namespace WebProject.BusinessLogic.MainBL
                 Address = data.Address,
                 Comment = data.Comment,
             };
-            var cardCred = new CardCreditionals();
             var cartData = GenerateCartData(data.CartItems);
 
             var StatusDelivery = GenerateStatusDelivery(data.StatusDelivery);
@@ -221,7 +192,6 @@ namespace WebProject.BusinessLogic.MainBL
             {
                 Id = data.Order_Id,
                 OrderInfo = orderInfo,
-                CardCreditinals = cardCred,
                 CartData = cartData,
                 StatusDelivery = StatusDelivery
             };

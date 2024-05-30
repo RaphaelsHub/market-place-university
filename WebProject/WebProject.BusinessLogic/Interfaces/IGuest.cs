@@ -8,7 +8,7 @@ using WebProject.Domain.Enum;
 
 namespace WebProject.BusinessLogic.Interfaces
 {
-    internal interface IGuestUser
+    public interface IGuest
     {
         UserData Register(RegistrationData registrationData);
         UserData Login(LoginData loginData);

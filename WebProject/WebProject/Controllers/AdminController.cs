@@ -1,7 +1,7 @@
 ﻿using System.Web.Mvc;
 using WebProject.Domain.Enum;
 using WebProject.ModelAccessLayer.Model;
-
+using WebProject.BusinessLogic.Interfaces;
 
 namespace WebProject.Controllers
 {
@@ -19,7 +19,7 @@ namespace WebProject.Controllers
         {
             if (IsAdmin())
             {
-                ((UserData)Session["UserData"]).ProductsAdmin = (_businessLogic.User as IAdmin).GetAllActiveProductsService();
+                ((UserData)Session["UserData"]).ProductsAdmin = (_businessLogic.User as IAdmin).GetAllProducts();
                 return View((UserData)Session["UserData"]);
             }
             return RedirectToAction("Index", "Home");
@@ -29,7 +29,7 @@ namespace WebProject.Controllers
         {
             if (IsAdmin())
             {
-                ((UserData)Session["UserData"]).DeliveriesUser = (_businessLogic.User as IAdmin).GetAllActiveOrderService();
+                ((UserData)Session["UserData"]).DeliveriesUser = (_businessLogic.User as IAdmin).GetAllActiveOrder();
                 return View((UserData)Session["UserData"]);
             }
             return RedirectToAction("Index", "Home");

@@ -10,7 +10,7 @@ using WebProject.ModelAccessLayer.Model;
 
 namespace WebProject.BusinessLogic.Core.Levels
 {
-    public class GuestAPI
+    public class UserGuestAPI
     {
         internal ResponseUserStatus ADNUSessionCheck(RegistrationData data)
         {
