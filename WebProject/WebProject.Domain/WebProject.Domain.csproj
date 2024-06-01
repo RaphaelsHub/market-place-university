@@ -55,21 +55,32 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Context.cs" />
-    <Compile Include="Entities\DBModels\AdminEF.cs" />
-    <Compile Include="Entities\DBModels\CartItemEF.cs" />
-    <Compile Include="Entities\DBModels\CategoryTypeEF.cs" />
-    <Compile Include="Entities\DBModels\OrderEF.cs" />
-    <Compile Include="Entities\DBModels\ProductDataEF.cs" />
-    <Compile Include="Entities\DBModels\UserEF.cs" />
+    <Compile Include="DB\CartItemDataEF.cs" />
+    <Compile Include="DB\CategoryDataEF.cs" />
+    <Compile Include="DB\OrderDataEF.cs" />
+    <Compile Include="DB\ProductDataEF.cs" />
+    <Compile Include="DB\UserDataEF.cs" />
     <Compile Include="Enum\SortBy.cs" />
     <Compile Include="Enum\StatusUser.cs" />
     <Compile Include="Enum\StatusDelivery.cs" />
+    <Compile Include="Migrations\202406011933088_NewDB.cs" />
+    <Compile Include="Migrations\202406011933088_NewDB.Designer.cs">
+      <DependentUpon>202406011933088_NewDB.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Folder Include="Entities\" />
+  </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
     <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Migrations\202406011933088_NewDB.resx">
+      <DependentUpon>202406011933088_NewDB.cs</DependentUpon>
+    </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">

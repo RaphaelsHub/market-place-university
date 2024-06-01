@@ -191,7 +191,7 @@ namespace WebProject.BusinessLogic.Core.Levels
 
         }
 
-        internal DataResponse<ProductDataEF> GetSingleProductData(int id)
+        internal DataResponse<ProductDataEff> GetSingleProductData(int id)
         {
             using (var db = new Context())
             {
@@ -205,7 +205,7 @@ namespace WebProject.BusinessLogic.Core.Levels
                         resp = $"There is no ProductData with this id: {id}";
                     }
 
-                    return new DataResponse<ProductDataEF>
+                    return new DataResponse<ProductDataEff>
                     {
                         Data = prod,
                         IsExist = (prod != null),
@@ -215,7 +215,7 @@ namespace WebProject.BusinessLogic.Core.Levels
                 }
                 catch (Exception ex)
                 {
-                    return new DataResponse<ProductDataEF>
+                    return new DataResponse<ProductDataEff>
                     {
                         Data = null,
                         IsExist = false,
@@ -226,13 +226,13 @@ namespace WebProject.BusinessLogic.Core.Levels
 
         }
 
-        internal DataResponse<List<ProductDataEF>> GetProductsByCategory(CategoryTypeEF category)
+        internal DataResponse<List<ProductDataEff>> GetProductsByCategory(CategoryTypeEF category)
         {
             using (var dbContext = new Context())
             {
                 try
                 {
-                    ProductDataEF a = new ProductDataEF();
+                    ProductDataEff a = new ProductDataEff();
                     var ProductsWithPrice = dbContext.Products
                     .Where(p => p.Category.CategoryName == category.CategoryName)
                     .ToList();
@@ -243,7 +243,7 @@ namespace WebProject.BusinessLogic.Core.Levels
                         resp = $"There is no ProductData with category: {category.CategoryName}";
                     }
 
-                    return new DataResponse<List<ProductDataEF>>
+                    return new DataResponse<List<ProductDataEff>>
                     {
                         Data = ProductsWithPrice,
                         IsExist = (ProductsWithPrice != null && ProductsWithPrice.Any()),
@@ -252,7 +252,7 @@ namespace WebProject.BusinessLogic.Core.Levels
                 }
                 catch (Exception ex)
                 {
-                    return new DataResponse<List<ProductDataEF>>
+                    return new DataResponse<List<ProductDataEff>>
                     {
                         Data = null,
                         IsExist = false,
@@ -262,7 +262,7 @@ namespace WebProject.BusinessLogic.Core.Levels
             }
         }
 
-        internal DataResponse<List<ProductDataEF>> GetProductsByPrice(PriceRange priceRange)
+        internal DataResponse<List<ProductDataEff>> GetProductsByPrice(PriceRange priceRange)
         {
             using (var dbContext = new Context())
             {
@@ -278,7 +278,7 @@ namespace WebProject.BusinessLogic.Core.Levels
                         resp = $"There is no ProductData with price from: {priceRange.Min} to {priceRange.Max}";
                     }
 
-                    return new DataResponse<List<ProductDataEF>>
+                    return new DataResponse<List<ProductDataEff>>
                     {
                         Data = ProductsWithPrice,
                         IsExist = (ProductsWithPrice != null && ProductsWithPrice.Any()),
@@ -287,7 +287,7 @@ namespace WebProject.BusinessLogic.Core.Levels
                 }
                 catch (Exception ex)
                 {
-                    return new DataResponse<List<ProductDataEF>>
+                    return new DataResponse<List<ProductDataEff>>
                     {
                         Data = null,
                         IsExist = false,
@@ -297,7 +297,7 @@ namespace WebProject.BusinessLogic.Core.Levels
             }
         }
 
-        internal DataResponse<List<ProductDataEF>> GetProductsByName(string subString)
+        internal DataResponse<List<ProductDataEff>> GetProductsByName(string subString)
         {
             using (var dbContext = new Context())
             {
@@ -313,7 +313,7 @@ namespace WebProject.BusinessLogic.Core.Levels
                         resp = $"There is no ProductData with sub word: {subString}";
                     }
 
-                    return new DataResponse<List<ProductDataEF>>
+                    return new DataResponse<List<ProductDataEff>>
                     {
                         Data = ProductsWithName,
                         IsExist = (ProductsWithName != null && ProductsWithName.Any()),
@@ -322,7 +322,7 @@ namespace WebProject.BusinessLogic.Core.Levels
                 }
                 catch (Exception ex)
                 {
-                    return new DataResponse<List<ProductDataEF>>
+                    return new DataResponse<List<ProductDataEff>>
                     {
                         Data = null,
                         IsExist = false,
@@ -332,7 +332,7 @@ namespace WebProject.BusinessLogic.Core.Levels
             }
         }
 
-        internal DataResponse<ProductDataEF> GetSingleProductByName(string name)
+        internal DataResponse<ProductDataEff> GetSingleProductByName(string name)
         {
             using (var dbContext = new Context())
             {
@@ -346,7 +346,7 @@ namespace WebProject.BusinessLogic.Core.Levels
                         resp = $"There is no ProductData with name: {name}";
                     }
 
-                    return new DataResponse<ProductDataEF>
+                    return new DataResponse<ProductDataEff>
                     {
                         Data = ProductsWithName,
                         IsExist = (ProductsWithName != null),
@@ -355,7 +355,7 @@ namespace WebProject.BusinessLogic.Core.Levels
                 }
                 catch (Exception ex)
                 {
-                    return new DataResponse<ProductDataEF>
+                    return new DataResponse<ProductDataEff>
                     {
                         Data = null,
                         IsExist = false,
@@ -400,7 +400,7 @@ namespace WebProject.BusinessLogic.Core.Levels
             }
         }
 
-        internal StandartResponse ModifyProductData(ProductDataEF updatedProductData)
+        internal StandartResponse ModifyProductData(ProductDataEff updatedProductData)
         {
             using (var db = new Context())
             {
@@ -448,7 +448,7 @@ namespace WebProject.BusinessLogic.Core.Levels
         }
 
 
-        internal DataResponse<List<ProductDataEF>> GetProductsOnPages(PageInfo currentPage)
+        internal DataResponse<List<ProductDataEff>> GetProductsOnPages(PageInfo currentPage)
         {
             uint ProductsPerPage = currentPage.ProductsPerPage;
             uint pageIndex = currentPage.PageIndex;
@@ -464,7 +464,7 @@ namespace WebProject.BusinessLogic.Core.Levels
                                 .Skip((int)startIndex)
                                 .Take((int)ProductsPerPage)
                                 .ToList();
-                    return new DataResponse<List<ProductDataEF>>
+                    return new DataResponse<List<ProductDataEff>>
                     {
                         Data = ProductsOnPage,
                         IsExist = true,
@@ -473,7 +473,7 @@ namespace WebProject.BusinessLogic.Core.Levels
                 }
                 catch (Exception ex)
                 {
-                    return new DataResponse<List<ProductDataEF>>
+                    return new DataResponse<List<ProductDataEff>>
                     {
                         Data = null,
                         IsExist = false,
@@ -483,7 +483,7 @@ namespace WebProject.BusinessLogic.Core.Levels
             }
         }
 
-        internal DataResponse<List<ProductDataEF>> GetAllProducts()
+        internal DataResponse<List<ProductDataEff>> GetAllProducts()
         {
             var BigPage = new PageInfo
             {
@@ -493,7 +493,7 @@ namespace WebProject.BusinessLogic.Core.Levels
             return GetProductsOnPages(BigPage);
         }
 
-        internal StandartResponse AddProductDataToDB(ProductDataEF prod)
+        internal StandartResponse AddProductDataToDB(ProductDataEff prod)
         {
             if (!IsValidProductData(prod)) //checking that all fields are not null and the validity of Price and Amount
             {
@@ -537,7 +537,7 @@ namespace WebProject.BusinessLogic.Core.Levels
             }
         }
 
-        private bool IsValidProductData(ProductDataEF prod)
+        private bool IsValidProductData(ProductDataEff prod)
         {
             return (
                 prod.Name != null &&
@@ -548,7 +548,7 @@ namespace WebProject.BusinessLogic.Core.Levels
                 //prod.Amount >= 0
                 );
         }
-        private string DetailsInvalidProductDataPesponse(ProductDataEF prod)
+        private string DetailsInvalidProductDataPesponse(ProductDataEff prod)
         {
             return
                 (

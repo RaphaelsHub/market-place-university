@@ -7,9 +7,6 @@ using WebProject.BusinessLogic.Core;
 using WebProject.BusinessLogic.Core.Levels;
 using WebProject.BusinessLogic.Interfaces;
 using WebProject.ModelAccessLayer.Model;
-
-using WebProject.Domain.Entities.DBModels;
-using WebProject.Domain.Entities.User;
 using WebProject.Domain.Enum;
 
 namespace WebProject.BusinessLogic.MainBL
@@ -48,7 +45,7 @@ namespace WebProject.BusinessLogic.MainBL
         }
 
         // response.Status (true -> deleted from DB, false -> cant deleted from DB)
-        public bool DeleteOrderModel(int idOrder) => _userAPI.SuperAdminDeleteOrderModel(idOrder).Status; 
+        public bool DeleteOrderModel(int idOrder) => _userAPI.SuperAdminDeleteOrderModel(idOrder).Status;
 
         public bool DeleteProduct(int id) => DeleteProductDataByID(id).Status;
 
@@ -71,9 +68,9 @@ namespace WebProject.BusinessLogic.MainBL
 
 
         //Convert
-        static private ProductDataEF ConvertProductDataEF(Product product)
+        static private ProductDataEff ConvertProductDataEF(Product product)
         {
-            var productEF = new ProductDataEF
+            var productEF = new ProductDataEff
             {
                 Name = product.Name,
                 Details = product.Details,
@@ -85,7 +82,7 @@ namespace WebProject.BusinessLogic.MainBL
             productEF.SetPhotos(product.PhotoUrl);
             return productEF;
         }
-        static private Product ConvertProduct(ProductDataEF data)
+        static private Product ConvertProduct(ProductDataEff data)
         {
             return new Product
             {
@@ -99,10 +96,10 @@ namespace WebProject.BusinessLogic.MainBL
                 Amount = data.Amount
             };
         }
-        static private AllProducts ConvertAllProducts(List<ProductDataEF> listData)
+        static private AllProducts ConvertAllProducts(List<ProductDataEff> listData)
         {
             var allProductList = new List<Product>();
-            foreach (ProductDataEF productData in listData)
+            foreach (ProductDataEff productData in listData)
             {
                 allProductList.Add(ConvertProduct(productData));
             }
@@ -122,7 +119,7 @@ namespace WebProject.BusinessLogic.MainBL
             {"Returned" , StatusDelivery.Returned },            // Возвращено
             {"Canceled" , StatusDelivery.Canceled }             // Отменено
         };
-        static private Product GenerateProduct(ProductDataEF data)
+        static private Product GenerateProduct(ProductDataEff data)
         {
             return new Product
             {

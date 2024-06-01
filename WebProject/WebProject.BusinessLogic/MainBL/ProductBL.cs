@@ -1,15 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.Collections.Generic;
+using WebProject.BusinessLogic.Core.Levels;
 using WebProject.BusinessLogic.Interfaces;
 using WebProject.Domain.Enum;
 using WebProject.ModelAccessLayer.Model;
-using WebProject.BusinessLogic.Core.Levels;
-using WebProject.Domain.Entities.User;
-using WebProject.Domain.Entities.DBModels;
-using System.Collections;
 //using WebProject.ModelAccessLayer.Model;
 
 namespace WebProject.BusinessLogic.MainBL
@@ -21,12 +14,12 @@ namespace WebProject.BusinessLogic.MainBL
         {
             var AllProductsResponse = base.GetAllProducts();
             if (AllProductsResponse.IsExist == false)
-            { 
-                return null; 
+            {
+                return null;
             }
             return ConvertAllProducts(AllProductsResponse.Data);
         }
-        public Product GetProductById(int id)
+        public  Product GetProductById(int id)
         {
             var responseProd = GetSingleProductData(id);
             if (responseProd.IsExist == false)
@@ -91,10 +84,10 @@ namespace WebProject.BusinessLogic.MainBL
                 case SortBy.High:
                     unsortedCategory.Products.Sort((x, y) => y.Price.CompareTo(x.Price));
                     break;
-                case SortBy.AZ :
+                case SortBy.AZ:
                     unsortedCategory.Products.Sort((x, y) => x.Name.CompareTo(y.Name));
                     break;
-                case SortBy.ZA :
+                case SortBy.ZA:
                     unsortedCategory.Products.Sort((x, y) => y.Name.CompareTo(x.Name));
                     break;
                 case SortBy.None: break;
@@ -102,9 +95,9 @@ namespace WebProject.BusinessLogic.MainBL
             unsortedCategory.SortBy = sortBy;
             return unsortedCategory;
         }
-        
+
         //Convert metods
-        static private Product ConvertProduct(ProductDataEF data)
+        static private Product ConvertProduct(ProductDataEff data)
         {
             return new Product
             {
@@ -118,11 +111,11 @@ namespace WebProject.BusinessLogic.MainBL
                 Amount = data.Amount
             };
         }
-        
-        static private AllProducts ConvertAllProducts(List<ProductDataEF> listData)
+
+        static private AllProducts ConvertAllProducts(List<ProductDataEff> listData)
         {
             var allProductList = new List<Product>();
-            foreach(ProductDataEF productData in listData)
+            foreach (ProductDataEff productData in listData)
             {
                 allProductList.Add(ConvertProduct(productData));
             }
@@ -130,7 +123,7 @@ namespace WebProject.BusinessLogic.MainBL
             return new AllProducts { Products = allProductList };
         }
 
-        static private Category ConvertCategory(CategoryTypeEF data) 
+        static private Category ConvertCategory(CategoryTypeEF data)
         {
             var prods = new List<Product>(); // По вопросам к Ивану
             var filters = new List<Feature>(); // По вопросам к Саше или Ивану
@@ -152,14 +145,14 @@ namespace WebProject.BusinessLogic.MainBL
             };
         }
 
-        static private AllCategories ConvertAllCategories(ICollection<CategoryTypeEF> categories) 
+        static private AllCategories ConvertAllCategories(ICollection<CategoryTypeEF> categories)
         {
             var allCategories = new List<Category>();
             foreach (CategoryTypeEF category in categories)
             {
                 allCategories.Add(ConvertCategory(category));
             }
-            return new AllCategories { Categories = allCategories };    
+            return new AllCategories { Categories = allCategories };
         }
     }
 }

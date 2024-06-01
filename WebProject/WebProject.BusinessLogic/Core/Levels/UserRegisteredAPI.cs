@@ -306,7 +306,7 @@ namespace WebProject.BusinessLogic.Core
                 }
             }
         }
-        internal StandartResponse SuperAdminEditProductData(ProductDataEF updatedProductData)
+        internal StandartResponse SuperAdminEditProductData(ProductDataEff updatedProductData)
         {
             using (var db = new Context())
             {
@@ -323,14 +323,14 @@ namespace WebProject.BusinessLogic.Core
                 }
             }
         }
-        internal DataResponse<List<ProductDataEF>> SuperAdminGetAllProducts()
+        internal DataResponse<List<ProductDataEff>> SuperAdminGetAllProducts()
         {
             using (var db = new Context())
             {
                 if (db.Products.Any())
-                    return new DataResponse<List<ProductDataEF>> { Data = db.Products.ToList(), IsExist = true };
+                    return new DataResponse<List<ProductDataEff>> { Data = db.Products.ToList(), IsExist = true };
                 else
-                    return new DataResponse<List<ProductDataEF>> { Data = new List<ProductDataEF>(), IsExist = false, ResponseMessage = "There are no Products in the database" };
+                    return new DataResponse<List<ProductDataEff>> { Data = new List<ProductDataEff>(), IsExist = false, ResponseMessage = "There are no Products in the database" };
             }
         }
         internal StandartResponse SuperAdminDeleteOrderModel(int idOrder)
@@ -355,7 +355,7 @@ namespace WebProject.BusinessLogic.Core
                 }
             }
         }
-        public DataResponse<ProductDataEF> SuperAdminDeleteProductData(int idProductData)
+        public DataResponse<ProductDataEff> SuperAdminDeleteProductData(int idProductData)
         {
             using (var db = new Context())
             {
@@ -368,7 +368,7 @@ namespace WebProject.BusinessLogic.Core
                     {
                         db.Products.Remove(deletedProductData);
                         db.SaveChanges();
-                        return new DataResponse<ProductDataEF>
+                        return new DataResponse<ProductDataEff>
                         {
                             Data = null,
                             IsExist = false,
@@ -379,7 +379,7 @@ namespace WebProject.BusinessLogic.Core
                     else
                     {
                         deletedProductData.Amount = 0;
-                        return new DataResponse<ProductDataEF>
+                        return new DataResponse<ProductDataEff>
                         {
                             Data = deletedProductData,
                             IsExist = true,
@@ -390,7 +390,7 @@ namespace WebProject.BusinessLogic.Core
                 }
                 else
                 {
-                    return new DataResponse<ProductDataEF> { Data = null, IsExist = false, ResponseMessage = "This ProductData dont exist" };
+                    return new DataResponse<ProductDataEff> { Data = null, IsExist = false, ResponseMessage = "This ProductData dont exist" };
                 }
             }
         }
