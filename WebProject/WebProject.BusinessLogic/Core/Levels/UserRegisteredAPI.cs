@@ -5,6 +5,7 @@ using WebProject.BusinessLogic.Core.Levels.GeneralResponse;
 using WebProject.Domain.Entities.DBModels;
 using WebProject.Domain.Entities.User;
 using WebProject.Domain;
+using WebProject.ModelAccessLayer.Model;
 
 namespace WebProject.BusinessLogic.Core
 {
@@ -21,10 +22,8 @@ namespace WebProject.BusinessLogic.Core
                     // Обновляем данные пользователя в объекте UserData
                     userFromDb = userData;
                     db.SaveChanges();
-
                     // Возвращаем обновленный объект UserData
                     return new DataResponse<UserEF> { Data = userFromDb, IsExist = true };
-
                 }
                 else
                 {
@@ -34,16 +33,14 @@ namespace WebProject.BusinessLogic.Core
                 }
             }
         }
-
         internal DataResponse<UserEF> FindUserEF(int indexUser)
         {
             using (var db = new Context())
             {
                 var userDB = db.Users.FirstOrDefault(u => u.Id == indexUser);
-
                 if (userDB != null)
                 {
-                    return new DataResponse<UserEF> { Data = userDB, IsExist = true};
+                    return new DataResponse<UserEF> { Data = userDB, IsExist = true };
                 }
                 else
                 {
@@ -56,13 +53,12 @@ namespace WebProject.BusinessLogic.Core
             using (var db = new Context())
             {
                 var userDB = db.Users.FirstOrDefault(u => u.Id == indexUser);
-
                 if (userDB != null)
                 {
                     var cartItemDB = userDB.CartItems.FirstOrDefault(i => i.ProductId == idProduct);
-                    if(cartItemDB != null)
+                    if (cartItemDB != null)
                     {
-                        return new DataResponse<CartItemEF> { Data = cartItemDB, IsExist = true};
+                        return new DataResponse<CartItemEF> { Data = cartItemDB, IsExist = true };
                     }
                     else
                     {
@@ -76,8 +72,28 @@ namespace WebProject.BusinessLogic.Core
 
             }
         }
+
+        private CartItemEF CretateCartItemEF(CartItemEF cartItem)
+        {
+            using (var db = new Context())
+            {
+                var newCartItem = db.CartItems.Add(cartItem);
+                db.SaveChanges();
+                return newCartItem;
+            }
+        }
+
         internal StandartResponse AddToUserCart(CartItemEF cartItem)
         {
+            var userResponse = FindUserEF(cartItem.User.Id);
+            if (userResponse.IsExist == false)
+                return new StandartResponse { Status = false, ResponseMessage = "User not found in database." };
+
+            if (cartItem == null)
+                return new StandartResponse { Status = false, ResponseMessage = "cartItem is null" };
+
+            var newCartItem = CretateCartItemEF(cartItem);
+
             using (var db = new Context())
             {
                 var userData = cartItem.User;
@@ -88,9 +104,14 @@ namespace WebProject.BusinessLogic.Core
                     // Обновляем данные пользователя в объекте UserData
                     userFromDb.CartItems.Add(cartItem);
                     db.SaveChanges();
+                    // Обновляем данные пользователя в объекте UserData
+                    var theNewestCartItem = db.CartItems.FirstOrDefault(x => x.CartItemId == newCartItem.CartItemId);
+                    var theNewestUser = db.Users.FirstOrDefault(x => x.Id == userResponse.Data.Id);
 
                     // Возвращаем обновленный объект UserData
                     return new StandartResponse { Status = true };
+                    theNewestUser.CartItems.Add(theNewestCartItem);
+                    db.SaveChanges();
 
                 }
                 else
@@ -99,6 +120,8 @@ namespace WebProject.BusinessLogic.Core
                     // возможно, стоит сгенерировать исключение или выполнить другое действие по обработке этой ситуации
                     return new StandartResponse { Status = false, ResponseMessage = "User not found in database." };
                 }
+                // Возвращаем обновленный объект UserData
+                return new StandartResponse { Status = true };
             }
         }
         internal StandartResponse DeleteFromUserCart(CartItemEF cartItem)
@@ -113,10 +136,8 @@ namespace WebProject.BusinessLogic.Core
                     // Обновляем данные пользователя в объекте UserData
                     db.CartItems.Remove(cartItem);
                     db.SaveChanges();
-
                     // Возвращаем обновленный объект UserData
                     return new StandartResponse { Status = true };
-
                 }
                 else
                 {
@@ -126,7 +147,6 @@ namespace WebProject.BusinessLogic.Core
                 }
             }
         }
-
         internal AdminEF GetSuperAdmin()
         {
             using (var db = new Context())
@@ -134,7 +154,6 @@ namespace WebProject.BusinessLogic.Core
                 return db.Admins.FirstOrDefault();
             }
         }
-
         internal StandartResponse SetSuperAdmin(UserEF admin)
         {
             using (var db = new Context())
@@ -153,7 +172,6 @@ namespace WebProject.BusinessLogic.Core
                 return new StandartResponse { Status = false, ResponseMessage = "SetSuperAdmin already exist" };
             }
         }
-
         internal StandartResponse UpdateOrderInfo(OrderInfoReqest updated)
         {
             using (var db = new Context())
@@ -185,18 +203,15 @@ namespace WebProject.BusinessLogic.Core
             {
                 // Получаем пользователя из базы данных по его Id
                 UserEF userFromDb = db.Users.FirstOrDefault(u => u.Id == indexUser);
-
                 if (userFromDb != null)
                 {
                     if (userFromDb.CartItems.Count() <= 0)
                     {
                         return new DataResponse<OrderEF> { Data = null, IsExist = false, ResponseMessage = "User dont have any item in cart" };
                     }
-
                     OrderEF newOrder = new OrderEF { User = userFromDb, Admin = superAdmin, OrderDate = DateTime.Now, CartItems = userFromDb.CartItems };
                     // Обновляем данные пользователя в объекте UserData
                     userFromDb.CartItems.Clear();
-
                     newOrder.Name = orderInfo.Name;
                     newOrder.Email = orderInfo.Email;
                     newOrder.Phone = orderInfo.Phone;
@@ -205,14 +220,10 @@ namespace WebProject.BusinessLogic.Core
                     newOrder.Address = orderInfo.Address;
                     newOrder.Comment = orderInfo.Comment;
                     newOrder.StatusDelivery = orderInfo.StatusDelivery;
-
                     userFromDb.Orders.Add(newOrder);
                     superAdmin.Orders.Add(newOrder);
-
                     db.SaveChanges();
-
                     return new DataResponse<OrderEF> { Data = newOrder, IsExist = true };
-
                 }
                 else
                 {
@@ -236,10 +247,8 @@ namespace WebProject.BusinessLogic.Core
                     }
                     // Обновляем данные пользователя в объекте UserData
                     List<CartItemEF> userCartItems = new List<CartItemEF>(userFromDb.CartItems);
-
                     // Возвращаем обновленный объект UserData
                     return new DataResponse<List<CartItemEF>> { Data = userCartItems, IsExist = true };
-
                 }
                 else
                 {
@@ -263,10 +272,8 @@ namespace WebProject.BusinessLogic.Core
                     }
                     // Обновляем данные пользователя в объекте UserData
                     List<OrderEF> userCartItems = new List<OrderEF>(userFromDb.Orders);
-
                     // Возвращаем обновленный объект UserData
                     return new DataResponse<List<OrderEF>> { Data = userCartItems, IsExist = true };
-
                 }
                 else
                 {
@@ -276,7 +283,6 @@ namespace WebProject.BusinessLogic.Core
                 }
             }
         }
-
         internal StandartResponse DeleteFromUserOrder(OrderEF userOrder)
         {
             using (var db = new Context())
@@ -289,10 +295,8 @@ namespace WebProject.BusinessLogic.Core
                     // Обновляем данные пользователя в объекте UserData
                     db.Orders.Remove(userOrder);
                     db.SaveChanges();
-
                     // Возвращаем обновленный объект UserData
                     return new StandartResponse { Status = true };
-
                 }
                 else
                 {
@@ -302,7 +306,6 @@ namespace WebProject.BusinessLogic.Core
                 }
             }
         }
-
         internal StandartResponse SuperAdminEditProductData(ProductDataEF updatedProductData)
         {
             using (var db = new Context())
@@ -314,7 +317,6 @@ namespace WebProject.BusinessLogic.Core
                     db.SaveChanges();
                     return new StandartResponse { Status = true };
                 }
-
                 else
                 {
                     return new StandartResponse { Status = false, ResponseMessage = "ProductData not found in database." };
@@ -327,7 +329,6 @@ namespace WebProject.BusinessLogic.Core
             {
                 if (db.Products.Any())
                     return new DataResponse<List<ProductDataEF>> { Data = db.Products.ToList(), IsExist = true };
-
                 else
                     return new DataResponse<List<ProductDataEF>> { Data = new List<ProductDataEF>(), IsExist = false, ResponseMessage = "There are no Products in the database" };
             }
@@ -343,10 +344,8 @@ namespace WebProject.BusinessLogic.Core
                     // Обновляем данные пользователя в объекте UserData
                     db.Orders.Remove(deletedOrder);
                     db.SaveChanges();
-
                     // Возвращаем обновленный объект UserData
                     return new StandartResponse { Status = true };
-
                 }
                 else
                 {
@@ -362,7 +361,6 @@ namespace WebProject.BusinessLogic.Core
             {
                 //не проверяю принадлежность к админу потому что SuperAdmin
                 var deletedProductData = db.Products.FirstOrDefault(p => p.Id == idProductData);
-
                 if (deletedProductData != null)
                 {
                     DeleteAllProductDataReferenseInCart(idProductData, db);
@@ -394,36 +392,28 @@ namespace WebProject.BusinessLogic.Core
                 {
                     return new DataResponse<ProductDataEF> { Data = null, IsExist = false, ResponseMessage = "This ProductData dont exist" };
                 }
-
             }
         }
-
         private bool FindAnyProductDataReferenseInOrders(int idProductData, Context db)
         {
             return db.Orders.Any(u => u.CartItems.Any
             (ci => ci.ProductId == idProductData));
         }
-
         private void DeleteAllProductDataReferenseInCart(int idProductData, Context db)
         {
             var userIdsWithProductData = db.Users
                 .Where(u => u.CartItems.Any(ci => ci.ProductId == idProductData))
                 .Select(u => u.Id)
                 .ToList(); //находит всех пользователй у которых есть искомый продукт именно в корзине
-
             foreach (var userId in userIdsWithProductData)
             {
                 var cartItemsWithProductData = db.CartItems
                     .Where(ci => ci.UserId == userId && ci.ProductId == idProductData)
                     .ToList();
-
                 db.CartItems.RemoveRange(cartItemsWithProductData);
                 //удаляет искомый продукт у именно из корзин пользователей
             }
-
             db.SaveChanges();
-
         }
-
     }
 }

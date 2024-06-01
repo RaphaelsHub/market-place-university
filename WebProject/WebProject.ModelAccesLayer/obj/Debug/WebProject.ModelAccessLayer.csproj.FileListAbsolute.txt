@@ -53,3 +53,15 @@ C:\!univer\!Project\WebProduct\WebProject\WebProject.ModelAccesLayer\obj\Debug\W
 D:\Repositories\MarketPlaceWebUniversity\WebProject\WebProject.ModelAccesLayer\bin\Debug\WebProject.Domain.dll.config
 D:\Repositories\MarketPlaceWebUniversity\WebProject\WebProject.ModelAccesLayer\bin\Debug\EntityFramework.dll
 D:\Repositories\MarketPlaceWebUniversity\WebProject\WebProject.ModelAccesLayer\bin\Debug\EntityFramework.xml
+D:\!Univer\Univer_4th_sem\!Project_2\MarketPlaceWebUniversity\WebProject\WebProject.ModelAccesLayer\bin\Debug\WebProject.ModelAccesLayer.dll
+D:\!Univer\Univer_4th_sem\!Project_2\MarketPlaceWebUniversity\WebProject\WebProject.ModelAccesLayer\bin\Debug\WebProject.ModelAccesLayer.pdb
+D:\!Univer\Univer_4th_sem\!Project_2\MarketPlaceWebUniversity\WebProject\WebProject.ModelAccesLayer\bin\Debug\WebProject.Domain.dll
+D:\!Univer\Univer_4th_sem\!Project_2\MarketPlaceWebUniversity\WebProject\WebProject.ModelAccesLayer\bin\Debug\EntityFramework.dll
+D:\!Univer\Univer_4th_sem\!Project_2\MarketPlaceWebUniversity\WebProject\WebProject.ModelAccesLayer\bin\Debug\WebProject.Domain.pdb
+D:\!Univer\Univer_4th_sem\!Project_2\MarketPlaceWebUniversity\WebProject\WebProject.ModelAccesLayer\bin\Debug\WebProject.Domain.dll.config
+D:\!Univer\Univer_4th_sem\!Project_2\MarketPlaceWebUniversity\WebProject\WebProject.ModelAccesLayer\bin\Debug\EntityFramework.xml
+D:\!Univer\Univer_4th_sem\!Project_2\MarketPlaceWebUniversity\WebProject\WebProject.ModelAccesLayer\obj\Debug\WebProject.ModelAccessLayer.csproj.AssemblyReference.cache
+D:\!Univer\Univer_4th_sem\!Project_2\MarketPlaceWebUniversity\WebProject\WebProject.ModelAccesLayer\obj\Debug\WebProject.ModelAccessLayer.csproj.CoreCompileInputs.cache
+D:\!Univer\Univer_4th_sem\!Project_2\MarketPlaceWebUniversity\WebProject\WebProject.ModelAccesLayer\obj\Debug\WebProject.ModelAccessLayer.csproj.CopyComplete
+D:\!Univer\Univer_4th_sem\!Project_2\MarketPlaceWebUniversity\WebProject\WebProject.ModelAccesLayer\obj\Debug\WebProject.ModelAccesLayer.dll
+D:\!Univer\Univer_4th_sem\!Project_2\MarketPlaceWebUniversity\WebProject\WebProject.ModelAccesLayer\obj\Debug\WebProject.ModelAccesLayer.pdb

@@ -50,3 +50,15 @@ D:\Repositories\MarketPlaceWebUniversity\WebProject\WebProject.Domain\bin\Debug\
 D:\Repositories\MarketPlaceWebUniversity\WebProject\WebProject.Domain\bin\Debug\EntityFramework.xml
 D:\Repositories\MarketPlaceWebUniversity\WebProject\WebProject.Domain\bin\Debug\EntityFramework.SqlServer.xml
 D:\Repositories\MarketPlaceWebUniversity\WebProject\WebProject.Domain\obj\Debug\WebProje.59F0A004.Up2Date
+D:\!Univer\Univer_4th_sem\!Project_2\MarketPlaceWebUniversity\WebProject\WebProject.Domain\bin\Debug\WebProject.Domain.dll.config
+D:\!Univer\Univer_4th_sem\!Project_2\MarketPlaceWebUniversity\WebProject\WebProject.Domain\bin\Debug\WebProject.Domain.dll
+D:\!Univer\Univer_4th_sem\!Project_2\MarketPlaceWebUniversity\WebProject\WebProject.Domain\bin\Debug\WebProject.Domain.pdb
+D:\!Univer\Univer_4th_sem\!Project_2\MarketPlaceWebUniversity\WebProject\WebProject.Domain\bin\Debug\EntityFramework.dll
+D:\!Univer\Univer_4th_sem\!Project_2\MarketPlaceWebUniversity\WebProject\WebProject.Domain\bin\Debug\EntityFramework.SqlServer.dll
+D:\!Univer\Univer_4th_sem\!Project_2\MarketPlaceWebUniversity\WebProject\WebProject.Domain\bin\Debug\EntityFramework.xml
+D:\!Univer\Univer_4th_sem\!Project_2\MarketPlaceWebUniversity\WebProject\WebProject.Domain\bin\Debug\EntityFramework.SqlServer.xml
+D:\!Univer\Univer_4th_sem\!Project_2\MarketPlaceWebUniversity\WebProject\WebProject.Domain\obj\Debug\WebProject.Domain.csproj.AssemblyReference.cache
+D:\!Univer\Univer_4th_sem\!Project_2\MarketPlaceWebUniversity\WebProject\WebProject.Domain\obj\Debug\WebProject.Domain.csproj.CoreCompileInputs.cache
+D:\!Univer\Univer_4th_sem\!Project_2\MarketPlaceWebUniversity\WebProject\WebProject.Domain\obj\Debug\WebProject.Domain.csproj.CopyComplete
+D:\!Univer\Univer_4th_sem\!Project_2\MarketPlaceWebUniversity\WebProject\WebProject.Domain\obj\Debug\WebProject.Domain.dll
+D:\!Univer\Univer_4th_sem\!Project_2\MarketPlaceWebUniversity\WebProject\WebProject.Domain\obj\Debug\WebProject.Domain.pdb
