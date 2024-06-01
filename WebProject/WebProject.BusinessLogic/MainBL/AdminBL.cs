@@ -17,6 +17,9 @@ namespace WebProject.BusinessLogic.MainBL
     public class AdminBL : UserBaseBL, IAdmin
     {
         private readonly UserRegisteredAPI _userAPI = new UserRegisteredAPI();
+
+        private readonly UserBL _userBL = new UserBL();
+
         //static private ProductAPI _productAPI = new ProductAPI(); нет нужнды испольлзовать UserBase уже наследует этот класс, использую это на фронте.
 
         //НУЖНО РЕАЛИЗОВАТЬ ЭТО ПОЛУЧЕНИЯ СПИСКА ВСЕХ ЗАКАЗОВ ДЛЯ АДМИНА
@@ -56,15 +59,15 @@ namespace WebProject.BusinessLogic.MainBL
             return response.Status;// response.Status (true -> prod is updated, false -> prod cant updated)
         }
 
-        public bool AddToCart(CartItem cartItem) => this is IRegistered user && user.AddToCart(cartItem);
+        public bool AddToCart(CartItem cartItem) => this is IRegistered && _userBL.AddToCart(cartItem);
 
-        public bool DeleteFromCart(CartItem cartItem) => this is IRegistered user && user.DeleteFromCart(cartItem);
+        public bool DeleteFromCart(CartItem cartItem) => this is IRegistered && _userBL.DeleteFromCart(cartItem);
 
-        public bool ProcessOrder(OrderModel orderModel) => this is IRegistered user && user.ProcessOrder(orderModel);
+        public bool ProcessOrder(OrderModel orderModel) => this is IRegistered && _userBL.ProcessOrder(orderModel);
 
-        public CartData ViewCart(int indexUser) => this is IRegistered user ? user.ViewCart(indexUser) : null;
+        public CartData ViewCart(int indexUser) => this is IRegistered ? _userBL.ViewCart(indexUser) : null;
 
-        public AllDeliveries ViewOrders(int indexUser) => this is IRegistered user ? user.ViewOrders(indexUser) : null;
+        public AllDeliveries ViewOrders(int indexUser) => this is IRegistered ? _userBL.ViewOrders(indexUser) : null;
 
 
         //Convert
