@@ -19,7 +19,7 @@ namespace WebProject.BusinessLogic.MainBL
             }
             return ConvertAllProducts(AllProductsResponse.Data);
         }
-        public  Product GetProductById(int id)
+        public Product GetProductById(int id)
         {
             var responseProd = GetSingleProductData(id);
             if (responseProd.IsExist == false)

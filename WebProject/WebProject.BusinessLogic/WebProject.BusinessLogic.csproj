@@ -63,6 +63,7 @@
     <Compile Include="Core\Levels\UserGuestAPI.cs" />
     <Compile Include="Core\Levels\ProductAPI.cs" />
     <Compile Include="Core\Levels\UserRegisteredAPI.cs" />
+    <Compile Include="Core\ModelGeneratingClass.cs" />
     <Compile Include="Interfaces\IAdmin.cs" />
     <Compile Include="Interfaces\IGuest.cs" />
     <Compile Include="Interfaces\IProduct.cs" />

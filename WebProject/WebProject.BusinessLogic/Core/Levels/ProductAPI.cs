@@ -1,14 +1,10 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using WebProject.BusinessLogic.Core.Levels.Product;
-using WebProject.BusinessLogic.Core.Levels.GeneralResponse;
-using WebProject.Domain.Entities.DBModels;
 using System.Data.Entity;
+using System.Linq;
+using WebProject.BusinessLogic.Core.Levels.GeneralResponse;
+using WebProject.BusinessLogic.Core.Levels.Product;
 using WebProject.Domain;
-using System.Xml.Linq;
 
 
 namespace WebProject.BusinessLogic.Core.Levels
@@ -20,8 +16,8 @@ namespace WebProject.BusinessLogic.Core.Levels
         internal DataResponse<CategoryTypeEF> GetBaseCategory()
         {
             return GetCategoryByName("Base");
-        }  
-        
+        }
+
         internal StandartResponse CreateBaseCategory()
         {
             var BaseCategoryResponse = GetBaseCategory();
@@ -71,7 +67,7 @@ namespace WebProject.BusinessLogic.Core.Levels
             if (parrentId == ProductAPI.withoutParentCategory)
             {
                 var baseCategoryResponse = GetBaseCategory();
-                if(baseCategoryResponse.IsExist == true)
+                if (baseCategoryResponse.IsExist == true)
                     parrentId = baseCategoryResponse.Data.CategoryTypeId;
                 else
                     return new DataResponse<CategoryTypeEF>
