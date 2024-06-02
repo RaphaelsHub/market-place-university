@@ -44,7 +44,7 @@ namespace WebProject.BusinessLogic.Core.Levels
                         Password = data.Password
                     };
                     db.Users.Add(userEx);
-                    db.SaveChangesAsync();
+                    db.SaveChanges();
 
                     return new DataResponse<UserDataEF> { Data = userEx, IsExist = true, ResponseMessage = "User Created!" };
                 }

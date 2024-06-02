@@ -135,7 +135,7 @@ namespace WebProject.BusinessLogic.Core.Levels
                         return new StandartResponse
                         {
                             Status = false,
-                            ResponseMessage = $"There is no ProductData with this id: {updatedProductData.Id}"
+                            ResponseMessage = $"There is no ProductData with this id: {updatedProductData.ProductDataId}"
                         };
                     }
                 }
@@ -149,12 +149,53 @@ namespace WebProject.BusinessLogic.Core.Levels
                 }
             }
         }
+        internal DataResponse<List<ProductDataEF>> GetAllProducts()
+        {
+            var BigPage = new PageInfo
+            {
+                PageIndex = 0,
+                ProductsPerPage = int.MaxValue
+            };
+            return GetProductsOnPages(BigPage);
+        }
+        internal DataResponse<List<ProductDataEF>> GetProductsOnPages(PageInfo currentPage)
+        {
+            uint ProductsPerPage = currentPage.ProductsPerPage;
+            uint pageIndex = currentPage.PageIndex;
+
+            uint startIndex = pageIndex * ProductsPerPage; //index of first element
+
+            using (var db = new Context())
+            {
+                try
+                {
+                    var ProductsOnPage = db.Products
+                                .OrderBy(p => p.ProductDataId)     //order ProductData by ID
+                                .Skip((int)startIndex)
+                                .Take((int)ProductsPerPage)
+                                .ToList();
+                    return new DataResponse<List<ProductDataEF>>
+                    {
+                        Data = ProductsOnPage,
+                        IsExist = true,
+                        ResponseMessage = ""
+                    };
+                }
+                catch (Exception ex)
+                {
+                    return new DataResponse<List<ProductDataEF>>
+                    {
+                        Data = null,
+                        IsExist = false,
+                        ResponseMessage = "Unexpected error: " + ex.Message
+                    };
+                }
+            }
+        }
 
 
 
-
-
-
+        /*
 
 
 
@@ -479,50 +520,9 @@ namespace WebProject.BusinessLogic.Core.Levels
 
 
 
-        internal DataResponse<List<ProductDataEff>> GetProductsOnPages(PageInfo currentPage)
-        {
-            uint ProductsPerPage = currentPage.ProductsPerPage;
-            uint pageIndex = currentPage.PageIndex;
 
-            uint startIndex = pageIndex * ProductsPerPage; //index of first element
 
-            using (var db = new Context())
-            {
-                try
-                {
-                    var ProductsOnPage = db.Products
-                                .OrderBy(p => p.Id)     //order ProductData by ID
-                                .Skip((int)startIndex)
-                                .Take((int)ProductsPerPage)
-                                .ToList();
-                    return new DataResponse<List<ProductDataEff>>
-                    {
-                        Data = ProductsOnPage,
-                        IsExist = true,
-                        ResponseMessage = ""
-                    };
-                }
-                catch (Exception ex)
-                {
-                    return new DataResponse<List<ProductDataEff>>
-                    {
-                        Data = null,
-                        IsExist = false,
-                        ResponseMessage = "Unexpected error: " + ex.Message
-                    };
-                }
-            }
-        }
 
-        internal DataResponse<List<ProductDataEff>> GetAllProducts()
-        {
-            var BigPage = new PageInfo
-            {
-                PageIndex = 0,
-                ProductsPerPage = int.MaxValue
-            };
-            return GetProductsOnPages(BigPage);
-        }
         private string DetailsInvalidProductDataPesponse(ProductDataEff prod)
         {
             return
@@ -534,6 +534,6 @@ namespace WebProject.BusinessLogic.Core.Levels
                 "\nprod.Price > 0        : " + (prod.Price > 0).ToString()
                 //"\nprod.Amount >= 0      : " + (prod.Amount >= 0).ToString()
                 );
-        }
+        }*/
     }
 }

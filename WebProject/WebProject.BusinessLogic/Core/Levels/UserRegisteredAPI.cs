@@ -17,7 +17,7 @@ namespace WebProject.BusinessLogic.Core
             {
                 // Проверяем есть ли уже такой элемент в корзине
                 var existingCartItem = db.CartItems
-                    .FirstOrDefault(c => c.User.UserDataId == cartItem.User.UserDataId && c.ProductId == cartItem.ProductId);
+                    .FirstOrDefault(c => c.UserDataId == cartItem.UserDataId && c.ProductId == cartItem.ProductId);
 
                 if (existingCartItem != null)
                     existingCartItem.Quantity += cartItem.Quantity;
@@ -34,7 +34,7 @@ namespace WebProject.BusinessLogic.Core
             if (cartItem == null)
                 return new StandartResponse { Status = false, ResponseMessage = "cartItem is null" };
 
-            var userResponse = FindUserEF(cartItem.User.UserDataId);
+            var userResponse = FindUserEF(cartItem.UserDataId);
 
             if (userResponse.IsExist == false)
                 return new StandartResponse { Status = false, ResponseMessage = "User not found in database." };
@@ -141,7 +141,7 @@ namespace WebProject.BusinessLogic.Core
             {
                 var userDB = db.Users.FirstOrDefault(u => u.UserDataId == indexUser);
 
-                return userDB != null ? new DataResponse<UserDataEF> { Data = userDB, IsExist = true, ResponseMessage = "Succesfully entered!" }
+                return userDB != null && userDB.CartItems!=null ? new DataResponse<UserDataEF> { Data = userDB, IsExist = true, ResponseMessage = "Succesfully entered!" }
                 : new DataResponse<UserDataEF> { Data = null, IsExist = false, ResponseMessage = "This User with userId dont exist" };
             }
         }
@@ -153,31 +153,7 @@ namespace WebProject.BusinessLogic.Core
                 return new DataResponse<List<OrderDataEF>>{ Data = orders };
             }
         }
-
-
-        internal DataResponse<UserEF> ResetUser(UserEF userData)
-        {
-            using (var db = new Context())
-            {
-                // Получаем пользователя из базы данных по его Id
-                UserEF userFromDb = db.Users.FirstOrDefault(u => u.Id == userData.Id);
-                if (userFromDb != null)
-                {
-                    // Обновляем данные пользователя в объекте UserData
-                    userFromDb = userData;
-                    db.SaveChanges();
-                    // Возвращаем обновленный объект UserData
-                    return new DataResponse<UserEF> { Data = userFromDb, IsExist = true };
-                }
-                else
-                {
-                    // Если пользователя с указанным Id не найдено в базе данных,
-                    // возможно, стоит сгенерировать исключение или выполнить другое действие по обработке этой ситуации
-                    return new DataResponse<UserEF> { Data = userFromDb, IsExist = false, ResponseMessage = "User not found in database." };
-                }
-            }
-        }
- 
+        /*
         internal StandartResponse UpdateOrderInfo(OrderInfoReqest updated)
         {
             using (var db = new Context())
@@ -202,68 +178,8 @@ namespace WebProject.BusinessLogic.Core
                 }
             }
         }
-        internal DataResponse<OrderEF> ProcessUserOrder(int indexUser, OrderInfoReqest orderInfo)
-        {
-            var superAdmin = GetSuperAdmin();
-            using (var db = new Context())
-            {
-                // Получаем пользователя из базы данных по его Id
-                UserEF userFromDb = db.Users.FirstOrDefault(u => u.Id == indexUser);
-                if (userFromDb != null)
-                {
-                    if (userFromDb.CartItems.Count() <= 0)
-                    {
-                        return new DataResponse<OrderEF> { Data = null, IsExist = false, ResponseMessage = "User dont have any item in cart" };
-                    }
-                    OrderEF newOrder = new OrderEF { User = userFromDb, Admin = superAdmin, OrderDate = DateTime.Now, CartItems = userFromDb.CartItems };
-                    // Обновляем данные пользователя в объекте UserData
-                    userFromDb.CartItems.Clear();
-                    newOrder.Name = orderInfo.Name;
-                    newOrder.Email = orderInfo.Email;
-                    newOrder.Phone = orderInfo.Phone;
-                    newOrder.Country = orderInfo.Country;
-                    newOrder.City = orderInfo.City;
-                    newOrder.Address = orderInfo.Address;
-                    newOrder.Comment = orderInfo.Comment;
-                    newOrder.StatusDelivery = orderInfo.StatusDelivery;
-                    userFromDb.Orders.Add(newOrder);
-                    superAdmin.Orders.Add(newOrder);
-                    db.SaveChanges();
-                    return new DataResponse<OrderEF> { Data = newOrder, IsExist = true };
-                }
-                else
-                {
-                    // Если пользователя с указанным Id не найдено в базе данных,
-                    // возможно, стоит сгенерировать исключение или выполнить другое действие по обработке этой ситуации
-                    return new DataResponse<OrderEF> { Data = null, IsExist = false, ResponseMessage = "User not found in database." };
-                }
-            }
-        }
 
 
-        internal StandartResponse DeleteFromUserOrder(OrderEF userOrder)
-        {
-            using (var db = new Context())
-            {
-                var userData = userOrder.User;
-                // Получаем пользователя из базы данных по его Id
-                UserEF userFromDb = db.Users.FirstOrDefault(u => u.Id == userData.Id);
-                if (userFromDb != null)
-                {
-                    // Обновляем данные пользователя в объекте UserData
-                    db.Orders.Remove(userOrder);
-                    db.SaveChanges();
-                    // Возвращаем обновленный объект UserData
-                    return new StandartResponse { Status = true };
-                }
-                else
-                {
-                    // Если пользователя с указанным Id не найдено в базе данных,
-                    // возможно, стоит сгенерировать исключение или выполнить другое действие по обработке этой ситуации
-                    return new StandartResponse { Status = false, ResponseMessage = "User not found in database." };
-                }
-            }
-        }
         internal StandartResponse SuperAdminEditProductData(ProductDataEff updatedProductData)
         {
             using (var db = new Context())
@@ -352,5 +268,6 @@ namespace WebProject.BusinessLogic.Core
             }
             db.SaveChanges();
         }
+        */
     }
 }

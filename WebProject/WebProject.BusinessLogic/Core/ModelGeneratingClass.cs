@@ -5,6 +5,7 @@ using System.Runtime.Remoting.Messaging;
 using System.Text;
 using System.Threading.Tasks;
 using WebProject.Domain.DB;
+using WebProject.Domain.Enum;
 using WebProject.ModelAccessLayer.Model;
 
 namespace WebProject.BusinessLogic.Core
@@ -79,7 +80,7 @@ namespace WebProject.BusinessLogic.Core
             {
                 IdUser = data.UserDataId,
                 NameUser = data.Name,
-                StatusUser = data.StatusUser,
+                StatusUser = (data.UserDataId==1) ? StatusUser.Admin:StatusUser.User,
                 CartUser = GenerateCartData(data.CartItems,getProductById),
                 DeliveriesUser = new AllDeliveries { AllOrders = GenerateDeliveries(data.Orders,getProductById) }
             };
@@ -96,6 +97,22 @@ namespace WebProject.BusinessLogic.Core
                 ProductDataId=product.Id,
                 PhotoUrls = product.PhotoUrl[0]
                 
+            };
+        };
+        public static Func<ProductDataEF, Product> GenerateProduct = product =>
+        {
+            var a = new List<string>();
+            a.Add(product.PhotoUrls);
+            return new Product
+            {
+                Name = product.Name,
+                Amount = product.Amount,
+                ShortDescription = product.ShortDescription,
+                Id = product.ProductDataId,
+                FullDescription = product.FullDescription,
+                Price = product.Price,
+                PhotoUrl = a
+
             };
         };
     }
