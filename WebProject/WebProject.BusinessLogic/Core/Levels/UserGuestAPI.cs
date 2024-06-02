@@ -23,7 +23,7 @@ namespace WebProject.BusinessLogic.Core.Levels
                     return new DataResponse<UserDataEF>();
 
                 user.LogTime = DateTime.Now;
-                db.SaveChangesAsync();
+                db.SaveChanges();
                 return new DataResponse<UserDataEF> { Data = user, IsExist = true, ResponseMessage = "Succesfully entered!" };
             }
         }

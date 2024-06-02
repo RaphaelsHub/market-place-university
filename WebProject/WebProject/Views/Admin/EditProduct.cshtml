@@ -1,28 +1,28 @@
-﻿
-@{
+﻿@{
     ViewBag.Title = "EditProduct";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
+@model WebProject.ModelAccessLayer.Model.Product
 
 <div class="container-fluid">
     <div class="row">
         <div class="col-12">
             <nav class="breadcrumbs">
                 <ul>
-                    <li><a href="@Url.Action("Index","Home")">Home</a></li>
-                    <li><span>Cart</span></li>
+                    <li><a href="@Url.Action("Index", "Home")">Home</a></li>
+                    <li><span>Edit Product</span></li>
                 </ul>
             </nav>
         </div>
     </div>
 </div>
 
-@model WebProject.ModelAccessLayer.Model.Product
-
 <div class="container-fluid">
     @using (Html.BeginForm("ReplaceProduct", "Admin", FormMethod.Post, new { @class = "needs-validation", @novalidate = "novalidate" }))
     {
+        @Html.HiddenFor(model => model.Id)
+
         <div id="photoUrls">
             <div class="col-md-12">
                 @Html.LabelFor(model => model.PhotoUrl, new { @class = "form-label" })
@@ -36,7 +36,6 @@
         <div class="col-md-12 mt-3">
             <button type="button" class="btn btn-secondary" id="addPhotoField">Add Photo URL</button>
         </div>
-
 
         <div class="col-md-12">
             @Html.LabelFor(model => model.Name, new { @class = "form-label" })
@@ -64,7 +63,6 @@
             </div>
         </div>
 
-
         <div class="col-md-12">
             @Html.LabelFor(model => model.ShortDescription, new { @class = "form-label" })
             @Html.TextBoxFor(model => model.ShortDescription, new { @class = "form-control", placeholder = "Short Description", aria_label = "ShortDescription", required = "required" })
@@ -85,20 +83,15 @@
 
 <script>
     $(document).ready(function () {
-        var photoCount = 0;
+        var photoCount = 1;
 
         $("#addPhotoField").click(function () {
             var fieldHtml = '<div class="col-md-12 mt-3">' +
                 '<label class="form-label">PhotoURL ' + (++photoCount) + '</label>' +
-                '<input type="text" name="PhotoUrl[' + photoCount + ']" class="form-control" placeholder="https://example.com/photo' + photoCount + '.jpg" required />' +
+                '<input type="text" name="PhotoUrl[' + (photoCount - 1) + ']" class="form-control" placeholder="https://example.com/photo' + photoCount + '.jpg" required />' +
                 '</div>';
 
             $("#dynamicPhotoFields").append(fieldHtml);
         });
     });
 </script>
-
-
-
-
-

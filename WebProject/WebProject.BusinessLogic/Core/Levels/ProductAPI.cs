@@ -28,23 +28,12 @@ namespace WebProject.BusinessLogic.Core.Levels
         }
         internal StandartResponse DeleteProductDataByID(int id)
         {
-            var prodResponse = GetSingleProductData(id);
-
-            if (!prodResponse.IsExist)
-            {
-                return new StandartResponse
-                {
-                    Status = false,
-                    ResponseMessage = prodResponse.ResponseMessage
-                };
-            }
-
             using (var db = new Context())
             {
                 try
                 {
-                    var productDataToDelete = prodResponse.Data;
-                    db.Products.Remove(productDataToDelete);
+                    var prod = db.Products.FirstOrDefault(p => p.ProductDataId == id);
+                    db.Products.Remove(prod);
                     db.SaveChanges();
 
                     return new StandartResponse { Status = true, ResponseMessage = "" };

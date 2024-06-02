@@ -7,6 +7,7 @@ namespace WebProject.Controllers
     public class AdminController : BaseController
     {
         // GET: AdminAddProduct
+        //Работает
         public ActionResult NewProduct()
         {
             if (IsAdmin())
@@ -14,6 +15,7 @@ namespace WebProject.Controllers
             return RedirectToAction("Index", "Home");
         }
 
+        //Работает
         public ActionResult ViewProducts()
         {
             if (IsAdmin())
@@ -30,6 +32,7 @@ namespace WebProject.Controllers
             return RedirectToAction("Index", "Home");
         }
 
+        //Работает
         [HttpPost]
         public ActionResult NewProduct(Product product)
         {
@@ -45,6 +48,7 @@ namespace WebProject.Controllers
             return RedirectToAction("Index", "Home");
         }
 
+        //Работает
         [HttpPost]
         public ActionResult EditProduct(int id)
         {
@@ -53,6 +57,7 @@ namespace WebProject.Controllers
             return RedirectToAction("Index", "Home");
         }
 
+        //Работает
         [HttpPost]
         public ActionResult ReplaceProduct(Product product)
         {
@@ -68,6 +73,7 @@ namespace WebProject.Controllers
             return RedirectToAction("Index", "Home");
         }
 
+        //Работает
         [HttpPost]
         public ActionResult DeleteProduct(int id)
         {
