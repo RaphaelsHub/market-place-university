@@ -115,5 +115,15 @@ namespace WebProject.BusinessLogic.Core
 
             };
         };
+
+        public static Func<List<ProductDataEF>, List<Product>> GenerateListOfProducts = product =>
+        {
+            List<Product> products = new List<Product>();
+            foreach (var item in product)
+            {
+                products.Add(GenerateProduct(item));
+            }
+            return products;
+        };
     }
 }

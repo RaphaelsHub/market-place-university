@@ -11,22 +11,28 @@ namespace WebProject.Controllers
     {
         public static List<Category> AllCategories { get; private set; }
 
+        //работает
         // GET: Home
         public ActionResult ThanksForOrder() => View();
 
+        //работает
         public ActionResult Error() => View();
 
+        //работает
         public ActionResult Error404() => View();
 
+        //работает
         public ActionResult Index()
         {
             AllCategories = _businessLogic.User.GetCategoriesView();
             return View(_businessLogic.User.GetAllProducts());
         }
 
+
+        //работает
         public ActionResult Search(string text)
         {
-            return (text == null) ? View() : View(_businessLogic.User.GetProductsByName(text));
+            return (text == null) ? View() : View(_businessLogic.User.GetProductssByName(text));
         }
     }
 }

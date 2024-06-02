@@ -19,6 +19,8 @@ namespace WebProject.Controllers
                 return RedirectToAction("Error404", "Home");
             }
         }
+
+        //работает
         public ActionResult Item(int? id)
         {
             if (id.HasValue)

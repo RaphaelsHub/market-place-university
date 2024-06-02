@@ -15,15 +15,6 @@ namespace WebProject.BusinessLogic.MainBL
         
         public bool AddToCart(CartItem cartItem)
         {
-            var responseUser = _userRegisteredApi.FindUserEF(cartItem.Id_User);
-            if (responseUser.IsExist == false)
-                return false;
-
-            var responseProduct = GetSingleProductData(cartItem.Id);
-            if (responseProduct.IsExist == false || responseProduct.Data.Amount < cartItem.Quantity)
-                return false;
-
-
             CartItemDataEF cartItemData = new CartItemDataEF
             {
                 UserDataId = cartItem.Id_User,
@@ -50,7 +41,7 @@ namespace WebProject.BusinessLogic.MainBL
             var response = _userRegisteredApi.ViewUserCart(indexUser);
 
             return response.IsExist == false ? null : ModelGeneratingClass.GenerateCartData(response.Data,GetProductById);
-        }
+         }
         public List<OrderModel> ViewOrders(int indexUser)
         {
             var response = _userRegisteredApi.ViewUserOrders(indexUser);

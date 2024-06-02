@@ -54,10 +54,13 @@ namespace WebProject.BusinessLogic.MainBL
             return ModelGeneratingClass.GenerateProduct(responseProd.Data);
         }
 
-        public List<Product> GetProductsByName(string textSearch)
+        public  List<Product> GetProductssByName(string textSearch)
         {
-            return null;
+            var response = base.GetProductssByName(textSearch);
+            return response.IsExist == false ? null : ModelGeneratingClass.GenerateListOfProducts(response.Data);
         }
+    }
+}
         /*
 public new Product GetSingleProductByName(string name)
 {
@@ -184,5 +187,3 @@ static private AllCategories ConvertAllCategories(ICollection<CategoryTypeEF> ca
    }
    return new AllCategories { Categories = allCategories };
 }*/
-    }
-}

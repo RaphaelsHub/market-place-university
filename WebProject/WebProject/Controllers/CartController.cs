@@ -9,6 +9,7 @@ namespace WebProject.Controllers
     public class CartController : BaseController
     {
         // GET: Cart
+        //Работает
         public ActionResult Buy()
         {
             if (Session["UserData"] != null && _businessLogic.User is IRegistered)
@@ -19,6 +20,7 @@ namespace WebProject.Controllers
             return RedirectToAction("Index", "Home");
         }
 
+        //Работает
         public ActionResult MakeAnOrder()
         {
             if (Session["UserData"] != null && _businessLogic.User is IRegistered)
@@ -26,6 +28,8 @@ namespace WebProject.Controllers
             return RedirectToAction("Index", "Home");
         }
 
+
+        //работает кроме cartItem они не получаются
         public ActionResult Delivery()
         {
             if (Session["UserData"] != null && _businessLogic.User is IRegistered)
@@ -36,6 +40,7 @@ namespace WebProject.Controllers
             return RedirectToAction("Index", "Home");
         }
 
+        //Работает
         [HttpPost]
         public ActionResult AddToCart(CartItem cartItem)
         {
@@ -53,6 +58,7 @@ namespace WebProject.Controllers
             return RedirectToAction("Item", "Catalog", new { id = cartItem.Id });
         }
 
+        //работает
         [HttpPost]
         public ActionResult MakeAnOrder(OrderInfo orderInfo)
         {
@@ -63,6 +69,8 @@ namespace WebProject.Controllers
             {
                 OrderModel orderModel = new OrderModel(orderInfo);
 
+                orderModel.OrderInfo.UserId = ((UserData)Session["UserData"]).IdUser;
+
                 bool WasAdded = (_businessLogic.User as IRegistered).ProcessOrder(orderModel);
 
                 return WasAdded ? RedirectToAction("ThanksForOrder", "Home") : RedirectToAction("Error404", "Home");
@@ -71,11 +79,14 @@ namespace WebProject.Controllers
             return View(orderInfo);
         }
 
+        //работает
         [HttpPost]
         public ActionResult DeleteCartItem(CartItem cartItem)
         {
             if (Session["UserData"] == null || _businessLogic.User is IGuest)
                 return RedirectToAction("Index", "Home");
+
+            cartItem.Id_User = ((UserData)Session["UserData"]).IdUser;
 
             ((IRegistered)_businessLogic.User).DeleteFromCart(cartItem);
 

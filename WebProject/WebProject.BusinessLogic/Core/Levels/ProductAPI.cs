@@ -182,6 +182,44 @@ namespace WebProject.BusinessLogic.Core.Levels
             }
         }
 
+        internal DataResponse<List<ProductDataEF>> GetProductssByName(string subString)
+        {
+            using (var dbContext = new Context())
+            {
+                try
+                {
+                    // Получаем список продуктов, имя которых содержит заданную подстроку
+                    var matchedProducts = dbContext.Products
+                        .Where(p => p.Name.Contains(subString))
+                        .ToList();
+
+                    // Проверка наличия найденных продуктов
+                    bool isProductExist = matchedProducts.Any();
+                    string responseMessage = isProductExist
+                        ? string.Empty
+                        : $"There is no ProductData with sub word: {subString}";
+
+                    return new DataResponse<List<ProductDataEF>>
+                    {
+                        Data = matchedProducts,
+                        IsExist = isProductExist,
+                        ResponseMessage = responseMessage
+                    };
+                }
+                catch (Exception ex)
+                {
+                    return new DataResponse<List<ProductDataEF>>
+                    {
+                        Data = null,
+                        IsExist = false,
+                        ResponseMessage = "Unexpected error: " + ex.Message
+                    };
+                }
+            }
+        }
+
+
+
 
 
         /*

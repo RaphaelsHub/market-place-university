@@ -15,29 +15,34 @@ namespace WebProject.BusinessLogic.Core
         {
             using (var db = new Context())
             {
-                
-                // Проверяем есть ли уже такой элемент в корзине
                 var existingCartItem = db.CartItems
                     .FirstOrDefault(c => c.UserDataId == cartItem.UserDataId && c.ProductId == cartItem.ProductId);
-
+                 
                 if (existingCartItem != null)
                 {
-                    var l = db.Users.FirstOrDefault(u => u.UserDataId == cartItem.UserDataId);
-                    l.CartItems.Add(cartItem);
                     existingCartItem.Quantity += cartItem.Quantity;
                 }
                 else
                 {
-                    var l = db.Users.FirstOrDefault(u => u.UserDataId == cartItem.UserDataId);
-                    l.CartItems.Add(cartItem);
-                    db.CartItems.Add(cartItem);
+                    var user = db.Users.FirstOrDefault(u => u.UserDataId == cartItem.UserDataId);
+                    if (user != null)
+                    {
+                        // Обновляем навигационное свойство у cartItem
+                        cartItem.User = user;
+                        // Добавляем элемент корзины в базу данных
+                        db.CartItems.Add(cartItem);
+                        // Обновляем навигационное свойство у пользователя
+                    }
                 }
 
                 db.SaveChanges();
 
-                return existingCartItem ?? cartItem;
+                var a = db.CartItems
+                    .FirstOrDefault(c => c.UserDataId == cartItem.UserDataId && c.ProductId == cartItem.ProductId);
+                return a;
             }
         }
+
         internal StandartResponse AddToUserCart(CartItemDataEF cartItem)
         {
             if (cartItem == null)
@@ -45,91 +50,116 @@ namespace WebProject.BusinessLogic.Core
 
             var userResponse = FindUserEF(cartItem.UserDataId);
 
-            if (userResponse.IsExist == false)
+            if (userResponse.Status == false)
                 return new StandartResponse { Status = false, ResponseMessage = "User not found in database." };
 
-            return CreateOrUpdateCartItemEF(cartItem) != null ? new StandartResponse { Status = true, ResponseMessage = "Was Added" }
+
+            return CreateOrUpdateCartItemEF(cartItem) != null ?
+                new StandartResponse { Status = true, ResponseMessage = "Was Added" }
             : new StandartResponse { Status = false, ResponseMessage = "Some errors" };
         }
         internal StandartResponse DeleteFromUserCart(CartItem cartItem)
         {
             using (var db = new Context())
             {
-                var cartItemEF = db.CartItems.FirstOrDefault(u => u.CartItemId == cartItem.Id && u.UserDataId == cartItem.Id);
+                var existingCartItem = db.CartItems
+                    .FirstOrDefault(c => c.UserDataId == cartItem.Id_User && c.ProductId == cartItem.Id);
 
-                if (cartItemEF != null)
+                if (existingCartItem != null)
                 {
-                    db.CartItems.Remove(cartItemEF);
+                    existingCartItem.Quantity -= cartItem.Quantity;
+                    if (existingCartItem.Quantity <= 0)
+                    {
+                        db.CartItems.Remove(existingCartItem);
+                    }
+
                     db.SaveChanges();
                     return new StandartResponse { Status = true };
                 }
-                else
-                {
-                    return new StandartResponse { Status = false, ResponseMessage = "User not found in database or product" };
-                }
+                return new StandartResponse { Status = false, ResponseMessage = "User not found in database or product" };
             }
         }
         internal DataResponse<OrderDataEF> ProcessUserOrder(OrderModel orderModel)
         {
+            if (orderModel?.OrderInfo?.UserId == null)
+                return new DataResponse<OrderDataEF> { Data = null, IsExist = false, ResponseMessage = "User doesn't have any item in cart" };
+
             using (var db = new Context())
             {
                 var user = db.Users.FirstOrDefault(u => u.UserDataId == orderModel.OrderInfo.UserId);
-                
+
                 if (user != null)
                 {
-                    if (user.CartItems.Count() <= 0)
-                        return new DataResponse<OrderDataEF> { Data = null, IsExist = false, ResponseMessage = "User dont have any item in cart" };
-                    
+                    var cartItems = db.CartItems.Where(c => c.UserDataId == orderModel.OrderInfo.UserId).ToList();
+
+                    if (!cartItems.Any())
+                        return new DataResponse<OrderDataEF> { Data = null, IsExist = false, ResponseMessage = "User doesn't have any items in cart" };
+
                     OrderDataEF orderDataEF = ModelGeneratingClass.GenerateInfoDataEF(orderModel.OrderInfo);
                     orderDataEF.User = user;
                     orderDataEF.UserDataId = orderModel.OrderInfo.UserId;
                     orderDataEF.StatusDelivery = orderModel.StatusDelivery;
-                    
-                    orderDataEF.CartItems = user.CartItems;
-                    user.CartItems.Clear();
+                    orderDataEF.CartItems = cartItems;
+
                     user.Orders.Add(orderDataEF);
+
+                    db.Orders.Add(orderDataEF);
+
+                    // Remove items from the cart
+                    db.CartItems.RemoveRange(cartItems);
+
                     db.SaveChanges();
 
                     return new DataResponse<OrderDataEF> { Data = orderDataEF, IsExist = true };
                 }
+
                 return new DataResponse<OrderDataEF> { Data = null, IsExist = false, ResponseMessage = "User not found in database." };
             }
         }
+
         internal DataResponse<List<CartItemDataEF>> ViewUserCart(int indexUser)
         {
             using (var db = new Context())
             {
-                var userFromDb = db.Users.FirstOrDefault(u => u.UserDataId == indexUser);
-                if (userFromDb != null)
+                var userCartItems = db.CartItems.Where(c => c.UserDataId == indexUser).ToList();
+
+                if (userCartItems != null && userCartItems.Any())
                 {
-                    if (userFromDb.CartItems.Count() <= 0)
-                        return new DataResponse<List<CartItemDataEF>> { Data = null, IsExist = false, ResponseMessage = "User dont have any item in cart" };
-                    
-                    var userCartItems = new List<CartItemDataEF>(userFromDb.CartItems);
-                    
                     return new DataResponse<List<CartItemDataEF>> { Data = userCartItems, IsExist = true };
                 }
-                return new DataResponse<List<CartItemDataEF>> { Data = null, IsExist = false, ResponseMessage = "User not found in database." };
+                else
+                {
+                    return new DataResponse<List<CartItemDataEF>> { Data = null, IsExist = false, ResponseMessage = "User doesn't have any items in the cart." };
+                }
             }
         }
+
+
+
         internal DataResponse<List<OrderDataEF>> ViewUserOrders(int indexUser)
         {
             using (var db = new Context())
             {
-                var userFromDb = db.Users.FirstOrDefault(u => u.UserDataId == indexUser);
+                var orders = db.Orders.Where(o => o.UserDataId == indexUser).ToList();
 
-                if (userFromDb != null)
+                if (orders != null && orders.Count > 0)
                 {
-                    if (userFromDb.Orders.Count() <= 0)
-                        return new DataResponse<List<OrderDataEF>> { Data = null, IsExist = false, ResponseMessage = "User dont have any orders" };
-                    
-                    var userCartItems = new List<OrderDataEF>(userFromDb.Orders);
-
-                    return new DataResponse<List<OrderDataEF>> { Data = userCartItems, IsExist = true };
+                    return new DataResponse<List<OrderDataEF>>
+                    {
+                        Data = orders,
+                        IsExist = true
+                    };
                 }
-                return new DataResponse<List<OrderDataEF>> { Data = null, IsExist = false, ResponseMessage = "User not found in database." };
+
+                return new DataResponse<List<OrderDataEF>>
+                {
+                    Data = null,
+                    IsExist = false,
+                    ResponseMessage = orders == null ? "User not found in database." : "User doesn't have any orders."
+                };
             }
         }
+
         internal StandartResponse SuperAdminDeleteOrderModel(int idOrder)
         {
             using (var db = new Context())
@@ -144,14 +174,14 @@ namespace WebProject.BusinessLogic.Core
                 return new StandartResponse { Status = false, ResponseMessage = "Order not found in database." };
             }
         }
-        internal DataResponse<UserDataEF> FindUserEF(int indexUser)
+        internal StandartResponse FindUserEF(int indexUser)
         {
             using (var db = new Context())
             {
                 var userDB = db.Users.FirstOrDefault(u => u.UserDataId == indexUser);
 
-                return userDB != null && userDB.CartItems!=null ? new DataResponse<UserDataEF> { Data = userDB, IsExist = true, ResponseMessage = "Succesfully entered!" }
-                : new DataResponse<UserDataEF> { Data = null, IsExist = false, ResponseMessage = "This User with userId dont exist" };
+                return userDB != null ? new StandartResponse { Status = true, ResponseMessage = "There is such user!" }
+                : new StandartResponse { Status = false, ResponseMessage = "There is no such user!" };
             }
         }
         internal DataResponse<List<OrderDataEF>> GetAllOrders()
