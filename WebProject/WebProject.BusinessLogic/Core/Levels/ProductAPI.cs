@@ -5,12 +5,159 @@ using System.Linq;
 using WebProject.BusinessLogic.Core.Levels.GeneralResponse;
 using WebProject.BusinessLogic.Core.Levels.Product;
 using WebProject.Domain;
+using WebProject.Domain.DB;
 
 
 namespace WebProject.BusinessLogic.Core.Levels
 {
     public class ProductAPI
     {
+        internal DataResponse<ProductDataEF> GetSingleProductData(int id)
+        {
+            using (var db = new Context())
+            {
+                var prod = db.Products.FirstOrDefault(p => p.ProductDataId == id);
+
+                return new DataResponse<ProductDataEF>
+                {
+                    Data = prod,
+                    IsExist = prod != null,
+                    ResponseMessage = prod != null ? "Good" : $"There is no ProductData with this id: {id}"
+                };
+            }
+        }
+        internal StandartResponse DeleteProductDataByID(int id)
+        {
+            var prodResponse = GetSingleProductData(id);
+
+            if (!prodResponse.IsExist)
+            {
+                return new StandartResponse
+                {
+                    Status = false,
+                    ResponseMessage = prodResponse.ResponseMessage
+                };
+            }
+
+            using (var db = new Context())
+            {
+                try
+                {
+                    var productDataToDelete = prodResponse.Data;
+                    db.Products.Remove(productDataToDelete);
+                    db.SaveChanges();
+
+                    return new StandartResponse { Status = true, ResponseMessage = "" };
+                }
+                catch (Exception ex)
+                {
+                    return new StandartResponse { Status = false, ResponseMessage = "Unexpected error: " + ex.Message };
+                }
+            }
+        }
+        internal StandartResponse AddProductDataToDB(ProductDataEF prod)
+        {
+            if (!IsValidProductData(prod)) //checking that all fields are not null and the validity of Price and Amount
+            {
+                return new StandartResponse
+                {
+                    Status = false,
+                    ResponseMessage = "Incorrect ProductData data"
+                };
+            }
+
+            using (var db = new Context())
+            {
+                try
+                {
+                    var sameProductData = db.Products.FirstOrDefault(p => p.Name == prod.Name);
+                    if (sameProductData != null)
+                    {
+                        return new StandartResponse
+                        {
+                            Status = false,
+                            ResponseMessage = "Same ProductData already exist"
+                        };
+                    }
+
+                    db.Products.Add(prod);
+                    db.SaveChanges();
+                    return new StandartResponse
+                    {
+                        Status = true,
+                        ResponseMessage = ""
+                    };
+                }
+                catch (Exception ex)
+                {
+                    return new StandartResponse
+                    {
+                        Status = false,
+                        ResponseMessage = "Unexpected error: " + ex.Message
+                    };
+                }
+            }
+        }
+        internal bool IsValidProductData(ProductDataEF prod)
+        {
+            return (
+                prod.Name != null &&
+                prod.ShortDescription != null &&
+                prod.Price > 0 && prod.FullDescription != null && prod.Amount >= 0);
+        }
+        internal StandartResponse ModifyProductData(ProductDataEF updatedProductData)
+        {
+            using (var db = new Context())
+            {
+                try
+                {
+                    var existingProductData = db.Products.FirstOrDefault(p => p.ProductDataId == updatedProductData.ProductDataId);
+
+                    if (existingProductData != null)
+                    {
+                        existingProductData.Name = updatedProductData.Name;
+                        existingProductData.PhotoUrls = updatedProductData.PhotoUrls;
+                        existingProductData.Amount = updatedProductData.Amount;
+                        existingProductData.Price = updatedProductData.Price;
+                        existingProductData.ShortDescription = updatedProductData.ShortDescription;
+                        existingProductData.FullDescription = updatedProductData.FullDescription;
+
+                        db.SaveChanges();
+
+                        return new StandartResponse
+                        {
+                            Status = true,
+                            ResponseMessage = ""
+                        };
+                    }
+                    else
+                    {
+                        return new StandartResponse
+                        {
+                            Status = false,
+                            ResponseMessage = $"There is no ProductData with this id: {updatedProductData.Id}"
+                        };
+                    }
+                }
+                catch (Exception ex)
+                {
+                    return new StandartResponse
+                    {
+                        Status = false,
+                        ResponseMessage = "Unexpected error: " + ex.Message
+                    };
+                }
+            }
+        }
+
+
+
+
+
+
+
+
+
         internal const int withoutParentCategory = -1;
         //public ProductDataAPI() { }
         internal DataResponse<CategoryTypeEF> GetBaseCategory()
@@ -187,40 +334,7 @@ namespace WebProject.BusinessLogic.Core.Levels
 
         }
 
-        internal DataResponse<ProductDataEff> GetSingleProductData(int id)
-        {
-            using (var db = new Context())
-            {
-                try
-                {
-                    var prod = db.Products.FirstOrDefault(p => p.Id == id);
 
-                    string resp = "";
-                    if (prod == null)
-                    {
-                        resp = $"There is no ProductData with this id: {id}";
-                    }
-
-                    return new DataResponse<ProductDataEff>
-                    {
-                        Data = prod,
-                        IsExist = (prod != null),
-                        ResponseMessage = resp
-
-                    };
-                }
-                catch (Exception ex)
-                {
-                    return new DataResponse<ProductDataEff>
-                    {
-                        Data = null,
-                        IsExist = false,
-                        ResponseMessage = "Unexpected error: " + ex.Message
-                    };
-                }
-            }
-
-        }
 
         internal DataResponse<List<ProductDataEff>> GetProductsByCategory(CategoryTypeEF category)
         {
@@ -360,88 +474,9 @@ namespace WebProject.BusinessLogic.Core.Levels
                 }
             }
         }
-        internal StandartResponse DeleteProductDataByID(int id)
-        {
-            var prodResponse = GetSingleProductData(id);
-            if (prodResponse.IsExist == false)
-            {
-                return new StandartResponse
-                {
-                    Status = false,
-                    ResponseMessage = prodResponse.ResponseMessage
-                };
-            }
-            var ProductDataToDelete = prodResponse.Data;
-            using (var db = new Context())
-            {
-                try
-                {
-                    db.Entry(ProductDataToDelete).State = EntityState.Deleted; // Setting an object state for delete
-                    db.SaveChanges();
 
-                    return new StandartResponse
-                    {
-                        Status = true,
-                        ResponseMessage = ""
-                    };
-                }
-                catch (Exception ex)
-                {
-                    return new StandartResponse
-                    {
-                        Status = false,
-                        ResponseMessage = "Unexpected error: " + ex.Message
-                    };
-                }
-            }
-        }
 
-        internal StandartResponse ModifyProductData(ProductDataEff updatedProductData)
-        {
-            using (var db = new Context())
-            {
-                try
-                {
-                    var existingProductData = db.Products.FirstOrDefault(p => p.Name == updatedProductData.Name);
 
-                    if (existingProductData != null)
-                    {
-                        existingProductData.Name = updatedProductData.Name;
-                        existingProductData.PhotoUrls = updatedProductData.PhotoUrls;
-                        existingProductData.Amount = updatedProductData.Amount;
-                        existingProductData.Price = updatedProductData.Price;
-                        existingProductData.Details = updatedProductData.Details;
-                        existingProductData.ShortDescription = updatedProductData.ShortDescription;
-                        existingProductData.FullDescription = updatedProductData.FullDescription;
-                        existingProductData.Details = updatedProductData.Details;
-
-                        db.SaveChanges();
-
-                        return new StandartResponse
-                        {
-                            Status = true,
-                            ResponseMessage = ""
-                        };
-                    }
-                    else
-                    {
-                        return new StandartResponse
-                        {
-                            Status = false,
-                            ResponseMessage = $"There is no ProductData with this id: {updatedProductData.Id}"
-                        };
-                    }
-                }
-                catch (Exception ex)
-                {
-                    return new StandartResponse
-                    {
-                        Status = false,
-                        ResponseMessage = "Unexpected error: " + ex.Message
-                    };
-                }
-            }
-        }
 
 
         internal DataResponse<List<ProductDataEff>> GetProductsOnPages(PageInfo currentPage)
@@ -487,62 +522,6 @@ namespace WebProject.BusinessLogic.Core.Levels
                 ProductsPerPage = int.MaxValue
             };
             return GetProductsOnPages(BigPage);
-        }
-
-        internal StandartResponse AddProductDataToDB(ProductDataEff prod)
-        {
-            if (!IsValidProductData(prod)) //checking that all fields are not null and the validity of Price and Amount
-            {
-                return new StandartResponse
-                {
-                    Status = false,
-                    ResponseMessage = "Incorrect ProductData data"
-                };
-            }
-
-            using (var db = new Context())
-            {
-                try
-                {
-                    var sameProductData = db.Products.FirstOrDefault(p => p.Name == prod.Name);
-                    if (sameProductData != null)
-                    {
-                        return new StandartResponse
-                        {
-                            Status = false,
-                            ResponseMessage = "Same ProductData already exist"
-                        };
-                    }
-
-                    db.Products.Add(prod);
-                    db.SaveChanges();
-                    return new StandartResponse
-                    {
-                        Status = true,
-                        ResponseMessage = ""
-                    };
-                }
-                catch (Exception ex)
-                {
-                    return new StandartResponse
-                    {
-                        Status = false,
-                        ResponseMessage = "Unexpected error: " + ex.Message
-                    };
-                }
-            }
-        }
-
-        private bool IsValidProductData(ProductDataEff prod)
-        {
-            return (
-                prod.Name != null &&
-                //prod.Category != null &&
-                prod.Details != null &&
-                prod.ShortDescription != null &&
-                prod.Price > 0
-                //prod.Amount >= 0
-                );
         }
         private string DetailsInvalidProductDataPesponse(ProductDataEff prod)
         {

@@ -84,5 +84,19 @@ namespace WebProject.BusinessLogic.Core
                 DeliveriesUser = new AllDeliveries { AllOrders = GenerateDeliveries(data.Orders,getProductById) }
             };
         };
+        public static Func<Product, ProductDataEF> GenerateEfProduct = product =>
+        {
+            return new ProductDataEF
+            {
+                Name = product.Name,
+                FullDescription = product.FullDescription,
+                ShortDescription = product.ShortDescription,
+                Price = product.Price,
+                Amount = product.Amount,
+                ProductDataId=product.Id,
+                PhotoUrls = product.PhotoUrl[0]
+                
+            };
+        };
     }
 }

@@ -111,8 +111,8 @@ namespace WebProject.BusinessLogic.Core
 
                 if (userFromDb != null)
                 {
-                    if (userFromDb.CartItems.Count() <= 0)
-                        return new DataResponse<List<OrderDataEF>> { Data = null, IsExist = false, ResponseMessage = "User dont have any item in cart" };
+                    if (userFromDb.Orders.Count() <= 0)
+                        return new DataResponse<List<OrderDataEF>> { Data = null, IsExist = false, ResponseMessage = "User dont have any orders" };
                     
                     var userCartItems = new List<OrderDataEF>(userFromDb.Orders);
 
@@ -121,9 +121,38 @@ namespace WebProject.BusinessLogic.Core
                 return new DataResponse<List<OrderDataEF>> { Data = null, IsExist = false, ResponseMessage = "User not found in database." };
             }
         }
+        internal StandartResponse SuperAdminDeleteOrderModel(int idOrder)
+        {
+            using (var db = new Context())
+            {
+                var deletedOrder = db.Orders.FirstOrDefault(or => or.OrderDataId == idOrder);
+                if (deletedOrder != null)
+                {
+                    db.Orders.Remove(deletedOrder);
+                    db.SaveChanges();
+                    return new StandartResponse { Status = true };
+                }
+                return new StandartResponse { Status = false, ResponseMessage = "Order not found in database." };
+            }
+        }
+        internal DataResponse<UserDataEF> FindUserEF(int indexUser)
+        {
+            using (var db = new Context())
+            {
+                var userDB = db.Users.FirstOrDefault(u => u.UserDataId == indexUser);
 
-
-
+                return userDB != null ? new DataResponse<UserDataEF> { Data = userDB, IsExist = true, ResponseMessage = "Succesfully entered!" }
+                : new DataResponse<UserDataEF> { Data = null, IsExist = false, ResponseMessage = "This User with userId dont exist" };
+            }
+        }
+        internal DataResponse<List<OrderDataEF>> GetAllOrders()
+        {
+            using (var db = new Context()) 
+            {
+                var orders = new List<OrderDataEF>(db.Orders);
+                return new DataResponse<List<OrderDataEF>>{ Data = orders };
+            }
+        }
 
 
         internal DataResponse<UserEF> ResetUser(UserEF userData)
@@ -148,52 +177,6 @@ namespace WebProject.BusinessLogic.Core
                 }
             }
         }
-        internal DataResponse<UserDataEF> FindUserEF(int indexUser)
-        {
-            using (var db = new Context())
-            {
-                var userDB = db.Users.FirstOrDefault(u => u.UserDataId == indexUser);
-
-                return userDB != null ? new DataResponse<UserDataEF> { Data = userDB, IsExist = true, ResponseMessage = "Succesfully entered!" }
-                : new DataResponse<UserDataEF> { Data = null, IsExist = false, ResponseMessage = "This User with userId dont exist" };
-            }
-        }
-
-
-
-
-
-        
-        
-        
-        /*
-         * internal DataResponse<CartItemDataEF> FindCartItemEF(int idProduct, int indexUser)
-        {
-            using (var db = new Context())
-            {
-                var cartItem = db.CartItems.FirstOrDefault(u=>u.ProductId == idProduct && u.UserDataId==indexUser);
-
-                if (cartItem != null)
-                {
-                    var cartItemDB = userDB.CartItems.FirstOrDefault(i => i.ProductId == idProduct);
-                    if (cartItemDB != null)
-                    {
-                        return new DataResponse<CartItemEF> { Data = cartItemDB, IsExist = true };
-                    }
-                    else
-                    {
-                        return new DataResponse<CartItemEF> { Data = null, IsExist = false, ResponseMessage = "This CartItemEF dont exist" };
-                    }
-                }
-                else
-                {
-                    return new DataResponse<CartItemEF> { Data = null, IsExist = false, ResponseMessage = "This User with indexUser dont exist" };
-                }
-
-            }
-        }*/
-
-
  
         internal StandartResponse UpdateOrderInfo(OrderInfoReqest updated)
         {
@@ -308,28 +291,7 @@ namespace WebProject.BusinessLogic.Core
                     return new DataResponse<List<ProductDataEff>> { Data = new List<ProductDataEff>(), IsExist = false, ResponseMessage = "There are no Products in the database" };
             }
         }
-        internal StandartResponse SuperAdminDeleteOrderModel(int idOrder)
-        {
-            using (var db = new Context())
-            {
-                // Получаем Order из базы данных по его Id
-                var deletedOrder = db.Orders.FirstOrDefault(or => or.Order_Id == idOrder);
-                if (deletedOrder != null)
-                {
-                    // Обновляем данные пользователя в объекте UserData
-                    db.Orders.Remove(deletedOrder);
-                    db.SaveChanges();
-                    // Возвращаем обновленный объект UserData
-                    return new StandartResponse { Status = true };
-                }
-                else
-                {
-                    // Если пользователя с указанным Id не найдено в базе данных,
-                    // возможно, стоит сгенерировать исключение или выполнить другое действие по обработке этой ситуации
-                    return new StandartResponse { Status = false, ResponseMessage = "Order not found in database." };
-                }
-            }
-        }
+
         public DataResponse<ProductDataEff> SuperAdminDeleteProductData(int idProductData)
         {
             using (var db = new Context())
