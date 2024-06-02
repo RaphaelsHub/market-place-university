@@ -3,6 +3,8 @@
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
+@model WebProject.ModelAccessLayer.Model.CartData
+
 <div class="container-fluid">
     <div class="row">
         <div class="col-12">
@@ -16,7 +18,7 @@
     </div>
 </div>
 
-@if (Model?.CartUser?.productList?.Any() ?? false)
+@if (Model != null && Model.productList.Count>0)
 {
     <div class="container-fluid">
         <div class="row">
@@ -36,20 +38,19 @@
                                     </tr>
                                 </thead>
                                 <tbody>
-                                    @foreach (var obj in Model.CartUser.productList)
+                                    @foreach (var obj in Model.productList)
                                     {
                                         <tr>
                                             <td class="align-middle text-center">
-                                                <img src="@obj.Item1.PhotoUrl[0]" alt="">
+                                                <img src="@obj.Item1.PhotoUrl.FirstOrDefault()" alt="Product Image">
                                             </td>
                                             <td class="align-middle text-center">@obj.Item1.Name</td>
                                             <td class="align-middle text-center">@obj.Item1.Price.ToString("C")</td>
                                             <td class="align-middle text-center">@obj.Item2</td>
                                             <td class="align-middle text-center">
                                                 <input type="hidden" name="cartItem.Id" value="@obj.Item1.Id" />
-                                                <input type="hidden" name="cartItem.Id_User" value="@Model.IdUser" />
                                                 <div class="input-group">
-                                                    <input type="number" class="form-control mr-sm-2" name="cartItem.Quantity">
+                                                    <input type="number" class="form-control mr-sm-2" name="cartItem.Quantity" value="@obj.Item2">
                                                     <button type="submit" class="btn btn-danger">Delete</button>
                                                 </div>
                                             </td>
@@ -68,17 +69,17 @@
 
                     <div class="d-flex justify-content-between my-3">
                         <h6>Total price:</h6>
-                        <h6>@Model.CartUser.SumPrice</h6>
+                        <h6>@Model.SumPrice.ToString("C")</h6>
                     </div>
 
                     <div class="d-flex justify-content-between my-3 border-bottom">
                         <h6>Price shipping:</h6>
-                        <h6>@Model.CartUser.DeliveryPrice</h6>
+                        <h6>@Model.DeliveryPrice.ToString("C")</h6>
                     </div>
 
                     <div class="d-flex justify-content-between my-3">
                         <h3>Final cost:</h3>
-                        <h3>@Model.CartUser.FinalPrice</h3>
+                        <h3>@Model.FinalPrice.ToString("C")</h3>
                     </div>
 
                     <div class="d-grid">

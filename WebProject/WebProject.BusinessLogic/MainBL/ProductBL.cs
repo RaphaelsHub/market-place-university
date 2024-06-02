@@ -12,7 +12,7 @@ namespace WebProject.BusinessLogic.MainBL
     public class ProductBL : ProductAPI, IProduct
     {
         //public ProductBL() { }
-        public new AllProducts GetAllProducts()
+        public new List<Product> GetAllProducts()
         {
             var AllProductsResponse = base.GetAllProducts();
             if (AllProductsResponse.IsExist == false)
@@ -25,7 +25,7 @@ namespace WebProject.BusinessLogic.MainBL
             {
                 b.Add(ModelGeneratingClass.GenerateProduct(a));
             }
-            return new AllProducts { Products = b };
+            return b;
         }
 
         public Category GetCategoriesCatalog(int idChildCategory)
@@ -38,7 +38,7 @@ namespace WebProject.BusinessLogic.MainBL
             return null;
         }
 
-        public AllCategories GetCategoriesView()
+        public List<Category> GetCategoriesView()
         {
             return null;
         }
@@ -54,7 +54,7 @@ namespace WebProject.BusinessLogic.MainBL
             return ModelGeneratingClass.GenerateProduct(responseProd.Data);
         }
 
-        public AllProducts GetProductByName(string textSearch)
+        public List<Product> GetProductsByName(string textSearch)
         {
             return null;
         }

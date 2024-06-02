@@ -18,7 +18,7 @@ namespace WebProject.ModelAccessLayer.Model
         public string Details { get; set; }
         
         //Доделать
-        public AllCategories AllCategories { get; set; }
+        public List<Category> AllCategories { get; set; }
 
         [Required(ErrorMessage = "ShortDescription is required.")]
         [StringLength(100, MinimumLength = 14, ErrorMessage = "Short Description must be at least 14 characters long")]
@@ -37,7 +37,9 @@ namespace WebProject.ModelAccessLayer.Model
         [Required(ErrorMessage = "Amount is required.")]
         public int Amount { get; set; }
 
-        public Product() {
+        public Product() 
+        {
+            AllCategories = new List<Category>();
             PhotoUrl = new List<string>();
         }
     }

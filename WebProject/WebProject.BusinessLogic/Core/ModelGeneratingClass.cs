@@ -81,8 +81,8 @@ namespace WebProject.BusinessLogic.Core
                 IdUser = data.UserDataId,
                 NameUser = data.Name,
                 StatusUser = (data.UserDataId==1) ? StatusUser.Admin:StatusUser.User,
-                CartUser = GenerateCartData(data.CartItems,getProductById),
-                DeliveriesUser = new AllDeliveries { AllOrders = GenerateDeliveries(data.Orders,getProductById) }
+                CartData = GenerateCartData(data.CartItems,getProductById),
+                AllOrders =  GenerateDeliveries(data.Orders,getProductById)
             };
         };
         public static Func<Product, ProductDataEF> GenerateEfProduct = product =>

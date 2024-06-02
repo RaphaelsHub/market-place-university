@@ -15,10 +15,8 @@ namespace WebProject.Controllers
         [HttpPost]
         public ActionResult Login(LoginData loginData) => HandleUserAuthentication(loginData);
 
-
         [HttpPost]
         public ActionResult Registration(RegistrationData registrationData) => HandleUserAuthentication(registrationData);
-
 
         public ActionResult LogOut()
         {

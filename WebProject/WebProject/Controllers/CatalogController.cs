@@ -31,9 +31,7 @@ namespace WebProject.Controllers
                     return RedirectToAction("Error", "Home");
             }
             else
-            {
                 return RedirectToAction("Error404", "Home");
-            }
         }
     }
 }

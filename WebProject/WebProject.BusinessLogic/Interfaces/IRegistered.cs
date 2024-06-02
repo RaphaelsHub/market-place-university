@@ -13,6 +13,6 @@ namespace WebProject.BusinessLogic.Interfaces
         bool DeleteFromCart(CartItem cartItem);
         bool ProcessOrder(OrderModel orderModel);
         CartData ViewCart(int indexUser);
-        AllDeliveries ViewOrders(int indexUser);
+        List<OrderModel> ViewOrders(int indexUser);
     }
 }

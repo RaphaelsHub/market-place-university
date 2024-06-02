@@ -10,10 +10,10 @@ namespace WebProject.BusinessLogic.Interfaces
 {
     public interface IProduct
     {
-        AllProducts GetAllProducts();
         Product GetProductById(int id);
-        AllProducts GetProductByName(string textSearch);
-        AllCategories GetCategoriesView();
+        List<Category> GetCategoriesView();
+        List<Product> GetAllProducts();
+        List<Product> GetProductsByName(string textSearch);
         Category GetCategoriesCatalog(int idChildCategory);
         Category GetCategoriesCatalog(int idChildCategory, SortBy sortBy);
     }

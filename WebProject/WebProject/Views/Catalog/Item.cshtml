@@ -4,7 +4,7 @@
 }
 
 
-@model WebProject.ModelAccessLayer.Model.Product
+@model  WebProject.ModelAccessLayer.Model.Product
 
 @if (Model != null)
 {
@@ -215,9 +215,9 @@
                                 <tbody>
 
 
-                                    @if (Model.AllCategories != null && Model.AllCategories.Categories != null && Model.AllCategories.Categories.Count > 0)
+                                    @if (Model.AllCategories?.Count>0)
                                     {
-                                        foreach (var b in Model.AllCategories.Categories)
+                                        foreach (var b in Model.AllCategories)
                                         {
                                             foreach (var c in b.Filters)
                                             {

@@ -16,7 +16,7 @@ namespace WebProject.BusinessLogic.MainBL
         private readonly UserRegisteredAPI _userAPI = new UserRegisteredAPI();
 
         private readonly UserBL _userBL = new UserBL();
-        public new AllProducts GetAllProducts() => base.GetAllProducts();
+        public new List<Product> GetAllProducts() => base.GetAllProducts();
         public bool AddToCart(CartItem cartItem) => this is IRegistered && _userBL.AddToCart(cartItem);
 
         public bool DeleteFromCart(CartItem cartItem) => this is IRegistered && _userBL.DeleteFromCart(cartItem);
@@ -25,16 +25,14 @@ namespace WebProject.BusinessLogic.MainBL
 
         public CartData ViewCart(int indexUser) => this is IRegistered ? _userBL.ViewCart(indexUser) : null;
 
-        public AllDeliveries ViewOrders(int indexUser) => this is IRegistered ? _userBL.ViewOrders(indexUser) : null;
+        public List<OrderModel> ViewOrders(int indexUser) => this is IRegistered ? _userBL.ViewOrders(indexUser) : null;
 
         public bool DeleteProduct(int id) => DeleteProductDataByID(id).Status;
 
         public bool DeleteOrderModel(int idOrder) => _userAPI.SuperAdminDeleteOrderModel(idOrder).Status;
 
-        public AllDeliveries GetAllActiveOrder() => new AllDeliveries 
-        { 
-            AllOrders = ModelGeneratingClass.GenerateDeliveries(_userAPI.GetAllOrders().Data, GetProductById) 
-        };
+        public List<OrderModel> GetAllActiveOrder() => ModelGeneratingClass.
+            GenerateDeliveries(_userAPI.GetAllOrders().Data, GetProductById);
 
         public bool AddProduct(Product product)
         {
@@ -47,7 +45,5 @@ namespace WebProject.BusinessLogic.MainBL
             var response = ModifyProductData(ModelGeneratingClass.GenerateEfProduct(updatedProduct));
             return response.Status;
         }
-
-
     }
 }

@@ -29,12 +29,10 @@
                                     var mod = WebProject.Controllers.HomeController.AllCategories;
                                 }
 
-                                @if (mod != null)
+                                @if (mod?.Count>0)
                                 {
-                                    if (mod.Categories != null && mod.Categories.Any())
-                                    {
                                         <ul id="subcategoriesDropdown" class="dropdown-menu dropdown-menu-end">
-                                            @foreach (var category in mod.Categories)
+                                            @foreach (var category in mod)
                                             {
                                                 if (category != null)
                                                 {
@@ -55,7 +53,6 @@
                                                 }
                                             }
                                         </ul>
-                                    }
                                 }
 
                             </li>

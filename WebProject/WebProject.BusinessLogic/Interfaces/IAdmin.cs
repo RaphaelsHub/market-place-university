@@ -12,8 +12,8 @@ namespace WebProject.BusinessLogic.Interfaces
     {
         bool AddProduct(Product product);
         bool EditProduct(Product updatedProduct);
-        AllProducts GetAllProducts();
-        AllDeliveries GetAllActiveOrder();
+        List<Product> GetAllProducts();
+        List<OrderModel> GetAllActiveOrder();
         bool DeleteProduct(int idProduct);
         bool DeleteOrderModel(int idOrder);
     }

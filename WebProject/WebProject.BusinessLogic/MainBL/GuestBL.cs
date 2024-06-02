@@ -19,6 +19,7 @@ namespace WebProject.BusinessLogic.MainBL
             return !responseResult.IsExist ? null : ModelGeneratingClass.GenerateUserData(responseResult.Data, GetProductById);
         }
 
+
         public UserData Register(RegistrationData registrationData)
         {
             var responseResult = _guestAPI.RegistrateUser(registrationData);

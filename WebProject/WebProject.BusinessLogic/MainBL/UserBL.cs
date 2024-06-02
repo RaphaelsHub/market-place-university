@@ -51,11 +51,11 @@ namespace WebProject.BusinessLogic.MainBL
 
             return response.IsExist == false ? null : ModelGeneratingClass.GenerateCartData(response.Data,GetProductById);
         }
-        public AllDeliveries ViewOrders(int indexUser)
+        public List<OrderModel> ViewOrders(int indexUser)
         {
             var response = _userRegisteredApi.ViewUserOrders(indexUser);
 
-            return response.IsExist == false ? null : new AllDeliveries { AllOrders = ModelGeneratingClass.GenerateDeliveries(response.Data, GetProductById) }; 
+            return response.IsExist == false ? null : ModelGeneratingClass.GenerateDeliveries(response.Data, GetProductById); 
         }
     }
 }

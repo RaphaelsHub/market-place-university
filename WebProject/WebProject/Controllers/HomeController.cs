@@ -1,4 +1,5 @@
-﻿using System.Web.Mvc;
+﻿using System.Collections.Generic;
+using System.Web.Mvc;
 using WebProject.ModelAccessLayer.Model;
 
 
@@ -8,7 +9,7 @@ namespace WebProject.Controllers
 {
     public class HomeController : BaseController
     {
-        public static AllCategories AllCategories { get; private set; }
+        public static List<Category> AllCategories { get; private set; }
 
         // GET: Home
         public ActionResult ThanksForOrder() => View();
@@ -25,9 +26,7 @@ namespace WebProject.Controllers
 
         public ActionResult Search(string text)
         {
-            AllProducts allProducts = null;
-
-            return (text == null) ? View(allProducts) : View(_businessLogic.User.GetProductByName(text));
+            return (text == null) ? View() : View(_businessLogic.User.GetProductsByName(text));
         }
     }
 }

@@ -12,7 +12,10 @@ namespace WebProject.Controllers
         public ActionResult Buy()
         {
             if (Session["UserData"] != null && _businessLogic.User is IRegistered)
-                return View(((UserData)Session["UserData"]).CartUser);
+            {
+                (Session["UserData"] as UserData).CartData = ((IRegistered)_businessLogic.User).ViewCart(((UserData)Session["UserData"]).IdUser);
+                return View((Session["UserData"] as UserData).CartData);
+            }
             return RedirectToAction("Index", "Home");
         }
 
@@ -26,12 +29,13 @@ namespace WebProject.Controllers
         public ActionResult Delivery()
         {
             if (Session["UserData"] != null && _businessLogic.User is IRegistered)
-                return View((UserData)Session["UserData"]);
+            {
+                (Session["UserData"] as UserData).AllOrders = ((IRegistered)_businessLogic.User).ViewOrders(((UserData)Session["UserData"]).IdUser);
+                return View((Session["UserData"] as UserData).AllOrders);
+            }
             return RedirectToAction("Index", "Home");
         }
 
-
-        //в бизнес ложик обмен данными
         [HttpPost]
         public ActionResult AddToCart(CartItem cartItem)
         {
@@ -44,8 +48,7 @@ namespace WebProject.Controllers
 
                 bool WasAdded = registred.AddToCart(cartItem);
 
-                TempData["Message"] = WasAdded ? "Some Error" : "Was added successfully";
-
+                TempData["Message"] = !WasAdded ? "Some Error" : "Was added successfully";
             }
             return RedirectToAction("Item", "Catalog", new { id = cartItem.Id });
         }

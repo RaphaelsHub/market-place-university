@@ -10,6 +10,5 @@ namespace WebProject.BusinessLogic.MainBL
     public abstract class UserBaseBL : ProductBL
     {
         public UserBaseBL() { }
-
     }
 }

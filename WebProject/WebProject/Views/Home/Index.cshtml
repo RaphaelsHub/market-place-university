@@ -35,6 +35,8 @@
     </button>
 </div>
 
+@model List<WebProject.ModelAccessLayer.Model.Product>
+
 <!-- OUR PRODUCTS -->
 <section class="featured-products">
     <div class="container-fluid">
@@ -44,9 +46,9 @@
             </div>
         </div>
         <div class="row">
-            @if (Model != null)
+            @if (Model?.Count>0)
             {
-                foreach (var product in Model.Products)
+                foreach (var product in Model)
                 {
                     <div class="col-lg-3 col-md-4 col-sm-6 mb-3">
                         <div class="product-card">

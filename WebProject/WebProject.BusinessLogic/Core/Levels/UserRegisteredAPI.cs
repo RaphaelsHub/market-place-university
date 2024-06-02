@@ -15,14 +15,23 @@ namespace WebProject.BusinessLogic.Core
         {
             using (var db = new Context())
             {
+                
                 // Проверяем есть ли уже такой элемент в корзине
                 var existingCartItem = db.CartItems
                     .FirstOrDefault(c => c.UserDataId == cartItem.UserDataId && c.ProductId == cartItem.ProductId);
 
                 if (existingCartItem != null)
+                {
+                    var l = db.Users.FirstOrDefault(u => u.UserDataId == cartItem.UserDataId);
+                    l.CartItems.Add(cartItem);
                     existingCartItem.Quantity += cartItem.Quantity;
+                }
                 else
+                {
+                    var l = db.Users.FirstOrDefault(u => u.UserDataId == cartItem.UserDataId);
+                    l.CartItems.Add(cartItem);
                     db.CartItems.Add(cartItem);
+                }
 
                 db.SaveChanges();
 
@@ -39,7 +48,7 @@ namespace WebProject.BusinessLogic.Core
             if (userResponse.IsExist == false)
                 return new StandartResponse { Status = false, ResponseMessage = "User not found in database." };
 
-            return CreateOrUpdateCartItemEF(cartItem) == cartItem ? new StandartResponse { Status = true, ResponseMessage = "Was Added" }
+            return CreateOrUpdateCartItemEF(cartItem) != null ? new StandartResponse { Status = true, ResponseMessage = "Was Added" }
             : new StandartResponse { Status = false, ResponseMessage = "Some errors" };
         }
         internal StandartResponse DeleteFromUserCart(CartItem cartItem)

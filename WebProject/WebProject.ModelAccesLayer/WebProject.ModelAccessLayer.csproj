@@ -43,9 +43,6 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Model\AllCategories.cs" />
-    <Compile Include="Model\AllDeliveries.cs" />
-    <Compile Include="Model\AllProducts.cs" />
     <Compile Include="Model\CartData.cs" />
     <Compile Include="Model\CartItem.cs" />
     <Compile Include="Model\Category.cs" />
