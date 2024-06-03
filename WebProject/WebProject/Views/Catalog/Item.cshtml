@@ -76,7 +76,7 @@
                     <h1 class="section-title h3">
                         <span>@Model.Name</span>
                     </h1>
-                    <div class="product-price">@Model.Price.ToString("C")</div>
+                    <div class="product-price">@Model.Price.ToString("C", System.Globalization.CultureInfo.GetCultureInfo("en-US"))</div>
                     <p>@Model.ShortDescription</p>
 
                     @{

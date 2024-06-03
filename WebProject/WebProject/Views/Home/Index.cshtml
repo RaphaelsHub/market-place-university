@@ -64,7 +64,7 @@
                                 <p class="product-excerpt">@product.ShortDescription</p>
                                 <div class="product-bottom-details d-flex justify-content-between">
                                     <div class="product-price">
-                                        @product.Price.ToString("C")
+                                        @product.Price.ToString("C", System.Globalization.CultureInfo.GetCultureInfo("en-US"))
                                     </div>
                                     <div class="product-links">
                                         <a href="@Url.Action("Item", "Catalog", new { id = product.Id })" class="btn btn-outline-secondary add-to-cart">

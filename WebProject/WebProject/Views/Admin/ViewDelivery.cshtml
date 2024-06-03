@@ -56,7 +56,7 @@
                                         <td class="align-middle text-center">@obj.OrderInfo.City</td>
                                         <td class="align-middle text-center">@obj.OrderInfo.Address</td>
                                         <td class="align-middle text-center">@obj.OrderInfo.Phone</td>
-                                        <td class="align-middle text-center">@obj.CartData.FinalPrice.ToString("C")</td>
+                                        <td class="align-middle text-center">@obj.CartData.FinalPrice.ToString("C", System.Globalization.CultureInfo.GetCultureInfo("en-US"))</td>
                                         <td class="align-middle text-center"><button type="submit" class="btn btn-danger">Status: @obj.StatusDelivery.ToString()</button></td>
                                         <td class="align-middle text-center">
                                             <form method="post" action="@Url.Action("DeleteDelivery", "Admin")">

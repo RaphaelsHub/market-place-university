@@ -110,7 +110,7 @@
                                         <p class="product-excerpt">@product.ShortDescription</p>
                                         <div class="product-bottom-details d-flex justify-content-between">
                                             <div class="product-price">
-                                                @product.Price.ToString("C") <!-- Форматирование цены -->
+                                                @product.Price.ToString("C", System.Globalization.CultureInfo.GetCultureInfo("en-US")) <!-- Форматирование цены -->
                                             </div>
                                             <div class="product-links">
                                                 <!-- Ссылка для передачи ID продукта методом GET -->

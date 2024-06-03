@@ -48,7 +48,7 @@
                         <td class="align-middle text-center">@order.OrderInfo.City</td>
                         <td class="align-middle text-center">@order.OrderInfo.Address</td>
                         <td class="align-middle text-center">@order.OrderInfo.Phone</td>
-                        <td class="align-middle text-center">@order.CartData.FinalPrice.ToString("C")</td>
+                        <td class="align-middle text-center">@order.CartData.FinalPrice.ToString("C", System.Globalization.CultureInfo.GetCultureInfo("en-US"))</td>
                         <td class="align-middle text-center">
                             <button type="submit" class="btn btn-danger">Status: @order.StatusDelivery.ToString()</button>
                         </td>

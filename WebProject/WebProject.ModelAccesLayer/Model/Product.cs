@@ -25,7 +25,7 @@ namespace WebProject.ModelAccessLayer.Model
         public string ShortDescription { get; set; }
 
         [Required(ErrorMessage = "FullDescription is required.")]
-        [StringLength(200, MinimumLength = 20, ErrorMessage = "Full Description must be at least 20 characters long")]
+        [StringLength(10000, MinimumLength = 20, ErrorMessage = "Full Description must be at least 20 characters long")]
         public string FullDescription { get; set; }
 
         //[Required(ErrorMessage = "PhotoUrl is required.")]

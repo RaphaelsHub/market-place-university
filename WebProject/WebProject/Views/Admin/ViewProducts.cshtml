@@ -55,7 +55,7 @@
                                         <td class="align-middle text-center">@product.Id</td>
                                         <td class="align-middle text-center">@product.Name</td>
                                         <td class="align-middle text-center description-cell">@product.ShortDescription</td>
-                                        <td class="align-middle text-center">@product.Price.ToString("C")</td>
+                                        <td class="align-middle text-center">@product.Price.ToString("C", System.Globalization.CultureInfo.GetCultureInfo("en-US"))</td>
                                         <td class="align-middle text-center">@product.Amount</td>
                                         <td class="align-middle text-center">
                                             <form method="post" action="@Url.Action("EditProduct", "Admin")">
