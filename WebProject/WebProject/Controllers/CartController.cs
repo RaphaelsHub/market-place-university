@@ -81,7 +81,7 @@ namespace WebProject.Controllers
 
         //работает
         [HttpPost]
-        public ActionResult DeleteCartItem(CartItem cartwItem)
+        public ActionResult DeleteCartItem(CartItem cartItem)
         {
             if (Session["UserData"] == null || _businessLogic.User is IGuest)
                 return RedirectToAction("Index", "Home");
