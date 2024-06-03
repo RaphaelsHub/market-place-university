@@ -76,12 +76,12 @@ namespace WebProject.Controllers
                 return WasAdded ? RedirectToAction("ThanksForOrder", "Home") : RedirectToAction("Error404", "Home");
             }
 
-            return View(new OrderInfo());
+            return View(new OrderModel());
         }
 
         //работает
         [HttpPost]
-        public ActionResult DeleteCartItem(CartItem cartItem)
+        public ActionResult DeleteCartItem(CartItem cartwItem)
         {
             if (Session["UserData"] == null || _businessLogic.User is IGuest)
                 return RedirectToAction("Index", "Home");
