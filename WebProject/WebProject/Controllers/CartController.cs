@@ -76,7 +76,7 @@ namespace WebProject.Controllers
                 return WasAdded ? RedirectToAction("ThanksForOrder", "Home") : RedirectToAction("Error404", "Home");
             }
 
-            return View(orderInfo);
+            return View(new OrderInfo());
         }
 
         //работает
