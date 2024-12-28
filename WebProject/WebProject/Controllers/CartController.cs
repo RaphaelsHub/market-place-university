@@ -6,12 +6,15 @@ using System.Web.Mvc;
 
 namespace WebProject.Controllers
 {
-    public class CartController : Controller
+    public class CartController : BaseController
     {
-        // GET: Cart
-        public ActionResult CartView()
-        {
-            return View();
-        }
+        [HttpGet]
+        public ActionResult CartView() => View();
+
+        [HttpPost]
+        public ActionResult RemoveItem(int id) => RedirectToAction("CartView");
+
+        [HttpPost]
+        public ActionResult PromoCode(string code) => RedirectToAction("CartView");
     }
 }

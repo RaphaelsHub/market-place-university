@@ -14,9 +14,25 @@ namespace WebProject.Controllers
         }
 
         // GET: Store
+        [HttpGet]
         public ActionResult AllProducts()
         {
             return View();
+        }
+
+        public ActionResult AllProducts(string search)
+        {
+            return View();
+        }
+
+        public ActionResult Search(string search)
+        {
+            return RedirectToAction("AllProducts", search);
+        }
+        
+        public ActionResult SortBy(string sort)
+        {
+            return RedirectToAction("AllProducts", "Store", sort);
         }
     }
 }

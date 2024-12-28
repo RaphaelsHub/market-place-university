@@ -151,6 +151,8 @@
     <Content Include="Asset\mail\mail.php" />
     <Content Include="Asset\style.css" />
     <Content Include="Global.asax" />
+    <Content Include="Views\Home\MailSuccess.cshtml" />
+    <Content Include="Views\Home\Thanks.cshtml" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
@@ -158,11 +160,11 @@
     <Compile Include="App_Start\IdentityConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Controllers\AccountController.cs" />
+    <Compile Include="Controllers\BaseController.cs" />
     <Compile Include="Controllers\BlogController.cs" />
     <Compile Include="Controllers\CartController.cs" />
     <Compile Include="Controllers\ErrorController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
-    <Compile Include="Controllers\MailController.cs" />
     <Compile Include="Controllers\OrderController.cs" />
     <Compile Include="Controllers\StoreController.cs" />
     <Compile Include="Global.asax.cs">
@@ -190,7 +192,6 @@
     <Content Include="Views\Home\AboutUs.cshtml" />
     <Content Include="Views\Account\Login.cshtml" />
     <Content Include="Views\Account\Register.cshtml" />
-    <Content Include="Views\Mail\MailSuccess.cshtml" />
     <Content Include="Views\Order\CheckOut.cshtml" />
     <Content Include="Views\Cart\CartView.cshtml" />
     <Content Include="Views\Error\NotFound.cshtml" />
@@ -208,6 +209,12 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\WebProject.Core\WebProject.Core.csproj">
+      <Project>{eec6d438-115e-4f49-9e5b-bff8f2dbea79}</Project>
+      <Name>WebProject.Core</Name>
+    </ProjectReference>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

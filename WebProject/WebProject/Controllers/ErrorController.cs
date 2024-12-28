@@ -1,16 +1,18 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
-using System.Web.Mvc;
+﻿using System.Web.Mvc;
 
 namespace WebProject.Controllers
 {
-    public class ErrorController : Controller
+    public class ErrorController : BaseController
     {
-        // GET: Error
+        [HttpGet]
         public ActionResult NotFound()
-        {
+        { 
+            
+            string lastUrl = Request.UrlReferrer?.ToString();
+
+            if (lastUrl == null)
+                return RedirectToAction("Index", "Home");
+            ViewBag.LastUrl = lastUrl;
             return View();
         }
     }

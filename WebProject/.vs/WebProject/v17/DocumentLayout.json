@@ -3,52 +3,16 @@
   "WorkspaceRootPath": "D:\\My Documents\\market_place_university\\WebProject\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{5F80B0C2-7F0F-4D1D-98CF-08C805A03522}|WebProject\\WebProject.csproj|d:\\my documents\\market_place_university\\webproject\\webproject\\views\\order\\checkout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{5F80B0C2-7F0F-4D1D-98CF-08C805A03522}|WebProject\\WebProject.csproj|solutionrelative:webproject\\views\\order\\checkout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+      "AbsoluteMoniker": "D:0:0:{5F80B0C2-7F0F-4D1D-98CF-08C805A03522}|WebProject\\WebProject.csproj|d:\\my documents\\market_place_university\\webproject\\webproject\\controllers\\cartcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{5F80B0C2-7F0F-4D1D-98CF-08C805A03522}|WebProject\\WebProject.csproj|solutionrelative:webproject\\controllers\\cartcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{5F80B0C2-7F0F-4D1D-98CF-08C805A03522}|WebProject\\WebProject.csproj|d:\\my documents\\market_place_university\\webproject\\webproject\\views\\shared\\_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{5F80B0C2-7F0F-4D1D-98CF-08C805A03522}|WebProject\\WebProject.csproj|solutionrelative:webproject\\views\\shared\\_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{5F80B0C2-7F0F-4D1D-98CF-08C805A03522}|WebProject\\WebProject.csproj|d:\\my documents\\market_place_university\\webproject\\webproject\\views\\partials\\newsletter.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{5F80B0C2-7F0F-4D1D-98CF-08C805A03522}|WebProject\\WebProject.csproj|solutionrelative:webproject\\views\\partials\\newsletter.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{5F80B0C2-7F0F-4D1D-98CF-08C805A03522}|WebProject\\WebProject.csproj|d:\\my documents\\market_place_university\\webproject\\webproject\\views\\partials\\header.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{5F80B0C2-7F0F-4D1D-98CF-08C805A03522}|WebProject\\WebProject.csproj|solutionrelative:webproject\\views\\partials\\header.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{5F80B0C2-7F0F-4D1D-98CF-08C805A03522}|WebProject\\WebProject.csproj|d:\\my documents\\market_place_university\\webproject\\webproject\\views\\partials\\footer.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{5F80B0C2-7F0F-4D1D-98CF-08C805A03522}|WebProject\\WebProject.csproj|solutionrelative:webproject\\views\\partials\\footer.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{5F80B0C2-7F0F-4D1D-98CF-08C805A03522}|WebProject\\WebProject.csproj|d:\\my documents\\market_place_university\\webproject\\webproject\\views\\mail\\mailsuccess.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{5F80B0C2-7F0F-4D1D-98CF-08C805A03522}|WebProject\\WebProject.csproj|solutionrelative:webproject\\views\\mail\\mailsuccess.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{5F80B0C2-7F0F-4D1D-98CF-08C805A03522}|WebProject\\WebProject.csproj|d:\\my documents\\market_place_university\\webproject\\webproject\\views\\home\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{5F80B0C2-7F0F-4D1D-98CF-08C805A03522}|WebProject\\WebProject.csproj|solutionrelative:webproject\\views\\home\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{5F80B0C2-7F0F-4D1D-98CF-08C805A03522}|WebProject\\WebProject.csproj|d:\\my documents\\market_place_university\\webproject\\webproject\\views\\home\\contactus.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{5F80B0C2-7F0F-4D1D-98CF-08C805A03522}|WebProject\\WebProject.csproj|solutionrelative:webproject\\views\\home\\contactus.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{5F80B0C2-7F0F-4D1D-98CF-08C805A03522}|WebProject\\WebProject.csproj|d:\\my documents\\market_place_university\\webproject\\webproject\\views\\home\\aboutus.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{5F80B0C2-7F0F-4D1D-98CF-08C805A03522}|WebProject\\WebProject.csproj|solutionrelative:webproject\\views\\home\\aboutus.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{5F80B0C2-7F0F-4D1D-98CF-08C805A03522}|WebProject\\WebProject.csproj|d:\\my documents\\market_place_university\\webproject\\webproject\\views\\error\\notfound.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{5F80B0C2-7F0F-4D1D-98CF-08C805A03522}|WebProject\\WebProject.csproj|solutionrelative:webproject\\views\\error\\notfound.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+      "AbsoluteMoniker": "D:0:0:{030F1626-8790-48EB-8E8A-5760877CC9B9}|WebProject.App\\WebProject.App.csproj|d:\\my documents\\market_place_university\\webproject\\webproject.app\\cartcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{030F1626-8790-48EB-8E8A-5760877CC9B9}|WebProject.App\\WebProject.App.csproj|solutionrelative:webproject.app\\cartcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{5F80B0C2-7F0F-4D1D-98CF-08C805A03522}|WebProject\\WebProject.csproj|d:\\my documents\\market_place_university\\webproject\\webproject\\views\\cart\\cartview.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
       "RelativeMoniker": "D:0:0:{5F80B0C2-7F0F-4D1D-98CF-08C805A03522}|WebProject\\WebProject.csproj|solutionrelative:webproject\\views\\cart\\cartview.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{5F80B0C2-7F0F-4D1D-98CF-08C805A03522}|WebProject\\WebProject.csproj|d:\\my documents\\market_place_university\\webproject\\webproject\\views\\blog\\allblogs.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{5F80B0C2-7F0F-4D1D-98CF-08C805A03522}|WebProject\\WebProject.csproj|solutionrelative:webproject\\views\\blog\\allblogs.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     }
   ],
   "DocumentGroupContainers": [
@@ -58,7 +22,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 611,
-          "SelectedChildIndex": 5,
+          "SelectedChildIndex": 2,
           "Children": [
             {
               "$type": "Bookmark",
@@ -67,157 +31,40 @@
             {
               "$type": "Document",
               "DocumentIndex": 1,
-              "Title": "_Layout.cshtml",
-              "DocumentMoniker": "D:\\My Documents\\market_place_university\\WebProject\\WebProject\\Views\\Shared\\_Layout.cshtml",
-              "RelativeDocumentMoniker": "WebProject\\Views\\Shared\\_Layout.cshtml",
-              "ToolTip": "D:\\My Documents\\market_place_university\\WebProject\\WebProject\\Views\\Shared\\_Layout.cshtml",
-              "RelativeToolTip": "WebProject\\Views\\Shared\\_Layout.cshtml",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2024-12-27T23:05:17.76Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "NewsLetter.cshtml",
-              "DocumentMoniker": "D:\\My Documents\\market_place_university\\WebProject\\WebProject\\Views\\Partials\\NewsLetter.cshtml",
-              "RelativeDocumentMoniker": "WebProject\\Views\\Partials\\NewsLetter.cshtml",
-              "ToolTip": "D:\\My Documents\\market_place_university\\WebProject\\WebProject\\Views\\Partials\\NewsLetter.cshtml",
-              "RelativeToolTip": "WebProject\\Views\\Partials\\NewsLetter.cshtml",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2024-12-27T23:05:15.288Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "Header.cshtml",
-              "DocumentMoniker": "D:\\My Documents\\market_place_university\\WebProject\\WebProject\\Views\\Partials\\Header.cshtml",
-              "RelativeDocumentMoniker": "WebProject\\Views\\Partials\\Header.cshtml",
-              "ToolTip": "D:\\My Documents\\market_place_university\\WebProject\\WebProject\\Views\\Partials\\Header.cshtml",
-              "RelativeToolTip": "WebProject\\Views\\Partials\\Header.cshtml",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2024-12-27T23:05:14.014Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "Footer.cshtml",
-              "DocumentMoniker": "D:\\My Documents\\market_place_university\\WebProject\\WebProject\\Views\\Partials\\Footer.cshtml",
-              "RelativeDocumentMoniker": "WebProject\\Views\\Partials\\Footer.cshtml",
-              "ToolTip": "D:\\My Documents\\market_place_university\\WebProject\\WebProject\\Views\\Partials\\Footer.cshtml",
-              "RelativeToolTip": "WebProject\\Views\\Partials\\Footer.cshtml",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2024-12-27T23:05:12.645Z",
+              "Title": "CartController.cs",
+              "DocumentMoniker": "D:\\My Documents\\market_place_university\\WebProject\\WebProject.App\\CartController.cs",
+              "RelativeDocumentMoniker": "WebProject.App\\CartController.cs",
+              "ToolTip": "D:\\My Documents\\market_place_university\\WebProject\\WebProject.App\\CartController.cs",
+              "RelativeToolTip": "WebProject.App\\CartController.cs",
+              "ViewState": "AgIAABkAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-28T00:55:05.947Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 0,
-              "Title": "CheckOut.cshtml",
-              "DocumentMoniker": "D:\\My Documents\\market_place_university\\WebProject\\WebProject\\Views\\Order\\CheckOut.cshtml",
-              "RelativeDocumentMoniker": "WebProject\\Views\\Order\\CheckOut.cshtml",
-              "ToolTip": "D:\\My Documents\\market_place_university\\WebProject\\WebProject\\Views\\Order\\CheckOut.cshtml",
-              "RelativeToolTip": "WebProject\\Views\\Order\\CheckOut.cshtml",
-              "ViewState": "AgIAADEAAAAAAAAAAAAAADwAAABLAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2024-12-27T23:04:19.996Z",
+              "Title": "CartController.cs",
+              "DocumentMoniker": "D:\\My Documents\\market_place_university\\WebProject\\WebProject\\Controllers\\CartController.cs",
+              "RelativeDocumentMoniker": "WebProject\\Controllers\\CartController.cs",
+              "ToolTip": "D:\\My Documents\\market_place_university\\WebProject\\WebProject\\Controllers\\CartController.cs",
+              "RelativeToolTip": "WebProject\\Controllers\\CartController.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABQAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-28T00:52:49.308Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
-              "Title": "MailSuccess.cshtml",
-              "DocumentMoniker": "D:\\My Documents\\market_place_university\\WebProject\\WebProject\\Views\\Mail\\MailSuccess.cshtml",
-              "RelativeDocumentMoniker": "WebProject\\Views\\Mail\\MailSuccess.cshtml",
-              "ToolTip": "D:\\My Documents\\market_place_university\\WebProject\\WebProject\\Views\\Mail\\MailSuccess.cshtml",
-              "RelativeToolTip": "WebProject\\Views\\Mail\\MailSuccess.cshtml",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAUAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2024-12-27T23:04:11.261Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 6,
-              "Title": "Index.cshtml",
-              "DocumentMoniker": "D:\\My Documents\\market_place_university\\WebProject\\WebProject\\Views\\Home\\Index.cshtml",
-              "RelativeDocumentMoniker": "WebProject\\Views\\Home\\Index.cshtml",
-              "ToolTip": "D:\\My Documents\\market_place_university\\WebProject\\WebProject\\Views\\Home\\Index.cshtml",
-              "RelativeToolTip": "WebProject\\Views\\Home\\Index.cshtml",
-              "ViewState": "AgIAAPwAAAAAAAAAAAAAAAIBAAAFAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2024-12-27T23:03:08.778Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 7,
-              "Title": "ContactUs.cshtml",
-              "DocumentMoniker": "D:\\My Documents\\market_place_university\\WebProject\\WebProject\\Views\\Home\\ContactUs.cshtml",
-              "RelativeDocumentMoniker": "WebProject\\Views\\Home\\ContactUs.cshtml",
-              "ToolTip": "D:\\My Documents\\market_place_university\\WebProject\\WebProject\\Views\\Home\\ContactUs.cshtml",
-              "RelativeToolTip": "WebProject\\Views\\Home\\ContactUs.cshtml",
-              "ViewState": "AgIAAE4AAAAAAAAAAAAAAGcAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2024-12-27T23:02:39.44Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 8,
-              "Title": "AboutUs.cshtml",
-              "DocumentMoniker": "D:\\My Documents\\market_place_university\\WebProject\\WebProject\\Views\\Home\\AboutUs.cshtml",
-              "RelativeDocumentMoniker": "WebProject\\Views\\Home\\AboutUs.cshtml",
-              "ToolTip": "D:\\My Documents\\market_place_university\\WebProject\\WebProject\\Views\\Home\\AboutUs.cshtml",
-              "RelativeToolTip": "WebProject\\Views\\Home\\AboutUs.cshtml",
-              "ViewState": "AgIAABEAAAAAAAAAAAAAABkAAAA6AAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2024-12-27T23:02:15.355Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 9,
-              "Title": "NotFound.cshtml",
-              "DocumentMoniker": "D:\\My Documents\\market_place_university\\WebProject\\WebProject\\Views\\Error\\NotFound.cshtml",
-              "RelativeDocumentMoniker": "WebProject\\Views\\Error\\NotFound.cshtml",
-              "ToolTip": "D:\\My Documents\\market_place_university\\WebProject\\WebProject\\Views\\Error\\NotFound.cshtml",
-              "RelativeToolTip": "WebProject\\Views\\Error\\NotFound.cshtml",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2024-12-27T23:02:06.267Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 10,
+              "DocumentIndex": 2,
               "Title": "CartView.cshtml",
               "DocumentMoniker": "D:\\My Documents\\market_place_university\\WebProject\\WebProject\\Views\\Cart\\CartView.cshtml",
               "RelativeDocumentMoniker": "WebProject\\Views\\Cart\\CartView.cshtml",
               "ToolTip": "D:\\My Documents\\market_place_university\\WebProject\\WebProject\\Views\\Cart\\CartView.cshtml",
               "RelativeToolTip": "WebProject\\Views\\Cart\\CartView.cshtml",
-              "ViewState": "AgIAAGQAAAAAAAAAAAAiwIoAAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAsAAAAlAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2024-12-27T22:59:53.79Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 11,
-              "Title": "AllBlogs.cshtml",
-              "DocumentMoniker": "D:\\My Documents\\market_place_university\\WebProject\\WebProject\\Views\\Blog\\AllBlogs.cshtml",
-              "RelativeDocumentMoniker": "WebProject\\Views\\Blog\\AllBlogs.cshtml",
-              "ToolTip": "D:\\My Documents\\market_place_university\\WebProject\\WebProject\\Views\\Blog\\AllBlogs.cshtml",
-              "RelativeToolTip": "WebProject\\Views\\Blog\\AllBlogs.cshtml",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAACEAAAAaAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2024-12-27T22:58:34.346Z",
+              "WhenOpened": "2024-12-28T00:50:35.223Z",
               "EditorCaption": ""
             }
           ]

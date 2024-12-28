@@ -76,16 +76,6 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\WebProject.Domain\WebProject.Domain.csproj">
-      <Project>{6b54e2b5-b484-41f4-a47b-8c4e70f663c1}</Project>
-      <Name>WebProject.Domain</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\WebProject.ModelAccesLayer\WebProject.ModelAccessLayer.csproj">
-      <Project>{a50be0b8-e1e8-4d7a-a2f1-5bed10251fd0}</Project>
-      <Name>WebProject.ModelAccessLayer</Name>
-    </ProjectReference>
-  </ItemGroup>
-  <ItemGroup>
     <None Include="App.config" />
     <None Include="packages.config" />
   </ItemGroup>

@@ -1,0 +1,8 @@
+D:\My Documents\market_place_university\WebProject\WebProject.Core\bin\Debug\WebProject.Core.dll
+D:\My Documents\market_place_university\WebProject\WebProject.Core\bin\Debug\WebProject.Core.pdb
+D:\My Documents\market_place_university\WebProject\WebProject.Core\bin\Debug\System.ComponentModel.Annotations.dll
+D:\My Documents\market_place_university\WebProject\WebProject.Core\obj\Debug\WebProject.Core.csproj.AssemblyReference.cache
+D:\My Documents\market_place_university\WebProject\WebProject.Core\obj\Debug\WebProject.Core.csproj.CoreCompileInputs.cache
+D:\My Documents\market_place_university\WebProject\WebProject.Core\obj\Debug\WebProje.BAE9BC2C.Up2Date
+D:\My Documents\market_place_university\WebProject\WebProject.Core\obj\Debug\WebProject.Core.dll
+D:\My Documents\market_place_university\WebProject\WebProject.Core\obj\Debug\WebProject.Core.pdb

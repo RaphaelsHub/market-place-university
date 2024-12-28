@@ -16,17 +16,17 @@
                     <div class="col-lg-7 col-md-12 col-12">
                         <div class="top-left">
                             <ul class="list-main">
-                                <li><i class="ti-headphone-alt"></i> +060 (800) 801-582</li>
-                                <li><i class="ti-email"></i> support@shophub.com</li>
+                                <li><i class="ti-headphone-alt"></i> +37367000000</li>
+                                <li><i class="ti-email"></i> temp@temp.com</li>
                             </ul>
                         </div>
                     </div>
                     <div class="col-lg-5 col-md-12 col-12">
                         <div class="right-content">
                             <ul class="list-main">
-                                <li><i class="ti-location-pin"></i> Store location</li>
-                                <li><i class="ti-user"></i> <a href="#">My account</a></li>
-                                <li><i class="ti-power-off"></i><a href="login.html#">Login</a></li>
+                                <li><i class="ti-user"></i> <a href="#">AdminPanel</a></li>
+                                <li><i class="ti-location-pin"></i> <a href="https://maps.app.goo.gl/NAt4bnBjHvY3CKdV6">Store location</a></li>
+                                <li><i class="ti-power-off"></i><a href="@Url.Action("Login","Account")">Auth</a></li>
                             </ul>
                         </div>
                     </div>
@@ -38,39 +38,39 @@
         <div class="container">
             <div class="row">
                 <div class="col-lg-2 col-md-2 col-12">
-                    <!-- Logo -->
                     <div class="logo">
-                        <a href="index.html"><img src="~/Asset/images/logo.png" alt="logo"></a>
+                        <a href="@Url.Action("Index","Home")"><img src="~/Asset/images/logo.png" alt="logo"></a>
                     </div>
-                    <!--/ End Logo -->
-                    <!-- Search Form -->
                     <div class="search-top">
                         <div class="top-search"><a href="#0"><i class="ti-search"></i></a></div>
-                        <!-- Search Form -->
                         <div class="search-top">
-                            <form class="search-form">
-                                <input type="text" placeholder="Search here..." name="search">
+                            @using (Html.BeginForm("Search", "Store", FormMethod.Post, new { @class = "search-form" }))
+                            {
+
+                                <input type="text" placeholder="Search here..." name="search" />
                                 <button value="search" type="submit"><i class="ti-search"></i></button>
-                            </form>
+                            }
                         </div>
-                        <!--/ End Search Form -->
                     </div>
-                    <!--/ End Search Form -->
                     <div class="mobile-nav"></div>
                 </div>
                 <div class="col-lg-8 col-md-7 col-12">
                     <div class="search-bar-top">
                         <div class="search-bar">
                             <select>
+                                <!-------------------------------------------------------------------------------Категории------------------------------------------------------>
                                 <option selected="selected">All Category</option>
                                 <option>watch</option>
                                 <option>mobile</option>
                                 <option>kid’s item</option>
                             </select>
-                            <form>
+
+
+                            @using (Html.BeginForm("Search", "Store", FormMethod.Post, new { @class = "search-form" }))
+                            {
                                 <input name="search" placeholder="Search Products Here....." type="search">
                                 <button class="btnn"><i class="ti-search"></i></button>
-                            </form>
+                            }
                         </div>
                     </div>
                 </div>
@@ -78,31 +78,24 @@
                     <div class="right-bar">
                         <!-- Search Form -->
                         <div class="sinlge-bar">
-                            <a href="#" class="single-icon"><i class="fa fa-heart-o" aria-hidden="true"></i></a>
+                            <a href="@Url.Action("CartView","Cart")" class="single-icon"><i class="fa fa-heart-o" aria-hidden="true"></i></a>
                         </div>
                         <div class="sinlge-bar">
-                            <a href="#" class="single-icon"><i class="fa fa-user-circle-o" aria-hidden="true"></i></a>
+                            <a href="@Url.Action("CartView","Cart")" class="single-icon"><i class="fa fa-user-circle-o" aria-hidden="true"></i></a>
                         </div>
                         <div class="sinlge-bar shopping">
-                            <a href="#" class="single-icon"><i class="ti-bag"></i> <span class="total-count">2</span></a>
-                            <!-- Shopping Item -->
+                            <a href="@Url.Action("CartView","Cart")" class="single-icon"><i class="ti-bag"></i> <span class="total-count">2</span></a>
                             <div class="shopping-item">
                                 <div class="dropdown-cart-header">
                                     <span>2 Items</span>
-                                    <a href="#">View Cart</a>
+                                    <a href="@Url.Action("CartView","Cart")">View Cart</a>
                                 </div>
                                 <ul class="shopping-list">
                                     <li>
                                         <a href="#" class="remove" title="Remove this item"><i class="fa fa-remove"></i></a>
-                                        <a class="cart-img" href="#"><img src="https://via.placeholder.com/70x70" alt="#"></a>
-                                        <h4><a href="#">Woman Ring</a></h4>
+                                        <a class="cart-img" href="@Url.Action("SingleProduct","Store")"><img src="https://via.placeholder.com/70x70" alt="#"></a>
+                                        <h4><a href="@Url.Action("SingleProduct","Store")">">Woman Ring</a></h4>
                                         <p class="quantity">1x - <span class="amount">$99.00</span></p>
-                                    </li>
-                                    <li>
-                                        <a href="#" class="remove" title="Remove this item"><i class="fa fa-remove"></i></a>
-                                        <a class="cart-img" href="#"><img src="https://via.placeholder.com/70x70" alt="#"></a>
-                                        <h4><a href="#">Woman Necklace</a></h4>
-                                        <p class="quantity">1x - <span class="amount">$35.00</span></p>
                                     </li>
                                 </ul>
                                 <div class="bottom">
@@ -110,10 +103,9 @@
                                         <span>Total</span>
                                         <span class="total-amount">$134.00</span>
                                     </div>
-                                    <a href="checkout.html" class="btn animate">Checkout</a>
+                                    <a href="@Url.Action("CheckOut","Order")" class="btn animate">Checkout</a>
                                 </div>
                             </div>
-                            <!--/ End Shopping Item -->
                         </div>
                     </div>
                 </div>
@@ -126,23 +118,22 @@
                 <div class="row">
                     <div class="col-12">
                         <div class="menu-area">
-                            <!-- Main Menu -->
                             <nav class="navbar navbar-expand-lg">
                                 <div class="navbar-collapse">
                                     <div class="nav-inner">
                                         <ul class="nav main-menu menu navbar-nav">
                                             <li class="active">
-                                                <a href="#">Home<i class="ti-angle-down"></i></a>
+                                                <a href="@Url.Action("Index","Home")">Home<i class="ti-angle-down"></i></a>
                                                 <ul class="dropdown">
-                                                    <li><a href="index.html">All products</a></li>
-                                                    <li><a href="index2.html">All blogs</a></li>
-                                                    <li><a href="index3.html">About us</a></li>
-                                                    <li><a href="index4.html">Contact us</a></li>
+                                                    <li><a href="@Url.Action("AllProducts","Store")">All products</a></li>
+                                                    <li><a href="@Url.Action("AllBlogs","Blog")">All blogs</a></li>
+                                                    <li><a href="@Url.Action("AboutUs","Home")">About us</a></li>
+                                                    <li><a href="@Url.Action("ContactUs","Home")">Contact us</a></li>
                                                 </ul>
                                             </li>
-                                            <li><a href="contact.html">My Activity</a></li>
-                                            <li><a href="#">Cart</a></li>
-                                            <li><a href="#">CheckOut</a></li>
+                                            <li><a href="@Url.Action("NotFound","Error")">My Activity</a></li>
+                                            <li><a href="@Url.Action("CartView","Cart")">Cart</a></li>
+                                            <li><a href="@Url.Action("CheckOut","Order")">CheckOut</a></li>
                                         </ul>
                                     </div>
                                 </div>

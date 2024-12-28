@@ -31,7 +31,13 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Microsoft.Build.Framework" />
+    <Reference Include="mscorlib" />
     <Reference Include="System" />
+    <Reference Include="System.ComponentModel.Annotations, Version=4.2.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.ComponentModel.Annotations.5.0.0\lib\net461\System.ComponentModel.Annotations.dll</HintPath>
+    </Reference>
+    <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
@@ -41,15 +47,37 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="CartData.cs" />
+    <Compile Include="CartItem.cs" />
+    <Compile Include="CartItemDataEF.cs" />
+    <Compile Include="Category.cs" />
+    <Compile Include="CategoryDataEF.cs" />
+    <Compile Include="DTO\Records\LoginDto.cs" />
+    <Compile Include="DTO\Records\ProductDto.cs" />
+    <Compile Include="DTO\Records\RegisterDto.cs" />
+    <Compile Include="Enums\SortBy.cs" />
+    <Compile Include="Enums\StatusDelivery.cs" />
+    <Compile Include="Enums\StatusUser.cs" />
+    <Compile Include="Feature.cs" />
+    <Compile Include="LoginData.cs" />
+    <Compile Include="OrderDataEF.cs" />
+    <Compile Include="OrderInfo.cs" />
+    <Compile Include="OrderModel.cs" />
+    <Compile Include="Product.cs" />
+    <Compile Include="ProductDataEF.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="RegistrationData.cs" />
+    <Compile Include="UserData.cs" />
+    <Compile Include="UserDataEF.cs" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="DTO\Records\" />
     <Folder Include="DTO\Responces\" />
     <Folder Include="Entities\" />
-    <Folder Include="Enums\" />
     <Folder Include="InterfaceExtensions\" />
     <Folder Include="Interfaces\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="packages.config" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

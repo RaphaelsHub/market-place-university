@@ -1,22 +1,23 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
-using System.Web.Mvc;
+﻿using System.Web.Mvc;
+using WebProject.Core.DTO.Records;
 
 namespace WebProject.Controllers
 {
-    public class AccountController : Controller
+    public class AccountController : BaseController
     {
-        // GET: Account
-        public ActionResult Login()
-        {
-            return View();
-        }
-
-        public ActionResult Register()
-        {
-            return View();
-        }
+        [HttpGet]
+        public ActionResult Login() => View();
+        
+        [HttpGet]
+        public ActionResult Register() => View();
+     
+        [HttpGet]
+        public ActionResult LogOut() => RedirectToAction("Index", "Home");
+        
+        [HttpPost]
+        public ActionResult Login(LoginDto loginDto) => View();
+        
+        [HttpPost]
+        public ActionResult Register(RegisterDto registerDto) => View();
     }
 }

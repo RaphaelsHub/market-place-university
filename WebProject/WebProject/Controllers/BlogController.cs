@@ -8,15 +8,8 @@ namespace WebProject.Controllers
 {
     public class BlogController : Controller
     {
-        // GET: Blog
-        public ActionResult SingleBlog()
-        {
-            return View();
-        }
+        public ActionResult SingleBlog() => View();
 
-        public ActionResult AllBlogs()
-        {
-            return View();
-        }
+        public ActionResult AllBlogs() => View();
     }
 }
