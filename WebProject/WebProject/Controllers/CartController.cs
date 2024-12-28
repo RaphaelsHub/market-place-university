@@ -9,7 +9,7 @@ namespace WebProject.Controllers
     public class CartController : Controller
     {
         // GET: Cart
-        public ActionResult Index()
+        public ActionResult CartView()
         {
             return View();
         }

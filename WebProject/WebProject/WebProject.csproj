@@ -94,15 +94,6 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Asset\404.html" />
-    <Content Include="Asset\about-us.html" />
-    <Content Include="Asset\blog-grid-sidebar.html" />
-    <Content Include="Asset\blog-grid.html" />
-    <Content Include="Asset\blog-single-sidebar.html" />
-    <Content Include="Asset\blog-single.html" />
-    <Content Include="Asset\cart.html" />
-    <Content Include="Asset\checkout.html" />
-    <Content Include="Asset\contact.html" />
     <Content Include="Asset\css\animate.css" />
     <Content Include="Asset\css\bootstrap.css" />
     <Content Include="Asset\css\color\color1.css" />
@@ -137,8 +128,6 @@
     <Content Include="Asset\images\map-marker.png" />
     <Content Include="Asset\images\payment-method.png" />
     <Content Include="Asset\images\payments.png" />
-    <Content Include="Asset\index3.html" />
-    <Content Include="Asset\index4.html" />
     <Content Include="Asset\js\active.js" />
     <Content Include="Asset\js\bootstrap.min.js" />
     <Content Include="Asset\js\colors.js" />
@@ -159,13 +148,7 @@
     <Content Include="Asset\js\scrollup.js" />
     <Content Include="Asset\js\slicknav.min.js" />
     <Content Include="Asset\js\waypoints.min.js" />
-    <Content Include="Asset\login.html" />
-    <Content Include="Asset\mail-success.html" />
     <Content Include="Asset\mail\mail.php" />
-    <Content Include="Asset\register.html" />
-    <Content Include="Asset\shop-grid.html" />
-    <Content Include="Asset\shop-list.html" />
-    <Content Include="Asset\shop-single.html" />
     <Content Include="Asset\style.css" />
     <Content Include="Global.asax" />
     <Content Include="Web.config" />
@@ -203,6 +186,19 @@
     <Content Include="Views\_ViewStart.cshtml" />
     <Content Include="Views\Shared\_Layout.cshtml" />
     <Content Include="Views\Home\Index.cshtml" />
+    <Content Include="Views\Home\ContactUs.cshtml" />
+    <Content Include="Views\Home\AboutUs.cshtml" />
+    <Content Include="Views\Account\Login.cshtml" />
+    <Content Include="Views\Account\Register.cshtml" />
+    <Content Include="Views\Mail\MailSuccess.cshtml" />
+    <Content Include="Views\Order\CheckOut.cshtml" />
+    <Content Include="Views\Cart\CartView.cshtml" />
+    <Content Include="Views\Error\NotFound.cshtml" />
+    <Content Include="Views\Blog\AllBlogs.cshtml" />
+    <Content Include="Views\Blog\SingleBlog.cshtml" />
+    <Content Include="Views\Store\AllProducts.cshtml" />
+    <Content Include="Views\Store\SingleProduct.cshtml" />
+    <Content Include="Views\Partials\NewsLetter.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -212,13 +208,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Views\Account\" />
-    <Folder Include="Views\Blog\" />
-    <Folder Include="Views\Cart\" />
-    <Folder Include="Views\Error\" />
-    <Folder Include="Views\Mail\" />
-    <Folder Include="Views\Order\" />
-    <Folder Include="Views\Store\" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

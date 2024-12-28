@@ -9,7 +9,7 @@ namespace WebProject.Controllers
     public class ErrorController : Controller
     {
         // GET: Error
-        public ActionResult Index()
+        public ActionResult NotFound()
         {
             return View();
         }

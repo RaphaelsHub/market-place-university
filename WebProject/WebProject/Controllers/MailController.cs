@@ -9,7 +9,7 @@ namespace WebProject.Controllers
     public class MailController : Controller
     {
         // GET: Mail
-        public ActionResult Index()
+        public ActionResult MailSuccess()
         {
             return View();
         }

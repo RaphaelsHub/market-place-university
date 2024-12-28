@@ -9,7 +9,7 @@ namespace WebProject.Controllers
     public class OrderController : Controller
     {
         // GET: Order
-        public ActionResult Index()
+        public ActionResult CheckOut()
         {
             return View();
         }

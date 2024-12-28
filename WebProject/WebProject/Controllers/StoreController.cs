@@ -8,8 +8,13 @@ namespace WebProject.Controllers
 {
     public class StoreController : Controller
     {
+        public ActionResult SingleProduct()
+        {
+            return View();
+        }
+
         // GET: Store
-        public ActionResult Index()
+        public ActionResult AllProducts()
         {
             return View();
         }
