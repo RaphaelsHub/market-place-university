@@ -1,10 +1,9 @@
 namespace WebProject.Core.Enums
 {
-    public enum TypeUser
+    public enum UserType
     {
         Admin,
-        User,
-        Guest,
+        User, 
         Moderator
     }
 }

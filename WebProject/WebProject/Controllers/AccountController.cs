@@ -1,5 +1,5 @@
 ﻿using System.Web.Mvc;
-using WebProject.Core.DTO.Records;
+using WebProject.Core.DTO;
 
 namespace WebProject.Controllers
 {

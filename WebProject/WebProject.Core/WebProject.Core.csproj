@@ -47,19 +47,34 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="DTO\DataResponse.cs" />
-    <Compile Include="DTO\PageInfo.cs" />
-    <Compile Include="DTO\PriceRange.cs" />
-    <Compile Include="DTO\Records\LoginDto.cs" />
-    <Compile Include="DTO\Records\ProductDto.cs" />
-    <Compile Include="DTO\Records\RegisterDto.cs" />
+    <Compile Include="DTO\BlogDto.cs" />
+    <Compile Include="DTO\CartDto.cs" />
+    <Compile Include="DTO\ErrorDto.cs" />
+    <Compile Include="DTO\LoginDto.cs" />
+    <Compile Include="DTO\OrderDto.cs" />
+    <Compile Include="DTO\ProductDto.cs" />
+    <Compile Include="DTO\RegisterDto.cs" />
+    <Compile Include="DTO\ResponcesDto\HelperModel.cs" />
+    <Compile Include="DTO\ResponcesDto\TResponce.cs" />
+    <Compile Include="DTO\UserDto.cs" />
+    <Compile Include="Entities\AddressEf.cs" />
+    <Compile Include="Entities\CategoryEf.cs" />
+    <Compile Include="Entities\FilterEf.cs" />
+    <Compile Include="Entities\FilterValueEf.cs" />
+    <Compile Include="Entities\MessageEf.cs" />
+    <Compile Include="Entities\OrderEf.cs" />
     <Compile Include="Entities\ProductEf.cs" />
+    <Compile Include="Entities\RattingEf.cs" />
     <Compile Include="Entities\UserEf.cs" />
+    <Compile Include="Enums\MessageStatus.cs" />
+    <Compile Include="Enums\ProductSellType.cs" />
+    <Compile Include="Enums\ProductStatus.cs" />
     <Compile Include="Enums\SortByName.cs" />
     <Compile Include="Enums\SortByPrice.cs" />
-    <Compile Include="Enums\StatusDelivery.cs" />
-    <Compile Include="Enums\StatusUser.cs" />
-    <Compile Include="Enums\TypeUser.cs" />
+    <Compile Include="Enums\AccountVerificationStatus.cs" />
+    <Compile Include="Enums\OrderStatus.cs" />
+    <Compile Include="Enums\UserStatus.cs" />
+    <Compile Include="Enums\UserType.cs" />
     <Compile Include="Interfaces\ICartRepository.cs" />
     <Compile Include="Interfaces\ICategoryRepository.cs" />
     <Compile Include="Interfaces\IMessagesRepository.cs" />
@@ -71,7 +86,6 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="DTO\Responces\" />
     <Folder Include="InterfaceExtensions\" />
   </ItemGroup>
   <ItemGroup>

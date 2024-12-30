@@ -1,4 +1,4 @@
-namespace WebProject.Core.DTO.Records
+namespace WebProject.Core.DTO
 {
     public class ProductDto
     {

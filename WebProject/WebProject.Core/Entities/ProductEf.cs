@@ -1,18 +1,20 @@
 using System;
-using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 using Microsoft.Build.Framework.XamlTypes;
-using Microsoft.Win32;
+using WebProject.Core.DTO;
+using WebProject.Core.Enums;
 
 namespace WebProject.Core.Entities
 {
     public class ProductEf
     {
         [Key]
-        public int IdProduct { get; set; }
+        [Column("ProductId")]
+        public int ProductId { get; set; }
         
         [Required(ErrorMessage = "Please enter the product name")]
-        [StringLength(63, MinimumLength = 4, ErrorMessage = "The name must be between 4 and 63 characters")]
+        [StringLength(31, MinimumLength = 4, ErrorMessage = "The name must be between 4 and 31 characters")]
         public string Name { get; set; }
         
         [Required(ErrorMessage = "Please enter the start amount")]
@@ -35,23 +37,15 @@ namespace WebProject.Core.Entities
         [Range(0.01, double.MaxValue, ErrorMessage = "Please enter a positive number")]
         public decimal Price { get; set; }
         
-        [Required(ErrorMessage = "Please enter the date of the post")]
-        public DateTime DatePost { get; set; }
+        public float PercentageDiscount { get; set; } = 0;
         
-        public bool IsVisible { get; set; }
-        public bool IsSoldOut { get; set; }
-        public bool IsBoosted { get; set; }
+        public DateTime DatePost { get; set; } = DateTime.Now;
+        public ProductSellType ProductSellType { get; set; } = ProductSellType.IsVisible;
+        public ProductStatus ProductStatus { get; set; } = ProductStatus.InStock;
 
         public byte[][] Image { get; set; }
-        
-        //public List<Filter> Filters { get; set; }
-        
+
         public Category Category { get; set; }
-        //public Ratting Ratting { get; set; }
-        
-        
-        
-        public int Views { get; set; }
-        public int Likes { get; set; }
+        public RattingEf Ratting { get; set; }
     }
 }

@@ -1,9 +1,9 @@
 ﻿namespace WebProject.Core.Enums
 {
-    public enum StatusDelivery
+    public enum OrderStatus
     {
         Pending,        
-        OutForDelivery, 
+        Delivering, 
         Delivered,    
         Returned,       
         Canceled        
