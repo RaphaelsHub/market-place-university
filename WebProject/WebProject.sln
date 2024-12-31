@@ -13,6 +13,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WebProject.Dal", "WebProjec
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WebProject.Helper", "WebProject.Helper\WebProject.Helper.csproj", "{492B2352-38BF-40E3-BB16-59674517EAF9}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WebProject.Tests", "WebProject.Tests\WebProject.Tests.csproj", "{944FFD2B-A009-4B1D-8583-36BF74D50C17}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -39,6 +41,10 @@ Global
 		{492B2352-38BF-40E3-BB16-59674517EAF9}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{492B2352-38BF-40E3-BB16-59674517EAF9}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{492B2352-38BF-40E3-BB16-59674517EAF9}.Release|Any CPU.Build.0 = Release|Any CPU
+		{944FFD2B-A009-4B1D-8583-36BF74D50C17}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{944FFD2B-A009-4B1D-8583-36BF74D50C17}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{944FFD2B-A009-4B1D-8583-36BF74D50C17}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{944FFD2B-A009-4B1D-8583-36BF74D50C17}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

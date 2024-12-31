@@ -1,11 +1,13 @@
 using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 using System.Net;
 using WebProject.Core.Enums;
 
 namespace WebProject.Core.Entities
 {
+    [Table("Users")]
     public class UserEf
     {
         /// <summary>
