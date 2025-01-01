@@ -58,13 +58,14 @@
     <Compile Include="DTO\ResponcesDto\TResponce.cs" />
     <Compile Include="DTO\UserDto.cs" />
     <Compile Include="Entities\AddressEf.cs" />
+    <Compile Include="Entities\Cart.cs" />
     <Compile Include="Entities\CategoryEf.cs" />
     <Compile Include="Entities\FilterEf.cs" />
     <Compile Include="Entities\FilterValueEf.cs" />
     <Compile Include="Entities\MessageEf.cs" />
     <Compile Include="Entities\OrderEf.cs" />
     <Compile Include="Entities\ProductEf.cs" />
-    <Compile Include="Entities\RattingEf.cs" />
+    <Compile Include="Entities\RatingEf.cs" />
     <Compile Include="Entities\UserEf.cs" />
     <Compile Include="Enums\MessageStatus.cs" />
     <Compile Include="Enums\ProductSellType.cs" />

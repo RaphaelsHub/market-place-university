@@ -6,40 +6,42 @@ namespace WebProject.Core.Entities
     public class AddressEf
     {
         [Key]
-        [Column("AddressId")]
         public uint AddressId { get; set; }
         
-        [Required(ErrorMessage = "Please enter your first name")]
-        [StringLength(127, MinimumLength = 2, ErrorMessage = "First Name must be between 2 and 127 characters")]
-        [Column("FirstName")]
+        [Required]
+        [MaxLength(127)]
         public string FirstName { get; set; } = ""; 
         
-        [Required(ErrorMessage = "Please enter your last name")]
-        [StringLength(127, MinimumLength = 2, ErrorMessage = "Last Name must be between 2 and 127 characters")]
-        [Column("LastName")]
+        [Required]
+        [MaxLength(127)]
         public string LastName { get; set; } = "";
         
-        [Required(ErrorMessage = "Please enter your email address")]
-        [EmailAddress(ErrorMessage = "Please enter a valid email address")]
+        [Required]
+        [EmailAddress]
         public string Email { get; set; } = "";
         
-        [Required(ErrorMessage = "Please enter your phone number")]
-        [Phone(ErrorMessage = "Please enter a valid phone number")]
+        [Required]
+        [Phone]
         public string Phone { get; set; } = "";
         
-        [Required (ErrorMessage = "Please enter your country")]
+        [Required]
         public string Country { get; set; } = "";
         
-        [Required (ErrorMessage = "Please enter your city")]
+        [Required]
         public string City { get; set; } = "";
         
-        [Required (ErrorMessage = "Please enter your address")]
+        [Required]
         public string Address1 { get; set; } = "";
         
-        [Required (ErrorMessage = "Please enter your address")]
+        [Required]
         public string Address2 { get; set; } = "";
         
-        [Required (ErrorMessage = "Please enter your postal code")]
+        [Required]
         public string PostalCode { get; set; } = "";
+        
+        [ForeignKey("User")]
+        public uint UserId { get; set; }
+        
+        public UserEf User { get; set; }
     }
 }
