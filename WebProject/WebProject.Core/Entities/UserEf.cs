@@ -61,7 +61,15 @@ namespace WebProject.Core.Entities
         /// </summary>
         [Required]
         [Column("UserStatus")]
-        public UserStatus UserStatus { get; set; } = UserStatus.Inactive;
+        public UserStatus UserStatus { get; set; } = UserStatus.Online;
+        
+        /// <summary>
+        /// Gets or sets the account status.
+        /// </summary>
+        /// <returns></returns>
+        [Required]
+        [Column("AccountStatus")]
+        public AccountStatus AccountStatus { get; set; } = AccountStatus.Inactive;
 
         /// <summary>
         /// Gets or sets the account verification status.
@@ -113,12 +121,6 @@ namespace WebProject.Core.Entities
         /// Gets or sets the list of products in the cart associated with the user.
         /// </summary>
         [InverseProperty("User")]
-        public List<ProductEf> Cart { get; set; } = new List<ProductEf>();
-
-        /// <summary>
-        /// Gets or sets the list of messages sent by the user.
-        /// </summary>
-        [InverseProperty("Sender")]
-        public List<MessageEf> SentMessages { get; set; } = new List<MessageEf>();
+        public List<CartEf> Cart { get; set; } = new List<CartEf>();
     }
 }

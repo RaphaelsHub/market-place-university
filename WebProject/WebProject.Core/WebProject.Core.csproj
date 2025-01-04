@@ -58,13 +58,15 @@
     <Compile Include="DTO\ResponcesDto\TResponce.cs" />
     <Compile Include="DTO\UserDto.cs" />
     <Compile Include="Entities\AddressEf.cs" />
-    <Compile Include="Entities\Cart.cs" />
+    <Compile Include="Entities\BlogEf.cs" />
+    <Compile Include="Entities\CartEf.cs" />
     <Compile Include="Entities\CategoryEf.cs" />
     <Compile Include="Entities\FilterEf.cs" />
     <Compile Include="Entities\FilterValueEf.cs" />
     <Compile Include="Entities\MessageEf.cs" />
     <Compile Include="Entities\OrderEf.cs" />
     <Compile Include="Entities\ProductEf.cs" />
+    <Compile Include="Entities\RateItemEf.cs" />
     <Compile Include="Entities\RatingEf.cs" />
     <Compile Include="Entities\UserEf.cs" />
     <Compile Include="Enums\MessageStatus.cs" />
@@ -74,6 +76,7 @@
     <Compile Include="Enums\SortByPrice.cs" />
     <Compile Include="Enums\AccountVerificationStatus.cs" />
     <Compile Include="Enums\OrderStatus.cs" />
+    <Compile Include="Enums\AccountStatus.cs" />
     <Compile Include="Enums\UserStatus.cs" />
     <Compile Include="Enums\UserType.cs" />
     <Compile Include="Interfaces\ICartRepository.cs" />

@@ -1,13 +1,11 @@
 using System;
+using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 using WebProject.Core.Enums;
 
 namespace WebProject.Core.Entities
 {
-    /// <summary>
-    /// Represents a product in the system.
-    /// </summary>
     public class ProductEf
     {
         /// <summary>
@@ -76,6 +74,7 @@ namespace WebProject.Core.Entities
         /// <summary>
         /// Gets the stock status of the product based on the current amount.
         /// </summary>
+        [NotMapped]
         public ProductStatus ProductStatus => CurrentAmount > 0 ? ProductStatus.InStock : ProductStatus.OutOfStock;
 
         /// <summary>
@@ -87,10 +86,6 @@ namespace WebProject.Core.Entities
         /// Gets or sets the identifier of the category associated with the product.
         /// </summary>
         public int CategoryId { get; set; }
-
-        /// <summary>
-        /// Gets or sets the category associated with the product.
-        /// </summary>
         [ForeignKey("CategoryId")]
         public CategoryEf Category { get; set; }
 
@@ -98,11 +93,10 @@ namespace WebProject.Core.Entities
         /// Gets or sets the identifier of the rating associated with the product.
         /// </summary>
         public uint RatingId { get; set; }
-
-        /// <summary>
-        /// Gets or sets the rating associated with the product.
-        /// </summary>
         [ForeignKey("RatingId")]
         public RatingEf Ratting { get; set; }
+        
+        [InverseProperty("Product")]
+        public List<RateItemEf> RateItems { get; set; } = new List<RateItemEf>();
     }
 }

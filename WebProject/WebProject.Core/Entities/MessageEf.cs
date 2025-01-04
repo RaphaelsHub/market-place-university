@@ -14,33 +14,18 @@ namespace WebProject.Core.Entities
         /// Gets or sets the unique identifier for the message.
         /// </summary>
         [Key]
-        [Column("MessageId")]
         public uint MessageId { get; set; }
 
         /// <summary>
-        /// Gets or sets the sender's user identifier.
-        /// </summary>
-        [Column("SenderId")]
-        public uint SenderId { get; set; }
-
-        /// <summary>
-        /// Gets or sets the receiver's user identifier.
-        /// </summary>
-        [Column("ReceiverId")]
-        public uint ReceiverId { get; set; }
-
-        /// <summary>
-        /// Gets or sets the content of the message.
+        ///  Gets or sets the content of the message.
         /// </summary>
         [Required]
-        [StringLength(255, MinimumLength = 15, ErrorMessage = "Content must be between 15 and 255 characters")]
-        [Column("Content")]
+        [StringLength(255, MinimumLength = 15)]
         public string Content { get; set; } = "";
-
+        
         /// <summary>
         /// Gets or sets the date and time the message was sent.
         /// </summary>
-        [Column("DateSent")]
         public DateTime DateSent { get; set; } = DateTime.Now;
         
         /// <summary>
@@ -49,16 +34,32 @@ namespace WebProject.Core.Entities
         public MessageStatus Status { get; set; } = MessageStatus.Active;
         
         /// <summary>
-        /// Gets or sets the sender user.
+        /// Gets or sets the value indicating whether the message was replied. 
         /// </summary>
-        [ForeignKey("SenderId")]
+        public bool IsReplied { get; set; } = false;
+        
+        /// <summary>
+        ///  Gets or sets the blog identifier.
+        /// </summary>
+        public uint? BlogId { get; set; }
+        [ForeignKey("BlogId")]
+        public BlogEf Blog { get; set; }
+        
+        /// <summary>
+        /// Gets or sets the sender's user identifier.
+        /// </summary>
+        [Required]
+        [Range(0, uint.MaxValue)]
+        public uint UserSenderId { get; set; }
+        [ForeignKey("UserSenderId")]
         public UserEf Sender { get; set; }
 
         /// <summary>
-        /// Gets or sets the receiver user.
+        /// Gets or sets the receiver's user identifier.
+        /// uint? is used to allow null values, as the message can be sent to all users.
         /// </summary>
-        [ForeignKey("ReceiverId")]
-        public UserEf Receiver { get; set; }
+        public uint? UserReceiverId { get; set; }
+        [ForeignKey("UserReceiverId")]
+        public UserEf UserReceiver { get; set; }
     }
-
 }

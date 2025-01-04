@@ -1,9 +1,8 @@
-﻿namespace WebProject.Core.Enums
+namespace WebProject.Core.Enums
 {
     public enum UserStatus
     {
-        Active, 
-        Inactive,
-        Blocked
+        Online,
+        Offline
     }
 }

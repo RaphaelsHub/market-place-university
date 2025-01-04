@@ -29,11 +29,9 @@ namespace WebProject.Core.Entities
         /// <summary>
         /// The product identifier.
         /// </summary>
+        [Required]
+        [Range(0, uint.MaxValue)]
         public uint ProductId { get; set; }
-
-        /// <summary>
-        /// The associated product.
-        /// </summary>
         [ForeignKey("ProductId")]
         public ProductEf Product { get; set; }
     }
