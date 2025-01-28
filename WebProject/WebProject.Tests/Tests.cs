@@ -7,9 +7,9 @@ namespace WebProject.Tests
     public class Tests
     {
         [Test]
-        public void Test1()
+        public void Test1() 
         {
-            Assert.True(true);
+            Assert.Pass();
         }
     }
 }
