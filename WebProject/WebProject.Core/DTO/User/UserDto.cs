@@ -1,4 +1,6 @@
 using System.Net;
+using WebProject.Core.Enums.Account;
+using WebProject.Core.Enums.User;
 
 namespace WebProject.Core.DTO.User
 {
@@ -13,5 +15,8 @@ namespace WebProject.Core.DTO.User
         public IPAddress IpAddress { get; set; }
         public bool HasNewsletter { get; set; }
         public bool HadGotPromoCodeBySendingEmail { get; set; }
+        public UserType UserType { get; set; }
+        public UserStatus UserStatus { get; set; }
+        public AccountVerificationStatus AccountVerificationStatus { get; set; }
     }
 }

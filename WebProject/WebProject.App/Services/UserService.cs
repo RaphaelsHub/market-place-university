@@ -9,22 +9,22 @@ namespace WebProject.App.Services
 {
     public class UserService : IUserService
     {
-        public Task<Response<UserDto>> GetUserById(int id)
+        public Task<ResponseType1<UserDto>> GetUserById(int id)
         {
             throw new System.NotImplementedException();
         }
 
-        public Task<Response<UserDto>> GetUserByEmail(string email)
+        public Task<ResponseType1<UserDto>> GetUserByEmail(string email)
         {
             throw new System.NotImplementedException();
         }
 
-        public Task<Response<UserDto>> GetUserByUserName(string userName)
+        public Task<ResponseType1<UserDto>> GetUserByUserName(string userName)
         {
             throw new System.NotImplementedException();
         }
 
-        public Task<Response<IEnumerable<UserDto>>> GetUsers()
+        public Task<ResponseType1<IEnumerable<UserDto>>> GetUsers()
         {
             throw new System.NotImplementedException();
         }

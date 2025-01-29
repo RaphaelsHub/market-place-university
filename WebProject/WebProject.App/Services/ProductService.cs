@@ -7,37 +7,37 @@ namespace WebProject.App.Services
 {
     public class ProductService : IProductService
     {
-        public Task<Response<ProductDto>> CreateProductAsync(ProductDto product)
+        public Task<ResponseType1<ProductDto>> CreateProductAsync(ProductDto product)
         {
             throw new System.NotImplementedException();
         }
 
-        public Task<Response<ProductDto>> GetProductByIdAsync(uint id)
+        public Task<ResponseType1<ProductDto>> GetProductByIdAsync(uint id)
         {
             throw new System.NotImplementedException();
         }
 
-        public Task<Response<ProductDto>> UpdateProductAsync(ProductDto product)
+        public Task<ResponseType1<ProductDto>> UpdateProductAsync(ProductDto product)
         {
             throw new System.NotImplementedException();
         }
 
-        public Task<Response<ProductDto>> DeleteProductAsync(uint id)
+        public Task<ResponseType1<ProductDto>> DeleteProductAsync(uint id)
         {
             throw new System.NotImplementedException();
         }
 
-        public Task<Response<ProductDto>> GetProductsAsync(uint currentPage, uint amountOfItemsPerPage)
+        public Task<ResponseType1<ProductDto>> GetProductsAsync(uint currentPage, uint amountOfItemsPerPage)
         {
             throw new System.NotImplementedException();
         }
 
-        public Task<Response<ProductDto>> GetProductsByNameAsync(string name, uint currentPage, uint amountOfItems)
+        public Task<ResponseType1<ProductDto>> GetProductsByNameAsync(string name, uint currentPage, uint amountOfItems)
         {
             throw new System.NotImplementedException();
         }
 
-        public Task<Response<ProductDto>> GetProductsByCategoryAsync(string category, uint currentPage, uint amountOfItems)
+        public Task<ResponseType1<ProductDto>> GetProductsByCategoryAsync(string category, uint currentPage, uint amountOfItems)
         {
             throw new System.NotImplementedException();
         }

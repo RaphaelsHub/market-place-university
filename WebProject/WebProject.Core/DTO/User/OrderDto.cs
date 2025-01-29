@@ -7,18 +7,18 @@ namespace WebProject.Core.DTO.User
     public class OrderDto
     {
         [Required(ErrorMessage = "FirstName is required")]
-        [StringLength(50, MinimumLength = 2, ErrorMessage = "FirstName must be between 2 and 50 characters")]
+        [StringLength(32, MinimumLength = 2, ErrorMessage = "FirstName must be between 2 and 32 characters")]
         [RegularExpression(@"^[a-zA-Z\s'-]+$", ErrorMessage = "FirstName must contain only letters, spaces, apostrophes, or hyphens")]
         public string FirstName { get; set; }
         
         [Required(ErrorMessage = "LastName is required")]
-        [StringLength(50, MinimumLength = 2, ErrorMessage = "LastName must be between 2 and 50 characters")]
+        [StringLength(32, MinimumLength = 2, ErrorMessage = "LastName must be between 2 and 32 characters")]
         [RegularExpression(@"^[a-zA-Z\s'-]+$", ErrorMessage = "LastName must contain only letters, spaces, apostrophes, or hyphens")]
         public string LastName { get; set; }
         
         [Required(ErrorMessage = "Email is required")]
         [EmailAddress(ErrorMessage = "Invalid Email Address")]
-        [StringLength(320, MinimumLength = 1, ErrorMessage = "Email must be less than 320 characters")]
+        [StringLength(255, MinimumLength = 1, ErrorMessage = "Email must be less than 255 characters")]
         public string Email { get; set; }
         
         [Required(ErrorMessage = "PhoneNumber is required")]
@@ -49,7 +49,7 @@ namespace WebProject.Core.DTO.User
         
         public decimal DiscountPrice { get; set; }
         
-        public PaymentType PaymentType { get; set; } = PaymentType.Cash;
+        public PaymentType PaymentType { get; set; } = PaymentType.None;
         
         public OrderStatus OrderStatus { get; set; } = OrderStatus.Pending;
         

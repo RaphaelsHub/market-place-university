@@ -2,17 +2,16 @@ using WebProject.Core.DTO;
 using System.Collections.Generic;
 using System.Threading.Tasks;
 using WebProject.Core.DTO.FeedBack.Standard;
-using WebProject.Core.DTO.ResponcesDto;
 
 namespace WebProject.App.Interfaces
 {
     public interface IBlogService
     {
-        Task<Response<bool>> CreateBlogAsync(BlogDto blog);
-        Task<Response<BlogDto>> GetBlogAsync(uint id);
-        Task<Response<IEnumerable<BlogDto>>> GetBlogsAsync(uint currentPage, uint amountOfItems);
+        Task<ResponseType1<bool>> CreateBlogAsync(BlogDto blog);
+        Task<ResponseType1<BlogDto>> GetBlogAsync(uint id);
+        Task<ResponseType1<IEnumerable<BlogDto>>> GetBlogsAsync(uint currentPage, uint amountOfItems);
         Task<IEnumerable<BlogDto>> FindBlogsAsync(string search, uint currentPage, uint amountOfItems);
-        Task<Response<bool>> UpdateBlogAsync(BlogDto blog);
-        Task<Response<bool>> DeleteBlogAsync(uint idBlog);
+        Task<ResponseType1<bool>> UpdateBlogAsync(BlogDto blog);
+        Task<ResponseType1<bool>> DeleteBlogAsync(uint idBlog);
     }
 }

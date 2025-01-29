@@ -5,13 +5,13 @@ namespace WebProject.Core.DTO.User
     public class ContactUsDto
     {
         [Required(ErrorMessage = "Name is required")]
-        [StringLength(50, MinimumLength = 3, ErrorMessage = "Name must be between 3 and 50 characters")]
+        [StringLength(32, MinimumLength = 3, ErrorMessage = "Name must be between 3 and 32 characters")]
         [RegularExpression(@"^[a-zA-Z\s'-]+$", ErrorMessage = "Name must contain only letters, spaces, apostrophes, or hyphens")]
         public string Name { get; set; }
         
         [Required(ErrorMessage = "Email is required")]
         [EmailAddress(ErrorMessage = "Invalid Email Address")]
-        [StringLength(320, MinimumLength = 1, ErrorMessage = "Email must be less than 320 characters")]
+        [StringLength(255, MinimumLength = 1, ErrorMessage = "Email must be less than 255 characters")]
         public string Email { get; set; }
         
         [Required(ErrorMessage = "Phone Number is required")]

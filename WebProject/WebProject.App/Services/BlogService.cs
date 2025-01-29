@@ -8,17 +8,17 @@ namespace WebProject.App.Services
 {
     public class BlogService : IBlogService
     {
-        public Task<Response<bool>> CreateBlogAsync(BlogDto blog)
+        public Task<ResponseType1<bool>> CreateBlogAsync(BlogDto blog)
         {
             throw new System.NotImplementedException();
         }
 
-        public Task<Response<BlogDto>> GetBlogAsync(uint id)
+        public Task<ResponseType1<BlogDto>> GetBlogAsync(uint id)
         {
             throw new System.NotImplementedException();
         }
 
-        public Task<Response<IEnumerable<BlogDto>>> GetBlogsAsync(uint currentPage, uint amountOfItems)
+        public Task<ResponseType1<IEnumerable<BlogDto>>> GetBlogsAsync(uint currentPage, uint amountOfItems)
         {
             throw new System.NotImplementedException();
         }
@@ -28,12 +28,12 @@ namespace WebProject.App.Services
             throw new System.NotImplementedException();
         }
 
-        public Task<Response<bool>> UpdateBlogAsync(BlogDto blog)
+        public Task<ResponseType1<bool>> UpdateBlogAsync(BlogDto blog)
         {
             throw new System.NotImplementedException();
         }
 
-        public Task<Response<bool>> DeleteBlogAsync(uint idBlog)
+        public Task<ResponseType1<bool>> DeleteBlogAsync(uint idBlog)
         {
             throw new System.NotImplementedException();
         }

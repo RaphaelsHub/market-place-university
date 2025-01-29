@@ -10,9 +10,8 @@ namespace WebProject.Core.DTO
         public uint Id { get; set; }
         public string Title { get; set; }
         public string Content { get; set; }
-        public List<string> Tags { get; set; }
-        public List<string> Messages { get; set; }
+        public List<MessageDto> Messages { get; set; }
         public DateTime DateTimePublished { get; set; }
-        public UserType UserType { get; set; } = UserType.Moderator;
+        public UserType UserPublished { get; set; }
     }
 }

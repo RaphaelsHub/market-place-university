@@ -1,4 +1,4 @@
-namespace WebProject.Core.DTO.FeedBack.Error
+namespace WebProject.Core.DTO.FeedBack.ErrorSuccess
 {
     public class ErrorResponseDto
     {

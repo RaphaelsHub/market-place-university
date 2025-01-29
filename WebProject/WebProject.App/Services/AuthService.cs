@@ -9,87 +9,87 @@ namespace WebProject.App.Services
 {
     public class AuthService : IAuthService
     {
-        public Task<Response<bool>> Register(SignUpDto registrationDto)
+        public Task<ResponseType1<bool>> Register(SignUpDto registrationDto)
         {
             throw new System.NotImplementedException();
         }
 
-        public Task<Response<bool>> SendEmailConfirmation(string email)
+        public Task<ResponseType1<bool>> SendEmailConfirmation(string email)
         {
             throw new System.NotImplementedException();
         }
 
-        public Task<Response<string>> RefreshToken(string refreshToken)
+        public Task<ResponseType1<string>> RefreshToken(string refreshToken)
         {
             throw new System.NotImplementedException();
         }
 
-        public Task<Response<bool>> ConfirmEmail(string email, string token)
+        public Task<ResponseType1<bool>> ConfirmEmail(string email, string token)
         {
             throw new System.NotImplementedException();
         }
 
-        public Task<Response<bool>> Login(SignInDto loginDto)
+        public Task<ResponseType1<bool>> Login(SignInDto loginDto)
         {
             throw new System.NotImplementedException();
         }
 
-        public Task<Response<bool>> Logout()
+        public Task<ResponseType1<bool>> Logout()
         {
             throw new System.NotImplementedException();
         }
 
-        public Task<Response<bool>> ForgotPassword(string email)
+        public Task<ResponseType1<bool>> ForgotPassword(string email)
         {
             throw new System.NotImplementedException();
         }
 
-        public Task<Response<bool>> ChangePassword(string changePasswordDto)
+        public Task<ResponseType1<bool>> ChangePassword(string changePasswordDto)
         {
             throw new System.NotImplementedException();
         }
 
-        public Task<Response<bool>> VerifySentCode(string email, string code)
+        public Task<ResponseType1<bool>> VerifySentCode(string email, string code)
         {
             throw new System.NotImplementedException();
         }
 
-        public Task<Response<bool>> EnableTwoFactorAuthentication()
+        public Task<ResponseType1<bool>> EnableTwoFactorAuthentication()
         {
             throw new System.NotImplementedException();
         }
 
-        public Task<Response<bool>> DisableTwoFactorAuthentication()
+        public Task<ResponseType1<bool>> DisableTwoFactorAuthentication()
         {
             throw new System.NotImplementedException();
         }
 
-        public Task<Response<bool>> EnableAccount()
+        public Task<ResponseType1<bool>> EnableAccount()
         {
             throw new System.NotImplementedException();
         }
 
-        public Task<Response<bool>> DisableAccount()
+        public Task<ResponseType1<bool>> DisableAccount()
         {
             throw new System.NotImplementedException();
         }
 
-        public Task<Response<bool>> BlockAccount()
+        public Task<ResponseType1<bool>> BlockAccount()
         {
             throw new System.NotImplementedException();
         }
 
-        public Task<Response<bool>> UnblockAccount()
+        public Task<ResponseType1<bool>> UnblockAccount()
         {
             throw new System.NotImplementedException();
         }
 
-        public Task<Response<bool>> SetVerificationStatus(string userId, bool status)
+        public Task<ResponseType1<bool>> SetVerificationStatus(string userId, bool status)
         {
             throw new System.NotImplementedException();
         }
 
-        public Task<Response<bool>> SetRole(string userId, string role)
+        public Task<ResponseType1<bool>> SetRole(string userId, string role)
         {
             throw new System.NotImplementedException();
         }
@@ -99,7 +99,7 @@ namespace WebProject.App.Services
             throw new System.NotImplementedException();
         }
 
-        public Task<Response<bool>> SetUserStatus(string userId, string status)
+        public Task<ResponseType1<bool>> SetUserStatus(string userId, string status)
         {
             throw new System.NotImplementedException();
         }

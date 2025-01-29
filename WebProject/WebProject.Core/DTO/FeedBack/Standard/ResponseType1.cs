@@ -1,6 +1,6 @@
 namespace WebProject.Core.DTO.FeedBack.Standard
 {
-    public class Response <T>
+    public class ResponseType1 <T>
     {
         
     }

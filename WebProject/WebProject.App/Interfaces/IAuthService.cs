@@ -9,38 +9,38 @@ namespace WebProject.App.Interfaces
     //Not really sure about the methods, but I think they will need to be improved and added more methods after architecture review
     public interface IAuthService
     {
-        Task<Response<bool>> Register(SignUpDto registrationDto);
-        Task<Response<bool>> SendEmailConfirmation(string email);
-        Task<Response<string>> RefreshToken(string refreshToken);
-        Task<Response<bool>> ConfirmEmail(string email, string token);
+        Task<ResponseType1<bool>> Register(SignUpDto registrationDto);
+        Task<ResponseType1<bool>> SendEmailConfirmation(string email);
+        Task<ResponseType1<string>> RefreshToken(string refreshToken);
+        Task<ResponseType1<bool>> ConfirmEmail(string email, string token);
 
-        Task<Response<bool>> Login(SignInDto loginDto);
-        Task<Response<bool>> Logout();
+        Task<ResponseType1<bool>> Login(SignInDto loginDto);
+        Task<ResponseType1<bool>> Logout();
 
         //Reset Password
-        Task<Response<bool>> ForgotPassword(string email);
-        Task<Response<bool>> ChangePassword(string changePasswordDto);
-        Task<Response<bool>> VerifySentCode(string email, string code);
+        Task<ResponseType1<bool>> ForgotPassword(string email);
+        Task<ResponseType1<bool>> ChangePassword(string changePasswordDto);
+        Task<ResponseType1<bool>> VerifySentCode(string email, string code);
         
         //2FA
-        Task<Response<bool>> EnableTwoFactorAuthentication();
-        Task<Response<bool>> DisableTwoFactorAuthentication();
+        Task<ResponseType1<bool>> EnableTwoFactorAuthentication();
+        Task<ResponseType1<bool>> DisableTwoFactorAuthentication();
         
         //Account Status
-        Task<Response<bool>> EnableAccount();
-        Task<Response<bool>> DisableAccount();
-        Task<Response<bool>> BlockAccount();
-        Task<Response<bool>> UnblockAccount();
+        Task<ResponseType1<bool>> EnableAccount();
+        Task<ResponseType1<bool>> DisableAccount();
+        Task<ResponseType1<bool>> BlockAccount();
+        Task<ResponseType1<bool>> UnblockAccount();
         
         //Account Verification Status
-        Task<Response<bool>> SetVerificationStatus(string userId, bool status);
+        Task<ResponseType1<bool>> SetVerificationStatus(string userId, bool status);
         
         //Account Role
-        Task<Response<bool>> SetRole(string userId, string role);
+        Task<ResponseType1<bool>> SetRole(string userId, string role);
         Task<IEnumerable<string>> GetRoles();
         
         //User Status
-        Task<Response<bool>> SetUserStatus(string userId, string status); //Online, Offline
+        Task<ResponseType1<bool>> SetUserStatus(string userId, string status); //Online, Offline
         
         //TO DO: Add more methods
     }

@@ -48,11 +48,13 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="DTO\BlogDto.cs" />
-    <Compile Include="DTO\FeedBack\Error\ErrorResponseDto.cs" />
-    <Compile Include="DTO\FeedBack\Standard\GeneralResponseDto.cs" />
-    <Compile Include="DTO\FeedBack\Standard\MessageResponseDto.cs" />
-    <Compile Include="DTO\FeedBack\Standard\Response.cs" />
+    <Compile Include="DTO\FeedBack\ErrorSuccess\ErrorResponseDto.cs" />
+    <Compile Include="DTO\FeedBack\ErrorSuccess\MessageResponseDto.cs" />
+    <Compile Include="DTO\FeedBack\Standard\ResponseType3.cs" />
+    <Compile Include="DTO\FeedBack\Standard\ResponseType1.cs" />
+    <Compile Include="DTO\FeedBack\Standard\ResponseType2.cs" />
     <Compile Include="DTO\HelpFull\ErrorAnalyticDto.cs" />
+    <Compile Include="DTO\MessageDto.cs" />
     <Compile Include="DTO\ProductDto.cs" />
     <Compile Include="DTO\HelpFull\AmountOfPagesDto.cs" />
     <Compile Include="DTO\User\CartDto.cs" />

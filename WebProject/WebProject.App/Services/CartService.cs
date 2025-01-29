@@ -8,32 +8,32 @@ namespace WebProject.App.Services
 {
     public class CartService : ICartService
     {
-        public Task<Response<CartDto>> GetCart(int userId)
+        public Task<ResponseType1<CartDto>> GetCart(int userId)
         {
             throw new System.NotImplementedException();
         }
 
-        public Task<Response<bool>> AddToCart(int productId)
+        public Task<ResponseType1<bool>> AddToCart(int productId)
         {
             throw new System.NotImplementedException();
         }
 
-        public Task<Response<bool>> RemoveFromCart(int productId)
+        public Task<ResponseType1<bool>> RemoveFromCart(int productId)
         {
             throw new System.NotImplementedException();
         }
 
-        public Task<Response<bool>> IncreaseQuantity(int productId)
+        public Task<ResponseType1<bool>> IncreaseQuantity(int productId)
         {
             throw new System.NotImplementedException();
         }
 
-        public Task<Response<bool>> DecreaseQuantity(int productId)
+        public Task<ResponseType1<bool>> DecreaseQuantity(int productId)
         {
             throw new System.NotImplementedException();
         }
 
-        public Task<Response<bool>> PromoCode(string code)
+        public Task<ResponseType1<bool>> PromoCode(string code)
         {
             throw new System.NotImplementedException();
         }
