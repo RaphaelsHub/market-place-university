@@ -15,7 +15,7 @@ namespace WebProject.Controllers
         public ActionResult Blogs() => View();
         
         [HttpGet]
-        public ActionResult FindBlog(string search) => RedirectToAction("Blogs", search);
+        public ActionResult FindBlogs(string search) => RedirectToAction("Blogs", search);
         
         [HttpPost]
         public ActionResult AddBlog() => RedirectToAction("Blogs");

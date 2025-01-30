@@ -55,7 +55,7 @@
     <Compile Include="DTO\ProductDto.cs" />
     <Compile Include="DTO\RegisterDto.cs" />
     <Compile Include="DTO\ResponcesDto\HelperModel.cs" />
-    <Compile Include="DTO\ResponcesDto\TResponce.cs" />
+    <Compile Include="DTO\ResponcesDto\Response.cs" />
     <Compile Include="DTO\UserDto.cs" />
     <Compile Include="Entities\AddressEf.cs" />
     <Compile Include="Entities\BlogEf.cs" />

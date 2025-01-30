@@ -213,9 +213,17 @@
     <Folder Include="Views\Admin\" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\WebProject.App\WebProject.App.csproj">
+      <Project>{030f1626-8790-48eb-8e8a-5760877cc9b9}</Project>
+      <Name>WebProject.App</Name>
+    </ProjectReference>
     <ProjectReference Include="..\WebProject.Core\WebProject.Core.csproj">
       <Project>{eec6d438-115e-4f49-9e5b-bff8f2dbea79}</Project>
       <Name>WebProject.Core</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\WebProject.Dal\WebProject.Dal.csproj">
+      <Project>{a517ac22-7678-4f1c-9b0e-82cc95da582a}</Project>
+      <Name>WebProject.Dal</Name>
     </ProjectReference>
   </ItemGroup>
   <PropertyGroup>
