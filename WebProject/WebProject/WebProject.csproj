@@ -160,8 +160,9 @@
     <Compile Include="App_Start\IdentityConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Controllers\AccountController.cs" />
+    <Compile Include="Controllers\AdminController.cs" />
     <Compile Include="Controllers\BaseController.cs" />
-    <Compile Include="Controllers\BlogController.cs" />
+    <Compile Include="Controllers\NewsController.cs" />
     <Compile Include="Controllers\CartController.cs" />
     <Compile Include="Controllers\ErrorController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
@@ -190,15 +191,15 @@
     <Content Include="Views\Home\Index.cshtml" />
     <Content Include="Views\Home\ContactUs.cshtml" />
     <Content Include="Views\Home\AboutUs.cshtml" />
-    <Content Include="Views\Account\Login.cshtml" />
-    <Content Include="Views\Account\Register.cshtml" />
-    <Content Include="Views\Order\CheckOut.cshtml" />
-    <Content Include="Views\Cart\CartView.cshtml" />
+    <Content Include="Views\Account\SignIn.cshtml" />
+    <Content Include="Views\Account\SignUp.cshtml" />
+    <Content Include="Views\Order\GetOrderForm.cshtml" />
+    <Content Include="Views\Cart\ViewCart.cshtml" />
     <Content Include="Views\Error\NotFound.cshtml" />
-    <Content Include="Views\Blog\AllBlogs.cshtml" />
-    <Content Include="Views\Blog\SingleBlog.cshtml" />
-    <Content Include="Views\Store\AllProducts.cshtml" />
-    <Content Include="Views\Store\SingleProduct.cshtml" />
+    <Content Include="Views\News\Blogs.cshtml" />
+    <Content Include="Views\News\Blog.cshtml" />
+    <Content Include="Views\Store\Products.cshtml" />
+    <Content Include="Views\Store\Product.cshtml" />
     <Content Include="Views\Partials\NewsLetter.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
@@ -209,6 +210,7 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="Views\Admin\" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\WebProject.Core\WebProject.Core.csproj">

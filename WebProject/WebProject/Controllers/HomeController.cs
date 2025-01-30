@@ -20,7 +20,7 @@ namespace WebProject.Controllers
         [HttpGet]
         public ActionResult Thanks() => View();
         
-        [HttpPost]
+        [HttpGet]
         public ActionResult MailSuccess() => View();
         
         [HttpPost]

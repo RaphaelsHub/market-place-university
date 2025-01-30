@@ -7,7 +7,6 @@ namespace WebProject.Controllers
         [HttpGet]
         public ActionResult NotFound()
         { 
-            
             string lastUrl = Request.UrlReferrer?.ToString();
 
             if (lastUrl == null)

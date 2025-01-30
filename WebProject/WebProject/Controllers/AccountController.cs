@@ -6,18 +6,35 @@ namespace WebProject.Controllers
     public class AccountController : BaseController
     {
         [HttpGet]
-        public ActionResult Login() => View();
+        public ActionResult SignIn() => View();
         
         [HttpGet]
-        public ActionResult Register() => View();
+        public ActionResult SignUp() => View();
      
         [HttpGet]
-        public ActionResult LogOut() => RedirectToAction("Index", "Home");
+        public ActionResult SignOut() => RedirectToAction("Index", "Home");
         
         [HttpPost]
-        public ActionResult Login(LoginDto loginDto) => View();
+        public ActionResult SignIn(LoginDto loginDto) => View();
         
         [HttpPost]
-        public ActionResult Register(RegisterDto registerDto) => View();
+        public ActionResult SignUp(RegisterDto registerDto) => View();
+        
+        
+        // User Admin Actions
+        [HttpGet]
+        public ActionResult Users() => View();
+        
+        [HttpGet]
+        public ActionResult FindUser(string search) => RedirectToAction("Users");
+        
+        [HttpPost]
+        public ActionResult AddUser() => RedirectToAction("Users");
+        
+        [HttpPatch]
+        public ActionResult UpdateUser() => RedirectToAction("Users");
+        
+        [HttpDelete]
+        public ActionResult DeleteUser() => RedirectToAction("Users");
     }
 }

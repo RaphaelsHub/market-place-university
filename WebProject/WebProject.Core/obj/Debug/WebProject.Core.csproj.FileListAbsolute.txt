@@ -6,3 +6,9 @@ D:\My Documents\market_place_university\WebProject\WebProject.Core\obj\Debug\Web
 D:\My Documents\market_place_university\WebProject\WebProject.Core\obj\Debug\WebProje.BAE9BC2C.Up2Date
 D:\My Documents\market_place_university\WebProject\WebProject.Core\obj\Debug\WebProject.Core.dll
 D:\My Documents\market_place_university\WebProject\WebProject.Core\obj\Debug\WebProject.Core.pdb
+C:\Users\speke\RiderProjects\market-place-university\WebProject\WebProject.Core\bin\Debug\WebProject.Core.dll
+C:\Users\speke\RiderProjects\market-place-university\WebProject\WebProject.Core\bin\Debug\WebProject.Core.pdb
+C:\Users\speke\RiderProjects\market-place-university\WebProject\WebProject.Core\obj\Debug\WebProject.Core.csproj.AssemblyReference.cache
+C:\Users\speke\RiderProjects\market-place-university\WebProject\WebProject.Core\obj\Debug\WebProject.Core.csproj.CoreCompileInputs.cache
+C:\Users\speke\RiderProjects\market-place-university\WebProject\WebProject.Core\obj\Debug\WebProject.Core.dll
+C:\Users\speke\RiderProjects\market-place-university\WebProject\WebProject.Core\obj\Debug\WebProject.Core.pdb
