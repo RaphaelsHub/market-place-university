@@ -6,42 +6,36 @@ using WebProject.Core.DTO.ResponcesDto;
 
 namespace WebProject.App.Services
 {
-    public class UserService : IUserService
+    public class BlogService : IBlogService
     {
-        public Task<Response<UserDto>> GetUserById(int id)
+        public Task<Response<bool>> CreateBlogAsync(BlogDto blog)
         {
             throw new System.NotImplementedException();
         }
 
-        public Task<Response<UserDto>> GetUserByEmail(string email)
+        public Task<Response<BlogDto>> GetBlogAsync(uint id)
         {
             throw new System.NotImplementedException();
         }
 
-        public Task<Response<UserDto>> GetUserByUserName(string userName)
+        public Task<Response<IEnumerable<BlogDto>>> GetBlogsAsync(uint currentPage, uint amountOfItems)
         {
             throw new System.NotImplementedException();
         }
 
-        public Task<Response<IEnumerable<UserDto>>> GetUsers()
+        public Task<IEnumerable<BlogDto>> FindBlogsAsync(string search, uint currentPage, uint amountOfItems)
         {
             throw new System.NotImplementedException();
         }
 
-        public Task<bool> AddUser(UserDto user)
+        public Task<Response<bool>> UpdateBlogAsync(BlogDto blog)
         {
             throw new System.NotImplementedException();
         }
 
-        public Task<bool> UpdateUser(UserDto user)
-        {
-            throw new System.NotImplementedException();
-        }
-
-        public Task<bool> DeleteUser(UserDto user)
+        public Task<Response<bool>> DeleteBlogAsync(uint idBlog)
         {
             throw new System.NotImplementedException();
         }
     }
 }
-

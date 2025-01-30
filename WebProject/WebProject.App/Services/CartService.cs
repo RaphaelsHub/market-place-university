@@ -1,4 +1,3 @@
-using System.Collections.Generic;
 using System.Threading.Tasks;
 using WebProject.App.Interfaces;
 using WebProject.Core.DTO;
@@ -6,42 +5,36 @@ using WebProject.Core.DTO.ResponcesDto;
 
 namespace WebProject.App.Services
 {
-    public class UserService : IUserService
+    public class CartService : ICartService
     {
-        public Task<Response<UserDto>> GetUserById(int id)
+        public Task<Response<CartDto>> GetCart(int userId)
         {
             throw new System.NotImplementedException();
         }
 
-        public Task<Response<UserDto>> GetUserByEmail(string email)
+        public Task<Response<bool>> AddToCart(int productId)
         {
             throw new System.NotImplementedException();
         }
 
-        public Task<Response<UserDto>> GetUserByUserName(string userName)
+        public Task<Response<bool>> RemoveFromCart(int productId)
         {
             throw new System.NotImplementedException();
         }
 
-        public Task<Response<IEnumerable<UserDto>>> GetUsers()
+        public Task<Response<bool>> IncreaseQuantity(int productId)
         {
             throw new System.NotImplementedException();
         }
 
-        public Task<bool> AddUser(UserDto user)
+        public Task<Response<bool>> DecreaseQuantity(int productId)
         {
             throw new System.NotImplementedException();
         }
 
-        public Task<bool> UpdateUser(UserDto user)
-        {
-            throw new System.NotImplementedException();
-        }
-
-        public Task<bool> DeleteUser(UserDto user)
+        public Task<Response<bool>> PromoCode(string code)
         {
             throw new System.NotImplementedException();
         }
     }
 }
-

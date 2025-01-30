@@ -1,6 +1,6 @@
 namespace WebProject.App.Interfaces
 {
-    public interface IAdmin
+    public interface IAdminService
     {
         void ChangeWorkingNumber(uint newNumber);
         void ChangeWorkingEmail(string newEmail);
