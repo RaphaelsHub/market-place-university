@@ -152,6 +152,7 @@
     <Content Include="Asset\mail\mail.php" />
     <Content Include="Asset\style.css" />
     <Content Include="Global.asax" />
+    <Content Include="Views\Home\Error.cshtml" />
     <Content Include="Views\Home\Thanks.cshtml" />
     <Content Include="Web.config" />
   </ItemGroup>
@@ -164,7 +165,6 @@
     <Compile Include="Controllers\BaseController.cs" />
     <Compile Include="Controllers\NewsController.cs" />
     <Compile Include="Controllers\CartController.cs" />
-    <Compile Include="Controllers\ErrorController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\OrderController.cs" />
     <Compile Include="Controllers\StoreController.cs" />
@@ -195,7 +195,6 @@
     <Content Include="Views\Account\SignUp.cshtml" />
     <Content Include="Views\Order\GetOrderForm.cshtml" />
     <Content Include="Views\Cart\ViewCart.cshtml" />
-    <Content Include="Views\Error\NotFound.cshtml" />
     <Content Include="Views\News\Blogs.cshtml" />
     <Content Include="Views\News\Blog.cshtml" />
     <Content Include="Views\Store\Products.cshtml" />

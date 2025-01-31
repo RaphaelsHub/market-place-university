@@ -54,11 +54,13 @@
     <Compile Include="DTO\OrderDto.cs" />
     <Compile Include="DTO\ProductDto.cs" />
     <Compile Include="DTO\RegisterDto.cs" />
+    <Compile Include="DTO\ResponcesDto\ErrorMessageResponse.cs" />
     <Compile Include="DTO\ResponcesDto\HelperModel.cs" />
     <Compile Include="DTO\ResponcesDto\MessageResponseDto.cs" />
     <Compile Include="DTO\ResponcesDto\Response.cs" />
     <Compile Include="DTO\UserDto.cs" />
     <Compile Include="DTO\UserDtoS\ContactUsDto.cs" />
+    <Compile Include="DTO\UserDtoS\EmailUserDto.cs" />
     <Compile Include="Entities\AddressEf.cs" />
     <Compile Include="Entities\BlogEf.cs" />
     <Compile Include="Entities\CartEf.cs" />

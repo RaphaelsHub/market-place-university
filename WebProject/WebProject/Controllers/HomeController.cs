@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
-using System.Web.Mvc;
+﻿using System.Web.Mvc;
 using WebProject.Core.DTO.ResponcesDto;
 using WebProject.Core.DTO.UserDtoS;
 
@@ -53,6 +49,31 @@ namespace WebProject.Controllers
         
         /************** GetDiscount **************/
         [HttpPost]
-        public ActionResult GetDiscount(string email) => RedirectToAction(GetLastUrl());
+        public ActionResult GetDiscount(EmailUserDto emailUserDto)
+        {
+            if (!ModelState.IsValid) 
+                return RedirectToAction(GetLastUrl());
+            
+            TempData["MessageResponse"] = new MessageResponseDto(
+                "Discount promo-code sent successfully, check your email !", 
+                "Success",
+                1);
+            
+            return RedirectToAction("Thanks");
+        }
+        
+        
+        /************** Error **************/
+        [HttpGet]
+        public ActionResult Error(int? statusCode)
+        {
+            var code = statusCode ?? 500;
+
+            var errorMessageResponseDto = new ErrorMessageResponse(code);
+
+            ViewBag.LastUrl = GetLastUrl();
+
+            return View(errorMessageResponseDto);
+        }
     }
 }

@@ -1,4 +1,6 @@
-﻿<section class="shop-newsletter section">
+﻿@model WebProject.Core.DTO.UserDtoS.EmailUserDto
+    
+<section class="shop-newsletter section">
     <div class="container">
         <div class="inner-top">
             <div class="row">
@@ -6,10 +8,13 @@
                     <div class="inner">
                         <h4>Newsletter</h4>
                         <p> Subscribe to our newsletter and get <span>10%</span> off your first purchase</p>
-                        <form action="mail/mail.php" method="get" target="_blank" class="newsletter-inner">
-                            <input name="EMAIL" placeholder="Your email address" required="" type="email">
+                        @using (Html.BeginForm("GetDiscount", "Home", FormMethod.Post, new { @class = "newsletter-inner" }))
+                        {
+                            @Html.LabelFor(m => m.Email, "Email Address")
+                            @Html.TextBoxFor(m => m.Email, null, new { @placeholder = "Your email address", @required = "required", @type = "email" })
+                            @Html.ValidationMessageFor(m => m.Email, "", new { @class = "text-danger" })
                             <button class="btn">Subscribe</button>
-                        </form>
+                        }
                     </div>
                 </div>
             </div>
