@@ -1,17 +1,18 @@
-﻿
-
-@{
-    ViewBag.Title = "Index";
+﻿@{
+    ViewBag.Title = "Contact Us";
     Layout = "~/Views/Shared/_Layout.cshtml";
+    
+    @model WebProject.Core.DTO.UserDtoS.ContactUsDto
 }
+
 <div class="breadcrumbs" style="background-color: #ffffff;">
     <div class="container">
         <div class="row">
             <div class="col-12">
                 <div class="bread-inner">
                     <ul class="bread-list">
-                        <li><a href="index1.html">Home<i class="ti-arrow-right"></i></a></li>
-                        <li class="active"><a href="blog-single.html">Contact</a></li>
+                        <li><a href="@Url.Action("Index", "Home")">Home<i class="ti-arrow-right"></i></a></li>
+                        <li class="active"><a href="@Url.Action("ContactUs", "Home")">Contact Us</a></li>
                     </ul>
                 </div>
             </div>
@@ -29,45 +30,51 @@
                             <h4>Get in touch</h4>
                             <h3>Write us a message</h3>
                         </div>
-                        <form class="form" method="post" action="mail/mail.php">
+                        @using (Html.BeginForm("ContactUs", "Home", FormMethod.Post, new { @class = "form" }))
+                        {
                             <div class="row">
                                 <div class="col-lg-6 col-12">
                                     <div class="form-group">
-                                        <label>Your Name<span>*</span></label>
-                                        <input name="name" type="text" placeholder="">
+                                        @Html.LabelFor(m => m.Name, "Your Name")
+                                        @Html.TextBoxFor(m => m.Name, new { @class = "form-control", @placeholder = "Enter your name" })
+                                        @Html.ValidationMessageFor(m => m.Name, "", new { @class = "text-danger" })
                                     </div>
                                 </div>
                                 <div class="col-lg-6 col-12">
                                     <div class="form-group">
-                                        <label>Your Subjects<span>*</span></label>
-                                        <input name="subject" type="text" placeholder="">
+                                        @Html.LabelFor(m => m.Subject, "Your Subject")
+                                        @Html.TextBoxFor(m => m.Subject, new { @class = "form-control", @placeholder = "Enter your subject" })
+                                        @Html.ValidationMessageFor(m => m.Subject, "", new { @class = "text-danger" })
                                     </div>
                                 </div>
                                 <div class="col-lg-6 col-12">
                                     <div class="form-group">
-                                        <label>Your Email<span>*</span></label>
-                                        <input name="email" type="email" placeholder="">
+                                        @Html.LabelFor(m => m.Email, "Your Email")
+                                        @Html.TextBoxFor(m => m.Email, new { @class = "form-control", @type = "email", @placeholder = "Enter your email" })
+                                        @Html.ValidationMessageFor(m => m.Email, "", new { @class = "text-danger" })
                                     </div>
                                 </div>
                                 <div class="col-lg-6 col-12">
                                     <div class="form-group">
-                                        <label>Your Phone<span>*</span></label>
-                                        <input name="company_name" type="text" placeholder="">
+                                        @Html.LabelFor(m => m.PhoneNumber, "Your Phone")
+                                        @Html.TextBoxFor(m => m.PhoneNumber, new { @class = "form-control", @placeholder = "Enter your phone number" })
+                                        @Html.ValidationMessageFor(m => m.PhoneNumber, "", new { @class = "text-danger" })
                                     </div>
                                 </div>
                                 <div class="col-12">
                                     <div class="form-group message">
-                                        <label>your message<span>*</span></label>
-                                        <textarea name="message" placeholder=""></textarea>
+                                        @Html.LabelFor(m => m.Message, "Your Message")
+                                        @Html.TextAreaFor(m => m.Message, new { @class = "form-control", @placeholder = "Enter your message" })
+                                        @Html.ValidationMessageFor(m => m.Message, "", new { @class = "text-danger" })
                                     </div>
                                 </div>
                                 <div class="col-12">
                                     <div class="form-group button">
-                                        <button type="submit" class="btn ">Send Message</button>
+                                        <button type="submit" class="btn btn-primary">Send Message</button>
                                     </div>
                                 </div>
                             </div>
-                        </form>
+                        }
                     </div>
                 </div>
                 <div class="col-lg-4 col-12">
@@ -76,15 +83,15 @@
                             <i class="fa fa-phone"></i>
                             <h4 class="title">Call us Now:</h4>
                             <ul>
-                                <li>+123 456-789-1120</li>
-                                <li>+522 672-452-1120</li>
+                                <li>+373 67-012-210</li>
+                                <li>+373 67-210-012</li>
                             </ul>
                         </div>
                         <div class="single-info">
                             <i class="fa fa-envelope-open"></i>
                             <h4 class="title">Email:</h4>
                             <ul>
-                                <li><a href="mailto:info@yourwebsite.com">info@yourwebsite.com</a></li>
+                                <li><a href="gmail:info@yourwebsite.com">info@yourwebsite.com</a></li>
                                 <li><a href="mailto:info@yourwebsite.com">support@yourwebsite.com</a></li>
                             </ul>
                         </div>

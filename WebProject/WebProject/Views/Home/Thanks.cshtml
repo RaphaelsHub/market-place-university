@@ -2,6 +2,8 @@
     Layout = null;
 }
 
+@model WebProject.Core.DTO.ResponcesDto.MessageResponseDto
+
 <!DOCTYPE html>
 <html lang="zxx">
 <head>
@@ -24,11 +26,9 @@
     <link rel="stylesheet" href="~/Asset/css/owl-carousel.css">
     <link rel="stylesheet" href="~/Asset/css/slicknav.min.css">
     <link rel="stylesheet" href="~/Asset/css/animate.css">
-
     <link rel="stylesheet" href="~/Asset/css/reset.css">
     <link rel="stylesheet" href="~/Asset/style.css">
     <link rel="stylesheet" href="~/Asset/css/responsive.css">
-
     <link rel="stylesheet" href="~/Asset/css/color/color2.css">
 
     <link rel="stylesheet" href="#" id="colors">
@@ -43,7 +43,6 @@
         </div>
     </div>
 
-   
     <section class="error-page">
         <div class="table">
             <div class="table-cell">
@@ -51,12 +50,12 @@
                     <div class="row">
                         <div class="col-lg-6 offset-lg-3 col-12">
                             <div class="error-inner">
-                                <h2>Success!</h2>
-                                <h5>Thanks for placing the order. Soon we will get in touch!</h5>
-                                <p>Your number order is: 22348532</p>
-                                <div class="button">
-                                   <a href="@Url.Action("Index","Home")" class="btn">Go Back</a>
-                                </div>
+                                    <h2>@Model.Success</h2>
+                                    <h5>@Model.Message</h5>
+                                    <p>Your track id is: @Model.IdTrack </p>
+                                    <div class="button">
+                                        <a href="@Url.Action("Index", "Home")" class="btn">Go Back</a>
+                                    </div>
                             </div>
                         </div>
                     </div>

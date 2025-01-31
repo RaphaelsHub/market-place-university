@@ -152,7 +152,6 @@
     <Content Include="Asset\mail\mail.php" />
     <Content Include="Asset\style.css" />
     <Content Include="Global.asax" />
-    <Content Include="Views\Home\MailSuccess.cshtml" />
     <Content Include="Views\Home\Thanks.cshtml" />
     <Content Include="Web.config" />
   </ItemGroup>
