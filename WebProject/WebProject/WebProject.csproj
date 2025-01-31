@@ -128,6 +128,7 @@
     <Content Include="Asset\images\map-marker.png" />
     <Content Include="Asset\images\payment-method.png" />
     <Content Include="Asset\images\payments.png" />
+    <Content Include="Asset\images\banner.png" />
     <Content Include="Asset\js\active.js" />
     <Content Include="Asset\js\bootstrap.min.js" />
     <Content Include="Asset\js\colors.js" />

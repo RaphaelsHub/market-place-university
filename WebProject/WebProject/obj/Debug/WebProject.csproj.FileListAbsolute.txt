@@ -621,9 +621,9 @@ C:\Users\speke\RiderProjects\market-place-university\WebProject\WebProject\obj\D
 C:\Users\speke\RiderProjects\market-place-university\WebProject\WebProject\obj\Debug\WebProject.csproj.Up2Date
 C:\Users\speke\RiderProjects\market-place-university\WebProject\WebProject\obj\Debug\WebProject.dll
 C:\Users\speke\RiderProjects\market-place-university\WebProject\WebProject\obj\Debug\WebProject.pdb
-C:\Users\speke\RiderProjects\market-place-university\WebProject\WebProject\bin\EntityFramework.dll
 C:\Users\speke\RiderProjects\market-place-university\WebProject\WebProject\bin\WebProject.App.dll
 C:\Users\speke\RiderProjects\market-place-university\WebProject\WebProject\bin\WebProject.Dal.dll
 C:\Users\speke\RiderProjects\market-place-university\WebProject\WebProject\bin\WebProject.App.pdb
 C:\Users\speke\RiderProjects\market-place-university\WebProject\WebProject\bin\WebProject.Dal.pdb
 C:\Users\speke\RiderProjects\market-place-university\WebProject\WebProject\bin\WebProject.Dal.dll.config
+C:\Users\speke\RiderProjects\market-place-university\WebProject\WebProject\bin\EntityFramework.xml
