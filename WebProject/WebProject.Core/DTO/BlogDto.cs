@@ -1,6 +1,7 @@
 using System;
 using System.Collections.Generic;
 using WebProject.Core.Enums;
+using WebProject.Core.Enums.User;
 
 namespace WebProject.Core.DTO
 {

@@ -1,6 +1,8 @@
 ﻿using System.Web.Mvc;
-using WebProject.Core.DTO.ResponcesDto;
+using WebProject.Core.DTO.FeedBack.Error;
+using WebProject.Core.DTO.FeedBack.Standart;
 using WebProject.Core.DTO.UserDtoS;
+using WebProject.Core.Enums.Operation;
 
 namespace WebProject.Controllers
 {
@@ -9,7 +11,6 @@ namespace WebProject.Controllers
         /*************** Index ***************/
         [HttpGet]
         public ActionResult Index() => View();
-        
         
         /************** AboutUs **************/
         [HttpGet]
@@ -24,19 +25,19 @@ namespace WebProject.Controllers
         {
             if (!ModelState.IsValid) 
                 return View(contactUsDto);
-
-            TempData["MessageResponse"] = new MessageResponseDto(
-                "Message sent successfully, soon we will get in touch !", 
-                "Success",
-                1);
             
-            return RedirectToAction("Thanks");
+            TempData["MessageResponse"] = new MessageResponseDto(
+                1,
+                "Message sent successfully, we will contact you soon !",
+                RequestStatus.Success);
+            
+            return RedirectToAction("Confirmation");
         }
 
         
         /************** Thanks **************/
         [HttpGet]
-        public ActionResult Thanks()
+        public ActionResult Confirmation()
         {
             var messageResponseDto = TempData["MessageResponse"] as MessageResponseDto;
             
@@ -55,11 +56,11 @@ namespace WebProject.Controllers
                 return RedirectToAction(GetLastUrl());
             
             TempData["MessageResponse"] = new MessageResponseDto(
-                "Discount promo-code sent successfully, check your email !", 
-                "Success",
-                1);
+                1,
+                "Discount code sent to your email successfully !",
+                RequestStatus.Success);
             
-            return RedirectToAction("Thanks");
+            return RedirectToAction("Confirmation");
         }
         
         
@@ -69,7 +70,7 @@ namespace WebProject.Controllers
         {
             var code = statusCode ?? 500;
 
-            var errorMessageResponseDto = new ErrorMessageResponse(code);
+            var errorMessageResponseDto = new ErrorResponseDto(code);
 
             ViewBag.LastUrl = GetLastUrl();
 

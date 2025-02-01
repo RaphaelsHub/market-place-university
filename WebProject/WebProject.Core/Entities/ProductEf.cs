@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 using WebProject.Core.Enums;
+using WebProject.Core.Enums.Product;
 
 namespace WebProject.Core.Entities
 {
@@ -69,13 +70,13 @@ namespace WebProject.Core.Entities
         /// <summary>
         /// Gets or sets the visibility type of the product.
         /// </summary>
-        public ProductSellType ProductSellType { get; set; } = ProductSellType.IsVisible;
+        public ProductSellType ProductSellType { get; set; } = ProductSellType.Normal;
 
         /// <summary>
         /// Gets the stock status of the product based on the current amount.
         /// </summary>
         [NotMapped]
-        public ProductStatus ProductStatus => CurrentAmount > 0 ? ProductStatus.InStock : ProductStatus.OutOfStock;
+        public ProductStockStatus ProductStatus => CurrentAmount > 0 ?  ProductStockStatus.InStock :  ProductStockStatus.OutOfStock;
 
         /// <summary>
         /// Gets or sets the images associated with the product.

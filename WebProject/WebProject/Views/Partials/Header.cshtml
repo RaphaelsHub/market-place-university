@@ -9,6 +9,7 @@
 
 
 <header class="header shop v3">
+    <!-- Admin Panel, Store Location, Auth -->
     <div class="topbar">
         <div class="container">
             <div class="inner-content">
@@ -26,7 +27,7 @@
                             <ul class="list-main">
                                 <li><i class="ti-user"></i> <a href="#">AdminPanel</a></li>
                                 <li><i class="ti-location-pin"></i> <a href="https://maps.app.goo.gl/NAt4bnBjHvY3CKdV6">Store location</a></li>
-                                <li><i class="ti-power-off"></i><a href="@Url.Action("Login","Account")">Auth</a></li>
+                                <li><i class="ti-power-off"></i><a href="@Url.Action("SignIn", "Account")">Auth</a></li>
                             </ul>
                         </div>
                     </div>
@@ -34,20 +35,21 @@
             </div>
         </div>
     </div>
+    
+    <!-- Logo, Search, Favorite, Cart -->
     <div class="middle-inner">
         <div class="container">
             <div class="row">
                 <div class="col-lg-2 col-md-2 col-12">
                     <div class="logo">
-                        <a href="@Url.Action("Index","Home")"><img src="~/Asset/images/logo.png" alt="logo"></a>
+                        <a href="@Url.Action("Index", "Home")"><img src="~/Asset/images/logo.png" alt="logo"></a>
                     </div>
                     <div class="search-top">
-                        <div class="top-search"><a href="#0"><i class="ti-search"></i></a></div>
+                        <div class="top-search"><a href="#"><i class="ti-search"></i></a></div>
                         <div class="search-top">
                             @using (Html.BeginForm("Search", "Store", FormMethod.Post, new { @class = "search-form" }))
                             {
-
-                                <input type="text" placeholder="Search here..." name="search" />
+                                <input type="text" placeholder="Search here..." name="search"/>
                                 <button value="search" type="submit"><i class="ti-search"></i></button>
                             }
                         </div>
@@ -58,9 +60,9 @@
                     <div class="search-bar-top">
                         <div class="search-bar">
                             <select>
-                                <!-------------------------------------------------------------------------------Категории------------------------------------------------------>
                                 <option selected="selected">All Category</option>
                                 <option>watch</option>
+                                <option>mobile</option>
                                 <option>mobile</option>
                                 <option>kid’s item</option>
                             </select>
@@ -78,23 +80,25 @@
                     <div class="right-bar">
                         <!-- Search Form -->
                         <div class="sinlge-bar">
-                            <a href="@Url.Action("CartView","Cart")" class="single-icon"><i class="fa fa-heart-o" aria-hidden="true"></i></a>
+                            <a href="@Url.Action("Index", "Cart")" class="single-icon"><i class="fa fa-heart-o" aria-hidden="true"></i></a>
                         </div>
+                        
                         <div class="sinlge-bar">
-                            <a href="@Url.Action("CartView","Cart")" class="single-icon"><i class="fa fa-user-circle-o" aria-hidden="true"></i></a>
+                            <a href="@Url.Action("Index", "Cart")" class="single-icon"><i class="fa fa-user-circle-o" aria-hidden="true"></i></a>
                         </div>
+                        
                         <div class="sinlge-bar shopping">
-                            <a href="@Url.Action("CartView","Cart")" class="single-icon"><i class="ti-bag"></i> <span class="total-count">2</span></a>
+                            <a href="@Url.Action("Index", "Cart")" class="single-icon"><i class="ti-bag"></i> <span class="total-count">2</span></a>
                             <div class="shopping-item">
                                 <div class="dropdown-cart-header">
                                     <span>2 Items</span>
-                                    <a href="@Url.Action("CartView","Cart")">View Cart</a>
+                                    <a href="@Url.Action("Index", "Cart")">View Cart</a>
                                 </div>
                                 <ul class="shopping-list">
                                     <li>
                                         <a href="#" class="remove" title="Remove this item"><i class="fa fa-remove"></i></a>
-                                        <a class="cart-img" href="@Url.Action("Product","Store")"><img src="https://via.placeholder.com/70x70" alt="#"></a>
-                                        <h4><a href="@Url.Action("Product","Store")">">Woman Ring</a></h4>
+                                        <a class="cart-img" href="@Url.Action("Product", "Store")"><img src="~/Asset/images/70x70/PC.jpg" alt="#"></a>
+                                        <h4><a href="@Url.Action("Product", "Store")">Woman Ring</a></h4>
                                         <p class="quantity">1x - <span class="amount">$99.00</span></p>
                                     </li>
                                 </ul>
@@ -103,7 +107,7 @@
                                         <span>Total</span>
                                         <span class="total-amount">$134.00</span>
                                     </div>
-                                    <a href="@Url.Action("CheckOut","Order")" class="btn animate">Checkout</a>
+                                    <a href="@Url.Action("GetOrderForm", "Order")" class="btn animate">Checkout</a>
                                 </div>
                             </div>
                         </div>
@@ -123,17 +127,15 @@
                                     <div class="nav-inner">
                                         <ul class="nav main-menu menu navbar-nav">
                                             <li class="active">
-                                                <a href="@Url.Action("Index","Home")">Home<i class="ti-angle-down"></i></a>
+                                                <a href="@Url.Action("Index", "Home")">Home<i class="ti-angle-down"></i></a>
                                                 <ul class="dropdown">
-                                                    <li><a href="@Url.Action("Products","Store")">All products</a></li>
-                                                    <li><a href="@Url.Action("AllBlogs","Blog")">All blogs</a></li>
-                                                    <li><a href="@Url.Action("AboutUs","Home")">About us</a></li>
-                                                    <li><a href="@Url.Action("ContactUs","Home")">Contact us</a></li>
+                                                    <li><a href="@Url.Action("AboutUs", "Home")">About us</a></li>
+                                                    <li><a href="@Url.Action("ContactUs", "Home")">Contact us</a></li>
                                                 </ul>
                                             </li>
-                                            <li><a href="@Url.Action("NotFound","Error")">My Activity</a></li>
-                                            <li><a href="@Url.Action("CartView","Cart")">Cart</a></li>
-                                            <li><a href="@Url.Action("CheckOut","Order")">CheckOut</a></li>
+                                            <li><a href="@Url.Action("Products", "Store")">Store</a></li>
+                                            <li><a href="@Url.Action("Blogs", "News")">Blogs</a></li>
+                                            <li><a href="@Url.Action("Index", "Cart")">Cart</a></li>
                                         </ul>
                                     </div>
                                 </div>

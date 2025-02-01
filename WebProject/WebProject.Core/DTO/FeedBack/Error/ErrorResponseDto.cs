@@ -1,14 +1,11 @@
-namespace WebProject.Core.DTO.ResponcesDto
+namespace WebProject.Core.DTO.FeedBack.Error
 {
-    public class ErrorMessageResponse
+    public class ErrorResponseDto
     {
-        public string Type => GetErrorMessage(Code);
-        public int Code { get; set; }
+        public int Code { get; }
+        public string ErrorMessage => GetErrorMessage(Code);
 
-        public ErrorMessageResponse(int code)
-        {
-            Code = code;
-        }
+        public ErrorResponseDto(int code) => Code = code;
 
         private string GetErrorMessage(int statusCode)
         {

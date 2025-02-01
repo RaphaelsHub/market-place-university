@@ -2,7 +2,7 @@
     Layout = null;
 }
 
-@model WebProject.Core.DTO.ResponcesDto.ErrorMessageResponse
+@model WebProject.Core.DTO.FeedBack.Error.ErrorResponseDto
 
 <!DOCTYPE html>
 <html lang="zxx">
@@ -49,7 +49,7 @@
                         <div class="col-lg-6 offset-lg-3 col-12">
                             <div class="error-inner">
                                 <h2>@Model.Code</h2>
-                                <h5>@Model.Type</h5>
+                                <h5>@Model.ErrorMessage</h5>
                                 <p>OOPSsssssssssss...</p>
                                 <div class="button">
                                     <a href="@ViewBag.LastUrl" class="btn">Go Back</a>

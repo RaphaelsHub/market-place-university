@@ -10,13 +10,15 @@ namespace WebProject.Controllers
     {
         // CRUD Operations for Products
         [HttpGet]
+        //int id = 0
         public ActionResult Product() => View();
         
         [HttpGet]
         public ActionResult Product(object obj) => View();
         
         [HttpGet]
-        public ActionResult Products(int page = 0) => View();
+        //int page = 0
+        public ActionResult Products() => View();
         
         [HttpPost]  
         public ActionResult AddProduct() => RedirectToAction("Products");

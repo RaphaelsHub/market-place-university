@@ -12,7 +12,7 @@ namespace WebProject.Controllers
         public ActionResult GetOrderForm() => View();
         
         [HttpPost]
-        public ActionResult SendOrderForm() =>RedirectToAction("Thanks","Home");
+        public ActionResult SendOrderForm() =>RedirectToAction("Confirmation","Home");
         
         [HttpGet]
         public ActionResult GetOrderInfo(int idOrder) => View();

@@ -2,7 +2,7 @@ using System.Collections.Generic;
 using System.Threading.Tasks;
 using WebProject.App.Interfaces;
 using WebProject.Core.DTO;
-using WebProject.Core.DTO.ResponcesDto;
+using WebProject.Core.DTO.FeedBack.Standard;
 
 namespace WebProject.App.Services
 {

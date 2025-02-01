@@ -1,4 +1,4 @@
-namespace WebProject.Core.Enums
+namespace WebProject.Core.Enums.Account
 {
     public enum AccountVerificationStatus
     {

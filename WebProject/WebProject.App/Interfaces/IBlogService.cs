@@ -1,6 +1,7 @@
 using WebProject.Core.DTO;
 using System.Collections.Generic;
 using System.Threading.Tasks;
+using WebProject.Core.DTO.FeedBack.Standard;
 using WebProject.Core.DTO.ResponcesDto;
 
 namespace WebProject.App.Interfaces

@@ -128,6 +128,7 @@
     <Content Include="Asset\images\550x750\PC.jpg" />
     <Content Include="Asset\images\600x370\JBL.jpg" />
     <Content Include="Asset\images\600x370\tv.jpg" />
+    <Content Include="Asset\images\70x70\PC.jpg" />
     <Content Include="Asset\images\750x590\logo.jpg" />
     <Content Include="Asset\images\750x590\PS.jpg" />
     <Content Include="Asset\images\favicon.png" />
@@ -161,7 +162,7 @@
     <Content Include="Asset\style.css" />
     <Content Include="Global.asax" />
     <Content Include="Views\Home\Error.cshtml" />
-    <Content Include="Views\Home\Thanks.cshtml" />
+    <Content Include="Views\Home\Confirmation.cshtml" />
     <Content Include="Views\Partials\SingleBlogCard.cshtml" />
     <Content Include="Views\Partials\SingleProductCard.cshtml" />
     <Content Include="Views\Partials\StoreAdvantages.cshtml" />
@@ -205,7 +206,7 @@
     <Content Include="Views\Account\SignIn.cshtml" />
     <Content Include="Views\Account\SignUp.cshtml" />
     <Content Include="Views\Order\GetOrderForm.cshtml" />
-    <Content Include="Views\Cart\ViewCart.cshtml" />
+    <Content Include="Views\Cart\Index.cshtml" />
     <Content Include="Views\News\Blogs.cshtml" />
     <Content Include="Views\News\Blog.cshtml" />
     <Content Include="Views\Store\Products.cshtml" />

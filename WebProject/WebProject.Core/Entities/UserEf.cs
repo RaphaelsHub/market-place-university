@@ -4,6 +4,8 @@ using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 using System.Net;
 using WebProject.Core.Enums;
+using WebProject.Core.Enums.Account;
+using WebProject.Core.Enums.User;
 
 namespace WebProject.Core.Entities
 {
@@ -63,14 +65,6 @@ namespace WebProject.Core.Entities
         [Column("UserStatus")]
         public UserStatus UserStatus { get; set; } = UserStatus.Online;
         
-        /// <summary>
-        /// Gets or sets the account status.
-        /// </summary>
-        /// <returns></returns>
-        [Required]
-        [Column("AccountStatus")]
-        public AccountStatus AccountStatus { get; set; } = AccountStatus.Inactive;
-
         /// <summary>
         /// Gets or sets the account verification status.
         /// </summary>
