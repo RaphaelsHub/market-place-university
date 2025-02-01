@@ -122,6 +122,14 @@
     <Content Include="Asset\css\themify-icons.css" />
     <Content Include="Asset\fonts\fontawesome-webfont.svg" />
     <Content Include="Asset\fonts\themify.svg" />
+    <Content Include="Asset\images\1160x560\IP.jpg" />
+    <Content Include="Asset\images\1160x560\SAM.jpg" />
+    <Content Include="Asset\images\370x300\P1.jpg" />
+    <Content Include="Asset\images\550x750\PC.jpg" />
+    <Content Include="Asset\images\600x370\JBL.jpg" />
+    <Content Include="Asset\images\600x370\tv.jpg" />
+    <Content Include="Asset\images\750x590\logo.jpg" />
+    <Content Include="Asset\images\750x590\PS.jpg" />
     <Content Include="Asset\images\favicon.png" />
     <Content Include="Asset\images\logo.png" />
     <Content Include="Asset\images\logo2.png" />
@@ -154,6 +162,9 @@
     <Content Include="Global.asax" />
     <Content Include="Views\Home\Error.cshtml" />
     <Content Include="Views\Home\Thanks.cshtml" />
+    <Content Include="Views\Partials\SingleBlogCard.cshtml" />
+    <Content Include="Views\Partials\SingleProductCard.cshtml" />
+    <Content Include="Views\Partials\StoreAdvantages.cshtml" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
@@ -199,7 +210,7 @@
     <Content Include="Views\News\Blog.cshtml" />
     <Content Include="Views\Store\Products.cshtml" />
     <Content Include="Views\Store\Product.cshtml" />
-    <Content Include="Views\Partials\NewsLetter.cshtml" />
+    <Content Include="Views\Partials\GetPromoCode.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
