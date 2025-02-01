@@ -2,19 +2,19 @@ using System.Collections.Generic;
 using System.Threading.Tasks;
 using WebProject.Core.DTO;
 using WebProject.Core.DTO.FeedBack.Standard;
-using WebProject.Core.DTO.ResponcesDto;
+using WebProject.Core.DTO.User;
 
 namespace WebProject.App.Interfaces
 {
     //Not really sure about the methods, but I think they will need to be improved and added more methods after architecture review
     public interface IAuthService
     {
-        Task<Response<bool>> Register(RegisterDto registrationDto);
+        Task<Response<bool>> Register(SignUpDto registrationDto);
         Task<Response<bool>> SendEmailConfirmation(string email);
         Task<Response<string>> RefreshToken(string refreshToken);
         Task<Response<bool>> ConfirmEmail(string email, string token);
 
-        Task<Response<bool>> Login(LoginDto loginDto);
+        Task<Response<bool>> Login(SignInDto loginDto);
         Task<Response<bool>> Logout();
 
         //Reset Password

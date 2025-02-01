@@ -1,4 +1,4 @@
-namespace WebProject.Core
+namespace WebProject.Core.DTO.HelpFull
 {
     public class AmountOfPagesDto
     {

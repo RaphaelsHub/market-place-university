@@ -1,10 +1,12 @@
 ﻿using System.Web.Mvc;
 using WebProject.Core.DTO;
+using WebProject.Core.DTO.User;
 
 namespace WebProject.Controllers
 {
     public class AccountController : BaseController
     {
+        /************** Sign In **************/
         [HttpGet]
         public ActionResult SignIn() => View();
         
@@ -13,12 +15,22 @@ namespace WebProject.Controllers
      
         [HttpGet]
         public ActionResult SignOut() => RedirectToAction("Index", "Home");
+
+        [HttpPost]
+        public ActionResult SignIn(SignInDto loginDto)
+        {
+            if(!ModelState.IsValid)
+                return View(loginDto);
+            return RedirectToAction("Index", "Home");
+        }
         
         [HttpPost]
-        public ActionResult SignIn(LoginDto loginDto) => View();
-        
-        [HttpPost]
-        public ActionResult SignUp(RegisterDto registerDto) => View();
+        public ActionResult SignUp(SignUpDto registerDto)
+        {
+            if(!ModelState.IsValid)
+                return View(registerDto);
+            return RedirectToAction("Index", "Home");
+        }
         
         
         // User Admin Actions

@@ -3,12 +3,13 @@ using System.Threading.Tasks;
 using WebProject.App.Interfaces;
 using WebProject.Core.DTO;
 using WebProject.Core.DTO.FeedBack.Standard;
+using WebProject.Core.DTO.User;
 
 namespace WebProject.App.Services
 {
     public class AuthService : IAuthService
     {
-        public Task<Response<bool>> Register(RegisterDto registrationDto)
+        public Task<Response<bool>> Register(SignUpDto registrationDto)
         {
             throw new System.NotImplementedException();
         }
@@ -28,7 +29,7 @@ namespace WebProject.App.Services
             throw new System.NotImplementedException();
         }
 
-        public Task<Response<bool>> Login(LoginDto loginDto)
+        public Task<Response<bool>> Login(SignInDto loginDto)
         {
             throw new System.NotImplementedException();
         }

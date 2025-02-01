@@ -1,8 +1,8 @@
 using System;
 
-namespace WebProject.Core.DTO
+namespace WebProject.Core.DTO.HelpFull
 {
-    public class ErrorDto
+    public class ErrorAnalyticDto
     {
         public uint Id { get; set; }
         public string ErrorCode { get; set; }

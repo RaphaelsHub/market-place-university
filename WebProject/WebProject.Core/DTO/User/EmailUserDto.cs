@@ -1,6 +1,6 @@
 using System.ComponentModel.DataAnnotations;
 
-namespace WebProject.Core.DTO.UserDtoS
+namespace WebProject.Core.DTO.User
 {
     public class EmailUserDto
     {

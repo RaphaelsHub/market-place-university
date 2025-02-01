@@ -3,14 +3,16 @@
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
+@model WebProject.Core.DTO.User.SignInDto
+
 <div class="breadcrumbs" style="background-color: #ffffff;">
     <div class="container">
         <div class="row">
             <div class="col-12">
                 <div class="bread-inner">
                     <ul class="bread-list">
-                        <li><a href="index1.html">Home<i class="ti-arrow-right"></i></a></li>
-                        <li class="active"><a href="blog-single.html">Login</a></li>
+                        <li><a href="@Url.Action("Index","Home")">Home<i class="ti-arrow-right"></i></a></li>
+                        <li class="active"><a href="@Url.Action("SignIn","Account")">Login</a></li>
                     </ul>
                 </div>
             </div>
@@ -24,33 +26,35 @@
             <div class="col-lg-6 offset-lg-3 col-12">
                 <div class="login-form">
                     <h2>Login</h2>
-                    <p>Please register in order to checkout more quickly</p>
-                    <form class="form" method="post" action="#">
+                    <p>Please log in to verify identity</p>
+                    @using (Html.BeginForm("SignIn", "Account", FormMethod.Post, new { @class = "form" }))
+                    {
                         <div class="row">
                             <div class="col-12">
                                 <div class="form-group">
-                                    <label>Your Email<span>*</span></label>
-                                    <input type="email" name="email" placeholder="" required="required">
+                                    @Html.LabelFor(m => m.Email, new { @class = "label" })
+                                    @Html.TextBoxFor(m => m.Email, new { @class = "form-control", @placeholder = "Email", @required = "required" })
+                                    @Html.ValidationMessageFor(m=> m.Email, "", new { @class = "text-danger" })
                                 </div>
                             </div>
                             <div class="col-12">
                                 <div class="form-group">
-                                    <label>Your Password<span>*</span></label>
-                                    <input type="password" name="password" placeholder="" required="required">
+                                    @Html.LabelFor(m => m.Password, new { @class = "label" })
+                                    @Html.PasswordFor(m => m.Password, new { @class = "form-control", @placeholder = "Password", @required = "required" })
+                                    @Html.ValidationMessageFor(m => m.Password, "", new { @class = "text-danger" })
                                 </div>
                             </div>
                             <div class="col-12">
                                 <div class="form-group login-btn">
                                     <button class="btn" type="submit">Login</button>
-                                    <a href="register.html" class="btn">Register</a>
+                                    <a href="@Url.Action("SignUp")" class="btn">Register</a>
                                 </div>
-                                <div class="checkbox">
-                                    <label class="checkbox-inline" for="2"><input name="news" id="2" type="checkbox">Remember me</label>
-                                </div>
+                                    @Html.CheckBoxFor(m => m.RememberMe, new { @class = "checkbox" })
+                                    @Html.LabelFor(m => m.RememberMe, new { @class = "checkbox" })
                                 <a href="#" class="lost-pass">Lost your password?</a>
                             </div>
                         </div>
-                    </form>
+                    }
                 </div>
             </div>
         </div>

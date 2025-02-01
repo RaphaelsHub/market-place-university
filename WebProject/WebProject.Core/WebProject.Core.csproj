@@ -49,19 +49,19 @@
   <ItemGroup>
     <Compile Include="DTO\BlogDto.cs" />
     <Compile Include="DTO\CartDto.cs" />
-    <Compile Include="DTO\ErrorDto.cs" />
     <Compile Include="DTO\FeedBack\Error\ErrorResponseDto.cs" />
     <Compile Include="DTO\FeedBack\Standard\GeneralResponseDto.cs" />
     <Compile Include="DTO\FeedBack\Standard\MessageResponseDto.cs" />
     <Compile Include="DTO\FeedBack\Standard\Response.cs" />
-    <Compile Include="DTO\LoginDto.cs" />
+    <Compile Include="DTO\HelpFull\ErrorAnalyticDto.cs" />
     <Compile Include="DTO\OrderDto.cs" />
     <Compile Include="DTO\ProductDto.cs" />
-    <Compile Include="DTO\RegisterDto.cs" />
     <Compile Include="DTO\HelpFull\AmountOfPagesDto.cs" />
     <Compile Include="DTO\UserDto.cs" />
     <Compile Include="DTO\User\ContactUsDto.cs" />
     <Compile Include="DTO\User\EmailUserDto.cs" />
+    <Compile Include="DTO\User\SignInDto.cs" />
+    <Compile Include="DTO\User\SignUpDto.cs" />
     <Compile Include="Entities\AddressEf.cs" />
     <Compile Include="Entities\BlogEf.cs" />
     <Compile Include="Entities\CartEf.cs" />
