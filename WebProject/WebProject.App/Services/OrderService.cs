@@ -3,6 +3,7 @@ using System.Threading.Tasks;
 using WebProject.App.Interfaces;
 using WebProject.Core.DTO;
 using WebProject.Core.DTO.FeedBack.Standard;
+using WebProject.Core.DTO.User;
 
 namespace WebProject.App.Services
 {

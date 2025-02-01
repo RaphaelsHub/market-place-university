@@ -2,6 +2,7 @@ using System.Collections.Generic;
 using System.Threading.Tasks;
 using WebProject.Core.DTO;
 using WebProject.Core.DTO.FeedBack.Standard;
+using WebProject.Core.DTO.User;
 
 namespace WebProject.App.Interfaces
 {

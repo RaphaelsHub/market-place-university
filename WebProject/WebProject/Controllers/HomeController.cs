@@ -1,6 +1,6 @@
 ﻿using System.Web.Mvc;
 using WebProject.Core.DTO.FeedBack.Error;
-using WebProject.Core.DTO.FeedBack.Standart;
+using WebProject.Core.DTO.FeedBack.Standard;
 using WebProject.Core.DTO.User;
 using WebProject.Core.Enums.Operation;
 

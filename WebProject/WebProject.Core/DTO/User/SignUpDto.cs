@@ -5,7 +5,7 @@ namespace WebProject.Core.DTO.User
     public class SignUpDto
     {
         [Required(ErrorMessage = "Name is required")]
-        [StringLength(50, MinimumLength = 3, ErrorMessage = "Name must be between 3 and 50 characters")]
+        [StringLength(50, MinimumLength = 2, ErrorMessage = "Name must be between 3 and 50 characters")]
         [RegularExpression(@"^[a-zA-Z\s'-]+$", ErrorMessage = "Name must contain only letters, spaces, apostrophes, or hyphens")]
         public string Name { get; set; }
 

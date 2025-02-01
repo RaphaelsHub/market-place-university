@@ -1,8 +1,7 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
-using System.Web.Mvc;
+﻿using System.Web.Mvc;
+using WebProject.Core.DTO.FeedBack.Standard;
+using WebProject.Core.DTO.User;
+using WebProject.Core.Enums.Operation;
 
 namespace WebProject.Controllers
 {
@@ -11,8 +10,21 @@ namespace WebProject.Controllers
         [HttpGet]
         public ActionResult GetOrderForm() => View();
         
+
         [HttpPost]
-        public ActionResult SendOrderForm() =>RedirectToAction("Confirmation","Home");
+        public ActionResult SendOrderForm(OrderDto orderDto)
+        {
+            if (!ModelState.IsValid)
+            {
+                return View("GetOrderForm", orderDto); 
+            }
+
+            TempData["MessageResponse"] = new MessageResponseDto(1, "Order has been successfully sent! Soon we will get in touch with you!", RequestStatus.Success);
+    
+            return RedirectToAction("Confirmation","Home");
+        }
+
+
         
         [HttpGet]
         public ActionResult GetOrderInfo(int idOrder) => View();

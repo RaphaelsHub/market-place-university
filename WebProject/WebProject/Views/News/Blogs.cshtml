@@ -8,8 +8,8 @@
             <div class="col-12">
                 <div class="bread-inner">
                     <ul class="bread-list">
-                        <li><a href="index1.html">Home<i class="ti-arrow-right"></i></a></li>
-                        <li class="active"><a href="blog-single.html">Blog Grid</a></li>
+                        <li><a href="@Url.Action("Index","Home")">Home<i class="ti-arrow-right"></i></a></li>
+                        <li class="active"><a href="@Url.Action("Blog","News")">Our news</a></li>
                     </ul>
                 </div>
             </div>
@@ -22,16 +22,9 @@
         <div class="row">
             <div class="col-12">
                 <div class="row">
-                    <div class="col-lg-4 col-md-6 col-12">
-                        <div class="shop-single-blog">
-                            <img src="https://via.placeholder.com/370x300" alt="#">
-                            <div class="content">
-                                <p class="date">22 July , 2020. Monday</p>
-                                <a href="#" class="title">Sed adipiscing ornare.</a>
-                                <a href="#" class="more-btn">Continue Reading</a>
-                            </div>
-                        </div>
-                    </div>
+                    
+                    @Html.Partial("~/Views/Partials/SingleBlogCard.cshtml")
+
                     <div class="col-12">
                         <div class="pagination center">
                             <ul class="pagination-list">

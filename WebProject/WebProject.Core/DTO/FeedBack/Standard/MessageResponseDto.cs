@@ -1,6 +1,6 @@
 using WebProject.Core.Enums.Operation;
 
-namespace WebProject.Core.DTO.FeedBack.Standart
+namespace WebProject.Core.DTO.FeedBack.Standard
 {
     public class MessageResponseDto
     {

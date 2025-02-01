@@ -1,4 +1,5 @@
 ﻿using System.Web.Mvc;
+using WebProject.Core.DTO.User;
 
 namespace WebProject.Controllers
 {
@@ -20,7 +21,10 @@ namespace WebProject.Controllers
         public ActionResult RemoveItem(int id) => RedirectToAction("Index");
 
         [HttpPost]
-        public ActionResult PromoCode(string code) => RedirectToAction("Index");
+        public ActionResult ApplyPromoCode(PromoCodeDto promoCodeDto)
+        {
+            return RedirectToAction("Index");
+        }
         
         [HttpPost]
         [Authorize]

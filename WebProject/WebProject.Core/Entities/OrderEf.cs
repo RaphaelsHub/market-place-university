@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 using WebProject.Core.Enums;
+using WebProject.Core.Enums.Order;
 
 namespace WebProject.Core.Entities
 {

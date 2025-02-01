@@ -10,12 +10,6 @@ namespace WebProject.Controllers
         [HttpGet]
         public ActionResult SignIn() => View();
         
-        [HttpGet]
-        public ActionResult SignUp() => View();
-     
-        [HttpGet]
-        public ActionResult SignOut() => RedirectToAction("Index", "Home");
-
         [HttpPost]
         public ActionResult SignIn(SignInDto loginDto)
         {
@@ -24,6 +18,11 @@ namespace WebProject.Controllers
             return RedirectToAction("Index", "Home");
         }
         
+        
+        /************** Sign Up **************/
+        [HttpGet]
+        public ActionResult SignUp() => View();
+     
         [HttpPost]
         public ActionResult SignUp(SignUpDto registerDto)
         {
@@ -31,6 +30,15 @@ namespace WebProject.Controllers
                 return View(registerDto);
             return RedirectToAction("Index", "Home");
         }
+        
+        
+        /************** Sign Out **************/
+        [HttpGet]
+        public ActionResult SignOut() => RedirectToAction("Index", "Home");
+
+
+        
+
         
         
         // User Admin Actions
