@@ -123,6 +123,7 @@
     <Content Include="Asset\fonts\fontawesome-webfont.svg" />
     <Content Include="Asset\fonts\themify.svg" />
     <Content Include="Asset\images\100x100\PS (1).jpg" />
+    <Content Include="Asset\images\1160x560\26-iPhone-13.jpg" />
     <Content Include="Asset\images\1160x560\IP.jpg" />
     <Content Include="Asset\images\1160x560\SAM.jpg" />
     <Content Include="Asset\images\370x300\P1.jpg" />

@@ -9,9 +9,6 @@ namespace WebProject.Controllers
         public ActionResult Product() => View();
         
         [HttpGet]
-        public ActionResult Product(object obj) => View();
-        
-        [HttpGet]
         //int page = 0
         public ActionResult Products() => View();
         
