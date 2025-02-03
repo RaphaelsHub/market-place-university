@@ -1,3 +1,5 @@
+using WebProject.Core.Entities.Product;
+
 namespace WebProject.Core.Entities.User
 {
     public class OrderItemEf

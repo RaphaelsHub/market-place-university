@@ -1,5 +1,6 @@
 using System.Data.Entity;
 using WebProject.Core.Entities;
+using WebProject.Core.Entities.Blog;
 using WebProject.Core.Entities.Product;
 using WebProject.Core.Entities.User;
 
@@ -25,6 +26,8 @@ namespace WebProject.Dal
         public DbSet<CategoryEf> Categories { get; set; }
         public DbSet<FilterEf> Filters { get; set; }
         public DbSet<FilterValueEf> FilterValues { get; set; }
+        public DbSet<BlogEf> Blogs { get; set; }
+        public DbSet<MessageEf> Messages { get; set; }
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
@@ -153,6 +156,30 @@ namespace WebProject.Dal
             modelBuilder.Entity<FilterValueEf>().HasRequired(x => x.Filter).WithMany(x => x.FilterValues)
                 .HasForeignKey(x => x.FilterId);
 
+            #endregion
+            
+            #region Configuring the BlogEf entity.
+            
+            modelBuilder.Entity<BlogEf>().ToTable("Blogs");
+            
+            modelBuilder.Entity<BlogEf>().HasKey(x => x.BlogId);
+            
+            modelBuilder.Entity<BlogEf>().HasMany(x => x.Comments).WithRequired(x => x.Blog).HasForeignKey(x => x.BlogId);
+            
+            #endregion
+            
+            #region Configuring the MessageEf entity.
+            
+            modelBuilder.Entity<MessageEf>().ToTable("Messages");
+            
+            modelBuilder.Entity<MessageEf>().HasKey(x => x.MessageId);
+            
+            modelBuilder.Entity<MessageEf>().HasRequired(x => x.Blog).WithMany(x => x.Comments).HasForeignKey(x => x.BlogId);
+            
+            modelBuilder.Entity<MessageEf>().HasRequired(x => x.Sender).WithMany().HasForeignKey(x => x.UserSenderId);
+            
+            modelBuilder.Entity<MessageEf>().HasOptional(x => x.UserReceiver).WithMany().HasForeignKey(x => x.UserReceiverId);
+            
             #endregion
         }
     }

@@ -63,8 +63,8 @@
     <Compile Include="DTO\User\SignInDto.cs" />
     <Compile Include="DTO\User\SignUpDto.cs" />
     <Compile Include="DTO\User\UserDto.cs" />
-    <Compile Include="Entities\BlogEf.cs" />
-    <Compile Include="Entities\MessageEf.cs" />
+    <Compile Include="Entities\Blog\BlogEf.cs" />
+    <Compile Include="Entities\Blog\MessageEf.cs" />
     <Compile Include="Entities\Product\CategoryEf.cs" />
     <Compile Include="Entities\Product\FilterEf.cs" />
     <Compile Include="Entities\Product\FilterValueEf.cs" />

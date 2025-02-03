@@ -1,4 +1,4 @@
-namespace WebProject.Core.Enums
+namespace WebProject.Core.Enums.Message
 {
     public enum MessageStatus
     {
