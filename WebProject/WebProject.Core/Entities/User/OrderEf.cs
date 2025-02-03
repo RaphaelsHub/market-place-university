@@ -15,6 +15,7 @@ namespace WebProject.Core.Entities.User
         public DateTime DateOrdered { get; set; } = DateTime.Now;
         public DateTime DateDelivered => Status == OrderStatus.Delivered ? DateTime.Now : new DateTime();
         public OrderStatus Status { get; set; } = OrderStatus.Pending;
+        public PaymentType PaymentMethod { get; set; } = PaymentType.None;
         
         public uint UserId { get; set; }
         public UserEf User { get; set; }
