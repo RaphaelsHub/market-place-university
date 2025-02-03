@@ -56,5 +56,11 @@
   <ItemGroup>
     <PackageReference Include="EntityFramework" Version="6.5.1" />
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\WebProject.Core\WebProject.Core.csproj">
+      <Project>{eec6d438-115e-4f49-9e5b-bff8f2dbea79}</Project>
+      <Name>WebProject.Core</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
