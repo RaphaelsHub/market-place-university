@@ -42,11 +42,22 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Configurations\AddressEfConfiguration.cs" />
+    <Compile Include="Configurations\BlogEfConfiguration.cs" />
+    <Compile Include="Configurations\CartItemEfConfiguration.cs" />
+    <Compile Include="Configurations\CategoryEfConfiguration.cs" />
+    <Compile Include="Configurations\FilterEfConfiguration.cs" />
+    <Compile Include="Configurations\FilterValueEfConfiguration.cs" />
+    <Compile Include="Configurations\MessageEfConfiguration.cs" />
+    <Compile Include="Configurations\OrderEfConfiguration.cs" />
+    <Compile Include="Configurations\OrderItemEfConfiguration.cs" />
+    <Compile Include="Configurations\ProductEfConfiguration.cs" />
+    <Compile Include="Configurations\RateItemEfConfiguration.cs" />
+    <Compile Include="Configurations\UserEfConfiguration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="StoreContext.cs" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Configurations\" />
     <Folder Include="Migrations\" />
     <Folder Include="Repositories\" />
   </ItemGroup>
