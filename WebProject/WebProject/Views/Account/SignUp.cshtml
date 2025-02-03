@@ -12,7 +12,7 @@
                 <div class="bread-inner">
                     <ul class="bread-list">
                         <li><a href="@Url.Action("Index","Home")">Home<i class="ti-arrow-right"></i></a></li>
-                        <li class="active"><a href="@Url.Action("SignUp","Account")">Register</a></li>
+                        <li class="active"><a href="@Url.Action("SignUp","Account")">SignUp</a></li>
                     </ul>
                 </div>
             </div>
@@ -25,8 +25,8 @@
         <div class="row">
             <div class="col-lg-6 offset-lg-3 col-12">
                 <div class="login-form">
-                    <h2>Register</h2>
-                    <p>Please register in order to check out more quickly</p>
+                    <h2>Sign Up</h2>
+                    <p>Please sign up in order to check out more quickly</p>
                     @using (Html.BeginForm("SignUp", "Account", FormMethod.Post, new { @class = "form" }))
                     {
                         <div class="row">

@@ -6,7 +6,7 @@ namespace WebProject.Core.DTO.User
     {
         [Required(ErrorMessage = "Email is required")]
         [EmailAddress(ErrorMessage = "Invalid Email Address")]
-        [StringLength(320, MinimumLength = 1, ErrorMessage = "Email must be less than 320 characters")]
+        [StringLength(255, MinimumLength = 1, ErrorMessage = "Email must be less than 320 characters")]
         public string Email { get; set; }
         
         [Required(ErrorMessage = "Password is required")]
