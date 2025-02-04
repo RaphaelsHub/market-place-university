@@ -1,7 +1,7 @@
 # University Project
 
 ## Overview
-This project is developed using **C# with ASP.NET 4.7**, **Entity Framework 6.5.1**, and **MSSQL**. The architectural design follows the **Clean Architecture (Onion Architecture)** principles.
+This project is developed using **C# with ASP.NET 4.7 using Razor on Front-End(Template)**, **Entity Framework 6.5.1**, and **MSSQL**. The architectural design follows the **Clean Architecture (Onion Architecture)** principles.
 
 ## Architecture Overview
 - **Presentation Layer**: Handles user interactions.
