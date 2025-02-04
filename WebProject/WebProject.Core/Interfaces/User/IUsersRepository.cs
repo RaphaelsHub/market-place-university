@@ -2,7 +2,7 @@ using WebProject.Core.Entities.User;
 
 namespace WebProject.Core.Interfaces.User
 {
-    public interface IUsersRepository : IGenericRepository<UserEf>
+    public interface IUsersRepository<T> : IGenericRepository<UserEf>
     {
         
     }
