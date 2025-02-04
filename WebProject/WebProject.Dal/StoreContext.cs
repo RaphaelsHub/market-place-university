@@ -1,5 +1,4 @@
 using System.Data.Entity;
-using WebProject.Core.Entities;
 using WebProject.Core.Entities.Blog;
 using WebProject.Core.Entities.Product;
 using WebProject.Core.Entities.User;
@@ -29,6 +28,7 @@ namespace WebProject.Dal
         public DbSet<FilterValueEf> FilterValues { get; set; }
         public DbSet<BlogEf> Blogs { get; set; }
         public DbSet<MessageEf> Messages { get; set; }
+        public DbSet<ContactUsEf> ContactUs { get; set; }
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
@@ -44,6 +44,7 @@ namespace WebProject.Dal
             modelBuilder.Configurations.Add(new RateItemEfConfiguration());
             modelBuilder.Configurations.Add(new BlogEfConfiguration());
             modelBuilder.Configurations.Add(new MessageEfConfiguration());
+            modelBuilder.Configurations.Add(new ContactUsEfConfiguration());
         }
     }
 }

@@ -72,6 +72,7 @@
     <Compile Include="Entities\Product\RateItemEf.cs" />
     <Compile Include="Entities\User\AddressEf.cs" />
     <Compile Include="Entities\User\CartItemEf.cs" />
+    <Compile Include="Entities\User\ContactUsEf.cs" />
     <Compile Include="Entities\User\OrderEf.cs" />
     <Compile Include="Entities\User\OrderItemEf.cs" />
     <Compile Include="Entities\User\UserEf.cs" />

@@ -46,6 +46,7 @@
     <Compile Include="Configurations\BlogEfConfiguration.cs" />
     <Compile Include="Configurations\CartItemEfConfiguration.cs" />
     <Compile Include="Configurations\CategoryEfConfiguration.cs" />
+    <Compile Include="Configurations\ContactUsEfConfiguration.cs" />
     <Compile Include="Configurations\FilterEfConfiguration.cs" />
     <Compile Include="Configurations\FilterValueEfConfiguration.cs" />
     <Compile Include="Configurations\MessageEfConfiguration.cs" />
