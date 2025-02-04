@@ -88,14 +88,20 @@
     <Compile Include="Enums\SortTypes\SortTypes.cs" />
     <Compile Include="Enums\User\UserStatus.cs" />
     <Compile Include="Enums\User\UserType.cs" />
-    <Compile Include="Interfaces\ICartRepository.cs" />
-    <Compile Include="Interfaces\ICategoryRepository.cs" />
-    <Compile Include="Interfaces\IMessagesRepository.cs" />
-    <Compile Include="Interfaces\IOrderRepository.cs" />
-    <Compile Include="Interfaces\IPostRepository.cs" />
-    <Compile Include="Interfaces\IProductRepository.cs" />
-    <Compile Include="Interfaces\IRattingRepository.cs" />
-    <Compile Include="Interfaces\IUserRepository.cs" />
+    <Compile Include="Interfaces\Blog\IMessagesRepository.cs" />
+    <Compile Include="Interfaces\Blog\IBlogsRepository.cs" />
+    <Compile Include="Interfaces\IGenericRepository.cs" />
+    <Compile Include="Interfaces\Product\ICategoriesRepository.cs" />
+    <Compile Include="Interfaces\Product\IFiltersRepository.cs" />
+    <Compile Include="Interfaces\Product\IFilterValuesRepository.cs" />
+    <Compile Include="Interfaces\Product\IProductsRepository.cs" />
+    <Compile Include="Interfaces\Product\IRateItemsRepository.cs" />
+    <Compile Include="Interfaces\User\IAddressesRepository.cs" />
+    <Compile Include="Interfaces\User\ICartItemsRepository.cs" />
+    <Compile Include="Interfaces\User\IContactUsRepository.cs" />
+    <Compile Include="Interfaces\User\IOrderItemsRepository.cs" />
+    <Compile Include="Interfaces\User\IOrdersRepository.cs" />
+    <Compile Include="Interfaces\User\IUsersRepository.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
