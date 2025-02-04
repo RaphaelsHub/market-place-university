@@ -26,7 +26,7 @@ This project is developed using **C# with ASP.NET 4.7**, **Entity Framework 6.5.
 4. **Modify the connection string**:
     ```xml
     <connectionStrings>
-        <add name="DefaultConnection" connectionString="Data Source=(localdb)\MSSQLLocalDB;AttachDbFilename=|DataDirectory|\YourDatabaseFile.mdf;Integrated Security=True;Connect Timeout=30"/>
+        <add name="DefaultConnection" connectionString="Data Source=(localdb)\MSSQLLocalDB;AttachDbFilename=|DataDirectory|\Base.mdf;Integrated Security=True;Connect Timeout=30"/>
     </connectionStrings>
     ```
 5. **Build and run the project**:
