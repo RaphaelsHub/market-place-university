@@ -1,0 +1,84 @@
+{
+  "format": 1,
+  "restore": {
+    "C:\\Users\\speke\\RiderProjects\\market-place-university\\WebProject\\WebProject.Dal\\WebProject.Dal.csproj": {}
+  },
+  "projects": {
+    "C:\\Users\\speke\\RiderProjects\\market-place-university\\WebProject\\WebProject.Core\\WebProject.Core.csproj": {
+      "restore": {
+        "projectUniqueName": "C:\\Users\\speke\\RiderProjects\\market-place-university\\WebProject\\WebProject.Core\\WebProject.Core.csproj",
+        "projectName": "WebProject.Core",
+        "projectPath": "C:\\Users\\speke\\RiderProjects\\market-place-university\\WebProject\\WebProject.Core\\WebProject.Core.csproj",
+        "UsingMicrosoftNETSdk": false,
+        "frameworks": {
+          "net472": {
+            "projectReferences": {}
+          }
+        }
+      },
+      "frameworks": {
+        "net472": {}
+      }
+    },
+    "C:\\Users\\speke\\RiderProjects\\market-place-university\\WebProject\\WebProject.Dal\\WebProject.Dal.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\Users\\speke\\RiderProjects\\market-place-university\\WebProject\\WebProject.Dal\\WebProject.Dal.csproj",
+        "projectName": "WebProject.Dal",
+        "projectPath": "C:\\Users\\speke\\RiderProjects\\market-place-university\\WebProject\\WebProject.Dal\\WebProject.Dal.csproj",
+        "packagesPath": "C:\\Users\\speke\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\speke\\RiderProjects\\market-place-university\\WebProject\\WebProject.Dal\\obj\\",
+        "projectStyle": "PackageReference",
+        "skipContentFileWrite": true,
+        "UsingMicrosoftNETSdk": false,
+        "configFilePaths": [
+          "C:\\Users\\speke\\AppData\\Roaming\\NuGet\\NuGet.Config"
+        ],
+        "originalTargetFrameworks": [
+          "net472"
+        ],
+        "sources": {
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net472": {
+            "projectReferences": {
+              "C:\\Users\\speke\\RiderProjects\\market-place-university\\WebProject\\WebProject.Core\\WebProject.Core.csproj": {
+                "projectPath": "C:\\Users\\speke\\RiderProjects\\market-place-university\\WebProject\\WebProject.Core\\WebProject.Core.csproj"
+              }
+            }
+          }
+        },
+        "restoreAuditProperties": {
+          "enableAudit": "true",
+          "auditLevel": "low",
+          "auditMode": "all"
+        }
+      },
+      "frameworks": {
+        "net472": {
+          "dependencies": {
+            "EntityFramework": {
+              "target": "Package",
+              "version": "[6.5.1, )"
+            }
+          }
+        }
+      },
+      "runtimes": {
+        "win": {
+          "#import": []
+        },
+        "win-arm64": {
+          "#import": []
+        },
+        "win-x64": {
+          "#import": []
+        },
+        "win-x86": {
+          "#import": []
+        }
+      }
+    }
+  }
+}
