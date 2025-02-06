@@ -33,6 +33,7 @@
   <ItemGroup>
     <Reference Include="System" />
     <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Configuration" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
@@ -55,6 +56,11 @@
     <Compile Include="Configurations\ProductEfConfiguration.cs" />
     <Compile Include="Configurations\RateItemEfConfiguration.cs" />
     <Compile Include="Configurations\UserEfConfiguration.cs" />
+    <Compile Include="Migrations\202502060913091_init.cs" />
+    <Compile Include="Migrations\202502060913091_init.Designer.cs">
+      <DependentUpon>202502060913091_init.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Repositories\Blog\BlogsRepository.cs" />
     <Compile Include="Repositories\Blog\MessagesRepository.cs" />
@@ -72,9 +78,6 @@
     <Compile Include="StoreContext.cs" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Migrations\" />
-  </ItemGroup>
-  <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
@@ -86,6 +89,11 @@
       <Project>{eec6d438-115e-4f49-9e5b-bff8f2dbea79}</Project>
       <Name>WebProject.Core</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Migrations\202502060913091_init.resx">
+      <DependentUpon>202502060913091_init.cs</DependentUpon>
+    </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

@@ -12,11 +12,11 @@ namespace WebProject.Dal.Configurations
             ToTable("Users");
             HasKey(x => x.UserId);
 
-            HasMany(x => x.Addresses).WithRequired(x => x.User);
+            HasMany(x => x.Addresses).WithRequired(x => x.User).HasForeignKey(x=>x.UserId).WillCascadeOnDelete(false);
 
-            HasMany(x => x.Orders).WithRequired(x => x.User);
+            HasMany(x => x.Orders).WithRequired(x => x.User).HasForeignKey(x=>x.UserId).WillCascadeOnDelete(false);
 
-            HasMany(x => x.CartItems).WithRequired(x => x.User);
+            HasMany(x => x.CartItems).WithRequired(x => x.User).HasForeignKey(x=>x.UserId);
 
             #endregion
         }

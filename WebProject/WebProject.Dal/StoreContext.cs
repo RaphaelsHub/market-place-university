@@ -1,4 +1,5 @@
 using System;
+using System.Configuration;
 using System.Data.Entity;
 using System.Data.SqlClient;
 using WebProject.Core.Entities.Blog;
@@ -12,21 +13,38 @@ namespace WebProject.Dal
     {
         public StoreContext() : base("DefaultConnection")
         {
-            if(!TestConnection("DefaultConnection"))
-                CreateDatabase("MasterConnection", "Store");
+            var connectionString = Database.Connection.ConnectionString; // При насследование dbcontext, вне компиляции ищет строку подключения в конфигурации
+            if(string.IsNullOrEmpty(connectionString))
+                throw new Exception("Connection string is empty");
             
-            // if(!Database.Exists())
-            //     Database.SetInitializer(new CreateDatabaseIfNotExists<StoreContext>());
-        }
-        public StoreContext(string connectionString) : base(connectionString)
-        {
+            var masterConnectionString = ConfigurationManager.ConnectionStrings["MasterConnectionString"]?.ConnectionString;
+            if (string.IsNullOrEmpty(masterConnectionString))
+                throw new Exception("Master connection string is empty");
+            
+            
+            
+            if(!TestConnection(connectionString))
+                CreateDatabase(masterConnectionString, "Store");
+            
         }
 
+
+        public StoreContext(string connectionStringOrName) : base(connectionStringOrName) 
+        {
+            var connectionString = Database.Connection.ConnectionString; // При насследование dbcontext, вне компиляции ищет строку подключения в конфигурации
+            
+            if(string.IsNullOrEmpty(connectionString))
+                throw new Exception("Connection string is empty");
+            
+            if(!TestConnection(connectionString))
+                CreateDatabase("MasterConnectionString", "Store");
+        }
+        
         private void CreateDatabase(string masterConnectionString, string databaseName)
         {
             try
             {
-                using (var connection =new SqlConnection(masterConnectionString))
+                using (var connection = new SqlConnection(masterConnectionString))
                 {
                     connection.Open();
                     
@@ -42,7 +60,8 @@ namespace WebProject.Dal
                 Console.WriteLine("Error: " + e.Message);
             }
         }
-
+        
+        
         private bool TestConnection(string defaultConnection)
         {
             using (var connection = new SqlConnection(defaultConnection))
@@ -54,7 +73,7 @@ namespace WebProject.Dal
                 }
                 catch (Exception e)
                 {
-                    Console.WriteLine("Error: " + e.Message);
+                    Console.WriteLine(@"Error: " + e.Message);
                     return false;
                 }
             }
@@ -73,8 +92,6 @@ namespace WebProject.Dal
         public DbSet<BlogEf> Blogs { get; set; }
         public DbSet<MessageEf> Messages { get; set; }
         public DbSet<ContactUsEf> ContactUs { get; set; }
-        
-        
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {

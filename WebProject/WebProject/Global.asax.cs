@@ -4,6 +4,7 @@ using System.Web;
 using System.Web.Mvc;
 using System.Web.Routing;
 using WebProject.Controllers;
+using WebProject.Dal;
 
 namespace WebProject
 {
@@ -14,6 +15,8 @@ namespace WebProject
             // Code that runs on application startup
            AreaRegistration.RegisterAllAreas();
            RouteConfig.RegisterRoutes(RouteTable.Routes);
+           Database.SetInitializer(new CreateDatabaseIfNotExists<StoreContext>());
+
            //BundleConfig.RegisterBundles(BundleTable.Bundles);// Bundle config registration ﻿using System.Web.Optimization - need to install
         }
         
