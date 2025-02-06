@@ -9,7 +9,7 @@ namespace WebProject.Core.Entities.User
 {
     public class UserEf
     {
-        public uint UserId { get; set; } 
+        public int UserId { get; set; } 
         public string Name { get; set; } = "";
         public string Email { get; set; } = "";
         public string PasswordHash { get; set; } = "";

@@ -8,11 +8,11 @@ namespace WebProject.Core.Entities.User
         public uint Quantity { get; set; }
         
         // Foreign key for the product.
-        public uint ProductId { get; set; }
+        public int ProductId { get; set; }
         public ProductEf Product { get; set; }
         
         // Foreign key for the user.
-        public uint UserId { get; set; }
+        public int UserId { get; set; }
         public UserEf User { get; set; }
     }
 }

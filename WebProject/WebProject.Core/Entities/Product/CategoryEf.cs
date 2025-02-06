@@ -4,8 +4,8 @@ namespace WebProject.Core.Entities.Product
 {
     public class CategoryEf
     {
-        public uint ParentCategoryId { get; set; }
-        public uint? ChildCategoryId { get; set; }
+        public int ParentCategoryId { get; set; }
+        public int? ChildCategoryId { get; set; }
 
         public string Name { get; set; }
 

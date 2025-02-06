@@ -6,7 +6,7 @@ namespace WebProject.Core.Entities.Product
 {
     public class ProductEf
     {
-        public uint ProductId { get; set; }
+        public int ProductId { get; set; }
         public uint StartAmount { get; set; }
         public uint CurrentAmount { get; set; }
         public uint Views { get; set; }
@@ -25,7 +25,7 @@ namespace WebProject.Core.Entities.Product
         public ProductVisibilityStatus ProductVisibilityStatus { get; set; } = ProductVisibilityStatus.IsHidden;
         public byte[][] Image { get; set; }
 
-        public uint CategoryId { get; set; }
+        public int CategoryId { get; set; }
         public CategoryEf Category { get; set; }
         
         public List<RateItemEf> RateItems { get; set; } = new List<RateItemEf>();

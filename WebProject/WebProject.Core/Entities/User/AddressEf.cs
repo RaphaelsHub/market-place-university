@@ -2,7 +2,7 @@ namespace WebProject.Core.Entities.User
 {
     public class AddressEf
     {
-        public uint AddressId { get; set; }
+        public int AddressId { get; set; }
         public string FirstName { get; set; } = ""; 
         public string LastName { get; set; } = "";
         public string Email { get; set; } = "";
@@ -13,7 +13,7 @@ namespace WebProject.Core.Entities.User
         public string Address2 { get; set; } = "";
         public string PostalCode { get; set; } = "";
 
-        public uint UserId { get; set; }
+        public int UserId { get; set; }
         public UserEf User { get; set; }
     }
 }
