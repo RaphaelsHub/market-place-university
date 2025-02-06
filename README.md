@@ -1,51 +1,36 @@
-University Project: ASP.NET 4.8 Online Marketplace
-This project is an online marketplace for electronics, developed as part of a university course. It demonstrates the use of various web development technologies and practices.
+# University Project
 
-Technologies Used
-ASP.NET 4.8: The main framework for building the web application.
+## Overview
+This project is developed using **C# with ASP.NET 4.7 using Razor on Front-End(Template)**, **Entity Framework 6.5.1**, and **MSSQL**. The architectural design follows the **Clean Architecture (Onion Architecture)** principles.
 
-Entity Framework: Used for object-relational mapping and data access.
+## Architecture Overview
+- **Presentation Layer**: Handles user interactions.
+- **Business Logic Layer**: Manages all processing and logic.
+- **Domain Layer**: Encompasses all business rules and entities.
+- **DAL (Data Access Layer)**: Provides access to the database and configurations.
 
-MS SQL Server: The database system, with an MDF file included in the project for easy setup.
-
-HTML, CSS: For structuring and styling the web pages.
-
-JavaScript, jQuery: For client-side scripting and interactivity.
-
-Architecture
-This project uses a monolithic architecture with the following layers:
-
-Application Layer: Manages application logic and user interactions.
-
-Business Layer: Implements business logic.
-
-Domain Layer: Manages domain entities and data access.
-
-API Endpoints
-The application is built around the following API endpoints:
-
-User API
-
-Guest: Basic access for viewing products.
-
-Admin: Administrative functions for managing users and products.
-
-User: Registered user functionalities like adding to cart, checking out.
-
-Product API
-
-CRUD operations (Create, Read, Update, Delete) for product management.
-
-Setup Instructions
-Clone the repository.
-
-Open the solution file in Visual Studio.
-
-Restore NuGet packages.
-
-Ensure the MSSQL Server is running and the MDF file is attached.
-
-Build and run the project.
-
-Contributions
-Feel free to fork this repository and make contributions via pull requests.
+## Setup and Installation
+1. **Clone the repository**:
+    ```sh
+    git clone [your-repo-url]
+    ```
+2. **Navigate to the project directory** and **restore NuGet Packages**:
+    ```sh
+    nuget restore
+    ```
+    Install all dependencies, especially for Entity Framework:
+    ```sh
+    Install-Package EntityFramework -Version 6.5.1
+    ```
+3. **Install SQL Server Express LocalDB** from the [official website](https://docs.microsoft.com/en-us/sql/database-engine/configure-windows/sql-server-express-localdb).
+4. **Modify the connection string**:
+    ```xml
+    <connectionStrings>
+        <add name="DefaultConnection" connectionString="Data Source=(localdb)\MSSQLLocalDB;AttachDbFilename=|DataDirectory|\Base.mdf;Integrated Security=True;Connect Timeout=30"/>
+    </connectionStrings>
+    ```
+5. **Build and run the project**:
+    ```sh
+    msbuild
+    dotnet run
+    ```
