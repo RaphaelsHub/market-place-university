@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Data.Entity;
 using System.Web;
 using System.Web.Mvc;
 using System.Web.Routing;
@@ -9,11 +10,11 @@ namespace WebProject
     public class Global : HttpApplication
     {
         void Application_Start(object sender, EventArgs e)
-        {
+        { 
             // Code that runs on application startup
            AreaRegistration.RegisterAllAreas();
            RouteConfig.RegisterRoutes(RouteTable.Routes);
-            //BundleConfig.RegisterBundles(BundleTable.Bundles);// Bundle config registration ﻿using System.Web.Optimization - need to install
+           //BundleConfig.RegisterBundles(BundleTable.Bundles);// Bundle config registration ﻿using System.Web.Optimization - need to install
         }
         
         protected void Application_Error(object sender, EventArgs e)
