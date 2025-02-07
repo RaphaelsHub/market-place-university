@@ -20,12 +20,9 @@ namespace WebProject.Dal
             var masterConnectionString = ConfigurationManager.ConnectionStrings["MasterConnectionString"]?.ConnectionString;
             if (string.IsNullOrEmpty(masterConnectionString))
                 throw new Exception("Master connection string is empty");
-            
-            
-            
+
             if(!TestConnection(connectionString))
                 CreateDatabase(masterConnectionString, "Store");
-            
         }
 
 

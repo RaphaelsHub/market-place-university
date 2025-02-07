@@ -1,6 +1,6 @@
 ﻿using System.Web.Mvc;
+using WebProject.App.Services;
 using WebProject.Core.DTO.FeedBack.ErrorSuccess;
-using WebProject.Core.DTO.FeedBack.Standard;
 using WebProject.Core.DTO.User;
 using WebProject.Core.Enums.Operation;
 
@@ -12,14 +12,26 @@ namespace WebProject.Controllers
         [HttpGet]
         public ActionResult Index() => View();
         
-        /************** AboutUs **************/
+        
+        /// <summary>
+        ///  AboutUs page that contains information about the company.
+        /// </summary>
+        /// <returns> Returns a view. </returns>
         [HttpGet]
         public ActionResult AboutUs() => View();
         
-        /************* ContactUs *************/
+        /// <summary>
+        ///  ContactUs page that contains a form to send a message to the company.
+        /// </summary>
+        /// <returns> Returns a view. </returns>
         [HttpGet]
         public ActionResult ContactUs() => View();
 
+        /// <summary>
+        ///  ContactUs page that contains a form to send a message to the company.
+        /// </summary>
+        /// <param name="contactUsDto"> Gets a model of contact data. </param>
+        /// <returns> Returns a view if the model isn't valid and redirects to confirmation action, if is valid. </returns>
         [HttpPost]
         public ActionResult ContactUs(ContactUsDto contactUsDto)
         {
@@ -33,48 +45,33 @@ namespace WebProject.Controllers
             
             return RedirectToAction("Confirmation");
         }
-
         
-        /************** Thanks **************/
+        /// <summary>
+        ///  Confirmation page that contains a message of success or error after sending a message or any other operation.
+        /// </summary>
+        /// <returns> Returns this message to the view. </returns>
         [HttpGet]
         public ActionResult Confirmation()
         {
-            var messageResponseDto = TempData["MessageResponse"] as MessageResponseDto;
-            
-            if (messageResponseDto == null)
-                View(new MessageResponseDto());
-            
+            var messageResponseDto = TempData["MessageResponse"] as MessageResponseDto 
+                                     ?? new MessageResponseDto();
+
             return View(messageResponseDto);
         }
         
-        
-        /************** GetDiscount **************/
-        [HttpPost]
-        public ActionResult GetDiscount(EmailUserDto emailUserDto)
-        {
-            if (!ModelState.IsValid) 
-                return RedirectToAction(GetLastUrl());
-            
-            TempData["MessageResponse"] = new MessageResponseDto(
-                1,
-                "Discount code sent to your email successfully !",
-                RequestStatus.Success);
-            
-            return RedirectToAction("Confirmation");
-        }
-        
-        
-        /************** Error **************/
+        /// <summary>
+        /// The error page that will be shown when an error occurs.
+        /// </summary>
+        /// <param name="errorCode">It gets the errorCode, initializes an instance of ErrorResponseDto where the error message is already initialized.</param>
+        /// <returns>It returns a unified view that contains an error and an error message.</returns>
         [HttpGet]
-        public ActionResult Error(int? statusCode)
+        public ActionResult Error(int errorCode)
         {
-            var code = statusCode ?? 500;
-
-            var errorMessageResponseDto = new ErrorResponseDto(code);
-
+            var errorResponseDto = new ErrorResponseDto(errorCode);
+            
             ViewBag.LastUrl = GetLastUrl();
 
-            return View(errorMessageResponseDto);
+            return View(errorResponseDto);
         }
     }
 }

@@ -53,14 +53,18 @@ namespace WebProject.Controllers
             try
             {
                 var response = _authService.Register(registerDto);
+
+                if (response.Result.Data == false)
+                    return View(registerDto);
+                
+                return RedirectToAction("Index", "Home");
             }
             catch (Exception e)
             {
+                
                 ModelState.AddModelError("Error", e.Message);
                 return View(registerDto);
             }
-            
-            return RedirectToAction("Index", "Home");
         }
         
         

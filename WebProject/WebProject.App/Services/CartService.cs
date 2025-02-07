@@ -45,7 +45,7 @@ namespace WebProject.App.Services
         {
             throw new System.NotImplementedException();
         }
-
+        
         public Task<ResponseType1<bool>> PromoCode(string code)
         {
             throw new System.NotImplementedException();
