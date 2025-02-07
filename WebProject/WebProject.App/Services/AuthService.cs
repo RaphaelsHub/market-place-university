@@ -1,17 +1,25 @@
 using System.Collections.Generic;
 using System.Threading.Tasks;
 using WebProject.App.Interfaces;
-using WebProject.Core.DTO;
 using WebProject.Core.DTO.FeedBack.Standard;
 using WebProject.Core.DTO.User;
+using WebProject.Core.Entities.User;
+using WebProject.Core.Interfaces.User;
 
 namespace WebProject.App.Services
 {
     public class AuthService : IAuthService
     {
+        private readonly IUsersRepository<UserEf> _usersRepository;
+        
+        public AuthService (IUsersRepository<UserEf> usersRepository)
+        {
+            _usersRepository = usersRepository;
+        }
+        
         public Task<ResponseType1<bool>> Register(SignUpDto registrationDto)
         {
-            throw new System.NotImplementedException();
+            return Task.FromResult(new ResponseType1<bool>());
         }
 
         public Task<ResponseType1<bool>> SendEmailConfirmation(string email)

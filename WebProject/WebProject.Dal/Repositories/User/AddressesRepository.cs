@@ -7,6 +7,13 @@ namespace WebProject.Dal.Repositories.User
 {
     public class AddressesRepository : IAddressesRepository<AddressEf>
     {
+        private readonly StoreContext _context;
+
+        public AddressesRepository(StoreContext context)
+        {
+            _context = context;
+        }
+        
         public Task<IEnumerable<AddressEf>> GetAllAsync()
         {
             throw new System.NotImplementedException();

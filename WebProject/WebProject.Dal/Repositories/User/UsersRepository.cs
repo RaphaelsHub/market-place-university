@@ -7,6 +7,13 @@ namespace WebProject.Dal.Repositories.User
 {
     public class UsersRepository : IUsersRepository<UserEf>
     {
+        private readonly StoreContext _context;
+        
+        public UsersRepository(StoreContext context)
+        {
+            _context = context;
+        }
+        
         public Task<IEnumerable<UserEf>> GetAllAsync()
         {
             throw new System.NotImplementedException();

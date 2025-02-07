@@ -1,9 +1,17 @@
 using WebProject.App.Interfaces;
+using WebProject.Core.Interfaces.Admin;
 
 namespace WebProject.App.Services
 {
     public class AdminService  : IAdminService
     {
+        private readonly IWebSiteControl _adminRepository;
+        
+        public AdminService(IWebSiteControl adminRepository)
+        {
+            _adminRepository = adminRepository;
+        }
+        
         public void ChangeWorkingNumber(uint newNumber)
         {
             throw new System.NotImplementedException();

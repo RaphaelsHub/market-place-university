@@ -4,11 +4,20 @@ using WebProject.App.Interfaces;
 using WebProject.Core.DTO;
 using WebProject.Core.DTO.FeedBack.Standard;
 using WebProject.Core.DTO.User;
+using WebProject.Core.Entities.User;
+using WebProject.Core.Interfaces.User;
 
 namespace WebProject.App.Services
 {
     public class UserService : IUserService
     {
+        private readonly IUsersRepository<UserEf> _usersRepository;
+        
+        public UserService(IUsersRepository<UserEf> usersRepository)
+        {
+            _usersRepository = usersRepository;
+        }
+        
         public Task<ResponseType1<UserDto>> GetUserById(int id)
         {
             throw new System.NotImplementedException();

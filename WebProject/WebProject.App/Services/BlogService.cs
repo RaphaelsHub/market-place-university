@@ -3,11 +3,20 @@ using System.Threading.Tasks;
 using WebProject.App.Interfaces;
 using WebProject.Core.DTO;
 using WebProject.Core.DTO.FeedBack.Standard;
+using WebProject.Core.Entities.Blog;
+using WebProject.Core.Interfaces.Blog;
 
 namespace WebProject.App.Services
 {
     public class BlogService : IBlogService
     {
+        private readonly IBlogsRepository<BlogEf> _blogsRepository;
+        
+        public BlogService(IBlogsRepository<BlogEf> blogsRepository)
+        {
+            _blogsRepository = blogsRepository;
+        }
+        
         public Task<ResponseType1<bool>> CreateBlogAsync(BlogDto blog)
         {
             throw new System.NotImplementedException();

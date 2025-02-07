@@ -7,6 +7,13 @@ namespace WebProject.Dal.Repositories.Product
 {
     public class ProductsRepository : IProductsRepository<ProductEf>
     {
+        private readonly StoreContext _context;
+
+        public ProductsRepository(StoreContext context)
+        {
+            _context = context;
+        }
+        
         public Task<IEnumerable<ProductEf>> GetAllAsync()
         {
             throw new System.NotImplementedException();

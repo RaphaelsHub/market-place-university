@@ -7,6 +7,12 @@ namespace WebProject.Dal.Repositories.User
 {
     public class CartItemsRepository : ICartItemsRepository<CartItemEf>
     {
+        private readonly StoreContext _context;
+
+        public CartItemsRepository(StoreContext context)
+        {
+            _context = context;
+        }
         public Task<IEnumerable<CartItemEf>> GetAllAsync()
         {
             throw new System.NotImplementedException();

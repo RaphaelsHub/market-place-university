@@ -7,6 +7,13 @@ namespace WebProject.Dal.Repositories.Blog
 {
     public class MessagesRepository : IMessagesRepository<MessageEf>
     {
+        private readonly StoreContext _context;
+
+        public MessagesRepository(StoreContext context)
+        {
+            _context = context;
+        }
+        
         public Task<IEnumerable<MessageEf>> GetAllAsync()
         {
             throw new System.NotImplementedException();

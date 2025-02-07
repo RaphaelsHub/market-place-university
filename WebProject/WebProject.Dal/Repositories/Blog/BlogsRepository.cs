@@ -7,6 +7,13 @@ namespace WebProject.Dal.Repositories.Blog
 {
     public class BlogsRepository : IBlogsRepository<BlogEf>
     {
+        private readonly StoreContext _context;
+        
+        public BlogsRepository(StoreContext context)
+        {
+            _context = context;
+        }
+        
         public Task<IEnumerable<BlogEf>> GetAllAsync()
         {
             throw new System.NotImplementedException();

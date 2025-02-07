@@ -7,6 +7,12 @@ namespace WebProject.Dal.Repositories.User
 {
     public class ContactUsRepository : IContactUsRepository<ContactUsEf>
     {
+        private readonly StoreContext _context;
+
+        public ContactUsRepository(StoreContext context)
+        {
+            _context = context;
+        }
         public Task<IEnumerable<ContactUsEf>> GetAllAsync()
         {
             throw new System.NotImplementedException();

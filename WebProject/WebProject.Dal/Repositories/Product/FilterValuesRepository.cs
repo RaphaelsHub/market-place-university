@@ -7,6 +7,13 @@ namespace WebProject.Dal.Repositories.Product
 {
     public class FilterValuesRepository : IFilterValuesRepository<FilterValueEf>
     {
+        private readonly StoreContext _context;
+
+        public FilterValuesRepository(StoreContext context)
+        {
+            _context = context;
+        }
+        
         public Task<IEnumerable<FilterValueEf>> GetAllAsync()
         {
             throw new System.NotImplementedException();

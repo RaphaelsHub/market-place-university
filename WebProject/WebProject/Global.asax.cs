@@ -11,10 +11,12 @@ using WebProject.Controllers;
 using WebProject.Core.Entities.Blog;
 using WebProject.Core.Entities.Product;
 using WebProject.Core.Entities.User;
+using WebProject.Core.Interfaces.Admin;
 using WebProject.Core.Interfaces.Blog;
 using WebProject.Core.Interfaces.Product;
 using WebProject.Core.Interfaces.User;
 using WebProject.Dal;
+using WebProject.Dal.Repositories.Admin;
 using WebProject.Dal.Repositories.Blog;
 using WebProject.Dal.Repositories.Product;
 using WebProject.Dal.Repositories.User;
@@ -76,6 +78,9 @@ namespace WebProject
             // Blog
             container.RegisterType<IBlogsRepository<BlogEf>, BlogsRepository>();
             container.RegisterType<IMessagesRepository<MessageEf>,MessagesRepository>();
+            
+            // WebSite
+            container.RegisterType<IWebSiteControl,WebSiteControl>();
             
             // Регистрация контекста базы данных
             container.RegisterType<StoreContext>();

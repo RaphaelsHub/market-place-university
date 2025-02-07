@@ -90,6 +90,7 @@
     <Compile Include="Enums\SortTypes\SortTypes.cs" />
     <Compile Include="Enums\User\UserStatus.cs" />
     <Compile Include="Enums\User\UserType.cs" />
+    <Compile Include="Interfaces\Admin\IWebSiteControl.cs" />
     <Compile Include="Interfaces\Blog\IMessagesRepository.cs" />
     <Compile Include="Interfaces\Blog\IBlogsRepository.cs" />
     <Compile Include="Interfaces\IGenericRepository.cs" />

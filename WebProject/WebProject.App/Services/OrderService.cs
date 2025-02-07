@@ -4,11 +4,20 @@ using WebProject.App.Interfaces;
 using WebProject.Core.DTO;
 using WebProject.Core.DTO.FeedBack.Standard;
 using WebProject.Core.DTO.User;
+using WebProject.Core.Entities.User;
+using WebProject.Core.Interfaces.User;
 
 namespace WebProject.App.Services
 {
     public class OrderService : IOrderService
     {
+        private readonly IOrdersRepository<OrderEf> _ordersRepository;
+        
+        public OrderService(IOrdersRepository<OrderEf> ordersRepository)
+        {
+            _ordersRepository = ordersRepository;
+        }
+        
         public Task<ResponseType1<bool>> CreateOrderAsync(OrderDto order)
         {
             throw new System.NotImplementedException();
