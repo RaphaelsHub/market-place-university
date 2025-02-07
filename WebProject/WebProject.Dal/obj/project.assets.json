@@ -46,11 +46,23 @@
       },
       "WebProject.Core/1.0.0": {
         "type": "project",
+        "dependencies": {
+          "WebProject.Helper": "1.0.0"
+        },
         "compile": {
           "bin/placeholder/WebProject.Core.dll": {}
         },
         "runtime": {
           "bin/placeholder/WebProject.Core.dll": {}
+        }
+      },
+      "WebProject.Helper/1.0.0": {
+        "type": "project",
+        "compile": {
+          "bin/placeholder/WebProject.Helper.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/WebProject.Helper.dll": {}
         }
       }
     },
@@ -99,11 +111,23 @@
       },
       "WebProject.Core/1.0.0": {
         "type": "project",
+        "dependencies": {
+          "WebProject.Helper": "1.0.0"
+        },
         "compile": {
           "bin/placeholder/WebProject.Core.dll": {}
         },
         "runtime": {
           "bin/placeholder/WebProject.Core.dll": {}
+        }
+      },
+      "WebProject.Helper/1.0.0": {
+        "type": "project",
+        "compile": {
+          "bin/placeholder/WebProject.Helper.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/WebProject.Helper.dll": {}
         }
       }
     },
@@ -152,11 +176,23 @@
       },
       "WebProject.Core/1.0.0": {
         "type": "project",
+        "dependencies": {
+          "WebProject.Helper": "1.0.0"
+        },
         "compile": {
           "bin/placeholder/WebProject.Core.dll": {}
         },
         "runtime": {
           "bin/placeholder/WebProject.Core.dll": {}
+        }
+      },
+      "WebProject.Helper/1.0.0": {
+        "type": "project",
+        "compile": {
+          "bin/placeholder/WebProject.Helper.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/WebProject.Helper.dll": {}
         }
       }
     },
@@ -205,11 +241,23 @@
       },
       "WebProject.Core/1.0.0": {
         "type": "project",
+        "dependencies": {
+          "WebProject.Helper": "1.0.0"
+        },
         "compile": {
           "bin/placeholder/WebProject.Core.dll": {}
         },
         "runtime": {
           "bin/placeholder/WebProject.Core.dll": {}
+        }
+      },
+      "WebProject.Helper/1.0.0": {
+        "type": "project",
+        "compile": {
+          "bin/placeholder/WebProject.Helper.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/WebProject.Helper.dll": {}
         }
       }
     },
@@ -258,11 +306,23 @@
       },
       "WebProject.Core/1.0.0": {
         "type": "project",
+        "dependencies": {
+          "WebProject.Helper": "1.0.0"
+        },
         "compile": {
           "bin/placeholder/WebProject.Core.dll": {}
         },
         "runtime": {
           "bin/placeholder/WebProject.Core.dll": {}
+        }
+      },
+      "WebProject.Helper/1.0.0": {
+        "type": "project",
+        "compile": {
+          "bin/placeholder/WebProject.Helper.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/WebProject.Helper.dll": {}
         }
       }
     }
@@ -367,6 +427,11 @@
       "type": "project",
       "path": "../WebProject.Core/WebProject.Core.csproj",
       "msbuildProject": "../WebProject.Core/WebProject.Core.csproj"
+    },
+    "WebProject.Helper/1.0.0": {
+      "type": "project",
+      "path": "../WebProject.Helper/WebProject.Helper.csproj",
+      "msbuildProject": "../WebProject.Helper/WebProject.Helper.csproj"
     }
   },
   "projectFileDependencyGroups": {

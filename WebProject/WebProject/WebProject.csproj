@@ -234,7 +234,6 @@
     <Content Include="Views\News\Blog.cshtml" />
     <Content Include="Views\Store\Products.cshtml" />
     <Content Include="Views\Store\Product.cshtml" />
-    <Content Include="Views\Partials\GetPromoCode.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -258,6 +257,10 @@
     <ProjectReference Include="..\WebProject.Dal\WebProject.Dal.csproj">
       <Project>{a517ac22-7678-4f1c-9b0e-82cc95da582a}</Project>
       <Name>WebProject.Dal</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\WebProject.Helper\WebProject.Helper.csproj">
+      <Project>{492b2352-38bf-40e3-bb16-59674517eaf9}</Project>
+      <Name>WebProject.Helper</Name>
     </ProjectReference>
   </ItemGroup>
   <PropertyGroup>

@@ -59,7 +59,6 @@
     <Compile Include="DTO\HelpFull\AmountOfPagesDto.cs" />
     <Compile Include="DTO\User\CartDto.cs" />
     <Compile Include="DTO\User\ContactUsDto.cs" />
-    <Compile Include="DTO\User\EmailUserDto.cs" />
     <Compile Include="DTO\User\OrderDto.cs" />
     <Compile Include="DTO\User\PromoCodeDto.cs" />
     <Compile Include="DTO\User\SignInDto.cs" />
@@ -112,6 +111,12 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\WebProject.Helper\WebProject.Helper.csproj">
+      <Project>{492b2352-38bf-40e3-bb16-59674517eaf9}</Project>
+      <Name>WebProject.Helper</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
