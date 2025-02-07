@@ -1,5 +1,4 @@
 ﻿using System;
-using System.Data.Entity;
 using System.Web;
 using System.Web.Mvc;
 using System.Web.Routing;
@@ -20,6 +19,7 @@ using WebProject.Dal.Repositories.Admin;
 using WebProject.Dal.Repositories.Blog;
 using WebProject.Dal.Repositories.Product;
 using WebProject.Dal.Repositories.User;
+using WebProject.Helper;
 
 namespace WebProject
 {
@@ -38,7 +38,7 @@ namespace WebProject
            //BundleConfig.RegisterBundles(BundleTable.Bundles);// using System.Web.Optimization - need to install
           
            // Инициализация базы данных
-           Database.SetInitializer(new CreateDatabaseIfNotExists<StoreContext>());
+           // Database.SetInitializer(new CreateDatabaseIfNotExists<StoreContext>());
            
            // 
            var container = new UnityContainer();
@@ -86,26 +86,16 @@ namespace WebProject
             container.RegisterType<StoreContext>();
         }
 
-        // Метод обработки ошибок
+        //Метод обработки ошибок
         protected void Application_Error(object sender, EventArgs e)
         {
             var exception = Server.GetLastError();
             var httpException = exception as HttpException;
-
+        
             Server.ClearError();
-
-            var routeData = new RouteData
-            {
-                Values =
-                {
-                    ["controller"] = "Home",
-                    ["action"] = "Error",
-                    // Передача кода ошибки
-                    ["statusCode"] = httpException?.GetHttpCode() ?? 500
-                }
-            };
-
-            // Вызов контроллера и действия
+        
+            var routeData = ErrorHelper.GetRouteData(httpException);
+            
             IController homeController = new HomeController();
             var contextWrapper = new HttpContextWrapper(Context);
             var requestContext = new RequestContext(contextWrapper, routeData);

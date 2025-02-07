@@ -12,3 +12,6 @@ C:\Users\speke\RiderProjects\market-place-university\WebProject\WebProject.Core\
 C:\Users\speke\RiderProjects\market-place-university\WebProject\WebProject.Core\obj\Debug\WebProject.Core.csproj.CoreCompileInputs.cache
 C:\Users\speke\RiderProjects\market-place-university\WebProject\WebProject.Core\obj\Debug\WebProject.Core.dll
 C:\Users\speke\RiderProjects\market-place-university\WebProject\WebProject.Core\obj\Debug\WebProject.Core.pdb
+C:\Users\speke\RiderProjects\market-place-university\WebProject\WebProject.Core\bin\Debug\WebProject.Helper.dll
+C:\Users\speke\RiderProjects\market-place-university\WebProject\WebProject.Core\bin\Debug\WebProject.Helper.pdb
+C:\Users\speke\RiderProjects\market-place-university\WebProject\WebProject.Core\obj\Debug\WebProje.BAE9BC2C.Up2Date
