@@ -1,0 +1,15 @@
+C:\Users\speke\RiderProjects\market-place-university\WebProject\WebProject.App\bin\Debug\WebProject.App.dll
+C:\Users\speke\RiderProjects\market-place-university\WebProject\WebProject.App\bin\Debug\WebProject.App.pdb
+C:\Users\speke\RiderProjects\market-place-university\WebProject\WebProject.App\bin\Debug\WebProject.Core.dll
+C:\Users\speke\RiderProjects\market-place-university\WebProject\WebProject.App\bin\Debug\WebProject.Dal.dll
+C:\Users\speke\RiderProjects\market-place-university\WebProject\WebProject.App\bin\Debug\WebProject.Helper.dll
+C:\Users\speke\RiderProjects\market-place-university\WebProject\WebProject.App\bin\Debug\EntityFramework.dll
+C:\Users\speke\RiderProjects\market-place-university\WebProject\WebProject.App\bin\Debug\WebProject.Core.pdb
+C:\Users\speke\RiderProjects\market-place-university\WebProject\WebProject.App\bin\Debug\WebProject.Dal.pdb
+C:\Users\speke\RiderProjects\market-place-university\WebProject\WebProject.App\bin\Debug\WebProject.Dal.dll.config
+C:\Users\speke\RiderProjects\market-place-university\WebProject\WebProject.App\bin\Debug\WebProject.Helper.pdb
+C:\Users\speke\RiderProjects\market-place-university\WebProject\WebProject.App\obj\Debug\WebProject.App.csproj.AssemblyReference.cache
+C:\Users\speke\RiderProjects\market-place-university\WebProject\WebProject.App\obj\Debug\WebProject.App.csproj.CoreCompileInputs.cache
+C:\Users\speke\RiderProjects\market-place-university\WebProject\WebProject.App\obj\Debug\WebProje.0936C339.Up2Date
+C:\Users\speke\RiderProjects\market-place-university\WebProject\WebProject.App\obj\Debug\WebProject.App.dll
+C:\Users\speke\RiderProjects\market-place-university\WebProject\WebProject.App\obj\Debug\WebProject.App.pdb

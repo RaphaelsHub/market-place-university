@@ -1,0 +1,11 @@
+{
+  "version": 2,
+  "dgSpecHash": "VmMrm4Tl3BM=",
+  "success": true,
+  "projectFilePath": "C:\\Users\\speke\\RiderProjects\\market-place-university\\WebProject\\WebProject.Dal\\WebProject.Dal.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\speke\\.nuget\\packages\\entityframework\\6.5.1\\entityframework.6.5.1.nupkg.sha512",
+    "C:\\Users\\speke\\.nuget\\packages\\system.data.sqlclient\\4.9.0\\system.data.sqlclient.4.9.0.nupkg.sha512"
+  ],
+  "logs": []
+}
