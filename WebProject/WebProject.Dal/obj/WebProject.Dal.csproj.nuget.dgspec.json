@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\speke\\RiderProjects\\market-place-university\\WebProject\\WebProject.Dal\\WebProject.Dal.csproj": {}
+    "D:\\Projects\\WebProject\\WebProject.Dal\\WebProject.Dal.csproj": {}
   },
   "projects": {
-    "C:\\Users\\speke\\RiderProjects\\market-place-university\\WebProject\\WebProject.Core\\WebProject.Core.csproj": {
+    "D:\\Projects\\WebProject\\WebProject.Core\\WebProject.Core.csproj": {
       "restore": {
-        "projectUniqueName": "C:\\Users\\speke\\RiderProjects\\market-place-university\\WebProject\\WebProject.Core\\WebProject.Core.csproj",
+        "projectUniqueName": "D:\\Projects\\WebProject\\WebProject.Core\\WebProject.Core.csproj",
         "projectName": "WebProject.Core",
-        "projectPath": "C:\\Users\\speke\\RiderProjects\\market-place-university\\WebProject\\WebProject.Core\\WebProject.Core.csproj",
+        "projectPath": "D:\\Projects\\WebProject\\WebProject.Core\\WebProject.Core.csproj",
         "UsingMicrosoftNETSdk": false,
         "frameworks": {
           "net472": {
             "projectReferences": {
-              "C:\\Users\\speke\\RiderProjects\\market-place-university\\WebProject\\WebProject.Helper\\WebProject.Helper.csproj": {
-                "projectPath": "C:\\Users\\speke\\RiderProjects\\market-place-university\\WebProject\\WebProject.Helper\\WebProject.Helper.csproj"
+              "D:\\Projects\\WebProject\\WebProject.Helper\\WebProject.Helper.csproj": {
+                "projectPath": "D:\\Projects\\WebProject\\WebProject.Helper\\WebProject.Helper.csproj"
               }
             }
           }
@@ -24,31 +24,37 @@
         "net472": {}
       }
     },
-    "C:\\Users\\speke\\RiderProjects\\market-place-university\\WebProject\\WebProject.Dal\\WebProject.Dal.csproj": {
+    "D:\\Projects\\WebProject\\WebProject.Dal\\WebProject.Dal.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\speke\\RiderProjects\\market-place-university\\WebProject\\WebProject.Dal\\WebProject.Dal.csproj",
+        "projectUniqueName": "D:\\Projects\\WebProject\\WebProject.Dal\\WebProject.Dal.csproj",
         "projectName": "WebProject.Dal",
-        "projectPath": "C:\\Users\\speke\\RiderProjects\\market-place-university\\WebProject\\WebProject.Dal\\WebProject.Dal.csproj",
-        "packagesPath": "C:\\Users\\speke\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\speke\\RiderProjects\\market-place-university\\WebProject\\WebProject.Dal\\obj\\",
+        "projectPath": "D:\\Projects\\WebProject\\WebProject.Dal\\WebProject.Dal.csproj",
+        "packagesPath": "C:\\Users\\Alex\\.nuget\\packages\\",
+        "outputPath": "D:\\Projects\\WebProject\\WebProject.Dal\\obj\\",
         "projectStyle": "PackageReference",
         "skipContentFileWrite": true,
         "UsingMicrosoftNETSdk": false,
+        "fallbackFolders": [
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+        ],
         "configFilePaths": [
-          "C:\\Users\\speke\\AppData\\Roaming\\NuGet\\NuGet.Config"
+          "C:\\Users\\Alex\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
           "net472"
         ],
         "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
           "net472": {
             "projectReferences": {
-              "C:\\Users\\speke\\RiderProjects\\market-place-university\\WebProject\\WebProject.Core\\WebProject.Core.csproj": {
-                "projectPath": "C:\\Users\\speke\\RiderProjects\\market-place-university\\WebProject\\WebProject.Core\\WebProject.Core.csproj"
+              "D:\\Projects\\WebProject\\WebProject.Core\\WebProject.Core.csproj": {
+                "projectPath": "D:\\Projects\\WebProject\\WebProject.Core\\WebProject.Core.csproj"
               }
             }
           }
@@ -56,7 +62,7 @@
         "restoreAuditProperties": {
           "enableAudit": "true",
           "auditLevel": "low",
-          "auditMode": "all"
+          "auditMode": "direct"
         }
       },
       "frameworks": {
@@ -88,11 +94,11 @@
         }
       }
     },
-    "C:\\Users\\speke\\RiderProjects\\market-place-university\\WebProject\\WebProject.Helper\\WebProject.Helper.csproj": {
+    "D:\\Projects\\WebProject\\WebProject.Helper\\WebProject.Helper.csproj": {
       "restore": {
-        "projectUniqueName": "C:\\Users\\speke\\RiderProjects\\market-place-university\\WebProject\\WebProject.Helper\\WebProject.Helper.csproj",
+        "projectUniqueName": "D:\\Projects\\WebProject\\WebProject.Helper\\WebProject.Helper.csproj",
         "projectName": "WebProject.Helper",
-        "projectPath": "C:\\Users\\speke\\RiderProjects\\market-place-university\\WebProject\\WebProject.Helper\\WebProject.Helper.csproj",
+        "projectPath": "D:\\Projects\\WebProject\\WebProject.Helper\\WebProject.Helper.csproj",
         "UsingMicrosoftNETSdk": false,
         "frameworks": {
           "net472": {
