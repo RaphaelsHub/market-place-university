@@ -47,6 +47,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="DTO\AuthDto\SignInDto.cs" />
+    <Compile Include="DTO\AuthDto\SignUpDto.cs" />
     <Compile Include="DTO\BlogDto.cs" />
     <Compile Include="DTO\FeedBack\ErrorSuccess\ErrorResponseDto.cs" />
     <Compile Include="DTO\FeedBack\ErrorSuccess\MessageResponseDto.cs" />
@@ -61,8 +63,6 @@
     <Compile Include="DTO\User\ContactUsDto.cs" />
     <Compile Include="DTO\User\OrderDto.cs" />
     <Compile Include="DTO\User\PromoCodeDto.cs" />
-    <Compile Include="DTO\User\SignInDto.cs" />
-    <Compile Include="DTO\User\SignUpDto.cs" />
     <Compile Include="DTO\User\UserDto.cs" />
     <Compile Include="Entities\Blog\BlogEf.cs" />
     <Compile Include="Entities\Blog\MessageEf.cs" />

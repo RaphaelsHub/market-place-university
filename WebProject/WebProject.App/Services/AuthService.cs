@@ -1,6 +1,7 @@
 using System.Collections.Generic;
 using System.Threading.Tasks;
 using WebProject.App.Interfaces;
+using WebProject.Core.DTO.AuthDto;
 using WebProject.Core.DTO.FeedBack.Standard;
 using WebProject.Core.DTO.User;
 using WebProject.Core.Entities.User;

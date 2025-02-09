@@ -1,6 +1,6 @@
 using System.ComponentModel.DataAnnotations;
 
-namespace WebProject.Core.DTO.User
+namespace WebProject.Core.DTO.AuthDto
 {
     public class SignInDto
     {

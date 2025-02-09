@@ -73,5 +73,15 @@ namespace WebProject.Controllers
 
             return View(errorResponseDto);
         }
+        
+        [HttpGet]
+        public ActionResult Error(int errorCode, string errorMessage)
+        {
+            var errorResponseDto = new ErrorResponseDto(errorCode, errorMessage);
+            
+            ViewBag.LastUrl = GetLastUrl();
+
+            return View(errorResponseDto);
+        }
     }
 }

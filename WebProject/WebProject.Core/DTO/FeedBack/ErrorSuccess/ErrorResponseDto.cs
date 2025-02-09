@@ -12,5 +12,11 @@ namespace WebProject.Core.DTO.FeedBack.ErrorSuccess
             Code = errorCode;
             ErrorMessage = ErrorHelper.GetErrorMessage(errorCode);
         }
+        
+        public ErrorResponseDto(int errorCode, string errorMessage)
+        {
+            Code = errorCode;
+            ErrorMessage = errorMessage;
+        }
     }
 }
