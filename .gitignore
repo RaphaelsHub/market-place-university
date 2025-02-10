@@ -1,0 +1,59 @@
+# Исключить все файлы конфигурации среды
+*.suo
+*.user
+*.userosscache
+*.sln.docstates
+
+# Исключить папки сборки
+bin/
+obj/
+
+# Исключить файлы и папки, связанные с пакетом NuGet
+*.nupkg
+*.nuspec
+packages/
+!packages/build/
+!packages/repositories.config
+project.lock.json
+project.fragment.lock.json
+artifacts/
+
+# Исключить конфигурации веб-сервера IIS
+.vs/
+.vscode/
+.idea/
+!.editorconfig
+
+# Исключить настройки пользователей
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# Исключить настройки публикации
+publish/
+publishProfile/
+
+# Исключить файлы конфигурации в CI и CD
+.vs/config/applicationhost.config
+.vs/config/
+.vs/ProjectName/applicationhost.config
+
+# Исключить миграции
+Migrations/
+
+# Исключить специфичные системные файлы
+Thumbs.db
+*.DS_Store
+
+# Исключить файлы логов и трассировки
+*.log
+*.tlg
+*.dmp
+*.tff
+*.iStat
+
+# Исключить временные файлы
+*.tmp
+*.temp
+*~
