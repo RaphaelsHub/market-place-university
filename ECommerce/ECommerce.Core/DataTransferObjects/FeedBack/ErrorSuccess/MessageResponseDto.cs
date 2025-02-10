@@ -1,6 +1,6 @@
-using WebProject.Core.Enums.Operation;
+using ECommerce.Core.Enums.Operation;
 
-namespace WebProject.Core.DTO.FeedBack.ErrorSuccess
+namespace ECommerce.Core.DataTransferObjects.FeedBack.ErrorSuccess
 {
     public class MessageResponseDto
     {

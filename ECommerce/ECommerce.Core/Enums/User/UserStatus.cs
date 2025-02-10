@@ -1,4 +1,4 @@
-namespace WebProject.Core.Enums.User
+namespace ECommerce.Core.Enums.User
 {
     public enum UserStatus
     {

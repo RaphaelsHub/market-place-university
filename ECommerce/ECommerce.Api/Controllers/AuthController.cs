@@ -1,9 +1,9 @@
 ﻿using System;
 using System.Web.Mvc;
-using WebProject.App.Interfaces;
-using WebProject.Core.DTO.AuthDto;
+using ECommerce.App.Interfaces;
+using ECommerce.Core.DataTransferObjects.AuthDto;
 
-namespace WebProject.Controllers
+namespace ECommerce.Controllers
 {
     public class AuthController : BaseController
     {

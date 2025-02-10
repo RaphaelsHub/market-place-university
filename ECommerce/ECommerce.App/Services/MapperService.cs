@@ -1,4 +1,4 @@
-namespace WebProject.App.Services
+namespace ECommerce.App.Services
 {
     public class MapperService
     {

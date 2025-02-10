@@ -1,6 +1,6 @@
 using System;
 
-namespace WebProject.Core.Entities.User
+namespace ECommerce.Core.Entities.User
 {
     public class ContactUsEf
     {

@@ -1,12 +1,12 @@
 using System.Collections.Generic;
 using System.Threading.Tasks;
-using WebProject.App.Interfaces;
-using WebProject.Core.DTO;
-using WebProject.Core.DTO.FeedBack.Standard;
-using WebProject.Core.Entities.Blog;
-using WebProject.Core.Interfaces.Blog;
+using ECommerce.App.Interfaces;
+using ECommerce.Core.DataTransferObjects;
+using ECommerce.Core.DataTransferObjects.FeedBack.Standard;
+using ECommerce.Core.Entities.Blog;
+using ECommerce.Core.Interfaces.Blog;
 
-namespace WebProject.App.Services
+namespace ECommerce.App.Services
 {
     public class BlogService : IBlogService
     {

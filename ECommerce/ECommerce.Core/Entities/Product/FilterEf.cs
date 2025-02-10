@@ -1,6 +1,6 @@
 using System.Collections.Generic;
 
-namespace WebProject.Core.Entities.Product
+namespace ECommerce.Core.Entities.Product
 {
     public class FilterEf
     {

@@ -1,9 +1,9 @@
 using System.Collections.Generic;
 using System.Threading.Tasks;
-using WebProject.Core.Entities.Product;
-using WebProject.Core.Interfaces.Product;
+using ECommerce.Core.Entities.Product;
+using ECommerce.Core.Interfaces.Product;
 
-namespace WebProject.Dal.Repositories.Product
+namespace ECommerce.Dal.Repositories.Product
 {
     public class CategoriesRepository : ICategoriesRepository<CategoryEf>
     {

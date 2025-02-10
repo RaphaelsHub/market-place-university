@@ -36,13 +36,19 @@
         <Reference Include="System"/>
         <Reference Include="System.Core"/>
         <Reference Include="System.Data"/>
+        <Reference Include="System.Web" />
         <Reference Include="System.Xml"/>
     </ItemGroup>
     <ItemGroup>
-        <Compile Include="Class1.cs"/>
         <Compile Include="ErrorHelper.cs" />
         <Compile Include="ModelGeneratingClass.cs" />
         <Compile Include="Properties\AssemblyInfo.cs"/>
+    </ItemGroup>
+    <ItemGroup>
+      <ProjectReference Include="..\ECommerce.Core\ECommerce.Core.csproj">
+        <Project>{10a4ed18-4b6a-408a-bb27-11b604517f4c}</Project>
+        <Name>ECommerce.Core</Name>
+      </ProjectReference>
     </ItemGroup>
     <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets"/>
     <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

@@ -1,8 +1,8 @@
 using System;
 using System.ComponentModel.DataAnnotations;
-using WebProject.Core.Enums.Order;
+using ECommerce.Core.Enums.Order;
 
-namespace WebProject.Core.DTO.User
+namespace ECommerce.Core.DataTransferObjects.User
 {
     public class OrderDto
     {

@@ -1,8 +1,8 @@
 using System.Net;
-using WebProject.Core.Enums.Account;
-using WebProject.Core.Enums.User;
+using ECommerce.Core.Enums.Account;
+using ECommerce.Core.Enums.User;
 
-namespace WebProject.Core.DTO.User
+namespace ECommerce.Core.DataTransferObjects.User
 {
     public class UserDto
     {

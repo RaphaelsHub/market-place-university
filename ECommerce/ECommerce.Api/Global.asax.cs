@@ -1,14 +1,30 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 using System.Web.Optimization;
 using System.Web.Routing;
+using ECommerce.App.Interfaces;
+using ECommerce.App.Services;
+using ECommerce.Controllers;
+using ECommerce.Core.Entities.Blog;
+using ECommerce.Core.Entities.Product;
+using ECommerce.Core.Entities.User;
+using ECommerce.Core.Interfaces.Admin;
+using ECommerce.Core.Interfaces.Blog;
+using ECommerce.Core.Interfaces.Product;
+using ECommerce.Core.Interfaces.User;
+using ECommerce.Dal;
+using ECommerce.Dal.Repositories.Admin;
+using ECommerce.Dal.Repositories.Blog;
+using ECommerce.Dal.Repositories.Product;
+using ECommerce.Dal.Repositories.User;
+using ECommerce.Helper;
+using Unity;
+using Unity.AspNet.Mvc;
 
 namespace ECommerce
 {
-    public class MvcApplication : System.Web.HttpApplication
+    public class MvcApplication : HttpApplication
     {
         protected void Application_Start()
         {
@@ -16,60 +32,11 @@ namespace ECommerce
             FilterConfig.RegisterGlobalFilters(GlobalFilters.Filters);
             RouteConfig.RegisterRoutes(RouteTable.Routes);
             BundleConfig.RegisterBundles(BundleTable.Bundles);
+            var container = new UnityContainer();
+            RegisterTypes(container);
+            DependencyResolver.SetResolver(new UnityDependencyResolver(container));
         }
-    }
-}
-
-using System;
-using System.Web;
-using System.Web.Mvc;
-using System.Web.Routing;
-using Unity;
-using Unity.AspNet.Mvc;
-using WebProject.App.Interfaces;
-using WebProject.App.Services;
-using WebProject.Controllers;
-using WebProject.Core.Entities.Blog;
-using WebProject.Core.Entities.Product;
-using WebProject.Core.Entities.User;
-using WebProject.Core.Interfaces.Admin;
-using WebProject.Core.Interfaces.Blog;
-using WebProject.Core.Interfaces.Product;
-using WebProject.Core.Interfaces.User;
-using WebProject.Dal;
-using WebProject.Dal.Repositories.Admin;
-using WebProject.Dal.Repositories.Blog;
-using WebProject.Dal.Repositories.Product;
-using WebProject.Dal.Repositories.User;
-using WebProject.Helper;
-
-namespace WebProject
-{
-    public class Global : HttpApplication
-    {
-        // Метод регистрации зависимостей
-        void Application_Start(object sender, EventArgs e)
-        { 
-            // Код, выполняемый при запуске приложения
-           AreaRegistration.RegisterAllAreas();
-           
-           // Конфигурация маршрутов
-           RouteConfig.RegisterRoutes(RouteTable.Routes);
-           
-           // Конфигурация бандлов
-           //BundleConfig.RegisterBundles(BundleTable.Bundles);// using System.Web.Optimization - need to install
-          
-           // Инициализация базы данных
-           // Database.SetInitializer(new CreateDatabaseIfNotExists<StoreContext>());
-           
-           // 
-           var container = new UnityContainer();
-           RegisterTypes(container);
-           DependencyResolver.SetResolver(new UnityDependencyResolver(container));
-           
-        }
-
-        private void RegisterTypes(UnityContainer container)
+                private void RegisterTypes(UnityContainer container)
         {
             // Регистрация зависимостей среди сервисов
             container.RegisterType<IAuthService, AuthService>();

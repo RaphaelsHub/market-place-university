@@ -1,12 +1,12 @@
 using System.Linq;
 using System.Web.Mvc;
+using ECommerce;
 using Unity.AspNet.Mvc;
-using WebProject;
 
 [assembly: WebActivatorEx.PreApplicationStartMethod(typeof(UnityMvcActivator), nameof(UnityMvcActivator.Start))]
 [assembly: WebActivatorEx.ApplicationShutdownMethod(typeof(UnityMvcActivator), nameof(UnityMvcActivator.Shutdown))]
 
-namespace WebProject
+namespace ECommerce
 {
     /// <summary>
     /// Provides the bootstrapping for integrating Unity with ASP.NET MVC.

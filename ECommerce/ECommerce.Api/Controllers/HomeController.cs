@@ -1,10 +1,9 @@
 ﻿using System.Web.Mvc;
-using WebProject.App.Services;
-using WebProject.Core.DTO.FeedBack.ErrorSuccess;
-using WebProject.Core.DTO.User;
-using WebProject.Core.Enums.Operation;
+using ECommerce.Core.DataTransferObjects.FeedBack.ErrorSuccess;
+using ECommerce.Core.DataTransferObjects.User;
+using ECommerce.Core.Enums.Operation;
 
-namespace WebProject.Controllers
+namespace ECommerce.Controllers
 {
     public class HomeController : BaseController
     {
@@ -65,9 +64,9 @@ namespace WebProject.Controllers
         /// <param name="errorCode">It gets the errorCode, initializes an instance of ErrorResponseDto where the error message is already initialized.</param>
         /// <returns>It returns a unified view that contains an error and an error message.</returns>
         [HttpGet]
-        public ActionResult Error(int errorCode)
+        public ActionResult Error(int errorCode, string errorMessage)
         {
-            var errorResponseDto = new ErrorResponseDto(errorCode);
+            var errorResponseDto = new ErrorResponseDto(errorCode, errorMessage);
             
             ViewBag.LastUrl = GetLastUrl();
 

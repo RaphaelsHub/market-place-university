@@ -1,10 +1,8 @@
 using System;
 using System.Collections.Generic;
-using System.ComponentModel.DataAnnotations;
-using System.ComponentModel.DataAnnotations.Schema;
-using WebProject.Core.Enums.Order;
+using ECommerce.Core.Enums.Order;
 
-namespace WebProject.Core.Entities.User
+namespace ECommerce.Core.Entities.User
 {
     public class OrderEf
     {

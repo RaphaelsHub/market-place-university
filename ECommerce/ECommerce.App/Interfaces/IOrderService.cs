@@ -1,10 +1,9 @@
 using System.Collections.Generic;
 using System.Threading.Tasks;
-using WebProject.Core.DTO;
-using WebProject.Core.DTO.FeedBack.Standard;
-using WebProject.Core.DTO.User;
+using ECommerce.Core.DataTransferObjects.FeedBack.Standard;
+using ECommerce.Core.DataTransferObjects.User;
 
-namespace WebProject.App.Interfaces
+namespace ECommerce.App.Interfaces
 {
     public interface IOrderService
     {

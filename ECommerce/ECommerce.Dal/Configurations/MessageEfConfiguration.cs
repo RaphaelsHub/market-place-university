@@ -1,7 +1,7 @@
 using System.Data.Entity.ModelConfiguration;
-using WebProject.Core.Entities.Blog;
+using ECommerce.Core.Entities.Blog;
 
-namespace WebProject.Dal.Configurations
+namespace ECommerce.Dal.Configurations
 {
     public class MessageEfConfiguration : EntityTypeConfiguration<MessageEf>
     {

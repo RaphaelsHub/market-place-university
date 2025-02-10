@@ -72,6 +72,20 @@
       <Folder Include="InterfaceExtensions\" />
       <Folder Include="Mappers\" />
     </ItemGroup>
+    <ItemGroup>
+      <ProjectReference Include="..\ECommerce.Core\ECommerce.Core.csproj">
+        <Project>{10a4ed18-4b6a-408a-bb27-11b604517f4c}</Project>
+        <Name>ECommerce.Core</Name>
+      </ProjectReference>
+      <ProjectReference Include="..\ECommerce.Dal\ECommerce.Dal.csproj">
+        <Project>{9cdcb1c2-48e2-462c-9d03-82971f2eb5c9}</Project>
+        <Name>ECommerce.Dal</Name>
+      </ProjectReference>
+      <ProjectReference Include="..\ECommerce.Helper\ECommerce.Helper.csproj">
+        <Project>{ee9e5465-384e-4775-b13e-30e40f3a085d}</Project>
+        <Name>ECommerce.Helper</Name>
+      </ProjectReference>
+    </ItemGroup>
     <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets"/>
     <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
          Other similar extension points exist, see Microsoft.Common.targets.

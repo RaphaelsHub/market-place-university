@@ -1,7 +1,7 @@
 using System;
-using WebProject.Core.Enums.Message;
+using ECommerce.Core.Enums.Message;
 
-namespace WebProject.Core.DTO
+namespace ECommerce.Core.DataTransferObjects
 {
     public class MessageDto
     {

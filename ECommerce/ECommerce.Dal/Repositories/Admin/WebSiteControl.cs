@@ -1,6 +1,6 @@
-using WebProject.Core.Interfaces.Admin;
+using ECommerce.Core.Interfaces.Admin;
 
-namespace WebProject.Dal.Repositories.Admin
+namespace ECommerce.Dal.Repositories.Admin
 {
     public class WebSiteControl : IWebSiteControl
     {

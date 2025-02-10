@@ -1,4 +1,4 @@
-namespace WebProject.Core.DTO.FeedBack.Standard
+namespace ECommerce.Core.DataTransferObjects.FeedBack.Standard
 {
     public class ResponseType1 <T>
     {

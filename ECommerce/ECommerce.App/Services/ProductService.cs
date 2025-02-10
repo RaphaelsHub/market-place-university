@@ -1,11 +1,11 @@
 using System.Threading.Tasks;
-using WebProject.App.Interfaces;
-using WebProject.Core.DTO;
-using WebProject.Core.DTO.FeedBack.Standard;
-using WebProject.Core.Entities.Product;
-using WebProject.Core.Interfaces.Product;
+using ECommerce.App.Interfaces;
+using ECommerce.Core.DataTransferObjects;
+using ECommerce.Core.DataTransferObjects.FeedBack.Standard;
+using ECommerce.Core.Entities.Product;
+using ECommerce.Core.Interfaces.Product;
 
-namespace WebProject.App.Services
+namespace ECommerce.App.Services
 {
     public class ProductService : IProductService
     {

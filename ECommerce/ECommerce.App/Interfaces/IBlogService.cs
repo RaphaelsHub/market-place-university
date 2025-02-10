@@ -1,9 +1,9 @@
-using WebProject.Core.DTO;
 using System.Collections.Generic;
 using System.Threading.Tasks;
-using WebProject.Core.DTO.FeedBack.Standard;
+using ECommerce.Core.DataTransferObjects;
+using ECommerce.Core.DataTransferObjects.FeedBack.Standard;
 
-namespace WebProject.App.Interfaces
+namespace ECommerce.App.Interfaces
 {
     public interface IBlogService
     {

@@ -1,9 +1,7 @@
 using System;
 using System.Collections.Generic;
-using System.ComponentModel.DataAnnotations;
-using System.ComponentModel.DataAnnotations.Schema;
 
-namespace WebProject.Core.Entities.Blog
+namespace ECommerce.Core.Entities.Blog
 {
     public class BlogEf
     {

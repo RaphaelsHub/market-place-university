@@ -1,9 +1,9 @@
 using System.Collections.Generic;
 using System.Threading.Tasks;
-using WebProject.Core.DTO.AuthDto;
-using WebProject.Core.DTO.FeedBack.Standard;
+using ECommerce.Core.DataTransferObjects.AuthDto;
+using ECommerce.Core.DataTransferObjects.FeedBack.Standard;
 
-namespace WebProject.App.Interfaces
+namespace ECommerce.App.Interfaces
 {
     //Not really sure about the methods, but I think they will need to be improved and added more methods after architecture review
     public interface IAuthService

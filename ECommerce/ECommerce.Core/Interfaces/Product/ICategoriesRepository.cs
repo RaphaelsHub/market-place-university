@@ -1,6 +1,6 @@
-using WebProject.Core.Entities.Product;
+using ECommerce.Core.Entities.Product;
 
-namespace WebProject.Core.Interfaces.Product
+namespace ECommerce.Core.Interfaces.Product
 {
     public interface ICategoriesRepository<T> : IGenericRepository<CategoryEf>
     {

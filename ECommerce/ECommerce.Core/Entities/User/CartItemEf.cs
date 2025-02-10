@@ -1,6 +1,6 @@
-using WebProject.Core.Entities.Product;
+using ECommerce.Core.Entities.Product;
 
-namespace WebProject.Core.Entities.User
+namespace ECommerce.Core.Entities.User
 {
     public class CartItemEf
     {

@@ -1,9 +1,9 @@
 using System.Web.Mvc;
-using WebProject.App.Interfaces;
-using WebProject.Core.DTO.User;
+using ECommerce.App.Interfaces;
+
 // using Newtonsoft.Json;
 
-namespace WebProject.Controllers
+namespace ECommerce.Controllers
 {
     public class UserController : Controller
     {

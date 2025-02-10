@@ -1,6 +1,6 @@
 using System;
 
-namespace WebProject.Core.DTO.HelpFull
+namespace ECommerce.Core.DataTransferObjects.HelpFull
 {
     public class ErrorAnalyticDto
     {

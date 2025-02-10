@@ -2,10 +2,10 @@ using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations.Schema;
 using System.Net;
-using WebProject.Core.Enums.Account;
-using WebProject.Core.Enums.User;
+using ECommerce.Core.Enums.Account;
+using ECommerce.Core.Enums.User;
 
-namespace WebProject.Core.Entities.User
+namespace ECommerce.Core.Entities.User
 {
     public class UserEf
     {

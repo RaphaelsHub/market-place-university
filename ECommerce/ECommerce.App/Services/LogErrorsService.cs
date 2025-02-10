@@ -1,9 +1,8 @@
 using System.Threading.Tasks;
-using WebProject.App.Interfaces;
-using WebProject.Core.DTO;
-using WebProject.Core.DTO.HelpFull;
+using ECommerce.App.Interfaces;
+using ECommerce.Core.DataTransferObjects.HelpFull;
 
-namespace WebProject.App.Services
+namespace ECommerce.App.Services
 {
     public class LogErrorsService : ILogErrorService
     {

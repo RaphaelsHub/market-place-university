@@ -1,7 +1,7 @@
 using System.Data.Entity.ModelConfiguration;
-using WebProject.Core.Entities.User;
+using ECommerce.Core.Entities.User;
 
-namespace WebProject.Dal.Configurations
+namespace ECommerce.Dal.Configurations
 {
     public class ContactUsEfConfiguration : EntityTypeConfiguration<ContactUsEf>
     {

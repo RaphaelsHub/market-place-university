@@ -1,7 +1,7 @@
 using System;
 using Unity;
 
-namespace WebProject 
+namespace ECommerce 
 {
     /// <summary>
     /// Specifies the Unity configuration for the main container.

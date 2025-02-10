@@ -1,8 +1,8 @@
 using System;
-using WebProject.Core.Entities.User;
-using WebProject.Core.Enums.Message;
+using ECommerce.Core.Entities.User;
+using ECommerce.Core.Enums.Message;
 
-namespace WebProject.Core.Entities.Blog
+namespace ECommerce.Core.Entities.Blog
 {
     public class MessageEf
     {

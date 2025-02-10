@@ -1,7 +1,7 @@
 using System;
 using System.Collections.Generic;
 
-namespace WebProject.Core.DTO.User
+namespace ECommerce.Core.DataTransferObjects.User
 {
     public class CartDto
     {

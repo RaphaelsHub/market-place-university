@@ -1,4 +1,4 @@
-namespace WebProject.Core.Enums.Account
+namespace ECommerce.Core.Enums.Account
 {
     public enum AccountVerificationStatus
     {

@@ -1,4 +1,4 @@
-namespace WebProject.Core.Entities.User
+namespace ECommerce.Core.Entities.User
 {
     public class AddressEf
     {

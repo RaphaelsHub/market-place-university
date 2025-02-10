@@ -1,6 +1,6 @@
-using WebProject.Core.Entities.Blog;
+using ECommerce.Core.Entities.Blog;
 
-namespace WebProject.Core.Interfaces.Blog
+namespace ECommerce.Core.Interfaces.Blog
 {
     public interface IBlogsRepository<T> : IGenericRepository<BlogEf>
     {

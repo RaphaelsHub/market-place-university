@@ -1,6 +1,6 @@
 using System.ComponentModel.DataAnnotations;
 
-namespace WebProject.Core.DTO.AuthDto
+namespace ECommerce.Core.DataTransferObjects.AuthDto
 {
     public class SignUpDto : SignInDto
     {

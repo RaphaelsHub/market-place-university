@@ -1,4 +1,4 @@
-namespace WebProject.Core.Enums.Product
+namespace ECommerce.Core.Enums.Product
 {
     public enum ProductSellType
     {

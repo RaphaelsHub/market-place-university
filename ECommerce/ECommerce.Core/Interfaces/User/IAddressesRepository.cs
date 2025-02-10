@@ -1,6 +1,6 @@
-using WebProject.Core.Entities.User;
+using ECommerce.Core.Entities.User;
 
-namespace WebProject.Core.Interfaces.User
+namespace ECommerce.Core.Interfaces.User
 {
     public interface IAddressesRepository<T> : IGenericRepository<AddressEf>
     {

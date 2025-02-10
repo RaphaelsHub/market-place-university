@@ -1,9 +1,8 @@
 using System;
 using System.Collections.Generic;
-using WebProject.Core.Enums;
-using WebProject.Core.Enums.User;
+using ECommerce.Core.Enums.User;
 
-namespace WebProject.Core.DTO
+namespace ECommerce.Core.DataTransferObjects
 {
     public class BlogDto
     {

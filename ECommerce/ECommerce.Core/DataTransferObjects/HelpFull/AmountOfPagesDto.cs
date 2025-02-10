@@ -1,4 +1,4 @@
-namespace WebProject.Core.DTO.HelpFull
+namespace ECommerce.Core.DataTransferObjects.HelpFull
 {
     public class AmountOfPagesDto
     {

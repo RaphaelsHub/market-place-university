@@ -1,7 +1,7 @@
 ﻿using System.Web.Mvc;
-using WebProject.Core.DTO.User;
+using ECommerce.Core.DataTransferObjects.User;
 
-namespace WebProject.Controllers
+namespace ECommerce.Controllers
 {
     public class CartController : BaseController
     {

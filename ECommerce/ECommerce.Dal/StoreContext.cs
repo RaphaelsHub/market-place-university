@@ -2,15 +2,12 @@ using System;
 using System.Configuration;
 using System.Data.Entity;
 using System.Data.SqlClient;
-using WebProject.Core.Entities.Blog;
-using WebProject.Core.Entities.Product;
-using WebProject.Core.Entities.User;
-using WebProject.Dal.Configurations;
-// <connectionStrings>
-//     <add name="DefaultConnection" connectionString="Data Source=INC\SQLEXPRESS;Initial Catalog=Store;Integrated Security=True;Connection Timeout=30;" providerName="Microsoft.Data.SqlClient" />
-//     <add name="MasterConnectionString" connectionString="Data Source=INC\SQLEXPRESS;Initial Catalog=master;Integrated Security=True;Connection Timeout=30;" providerName="Microsoft.Data.SqlClient" />
-//     </connectionStrings>
-namespace WebProject.Dal
+using ECommerce.Core.Entities.Blog;
+using ECommerce.Core.Entities.Product;
+using ECommerce.Core.Entities.User;
+using ECommerce.Dal.Configurations;
+
+namespace ECommerce.Dal
 {
     public class StoreContext : DbContext
     {

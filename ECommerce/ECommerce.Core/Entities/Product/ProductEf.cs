@@ -1,8 +1,8 @@
 using System;
 using System.Collections.Generic;
-using WebProject.Core.Enums.Product;
+using ECommerce.Core.Enums.Product;
 
-namespace WebProject.Core.Entities.Product
+namespace ECommerce.Core.Entities.Product
 {
     public class ProductEf
     {

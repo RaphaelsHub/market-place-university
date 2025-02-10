@@ -1,4 +1,4 @@
-﻿namespace WebProject.Core.Enums.SortTypes
+﻿namespace ECommerce.Core.Enums.SortTypes
 {
     public enum SortBy
     {

@@ -1,9 +1,9 @@
 using System.Collections.Generic;
 using System.Threading.Tasks;
-using WebProject.Core.Entities.User;
-using WebProject.Core.Interfaces.User;
+using ECommerce.Core.Entities.User;
+using ECommerce.Core.Interfaces.User;
 
-namespace WebProject.Dal.Repositories.User
+namespace ECommerce.Dal.Repositories.User
 {
     public class OrderItemsRepository : IOrderItemsRepository<OrderItemEf>
     {

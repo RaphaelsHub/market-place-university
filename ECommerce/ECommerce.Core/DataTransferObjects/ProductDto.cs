@@ -1,9 +1,9 @@
 using System;
 using System.Collections.Generic;
-using WebProject.Core.Entities.Product;
-using WebProject.Core.Enums.Product;
+using ECommerce.Core.Entities.Product;
+using ECommerce.Core.Enums.Product;
 
-namespace WebProject.Core.DTO
+namespace ECommerce.Core.DataTransferObjects
 {
     public class ProductDto
     {

@@ -1,7 +1,7 @@
 using System;
 using System.Web.Mvc;
 
-namespace WebProject.Controllers
+namespace ECommerce.Controllers
 {
     public class BaseController : Controller
     {

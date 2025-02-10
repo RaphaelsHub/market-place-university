@@ -1,4 +1,4 @@
-﻿namespace WebProject
+﻿namespace ECommerce
 {
     public class IdentityConfig
     {

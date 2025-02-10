@@ -1,7 +1,7 @@
 using System.Web;
 using System.Web.Routing;
 
-namespace WebProject.Helper
+namespace ECommerce.Helper
 {
     public class ErrorHelper
     {
@@ -14,7 +14,8 @@ namespace WebProject.Helper
                     ["controller"] = "Home",
                     ["action"] = "Error",
                     ["errorCode"] = exception?.GetHttpCode() ?? 500,
-                }
+                    ["errorMessage"] = GetErrorMessage(exception?.GetHttpCode() ?? 500)
+                }   
             };
             return routeData;
         }

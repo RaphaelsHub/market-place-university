@@ -1,4 +1,4 @@
-namespace WebProject.Core.Enums.Operation
+namespace ECommerce.Core.Enums.Operation
 {
     public enum RequestStatus
     {

@@ -1,10 +1,9 @@
 ﻿using System.Web.Mvc;
-using WebProject.Core.DTO.FeedBack.ErrorSuccess;
-using WebProject.Core.DTO.FeedBack.Standard;
-using WebProject.Core.DTO.User;
-using WebProject.Core.Enums.Operation;
+using ECommerce.Core.DataTransferObjects.FeedBack.ErrorSuccess;
+using ECommerce.Core.DataTransferObjects.User;
+using ECommerce.Core.Enums.Operation;
 
-namespace WebProject.Controllers
+namespace ECommerce.Controllers
 {
     public class OrderController : Controller
     {

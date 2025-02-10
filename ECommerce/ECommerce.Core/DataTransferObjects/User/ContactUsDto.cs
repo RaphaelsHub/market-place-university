@@ -1,6 +1,6 @@
 using System.ComponentModel.DataAnnotations;
 
-namespace WebProject.Core.DTO.User
+namespace ECommerce.Core.DataTransferObjects.User
 {
     public class ContactUsDto
     {

@@ -1,7 +1,7 @@
 using System.Data.Entity.ModelConfiguration;
-using WebProject.Core.Entities.Product;
+using ECommerce.Core.Entities.Product;
 
-namespace WebProject.Dal.Configurations
+namespace ECommerce.Dal.Configurations
 {
     public class CategoryEfConfiguration : EntityTypeConfiguration<CategoryEf>
     {

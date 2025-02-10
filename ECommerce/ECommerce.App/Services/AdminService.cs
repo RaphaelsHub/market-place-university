@@ -1,7 +1,7 @@
-using WebProject.App.Interfaces;
-using WebProject.Core.Interfaces.Admin;
+using ECommerce.App.Interfaces;
+using ECommerce.Core.Interfaces.Admin;
 
-namespace WebProject.App.Services
+namespace ECommerce.App.Services
 {
     public class AdminService  : IAdminService
     {

@@ -1,4 +1,4 @@
-namespace WebProject.Core.Entities.Product
+namespace ECommerce.Core.Entities.Product
 {
     public class FilterValueEf
     {

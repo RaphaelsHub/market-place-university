@@ -1,4 +1,4 @@
-namespace WebProject.Core.Enums.Order
+namespace ECommerce.Core.Enums.Order
 {
     public enum PaymentType
     {

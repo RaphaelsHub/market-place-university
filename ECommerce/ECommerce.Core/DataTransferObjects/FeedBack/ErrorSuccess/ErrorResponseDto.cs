@@ -1,17 +1,11 @@
-using WebProject.Helper;
-
-namespace WebProject.Core.DTO.FeedBack.ErrorSuccess
+namespace ECommerce.Core.DataTransferObjects.FeedBack.ErrorSuccess
 {
     public class ErrorResponseDto
     {
-        public int Code { get; }
-        public string ErrorMessage { get; }
+        public int Code { get; set; } = 500;
+        public string ErrorMessage { get; set; } = "An unexpected error occurred, please try again later !";
         
-        public ErrorResponseDto(int errorCode = 500)
-        {
-            Code = errorCode;
-            ErrorMessage = ErrorHelper.GetErrorMessage(errorCode);
-        }
+        public ErrorResponseDto() { }
         
         public ErrorResponseDto(int errorCode, string errorMessage)
         {

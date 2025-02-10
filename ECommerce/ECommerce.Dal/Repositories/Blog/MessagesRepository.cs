@@ -1,9 +1,9 @@
 using System.Collections.Generic;
 using System.Threading.Tasks;
-using WebProject.Core.Entities.Blog;
-using WebProject.Core.Interfaces.Blog;
+using ECommerce.Core.Entities.Blog;
+using ECommerce.Core.Interfaces.Blog;
 
-namespace WebProject.Dal.Repositories.Blog
+namespace ECommerce.Dal.Repositories.Blog
 {
     public class MessagesRepository : IMessagesRepository<MessageEf>
     {

@@ -1,8 +1,7 @@
 using System.Threading.Tasks;
-using WebProject.Core.DTO;
-using WebProject.Core.DTO.HelpFull;
+using ECommerce.Core.DataTransferObjects.HelpFull;
 
-namespace WebProject.App.Interfaces
+namespace ECommerce.App.Interfaces
 {
     public interface ILogErrorService
     { 
