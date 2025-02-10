@@ -1,14 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="dataSourceStorageLocal" created-in="RD-243.23654.126">
-    <data-source name="Store@INC" uuid="8062bb6c-6ac1-4276-8703-1a3891c01188">
+    <data-source name="Microsoft SQL Server (JetBrains)" uuid="0995f854-7396-4bfc-8c6d-8c4ba27c1f71">
       <database-info product="Microsoft SQL Server" version="16.00.1000" jdbc-version="4.2" driver-name="JetBrains JDBC Driver for SQL Server" driver-version="1.0" dbms="MSSQL" exact-version="16.0.1000" exact-driver-version="1.0">
         <extra-name-characters>$#@</extra-name-characters>
         <identifier-quote-string>&quot;</identifier-quote-string>
       </database-info>
       <case-sensitivity plain-identifiers="mixed" quoted-identifiers="mixed" />
       <secret-storage>master_key</secret-storage>
-      <auth-provider>ms-sso</auth-provider>
+      <auth-provider>no-auth</auth-provider>
       <schema-mapping>
         <introspection-scope>
           <node kind="database" qname="@">
@@ -17,7 +17,7 @@
         </introspection-scope>
       </schema-mapping>
     </data-source>
-    <data-source name="master@INC" uuid="08bba3f2-e90b-42bc-907a-797a4e613e7c">
+    <data-source name="Microsoft SQL Server (JetBrains) [2]" uuid="aace30de-613a-43e8-9f82-97884334905b">
       <database-info product="Microsoft SQL Server" version="16.00.1000" jdbc-version="4.2" driver-name="JetBrains JDBC Driver for SQL Server" driver-version="1.0" dbms="MSSQL" exact-version="16.0.1000" exact-driver-version="1.0">
         <extra-name-characters>$#@</extra-name-characters>
         <identifier-quote-string>&quot;</identifier-quote-string>

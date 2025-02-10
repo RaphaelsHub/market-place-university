@@ -86,7 +86,6 @@ namespace WebProject
             container.RegisterType<StoreContext>();
         }
 
-        //Метод обработки ошибок
         protected void Application_Error(object sender, EventArgs e)
         {
             var exception = Server.GetLastError();

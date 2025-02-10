@@ -8,179 +8,504 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="c502ff1d-d893-4c5d-8cab-1bd01841ee1a" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/../ECommerce/ECommerce.Api/Controllers/BaseController.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../ECommerce/ECommerce.Api/Controllers/UserController.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../ECommerce/ECommerce.Api/ECommerce.Api.csproj" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.WebProject/.idea/dataSources.local.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.WebProject/.idea/dataSources.local.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.WebProject/.idea/dataSources.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.WebProject/.idea/dataSources.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.WebProject/.idea/dataSources/08bba3f2-e90b-42bc-907a-797a4e613e7c.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.WebProject/.idea/dataSources/08bba3f2-e90b-42bc-907a-797a4e613e7c/storage_v2/_src_/database/master.YiqNvw.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.WebProject/.idea/dataSources/08bba3f2-e90b-42bc-907a-797a4e613e7c/storage_v2/_src_/database/master.YiqNvw/schema/INFORMATION_SCHEMA.NBgcMw.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.WebProject/.idea/dataSources/08bba3f2-e90b-42bc-907a-797a4e613e7c/storage_v2/_src_/database/master.YiqNvw/schema/sys.zb4BAA.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.WebProject/.idea/dataSources/8062bb6c-6ac1-4276-8703-1a3891c01188.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.WebProject/.idea/dataSources/8062bb6c-6ac1-4276-8703-1a3891c01188/storage_v2/_src_/database/Store.wQjIBA.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.WebProject/.idea/dataSources/8062bb6c-6ac1-4276-8703-1a3891c01188/storage_v2/_src_/database/Store.wQjIBA/schema/INFORMATION_SCHEMA.NBgcMw.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.WebProject/.idea/dataSources/8062bb6c-6ac1-4276-8703-1a3891c01188/storage_v2/_src_/database/Store.wQjIBA/schema/dbo.sYMBAA.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.WebProject/.idea/dataSources/8062bb6c-6ac1-4276-8703-1a3891c01188/storage_v2/_src_/database/Store.wQjIBA/schema/sys.zb4BAA.meta" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.WebProject/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.WebProject/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/config/applicationhost.config" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/config/applicationhost.config" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/WebProject.App/Interfaces/IAuthService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/WebProject.App/Interfaces/IAuthService.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/WebProject.App/Services/AuthService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/WebProject.App/Services/AuthService.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WebProject.App/ClientServices/CacheService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/../ECommerce/ECommerce.App/Infrastucture/Services/CacheService.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WebProject.App/ClientServices/CookiesService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/../ECommerce/ECommerce.App/Infrastucture/Services/CookiesService.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WebProject.App/ClientServices/IdentityService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/../ECommerce/ECommerce.App/Infrastucture/Services/IdentityService.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WebProject.App/ClientServices/SessionService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/../ECommerce/ECommerce.App/Infrastucture/Services/SessionService.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WebProject.App/Interfaces/IAdminService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/../ECommerce/ECommerce.App/Interfaces/IAdminService.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WebProject.App/Interfaces/IAuthService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/../ECommerce/ECommerce.App/Interfaces/IAuthService.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WebProject.App/Interfaces/IBlogService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/../ECommerce/ECommerce.App/Interfaces/IBlogService.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WebProject.App/Interfaces/ICartService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/../ECommerce/ECommerce.App/Interfaces/ICartService.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WebProject.App/Interfaces/ILogErrorService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/../ECommerce/ECommerce.App/Interfaces/ILogErrorService.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WebProject.App/Interfaces/IOrderService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/../ECommerce/ECommerce.App/Interfaces/IOrderService.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WebProject.App/Interfaces/IProductService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/../ECommerce/ECommerce.App/Interfaces/IProductService.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WebProject.App/Interfaces/IUserService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/../ECommerce/ECommerce.App/Interfaces/IUserService.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WebProject.App/Services/AdminService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/../ECommerce/ECommerce.App/Services/AdminService.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WebProject.App/Services/AuthService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/../ECommerce/ECommerce.App/Services/AuthService.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WebProject.App/Services/BlogService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/../ECommerce/ECommerce.App/Services/BlogService.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WebProject.App/Services/CartService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/../ECommerce/ECommerce.App/Services/CartService.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WebProject.App/Services/LogErrorsService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/../ECommerce/ECommerce.App/Services/LogErrorsService.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WebProject.App/Services/MapperService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/../ECommerce/ECommerce.App/Services/MapperService.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WebProject.App/Services/OrderService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/../ECommerce/ECommerce.App/Services/OrderService.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WebProject.App/Services/ProductService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/../ECommerce/ECommerce.App/Services/ProductService.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WebProject.App/Services/UserService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/../ECommerce/ECommerce.App/Services/UserService.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WebProject.App/WebProject.App.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/WebProject.App/WebProject.App.csproj" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/WebProject.App/bin/Debug/WebProject.App.dll" beforeDir="false" afterPath="$PROJECT_DIR$/WebProject.App/bin/Debug/WebProject.App.dll" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/WebProject.App/bin/Debug/WebProject.App.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/WebProject.App/bin/Debug/WebProject.App.pdb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/WebProject.App/bin/Debug/WebProject.Core.dll" beforeDir="false" afterPath="$PROJECT_DIR$/WebProject.App/bin/Debug/WebProject.Core.dll" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/WebProject.App/bin/Debug/WebProject.Core.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/WebProject.App/bin/Debug/WebProject.Core.pdb" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/WebProject.App/bin/Debug/WebProject.Dal.dll" beforeDir="false" afterPath="$PROJECT_DIR$/WebProject.App/bin/Debug/WebProject.Dal.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WebProject.App/bin/Debug/WebProject.Dal.dll.config" beforeDir="false" afterPath="$PROJECT_DIR$/WebProject.App/bin/Debug/WebProject.Dal.dll.config" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/WebProject.App/bin/Debug/WebProject.Dal.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/WebProject.App/bin/Debug/WebProject.Dal.pdb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/WebProject.App/bin/Debug/WebProject.Helper.dll" beforeDir="false" afterPath="$PROJECT_DIR$/WebProject.App/bin/Debug/WebProject.Helper.dll" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/WebProject.App/bin/Debug/WebProject.Helper.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/WebProject.App/bin/Debug/WebProject.Helper.pdb" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/WebProject.App/obj/Debug/WebProject.App.csproj.AssemblyReference.cache" beforeDir="false" afterPath="$PROJECT_DIR$/WebProject.App/obj/Debug/WebProject.App.csproj.AssemblyReference.cache" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/WebProject.App/obj/Debug/WebProject.App.csproj.CoreCompileInputs.cache" beforeDir="false" afterPath="$PROJECT_DIR$/WebProject.App/obj/Debug/WebProject.App.csproj.CoreCompileInputs.cache" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/WebProject.App/obj/Debug/WebProject.App.csproj.FileListAbsolute.txt" beforeDir="false" afterPath="$PROJECT_DIR$/WebProject.App/obj/Debug/WebProject.App.csproj.FileListAbsolute.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/WebProject.App/obj/Debug/WebProject.App.dll" beforeDir="false" afterPath="$PROJECT_DIR$/WebProject.App/obj/Debug/WebProject.App.dll" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/WebProject.App/obj/Debug/WebProject.App.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/WebProject.App/obj/Debug/WebProject.App.pdb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/WebProject.Core/DTO/FeedBack/ErrorSuccess/ErrorResponseDto.cs" beforeDir="false" afterPath="$PROJECT_DIR$/WebProject.Core/DTO/FeedBack/ErrorSuccess/ErrorResponseDto.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/WebProject.Core/DTO/User/SignInDto.cs" beforeDir="false" afterPath="$PROJECT_DIR$/WebProject.Core/DTO/AuthDto/SignInDto.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/WebProject.Core/DTO/User/SignUpDto.cs" beforeDir="false" afterPath="$PROJECT_DIR$/WebProject.Core/DTO/AuthDto/SignUpDto.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WebProject.Core/DTO/AuthDto/SignInDto.cs" beforeDir="false" afterPath="$PROJECT_DIR$/../ECommerce/ECommerce.Core/DataTransferObjects/AuthDto/SignInDto.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WebProject.Core/DTO/AuthDto/SignUpDto.cs" beforeDir="false" afterPath="$PROJECT_DIR$/../ECommerce/ECommerce.Core/DataTransferObjects/AuthDto/SignUpDto.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WebProject.Core/DTO/BlogDto.cs" beforeDir="false" afterPath="$PROJECT_DIR$/../ECommerce/ECommerce.Core/DataTransferObjects/BlogDto.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WebProject.Core/DTO/FeedBack/ErrorSuccess/ErrorResponseDto.cs" beforeDir="false" afterPath="$PROJECT_DIR$/../ECommerce/ECommerce.Core/DataTransferObjects/FeedBack/ErrorSuccess/ErrorResponseDto.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WebProject.Core/DTO/FeedBack/ErrorSuccess/MessageResponseDto.cs" beforeDir="false" afterPath="$PROJECT_DIR$/../ECommerce/ECommerce.Core/DataTransferObjects/FeedBack/ErrorSuccess/MessageResponseDto.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WebProject.Core/DTO/FeedBack/Standard/ResponseType1.cs" beforeDir="false" afterPath="$PROJECT_DIR$/../ECommerce/ECommerce.Core/DataTransferObjects/FeedBack/Standard/ResponseType1.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WebProject.Core/DTO/FeedBack/Standard/ResponseType2.cs" beforeDir="false" afterPath="$PROJECT_DIR$/../ECommerce/ECommerce.Core/DataTransferObjects/FeedBack/Standard/ResponseType2.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WebProject.Core/DTO/FeedBack/Standard/ResponseType3.cs" beforeDir="false" afterPath="$PROJECT_DIR$/../ECommerce/ECommerce.Core/DataTransferObjects/FeedBack/Standard/ResponseType3.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WebProject.Core/DTO/HelpFull/AmountOfPagesDto.cs" beforeDir="false" afterPath="$PROJECT_DIR$/../ECommerce/ECommerce.Core/DataTransferObjects/HelpFull/AmountOfPagesDto.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WebProject.Core/DTO/HelpFull/ErrorAnalyticDto.cs" beforeDir="false" afterPath="$PROJECT_DIR$/../ECommerce/ECommerce.Core/DataTransferObjects/HelpFull/ErrorAnalyticDto.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WebProject.Core/DTO/MessageDto.cs" beforeDir="false" afterPath="$PROJECT_DIR$/../ECommerce/ECommerce.Core/DataTransferObjects/MessageDto.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WebProject.Core/DTO/ProductDto.cs" beforeDir="false" afterPath="$PROJECT_DIR$/../ECommerce/ECommerce.Core/DataTransferObjects/ProductDto.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WebProject.Core/DTO/User/CartDto.cs" beforeDir="false" afterPath="$PROJECT_DIR$/../ECommerce/ECommerce.Core/DataTransferObjects/User/CartDto.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WebProject.Core/DTO/User/ContactUsDto.cs" beforeDir="false" afterPath="$PROJECT_DIR$/../ECommerce/ECommerce.Core/DataTransferObjects/User/ContactUsDto.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WebProject.Core/DTO/User/OrderDto.cs" beforeDir="false" afterPath="$PROJECT_DIR$/../ECommerce/ECommerce.Core/DataTransferObjects/User/OrderDto.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WebProject.Core/DTO/User/PromoCodeDto.cs" beforeDir="false" afterPath="$PROJECT_DIR$/../ECommerce/ECommerce.Core/DataTransferObjects/User/PromoCodeDto.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WebProject.Core/DTO/User/UserDto.cs" beforeDir="false" afterPath="$PROJECT_DIR$/../ECommerce/ECommerce.Core/DataTransferObjects/User/UserDto.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WebProject.Core/Entities/Blog/BlogEf.cs" beforeDir="false" afterPath="$PROJECT_DIR$/../ECommerce/ECommerce.Core/Entities/Blog/BlogEf.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WebProject.Core/Entities/Blog/MessageEf.cs" beforeDir="false" afterPath="$PROJECT_DIR$/../ECommerce/ECommerce.Core/Entities/Blog/MessageEf.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WebProject.Core/Entities/Product/CategoryEf.cs" beforeDir="false" afterPath="$PROJECT_DIR$/../ECommerce/ECommerce.Core/Entities/Product/CategoryEf.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WebProject.Core/Entities/Product/FilterEf.cs" beforeDir="false" afterPath="$PROJECT_DIR$/../ECommerce/ECommerce.Core/Entities/Product/FilterEf.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WebProject.Core/Entities/Product/FilterValueEf.cs" beforeDir="false" afterPath="$PROJECT_DIR$/../ECommerce/ECommerce.Core/Entities/Product/FilterValueEf.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WebProject.Core/Entities/Product/ProductEf.cs" beforeDir="false" afterPath="$PROJECT_DIR$/../ECommerce/ECommerce.Core/Entities/Product/ProductEf.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WebProject.Core/Entities/Product/RateItemEf.cs" beforeDir="false" afterPath="$PROJECT_DIR$/../ECommerce/ECommerce.Core/Entities/Product/RateItemEf.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WebProject.Core/Entities/User/AddressEf.cs" beforeDir="false" afterPath="$PROJECT_DIR$/../ECommerce/ECommerce.Core/Entities/User/AddressEf.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WebProject.Core/Entities/User/CartItemEf.cs" beforeDir="false" afterPath="$PROJECT_DIR$/../ECommerce/ECommerce.Core/Entities/User/CartItemEf.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WebProject.Core/Entities/User/ContactUsEf.cs" beforeDir="false" afterPath="$PROJECT_DIR$/../ECommerce/ECommerce.Core/Entities/User/ContactUsEf.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WebProject.Core/Entities/User/OrderEf.cs" beforeDir="false" afterPath="$PROJECT_DIR$/../ECommerce/ECommerce.Core/Entities/User/OrderEf.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WebProject.Core/Entities/User/OrderItemEf.cs" beforeDir="false" afterPath="$PROJECT_DIR$/../ECommerce/ECommerce.Core/Entities/User/OrderItemEf.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WebProject.Core/Entities/User/UserEf.cs" beforeDir="false" afterPath="$PROJECT_DIR$/../ECommerce/ECommerce.Core/Entities/User/UserEf.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WebProject.Core/Enums/Account/AccountVerificationStatus.cs" beforeDir="false" afterPath="$PROJECT_DIR$/../ECommerce/ECommerce.Core/Enums/Account/AccountVerificationStatus.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WebProject.Core/Enums/Message/MessageStatus.cs" beforeDir="false" afterPath="$PROJECT_DIR$/../ECommerce/ECommerce.Core/Enums/Message/MessageStatus.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WebProject.Core/Enums/Operation/RequestStatus.cs" beforeDir="false" afterPath="$PROJECT_DIR$/../ECommerce/ECommerce.Core/Enums/Operation/RequestStatus.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WebProject.Core/Enums/Order/OrderStatus.cs" beforeDir="false" afterPath="$PROJECT_DIR$/../ECommerce/ECommerce.Core/Enums/Order/OrderStatus.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WebProject.Core/Enums/Order/PaymentType.cs" beforeDir="false" afterPath="$PROJECT_DIR$/../ECommerce/ECommerce.Core/Enums/Order/PaymentType.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WebProject.Core/Enums/Product/ProductSellType.cs" beforeDir="false" afterPath="$PROJECT_DIR$/../ECommerce/ECommerce.Core/Enums/Product/ProductSellType.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WebProject.Core/Enums/Product/ProductStockStatus.cs" beforeDir="false" afterPath="$PROJECT_DIR$/../ECommerce/ECommerce.Core/Enums/Product/ProductStockStatus.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WebProject.Core/Enums/Product/ProductVisibilityStatus.cs" beforeDir="false" afterPath="$PROJECT_DIR$/../ECommerce/ECommerce.Core/Enums/Product/ProductVisibilityStatus.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WebProject.Core/Enums/SortTypes/SortBy.cs" beforeDir="false" afterPath="$PROJECT_DIR$/../ECommerce/ECommerce.Core/Enums/SortTypes/SortBy.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WebProject.Core/Enums/SortTypes/SortTypes.cs" beforeDir="false" afterPath="$PROJECT_DIR$/../ECommerce/ECommerce.Core/Enums/SortTypes/SortTypes.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WebProject.Core/Enums/User/UserStatus.cs" beforeDir="false" afterPath="$PROJECT_DIR$/../ECommerce/ECommerce.Core/Enums/User/UserStatus.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WebProject.Core/Enums/User/UserType.cs" beforeDir="false" afterPath="$PROJECT_DIR$/../ECommerce/ECommerce.Core/Enums/User/UserType.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WebProject.Core/Interfaces/Admin/IWebSiteControl.cs" beforeDir="false" afterPath="$PROJECT_DIR$/../ECommerce/ECommerce.Core/Interfaces/Admin/IWebSiteControl.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WebProject.Core/Interfaces/Blog/IBlogsRepository.cs" beforeDir="false" afterPath="$PROJECT_DIR$/../ECommerce/ECommerce.Core/Interfaces/Blog/IBlogsRepository.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WebProject.Core/Interfaces/Blog/IMessagesRepository.cs" beforeDir="false" afterPath="$PROJECT_DIR$/../ECommerce/ECommerce.Core/Interfaces/Blog/IMessagesRepository.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WebProject.Core/Interfaces/IGenericRepository.cs" beforeDir="false" afterPath="$PROJECT_DIR$/../ECommerce/ECommerce.Core/Interfaces/IGenericRepository.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WebProject.Core/Interfaces/Product/ICategoriesRepository.cs" beforeDir="false" afterPath="$PROJECT_DIR$/../ECommerce/ECommerce.Core/Interfaces/Product/ICategoriesRepository.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WebProject.Core/Interfaces/Product/IFilterValuesRepository.cs" beforeDir="false" afterPath="$PROJECT_DIR$/../ECommerce/ECommerce.Core/Interfaces/Product/IFilterValuesRepository.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WebProject.Core/Interfaces/Product/IFiltersRepository.cs" beforeDir="false" afterPath="$PROJECT_DIR$/../ECommerce/ECommerce.Core/Interfaces/Product/IFiltersRepository.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WebProject.Core/Interfaces/Product/IProductsRepository.cs" beforeDir="false" afterPath="$PROJECT_DIR$/../ECommerce/ECommerce.Core/Interfaces/Product/IProductsRepository.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WebProject.Core/Interfaces/Product/IRateItemsRepository.cs" beforeDir="false" afterPath="$PROJECT_DIR$/../ECommerce/ECommerce.Core/Interfaces/Product/IRateItemsRepository.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WebProject.Core/Interfaces/User/IAddressesRepository.cs" beforeDir="false" afterPath="$PROJECT_DIR$/../ECommerce/ECommerce.Core/Interfaces/User/IAddressesRepository.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WebProject.Core/Interfaces/User/ICartItemsRepository.cs" beforeDir="false" afterPath="$PROJECT_DIR$/../ECommerce/ECommerce.Core/Interfaces/User/ICartItemsRepository.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WebProject.Core/Interfaces/User/IContactUsRepository.cs" beforeDir="false" afterPath="$PROJECT_DIR$/../ECommerce/ECommerce.Core/Interfaces/User/IContactUsRepository.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WebProject.Core/Interfaces/User/IOrderItemsRepository.cs" beforeDir="false" afterPath="$PROJECT_DIR$/../ECommerce/ECommerce.Core/Interfaces/User/IOrderItemsRepository.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WebProject.Core/Interfaces/User/IOrdersRepository.cs" beforeDir="false" afterPath="$PROJECT_DIR$/../ECommerce/ECommerce.Core/Interfaces/User/IOrdersRepository.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WebProject.Core/Interfaces/User/IUsersRepository.cs" beforeDir="false" afterPath="$PROJECT_DIR$/../ECommerce/ECommerce.Core/Interfaces/User/IUsersRepository.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/WebProject.Core/WebProject.Core.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/WebProject.Core/WebProject.Core.csproj" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/WebProject.Core/bin/Debug/WebProject.Core.dll" beforeDir="false" afterPath="$PROJECT_DIR$/WebProject.Core/bin/Debug/WebProject.Core.dll" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/WebProject.Core/bin/Debug/WebProject.Core.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/WebProject.Core/bin/Debug/WebProject.Core.pdb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/WebProject.Core/bin/Debug/WebProject.Helper.dll" beforeDir="false" afterPath="$PROJECT_DIR$/WebProject.Core/bin/Debug/WebProject.Helper.dll" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/WebProject.Core/bin/Debug/WebProject.Helper.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/WebProject.Core/bin/Debug/WebProject.Helper.pdb" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/WebProject.Core/obj/Debug/WebProject.Core.csproj.AssemblyReference.cache" beforeDir="false" afterPath="$PROJECT_DIR$/WebProject.Core/obj/Debug/WebProject.Core.csproj.AssemblyReference.cache" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/WebProject.Core/obj/Debug/WebProject.Core.csproj.CoreCompileInputs.cache" beforeDir="false" afterPath="$PROJECT_DIR$/WebProject.Core/obj/Debug/WebProject.Core.csproj.CoreCompileInputs.cache" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/WebProject.Core/obj/Debug/WebProject.Core.csproj.FileListAbsolute.txt" beforeDir="false" afterPath="$PROJECT_DIR$/WebProject.Core/obj/Debug/WebProject.Core.csproj.FileListAbsolute.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/WebProject.Core/obj/Debug/WebProject.Core.dll" beforeDir="false" afterPath="$PROJECT_DIR$/WebProject.Core/obj/Debug/WebProject.Core.dll" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/WebProject.Core/obj/Debug/WebProject.Core.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/WebProject.Core/obj/Debug/WebProject.Core.pdb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/WebProject.Dal/bin/Debug/WebProject.Core.dll" beforeDir="false" afterPath="$PROJECT_DIR$/WebProject.Dal/bin/Debug/WebProject.Core.dll" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/WebProject.Dal/bin/Debug/WebProject.Core.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/WebProject.Dal/bin/Debug/WebProject.Core.pdb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/WebProject.Dal/bin/Debug/WebProject.Dal.dll" beforeDir="false" afterPath="$PROJECT_DIR$/WebProject.Dal/bin/Debug/WebProject.Dal.dll" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/WebProject.Dal/bin/Debug/WebProject.Dal.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/WebProject.Dal/bin/Debug/WebProject.Dal.pdb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/WebProject.Dal/bin/Debug/WebProject.Helper.dll" beforeDir="false" afterPath="$PROJECT_DIR$/WebProject.Dal/bin/Debug/WebProject.Helper.dll" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/WebProject.Dal/bin/Debug/WebProject.Helper.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/WebProject.Dal/bin/Debug/WebProject.Helper.pdb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/WebProject.Dal/obj/Debug/WebProject.Dal.csproj.AssemblyReference.cache" beforeDir="false" afterPath="$PROJECT_DIR$/WebProject.Dal/obj/Debug/WebProject.Dal.csproj.AssemblyReference.cache" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/WebProject.Dal/obj/Debug/WebProject.Dal.csproj.CoreCompileInputs.cache" beforeDir="false" afterPath="$PROJECT_DIR$/WebProject.Dal/obj/Debug/WebProject.Dal.csproj.CoreCompileInputs.cache" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/WebProject.Dal/obj/Debug/WebProject.Dal.csproj.FileListAbsolute.txt" beforeDir="false" afterPath="$PROJECT_DIR$/WebProject.Dal/obj/Debug/WebProject.Dal.csproj.FileListAbsolute.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/WebProject.Dal/obj/Debug/WebProject.Dal.csproj.GenerateResource.cache" beforeDir="false" afterPath="$PROJECT_DIR$/WebProject.Dal/obj/Debug/WebProject.Dal.csproj.GenerateResource.cache" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/WebProject.Dal/obj/Debug/WebProject.Dal.dll" beforeDir="false" afterPath="$PROJECT_DIR$/WebProject.Dal/obj/Debug/WebProject.Dal.dll" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/WebProject.Dal/obj/Debug/WebProject.Dal.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/WebProject.Dal/obj/Debug/WebProject.Dal.pdb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/WebProject.Dal/obj/WebProject.Dal.csproj.nuget.dgspec.json" beforeDir="false" afterPath="$PROJECT_DIR$/WebProject.Dal/obj/WebProject.Dal.csproj.nuget.dgspec.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/WebProject.Dal/obj/WebProject.Dal.csproj.nuget.g.props" beforeDir="false" afterPath="$PROJECT_DIR$/WebProject.Dal/obj/WebProject.Dal.csproj.nuget.g.props" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/WebProject.Dal/obj/project.assets.json" beforeDir="false" afterPath="$PROJECT_DIR$/WebProject.Dal/obj/project.assets.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/WebProject.Dal/obj/project.nuget.cache" beforeDir="false" afterPath="$PROJECT_DIR$/WebProject.Dal/obj/project.nuget.cache" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/WebProject.Dal/obj/rider.project.model.nuget.info" beforeDir="false" afterPath="$PROJECT_DIR$/WebProject.Dal/obj/rider.project.model.nuget.info" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/WebProject.Dal/obj/rider.project.restore.info" beforeDir="false" afterPath="$PROJECT_DIR$/WebProject.Dal/obj/rider.project.restore.info" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/WebProject.Helper/bin/Debug/WebProject.Helper.dll" beforeDir="false" afterPath="$PROJECT_DIR$/WebProject.Helper/bin/Debug/WebProject.Helper.dll" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/WebProject.Helper/bin/Debug/WebProject.Helper.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/WebProject.Helper/bin/Debug/WebProject.Helper.pdb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/WebProject.Helper/obj/Debug/WebProject.Helper.csproj.FileListAbsolute.txt" beforeDir="false" afterPath="$PROJECT_DIR$/WebProject.Helper/obj/Debug/WebProject.Helper.csproj.FileListAbsolute.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/WebProject.Helper/obj/Debug/WebProject.Helper.dll" beforeDir="false" afterPath="$PROJECT_DIR$/WebProject.Helper/obj/Debug/WebProject.Helper.dll" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/WebProject.Helper/obj/Debug/WebProject.Helper.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/WebProject.Helper/obj/Debug/WebProject.Helper.pdb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WebProject.Dal/App.config" beforeDir="false" afterPath="$PROJECT_DIR$/WebProject.Dal/App.config" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WebProject.Dal/Configurations/AddressEfConfiguration.cs" beforeDir="false" afterPath="$PROJECT_DIR$/../ECommerce/ECommerce.Dal/Configurations/AddressEfConfiguration.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WebProject.Dal/Configurations/BlogEfConfiguration.cs" beforeDir="false" afterPath="$PROJECT_DIR$/../ECommerce/ECommerce.Dal/Configurations/BlogEfConfiguration.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WebProject.Dal/Configurations/CartItemEfConfiguration.cs" beforeDir="false" afterPath="$PROJECT_DIR$/../ECommerce/ECommerce.Dal/Configurations/CartItemEfConfiguration.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WebProject.Dal/Configurations/CategoryEfConfiguration.cs" beforeDir="false" afterPath="$PROJECT_DIR$/../ECommerce/ECommerce.Dal/Configurations/CategoryEfConfiguration.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WebProject.Dal/Configurations/ContactUsEfConfiguration.cs" beforeDir="false" afterPath="$PROJECT_DIR$/../ECommerce/ECommerce.Dal/Configurations/ContactUsEfConfiguration.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WebProject.Dal/Configurations/FilterEfConfiguration.cs" beforeDir="false" afterPath="$PROJECT_DIR$/../ECommerce/ECommerce.Dal/Configurations/FilterEfConfiguration.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WebProject.Dal/Configurations/FilterValueEfConfiguration.cs" beforeDir="false" afterPath="$PROJECT_DIR$/../ECommerce/ECommerce.Dal/Configurations/FilterValueEfConfiguration.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WebProject.Dal/Configurations/MessageEfConfiguration.cs" beforeDir="false" afterPath="$PROJECT_DIR$/../ECommerce/ECommerce.Dal/Configurations/MessageEfConfiguration.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WebProject.Dal/Configurations/OrderEfConfiguration.cs" beforeDir="false" afterPath="$PROJECT_DIR$/../ECommerce/ECommerce.Dal/Configurations/OrderEfConfiguration.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WebProject.Dal/Configurations/OrderItemEfConfiguration.cs" beforeDir="false" afterPath="$PROJECT_DIR$/../ECommerce/ECommerce.Dal/Configurations/OrderItemEfConfiguration.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WebProject.Dal/Configurations/ProductEfConfiguration.cs" beforeDir="false" afterPath="$PROJECT_DIR$/../ECommerce/ECommerce.Dal/Configurations/ProductEfConfiguration.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WebProject.Dal/Configurations/RateItemEfConfiguration.cs" beforeDir="false" afterPath="$PROJECT_DIR$/../ECommerce/ECommerce.Dal/Configurations/RateItemEfConfiguration.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WebProject.Dal/Configurations/UserEfConfiguration.cs" beforeDir="false" afterPath="$PROJECT_DIR$/../ECommerce/ECommerce.Dal/Configurations/UserEfConfiguration.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WebProject.Dal/Migrations/202502060913091_init.Designer.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/WebProject.Dal/Migrations/202502060913091_init.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/WebProject.Dal/Migrations/202502060913091_init.resx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/WebProject.Dal/Migrations/Configuration.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/WebProject.Dal/Properties/AssemblyInfo.cs" beforeDir="false" afterPath="$PROJECT_DIR$/WebProject.Dal/Properties/AssemblyInfo.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WebProject.Dal/Repositories/Admin/WebSiteControl.cs" beforeDir="false" afterPath="$PROJECT_DIR$/../ECommerce/ECommerce.Dal/Repositories/Admin/WebSiteControl.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WebProject.Dal/Repositories/Blog/BlogsRepository.cs" beforeDir="false" afterPath="$PROJECT_DIR$/../ECommerce/ECommerce.Dal/Repositories/Blog/BlogsRepository.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WebProject.Dal/Repositories/Blog/MessagesRepository.cs" beforeDir="false" afterPath="$PROJECT_DIR$/../ECommerce/ECommerce.Dal/Repositories/Blog/MessagesRepository.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WebProject.Dal/Repositories/Product/CategoriesRepository.cs" beforeDir="false" afterPath="$PROJECT_DIR$/../ECommerce/ECommerce.Dal/Repositories/Product/CategoriesRepository.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WebProject.Dal/Repositories/Product/FilterValuesRepository.cs" beforeDir="false" afterPath="$PROJECT_DIR$/../ECommerce/ECommerce.Dal/Repositories/Product/FilterValuesRepository.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WebProject.Dal/Repositories/Product/FiltersRepository.cs" beforeDir="false" afterPath="$PROJECT_DIR$/../ECommerce/ECommerce.Dal/Repositories/Product/FiltersRepository.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WebProject.Dal/Repositories/Product/ProductsRepository.cs" beforeDir="false" afterPath="$PROJECT_DIR$/../ECommerce/ECommerce.Dal/Repositories/Product/ProductsRepository.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WebProject.Dal/Repositories/Product/RateItemsRepository.cs" beforeDir="false" afterPath="$PROJECT_DIR$/../ECommerce/ECommerce.Dal/Repositories/Product/RateItemsRepository.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WebProject.Dal/Repositories/User/AddressesRepository.cs" beforeDir="false" afterPath="$PROJECT_DIR$/../ECommerce/ECommerce.Dal/Repositories/User/AddressesRepository.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WebProject.Dal/Repositories/User/CartItemsRepository.cs" beforeDir="false" afterPath="$PROJECT_DIR$/../ECommerce/ECommerce.Dal/Repositories/User/CartItemsRepository.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WebProject.Dal/Repositories/User/ContactUsRepository.cs" beforeDir="false" afterPath="$PROJECT_DIR$/../ECommerce/ECommerce.Dal/Repositories/User/ContactUsRepository.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WebProject.Dal/Repositories/User/OrderItemsRepository.cs" beforeDir="false" afterPath="$PROJECT_DIR$/../ECommerce/ECommerce.Dal/Repositories/User/OrderItemsRepository.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WebProject.Dal/Repositories/User/OrdersRepository.cs" beforeDir="false" afterPath="$PROJECT_DIR$/../ECommerce/ECommerce.Dal/Repositories/User/OrdersRepository.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WebProject.Dal/Repositories/User/UsersRepository.cs" beforeDir="false" afterPath="$PROJECT_DIR$/../ECommerce/ECommerce.Dal/Repositories/User/UsersRepository.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WebProject.Dal/StoreContext.cs" beforeDir="false" afterPath="$PROJECT_DIR$/../ECommerce/ECommerce.Dal/StoreContext.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WebProject.Dal/WebProject.Dal.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/WebProject.Dal/WebProject.Dal.csproj" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WebProject.Dal/bin/Debug/EntityFramework.SqlServer.dll" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/WebProject.Dal/bin/Debug/EntityFramework.dll" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/WebProject.Dal/bin/Debug/System.Data.SqlClient.dll" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/WebProject.Dal/bin/Debug/WebProject.Core.dll" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/WebProject.Dal/bin/Debug/WebProject.Core.pdb" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/WebProject.Dal/bin/Debug/WebProject.Dal.dll" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/WebProject.Dal/bin/Debug/WebProject.Dal.dll.config" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/WebProject.Dal/bin/Debug/WebProject.Dal.pdb" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/WebProject.Dal/bin/Debug/WebProject.Helper.dll" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/WebProject.Dal/bin/Debug/WebProject.Helper.pdb" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/WebProject.Dal/obj/Debug/.NETFramework,Version=v4.7.2.AssemblyAttributes.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/WebProject.Dal/obj/Debug/WebProje.3EAB6609.Up2Date" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/WebProject.Dal/obj/Debug/WebProject.Dal.Migrations.init.resources" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/WebProject.Dal/obj/Debug/WebProject.Dal.csproj.AssemblyReference.cache" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/WebProject.Dal/obj/Debug/WebProject.Dal.csproj.CoreCompileInputs.cache" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/WebProject.Dal/obj/Debug/WebProject.Dal.csproj.FileListAbsolute.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/WebProject.Dal/obj/Debug/WebProject.Dal.csproj.GenerateResource.cache" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/WebProject.Dal/obj/Debug/WebProject.Dal.dll" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/WebProject.Dal/obj/Debug/WebProject.Dal.pdb" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/WebProject.Dal/obj/WebProject.Dal.csproj.nuget.dgspec.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/WebProject.Dal/obj/WebProject.Dal.csproj.nuget.g.props" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/WebProject.Dal/obj/WebProject.Dal.csproj.nuget.g.targets" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/WebProject.Dal/obj/project.assets.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/WebProject.Dal/obj/project.nuget.cache" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/WebProject.Dal/obj/rider.project.model.nuget.info" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/WebProject.Dal/obj/rider.project.restore.info" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/WebProject.Helper/ErrorHelper.cs" beforeDir="false" afterPath="$PROJECT_DIR$/../ECommerce/ECommerce.Helper/ErrorHelper.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WebProject.Helper/ModelGeneratingClass.cs" beforeDir="false" afterPath="$PROJECT_DIR$/../ECommerce/ECommerce.Helper/ModelGeneratingClass.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WebProject.Helper/WebProject.Helper.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/WebProject.Helper/WebProject.Helper.csproj" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WebProject.ModelAccesLayer/obj/Debug/WebProject.ModelAccessLayer.csproj.AssemblyReference.cache" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/WebProject.Tests/Tests.cs" beforeDir="false" afterPath="$PROJECT_DIR$/WebProject.Tests/Tests.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WebProject.Tests/WebProject.Tests.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/WebProject.Tests/WebProject.Tests.csproj" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/WebProject.Tests/obj/Debug/WebProject.Tests.csproj.AssemblyReference.cache" beforeDir="false" afterPath="$PROJECT_DIR$/WebProject.Tests/obj/Debug/WebProject.Tests.csproj.AssemblyReference.cache" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/WebProject/Controllers/AccountController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/WebProject/Controllers/AuthController.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/WebProject/Controllers/HomeController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/WebProject/Controllers/HomeController.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/WebProject/Controllers/UserController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/WebProject/Controllers/UserController.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WebProject.Tests/packages.config" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/WebProject.sln.DotSettings.user" beforeDir="false" afterPath="$PROJECT_DIR$/WebProject.sln.DotSettings.user" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WebProject/App_Start/IdentityConfig.cs" beforeDir="false" afterPath="$PROJECT_DIR$/../ECommerce/ECommerce.Api/App_Start/IdentityConfig.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WebProject/App_Start/RouteConfig.cs" beforeDir="false" afterPath="$PROJECT_DIR$/WebProject/App_Start/RouteConfig.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WebProject/App_Start/UnityConfig.cs" beforeDir="false" afterPath="$PROJECT_DIR$/../ECommerce/ECommerce.Api/App_Start/UnityConfig.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WebProject/App_Start/UnityMvcActivator.cs" beforeDir="false" afterPath="$PROJECT_DIR$/../ECommerce/ECommerce.Api/App_Start/UnityMvcActivator.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WebProject/Asset/css/animate.css" beforeDir="false" afterPath="$PROJECT_DIR$/../ECommerce/ECommerce.Api/Asset/css/animate.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WebProject/Asset/css/bootstrap.css" beforeDir="false" afterPath="$PROJECT_DIR$/../ECommerce/ECommerce.Api/Asset/css/bootstrap.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WebProject/Asset/css/color/color1.css" beforeDir="false" afterPath="$PROJECT_DIR$/../ECommerce/ECommerce.Api/Asset/css/color/color1.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WebProject/Asset/css/color/color10.css" beforeDir="false" afterPath="$PROJECT_DIR$/../ECommerce/ECommerce.Api/Asset/css/color/color10.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WebProject/Asset/css/color/color11.css" beforeDir="false" afterPath="$PROJECT_DIR$/../ECommerce/ECommerce.Api/Asset/css/color/color11.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WebProject/Asset/css/color/color12.css" beforeDir="false" afterPath="$PROJECT_DIR$/../ECommerce/ECommerce.Api/Asset/css/color/color12.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WebProject/Asset/css/color/color2.css" beforeDir="false" afterPath="$PROJECT_DIR$/../ECommerce/ECommerce.Api/Asset/css/color/color2.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WebProject/Asset/css/color/color3.css" beforeDir="false" afterPath="$PROJECT_DIR$/../ECommerce/ECommerce.Api/Asset/css/color/color3.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WebProject/Asset/css/color/color4.css" beforeDir="false" afterPath="$PROJECT_DIR$/../ECommerce/ECommerce.Api/Asset/css/color/color4.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WebProject/Asset/css/color/color5.css" beforeDir="false" afterPath="$PROJECT_DIR$/../ECommerce/ECommerce.Api/Asset/css/color/color5.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WebProject/Asset/css/color/color6.css" beforeDir="false" afterPath="$PROJECT_DIR$/../ECommerce/ECommerce.Api/Asset/css/color/color6.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WebProject/Asset/css/color/color7.css" beforeDir="false" afterPath="$PROJECT_DIR$/../ECommerce/ECommerce.Api/Asset/css/color/color7.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WebProject/Asset/css/color/color8.css" beforeDir="false" afterPath="$PROJECT_DIR$/../ECommerce/ECommerce.Api/Asset/css/color/color8.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WebProject/Asset/css/color/color9.css" beforeDir="false" afterPath="$PROJECT_DIR$/../ECommerce/ECommerce.Api/Asset/css/color/color9.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WebProject/Asset/css/flex-slider.min.css" beforeDir="false" afterPath="$PROJECT_DIR$/../ECommerce/ECommerce.Api/Asset/css/flex-slider.min.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WebProject/Asset/css/font-awesome.css" beforeDir="false" afterPath="$PROJECT_DIR$/../ECommerce/ECommerce.Api/Asset/css/font-awesome.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WebProject/Asset/css/jquery-ui.css" beforeDir="false" afterPath="$PROJECT_DIR$/../ECommerce/ECommerce.Api/Asset/css/jquery-ui.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WebProject/Asset/css/magnific-popup.css" beforeDir="false" afterPath="$PROJECT_DIR$/../ECommerce/ECommerce.Api/Asset/css/magnific-popup.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WebProject/Asset/css/magnific-popup.min.css" beforeDir="false" afterPath="$PROJECT_DIR$/../ECommerce/ECommerce.Api/Asset/css/magnific-popup.min.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WebProject/Asset/css/nice-select.css" beforeDir="false" afterPath="$PROJECT_DIR$/../ECommerce/ECommerce.Api/Asset/css/nice-select.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WebProject/Asset/css/niceselect.css" beforeDir="false" afterPath="$PROJECT_DIR$/../ECommerce/ECommerce.Api/Asset/css/niceselect.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WebProject/Asset/css/owl-carousel.css" beforeDir="false" afterPath="$PROJECT_DIR$/../ECommerce/ECommerce.Api/Asset/css/owl-carousel.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WebProject/Asset/css/reset.css" beforeDir="false" afterPath="$PROJECT_DIR$/../ECommerce/ECommerce.Api/Asset/css/reset.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WebProject/Asset/css/responsive.css" beforeDir="false" afterPath="$PROJECT_DIR$/../ECommerce/ECommerce.Api/Asset/css/responsive.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WebProject/Asset/css/slicknav.min.css" beforeDir="false" afterPath="$PROJECT_DIR$/../ECommerce/ECommerce.Api/Asset/css/slicknav.min.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WebProject/Asset/css/themify-icons.css" beforeDir="false" afterPath="$PROJECT_DIR$/../ECommerce/ECommerce.Api/Asset/css/themify-icons.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WebProject/Asset/fonts/fontawesome-webfont.eot" beforeDir="false" afterPath="$PROJECT_DIR$/../ECommerce/ECommerce.Api/Asset/fonts/fontawesome-webfont.eot" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WebProject/Asset/fonts/fontawesome-webfont.svg" beforeDir="false" afterPath="$PROJECT_DIR$/../ECommerce/ECommerce.Api/Asset/fonts/fontawesome-webfont.svg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WebProject/Asset/fonts/fontawesome-webfont.ttf" beforeDir="false" afterPath="$PROJECT_DIR$/../ECommerce/ECommerce.Api/Asset/fonts/fontawesome-webfont.ttf" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WebProject/Asset/fonts/fontawesome-webfont.woff" beforeDir="false" afterPath="$PROJECT_DIR$/../ECommerce/ECommerce.Api/Asset/fonts/fontawesome-webfont.woff" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WebProject/Asset/fonts/fontawesome-webfont.woff2" beforeDir="false" afterPath="$PROJECT_DIR$/../ECommerce/ECommerce.Api/Asset/fonts/fontawesome-webfont.woff2" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WebProject/Asset/fonts/themify.eot" beforeDir="false" afterPath="$PROJECT_DIR$/../ECommerce/ECommerce.Api/Asset/fonts/themify.eot" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WebProject/Asset/fonts/themify.svg" beforeDir="false" afterPath="$PROJECT_DIR$/../ECommerce/ECommerce.Api/Asset/fonts/themify.svg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WebProject/Asset/fonts/themify.ttf" beforeDir="false" afterPath="$PROJECT_DIR$/../ECommerce/ECommerce.Api/Asset/fonts/themify.ttf" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WebProject/Asset/fonts/themify.woff" beforeDir="false" afterPath="$PROJECT_DIR$/../ECommerce/ECommerce.Api/Asset/fonts/themify.woff" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WebProject/Asset/images/100x100/PS (1).jpg" beforeDir="false" afterPath="$PROJECT_DIR$/../ECommerce/ECommerce.Api/Asset/images/100x100/PS (1).jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WebProject/Asset/images/1160x560/26-iPhone-13.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/../ECommerce/ECommerce.Api/Asset/images/1160x560/26-iPhone-13.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WebProject/Asset/images/1160x560/IP.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/../ECommerce/ECommerce.Api/Asset/images/1160x560/IP.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WebProject/Asset/images/1160x560/SAM.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/../ECommerce/ECommerce.Api/Asset/images/1160x560/SAM.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WebProject/Asset/images/370x300/P1.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/../ECommerce/ECommerce.Api/Asset/images/370x300/P1.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WebProject/Asset/images/550x750/PC.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/../ECommerce/ECommerce.Api/Asset/images/550x750/PC.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WebProject/Asset/images/600x370/JBL.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/../ECommerce/ECommerce.Api/Asset/images/600x370/JBL.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WebProject/Asset/images/600x370/tv.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/../ECommerce/ECommerce.Api/Asset/images/600x370/tv.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WebProject/Asset/images/70x70/PC.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/../ECommerce/ECommerce.Api/Asset/images/70x70/PC.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WebProject/Asset/images/750x590/PS.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/../ECommerce/ECommerce.Api/Asset/images/750x590/PS.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WebProject/Asset/images/750x590/logo.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/../ECommerce/ECommerce.Api/Asset/images/750x590/logo.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WebProject/Asset/images/banner.png" beforeDir="false" afterPath="$PROJECT_DIR$/../ECommerce/ECommerce.Api/Asset/images/banner.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WebProject/Asset/images/favicon.png" beforeDir="false" afterPath="$PROJECT_DIR$/../ECommerce/ECommerce.Api/Asset/images/favicon.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WebProject/Asset/images/logo.png" beforeDir="false" afterPath="$PROJECT_DIR$/../ECommerce/ECommerce.Api/Asset/images/logo.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WebProject/Asset/images/logo2.png" beforeDir="false" afterPath="$PROJECT_DIR$/../ECommerce/ECommerce.Api/Asset/images/logo2.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WebProject/Asset/images/map-marker.png" beforeDir="false" afterPath="$PROJECT_DIR$/../ECommerce/ECommerce.Api/Asset/images/map-marker.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WebProject/Asset/images/payment-method.png" beforeDir="false" afterPath="$PROJECT_DIR$/../ECommerce/ECommerce.Api/Asset/images/payment-method.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WebProject/Asset/images/payments.png" beforeDir="false" afterPath="$PROJECT_DIR$/../ECommerce/ECommerce.Api/Asset/images/payments.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WebProject/Asset/js/active.js" beforeDir="false" afterPath="$PROJECT_DIR$/../ECommerce/ECommerce.Api/Asset/js/active.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WebProject/Asset/js/bootstrap.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/../ECommerce/ECommerce.Api/Asset/js/bootstrap.min.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WebProject/Asset/js/colors.js" beforeDir="false" afterPath="$PROJECT_DIR$/../ECommerce/ECommerce.Api/Asset/js/colors.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WebProject/Asset/js/easing.js" beforeDir="false" afterPath="$PROJECT_DIR$/../ECommerce/ECommerce.Api/Asset/js/easing.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WebProject/Asset/js/facnybox.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/../ECommerce/ECommerce.Api/Asset/js/facnybox.min.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WebProject/Asset/js/finalcountdown.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/../ECommerce/ECommerce.Api/Asset/js/finalcountdown.min.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WebProject/Asset/js/flex-slider.js" beforeDir="false" afterPath="$PROJECT_DIR$/../ECommerce/ECommerce.Api/Asset/js/flex-slider.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WebProject/Asset/js/gmap.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/../ECommerce/ECommerce.Api/Asset/js/gmap.min.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WebProject/Asset/js/jquery-migrate-3.0.0.js" beforeDir="false" afterPath="$PROJECT_DIR$/../ECommerce/ECommerce.Api/Asset/js/jquery-migrate-3.0.0.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WebProject/Asset/js/jquery-ui.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/../ECommerce/ECommerce.Api/Asset/js/jquery-ui.min.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WebProject/Asset/js/jquery.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/../ECommerce/ECommerce.Api/Asset/js/jquery.min.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WebProject/Asset/js/magnific-popup.js" beforeDir="false" afterPath="$PROJECT_DIR$/../ECommerce/ECommerce.Api/Asset/js/magnific-popup.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WebProject/Asset/js/map-script.js" beforeDir="false" afterPath="$PROJECT_DIR$/../ECommerce/ECommerce.Api/Asset/js/map-script.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WebProject/Asset/js/nicesellect.js" beforeDir="false" afterPath="$PROJECT_DIR$/../ECommerce/ECommerce.Api/Asset/js/nicesellect.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WebProject/Asset/js/onepage-nav.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/../ECommerce/ECommerce.Api/Asset/js/onepage-nav.min.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WebProject/Asset/js/owl-carousel.js" beforeDir="false" afterPath="$PROJECT_DIR$/../ECommerce/ECommerce.Api/Asset/js/owl-carousel.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WebProject/Asset/js/popper.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/../ECommerce/ECommerce.Api/Asset/js/popper.min.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WebProject/Asset/js/scrollup.js" beforeDir="false" afterPath="$PROJECT_DIR$/../ECommerce/ECommerce.Api/Asset/js/scrollup.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WebProject/Asset/js/slicknav.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/../ECommerce/ECommerce.Api/Asset/js/slicknav.min.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WebProject/Asset/js/waypoints.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/../ECommerce/ECommerce.Api/Asset/js/waypoints.min.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WebProject/Asset/mail/mail.php" beforeDir="false" afterPath="$PROJECT_DIR$/../ECommerce/ECommerce.Api/Asset/mail/mail.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WebProject/Asset/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/../ECommerce/ECommerce.Api/Asset/css/style.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WebProject/Controllers/AdminController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/../ECommerce/ECommerce.Api/Controllers/AdminController.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WebProject/Controllers/AuthController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/../ECommerce/ECommerce.Api/Controllers/AuthController.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WebProject/Controllers/BaseController.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/WebProject/Controllers/CartController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/../ECommerce/ECommerce.Api/Controllers/CartController.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WebProject/Controllers/HomeController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/../ECommerce/ECommerce.Api/Controllers/HomeController.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WebProject/Controllers/NewsController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/../ECommerce/ECommerce.Api/Controllers/NewsController.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WebProject/Controllers/OrderController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/../ECommerce/ECommerce.Api/Controllers/OrderController.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WebProject/Controllers/StoreController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/../ECommerce/ECommerce.Api/Controllers/StoreController.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WebProject/Controllers/UserController.cs" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/WebProject/Global.asax.cs" beforeDir="false" afterPath="$PROJECT_DIR$/WebProject/Global.asax.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/WebProject/Views/Account/SignIn.cshtml" beforeDir="false" afterPath="$PROJECT_DIR$/WebProject/Views/Auth/SignIn.cshtml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/WebProject/Views/Account/SignUp.cshtml" beforeDir="false" afterPath="$PROJECT_DIR$/WebProject/Views/Auth/SignUp.cshtml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/WebProject/Views/Partials/Header.cshtml" beforeDir="false" afterPath="$PROJECT_DIR$/WebProject/Views/Partials/Header.cshtml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WebProject/Views/Auth/SignIn.cshtml" beforeDir="false" afterPath="$PROJECT_DIR$/../ECommerce/ECommerce.Api/Views/Auth/SignIn.cshtml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WebProject/Views/Auth/SignUp.cshtml" beforeDir="false" afterPath="$PROJECT_DIR$/../ECommerce/ECommerce.Api/Views/Auth/SignUp.cshtml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WebProject/Views/Cart/Index.cshtml" beforeDir="false" afterPath="$PROJECT_DIR$/../ECommerce/ECommerce.Api/Views/Cart/Index.cshtml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WebProject/Views/Home/AboutUs.cshtml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/WebProject/Views/Home/Confirmation.cshtml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/WebProject/Views/Home/ContactUs.cshtml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/WebProject/Views/Home/Error.cshtml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/WebProject/Views/Home/Index.cshtml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/WebProject/Views/News/Blog.cshtml" beforeDir="false" afterPath="$PROJECT_DIR$/../ECommerce/ECommerce.Api/Views/News/Blog.cshtml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WebProject/Views/News/Blogs.cshtml" beforeDir="false" afterPath="$PROJECT_DIR$/../ECommerce/ECommerce.Api/Views/News/Blogs.cshtml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WebProject/Views/Order/GetOrderForm.cshtml" beforeDir="false" afterPath="$PROJECT_DIR$/../ECommerce/ECommerce.Api/Views/Order/GetOrderForm.cshtml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WebProject/Views/Partials/Footer.cshtml" beforeDir="false" afterPath="$PROJECT_DIR$/../ECommerce/ECommerce.Api/Views/Partials/Footer.cshtml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WebProject/Views/Partials/Header.cshtml" beforeDir="false" afterPath="$PROJECT_DIR$/../ECommerce/ECommerce.Api/Views/Partials/Header.cshtml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WebProject/Views/Partials/SingleBlogCard.cshtml" beforeDir="false" afterPath="$PROJECT_DIR$/../ECommerce/ECommerce.Api/Views/Partials/SingleBlogCard.cshtml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WebProject/Views/Partials/SingleCartProduct.cshtml" beforeDir="false" afterPath="$PROJECT_DIR$/../ECommerce/ECommerce.Api/Views/Partials/SingleCartProduct.cshtml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WebProject/Views/Partials/SingleProductCard.cshtml" beforeDir="false" afterPath="$PROJECT_DIR$/../ECommerce/ECommerce.Api/Views/Partials/SingleProductCard.cshtml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WebProject/Views/Partials/StoreAdvantages.cshtml" beforeDir="false" afterPath="$PROJECT_DIR$/../ECommerce/ECommerce.Api/Views/Partials/StoreAdvantages.cshtml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WebProject/Views/Shared/_Layout.cshtml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/WebProject/Views/Store/Product.cshtml" beforeDir="false" afterPath="$PROJECT_DIR$/../ECommerce/ECommerce.Api/Views/Store/Product.cshtml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WebProject/Views/Store/Products.cshtml" beforeDir="false" afterPath="$PROJECT_DIR$/../ECommerce/ECommerce.Api/Views/Store/Products.cshtml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WebProject/Views/_ViewStart.cshtml" beforeDir="false" afterPath="$PROJECT_DIR$/../ECommerce/ECommerce.Api/Views/_ViewStart.cshtml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WebProject/Web.config" beforeDir="false" afterPath="$PROJECT_DIR$/WebProject/Web.config" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/WebProject/WebProject.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/WebProject/WebProject.csproj" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/WebProject/bin/Antlr3.Runtime.dll" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/WebProject/bin/Antlr3.Runtime.pdb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/WebProject/bin/EntityFramework.SqlServer.dll" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/WebProject/bin/EntityFramework.SqlServer.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/WebProject/bin/EntityFramework.dll" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/WebProject/bin/EntityFramework.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/WebProject/bin/Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/WebProject/bin/Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/WebProject/bin/Microsoft.Web.Infrastructure.dll" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/WebProject/bin/Newtonsoft.Json.dll" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/WebProject/bin/Newtonsoft.Json.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/WebProject/bin/System.Runtime.CompilerServices.Unsafe.dll" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/WebProject/bin/System.Runtime.CompilerServices.Unsafe.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/WebProject/bin/System.Threading.Tasks.Extensions.dll" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/WebProject/bin/System.Threading.Tasks.Extensions.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/WebProject/bin/System.Web.Helpers.dll" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/WebProject/bin/System.Web.Helpers.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/WebProject/bin/System.Web.Mvc.dll" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/WebProject/bin/System.Web.Mvc.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/WebProject/bin/System.Web.Optimization.dll" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/WebProject/bin/System.Web.Optimization.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/WebProject/bin/System.Web.Razor.dll" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/WebProject/bin/System.Web.Razor.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/WebProject/bin/System.Web.Webpages.Deployment.dll" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/WebProject/bin/System.Web.Webpages.Deployment.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/WebProject/bin/System.Web.Webpages.Razor.dll" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/WebProject/bin/System.Web.Webpages.Razor.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/WebProject/bin/System.Web.Webpages.dll" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/WebProject/bin/System.Web.Webpages.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/WebProject/bin/Unity.Abstractions.dll" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/WebProject/bin/Unity.Abstractions.pdb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/WebProject/bin/Unity.Container.dll" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/WebProject/bin/Unity.Container.pdb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/WebProject/bin/Unity.Mvc.dll" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/WebProject/bin/Unity.Mvc.pdb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/WebProject/bin/Unity.Mvc.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/WebProject/bin/WebActivatorEx.dll" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/WebProject/bin/WebGrease.dll" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/WebProject/bin/WebProject.App.dll" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/WebProject/bin/WebProject.App.pdb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/WebProject/bin/WebProject.BusinessLogic.dll.config" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/WebProject/bin/WebProject.Core.dll" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/WebProject/bin/WebProject.Core.pdb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/WebProject/bin/WebProject.Dal.dll" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/WebProject/bin/WebProject.Dal.dll.config" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/WebProject/bin/WebProject.Dal.pdb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/WebProject/bin/WebProject.Domain.dll.config" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/WebProject/bin/WebProject.Helper.dll" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/WebProject/bin/WebProject.Helper.pdb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/WebProject/bin/WebProject.dll" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/WebProject/bin/WebProject.dll.config" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/WebProject/bin/WebProject.pdb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/WebProject/bin/roslyn/Microsoft.Build.Tasks.CodeAnalysis.dll" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/WebProject/bin/roslyn/Microsoft.CSharp.Core.targets" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/WebProject/bin/roslyn/Microsoft.CodeAnalysis.CSharp.Scripting.dll" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/WebProject/bin/roslyn/Microsoft.CodeAnalysis.CSharp.dll" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/WebProject/bin/roslyn/Microsoft.CodeAnalysis.Scripting.dll" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/WebProject/bin/roslyn/Microsoft.CodeAnalysis.VisualBasic.dll" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/WebProject/bin/roslyn/Microsoft.CodeAnalysis.dll" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/WebProject/bin/roslyn/Microsoft.DiaSymReader.Native.amd64.dll" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/WebProject/bin/roslyn/Microsoft.DiaSymReader.Native.x86.dll" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/WebProject/bin/roslyn/Microsoft.Managed.Core.targets" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/WebProject/bin/roslyn/Microsoft.VisualBasic.Core.targets" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/WebProject/bin/roslyn/Microsoft.Win32.Primitives.dll" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/WebProject/bin/roslyn/System.AppContext.dll" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/WebProject/bin/roslyn/System.Collections.Immutable.dll" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/WebProject/bin/roslyn/System.Console.dll" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/WebProject/bin/roslyn/System.Diagnostics.DiagnosticSource.dll" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/WebProject/bin/roslyn/System.Diagnostics.FileVersionInfo.dll" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/WebProject/bin/roslyn/System.Diagnostics.StackTrace.dll" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/WebProject/bin/roslyn/System.Globalization.Calendars.dll" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/WebProject/bin/roslyn/System.IO.Compression.ZipFile.dll" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/WebProject/bin/roslyn/System.IO.Compression.dll" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/WebProject/bin/roslyn/System.IO.FileSystem.Primitives.dll" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/WebProject/bin/roslyn/System.IO.FileSystem.dll" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/WebProject/bin/roslyn/System.Net.Http.dll" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/WebProject/bin/roslyn/System.Net.Sockets.dll" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/WebProject/bin/roslyn/System.Reflection.Metadata.dll" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/WebProject/bin/roslyn/System.Runtime.InteropServices.RuntimeInformation.dll" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/WebProject/bin/roslyn/System.Security.Cryptography.Algorithms.dll" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/WebProject/bin/roslyn/System.Security.Cryptography.Encoding.dll" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/WebProject/bin/roslyn/System.Security.Cryptography.Primitives.dll" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/WebProject/bin/roslyn/System.Security.Cryptography.X509Certificates.dll" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/WebProject/bin/roslyn/System.Text.Encoding.CodePages.dll" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/WebProject/bin/roslyn/System.Threading.Tasks.Extensions.dll" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/WebProject/bin/roslyn/System.ValueTuple.dll" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/WebProject/bin/roslyn/System.Xml.ReaderWriter.dll" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/WebProject/bin/roslyn/System.Xml.XPath.XDocument.dll" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/WebProject/bin/roslyn/System.Xml.XPath.dll" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/WebProject/bin/roslyn/System.Xml.XmlDocument.dll" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/WebProject/bin/roslyn/VBCSCompiler.exe" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/WebProject/bin/roslyn/VBCSCompiler.exe.config" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/WebProject/bin/roslyn/csc.exe" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/WebProject/bin/roslyn/csc.exe.config" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/WebProject/bin/roslyn/csc.rsp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/WebProject/bin/roslyn/csi.exe" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/WebProject/bin/roslyn/csi.exe.config" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/WebProject/bin/roslyn/csi.rsp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/WebProject/bin/roslyn/vbc.exe" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/WebProject/bin/roslyn/vbc.exe.config" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/WebProject/bin/roslyn/vbc.rsp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/WebProject/obj/Debug/.NETFramework,Version=v4.7.2.AssemblyAttributes.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/WebProject/obj/Debug/DesignTimeResolveAssemblyReferences.cache" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/WebProject/obj/Debug/DesignTimeResolveAssemblyReferencesInput.cache" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/WebProject/obj/Debug/WebProject.csproj.AssemblyReference.cache" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/WebProject/obj/Debug/WebProject.csproj.CopyComplete" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/WebProject/obj/Debug/WebProject.csproj.CoreCompileInputs.cache" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/WebProject/obj/Debug/WebProject.csproj.FileListAbsolute.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/WebProject/obj/Debug/WebProject.csproj.Up2Date" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/WebProject/obj/Debug/WebProject.dll" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/WebProject/obj/Debug/WebProject.pdb" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/packages/EntityFramework.6.4.4/.signature.p7s" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/packages/EntityFramework.6.4.4/EntityFramework.6.4.4.nupkg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/packages/EntityFramework.6.4.4/Icon.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/packages/EntityFramework.6.4.4/build/EntityFramework.DefaultItems.props" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/packages/EntityFramework.6.4.4/build/EntityFramework.props" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/packages/EntityFramework.6.4.4/build/EntityFramework.targets" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/packages/EntityFramework.6.4.4/build/netcoreapp3.0/EntityFramework.props" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/packages/EntityFramework.6.4.4/build/netcoreapp3.0/EntityFramework.targets" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/packages/EntityFramework.6.4.4/buildTransitive/EntityFramework.props" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/packages/EntityFramework.6.4.4/buildTransitive/EntityFramework.targets" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/packages/EntityFramework.6.4.4/buildTransitive/netcoreapp3.0/EntityFramework.props" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/packages/EntityFramework.6.4.4/buildTransitive/netcoreapp3.0/EntityFramework.targets" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/packages/EntityFramework.6.4.4/content/net40/App.config.install.xdt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/packages/EntityFramework.6.4.4/content/net40/App.config.transform" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/packages/EntityFramework.6.4.4/content/net40/Web.config.install.xdt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/packages/EntityFramework.6.4.4/content/net40/Web.config.transform" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/packages/EntityFramework.6.4.4/lib/net40/EntityFramework.SqlServer.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/packages/EntityFramework.6.4.4/lib/net40/EntityFramework.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/packages/EntityFramework.6.4.4/lib/net45/EntityFramework.SqlServer.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/packages/EntityFramework.6.4.4/lib/net45/EntityFramework.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/packages/EntityFramework.6.4.4/lib/netstandard2.1/EntityFramework.SqlServer.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/packages/EntityFramework.6.4.4/lib/netstandard2.1/EntityFramework.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/packages/EntityFramework.6.4.4/tools/EntityFramework6.PS2.psd1" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/packages/EntityFramework.6.4.4/tools/EntityFramework6.PS2.psm1" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/packages/EntityFramework.6.4.4/tools/EntityFramework6.psd1" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/packages/EntityFramework.6.4.4/tools/EntityFramework6.psm1" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/packages/EntityFramework.6.4.4/tools/about_EntityFramework6.help.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/packages/EntityFramework.6.4.4/tools/init.ps1" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/packages/EntityFramework.6.4.4/tools/install.ps1" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/packages/EntityFramework.6.4.4/tools/netcoreapp3.0/any/ef6.runtimeconfig.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/packages/EntityFramework.6.5.1/.signature.p7s" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/packages/EntityFramework.6.5.1/EntityFramework.6.5.1.nupkg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/packages/EntityFramework.6.5.1/Icon.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/packages/EntityFramework.6.5.1/README.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/packages/EntityFramework.6.5.1/build/EntityFramework.DefaultItems.props" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/packages/EntityFramework.6.5.1/build/EntityFramework.props" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/packages/EntityFramework.6.5.1/build/EntityFramework.targets" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/packages/EntityFramework.6.5.1/build/Microsoft.Data.Entity.Build.Tasks.dll" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/packages/EntityFramework.6.5.1/build/net6.0/EntityFramework.props" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/packages/EntityFramework.6.5.1/build/net6.0/EntityFramework.targets" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/packages/EntityFramework.6.5.1/buildTransitive/EntityFramework.props" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/packages/EntityFramework.6.5.1/buildTransitive/EntityFramework.targets" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/packages/EntityFramework.6.5.1/buildTransitive/net6.0/EntityFramework.props" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/packages/EntityFramework.6.5.1/buildTransitive/net6.0/EntityFramework.targets" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/packages/EntityFramework.6.5.1/content/net40/App.config.install.xdt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/packages/EntityFramework.6.5.1/content/net40/App.config.transform" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/packages/EntityFramework.6.5.1/content/net40/Web.config.install.xdt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/packages/EntityFramework.6.5.1/content/net40/Web.config.transform" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/packages/EntityFramework.6.5.1/lib/net40/EntityFramework.SqlServer.dll" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/packages/EntityFramework.6.5.1/lib/net40/EntityFramework.SqlServer.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/packages/EntityFramework.6.5.1/lib/net40/EntityFramework.dll" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/packages/EntityFramework.6.5.1/lib/net40/EntityFramework.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/packages/EntityFramework.6.5.1/lib/net45/EntityFramework.SqlServer.dll" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/packages/EntityFramework.6.5.1/lib/net45/EntityFramework.SqlServer.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/packages/EntityFramework.6.5.1/lib/net45/EntityFramework.dll" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/packages/EntityFramework.6.5.1/lib/net45/EntityFramework.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/packages/EntityFramework.6.5.1/lib/netstandard2.1/EntityFramework.SqlServer.dll" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/packages/EntityFramework.6.5.1/lib/netstandard2.1/EntityFramework.SqlServer.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/packages/EntityFramework.6.5.1/lib/netstandard2.1/EntityFramework.dll" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/packages/EntityFramework.6.5.1/lib/netstandard2.1/EntityFramework.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/packages/EntityFramework.6.5.1/tools/EntityFramework6.PS2.psd1" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/packages/EntityFramework.6.5.1/tools/EntityFramework6.PS2.psm1" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/packages/EntityFramework.6.5.1/tools/EntityFramework6.psd1" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/packages/EntityFramework.6.5.1/tools/EntityFramework6.psm1" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/packages/EntityFramework.6.5.1/tools/about_EntityFramework6.help.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/packages/EntityFramework.6.5.1/tools/init.ps1" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/packages/EntityFramework.6.5.1/tools/install.ps1" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/packages/EntityFramework.6.5.1/tools/net40/any/ef6.exe" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/packages/EntityFramework.6.5.1/tools/net40/any/ef6.pdb" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/packages/EntityFramework.6.5.1/tools/net40/win-arm64/ef6.exe" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/packages/EntityFramework.6.5.1/tools/net40/win-arm64/ef6.pdb" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/packages/EntityFramework.6.5.1/tools/net40/win-x86/ef6.exe" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/packages/EntityFramework.6.5.1/tools/net40/win-x86/ef6.pdb" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/packages/EntityFramework.6.5.1/tools/net45/any/ef6.exe" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/packages/EntityFramework.6.5.1/tools/net45/any/ef6.pdb" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/packages/EntityFramework.6.5.1/tools/net45/win-arm64/ef6.exe" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/packages/EntityFramework.6.5.1/tools/net45/win-arm64/ef6.pdb" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/packages/EntityFramework.6.5.1/tools/net45/win-x86/ef6.exe" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/packages/EntityFramework.6.5.1/tools/net45/win-x86/ef6.pdb" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/packages/EntityFramework.6.5.1/tools/net6.0/any/ef6.dll" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/packages/EntityFramework.6.5.1/tools/net6.0/any/ef6.pdb" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/packages/EntityFramework.6.5.1/tools/net6.0/any/ef6.runtimeconfig.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/packages/NUnit.4.3.2/.signature.p7s" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/packages/NUnit.4.3.2/LICENSE.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/packages/NUnit.4.3.2/NOTICES.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/packages/NUnit.4.3.2/NUnit.4.3.2.nupkg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/packages/NUnit.4.3.2/README.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/packages/NUnit.4.3.2/THIRD_PARTY_NOTICES.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/packages/NUnit.4.3.2/build/NUnit.props" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/packages/NUnit.4.3.2/icon.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/packages/NUnit.4.3.2/lib/net462/nunit.framework.dll" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/packages/NUnit.4.3.2/lib/net462/nunit.framework.legacy.dll" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/packages/NUnit.4.3.2/lib/net462/nunit.framework.legacy.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/packages/NUnit.4.3.2/lib/net462/nunit.framework.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/packages/NUnit.4.3.2/lib/net6.0/nunit.framework.dll" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/packages/NUnit.4.3.2/lib/net6.0/nunit.framework.legacy.dll" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/packages/NUnit.4.3.2/lib/net6.0/nunit.framework.legacy.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/packages/NUnit.4.3.2/lib/net6.0/nunit.framework.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/packages/NUnit.4.3.2/lib/net8.0/nunit.framework.dll" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/packages/NUnit.4.3.2/lib/net8.0/nunit.framework.legacy.dll" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/packages/NUnit.4.3.2/lib/net8.0/nunit.framework.legacy.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/packages/NUnit.4.3.2/lib/net8.0/nunit.framework.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/packages/System.Buffers.4.6.0/.signature.p7s" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/packages/System.Buffers.4.6.0/Icon.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/packages/System.Buffers.4.6.0/PACKAGE.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/packages/System.Buffers.4.6.0/System.Buffers.4.6.0.nupkg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/packages/System.Buffers.4.6.0/buildTransitive/net461/System.Buffers.targets" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/packages/System.Buffers.4.6.0/buildTransitive/net462/_._" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/packages/System.Buffers.4.6.0/lib/net462/System.Buffers.dll" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/packages/System.Buffers.4.6.0/lib/net462/System.Buffers.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/packages/System.Buffers.4.6.0/lib/netcoreapp2.1/_._" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/packages/System.Buffers.4.6.0/lib/netstandard2.0/System.Buffers.dll" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/packages/System.Buffers.4.6.0/lib/netstandard2.0/System.Buffers.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/packages/System.Memory.4.6.0/.signature.p7s" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/packages/System.Memory.4.6.0/Icon.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/packages/System.Memory.4.6.0/PACKAGE.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/packages/System.Memory.4.6.0/System.Memory.4.6.0.nupkg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/packages/System.Memory.4.6.0/buildTransitive/net461/System.Memory.targets" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/packages/System.Memory.4.6.0/buildTransitive/net462/_._" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/packages/System.Memory.4.6.0/lib/net462/System.Memory.dll" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/packages/System.Memory.4.6.0/lib/net462/System.Memory.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/packages/System.Memory.4.6.0/lib/netcoreapp2.1/_._" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/packages/System.Memory.4.6.0/lib/netstandard2.0/System.Memory.dll" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/packages/System.Memory.4.6.0/lib/netstandard2.0/System.Memory.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/packages/System.Numerics.Vectors.4.6.0/.signature.p7s" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/packages/System.Numerics.Vectors.4.6.0/Icon.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/packages/System.Numerics.Vectors.4.6.0/PACKAGE.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/packages/System.Numerics.Vectors.4.6.0/System.Numerics.Vectors.4.6.0.nupkg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/packages/System.Numerics.Vectors.4.6.0/buildTransitive/net461/System.Numerics.Vectors.targets" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/packages/System.Numerics.Vectors.4.6.0/buildTransitive/net462/_._" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/packages/System.Numerics.Vectors.4.6.0/lib/net462/System.Numerics.Vectors.dll" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/packages/System.Numerics.Vectors.4.6.0/lib/net462/System.Numerics.Vectors.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/packages/System.Numerics.Vectors.4.6.0/lib/netcoreapp2.0/_._" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/packages/System.Numerics.Vectors.4.6.0/lib/netstandard2.0/System.Numerics.Vectors.dll" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/packages/System.Numerics.Vectors.4.6.0/lib/netstandard2.0/System.Numerics.Vectors.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/packages/System.Runtime.CompilerServices.Unsafe.6.1.0/.signature.p7s" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/packages/System.Runtime.CompilerServices.Unsafe.6.1.0/Icon.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/packages/System.Runtime.CompilerServices.Unsafe.6.1.0/PACKAGE.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/packages/System.Runtime.CompilerServices.Unsafe.6.1.0/System.Runtime.CompilerServices.Unsafe.6.1.0.nupkg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/packages/System.Runtime.CompilerServices.Unsafe.6.1.0/buildTransitive/net461/System.Runtime.CompilerServices.Unsafe.targets" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/packages/System.Runtime.CompilerServices.Unsafe.6.1.0/buildTransitive/net462/_._" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/packages/System.Runtime.CompilerServices.Unsafe.6.1.0/buildTransitive/net6.0/_._" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/packages/System.Runtime.CompilerServices.Unsafe.6.1.0/buildTransitive/netcoreapp2.0/System.Runtime.CompilerServices.Unsafe.targets" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/packages/System.Runtime.CompilerServices.Unsafe.6.1.0/lib/net462/System.Runtime.CompilerServices.Unsafe.dll" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/packages/System.Runtime.CompilerServices.Unsafe.6.1.0/lib/net462/System.Runtime.CompilerServices.Unsafe.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/packages/System.Runtime.CompilerServices.Unsafe.6.1.0/lib/net7.0/_._" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/packages/System.Runtime.CompilerServices.Unsafe.6.1.0/lib/netstandard2.0/System.Runtime.CompilerServices.Unsafe.dll" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/packages/System.Runtime.CompilerServices.Unsafe.6.1.0/lib/netstandard2.0/System.Runtime.CompilerServices.Unsafe.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/packages/System.Threading.Tasks.Extensions.4.5.4/.signature.p7s" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/packages/System.Threading.Tasks.Extensions.4.5.4/LICENSE.TXT" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/packages/System.Threading.Tasks.Extensions.4.5.4/System.Threading.Tasks.Extensions.4.5.4.nupkg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/packages/System.Threading.Tasks.Extensions.4.5.4/THIRD-PARTY-NOTICES.TXT" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/packages/System.Threading.Tasks.Extensions.4.5.4/lib/MonoAndroid10/_._" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/packages/System.Threading.Tasks.Extensions.4.5.4/lib/MonoTouch10/_._" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/packages/System.Threading.Tasks.Extensions.4.5.4/lib/net461/System.Threading.Tasks.Extensions.dll" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/packages/System.Threading.Tasks.Extensions.4.5.4/lib/net461/System.Threading.Tasks.Extensions.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/packages/System.Threading.Tasks.Extensions.4.5.4/lib/netcoreapp2.1/_._" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/packages/System.Threading.Tasks.Extensions.4.5.4/lib/netstandard1.0/System.Threading.Tasks.Extensions.dll" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/packages/System.Threading.Tasks.Extensions.4.5.4/lib/netstandard1.0/System.Threading.Tasks.Extensions.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/packages/System.Threading.Tasks.Extensions.4.5.4/lib/netstandard2.0/System.Threading.Tasks.Extensions.dll" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/packages/System.Threading.Tasks.Extensions.4.5.4/lib/netstandard2.0/System.Threading.Tasks.Extensions.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/packages/System.Threading.Tasks.Extensions.4.5.4/lib/portable-net45+win8+wp8+wpa81/System.Threading.Tasks.Extensions.dll" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/packages/System.Threading.Tasks.Extensions.4.5.4/lib/portable-net45+win8+wp8+wpa81/System.Threading.Tasks.Extensions.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/packages/System.Threading.Tasks.Extensions.4.5.4/lib/xamarinios10/_._" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/packages/System.Threading.Tasks.Extensions.4.5.4/lib/xamarinmac20/_._" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/packages/System.Threading.Tasks.Extensions.4.5.4/lib/xamarintvos10/_._" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/packages/System.Threading.Tasks.Extensions.4.5.4/lib/xamarinwatchos10/_._" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/packages/System.Threading.Tasks.Extensions.4.5.4/ref/MonoAndroid10/_._" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/packages/System.Threading.Tasks.Extensions.4.5.4/ref/MonoTouch10/_._" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/packages/System.Threading.Tasks.Extensions.4.5.4/ref/netcoreapp2.1/_._" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/packages/System.Threading.Tasks.Extensions.4.5.4/ref/xamarinios10/_._" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/packages/System.Threading.Tasks.Extensions.4.5.4/ref/xamarinmac20/_._" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/packages/System.Threading.Tasks.Extensions.4.5.4/ref/xamarintvos10/_._" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/packages/System.Threading.Tasks.Extensions.4.5.4/ref/xamarinwatchos10/_._" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/packages/System.Threading.Tasks.Extensions.4.5.4/useSharedDesignerContext.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/packages/System.Threading.Tasks.Extensions.4.5.4/version.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/packages/System.ValueTuple.4.5.0/.signature.p7s" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/packages/System.ValueTuple.4.5.0/LICENSE.TXT" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/packages/System.ValueTuple.4.5.0/System.ValueTuple.4.5.0.nupkg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/packages/System.ValueTuple.4.5.0/THIRD-PARTY-NOTICES.TXT" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/packages/System.ValueTuple.4.5.0/lib/MonoAndroid10/_._" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/packages/System.ValueTuple.4.5.0/lib/MonoTouch10/_._" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/packages/System.ValueTuple.4.5.0/lib/net461/System.ValueTuple.dll" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/packages/System.ValueTuple.4.5.0/lib/net461/System.ValueTuple.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/packages/System.ValueTuple.4.5.0/lib/net47/System.ValueTuple.dll" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/packages/System.ValueTuple.4.5.0/lib/net47/System.ValueTuple.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/packages/System.ValueTuple.4.5.0/lib/netcoreapp2.0/_._" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/packages/System.ValueTuple.4.5.0/lib/netstandard1.0/System.ValueTuple.dll" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/packages/System.ValueTuple.4.5.0/lib/netstandard1.0/System.ValueTuple.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/packages/System.ValueTuple.4.5.0/lib/netstandard2.0/_._" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/packages/System.ValueTuple.4.5.0/lib/portable-net40+sl4+win8+wp8/System.ValueTuple.dll" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/packages/System.ValueTuple.4.5.0/lib/portable-net40+sl4+win8+wp8/System.ValueTuple.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/packages/System.ValueTuple.4.5.0/lib/uap10.0.16299/_._" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/packages/System.ValueTuple.4.5.0/lib/xamarinios10/_._" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/packages/System.ValueTuple.4.5.0/lib/xamarinmac20/_._" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/packages/System.ValueTuple.4.5.0/lib/xamarintvos10/_._" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/packages/System.ValueTuple.4.5.0/lib/xamarinwatchos10/_._" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/packages/System.ValueTuple.4.5.0/ref/MonoAndroid10/_._" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/packages/System.ValueTuple.4.5.0/ref/MonoTouch10/_._" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/packages/System.ValueTuple.4.5.0/ref/net461/System.ValueTuple.dll" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/packages/System.ValueTuple.4.5.0/ref/net47/System.ValueTuple.dll" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/packages/System.ValueTuple.4.5.0/ref/netcoreapp2.0/_._" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/packages/System.ValueTuple.4.5.0/ref/netstandard2.0/_._" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/packages/System.ValueTuple.4.5.0/ref/portable-net40+sl4+win8+wp8/System.ValueTuple.dll" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/packages/System.ValueTuple.4.5.0/ref/uap10.0.16299/_._" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/packages/System.ValueTuple.4.5.0/ref/xamarinios10/_._" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/packages/System.ValueTuple.4.5.0/ref/xamarinmac20/_._" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/packages/System.ValueTuple.4.5.0/ref/xamarintvos10/_._" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/packages/System.ValueTuple.4.5.0/ref/xamarinwatchos10/_._" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/packages/System.ValueTuple.4.5.0/useSharedDesignerContext.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/packages/System.ValueTuple.4.5.0/version.txt" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -206,12 +531,17 @@
   }
 }</component>
   <component name="HighlightingSettingsPerFile">
-    <setting file="file://$PROJECT_DIR$/WebProject.Dal/Migrations/Configuration.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/214b82a385d545689d2792477a6b154a529a28/56/fb91029b/AspNetSynchronizationContext.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/214b82a385d545689d2792477a6b154a529a28/73/fecfb8d1/HttpApplication.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/b18a8b3398e74bca86895881dd02956c573648/34/5894c14b/Lazy`1.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/b18a8b3398e74bca86895881dd02956c573648/60/4b563c43/ExceptionDispatchInfo.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/c11f3b1e27ba4255a48f3fa4d01496ab861d8/b8/c5baaae1/ActionMethodSelectorBase.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/9bf0f13d438527cf272c8c8bb9587f55c4e67322/UnityContainer.Resolution.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/WebProject/Controllers/UserController.cs" root0="FORCE_HIGHLIGHTING" />
   </component>
   <component name="MetaFilesCheckinStateConfiguration" checkMetaFiles="true" />
   <component name="ProblemsViewState">
-    <option name="selectedTabId" value="SWEA" />
+    <option name="selectedTabId" value="CurrentFile" />
   </component>
   <component name="ProjectColorInfo">{
   &quot;customColor&quot;: &quot;&quot;,
@@ -224,7 +554,7 @@
   </component>
   <component name="PropertiesComponent">{
   &quot;keyToString&quot;: {
-    &quot;.NET Project.WebProject - IIS Express.executor&quot;: &quot;Run&quot;,
+    &quot;.NET Project.WebProject - IIS Express.executor&quot;: &quot;Debug&quot;,
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
     &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
     &quot;git-widget-placeholder&quot;: &quot;main&quot;,
@@ -234,7 +564,7 @@
     &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
     &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
     &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;SolutionBuilderGeneralOptionsPage&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;terminal&quot;,
     &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   },
   &quot;keyToStringList&quot;: {
@@ -244,7 +574,12 @@
     ]
   }
 }</component>
-  <component name="RunManager">
+  <component name="RunManager" selected=".NET Project.WebProject - IIS Express">
+    <configuration name="Guvehun.sql" type="DatabaseScript" editBeforeRun="true" temporary="true" nameIsGenerated="true">
+      <script-file value="$USER_HOME$/AppData/Local/Temp/Guvehun.sql" />
+      <script-mode>FILE</script-mode>
+      <method v="2" />
+    </configuration>
     <configuration name="WebProject - IIS Express" type="DotNetProject" factoryName=".NET Project">
       <option name="EXE_PATH" value="" />
       <option name="PROGRAM_PARAMETERS" value="" />
@@ -264,6 +599,11 @@
         <option name="Build" />
       </method>
     </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Database Script.Guvehun.sql" />
+      </list>
+    </recent_temporary>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
@@ -288,7 +628,11 @@
       <workItem from="1738962576012" duration="1869000" />
       <workItem from="1738964523751" duration="9623000" />
       <workItem from="1739096832971" duration="441000" />
-      <workItem from="1739097342036" duration="3498000" />
+      <workItem from="1739097342036" duration="6353000" />
+      <workItem from="1739104921283" duration="1435000" />
+      <workItem from="1739106379177" duration="2691000" />
+      <workItem from="1739110071227" duration="221000" />
+      <workItem from="1739128511100" duration="5203000" />
     </task>
     <task id="LOCAL-00001" summary="Created DB, added connection string, changed uint dateType to int in Entities, because, EntityFramework doesnt allow PK to uint.">
       <option name="closed" value="true" />
@@ -346,7 +690,23 @@
       <option name="project" value="LOCAL" />
       <updated>1738964187933</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="Reinstalled all dependencies.">
+      <option name="closed" value="true" />
+      <created>1739102392843</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1739102392843</updated>
+    </task>
+    <task id="LOCAL-00009" summary="Working on auth controller and auth dtos.">
+      <option name="closed" value="true" />
+      <created>1739102579116</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1739102579116</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -374,6 +734,12 @@
     <MESSAGE value="Added constructors and instance of needed class" />
     <MESSAGE value="Delete all features about getting promocode on email." />
     <MESSAGE value="Moved connection string." />
-    <option name="LAST_COMMIT_MESSAGE" value="Moved connection string." />
+    <MESSAGE value="Reinstalled all dependencies." />
+    <MESSAGE value="Working on auth controller and auth dtos." />
+    <option name="LAST_COMMIT_MESSAGE" value="Working on auth controller and auth dtos." />
+  </component>
+  <component name="XSLT-Support.FileAssociations.UIState">
+    <expand />
+    <select />
   </component>
 </project>

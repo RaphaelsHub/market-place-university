@@ -1,0 +1,84 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+    <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props"
+            Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')"/>
+    <PropertyGroup>
+        <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+        <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+        <ProjectGuid>{E826CA1C-1564-4F58-8367-A9D94EE82DC9}</ProjectGuid>
+        <OutputType>Library</OutputType>
+        <AppDesignerFolder>Properties</AppDesignerFolder>
+        <RootNamespace>ECommerce.App</RootNamespace>
+        <AssemblyName>ECommerce.App</AssemblyName>
+        <TargetFrameworkVersion>v4.8.1</TargetFrameworkVersion>
+        <FileAlignment>512</FileAlignment>
+    </PropertyGroup>
+    <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+        <PlatformTarget>AnyCPU</PlatformTarget>
+        <DebugSymbols>true</DebugSymbols>
+        <DebugType>full</DebugType>
+        <Optimize>false</Optimize>
+        <OutputPath>bin\Debug\</OutputPath>
+        <DefineConstants>DEBUG;TRACE</DefineConstants>
+        <ErrorReport>prompt</ErrorReport>
+        <WarningLevel>4</WarningLevel>
+    </PropertyGroup>
+    <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+        <PlatformTarget>AnyCPU</PlatformTarget>
+        <DebugType>pdbonly</DebugType>
+        <Optimize>true</Optimize>
+        <OutputPath>bin\Release\</OutputPath>
+        <DefineConstants>TRACE</DefineConstants>
+        <ErrorReport>prompt</ErrorReport>
+        <WarningLevel>4</WarningLevel>
+    </PropertyGroup>
+    <ItemGroup>
+        <Reference Include="System"/>
+        <Reference Include="System.Core"/>
+        <Reference Include="System.Data"/>
+        <Reference Include="System.Xml"/>
+    </ItemGroup>
+    <ItemGroup>
+        <Compile Include="Infrastucture\Services\CacheService.cs" />
+        <Compile Include="Infrastucture\Services\CookiesService.cs" />
+        <Compile Include="Infrastucture\Services\IdentityService.cs" />
+        <Compile Include="Infrastucture\Services\SessionService.cs" />
+        <Compile Include="Interfaces\IAdminService.cs" />
+        <Compile Include="Interfaces\IAuthService.cs" />
+        <Compile Include="Interfaces\IBlogService.cs" />
+        <Compile Include="Interfaces\ICartService.cs" />
+        <Compile Include="Interfaces\ILogErrorService.cs" />
+        <Compile Include="Interfaces\IOrderService.cs" />
+        <Compile Include="Interfaces\IProductService.cs" />
+        <Compile Include="Interfaces\IUserService.cs" />
+        <Compile Include="Properties\AssemblyInfo.cs"/>
+        <Compile Include="Services\AdminService.cs" />
+        <Compile Include="Services\AuthService.cs" />
+        <Compile Include="Services\BlogService.cs" />
+        <Compile Include="Services\CartService.cs" />
+        <Compile Include="Services\LogErrorsService.cs" />
+        <Compile Include="Services\MapperService.cs" />
+        <Compile Include="Services\OrderService.cs" />
+        <Compile Include="Services\ProductService.cs" />
+        <Compile Include="Services\UserService.cs" />
+    </ItemGroup>
+    <ItemGroup>
+      <Folder Include="Infrastucture\Abstractions\" />
+      <Folder Include="Infrastucture\CachingManager\" />
+      <Folder Include="Infrastucture\CookiesManager\" />
+      <Folder Include="Infrastucture\FilesManager\" />
+      <Folder Include="Infrastucture\LoggerManager\" />
+      <Folder Include="Infrastucture\SessionManager\" />
+      <Folder Include="InterfaceExtensions\" />
+      <Folder Include="Mappers\" />
+    </ItemGroup>
+    <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets"/>
+    <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+         Other similar extension points exist, see Microsoft.Common.targets.
+    <Target Name="BeforeBuild">
+    </Target>
+    <Target Name="AfterBuild">
+    </Target>
+    -->
+
+</Project>

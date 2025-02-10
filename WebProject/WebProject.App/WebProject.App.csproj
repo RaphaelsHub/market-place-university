@@ -41,31 +41,13 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="ClientServices\CacheService.cs" />
-    <Compile Include="ClientServices\CookiesService.cs" />
-    <Compile Include="ClientServices\IdentityService.cs" />
-    <Compile Include="ClientServices\SessionService.cs" />
-    <Compile Include="Interfaces\IAdminService.cs" />
-    <Compile Include="Interfaces\IAuthService.cs" />
-    <Compile Include="Interfaces\IBlogService.cs" />
-    <Compile Include="Interfaces\ICartService.cs" />
-    <Compile Include="Interfaces\ILogErrorService.cs" />
-    <Compile Include="Interfaces\IOrderService.cs" />
-    <Compile Include="Interfaces\IProductService.cs" />
-    <Compile Include="Interfaces\IUserService.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Services\AdminService.cs" />
-    <Compile Include="Services\AuthService.cs" />
-    <Compile Include="Services\BlogService.cs" />
-    <Compile Include="Services\CartService.cs" />
-    <Compile Include="Services\LogErrorsService.cs" />
-    <Compile Include="Services\MapperService.cs" />
-    <Compile Include="Services\OrderService.cs" />
-    <Compile Include="Services\ProductService.cs" />
-    <Compile Include="Services\UserService.cs" />
   </ItemGroup>
   <ItemGroup>
+    <Folder Include="ClientServices\" />
     <Folder Include="InterfaceExtensions\" />
+    <Folder Include="Interfaces\" />
+    <Folder Include="Services\" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\WebProject.Core\WebProject.Core.csproj">

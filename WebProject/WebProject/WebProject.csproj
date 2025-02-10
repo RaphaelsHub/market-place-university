@@ -112,98 +112,12 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Asset\css\animate.css" />
-    <Content Include="Asset\css\bootstrap.css" />
-    <Content Include="Asset\css\color\color1.css" />
-    <Content Include="Asset\css\color\color10.css" />
-    <Content Include="Asset\css\color\color11.css" />
-    <Content Include="Asset\css\color\color12.css" />
-    <Content Include="Asset\css\color\color2.css" />
-    <Content Include="Asset\css\color\color3.css" />
-    <Content Include="Asset\css\color\color4.css" />
-    <Content Include="Asset\css\color\color5.css" />
-    <Content Include="Asset\css\color\color6.css" />
-    <Content Include="Asset\css\color\color7.css" />
-    <Content Include="Asset\css\color\color8.css" />
-    <Content Include="Asset\css\color\color9.css" />
-    <Content Include="Asset\css\flex-slider.min.css" />
-    <Content Include="Asset\css\font-awesome.css" />
-    <Content Include="Asset\css\jquery-ui.css" />
-    <Content Include="Asset\css\magnific-popup.css" />
-    <Content Include="Asset\css\magnific-popup.min.css" />
-    <Content Include="Asset\css\nice-select.css" />
-    <Content Include="Asset\css\niceselect.css" />
-    <Content Include="Asset\css\owl-carousel.css" />
-    <Content Include="Asset\css\reset.css" />
-    <Content Include="Asset\css\responsive.css" />
-    <Content Include="Asset\css\slicknav.min.css" />
-    <Content Include="Asset\css\themify-icons.css" />
-    <Content Include="Asset\fonts\fontawesome-webfont.svg" />
-    <Content Include="Asset\fonts\themify.svg" />
-    <Content Include="Asset\images\100x100\PS (1).jpg" />
-    <Content Include="Asset\images\1160x560\26-iPhone-13.jpg" />
-    <Content Include="Asset\images\1160x560\IP.jpg" />
-    <Content Include="Asset\images\1160x560\SAM.jpg" />
-    <Content Include="Asset\images\370x300\P1.jpg" />
-    <Content Include="Asset\images\550x750\PC.jpg" />
-    <Content Include="Asset\images\600x370\JBL.jpg" />
-    <Content Include="Asset\images\600x370\tv.jpg" />
-    <Content Include="Asset\images\70x70\PC.jpg" />
-    <Content Include="Asset\images\750x590\logo.jpg" />
-    <Content Include="Asset\images\750x590\PS.jpg" />
-    <Content Include="Asset\images\favicon.png" />
-    <Content Include="Asset\images\logo.png" />
-    <Content Include="Asset\images\logo2.png" />
-    <Content Include="Asset\images\map-marker.png" />
-    <Content Include="Asset\images\payment-method.png" />
-    <Content Include="Asset\images\payments.png" />
-    <Content Include="Asset\images\banner.png" />
-    <Content Include="Asset\js\active.js" />
-    <Content Include="Asset\js\bootstrap.min.js" />
-    <Content Include="Asset\js\colors.js" />
-    <Content Include="Asset\js\easing.js" />
-    <Content Include="Asset\js\facnybox.min.js" />
-    <Content Include="Asset\js\finalcountdown.min.js" />
-    <Content Include="Asset\js\flex-slider.js" />
-    <Content Include="Asset\js\gmap.min.js" />
-    <Content Include="Asset\js\jquery-migrate-3.0.0.js" />
-    <Content Include="Asset\js\jquery-ui.min.js" />
-    <Content Include="Asset\js\jquery.min.js" />
-    <Content Include="Asset\js\magnific-popup.js" />
-    <Content Include="Asset\js\map-script.js" />
-    <Content Include="Asset\js\nicesellect.js" />
-    <Content Include="Asset\js\onepage-nav.min.js" />
-    <Content Include="Asset\js\owl-carousel.js" />
-    <Content Include="Asset\js\popper.min.js" />
-    <Content Include="Asset\js\scrollup.js" />
-    <Content Include="Asset\js\slicknav.min.js" />
-    <Content Include="Asset\js\waypoints.min.js" />
-    <Content Include="Asset\mail\mail.php" />
-    <Content Include="Asset\style.css" />
     <Content Include="Global.asax" />
-    <Content Include="Views\Home\Error.cshtml" />
-    <Content Include="Views\Home\Confirmation.cshtml" />
-    <Content Include="Views\Partials\SingleBlogCard.cshtml" />
-    <Content Include="Views\Partials\SingleCartProduct.cshtml" />
-    <Content Include="Views\Partials\SingleProductCard.cshtml" />
-    <Content Include="Views\Partials\StoreAdvantages.cshtml" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="App_Start\BundleConfig.cs" />
-    <Compile Include="App_Start\IdentityConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
-    <Compile Include="App_Start\UnityConfig.cs" />
-    <Compile Include="App_Start\UnityMvcActivator.cs" />
-    <Compile Include="Controllers\AuthController.cs" />
-    <Compile Include="Controllers\AdminController.cs" />
-    <Compile Include="Controllers\BaseController.cs" />
-    <Compile Include="Controllers\NewsController.cs" />
-    <Compile Include="Controllers\CartController.cs" />
-    <Compile Include="Controllers\HomeController.cs" />
-    <Compile Include="Controllers\OrderController.cs" />
-    <Compile Include="Controllers\StoreController.cs" />
-    <Compile Include="Controllers\UserController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -212,29 +126,7 @@
   <ItemGroup>
     <Content Include="Views\web.config" />
     <Content Include="libman.json" />
-    <Content Include="Asset\fonts\fontawesome-webfont.eot" />
-    <Content Include="Asset\fonts\fontawesome-webfont.ttf" />
-    <Content Include="Asset\fonts\fontawesome-webfont.woff" />
-    <Content Include="Asset\fonts\fontawesome-webfont.woff2" />
-    <Content Include="Asset\fonts\themify.eot" />
-    <Content Include="Asset\fonts\themify.ttf" />
-    <Content Include="Asset\fonts\themify.woff" />
     <None Include="packages.config" />
-    <Content Include="Views\Partials\Footer.cshtml" />
-    <Content Include="Views\Partials\Header.cshtml" />
-    <Content Include="Views\_ViewStart.cshtml" />
-    <Content Include="Views\Shared\_Layout.cshtml" />
-    <Content Include="Views\Home\Index.cshtml" />
-    <Content Include="Views\Home\ContactUs.cshtml" />
-    <Content Include="Views\Home\AboutUs.cshtml" />
-    <Content Include="Views\Auth\SignIn.cshtml" />
-    <Content Include="Views\Auth\SignUp.cshtml" />
-    <Content Include="Views\Order\GetOrderForm.cshtml" />
-    <Content Include="Views\Cart\Index.cshtml" />
-    <Content Include="Views\News\Blogs.cshtml" />
-    <Content Include="Views\News\Blog.cshtml" />
-    <Content Include="Views\Store\Products.cshtml" />
-    <Content Include="Views\Store\Product.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -243,7 +135,8 @@
     </None>
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="App_Data\" />
+    <Folder Include="Asset\" />
+    <Folder Include="Controllers\" />
     <Folder Include="Views\Admin\" />
   </ItemGroup>
   <ItemGroup>
