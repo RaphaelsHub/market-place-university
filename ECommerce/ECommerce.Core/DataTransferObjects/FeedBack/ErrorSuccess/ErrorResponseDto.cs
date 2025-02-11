@@ -2,12 +2,17 @@ namespace ECommerce.Core.DataTransferObjects.FeedBack.ErrorSuccess
 {
     public class ErrorResponseDto
     {
-        public int Code { get; set; } = 500;
-        public string ErrorMessage { get; set; } = "An unexpected error occurred, please try again later !";
-        
-        public ErrorResponseDto() { }
-        
-        public ErrorResponseDto(int errorCode, string errorMessage)
+        public int Code { get; }
+        public string ErrorMessage { get; }
+
+        public ErrorResponseDto()
+        {
+            Code = 500;
+            ErrorMessage = "An unexpected error occurred, please try again later !";
+        }
+
+        public ErrorResponseDto(int errorCode = 500,
+            string errorMessage = "An unexpected error occurred, please try again later !")
         {
             Code = errorCode;
             ErrorMessage = errorMessage;
