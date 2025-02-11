@@ -4,7 +4,17 @@ using System.Web.Mvc;
 using System.Web.Optimization;
 using System.Web.Routing;
 using ECommerce.App.Interfaces;
+using ECommerce.App.Interfaces.Admin;
+using ECommerce.App.Interfaces.Auth;
+using ECommerce.App.Interfaces.Blog;
+using ECommerce.App.Interfaces.Product;
+using ECommerce.App.Interfaces.User;
 using ECommerce.App.Services;
+using ECommerce.App.Services.Admin;
+using ECommerce.App.Services.Auth;
+using ECommerce.App.Services.Blog;
+using ECommerce.App.Services.Product;
+using ECommerce.App.Services.User;
 using ECommerce.Controllers;
 using ECommerce.Core.Entities.Blog;
 using ECommerce.Core.Entities.Product;
@@ -36,17 +46,24 @@ namespace ECommerce
             RegisterTypes(container);
             DependencyResolver.SetResolver(new UnityDependencyResolver(container));
         }
-                private void RegisterTypes(UnityContainer container)
+        private void RegisterTypes(UnityContainer container)
         {
             // Регистрация зависимостей среди сервисов
-            container.RegisterType<IAuthService, AuthService>();
+            // auth
+            container.RegisterType<IAccountManagementService, AccountManagementService>();
+            container.RegisterType<IAuthenticationService, AuthenticationService>();
+            container.RegisterType<IAuthorizationService, AuthorizationService>();
+            // admin
             container.RegisterType<IAdminService, AdminService>();
+            // user
             container.RegisterType<IUserService, UserService>();
-            container.RegisterType<IProductService, ProductService>();
             container.RegisterType<IOrderService, OrderService>();
-            container.RegisterType<IBlogService, BlogService>();
             container.RegisterType<ICartService, CartService>();
-            container.RegisterType<ILogErrorService, LogErrorsService>();
+            // product
+            container.RegisterType<IProductService, ProductService>();
+            container.RegisterType<ICategoryService, CategoryService>();
+            // blog
+            container.RegisterType<IBlogService, BlogService>();
             
             // Регистрация зависимостей среди репозиториев
             // User
@@ -84,7 +101,13 @@ namespace ECommerce
         
             var routeData = ErrorHelper.GetRouteData(httpException);
             
-            IController homeController = new HomeController();
+            // IController homeController = new HomeController( );
+            
+            IController homeController = DependencyResolver.Current.GetService<HomeController>();
+            
+            // var container = DependencyResolver.Current.GetService<IUnityContainer>();
+            // IController homeController = container.Resolve<HomeController>();
+            
             var contextWrapper = new HttpContextWrapper(Context);
             var requestContext = new RequestContext(contextWrapper, routeData);
             homeController.Execute(requestContext);
