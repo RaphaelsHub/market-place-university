@@ -2,7 +2,7 @@ using System.Threading.Tasks;
 using ECommerce.Core.DataTransferObjects.FeedBack.Standard;
 using ECommerce.Core.DataTransferObjects.User;
 
-namespace ECommerce.App.Interfaces
+namespace ECommerce.App.Interfaces.User
 {
     public interface ICartService 
     {

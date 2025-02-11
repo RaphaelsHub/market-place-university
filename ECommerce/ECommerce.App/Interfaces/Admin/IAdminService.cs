@@ -1,4 +1,4 @@
-namespace ECommerce.App.Interfaces
+namespace ECommerce.App.Interfaces.Admin
 {
     public interface IAdminService
     {
