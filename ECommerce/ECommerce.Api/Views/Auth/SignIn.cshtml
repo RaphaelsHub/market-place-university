@@ -1,5 +1,4 @@
-﻿@using System.Security.Policy
-@{
+﻿@{
     ViewBag.Title = "Index";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
@@ -53,6 +52,12 @@
                                     @Html.CheckBoxFor(m => m.RememberMe, new { @class = "checkbox" })
                                     @Html.LabelFor(m => m.RememberMe, new { @class = "checkbox" })
                                 <a href="#" class="lost-pass">Lost your password?</a>
+
+                                @if (TempData["Error"] != null)
+                                {
+                                    <div class="alert alert-info">@TempData["Error"]</div>
+                                }
+                                
                             </div>
                         </div>
                     }
