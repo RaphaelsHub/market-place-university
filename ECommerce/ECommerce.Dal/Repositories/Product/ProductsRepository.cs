@@ -1,4 +1,5 @@
 using System.Collections.Generic;
+using System.Data.Entity;
 using System.Threading.Tasks;
 using ECommerce.Core.Entities.Product;
 using ECommerce.Core.Interfaces.Product;
@@ -13,30 +14,33 @@ namespace ECommerce.Dal.Repositories.Product
         {
             _context = context;
         }
-        
-        public Task<IEnumerable<ProductEf>> GetAllAsync()
+
+        public async Task<IEnumerable<ProductEf>> GetAllAsync() =>
+            await _context.Products.ToListAsync();
+
+        public async Task<ProductEf> GetByIdAsync(int id) =>
+            await _context.Products.FirstOrDefaultAsync(x => x.ProductId == id);
+
+        public async Task CreateAsync(ProductEf entity)
         {
-            throw new System.NotImplementedException();
+            _context.Products.Add(entity);
+            await _context.SaveChangesAsync();
         }
 
-        public Task<ProductEf> GetByIdAsync(uint id)
+        public async Task UpdateAsync(ProductEf entity)
         {
-            throw new System.NotImplementedException();
+            _context.Products.Attach(entity);
+            await _context.SaveChangesAsync();
         }
 
-        public Task AddAsync(ProductEf entity)
+        public async Task DeleteByIdAsync(int id)
         {
-            throw new System.NotImplementedException();
-        }
-
-        public Task UpdateAsync(ProductEf entity)
-        {
-            throw new System.NotImplementedException();
-        }
-
-        public Task DeleteByIdAsync(uint id)
-        {
-            throw new System.NotImplementedException();
+            var product = await _context.Products.FirstOrDefaultAsync(x => x.ProductId == id);
+            if (product != null)
+            {
+                _context.Products.Remove(product);
+                await _context.SaveChangesAsync();
+            }
         }
     }
 }

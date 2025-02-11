@@ -3,12 +3,12 @@ using System.Threading.Tasks;
 
 namespace ECommerce.Core.Interfaces
 {
-    public interface IGenericRepository<T> where T : class
+    public interface IGenericRepository<TEntity> where TEntity : class
     {
-        Task<IEnumerable<T>> GetAllAsync();
-        Task<T> GetByIdAsync(uint id);
-        Task AddAsync(T entity);
-        Task UpdateAsync(T entity);
-        Task DeleteByIdAsync(uint id);
+        Task CreateAsync(TEntity entity);
+        Task<TEntity> GetByIdAsync(int id);
+        Task<IEnumerable<TEntity>> GetAllAsync();
+        Task UpdateAsync(TEntity entity);
+        Task DeleteByIdAsync(int id);
     }
 }

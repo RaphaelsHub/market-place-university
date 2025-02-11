@@ -1,4 +1,5 @@
 using System.Collections.Generic;
+using System.Data.Entity;
 using System.Threading.Tasks;
 using ECommerce.Core.Entities.Product;
 using ECommerce.Core.Interfaces.Product;
@@ -13,30 +14,33 @@ namespace ECommerce.Dal.Repositories.Product
         {
             _context = context;
         }
-        
-        public Task<IEnumerable<CategoryEf>> GetAllAsync()
+
+        public async Task<IEnumerable<CategoryEf>> GetAllAsync() =>
+            await _context.Categories.ToListAsync();
+
+        public async Task<CategoryEf> GetByIdAsync(int id) =>
+            await _context.Categories.FirstOrDefaultAsync(x => x.ParentCategoryId == id);
+
+        public async Task CreateAsync(CategoryEf entity)
         {
-            throw new System.NotImplementedException();
+            _context.Categories.Add(entity);
+            await _context.SaveChangesAsync();
         }
 
-        public Task<CategoryEf> GetByIdAsync(uint id)
+        public async Task UpdateAsync(CategoryEf entity)
         {
-            throw new System.NotImplementedException();
+            _context.Categories.Attach(entity);
+            await _context.SaveChangesAsync();
         }
 
-        public Task AddAsync(CategoryEf entity)
+        public async Task DeleteByIdAsync(int id)
         {
-            throw new System.NotImplementedException();
-        }
-
-        public Task UpdateAsync(CategoryEf entity)
-        {
-            throw new System.NotImplementedException();
-        }
-
-        public Task DeleteByIdAsync(uint id)
-        {
-            throw new System.NotImplementedException();
+            var category = await _context.Categories.FirstOrDefaultAsync(x => x.ParentCategoryId == id);
+            if (category != null)
+            {
+                _context.Categories.Remove(category);
+                await _context.SaveChangesAsync();
+            }
         }
     }
 }

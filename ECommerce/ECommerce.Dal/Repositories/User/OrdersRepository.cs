@@ -1,4 +1,5 @@
 using System.Collections.Generic;
+using System.Data.Entity;
 using System.Threading.Tasks;
 using ECommerce.Core.Entities.User;
 using ECommerce.Core.Interfaces.User;
@@ -13,30 +14,33 @@ namespace ECommerce.Dal.Repositories.User
         {
             _context = context;
         }
-        
-        public Task<IEnumerable<OrderEf>> GetAllAsync()
+
+        public async Task<IEnumerable<OrderEf>> GetAllAsync() =>
+            await _context.Orders.ToListAsync();
+
+        public async Task<OrderEf> GetByIdAsync(int id) =>
+            await _context.Orders.FirstOrDefaultAsync(x => x.OrderId == id);
+
+        public async Task CreateAsync(OrderEf entity)
         {
-            throw new System.NotImplementedException();
+            _context.Orders.Add(entity);
+            await _context.SaveChangesAsync();
         }
 
-        public Task<OrderEf> GetByIdAsync(uint id)
+        public async Task UpdateAsync(OrderEf entity)
         {
-            throw new System.NotImplementedException();
+            _context.Orders.Attach(entity);
+            await _context.SaveChangesAsync();
         }
 
-        public Task AddAsync(OrderEf entity)
+        public async Task DeleteByIdAsync(int id)
         {
-            throw new System.NotImplementedException();
-        }
-
-        public Task UpdateAsync(OrderEf entity)
-        {
-            throw new System.NotImplementedException();
-        }
-
-        public Task DeleteByIdAsync(uint id)
-        {
-            throw new System.NotImplementedException();
+            var order = await _context.Orders.FirstOrDefaultAsync(x => x.OrderId == id);
+            if (order != null)
+            {
+                _context.Orders.Remove(order);
+                await _context.SaveChangesAsync();
+            }
         }
     }
 }

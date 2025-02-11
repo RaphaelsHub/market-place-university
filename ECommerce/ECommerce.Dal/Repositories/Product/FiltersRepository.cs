@@ -1,4 +1,5 @@
 using System.Collections.Generic;
+using System.Data.Entity;
 using System.Threading.Tasks;
 using ECommerce.Core.Entities.Product;
 using ECommerce.Core.Interfaces.Product;
@@ -13,30 +14,33 @@ namespace ECommerce.Dal.Repositories.Product
         {
             _context = context;
         }
-        
-        public Task<IEnumerable<FilterEf>> GetAllAsync()
+
+        public async Task<IEnumerable<FilterEf>> GetAllAsync() =>
+            await _context.Filters.ToListAsync();
+
+        public async Task<FilterEf> GetByIdAsync(int id) =>
+            await _context.Filters.FirstOrDefaultAsync(x => x.FilterId == id);
+
+        public async Task CreateAsync(FilterEf entity)
         {
-            throw new System.NotImplementedException();
+            _context.Filters.Add(entity);
+            await _context.SaveChangesAsync();
         }
 
-        public Task<FilterEf> GetByIdAsync(uint id)
+        public async Task UpdateAsync(FilterEf entity)
         {
-            throw new System.NotImplementedException();
+            _context.Filters.Attach(entity);
+            await _context.SaveChangesAsync();
         }
 
-        public Task AddAsync(FilterEf entity)
+        public async Task DeleteByIdAsync(int id)
         {
-            throw new System.NotImplementedException();
-        }
-
-        public Task UpdateAsync(FilterEf entity)
-        {
-            throw new System.NotImplementedException();
-        }
-
-        public Task DeleteByIdAsync(uint id)
-        {
-            throw new System.NotImplementedException();
+            var filter = await _context.Filters.FirstOrDefaultAsync(x => x.FilterId == id);
+            if (filter != null)
+            {
+                _context.Filters.Remove(filter);
+                await _context.SaveChangesAsync();
+            }
         }
     }
 }

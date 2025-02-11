@@ -1,4 +1,5 @@
 using System.Collections.Generic;
+using System.Data.Entity;
 using System.Threading.Tasks;
 using ECommerce.Core.Entities.Blog;
 using ECommerce.Core.Interfaces.Blog;
@@ -13,30 +14,33 @@ namespace ECommerce.Dal.Repositories.Blog
         {
             _context = context;
         }
-        
-        public Task<IEnumerable<MessageEf>> GetAllAsync()
+
+        public async Task<IEnumerable<MessageEf>> GetAllAsync() =>
+            await _context.Messages.ToListAsync();
+
+        public async Task<MessageEf> GetByIdAsync(int id) =>
+            await _context.Messages.FirstOrDefaultAsync(x => x.MessageId == id);
+
+        public async Task CreateAsync(MessageEf entity)
         {
-            throw new System.NotImplementedException();
+            _context.Messages.Add(entity);
+            await _context.SaveChangesAsync();
         }
 
-        public Task<MessageEf> GetByIdAsync(uint id)
+        public async Task UpdateAsync(MessageEf entity)
         {
-            throw new System.NotImplementedException();
+            _context.Messages.Attach(entity);
+            await _context.SaveChangesAsync();
         }
 
-        public Task AddAsync(MessageEf entity)
+        public async Task DeleteByIdAsync(int id)
         {
-            throw new System.NotImplementedException();
-        }
-
-        public Task UpdateAsync(MessageEf entity)
-        {
-            throw new System.NotImplementedException();
-        }
-
-        public Task DeleteByIdAsync(uint id)
-        {
-            throw new System.NotImplementedException();
+            var message = await _context.Messages.FirstOrDefaultAsync(x => x.MessageId == id);
+            if (message != null)
+            {
+                _context.Messages.Remove(message);
+                await _context.SaveChangesAsync();
+            }
         }
     }
 }

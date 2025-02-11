@@ -1,4 +1,5 @@
 using System.Collections.Generic;
+using System.Data.Entity;
 using System.Threading.Tasks;
 using ECommerce.Core.Entities.Blog;
 using ECommerce.Core.Interfaces.Blog;
@@ -14,29 +15,32 @@ namespace ECommerce.Dal.Repositories.Blog
             _context = context;
         }
         
-        public Task<IEnumerable<BlogEf>> GetAllAsync()
+        public async Task<IEnumerable<BlogEf>> GetAllAsync() =>
+            await _context.Blogs.ToListAsync();
+
+        public async Task<BlogEf> GetByIdAsync(int id) =>
+            await _context.Blogs.FirstOrDefaultAsync(x => x.BlogId == id);
+
+        public async Task CreateAsync(BlogEf entity)
         {
-            throw new System.NotImplementedException();
+            _context.Blogs.Add(entity);
+            await _context.SaveChangesAsync();
         }
 
-        public Task<BlogEf> GetByIdAsync(uint id)
+        public async Task UpdateAsync(BlogEf entity)
         {
-            throw new System.NotImplementedException();
+            _context.Blogs.Attach(entity);
+            await _context.SaveChangesAsync();
         }
 
-        public Task AddAsync(BlogEf entity)
+        public async Task DeleteByIdAsync(int id)
         {
-            throw new System.NotImplementedException();
-        }
-
-        public Task UpdateAsync(BlogEf entity)
-        {
-            throw new System.NotImplementedException();
-        }
-
-        public Task DeleteByIdAsync(uint id)
-        {
-            throw new System.NotImplementedException();
+            var blog = await _context.Blogs.FirstOrDefaultAsync(x => x.BlogId == id);
+            if (blog != null)
+            {
+                _context.Blogs.Remove(blog);
+                await _context.SaveChangesAsync();
+            }
         }
     }
 }

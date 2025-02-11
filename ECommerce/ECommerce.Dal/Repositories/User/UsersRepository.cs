@@ -1,4 +1,5 @@
 using System.Collections.Generic;
+using System.Data.Entity;
 using System.Threading.Tasks;
 using ECommerce.Core.Entities.User;
 using ECommerce.Core.Interfaces.User;
@@ -14,29 +15,33 @@ namespace ECommerce.Dal.Repositories.User
             _context = context;
         }
         
-        public Task<IEnumerable<UserEf>> GetAllAsync()
+        public async Task<IEnumerable<UserEf>> GetAllAsync() => 
+            await _context.Users.ToListAsync();
+
+        public async Task<UserEf> GetByIdAsync(int id) => 
+            await _context.Users.FirstOrDefaultAsync(x => x.UserId == id);
+
+        public async Task CreateAsync(UserEf entity)
         {
-            throw new System.NotImplementedException();
+            _context.Users.Add(entity);
+            await _context.SaveChangesAsync();
         }
 
-        public Task<UserEf> GetByIdAsync(uint id)
+        public async Task UpdateAsync(UserEf entity)
         {
-            throw new System.NotImplementedException();
+            _context.Users.Attach(entity);
+            await _context.SaveChangesAsync();
         }
 
-        public Task AddAsync(UserEf entity)
+        public async Task DeleteByIdAsync(int id)
         {
-            throw new System.NotImplementedException();
+            var user = await _context.Users.FirstOrDefaultAsync(x => x.UserId == id);
+            if (user != null)
+            {
+                _context.Users.Remove(user);
+                await _context.SaveChangesAsync();
+            }
         }
 
-        public Task UpdateAsync(UserEf entity)
-        {
-            throw new System.NotImplementedException();
-        }
-
-        public Task DeleteByIdAsync(uint id)
-        {
-            throw new System.NotImplementedException();
-        }
     }
 }
