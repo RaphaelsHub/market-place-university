@@ -1,6 +1,5 @@
 using System.Web.Mvc;
-using ECommerce.App.Interfaces;
-
+using ECommerce.App.Interfaces.User;
 // using Newtonsoft.Json;
 
 namespace ECommerce.Controllers

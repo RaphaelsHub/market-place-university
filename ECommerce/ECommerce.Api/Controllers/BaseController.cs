@@ -16,18 +16,5 @@ namespace ECommerce.Controllers
             return Redirect(GetLastUrl());
         }
         
-        protected ActionResult CheckIfLoggedIn()
-        {
-            try
-            {
-                // Check if the user is already logged in
-                
-                return View();
-            }
-            catch (Exception e)
-            {
-                return RedirectToAction("Error", "Home", new {errorCode = 500, errorMessage = e.Message});
-            }
-        }
     }
 }

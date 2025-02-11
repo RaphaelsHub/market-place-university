@@ -1,18 +1,19 @@
 ﻿using System;
 using System.Web.Mvc;
-using ECommerce.App.Interfaces;
+using ECommerce.App.Interfaces.Auth;
+using ECommerce.App.Services.Auth;
 using ECommerce.Core.DataTransferObjects.AuthDto;
 
 namespace ECommerce.Controllers
 {
     public class AuthController : BaseController
     {
-        private readonly IAuthService _authService;
-        public AuthController(IAuthService authService) => _authService = authService;
+        private readonly IAuthenticationService _authService;
+        public AuthController(IAuthenticationService  authService) => _authService = authService;
 
-        [HttpGet] public ActionResult SignIn() => CheckIfLoggedIn();
+        [HttpGet] public ActionResult SignIn() => View();
 
-        [HttpGet] public ActionResult SignUp() => CheckIfLoggedIn();
+        [HttpGet] public ActionResult SignUp() => View();
         
         [HttpPost] public ActionResult SignIn(SignInDto signInDto)
         {
@@ -21,7 +22,7 @@ namespace ECommerce.Controllers
 
             try
             {
-                var response = _authService.Login(signInDto);
+                var response = _authService.SignIn(signInDto);
 
                 if (response.Result.Data == false)
                 {
@@ -43,7 +44,7 @@ namespace ECommerce.Controllers
 
             try
             {
-                var response = _authService.Register(signUpDto);
+                var response = _authService.SignUp(signUpDto);
 
                 if (response.Result.Data == false)
                 {

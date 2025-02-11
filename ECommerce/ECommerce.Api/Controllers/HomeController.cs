@@ -1,56 +1,35 @@
 ﻿using System.Web.Mvc;
+using ECommerce.App.Interfaces;
+using ECommerce.App.Interfaces.User;
 using ECommerce.Core.DataTransferObjects.FeedBack.ErrorSuccess;
 using ECommerce.Core.DataTransferObjects.User;
-using ECommerce.Core.Enums.Operation;
 
 namespace ECommerce.Controllers
 {
     public class HomeController : BaseController
     {
-        /*************** Index ***************/
-        [HttpGet]
-        public ActionResult Index() => View();
+        private readonly IUserService _userService;
         
+        public HomeController() { }
+        public HomeController(IUserService userService) => _userService = userService;
         
-        /// <summary>
-        ///  AboutUs page that contains information about the company.
-        /// </summary>
-        /// <returns> Returns a view. </returns>
-        [HttpGet]
-        public ActionResult AboutUs() => View();
+        [HttpGet] public ActionResult Index() => View();
         
-        /// <summary>
-        ///  ContactUs page that contains a form to send a message to the company.
-        /// </summary>
-        /// <returns> Returns a view. </returns>
-        [HttpGet]
-        public ActionResult ContactUs() => View();
-
-        /// <summary>
-        ///  ContactUs page that contains a form to send a message to the company.
-        /// </summary>
-        /// <param name="contactUsDto"> Gets a model of contact data. </param>
-        /// <returns> Returns a view if the model isn't valid and redirects to confirmation action, if is valid. </returns>
-        [HttpPost]
-        public ActionResult ContactUs(ContactUsDto contactUsDto)
+        [HttpGet] public ActionResult AboutUs() => View();
+        
+        [HttpGet] public ActionResult ContactUs() => View();
+        
+        [HttpPost] public ActionResult ContactUs(ContactUsDto contactUsDto)
         {
             if (!ModelState.IsValid) 
                 return View(contactUsDto);
             
-            TempData["MessageResponse"] = new MessageResponseDto(
-                1,
-                "Message sent successfully, we will contact you soon !",
-                RequestStatus.Success);
+            //TempData["MessageResponse"] = _userService.ContactUs(contactUsDto).Result;
             
             return RedirectToAction("Confirmation");
         }
         
-        /// <summary>
-        ///  Confirmation page that contains a message of success or error after sending a message or any other operation.
-        /// </summary>
-        /// <returns> Returns this message to the view. </returns>
-        [HttpGet]
-        public ActionResult Confirmation()
+        [HttpGet] public ActionResult Confirmation()
         {
             var messageResponseDto = TempData["MessageResponse"] as MessageResponseDto 
                                      ?? new MessageResponseDto();
@@ -58,21 +37,13 @@ namespace ECommerce.Controllers
             return View(messageResponseDto);
         }
         
-        /// <summary>
-        /// The error page that will be shown when an error occurs.
-        /// </summary>
-        /// <param name="errorCode">It gets the errorCode, initializes an instance of ErrorResponseDto where the error message is already initialized.</param>
-        /// <returns>It returns a unified view that contains an error and an error message.</returns>
-        [HttpGet]
-        public ActionResult Error(int errorCode, string errorMessage)
+        [HttpGet] public ActionResult Error(int errorCode, string errorMessage)
         {
             var errorResponseDto = new ErrorResponseDto(errorCode, errorMessage);
             
             ViewBag.LastUrl = GetLastUrl();
 
-            return View(errorResponseDto);
+           return View(errorResponseDto);
         }
-        
-
     }
 }
