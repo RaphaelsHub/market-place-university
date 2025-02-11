@@ -3,7 +3,7 @@ using System.Threading.Tasks;
 using ECommerce.Core.DataTransferObjects;
 using ECommerce.Core.DataTransferObjects.FeedBack.Standard;
 
-namespace ECommerce.App.Interfaces.Admin
+namespace ECommerce.App.Interfaces.Blog
 {
     /// <summary>
     ///  Blog service, which allows to create, read, update, delete blog, find blog by search

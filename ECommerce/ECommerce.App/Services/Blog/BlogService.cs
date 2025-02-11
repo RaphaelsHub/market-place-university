@@ -1,12 +1,13 @@
 using System.Collections.Generic;
 using System.Threading.Tasks;
-using ECommerce.App.Interfaces;
+using ECommerce.App.Interfaces.Admin;
+using ECommerce.App.Interfaces.Blog;
 using ECommerce.Core.DataTransferObjects;
 using ECommerce.Core.DataTransferObjects.FeedBack.Standard;
 using ECommerce.Core.Entities.Blog;
 using ECommerce.Core.Interfaces.Blog;
 
-namespace ECommerce.App.Services
+namespace ECommerce.App.Services.Blog
 {
     public class BlogService : IBlogService
     {
@@ -16,23 +17,24 @@ namespace ECommerce.App.Services
         {
             _blogsRepository = blogsRepository;
         }
-        
+
+
         public Task<ResponseType1<bool>> CreateBlogAsync(BlogDto blog)
         {
             throw new System.NotImplementedException();
         }
 
-        public Task<ResponseType1<BlogDto>> GetBlogAsync(uint id)
+        public Task<ResponseType1<BlogDto>> GetBlogAsync(int idBlog)
         {
             throw new System.NotImplementedException();
         }
 
-        public Task<ResponseType1<IEnumerable<BlogDto>>> GetBlogsAsync(uint currentPage, uint amountOfItems)
+        public Task<ResponseType1<IEnumerable<BlogDto>>> GetBlogsAsync(int currentPage = 1, int amountOfItems = 16)
         {
             throw new System.NotImplementedException();
         }
 
-        public Task<IEnumerable<BlogDto>> FindBlogsAsync(string search, uint currentPage, uint amountOfItems)
+        public Task<IEnumerable<BlogDto>> FindBlogsAsync(string search, int currentPage = 1, int amountOfItems = 16)
         {
             throw new System.NotImplementedException();
         }
@@ -42,7 +44,7 @@ namespace ECommerce.App.Services
             throw new System.NotImplementedException();
         }
 
-        public Task<ResponseType1<bool>> DeleteBlogAsync(uint idBlog)
+        public Task<ResponseType1<bool>> DeleteBlogAsync(int idBlog)
         {
             throw new System.NotImplementedException();
         }

@@ -1,7 +1,7 @@
-using ECommerce.App.Interfaces;
+using ECommerce.App.Interfaces.Admin;
 using ECommerce.Core.Interfaces.Admin;
 
-namespace ECommerce.App.Services
+namespace ECommerce.App.Services.Admin
 {
     public class AdminService  : IAdminService
     {
