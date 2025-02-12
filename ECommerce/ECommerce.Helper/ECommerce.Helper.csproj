@@ -41,6 +41,7 @@
     </ItemGroup>
     <ItemGroup>
         <Compile Include="ErrorHelper.cs" />
+        <Compile Include="HashingUtility.cs" />
         <Compile Include="ModelGeneratingClass.cs" />
         <Compile Include="Properties\AssemblyInfo.cs"/>
     </ItemGroup>
