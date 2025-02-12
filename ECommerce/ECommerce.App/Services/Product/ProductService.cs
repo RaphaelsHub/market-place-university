@@ -2,7 +2,7 @@ using System.Collections.Generic;
 using System.Threading.Tasks;
 using ECommerce.App.Interfaces.Product;
 using ECommerce.Core.DataTransferObjects;
-using ECommerce.Core.DataTransferObjects.FeedBack.Standard;
+using ECommerce.Core.DataTransferObjects.Responses;
 using ECommerce.Core.Entities.Product;
 using ECommerce.Core.Interfaces.Product;
 

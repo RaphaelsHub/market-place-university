@@ -1,6 +1,6 @@
 using ECommerce.Core.Enums.Operation;
 
-namespace ECommerce.Core.DataTransferObjects.FeedBack.ErrorSuccess
+namespace ECommerce.Core.DataTransferObjects.Responses
 {
     public class MessageResponseDto
     {
