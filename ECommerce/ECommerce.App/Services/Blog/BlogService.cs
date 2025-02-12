@@ -3,7 +3,7 @@ using System.Threading.Tasks;
 using ECommerce.App.Interfaces.Admin;
 using ECommerce.App.Interfaces.Blog;
 using ECommerce.Core.DataTransferObjects;
-using ECommerce.Core.DataTransferObjects.FeedBack.Standard;
+using ECommerce.Core.DataTransferObjects.Responses;
 using ECommerce.Core.Entities.Blog;
 using ECommerce.Core.Interfaces.Blog;
 

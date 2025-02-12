@@ -1,5 +1,5 @@
 ﻿using System.Web.Mvc;
-using ECommerce.Core.DataTransferObjects.FeedBack.ErrorSuccess;
+using ECommerce.Core.DataTransferObjects.Responses;
 using ECommerce.Core.DataTransferObjects.User;
 using ECommerce.Core.Enums.Operation;
 

@@ -2,7 +2,7 @@
     Layout = null;
 }
 
-@model ECommerce.Core.DataTransferObjects.FeedBack.ErrorSuccess.MessageResponseDto
+@model ECommerce.Core.DataTransferObjects.Responses.MessageResponseDto
 
 <!DOCTYPE html>
 <html lang="zxx">
@@ -53,7 +53,7 @@
                                     <h5>@Model.Message</h5>
                                     <p>Your track id is: @Model.IdTrack </p>
                                     <div class="button">
-                                        <a href="@Url.Action("Index", "Home")" class="btn">Go Back</a>
+                                        <a href="@Url.Action("Index", "Home")" class="btn">Go to main page</a>
                                     </div>
                             </div>
                         </div>

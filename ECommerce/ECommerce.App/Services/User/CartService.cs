@@ -1,6 +1,6 @@
 using System.Threading.Tasks;
 using ECommerce.App.Interfaces.User;
-using ECommerce.Core.DataTransferObjects.FeedBack.Standard;
+using ECommerce.Core.DataTransferObjects.Responses;
 using ECommerce.Core.DataTransferObjects.User;
 using ECommerce.Core.Entities.Product;
 using ECommerce.Core.Entities.User;
