@@ -1,6 +1,6 @@
 using System.Threading.Tasks;
 using ECommerce.App.Interfaces.Auth;
-using ECommerce.Core.DataTransferObjects.FeedBack.Standard;
+using ECommerce.Core.DataTransferObjects.Responses;
 using ECommerce.Core.Enums.User;
 
 namespace ECommerce.App.Services.Auth

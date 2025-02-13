@@ -2,8 +2,10 @@ using System;
 using System.Threading.Tasks;
 using ECommerce.App.Interfaces.Auth;
 using ECommerce.Core.DataTransferObjects.AuthDto;
-using ECommerce.Core.DataTransferObjects.FeedBack.Standard;
-using ECommerce.Dal.Repositories.User;
+using ECommerce.Core.DataTransferObjects.Responses;
+using ECommerce.Core.Entities.User;
+using ECommerce.Core.Interfaces.User;
+using ECommerce.Helper;
 
 namespace ECommerce.App.Services.Auth
 {

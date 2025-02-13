@@ -1,5 +1,6 @@
 using System.Collections.Generic;
 using System.Data.Entity;
+using System.Linq;
 using System.Threading.Tasks;
 using ECommerce.Core.Entities.User;
 using ECommerce.Core.Interfaces.User;

@@ -1,6 +1,6 @@
 using System.Threading.Tasks;
 using ECommerce.Core.DataTransferObjects.AuthDto;
-using ECommerce.Core.DataTransferObjects.FeedBack.Standard;
+using ECommerce.Core.DataTransferObjects.Responses;
 
 namespace ECommerce.App.Interfaces.Auth
 {

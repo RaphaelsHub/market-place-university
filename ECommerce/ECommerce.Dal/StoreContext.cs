@@ -2,6 +2,7 @@ using System;
 using System.Configuration;
 using System.Data.Entity;
 using System.Data.SqlClient;
+using System.Data.Entity.SqlServer;
 using ECommerce.Core.Entities.Blog;
 using ECommerce.Core.Entities.Product;
 using ECommerce.Core.Entities.User;

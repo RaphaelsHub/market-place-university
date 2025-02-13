@@ -1,7 +1,8 @@
 ﻿using System.Web.Mvc;
 using ECommerce.App.Interfaces;
 using ECommerce.App.Interfaces.User;
-using ECommerce.Core.DataTransferObjects.FeedBack.ErrorSuccess;
+using ECommerce.Core.Constants;
+using ECommerce.Core.DataTransferObjects.Responses;
 using ECommerce.Core.DataTransferObjects.User;
 
 namespace ECommerce.Controllers

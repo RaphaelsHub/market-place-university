@@ -1,5 +1,5 @@
 using System.Threading.Tasks;
-using ECommerce.Core.DataTransferObjects.FeedBack.Standard;
+using ECommerce.Core.DataTransferObjects.Responses;
 using ECommerce.Core.DataTransferObjects.User;
 
 namespace ECommerce.App.Interfaces.User

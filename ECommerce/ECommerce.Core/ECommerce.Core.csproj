@@ -35,27 +35,25 @@
     <ItemGroup>
         <Reference Include="mscorlib" />
         <Reference Include="System"/>
-        <Reference Include="System.ComponentModel.Annotations, Version=4.2.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
-          <HintPath>..\packages\System.ComponentModel.Annotations.5.0.0\lib\net461\System.ComponentModel.Annotations.dll</HintPath>
-        </Reference>
         <Reference Include="System.ComponentModel.DataAnnotations" />
         <Reference Include="System.Core"/>
         <Reference Include="System.Data"/>
         <Reference Include="System.Xml"/>
     </ItemGroup>
     <ItemGroup>
+        <Compile Include="Constants\TempDataKeys.cs" />
         <Compile Include="DataTransferObjects\AuthDto\SignInDto.cs" />
         <Compile Include="DataTransferObjects\AuthDto\SignUpDto.cs" />
         <Compile Include="DataTransferObjects\BlogDto.cs" />
-        <Compile Include="DataTransferObjects\FeedBack\ErrorSuccess\ErrorResponseDto.cs" />
-        <Compile Include="DataTransferObjects\FeedBack\ErrorSuccess\MessageResponseDto.cs" />
-        <Compile Include="DataTransferObjects\FeedBack\Standard\ResponseType1.cs" />
-        <Compile Include="DataTransferObjects\FeedBack\Standard\ResponseType2.cs" />
-        <Compile Include="DataTransferObjects\FeedBack\Standard\ResponseType3.cs" />
+        <Compile Include="DataTransferObjects\Responses\ErrorResponseDto.cs" />
+        <Compile Include="DataTransferObjects\Responses\MessageResponseDto.cs" />
+        <Compile Include="DataTransferObjects\Responses\ResponseType1.cs" />
+        <Compile Include="DataTransferObjects\Responses\ResponseType2.cs" />
         <Compile Include="DataTransferObjects\HelpFull\AmountOfPagesDto.cs" />
         <Compile Include="DataTransferObjects\HelpFull\ErrorAnalyticDto.cs" />
         <Compile Include="DataTransferObjects\MessageDto.cs" />
         <Compile Include="DataTransferObjects\ProductDto.cs" />
+        <Compile Include="DataTransferObjects\Responses\ResponseType3.cs" />
         <Compile Include="DataTransferObjects\User\CartDto.cs" />
         <Compile Include="DataTransferObjects\User\ContactUsDto.cs" />
         <Compile Include="DataTransferObjects\User\OrderDto.cs" />
@@ -101,7 +99,7 @@
         <Compile Include="Interfaces\User\IOrderItemsRepository.cs" />
         <Compile Include="Interfaces\User\IOrdersRepository.cs" />
         <Compile Include="Interfaces\User\IUsersRepository.cs" />
-        <Compile Include="Properties\AssemblyInfo.cs"/>
+        <Compile Include="Properties\AssemblyInfo.cs" />
     </ItemGroup>
     <ItemGroup>
       <Folder Include="CustomExceptions\" />
@@ -109,7 +107,7 @@
       <Folder Include="ValueObjects\" />
     </ItemGroup>
     <ItemGroup>
-      <None Include="packages.config" />
+      <PackageReference Include="System.ComponentModel.Annotations" Version="5.0.0" />
     </ItemGroup>
     <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets"/>
     <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

@@ -3,6 +3,7 @@ using System.Web.Mvc;
 using ECommerce.App.Interfaces.Auth;
 using ECommerce.App.Services.Auth;
 using ECommerce.Core.DataTransferObjects.AuthDto;
+using ECommerce.Core.DataTransferObjects.Responses;
 
 namespace ECommerce.Controllers
 {
