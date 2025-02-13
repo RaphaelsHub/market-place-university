@@ -1,5 +1,4 @@
 using System.Threading.Tasks;
-using ECommerce.Core.DataTransferObjects.FeedBack.Standard;
 
 namespace ECommerce.App.Interfaces.Product
 {
