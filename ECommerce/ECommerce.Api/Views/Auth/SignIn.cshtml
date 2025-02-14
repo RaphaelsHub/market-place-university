@@ -1,4 +1,6 @@
-﻿@{
+﻿@using ECommerce.Core.Constants
+
+@{
     ViewBag.Title = "Index";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
@@ -27,6 +29,10 @@
                 <div class="login-form">
                     <h2>Sign In</h2>
                     <p>Please sign in to verify identity</p>
+                    @if (TempData[TempDataKeys.Error] != null)
+                    {
+                        <div class="alert alert-info">@TempData[TempDataKeys.Error]</div>
+                    }
                     @using (Html.BeginForm("SignIn", "Auth", FormMethod.Post, new { @class = "form" }))
                     {
                         <div class="row">
@@ -52,12 +58,6 @@
                                     @Html.CheckBoxFor(m => m.RememberMe, new { @class = "checkbox" })
                                     @Html.LabelFor(m => m.RememberMe, new { @class = "checkbox" })
                                 <a href="#" class="lost-pass">Lost your password?</a>
-
-                                @if (TempData["Error"] != null)
-                                {
-                                    <div class="alert alert-info">@TempData["Error"]</div>
-                                }
-                                
                             </div>
                         </div>
                     }
