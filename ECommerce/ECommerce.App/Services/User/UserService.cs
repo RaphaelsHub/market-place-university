@@ -11,9 +11,9 @@ namespace ECommerce.App.Services.User
 {
     public class UserService : IUserService
     {
-        private readonly IUsersRepository<UserEf> _usersRepository;
+        private readonly IUsersRepository _usersRepository;
         
-        public UserService(IUsersRepository<UserEf> usersRepository)
+        public UserService(IUsersRepository usersRepository)
         {
             _usersRepository = usersRepository;
         }

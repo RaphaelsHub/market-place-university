@@ -7,7 +7,7 @@ using ECommerce.Core.Interfaces.User;
 
 namespace ECommerce.Dal.Repositories.User
 {
-    public class UsersRepository : IUsersRepository<UserEf>
+    public class UsersRepository : IUsersRepository
     {
         private readonly StoreContext _context;
         
@@ -21,6 +21,9 @@ namespace ECommerce.Dal.Repositories.User
 
         public async Task<UserEf> GetByIdAsync(int id) => 
             await _context.Users.FirstOrDefaultAsync(x => x.UserId == id);
+        
+        public async Task<UserEf> GetByEmailAsync(string email) => 
+            await _context.Users.FirstOrDefaultAsync(x => x.Email == email);
 
         public async Task CreateAsync(UserEf entity)
         {
