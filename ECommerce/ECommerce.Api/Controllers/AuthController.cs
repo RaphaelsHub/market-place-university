@@ -1,7 +1,9 @@
 ﻿using System;
+using System.Threading.Tasks;
 using System.Web.Mvc;
 using ECommerce.App.Interfaces.Auth;
-using ECommerce.App.Services.Auth;
+using ECommerce.App.Interfaces.JWT;
+using ECommerce.Core.Constants;
 using ECommerce.Core.DataTransferObjects.AuthDto;
 using ECommerce.Core.DataTransferObjects.Responses;
 
@@ -10,71 +12,71 @@ namespace ECommerce.Controllers
     public class AuthController : BaseController
     {
         private readonly IAuthenticationService _authService;
-        public AuthController(IAuthenticationService  authService) => _authService = authService;
+        private readonly IJwtService _jwtService;
 
-        [HttpGet] public ActionResult SignIn() => View();
-
-        [HttpGet] public ActionResult SignUp() => View();
-        
-        [HttpPost] public ActionResult SignIn(SignInDto signInDto)
+        public AuthController(IAuthenticationService authService, IJwtService jwtService)
         {
-            if(!ModelState.IsValid)
-                return View(signInDto);
+            _authService = authService;
+            _jwtService = jwtService;
+        }
+
+        [HttpGet]
+        public async Task<ActionResult> SignIn() => await _jwtService.IsTokenValid()
+            ? (ActionResult)RedirectToAction("Index", "Home")
+            : View();
+        
+        [HttpGet] public async Task<ActionResult> SignUp() => await _jwtService.IsTokenValid()
+            ? (ActionResult)RedirectToAction("Index", "Home")  
+            : View();
+    
+        [HttpPost] public async Task<ActionResult> SignIn(SignInDto signInDto) => 
+            await ProcessAuthentication(async () => await _authService.SignIn(signInDto), signInDto);
+        
+        [HttpPost] public async Task<ActionResult> SignUp(SignUpDto signUpDto) => 
+            await ProcessAuthentication(async () => await _authService.SignUp(signUpDto), signUpDto);
+
+        [HttpGet] public async Task<ActionResult> SignOut()
+        {
+            try
+            {
+                var response = await _authService.Logout();
+
+                if (!response.Data)
+                    return RedirectToErrorPage(500);
+
+                return RedirectToAction("SignIn", "Auth");
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine($"Error has occured : {e.Message}");
+                return RedirectToErrorPage(500);
+            }
+        }
+
+        private async Task<ActionResult> ProcessAuthentication
+            (Func<Task<ResponseType1<bool>>> authServiceMethod, object dto)
+        {
+            if (await _jwtService.IsTokenValid())
+                return RedirectToAction("Index", "Home");
+
+            if (!ModelState.IsValid)
+                return View(dto);
 
             try
             {
-                var response = _authService.SignIn(signInDto);
+                var response = await authServiceMethod();
 
-                if (response.Result.Data == false)
+                if (!response.Data)
                 {
-                    TempData["Error"] = response.Result.Message;
-                    return View(signInDto);
+                    TempData[TempDataKeys.Error] = response.Message;
+                    return View(dto);
                 }
                 return RedirectToAction("Index", "Home");
             }
             catch (Exception e)
             {
-                return RedirectToAction("Error", "Home", new {errorCode = 500, errorMessage = e.Message});
-            }
-        }
-        
-        [HttpPost] public ActionResult SignUp(SignUpDto signUpDto)
-        {
-            if(!ModelState.IsValid)
-                return View(signUpDto);
-
-            try
-            {
-                var response = _authService.SignUp(signUpDto);
-
-                if (response.Result.Data == false)
-                {
-                    TempData["Error"] = response.Result.Message;
-                    return View(signUpDto);
-                }
-                return RedirectToAction("Index", "Home");
-            }
-            catch (Exception e)
-            {
-                return RedirectToAction("Error", "Home", new {errorCode = 500, errorMessage = e.Message});
-            }
-        }
-        
-        [HttpGet] public ActionResult SignOut()
-        {
-            try
-            {
-                var response = _authService.Logout();
-                
-                if (response.Result.Data == false)
-                    return RedirectToAction("Error", "Home", 
-                        new {errorCode = 500, errorMessage = response.Result.Message});
-                
-                return RedirectToAction("Index", "Home");
-            }
-            catch (Exception e)
-            {
-                return RedirectToAction("Error", "Home", new {errorCode = 500, errorMessage = e.Message});
+                Console.WriteLine($"Error has occured : {e.Message}");
+                return RedirectToErrorPage(500);
             }
         }
     }
