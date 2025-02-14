@@ -3,16 +3,18 @@ using System.Web;
 using System.Web.Mvc;
 using System.Web.Optimization;
 using System.Web.Routing;
-using ECommerce.App.Interfaces;
+using ECommerce.App.Infrastructure.Abstractions;
+using ECommerce.App.Infrastructure.Services;
 using ECommerce.App.Interfaces.Admin;
 using ECommerce.App.Interfaces.Auth;
 using ECommerce.App.Interfaces.Blog;
+using ECommerce.App.Interfaces.JWT;
 using ECommerce.App.Interfaces.Product;
 using ECommerce.App.Interfaces.User;
-using ECommerce.App.Services;
 using ECommerce.App.Services.Admin;
 using ECommerce.App.Services.Auth;
 using ECommerce.App.Services.Blog;
+using ECommerce.App.Services.JWT;
 using ECommerce.App.Services.Product;
 using ECommerce.App.Services.User;
 using ECommerce.Controllers;
@@ -42,10 +44,19 @@ namespace ECommerce
             FilterConfig.RegisterGlobalFilters(GlobalFilters.Filters);
             RouteConfig.RegisterRoutes(RouteTable.Routes);
             BundleConfig.RegisterBundles(BundleTable.Bundles);
+            
             var container = new UnityContainer();
             RegisterTypes(container);
             DependencyResolver.SetResolver(new UnityDependencyResolver(container));
+            
+            // ConfigureJwtAuth();      
         }
+
+        // private void ConfigureJwtAuth()
+        // {
+        //     throw new NotImplementedException();
+        // }
+
         private void RegisterTypes(UnityContainer container)
         {
             // Регистрация зависимостей среди сервисов
@@ -64,15 +75,19 @@ namespace ECommerce
             container.RegisterType<ICategoryService, CategoryService>();
             // blog
             container.RegisterType<IBlogService, BlogService>();
+
+            container.RegisterType<ICookiesService, CookiesService>();
+            container.RegisterType<IJwtService, JwtService>();
+            container.RegisterType<IContactUsService, ContactUsService>();
             
             // Регистрация зависимостей среди репозиториев
             // User
-            container.RegisterType<IUsersRepository<UserEf>, UsersRepository>();
+            container.RegisterType<IUsersRepository, UsersRepository>();
             container.RegisterType<IOrdersRepository<OrderEf>, OrdersRepository>();
             container.RegisterType<IOrderItemsRepository<OrderItemEf>,OrderItemsRepository>();
             container.RegisterType<ICartItemsRepository<CartItemEf>,CartItemsRepository>();
             container.RegisterType<IAddressesRepository<AddressEf>,AddressesRepository>();
-            container.RegisterType<IContactUsRepository<ContactUsEf>, ContactUsRepository>();
+            container.RegisterType<IContactUsRepository, ContactUsRepository>();
             
             // Product
             container.RegisterType<IProductsRepository<ProductEf>, ProductsRepository>();
@@ -101,12 +116,13 @@ namespace ECommerce
         
             var routeData = ErrorHelper.GetRouteData(httpException);
             
-            // IController homeController = new HomeController( );
+            IController homeController = new HomeController();
             
-            IController homeController = DependencyResolver.Current.GetService<HomeController>();
-            
-            // var container = DependencyResolver.Current.GetService<IUnityContainer>();
-            // IController homeController = container.Resolve<HomeController>();
+            //
+            // IController homeController = DependencyResolver.Current.GetService<HomeController>();
+            //
+            // // var container = DependencyResolver.Current.GetService<IUnityContainer>();
+            // // IController homeController = container.Resolve<HomeController>();
             
             var contextWrapper = new HttpContextWrapper(Context);
             var requestContext = new RequestContext(contextWrapper, routeData);

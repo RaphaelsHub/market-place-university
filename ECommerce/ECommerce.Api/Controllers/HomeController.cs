@@ -1,50 +1,58 @@
-﻿using System.Web.Mvc;
-using ECommerce.App.Interfaces;
+﻿using System.Threading.Tasks;
+using System.Web.Mvc;
+using ECommerce.App.Interfaces.Blog;
+using ECommerce.App.Interfaces.Product;
 using ECommerce.App.Interfaces.User;
 using ECommerce.Core.Constants;
 using ECommerce.Core.DataTransferObjects.Responses;
 using ECommerce.Core.DataTransferObjects.User;
+using ECommerce.Helper;
 
 namespace ECommerce.Controllers
 {
     public class HomeController : BaseController
     {
-        private readonly IUserService _userService;
+        private readonly IContactUsService _contactUs;
+        private readonly IProductService _productService;
+        private readonly ICategoryService _categoryService;
+        private readonly IBlogService _blogService;
         
-        public HomeController() { }
-        public HomeController(IUserService userService) => _userService = userService;
+        public HomeController(){}
         
-        [HttpGet] public ActionResult Index() => View();
+        public HomeController(IContactUsService contactUs, IBlogService blogService, 
+            ICategoryService categoryService, IProductService productService) 
+        {
+            _contactUs = contactUs;
+            _blogService = blogService;
+            _categoryService = categoryService;
+            _productService = productService;
+        }
+        
+        [HttpGet]  public ActionResult Index() => View();
         
         [HttpGet] public ActionResult AboutUs() => View();
         
         [HttpGet] public ActionResult ContactUs() => View();
         
-        [HttpPost] public ActionResult ContactUs(ContactUsDto contactUsDto)
+        [HttpPost] public async Task<ActionResult> ContactUs(ContactUsDto contactUsDto)
         {
-            if (!ModelState.IsValid) 
-                return View(contactUsDto);
+            if (!ModelState.IsValid) return View(contactUsDto);
             
-            //TempData["MessageResponse"] = _userService.ContactUs(contactUsDto).Result;
+            TempData[TempDataKeys.MessageResponse] = await _contactUs.SendContactUsRequestAsync(contactUsDto);
             
             return RedirectToAction("Confirmation");
         }
         
-        [HttpGet] public ActionResult Confirmation()
-        {
-            var messageResponseDto = TempData["MessageResponse"] as MessageResponseDto 
-                                     ?? new MessageResponseDto();
+        [HttpGet] public ActionResult Confirmation() => (TempData[TempDataKeys.MessageResponse] as MessageResponseDto) == null 
+            ? (ActionResult)RedirectToAction("Index") 
+            : View(TempData[TempDataKeys.MessageResponse] as MessageResponseDto);
 
-            return View(messageResponseDto);
-        }
-        
-        [HttpGet] public ActionResult Error(int errorCode, string errorMessage)
+        [HttpGet] public ActionResult Error(int? errorCode)
         {
-            var errorResponseDto = new ErrorResponseDto(errorCode, errorMessage);
-            
             ViewBag.LastUrl = GetLastUrl();
-
-           return View(errorResponseDto);
+            return errorCode == null ? 
+                View(new ErrorResponseDto()) : 
+                View(new ErrorResponseDto(errorCode.Value,ErrorHelper.GetErrorMessage(errorCode.Value)));
         }
     }
 }

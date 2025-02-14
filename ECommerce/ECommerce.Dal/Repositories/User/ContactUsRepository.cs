@@ -6,7 +6,7 @@ using ECommerce.Core.Interfaces.User;
 
 namespace ECommerce.Dal.Repositories.User
 {
-    public class ContactUsRepository : IContactUsRepository<ContactUsEf>
+    public class ContactUsRepository : IContactUsRepository
     {
         private readonly StoreContext _context;
 
