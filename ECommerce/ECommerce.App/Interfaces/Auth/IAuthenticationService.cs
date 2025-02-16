@@ -1,6 +1,6 @@
 using System.Threading.Tasks;
-using ECommerce.Core.DataTransferObjects.AuthDto;
-using ECommerce.Core.DataTransferObjects.Responses;
+using ECommerce.Core.Models.DTOs.Auth;
+using ECommerce.Core.Models.ViewModels;
 
 namespace ECommerce.App.Interfaces.Auth
 {
@@ -9,9 +9,9 @@ namespace ECommerce.App.Interfaces.Auth
     /// </summary>
     public interface IAuthenticationService
     {
-        Task<ResponseType1<bool>> SignUp(SignUpDto registrationDto);
-        Task<ResponseType1<bool>> SignIn(SignInDto loginDto);
-        Task<ResponseType1<bool>> Logout();
-        Task<ResponseType1<bool>> SendEmailConfirmation(string email);
+        Task<ResponseViewModel<bool>> SignUp(SignUpDto registrationDto);
+        Task<ResponseViewModel<bool>> SignIn(SignInDto loginDto);
+        Task<ResponseViewModel<bool>> Logout();
+        Task<ResponseViewModel<bool>> SendEmailConfirmation(string email);
     }
 }

@@ -1,7 +1,8 @@
 using System.Collections.Generic;
 using System.Threading.Tasks;
-using ECommerce.Core.DataTransferObjects;
-using ECommerce.Core.DataTransferObjects.Responses;
+using ECommerce.Core.Models;
+using ECommerce.Core.Models.DTOs.Blog;
+using ECommerce.Core.Models.ViewModels;
 
 namespace ECommerce.App.Interfaces.Blog
 {
@@ -10,12 +11,12 @@ namespace ECommerce.App.Interfaces.Blog
     /// </summary>
     public interface IBlogService
     {
-        Task<ResponseType1<bool>> CreateBlogAsync(BlogDto blog);
-        Task<ResponseType1<BlogDto>> GetBlogAsync(int idBlog);
-        Task<ResponseType1<IEnumerable<BlogDto>>> GetBlogsAsync(int currentPage = 1, int amountOfItems = 16);
+        Task<ResponseViewModel<bool>> CreateBlogAsync(BlogDto blog);
+        Task<ResponseViewModel<BlogDto>> GetBlogAsync(int idBlog);
+        Task<ResponseViewModel<IEnumerable<BlogDto>>> GetBlogsAsync(int currentPage = 1, int amountOfItems = 16);
         Task<IEnumerable<BlogDto>> FindBlogsAsync(string search, int currentPage = 1, int amountOfItems = 16);
-        Task<ResponseType1<bool>> UpdateBlogAsync(BlogDto blog);
-        Task<ResponseType1<bool>> DeleteBlogAsync(int idBlog);
+        Task<ResponseViewModel<bool>> UpdateBlogAsync(BlogDto blog);
+        Task<ResponseViewModel<bool>> DeleteBlogAsync(int idBlog);
         
         
         

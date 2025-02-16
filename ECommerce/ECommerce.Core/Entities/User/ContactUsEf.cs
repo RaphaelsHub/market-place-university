@@ -10,6 +10,6 @@ namespace ECommerce.Core.Entities.User
         public string PhoneNumber { get; set; }
         public string Subject { get; set; }
         public string Message { get; set; }
-        public DateTime CreatedRequest { get; set; }
+        public DateTime DateTime { get; set; }
     }
 }

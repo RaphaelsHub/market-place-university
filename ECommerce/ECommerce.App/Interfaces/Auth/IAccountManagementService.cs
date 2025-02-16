@@ -1,6 +1,7 @@
 using System.Threading.Tasks;
-using ECommerce.Core.DataTransferObjects.Responses;
+using ECommerce.Core.Enums.Entity;
 using ECommerce.Core.Enums.User;
+using ECommerce.Core.Models.ViewModels;
 
 namespace ECommerce.App.Interfaces.Auth
 {
@@ -9,7 +10,7 @@ namespace ECommerce.App.Interfaces.Auth
     /// </summary>
     public interface IAccountManagementService
     {
-        Task<ResponseType1<bool>> ChangePassword(string changePasswordDto);
-        Task<ResponseType1<bool>> SetAccountStatus(int userId, UserStatus status);
+        Task<ResponseViewModel<bool>> ChangePassword(string changePasswordDto);
+        Task<ResponseViewModel<bool>> SetAccountStatus(int userId, EntityStatus status);
     }
 }

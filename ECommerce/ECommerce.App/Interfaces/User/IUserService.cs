@@ -1,7 +1,7 @@
 using System.Collections.Generic;
 using System.Threading.Tasks;
-using ECommerce.Core.DataTransferObjects.Responses;
-using ECommerce.Core.DataTransferObjects.User;
+using ECommerce.Core.Models.DTOs.User;
+using ECommerce.Core.Models.ViewModels;
 
 namespace ECommerce.App.Interfaces.User
 {
@@ -11,10 +11,10 @@ namespace ECommerce.App.Interfaces.User
     public interface IUserService
     {
         Task<bool> CreateUserAsync(UserDto user);
-        Task<ResponseType1<UserDto>> GetUserAsync(int id);
-        Task<ResponseType1<UserDto>> FindUserByEmailAsync(string email);
-        Task<ResponseType1<UserDto>> FindUserByUserNameAsync(string userName, int currentPage = 1, int amountOfUsers = 16);
-        Task<ResponseType1<IEnumerable<UserDto>>> GetUsersAsync(int currentPage = 1, int amountOfUsers = 16);
+        Task<ResponseViewModel<UserDto>> GetUserAsync(int id);
+        Task<ResponseViewModel<UserDto>> FindUserByEmailAsync(string email);
+        Task<ResponseViewModel<UserDto>> FindUserByUserNameAsync(string userName, int currentPage = 1, int amountOfUsers = 16);
+        Task<ResponseViewModel<IEnumerable<UserDto>>> GetUsersAsync(int currentPage = 1, int amountOfUsers = 16);
         Task<bool> UpdateUserAsync(UserDto user);
         Task<bool> DeleteUserAsync(int id);
     }

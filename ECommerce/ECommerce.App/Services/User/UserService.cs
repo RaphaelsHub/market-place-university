@@ -2,10 +2,12 @@ using System.Collections.Generic;
 using System.Threading.Tasks;
 using ECommerce.App.Interfaces;
 using ECommerce.App.Interfaces.User;
-using ECommerce.Core.DataTransferObjects.Responses;
-using ECommerce.Core.DataTransferObjects.User;
 using ECommerce.Core.Entities.User;
 using ECommerce.Core.Interfaces.User;
+using ECommerce.Core.Models;
+using ECommerce.Core.Models.DTOs.ContactUs;
+using ECommerce.Core.Models.DTOs.User;
+using ECommerce.Core.Models.ViewModels;
 
 namespace ECommerce.App.Services.User
 {
@@ -18,22 +20,22 @@ namespace ECommerce.App.Services.User
             _usersRepository = usersRepository;
         }
         
-        public Task<ResponseType1<UserDto>> GetUser(int id)
+        public Task<ResponseViewModel<UserDto>> GetUser(int id)
         {
             throw new System.NotImplementedException();
         }
 
-        public Task<ResponseType1<UserDto>> GetUserByEmail(string email)
+        public Task<ResponseViewModel<UserDto>> GetUserByEmail(string email)
         {
             throw new System.NotImplementedException();
         }
 
-        public Task<ResponseType1<UserDto>> GetUserByUserName(string userName)
+        public Task<ResponseViewModel<UserDto>> GetUserByUserName(string userName)
         {
             throw new System.NotImplementedException();
         }
 
-        public Task<ResponseType1<IEnumerable<UserDto>>> GetUsers()
+        public Task<ResponseViewModel<IEnumerable<UserDto>>> GetUsers()
         {
             throw new System.NotImplementedException();
         }
@@ -53,7 +55,7 @@ namespace ECommerce.App.Services.User
             throw new System.NotImplementedException();
         }
         
-        public Task<MessageResponseDto> ContactUs(ContactUsDto contactUsDto)
+        public Task<MessageViewModel> ContactUs(ContactUsDto contactUsDto)
         {
             throw new System.NotImplementedException();
         }
@@ -63,22 +65,22 @@ namespace ECommerce.App.Services.User
             throw new System.NotImplementedException();
         }
 
-        public Task<ResponseType1<UserDto>> GetUserAsync(int id)
+        public Task<ResponseViewModel<UserDto>> GetUserAsync(int id)
         {
             throw new System.NotImplementedException();
         }
 
-        public Task<ResponseType1<UserDto>> FindUserByEmailAsync(string email)
+        public Task<ResponseViewModel<UserDto>> FindUserByEmailAsync(string email)
         {
             throw new System.NotImplementedException();
         }
 
-        public Task<ResponseType1<UserDto>> FindUserByUserNameAsync(string userName, int currentPage = 1, int amountOfUsers = 16)
+        public Task<ResponseViewModel<UserDto>> FindUserByUserNameAsync(string userName, int currentPage = 1, int amountOfUsers = 16)
         {
             throw new System.NotImplementedException();
         }
 
-        public Task<ResponseType1<IEnumerable<UserDto>>> GetUsersAsync(int currentPage = 1, int amountOfUsers = 16)
+        public Task<ResponseViewModel<IEnumerable<UserDto>>> GetUsersAsync(int currentPage = 1, int amountOfUsers = 16)
         {
             throw new System.NotImplementedException();
         }

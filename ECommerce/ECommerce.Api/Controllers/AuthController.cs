@@ -4,11 +4,14 @@ using System.Web.Mvc;
 using ECommerce.App.Interfaces.Auth;
 using ECommerce.App.Interfaces.JWT;
 using ECommerce.Core.Constants;
-using ECommerce.Core.DataTransferObjects.AuthDto;
-using ECommerce.Core.DataTransferObjects.Responses;
+using ECommerce.Core.Models.DTOs.Auth;
+using ECommerce.Core.Models.ViewModels;
 
 namespace ECommerce.Controllers
 {
+    /// <summary>
+    /// Controller for handling authentication operations
+    /// </summary>
     public class AuthController : BaseController
     {
         private readonly IAuthenticationService _authService;
@@ -20,10 +23,10 @@ namespace ECommerce.Controllers
             _jwtService = jwtService;
         }
 
-        [HttpGet]
-        public async Task<ActionResult> SignIn() => await _jwtService.IsTokenValid()
+        [HttpGet] public async Task<ActionResult> SignIn() => await _jwtService.IsTokenValid()
             ? (ActionResult)RedirectToAction("Index", "Home")
             : View();
+
         
         [HttpGet] public async Task<ActionResult> SignUp() => await _jwtService.IsTokenValid()
             ? (ActionResult)RedirectToAction("Index", "Home")  
@@ -54,7 +57,7 @@ namespace ECommerce.Controllers
         }
 
         private async Task<ActionResult> ProcessAuthentication
-            (Func<Task<ResponseType1<bool>>> authServiceMethod, object dto)
+            (Func<Task<ResponseViewModel<bool>>> authServiceMethod, object dto)
         {
             if (await _jwtService.IsTokenValid())
                 return RedirectToAction("Index", "Home");

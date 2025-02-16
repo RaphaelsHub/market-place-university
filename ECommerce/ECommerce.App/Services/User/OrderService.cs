@@ -1,10 +1,11 @@
 using System.Collections.Generic;
 using System.Threading.Tasks;
 using ECommerce.App.Interfaces.User;
-using ECommerce.Core.DataTransferObjects.Responses;
-using ECommerce.Core.DataTransferObjects.User;
 using ECommerce.Core.Entities.User;
 using ECommerce.Core.Interfaces.User;
+using ECommerce.Core.Models;
+using ECommerce.Core.Models.DTOs.Order;
+using ECommerce.Core.Models.ViewModels;
 
 namespace ECommerce.App.Services.User
 {
@@ -17,52 +18,53 @@ namespace ECommerce.App.Services.User
             _ordersRepository = ordersRepository;
         }
         
-        public Task<ResponseType1<bool>> CreateOrderAsync(OrderDto order)
+
+        public Task<ResponseViewModel<bool>> CreateOrderAsync(OrderDataDto order)
         {
             throw new System.NotImplementedException();
         }
 
-        public Task<ResponseType1<OrderDto>> GetOrderAsync(int id)
+        public Task<ResponseViewModel<OrderDataDto>> GetOrderAsync(int id)
         {
             throw new System.NotImplementedException();
         }
 
-        public Task<ResponseType1<IEnumerable<OrderDto>>> GetOrdersAsync(uint currentPage = 1, uint amountOfItemsPerPage = 16)
+        public Task<ResponseViewModel<IEnumerable<OrderDataDto>>> GetOrdersAsync(uint currentPage = 1, uint amountOfItemsPerPage = 16)
         {
             throw new System.NotImplementedException();
         }
 
-        public Task<ResponseType1<OrderDto>> GetOrderByIdAsync(uint id)
+        public Task<ResponseViewModel<OrderDataDto>> GetOrderByIdAsync(uint id)
         {
             throw new System.NotImplementedException();
         }
 
-        public Task<ResponseType1<bool>> DeleteOrderAsync(int id)
+        public Task<ResponseViewModel<bool>> DeleteOrderAsync(int id)
         {
             throw new System.NotImplementedException();
         }
 
-        public Task<ResponseType1<IEnumerable<OrderDto>>> GetUsersOrdersAsync(uint userId, uint currentPage, uint amountOfItemsPerPage)
+        public Task<ResponseViewModel<IEnumerable<OrderDataDto>>> GetUsersOrdersAsync(uint userId, uint currentPage, uint amountOfItemsPerPage)
         {
             throw new System.NotImplementedException();
         }
 
-        public Task<ResponseType1<IEnumerable<OrderDto>>> GetAllOrdersAsync(uint currentPage, uint amountOfItemsPerPage)
+        public Task<ResponseViewModel<IEnumerable<OrderDataDto>>> GetAllOrdersAsync(uint currentPage, uint amountOfItemsPerPage)
         {
             throw new System.NotImplementedException();
         }
 
-        public Task<ResponseType1<IEnumerable<OrderDto>>> GetAllOrdersByStatusAsync(string status, uint currentPage, uint amountOfItemsPerPage)
+        public Task<ResponseViewModel<IEnumerable<OrderDataDto>>> GetAllOrdersByStatusAsync(string status, uint currentPage, uint amountOfItemsPerPage)
         {
             throw new System.NotImplementedException();
         }
 
-        public Task<ResponseType1<bool>> UpdateOrderAsync(OrderDto order)
+        public Task<ResponseViewModel<bool>> UpdateOrderAsync(OrderDataDto order)
         {
             throw new System.NotImplementedException();
         }
 
-        public Task<ResponseType1<bool>> DeleteOrderAsync(uint id)
+        public Task<ResponseViewModel<bool>> DeleteOrderAsync(uint id)
         {
             throw new System.NotImplementedException();
         }

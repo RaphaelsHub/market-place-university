@@ -1,6 +1,6 @@
 using System.Threading.Tasks;
-using ECommerce.Core.DataTransferObjects.Responses;
 using ECommerce.Core.Enums.User;
+using ECommerce.Core.Models.ViewModels;
 
 namespace ECommerce.App.Interfaces.Auth
 {
@@ -9,8 +9,8 @@ namespace ECommerce.App.Interfaces.Auth
     /// </summary>
     public interface IAuthorizationService
     {
-        Task<ResponseType1<bool>> SetRole(int userId, UserType role);
-        Task<ResponseType1<bool>> CheckRole(int userId, UserType role);
-        Task<ResponseType1<UserType>> GetUserRole(int userId);
+        Task<ResponseViewModel<bool>> SetRole(int userId, UserType role);
+        Task<ResponseViewModel<bool>> CheckRole(int userId, UserType role);
+        Task<ResponseViewModel<UserType>> GetUserRole(int userId);
     }
 }

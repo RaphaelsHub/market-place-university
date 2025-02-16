@@ -1,7 +1,8 @@
 using System.Collections.Generic;
 using System.Threading.Tasks;
-using ECommerce.Core.DataTransferObjects;
-using ECommerce.Core.DataTransferObjects.Responses;
+using ECommerce.Core.Models;
+using ECommerce.Core.Models.DTOs.Product;
+using ECommerce.Core.Models.ViewModels;
 
 namespace ECommerce.App.Interfaces.Product
 {
@@ -10,11 +11,11 @@ namespace ECommerce.App.Interfaces.Product
     /// </summary>
     public interface IProductService
     {
-        Task<ResponseType1<bool>> CreateProductAsync(ProductDto product);
-        Task<ResponseType1<ProductDto>> GetProductAsync(int id);
-        Task<ResponseType1<IEnumerable<ProductDto>>> GetProductsAsync(int categoryId, int currentPage = 1, int amountOfItemsPerPage = 16); 
-        Task<ResponseType1<IEnumerable<ProductDto>>> GetProductsAsync(string search, int categoryId = 0, int currentPage = 1, int amountOfItemsPerPage = 16);
-        Task<ResponseType1<bool>> UpdateProductAsync(ProductDto product);
-        Task<ResponseType1<bool>> DeleteProductAsync(int id);    
+        Task<ResponseViewModel<bool>> CreateProductAsync(ProductDto product);
+        Task<ResponseViewModel<ProductDto>> GetProductAsync(int id);
+        Task<ResponseViewModel<IEnumerable<ProductDto>>> GetProductsAsync(int categoryId, int currentPage = 1, int amountOfItemsPerPage = 16); 
+        Task<ResponseViewModel<IEnumerable<ProductDto>>> GetProductsAsync(string search, int categoryId = 0, int currentPage = 1, int amountOfItemsPerPage = 16);
+        Task<ResponseViewModel<bool>> UpdateProductAsync(ProductDto product);
+        Task<ResponseViewModel<bool>> DeleteProductAsync(int id);    
     }
 }

@@ -10,3 +10,4 @@ namespace ECommerce.App.Infrastructure.Abstractions
         Task DeleteCookie(string key);
     }
 }
+

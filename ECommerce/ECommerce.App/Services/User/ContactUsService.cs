@@ -1,11 +1,12 @@
 using System;
 using System.Threading.Tasks;
 using ECommerce.App.Interfaces.User;
-using ECommerce.Core.DataTransferObjects.Responses;
-using ECommerce.Core.DataTransferObjects.User;
 using ECommerce.Core.Entities.User;
-using ECommerce.Core.Enums.Operation;
+using ECommerce.Core.Enums.Message;
 using ECommerce.Core.Interfaces.User;
+using ECommerce.Core.Models;
+using ECommerce.Core.Models.DTOs.ContactUs;
+using ECommerce.Core.Models.ViewModels;
 
 namespace ECommerce.App.Services.User
 {
@@ -16,7 +17,7 @@ namespace ECommerce.App.Services.User
         public ContactUsService(IContactUsRepository contactUsRepository) => 
             _contactUsRepository = contactUsRepository;
         
-        public async Task<MessageResponseDto> SendContactUsRequestAsync(ContactUsDto contactUsDto)
+        public async Task<MessageViewModel> SendContactUsRequestAsync(ContactUsDto contactUsDto)
         {
             var contactUsEntity = new ContactUsEf()
             {
@@ -25,12 +26,12 @@ namespace ECommerce.App.Services.User
                 Name = contactUsDto.Name,
                 Subject = contactUsDto.Subject,
                 PhoneNumber = contactUsDto.PhoneNumber,
-                CreatedRequest = DateTime.UtcNow
+                DateTime = DateTime.UtcNow
             };
 
             await _contactUsRepository.CreateAsync(contactUsEntity);
 
-            return new MessageResponseDto(0, "Your message has been sent successfully", RequestStatus.Success);
+            return new MessageViewModel(0, "Your message has been sent successfully", RequestStatus.Success);
         }
     }
 }
