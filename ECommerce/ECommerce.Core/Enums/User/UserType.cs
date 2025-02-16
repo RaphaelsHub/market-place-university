@@ -2,8 +2,9 @@ namespace ECommerce.Core.Enums.User
 {
     public enum UserType
     {
-        Admin,
+        None,
         User, 
-        Moderator
+        Moderator,
+        Admin
     }
 }
