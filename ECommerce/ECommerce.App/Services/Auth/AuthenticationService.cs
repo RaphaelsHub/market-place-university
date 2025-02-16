@@ -35,10 +35,10 @@ namespace ECommerce.App.Services.Auth
             
             var newUser = new UserEf
             {
-                Name = registrationDto.Name,
+                FullName = registrationDto.Name,
                 Email = registrationDto.Email,
                 PasswordHash = HashingUtility.HashPasswordSha256(registrationDto.Password),
-                IsSignUpForNewsletter = registrationDto.SignUpForNewsletter,
+                IsSignUpForLetters = registrationDto.SignUpForNewsletter ? SignUpForLettersStatus.Yes : SignUpForLettersStatus.No,
                 IpAddress = HttpContext.Current.Request.UserHostAddress
             };
 

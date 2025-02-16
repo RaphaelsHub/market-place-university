@@ -1,11 +1,11 @@
 using System.Threading.Tasks;
 using ECommerce.App.Interfaces.User;
-using ECommerce.Core.DataTransferObjects.Responses;
-using ECommerce.Core.DataTransferObjects.User;
 using ECommerce.Core.Entities.Product;
 using ECommerce.Core.Entities.User;
 using ECommerce.Core.Interfaces.Product;
 using ECommerce.Core.Interfaces.User;
+using ECommerce.Core.Models;
+using ECommerce.Core.Models.ViewModels;
 
 namespace ECommerce.App.Services.User
 {
@@ -20,32 +20,32 @@ namespace ECommerce.App.Services.User
             _productsRepository = productsRepository;
         }
         
-        public Task<ResponseType1<CartDto>> GetCart(int userId)
+        public Task<ResponseViewModel<CartDto>> GetCart(int userId)
         {
             throw new System.NotImplementedException();
         }
 
-        public Task<ResponseType1<bool>> AddToCart(int productId)
+        public Task<ResponseViewModel<bool>> AddToCart(int productId)
         {
             throw new System.NotImplementedException();
         }
 
-        public Task<ResponseType1<bool>> RemoveFromCart(int productId)
+        public Task<ResponseViewModel<bool>> RemoveFromCart(int productId)
         {
             throw new System.NotImplementedException();
         }
 
-        public Task<ResponseType1<bool>> IncreaseQuantity(int productId)
+        public Task<ResponseViewModel<bool>> IncreaseQuantity(int productId)
         {
             throw new System.NotImplementedException();
         }
 
-        public Task<ResponseType1<bool>> DecreaseQuantity(int productId)
+        public Task<ResponseViewModel<bool>> DecreaseQuantity(int productId)
         {
             throw new System.NotImplementedException();
         }
         
-        public Task<ResponseType1<bool>> PromoCode(string code)
+        public Task<ResponseViewModel<bool>> PromoCode(string code)
         {
             throw new System.NotImplementedException();
         }
