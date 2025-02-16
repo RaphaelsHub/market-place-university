@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>@ViewBag.Title</title>
+    <link rel="icon" type="image/png" href="~/Asset/images/favicon.png">
+    <link rel="stylesheet" href="~/Asset/css/admin-css.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+</head>
+<body class="bg-light">
+
+<div id="sidebar">
+    <span class="close-btn" onclick="toggleSidebar()">&#x25C0;</span>
+    <img src="~/Asset/images/AdminPhoto.jpg" alt="Admin" class="profile-img">
+    <div class="admin-name">Admin</div>
+    <ul>
+        <li><a href="@Url.Action("Index","ManagementUsers")">Users Management</a></li>
+        <li><a href="@Url.Action("Index", "ManagementOrders")">Orders Management</a></li>
+        <li><a href="@Url.Action("Index","ManagementBlogs")">News Management</a></li>
+        <li><a href="@Url.Action("Index","ManagementProducts")">Products Management</a></li>
+        <li><a href="">Categories Management</a></li>
+        <li><a href="@Url.Action("ContactUs","ManagementWebSiteData")">ContactUs Management</a></li>
+        <li><a href="@Url.Action("Index","ManagementWebSiteData")">WebSite Management</a></li>
+        <li><a href="@Url.Action("Index","Home")">Go to Store</a></li>
+    </ul>
+</div>
+
+
+<header class="container mt-3">
+    <div class="d-flex justify-content-center align-items-center mb-4">
+        <button class="btn btn-secondary me-3" onclick="toggleSidebar()">&#9776;</button>
+        <h2 class="text-primary">@ViewBag.Title</h2>
+    </div>
+</header>
+
+
+@RenderBody()
+
+<script src="~/Asset/js/admin.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
