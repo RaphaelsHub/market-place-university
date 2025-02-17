@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations.Schema;
 using System.Net;
 using ECommerce.Core.Enums.Account;
+using ECommerce.Core.Enums.Entity;
 using ECommerce.Core.Enums.User;
 
 namespace ECommerce.Core.Entities.User
@@ -10,15 +11,15 @@ namespace ECommerce.Core.Entities.User
     public class UserEf
     {
         public int UserId { get; set; } 
-        public string Name { get; set; } = "";
+        public string FullName { get; set; } = "";
         public string Email { get; set; } = "";
         public string PasswordHash { get; set; } = "";
         public DateTime DateRegistered { get; set; } = DateTime.UtcNow;
         public UserType UserType { get; set; } = UserType.User;
-        public UserStatus UserStatus { get; set; } = UserStatus.Offline;
+        public EntityStatus UserStatus { get; set; } = EntityStatus.Active;
         public AccountVerificationStatus IsVerified { get; set; } = AccountVerificationStatus.NotVerified;
-        public bool RememberMe { get; set; } = false;
-        public bool IsSignUpForNewsletter { get; set; } = false;
+        public SignUpForLettersStatus IsSignUpForLetters { get; set; } = SignUpForLettersStatus.No;
+        
         [NotMapped]
         private IPAddress _ipAddress;
         public string IpAddress

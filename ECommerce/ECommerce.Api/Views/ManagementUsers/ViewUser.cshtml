@@ -1,0 +1,101 @@
+@{
+    ViewBag.Title = "User Details";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<div class="container mt-5">
+    <div class="d-flex justify-content-between align-items-center mb-3">
+        <h2>User Details</h2>
+        <div>
+            <button class="btn btn-success">Save</button>
+            <button class="btn btn-danger">Delete</button>
+        </div>
+    </div>
+
+    <div class="card mb-4">
+        <div class="card-header">User Information</div>
+        <div class="card-body">
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="mb-3">
+                        <label for="fullName" class="form-label">Full Name</label>
+                        <input type="text" class="form-control" id="fullName" value="John Doe">
+                    </div>
+                    <div class="mb-3">
+                        <label for="email" class="form-label">Email</label>
+                        <input type="email" class="form-control" id="email" value="johndoe@example.com">
+                    </div>
+                    <div class="mb-3">
+                        <label for="dateRegistered" class="form-label">Date Registered</label>
+                        <input type="date" class="form-control" id="dateRegistered" value="2025-02-10">
+                    </div>
+                    <div class="mb-3">
+                        <label for="hasNewsletter" class="form-label">Newsletter Subscription</label>
+                        <select class="form-select" id="hasNewsletter">
+                            <option selected>Yes</option>
+                            <option>No</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="mb-3">
+                        <label for="userType" class="form-label">User Type</label>
+                        <select class="form-select" id="userType">
+                            <option selected>Admin</option>
+                            <option>User</option>
+                            <option>Moderator</option>
+                        </select>
+                    </div>
+                    <div class="mb-3">
+                        <label for="userStatus" class="form-label">User Status</label>
+                        <select class="form-select" id="userStatus">
+                            <option selected>Active</option>
+                            <option>Inactive</option>
+                            <option>Banned</option>
+                        </select>
+                    </div>
+                    <div class="mb-3">
+                        <label for="verificationStatus" class="form-label">Account Verification Status</label>
+                        <select class="form-select" id="verificationStatus">
+                            <option selected>Verified</option>
+                            <option>Unverified</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="card">
+        <div class="card-header">Orders</div>
+        <div class="card-body">
+            <div class="table-responsive">
+                <table class="table table-bordered text-center">
+                    <thead class="table-primary">
+                    <tr>
+                        <th>Order ID</th>
+                        <th>Email/User Owner</th>
+                        <th>Date</th>
+                        <th>Payment Method</th>
+                        <th>Order Status</th>
+                        <th>Actions</th>
+                    </tr>
+                    </thead>
+                    <tbody id="ordersTable">
+                    <tr>
+                        <td>1001</td>
+                        <td>spekel2003@gmail.com/Alex Pushkin</td>
+                        <td>2025-02-15</td>
+                        <td>Cash</td>
+                        <td>Pending</td>
+                        <td>
+                            <button class="btn btn-info btn-sm">View Details</button>
+                        </td>
+                    </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+
+</div>
