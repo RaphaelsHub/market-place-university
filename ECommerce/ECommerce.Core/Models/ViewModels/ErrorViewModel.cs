@@ -1,17 +1,17 @@
-namespace ECommerce.Core.DataTransferObjects.Responses
+namespace ECommerce.Core.Models.ViewModels
 {
-    public class ErrorResponseDto
+    public class ErrorViewModel
     {
         public int Code { get; }
         public string ErrorMessage { get; }
 
-        public ErrorResponseDto()
+        public ErrorViewModel()
         {
             Code = 404;
             ErrorMessage = "Page Not Found. The requested resource could not be found on the server.";
         }
 
-        public ErrorResponseDto(int errorCode, string errorMessage)
+        public ErrorViewModel(int errorCode, string errorMessage)
         {
             Code = errorCode;
             ErrorMessage = errorMessage;
