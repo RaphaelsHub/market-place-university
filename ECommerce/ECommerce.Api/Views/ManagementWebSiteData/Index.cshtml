@@ -1,0 +1,77 @@
+@model ECommerce.Core.Models.ViewModels.WebSiteDataViewModel
+
+@{
+    ViewBag.Title = "WebSite Management";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<div class="container mt-5">
+    <h2 class="mb-4">Admin Settings</h2>
+    
+    @using (Html.BeginForm())
+    {
+        <div class="row">
+            <div class="col-md-6">
+                <div class="form-group">
+                    @Html.LabelFor(m => m.ShopLogo)
+                    <input type="file" name="ShopLogo" class="form-control" />
+                </div>
+                <div class="form-group">
+                    @Html.LabelFor(m => m.ShopPhoto)
+                    <input type="file" name="ShopPhoto" class="form-control" />
+                </div>
+                <div class="form-group">
+                    @Html.LabelFor(m => m.WorkingAddressShop)
+                    @Html.TextBoxFor(m => m.WorkingAddressShop, new { @class = "form-control" })
+                </div>
+                <div class="form-group">
+                    @Html.LabelFor(m => m.WorkingNameShop)
+                    @Html.TextBoxFor(m => m.WorkingNameShop, new { @class = "form-control" })
+                </div>
+                <div class="form-group">
+                    @Html.LabelFor(m => m.ShopDescription)
+                    @Html.TextBoxFor(m => m.ShopDescription, new { @class = "form-control" })
+                </div>
+                <div class="form-group">
+                    @Html.LabelFor(m => m.InfoEmail)
+                    @Html.TextBoxFor(m => m.InfoEmail, new { @class = "form-control" })
+                </div>
+                <div class="form-group">
+                    @Html.LabelFor(m => m.SupportEmail)
+                    @Html.TextBoxFor(m => m.SupportEmail, new { @class = "form-control" })
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="form-group">
+                    @Html.LabelFor(m => m.WorkingEmail)
+                    @Html.TextBoxFor(m => m.WorkingEmail, new { @class = "form-control" })
+                </div>
+                <div class="form-group">
+                    @Html.LabelFor(m => m.InfoNumber)
+                    @Html.TextBoxFor(m => m.InfoNumber, new { @class = "form-control" })
+                </div>
+                <div class="form-group">
+                    @Html.LabelFor(m => m.SupportNumber)
+                    @Html.TextBoxFor(m => m.SupportNumber, new { @class = "form-control" })
+                </div>
+                <div class="form-group">
+                    @Html.LabelFor(m => m.WorkingNumber)
+                    @Html.TextBoxFor(m => m.WorkingNumber, new { @class = "form-control" })
+                </div>
+                <div class="form-group">
+                    @Html.LabelFor(m => m.InstagramLink)
+                    @Html.TextBoxFor(m => m.InstagramLink, new { @class = "form-control" })
+                </div>
+                <div class="form-group">
+                    @Html.LabelFor(m => m.FacebookLink)
+                    @Html.TextBoxFor(m => m.FacebookLink, new { @class = "form-control" })
+                </div>
+                <div class="form-group">
+                    @Html.LabelFor(m => m.XLink)
+                    @Html.TextBoxFor(m => m.XLink, new { @class = "form-control" })
+                </div>
+            </div>
+        </div>
+        <button type="submit" class="btn btn-primary mt-3">Save</button>
+    }
+</div>
