@@ -1,4 +1,4 @@
-﻿@{
+@{
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
@@ -9,7 +9,7 @@
                 <div class="bread-inner">
                     <ul class="bread-list">
                         <li><a href="@Url.Action("Index","Home")">Home<i class="ti-arrow-right"></i></a></li>
-                        <li class="active"><a href="@Url.Action("Blog","News")">Our news</a></li>
+                        <li class="active"><a href="@Url.Action("Index","Blogs")">Our news</a></li>
                     </ul>
                 </div>
             </div>
@@ -23,7 +23,7 @@
             <div class="col-12">
                 <div class="row">
                     
-                    @Html.Partial("~/Views/Partials/SingleBlogCard.cshtml")
+                    @Html.Partial("~/Views/Shared/Partials/SingleBlogCard.cshtml")
 
                     <div class="col-12">
                         <div class="pagination center">

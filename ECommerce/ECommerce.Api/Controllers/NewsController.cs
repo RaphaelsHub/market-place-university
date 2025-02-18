@@ -1,25 +1,10 @@
-﻿using System.Web.Mvc;
+using System.Web.Mvc;
 
 namespace ECommerce.Controllers
 {
-    public class NewsController : Controller
+    public class NewsController : BaseController
     {
-        [HttpGet]
-        public ActionResult Blog() => View();
-
-        [HttpGet]
-        public ActionResult Blogs() => View();
-        
-        [HttpGet]
-        public ActionResult FindBlogs(string search) => RedirectToAction("Blogs", search);
-        
-        [HttpPost]
-        public ActionResult AddBlog() => RedirectToAction("Blogs");
-        
-        [HttpPatch]
-        public ActionResult UpdateBlog() => RedirectToAction("Blogs");
-        
-        [HttpDelete]
-        public ActionResult DeleteBlog() => RedirectToAction("Blogs");
+        [HttpGet] public ActionResult Index(string search = "", string sort = "", int? page = 1, int? blogsPerPage = 20) => View(); 
+        [HttpGet] public ActionResult Blog(int? idBlog) => View();
     }
 }
