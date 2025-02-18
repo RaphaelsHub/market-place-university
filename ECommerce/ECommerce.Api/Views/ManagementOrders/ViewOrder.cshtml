@@ -1,0 +1,104 @@
+@{
+    ViewBag.Title = "Order Details";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<div class="container mt-5">
+    <div class="d-flex justify-content-between align-items-center mb-3">
+        <h2>Order Information</h2>
+        <div>
+            <button class="btn btn-danger">Delete</button>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-4">
+            <p><strong>First Name:</strong> John</p>
+            <p><strong>Last Name:</strong> Doe</p>
+            <p><strong>Email:</strong> john.doe@example.com</p>
+            <p><strong>Phone Number:</strong> +123456789</p>
+            <p><strong>Country:</strong> USA</p>
+        </div>
+        <div class="col-md-4">
+            <p><strong>City:</strong> New York</p>
+            <p><strong>Address:</strong> 123 Main St</p>
+            <p><strong>Address 2:</strong> Apt 4B</p>
+            <p><strong>Postal Code:</strong> 10001</p>
+            <p><strong>Order Note:</strong> Please deliver between 9 AM and 5 PM.</p>
+        </div>
+        <div class="col-md-4">
+            <div class="card mb-4 shadow-sm">
+                <div class="card-header bg-primary text-white">
+                    <h4 class="mb-0">Order Summary</h4>
+                </div>
+                <div class="card-body">
+                    <div class="row mb-2">
+                        <div class="col-sm-6 text-muted">Subtotal Price:</div>
+                        <div class="col-sm-6 text-end">$100.00</div>
+                    </div>
+                    <div class="row mb-2">
+                        <div class="col-sm-6 text-muted">Discount Price:</div>
+                        <div class="col-sm-6 text-end">$10.00</div>
+                    </div>
+                    <div class="row mb-2">
+                        <div class="col-sm-6 text-muted">Total Price:</div>
+                        <div class="col-sm-6 text-end"><strong>$90.00</strong></div>
+                    </div>
+                    <div class="row">
+                        <div class="col-sm-6 text-muted">Payment Type:</div>
+                        <div class="col-sm-6 text-end">Credit Card</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="row mt-3">
+        <div class="col-md-4">
+            <p><strong>Order Date:</strong> 01/01/2025</p>
+            <p><strong>Estimated Delivery Date:</strong> 10/01/2025</p>
+        </div>
+        <div class="col-md-4">
+            <div class="form-group">
+                <label for="orderStatus">Order Status</label>
+                <select class="form-control" id="orderStatus">
+                    <option>Pending</option>
+                    <option>Processing</option>
+                    <option>Shipped</option>
+                    <option>Delivered</option>
+                    <option>Cancelled</option>
+                </select>
+            </div>
+        </div>
+        <div class="col-md-4 d-flex align-items-center">
+            <button class="btn btn-success me-2">Save</button>
+        </div>
+    </div>
+
+    <div class="card mt-4">
+        <div class="card-header">Order Items</div>
+        <div class="card-body">
+            <table class="table table-bordered text-center">
+                <thead class="table-primary">
+                <tr>
+                    <th>Product ID</th>
+                    <th>Product Name</th>
+                    <th>Quantity</th>
+                    <th>Total Price</th>
+                    <th>Action</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr>
+                    <td>2001</td>
+                    <td>Sample Product</td>
+                    <td>2</td>
+                    <td>$50.00</td>
+                    <td>
+                        <a href="#" class="btn btn-info btn-sm">View Product</a>
+                    </td>
+                </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
