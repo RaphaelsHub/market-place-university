@@ -1,0 +1,101 @@
+@{
+    ViewBag.Title = "Create Product";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<div class="container mt-5">
+    <div class="d-flex justify-content-between align-items-center mb-3">
+        <h2>Set Up the Product</h2>
+        <div>
+            <button class="btn btn-success">Save</button>
+            <button class="btn btn-danger">Delete</button>
+        </div>
+    </div>
+
+    <div class="card mb-4">
+        <div class="card-header">Product Information</div>
+        <div class="card-body">
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="mb-3">
+                        <label for="name" class="form-label">Product Name</label>
+                        <input type="text" class="form-control" id="name" placeholder="Enter product name">
+                    </div>
+                    <div class="mb-3">
+                        <label for="shortDescription" class="form-label">Short Description</label>
+                        <input type="text" class="form-control" id="shortDescription" placeholder="Enter short description">
+                    </div>
+                    <div class="mb-3">
+                        <label for="fullDescription" class="form-label">Full Description</label>
+                        <textarea class="form-control" id="fullDescription" rows="4" placeholder="Enter full description"></textarea>
+                    </div>
+                    <div class="mb-3">
+                        <label for="price" class="form-label">Price</label>
+                        <input type="number" class="form-control" id="price" step="0.01" placeholder="Enter price">
+                    </div>
+                    <div class="mb-3">
+                        <label for="discount" class="form-label">Discount (%)</label>
+                        <input type="number" class="form-control" id="discount" step="0.1" placeholder="Enter discount percentage">
+                    </div>
+                    <div class="mb-3">
+                        <label for="startAmount" class="form-label">Start Amount</label>
+                        <input type="number" class="form-control" id="startAmount" placeholder="Enter start amount">
+                    </div>
+                    <div class="mb-3">
+                        <label for="currentAmount" class="form-label">Current Amount</label>
+                        <input type="number" class="form-control" id="currentAmount" placeholder="Enter current amount">
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="mb-3">
+                        <label for="category" class="form-label">Category</label>
+                        <input type="text" class="form-control" id="category" placeholder="Enter category ID">
+                    </div>
+                    <div class="mb-3">
+                        <label for="productStatus" class="form-label">Stock Status</label>
+                        <select class="form-select" id="productStatus">
+                            <option>In Stock</option>
+                            <option>Out of Stock</option>
+                        </select>
+                    </div>
+                    <div class="mb-3">
+                        <label for="productSellType" class="form-label">Sell Type</label>
+                        <select class="form-select" id="productSellType">
+                            <option>Retail</option>
+                            <option>Wholesale</option>
+                        </select>
+                    </div>
+                    <div class="mb-3">
+                        <label for="productVisibilityStatus" class="form-label">Visibility Status</label>
+                        <select class="form-select" id="productVisibilityStatus">
+                            <option>Visible</option>
+                            <option>Hidden</option>
+                        </select>
+                    </div>
+                    <div class="mb-3">
+                        <label for="imageUpload" class="form-label">Upload Image</label>
+                        <input type="file" class="form-control" id="imageUpload" accept="image/*" onchange="previewImage(event)">
+                        <div class="mt-3">
+                            <img id="imagePreview" src="#" alt="Preview" style="display: none; width: 100px; height: 100px; object-fit: cover; border: 1px solid #ccc;">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    function previewImage(event) {
+        const input = event.target;
+        const reader = new FileReader();
+        reader.onload = function () {
+            const img = document.getElementById('imagePreview');
+            img.src = reader.result;
+            img.style.display = 'block';
+        };
+        if (input.files && input.files[0]) {
+            reader.readAsDataURL(input.files[0]);
+        }
+    }
+</script>

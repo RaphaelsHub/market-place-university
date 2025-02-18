@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using ECommerce.Core.Enums.Entity;
 using ECommerce.Core.Enums.Product;
 
 namespace ECommerce.Core.Entities.Product
@@ -7,9 +8,9 @@ namespace ECommerce.Core.Entities.Product
     public class ProductEf
     {
         public int ProductId { get; set; }
-        public uint StartAmount { get; set; }
-        public uint CurrentAmount { get; set; }
-        public uint Views { get; set; }
+        public int StartAmount { get; set; }
+        public int CurrentAmount { get; set; }
+        public int Views { get; set; }
         public string Name { get; set; }
         public string ShortDescription { get; set; }
         public string FullDescription { get; set; }
@@ -22,7 +23,7 @@ namespace ECommerce.Core.Entities.Product
             ProductStockStatus.InStock :  
             ProductStockStatus.OutOfStock;
 
-        public ProductVisibilityStatus ProductVisibilityStatus { get; set; } = ProductVisibilityStatus.IsHidden;
+        public EntityStatus ProductVisibilityStatus { get; set; } = EntityStatus.Active;
         public byte[][] Image { get; set; }
 
         public int CategoryId { get; set; }
