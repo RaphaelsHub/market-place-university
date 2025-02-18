@@ -1,7 +1,8 @@
 using System;
 using System.Collections.Generic;
+using ECommerce.Core.Models.DTOs.Product;
 
-namespace ECommerce.Core.DataTransferObjects.User
+namespace ECommerce.Core.Models.ViewModels
 {
     public class CartDto
     {

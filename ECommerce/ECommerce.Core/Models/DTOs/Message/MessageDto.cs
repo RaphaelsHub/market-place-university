@@ -1,7 +1,7 @@
 using System;
 using ECommerce.Core.Enums.Message;
 
-namespace ECommerce.Core.DataTransferObjects
+namespace ECommerce.Core.Models.DTOs.Message
 {
     public class MessageDto
     {
