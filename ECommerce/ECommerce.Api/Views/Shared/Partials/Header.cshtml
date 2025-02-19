@@ -133,8 +133,45 @@
                                                     <li><a href="@Url.Action("ContactUs", "Home")">Contact us</a></li>
                                                 </ul>
                                             </li>
-                                            <li><a href="@Url.Action("Products", "Store")">Store</a></li>
-                                            <li><a href="@Url.Action("Blogs", "News")">Blogs</a></li>
+                                            <li><a href="@Url.Action("Index", "Home")">UserPages<i class="ti-angle-down"></i></a>
+                                                <ul class="dropdown">
+                                                    <li><a href="/signin">SignIn</a></li>
+                                                    <li><a href="/signup">SignUp</a></li>
+                                                    <li><a href="/signout">SignOut</a></li>
+                                                    <li><a href="/cart">ViewCart</a></li>
+                                                    <li><a href="/news">ViewAllBlogs</a></li>
+                                                    <li><a href="/news/1">ViewSingleBlog</a></li>
+                                                    <li><a href="/orders">ViewAllOrders</a></li>
+                                                    <li><a href="/orders/1">ViewOrderDetails</a></li>
+                                                    <li><a href="/make-order">OrderDataForm</a></li>
+                                                    <li><a href="/products">ViewAllProducts</a></li>
+                                                    <li><a href="/products/1">ViewSingleProduct</a></li>
+                                                    <li><a href="/contactUs">ContactUs</a></li>
+                                                    <li><a href="/aboutUs">AboutUs</a></li>
+                                                    <li><a href="/confirmation">Confirmation</a></li>
+                                                    <li><a href="/error">Error</a></li>
+                                                    <li><a href="/error/1">ErrorWithParams</a></li>
+                                                </ul>
+                                            </li>
+
+
+                                            <li><a href="@Url.Action("Index", "Home")">AdminPages<i class="ti-angle-down"></i></a>
+                                                <ul class="dropdown">
+                                                    <li><a href="/admin/blogs">ViewAllBlogs_Admin</a></li>
+                                                    <li><a href="/admin/blogs/1">ViewSingleBlog_Admin</a></li>
+                                                    <li><a href="/admin/orders">ViewAllOrders_Admin</a></li>
+                                                    <li><a href="/admin/orders/1">ViewSingleOrder_Admin</a></li>
+                                                    <li><a href="/admin/products">ViewAllProducts_Admin</a></li>
+                                                    <li><a href="/admin/products/1">ViewSingleProduct_Admin</a></li>
+                                                    <li><a href="/admin/web">ViewSiteData_Admin</a></li>
+                                                    <li><a href="/admin/contactus">ViewContactUs_Admin</a></li>
+                                                    <li><a href="/admin/users">ViewAllUsers_Admin</a></li>
+                                                    <li><a href="/admin/users/1">ViewSingleUser_Admin</a></li>
+                                                </ul>
+                                            </li>
+
+                                            <li><a href="@Url.Action("Products", "Product")">Store</a></li>
+                                            <li><a href="@Url.Action("Index", "Blogs")">Blogs</a></li>
                                             <li><a href="@Url.Action("Index", "Cart")">Cart</a></li>
                                         </ul>
                                     </div>
