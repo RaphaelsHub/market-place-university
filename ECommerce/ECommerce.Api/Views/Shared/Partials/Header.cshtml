@@ -47,7 +47,7 @@
                     <div class="search-top">
                         <div class="top-search"><a href="#"><i class="ti-search"></i></a></div>
                         <div class="search-top">
-                            @using (Html.BeginForm("Search", "Store", FormMethod.Post, new { @class = "search-form" }))
+                            @using (Html.BeginForm("Search", "Product", FormMethod.Post, new { @class = "search-form" }))
                             {
                                 <input type="text" placeholder="Search here..." name="search"/>
                                 <button value="search" type="submit"><i class="ti-search"></i></button>
@@ -68,7 +68,7 @@
                             </select>
 
 
-                            @using (Html.BeginForm("Search", "Store", FormMethod.Post, new { @class = "search-form" }))
+                            @using (Html.BeginForm("Search", "Product", FormMethod.Post, new { @class = "search-form" }))
                             {
                                 <input name="search" placeholder="Search Products Here....." type="search">
                                 <button class="btnn"><i class="ti-search"></i></button>
@@ -97,8 +97,8 @@
                                 <ul class="shopping-list">
                                     <li>
                                         <a href="#" class="remove" title="Remove this item"><i class="fa fa-remove"></i></a>
-                                        <a class="cart-img" href="@Url.Action("Product", "Store")"><img src="~/Asset/images/70x70/PC.jpg" alt="#"></a>
-                                        <h4><a href="@Url.Action("Product", "Store")">Woman Ring</a></h4>
+                                        <a class="cart-img" href="@Url.Action("Product", "Product")"><img src="~/Asset/images/70x70/PC.jpg" alt="#"></a>
+                                        <h4><a href="@Url.Action("Product", "Product")">Woman Ring</a></h4>
                                         <p class="quantity">1x - <span class="amount">$99.00</span></p>
                                     </li>
                                 </ul>
@@ -107,7 +107,7 @@
                                         <span>Total</span>
                                         <span class="total-amount">$134.00</span>
                                     </div>
-                                    <a href="@Url.Action("GetOrderForm", "Order")" class="btn animate">Checkout</a>
+                                    <a href="@Url.Action("GetOrderForm", "ManagementOrders")" class="btn animate">Checkout</a>
                                 </div>
                             </div>
                         </div>

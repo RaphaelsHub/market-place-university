@@ -4,8 +4,8 @@ using ECommerce.App.Interfaces.Blog;
 using ECommerce.App.Interfaces.Product;
 using ECommerce.App.Interfaces.User;
 using ECommerce.Core.Constants;
-using ECommerce.Core.DataTransferObjects.Responses;
-using ECommerce.Core.DataTransferObjects.User;
+using ECommerce.Core.Models.DTOs.ContactUs;
+using ECommerce.Core.Models.ViewModels;
 using ECommerce.Helper;
 
 namespace ECommerce.Controllers
@@ -40,19 +40,19 @@ namespace ECommerce.Controllers
             
             TempData[TempDataKeys.MessageResponse] = await _contactUs.SendContactUsRequestAsync(contactUsDto);
             
-            return RedirectToAction("Confirmation");
+            return RedirectToAction("Confirmation", "Home");
         }
         
-        [HttpGet] public ActionResult Confirmation() => (TempData[TempDataKeys.MessageResponse] as MessageResponseDto) == null 
-            ? (ActionResult)RedirectToAction("Index") 
-            : View(TempData[TempDataKeys.MessageResponse] as MessageResponseDto);
+        [HttpGet] public ActionResult Confirmation() => (TempData[TempDataKeys.MessageResponse] as MessageViewModel) == null 
+            ? (ActionResult)RedirectToAction("Index", "Home") 
+            : View(TempData[TempDataKeys.MessageResponse] as MessageViewModel);
 
         [HttpGet] public ActionResult Error(int? errorCode)
         {
             ViewBag.LastUrl = GetLastUrl();
             return errorCode == null ? 
-                View(new ErrorResponseDto()) : 
-                View(new ErrorResponseDto(errorCode.Value,ErrorHelper.GetErrorMessage(errorCode.Value)));
+                View(new ErrorViewModel()) : 
+                View(new ErrorViewModel(errorCode.Value,ErrorHelper.GetErrorMessage(errorCode.Value)));
         }
     }
 }

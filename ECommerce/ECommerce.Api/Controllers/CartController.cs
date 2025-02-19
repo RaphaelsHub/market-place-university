@@ -1,33 +1,17 @@
 ﻿using System.Web.Mvc;
-using ECommerce.Core.DataTransferObjects.User;
 
 namespace ECommerce.Controllers
 {
     public class CartController : BaseController
     {
-        [HttpGet]
-        public ActionResult Index() => View();
+        [HttpGet] public ActionResult Index() => View();
         
-        [HttpPatch]
-        public ActionResult IncreaseQuantity(int id) => RedirectToAction("Index");
+        [HttpPost] public ActionResult IncreaseQuantity(int idProduct) => RedirectToAction("Index");
         
-        [HttpPatch]
-        public ActionResult DecreaseQuantity(int id) => RedirectToAction("Index");
+        [HttpPost] public ActionResult DecreaseQuantity(int idProduct) => RedirectToAction("Index");
         
-        [HttpPost]
-        public ActionResult AddItem(int id) => RedirectToAction("Index");
+        [HttpPost] public ActionResult AddItem(int idProduct) => RedirectToAction("Index");
         
-        [HttpDelete]
-        public ActionResult RemoveItem(int id) => RedirectToAction("Index");
-
-        [HttpPost]
-        public ActionResult ApplyPromoCode(PromoCodeDto promoCodeDto)
-        {
-            return RedirectToAction("Index");
-        }
-        
-        [HttpPost]
-        [Authorize]
-        public ActionResult Index1(int userId) => View();
+        [HttpPost] public ActionResult RemoveItem(int idProduct) => RedirectToAction("Index");
     }
 }
