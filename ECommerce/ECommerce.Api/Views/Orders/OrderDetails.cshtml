@@ -1,0 +1,99 @@
+﻿@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="breadcrumbs" style="background-color: #ffffff;">
+    <div class="container">
+        <div class="row">
+            <div class="col-12">
+                <div class="bread-inner">
+                    <ul class="bread-list">
+                        <li><a href="@Url.Action("Index", "Home")">Home<i class="ti-arrow-right"></i></a></li>
+                        <li class="active"><a href="@Url.Action("GetOrderForm", "ManagementOrders")">Checkout</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="container mt-4">
+    <h2 class="mb-3">Order Details</h2>
+
+    <div class="row">
+        <div class="col-md-6 mb-4">
+            <h4>Customer Information</h4>
+            <p><strong>First Name:</strong> John</p>
+            <p><strong>Last Name:</strong> Doe</p>
+            <p><strong>Email:</strong> john.doe@example.com</p>
+            <p><strong>Phone Number:</strong> +1 234 567 890</p>
+            <p><strong>Country:</strong> USA</p>
+            <p><strong>City:</strong> New York</p>
+            <p><strong>Address:</strong> 123 Main Street</p>
+            <p><strong>Postal Code:</strong> 10001</p>
+            <p><strong>Order Note:</strong> Please deliver in the morning.</p>
+        </div>
+
+        <div class="col-md-6 mb-4">
+            <h4>Order Status</h4>
+            <p><strong>Order Date:</strong> 2024-02-15</p>
+            <p><strong>Estimated Delivery:</strong> 2024-02-20</p>
+            <p><strong>Status:</strong> <span class="badge bg-success">Shipped</span></p>
+
+            <!-- Добавлена информация о платеже -->
+            <h4 class="mt-4">Payment Information</h4>
+            <p><strong>Subtotal Price:</strong> $120.00</p>
+            <p><strong>Total Price:</strong> $110.00</p>
+            <p><strong>Discount Price:</strong> $10.00</p>
+            <p><strong>Payment Type:</strong> Credit Card</p>
+        </div>
+    </div>
+
+
+    <h4 class="mt-4">Ordered Products</h4>
+    <div class="table-responsive">
+        <table class="table table-bordered table-striped text-center">
+            <thead class="table-dark">
+            <tr>
+                <th>PHOTO</th>
+                <th>NAME</th>
+                <th>QUANTITY</th>
+                <th>UNIT PRICE</th>
+                <th>TOTAL</th>
+                <th>ACTION</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr>
+                <td><img src="https://via.placeholder.com/50" alt="Product" class="img-fluid"></td>
+                <td>Sample Product 1</td>
+                <td>2</td>
+                <td>$50.00</td>
+                <td>$100.00</td>
+                <td><button class="btn btn-primary btn-sm">View Product</button></td>
+            </tr>
+            <tr>
+                <td><img src="https://via.placeholder.com/50" alt="Product" class="img-fluid"></td>
+                <td>Sample Product 2</td>
+                <td>1</td>
+                <td>$30.00</td>
+                <td>$30.00</td>
+                <td><button class="btn btn-primary btn-sm">View Product</button></td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
+
+<div class="mt-5"></div> <!-- Отступ перед partial -->
+
+@Html.Partial("~/Views/Shared/Partials/StoreAdvantages.cshtml")
+
+
+
+
+
+
+
+

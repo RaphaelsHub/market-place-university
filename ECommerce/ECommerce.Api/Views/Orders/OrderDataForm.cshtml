@@ -2,8 +2,9 @@
     ViewBag.Title = "Index";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
+@model ECommerce.Core.Models.DTOs.Order.OrderDataDto
+
 @using ECommerce.Core.Enums.Order
-@model ECommerce.Core.DataTransferObjects.User.OrderDto
 
 <div class="breadcrumbs" style="background-color: #ffffff;">
     <div class="container">
@@ -12,7 +13,7 @@
                 <div class="bread-inner">
                     <ul class="bread-list">
                         <li><a href="@Url.Action("Index", "Home")">Home<i class="ti-arrow-right"></i></a></li>
-                        <li class="active"><a href="@Url.Action("GetOrderForm", "Order")">Checkout</a></li>
+                        <li class="active"><a href="@Url.Action("GetOrderForm", "ManagementOrders")">Checkout</a></li>
                     </ul>
                 </div>
             </div>
@@ -22,7 +23,7 @@
 
 <section class="shop checkout section">
     <div class="container">
-        @using (Html.BeginForm("SendOrderForm", "Order", FormMethod.Post, new { @class = "form" }))
+        @using (Html.BeginForm("SendOrderForm", "ManagementOrders", FormMethod.Post, new { @class = "form" }))
         {
             <div class="row">
                 <div class="col-lg-8 col-12">
@@ -114,15 +115,15 @@
                                 </ul>
                             </div>
                         </div>
-                        <div class="single-widget">
-                            <h2>Select Payment Type</h2>
-                            <div class="content">
-                                <div class="form-group">
-                                    @Html.DropDownListFor(m => m.PaymentType, new SelectList(Enum.GetValues(typeof(PaymentType))), "Select Payment Method", new { @class = "form-control", @style = "width: 50px; height: 30px;" })
-                                    @Html.ValidationMessageFor(m => m.PaymentType, "", new { @class = "text-danger" })
-                                </div>
-                            </div>
-                        </div>
+                        @* <div class="single-widget"> *@
+                        @*     <h2>Select Payment Type</h2> *@
+                        @*     <div class="content"> *@
+                        @*         <div class="form-group"> *@
+                        @*             @Html.DropDownListFor(m => m., new SelectList(Enum.GetValues(typeof(PaymentType))), "Select Payment Method", new { @class = "form-control", @style = "width: 50px; height: 30px;" }) *@
+                        @*             @Html.ValidationMessageFor(m => m.PaymentType, "", new { @class = "text-danger" }) *@
+                        @*         </div> *@
+                        @*     </div> *@
+                        @* </div> *@
                         <div class="single-widget payement">
                             <div class="content">
                                 <img src="~/Asset/images/payment-method.png" alt="#">
@@ -142,7 +143,7 @@
     </div>
 </section>
 
-@Html.Partial("~/Views/Partials/StoreAdvantages.cshtml")
+@Html.Partial("~/Views/Shared/Partials/StoreAdvantages.cshtml")
 
 
 

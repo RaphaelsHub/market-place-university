@@ -1,47 +1,26 @@
 ﻿using System.Web.Mvc;
-using ECommerce.Core.DataTransferObjects.Responses;
-using ECommerce.Core.DataTransferObjects.User;
-using ECommerce.Core.Enums.Operation;
+using ECommerce.Core.Enums.Message;
+using ECommerce.Core.Models.DTOs.Order;
+using ECommerce.Core.Models.ViewModels;
 
 namespace ECommerce.Controllers
 {
-    public class OrderController : Controller
+    public class OrdersController : Controller
     {
-        [HttpGet]
-        public ActionResult GetOrderForm() => View();
-        
-
-        [HttpPost]
-        public ActionResult SendOrderForm(OrderDto orderDto)
+        [HttpGet] public ActionResult Index() => View();
+        [HttpGet] public ActionResult OrderDetails(int id) => View();
+        [HttpGet] public ActionResult OrderDataForm() => View(new OrderDataDto());
+        [HttpPost] public ActionResult SaveDataOrder(OrderDataDto orderDto)
         {
             if (!ModelState.IsValid)
             {
-                return View("GetOrderForm", orderDto); 
+                return View("OrderDataForm", orderDto); 
             }
 
-            TempData["MessageResponse"] = new MessageResponseDto(1, "Order has been successfully sent! Soon we will get in touch with you!", RequestStatus.Success);
+            TempData["MessageResponse"] = new MessageViewModel(1, "Order has been successfully sent! Soon we will get in touch with you!", RequestStatus.Success);
     
             return RedirectToAction("Confirmation","Home");
         }
-
-
-        
-        [HttpGet]
-        public ActionResult GetOrderInfo(int idOrder) => View();
-        
-        [HttpPatch]
-        public ActionResult UserUpdateOrderInfo(int idOrder) => RedirectToAction("Orders");
-        
-        [HttpPatch]
-        public ActionResult AdminUpdateOrderInfo(int idOrder) => RedirectToAction("Orders");
-        
-        [HttpGet]
-        public ActionResult UserGetOrders() => View();
-        
-        [HttpGet]
-        public ActionResult AdminGetOrders() => View();
-        
-        [HttpDelete]
-        public ActionResult DeleteOrder(int idOrder) => RedirectToAction("Orders");
+        [HttpPost] public ActionResult UpdateDataOrder(int idOrder) => RedirectToAction("Orders");
     }
 }

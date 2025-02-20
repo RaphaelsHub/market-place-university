@@ -1,0 +1,59 @@
+﻿@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="breadcrumbs" style="background-color: #ffffff;">
+    <div class="container">
+        <div class="row">
+            <div class="col-12">
+                <div class="bread-inner">
+                    <ul class="bread-list">
+                        <li><a href="@Url.Action("Index", "Home")">Home<i class="ti-arrow-right"></i></a></li>
+                        <li class="active"><a href="@Url.Action("GetOrderForm", "ManagementOrders")">Checkout</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="container mt-4">
+    <h2 class="mb-3">My Orders</h2>
+    <div class="table-responsive">
+        <table class="table table-bordered table-striped text-center">
+            <thead class="table-dark">
+            <tr>
+                <th>Order ID</th>
+                <th>Total Amount</th>
+                <th>Order Date</th>
+                <th>Delivery Date</th>
+                <th>Status</th>
+                <th>Action</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr>
+                <td>12345</td>
+                <td>1,500.00 ₽</td>
+                <td>2024-02-19</td>
+                <td>2024-02-22</td>
+                <td><span class="badge bg-success">Delivered</span></td>
+                <td><button class="btn btn-primary btn-sm">View</button></td>
+            </tr>
+            <tr>
+                <td>12346</td>
+                <td>800.50 ₽</td>
+                <td>2024-02-18</td>
+                <td>-</td>
+                <td><span class="badge bg-warning">Processing</span></td>
+                <td><button class="btn btn-primary btn-sm">View</button></td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
+
+<div class="mt-5"></div> <!-- Отступ перед partial -->
+
+@Html.Partial("~/Views/Shared/Partials/StoreAdvantages.cshtml")
