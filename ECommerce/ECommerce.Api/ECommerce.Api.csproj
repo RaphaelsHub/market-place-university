@@ -72,21 +72,25 @@
         <Compile Include="App_Start\RouteConfig.cs" />
         <Compile Include="App_Start\UnityConfig.cs" />
         <Compile Include="App_Start\UnityMvcActivator.cs" />
-        <Compile Include="Controllers\AdminController.cs" />
         <Compile Include="Controllers\AuthController.cs" />
         <Compile Include="Controllers\BaseController.cs" />
         <Compile Include="Controllers\CartController.cs" />
         <Compile Include="Controllers\HomeController.cs" />
+        <Compile Include="Controllers\ManagementBlogsController.cs" />
+        <Compile Include="Controllers\ManagementOrdersController.cs" />
+        <Compile Include="Controllers\ManagementProductsController.cs" />
+        <Compile Include="Controllers\ManagementUsersController.cs" />
+        <Compile Include="Controllers\ManagementWebSiteDataController.cs" />
         <Compile Include="Controllers\NewsController.cs" />
         <Compile Include="Controllers\OrderController.cs" />
         <Compile Include="Controllers\StoreController.cs" />
-        <Compile Include="Controllers\UserController.cs" />
         <Compile Include="Global.asax.cs">
             <DependentUpon>Global.asax</DependentUpon>
         </Compile>
         <Compile Include="Properties\AssemblyInfo.cs" />
     </ItemGroup>
     <ItemGroup>
+        <Content Include="Asset\css\admin-css.css" />
         <Content Include="Asset\css\animate.css" />
         <Content Include="Asset\css\bootstrap.css" />
         <Content Include="Asset\css\color\color1.css" />
@@ -134,6 +138,7 @@
         <Content Include="Asset\images\70x70\PC.jpg" />
         <Content Include="Asset\images\750x590\logo.jpg" />
         <Content Include="Asset\images\750x590\PS.jpg" />
+        <Content Include="Asset\images\AdminPhoto.jpg" />
         <Content Include="Asset\images\banner.png" />
         <Content Include="Asset\images\favicon.png" />
         <Content Include="Asset\images\logo.png" />
@@ -142,11 +147,12 @@
         <Content Include="Asset\images\payment-method.png" />
         <Content Include="Asset\images\payments.png" />
         <Content Include="Asset\js\active.js" />
+        <Content Include="Asset\js\admin.js" />
         <Content Include="Asset\js\bootstrap.min.js" />
         <Content Include="Asset\js\colors.js" />
         <Content Include="Asset\js\easing.js" />
         <Content Include="Asset\js\facnybox.min.js" />
-        <Content Include="Asset\js\finalcountdown.min.js" />
+        <Content Include="Asset\js\final-countdown.min.js" />
         <Content Include="Asset\js\flex-slider.js" />
         <Content Include="Asset\js\gmap.min.js" />
         <Content Include="Asset\js\jquery-migrate-3.0.0.js" />
@@ -154,7 +160,7 @@
         <Content Include="Asset\js\jquery.min.js" />
         <Content Include="Asset\js\magnific-popup.js" />
         <Content Include="Asset\js\map-script.js" />
-        <Content Include="Asset\js\nicesellect.js" />
+        <Content Include="Asset\js\niceSelect.js" />
         <Content Include="Asset\js\onepage-nav.min.js" />
         <Content Include="Asset\js\owl-carousel.js" />
         <Content Include="Asset\js\popper.min.js" />
@@ -163,6 +169,14 @@
         <Content Include="Asset\js\waypoints.min.js" />
         <Content Include="Asset\mail\mail.php" />
         <Content Include="Global.asax" />
+        <Content Include="Views\ManagementBlogs\Index.cshtml" />
+        <Content Include="Views\ManagementBlogs\ViewBlog.cshtml" />
+        <Content Include="Views\ManagementOrders\Index.cshtml" />
+        <Content Include="Views\ManagementOrders\ViewOrder.cshtml" />
+        <Content Include="Views\ManagementProducts\Index.cshtml" />
+        <Content Include="Views\ManagementProducts\ViewProduct.cshtml" />
+        <Content Include="Views\ManagementWebSiteData\ContactUs.cshtml" />
+        <Content Include="Views\ManagementWebSiteData\Index.cshtml" />
         <Content Include="Views\Auth\SignIn.cshtml" />
         <Content Include="Views\Auth\SignUp.cshtml" />
         <Content Include="Views\Cart\Index.cshtml" />
@@ -171,18 +185,23 @@
         <Content Include="Views\Home\ContactUs.cshtml" />
         <Content Include="Views\Home\Error.cshtml" />
         <Content Include="Views\Home\Index.cshtml" />
+        <Content Include="Views\ManagementUsers\Index.cshtml" />
         <Content Include="Views\News\Blog.cshtml" />
-        <Content Include="Views\News\Blogs.cshtml" />
-        <Content Include="Views\Order\GetOrderForm.cshtml" />
-        <Content Include="Views\Partials\Footer.cshtml" />
-        <Content Include="Views\Partials\Header.cshtml" />
-        <Content Include="Views\Partials\SingleBlogCard.cshtml" />
-        <Content Include="Views\Partials\SingleCartProduct.cshtml" />
-        <Content Include="Views\Partials\SingleProductCard.cshtml" />
-        <Content Include="Views\Partials\StoreAdvantages.cshtml" />
+        <Content Include="Views\News\Index.cshtml" />
+        <Content Include="Views\Orders\OrderDataForm.cshtml" />
+        <Content Include="Views\Orders\OrderDetails.cshtml" />
+        <Content Include="Views\Orders\Index.cshtml" />
+        <Content Include="Views\Shared\Partials\Footer.cshtml" />
+        <Content Include="Views\Shared\Partials\Header.cshtml" />
+        <Content Include="Views\Shared\Partials\SingleBlogCard.cshtml" />
+        <Content Include="Views\Shared\Partials\SingleCartProduct.cshtml" />
+        <Content Include="Views\Shared\Partials\SingleProductCard.cshtml" />
+        <Content Include="Views\Shared\Partials\StoreAdvantages.cshtml" />
+        <Content Include="Views\Shared\_AdminLayout.cshtml" />
         <Content Include="Views\Shared\_Layout.cshtml" />
         <Content Include="Views\Store\Product.cshtml" />
-        <Content Include="Views\Store\Products.cshtml" />
+        <Content Include="Views\Store\Index.cshtml" />
+        <Content Include="Views\ManagementUsers\ViewUser.cshtml" />
         <Content Include="Views\_ViewStart.cshtml" />
         <Content Include="Web.config" />
         <Content Include="Web.Debug.config">
