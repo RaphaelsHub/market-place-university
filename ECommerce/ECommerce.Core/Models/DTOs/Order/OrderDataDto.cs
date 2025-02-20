@@ -1,10 +1,9 @@
-using System;
 using System.ComponentModel.DataAnnotations;
 using ECommerce.Core.Enums.Order;
 
-namespace ECommerce.Core.DataTransferObjects.User
+namespace ECommerce.Core.Models.DTOs.Order
 {
-    public class OrderDto
+    public class OrderDataDto
     {
         [Required(ErrorMessage = "FirstName is required")]
         [StringLength(32, MinimumLength = 2, ErrorMessage = "FirstName must be between 2 and 32 characters")]
@@ -43,18 +42,5 @@ namespace ECommerce.Core.DataTransferObjects.User
         [StringLength(100, MinimumLength = 10, ErrorMessage = "Message must be between 10 and 100 characters")]
         public string OrderNote { get; set; }
         
-        public decimal SubTotalPrice { get; set; }
-        
-        public decimal TotalPrice { get; set; }
-        
-        public decimal DiscountPrice { get; set; }
-        
-        public PaymentType PaymentType { get; set; } = PaymentType.None;
-        
-        public OrderStatus OrderStatus { get; set; } = OrderStatus.Pending;
-        
-        public DateTime OrderDate { get; set; } = DateTime.Now;
-
-        public DateTime? DeliverDate { get; set; } = null;
     }
 }
