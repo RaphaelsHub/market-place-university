@@ -5,8 +5,8 @@ namespace ECommerce
 {
     public class RouteConfig
     {
-        // Adding custom routes before the default route is important
-        public static void RegisterRoutes(RouteCollection routes)
+        // Добавление пользовательских маршрутов перед маршрутами по умолчанию важно
+        public static void ConfigureRoutes(RouteCollection routes)
         {
             routes.IgnoreRoute("{resource}.axd/{*pathInfo}");
             

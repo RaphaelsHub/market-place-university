@@ -42,7 +42,7 @@ namespace ECommerce
         {
             AreaRegistration.RegisterAllAreas();
             FilterConfig.RegisterGlobalFilters(GlobalFilters.Filters);
-            RouteConfig.RegisterRoutes(RouteTable.Routes);
+            RouteConfig.ConfigureRoutes(RouteTable.Routes);
             BundleConfig.RegisterBundles(BundleTable.Bundles);
             
             var container = new UnityContainer();
@@ -107,26 +107,26 @@ namespace ECommerce
             container.RegisterType<StoreContext>();
         }
 
-        protected void Application_Error(object sender, EventArgs e)
-        {
-            var exception = Server.GetLastError();
-            var httpException = exception as HttpException;
-        
-            Server.ClearError();
-        
-            var routeData = ErrorHelper.GetRouteData(httpException);
-            
-            IController homeController = new HomeController();
-            
-            //
-            // IController homeController = DependencyResolver.Current.GetService<HomeController>();
-            //
-            // // var container = DependencyResolver.Current.GetService<IUnityContainer>();
-            // // IController homeController = container.Resolve<HomeController>();
-            
-            var contextWrapper = new HttpContextWrapper(Context);
-            var requestContext = new RequestContext(contextWrapper, routeData);
-            homeController.Execute(requestContext);
-        }
+        // protected void Application_Error(object sender, EventArgs e)
+        // {
+        //     var exception = Server.GetLastError();
+        //     var httpException = exception as HttpException;
+        //
+        //     Server.ClearError();
+        //
+        //     var routeData = ErrorHelper.GetRouteData(httpException);
+        //     
+        //     IController homeController = new HomeController();
+        //     
+        //     //
+        //     // IController homeController = DependencyResolver.Current.GetService<HomeController>();
+        //     //
+        //     // // var container = DependencyResolver.Current.GetService<IUnityContainer>();
+        //     // // IController homeController = container.Resolve<HomeController>();
+        //     
+        //     var contextWrapper = new HttpContextWrapper(Context);
+        //     var requestContext = new RequestContext(contextWrapper, routeData);
+        //     homeController.Execute(requestContext);
+        // }
     }
 }
