@@ -1,4 +1,5 @@
 ﻿@{
+    ViewBag.Title = "Cart";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
@@ -8,69 +9,85 @@
             <div class="col-12">
                 <div class="bread-inner">
                     <ul class="bread-list">
-                        <li><a href="@Url.Action("Index","Home")">Home<i class="ti-arrow-right"></i></a></li>
-                        <li class="active"><a href="@Url.Action("Index","Cart")">Cart</a></li>
+                        <li><a href="@Url.Action("Index", "Home")">Home<i class="ti-arrow-right"></i></a></li>
+                        <li class="active"><a href="@Url.Action("Cart", "Shopping")">Cart</a></li>
                     </ul>
                 </div>
             </div>
         </div>
     </div>
-    </div>
+</div>
+<div class="container mt-4">
+    <h2 class="mb-3">Shopping Cart</h2>
 
-<div class="shopping-cart section">
-    <div class="container">
-        <div class="row">
-            <div class="col-12">
-                <table class="table shopping-summery">
-                    <thead>
-                        <tr class="main-hading">
-                            <th>PRODUCT</th>
-                            <th>NAME</th>
-                            <th class="text-center">UNIT PRICE</th>
-                            <th class="text-center">QUANTITY</th>
-                            <th class="text-center">TOTAL</th>
-                            <th class="text-center"><i class="ti-trash remove-icon"></i></th>
-                        </tr>
+    <div class="row">
+        <!-- Колонка с таблицей товаров -->
+        <div class="col-md-8">
+            <div class="table-responsive">
+                <table class="table table-bordered table-striped text-center">
+                    <thead class="table-dark">
+                    <tr>
+                        <th style="width: 70px;">PHOTO</th>
+                        <th style="width: 300px;">NAME</th>
+                        <th style="width: 120px;">UNIT PRICE</th>
+                        <th style="width: 100px;">QUANTITY</th>
+                        <th style="width: 140px;">TOTAL</th>
+                        <th style="width: 100px;"><i class="ti-trash remove-icon"></i></th>
+                    </tr>
                     </thead>
                     <tbody>
-                    @Html.Partial("~/Views/Partials/SingleCartProduct.cshtml")
+                    <tr>
+                        <td><img src="https://via.placeholder.com/50" alt="Product" class="img-fluid"></td>
+                        <td>Sample Product 1</td>
+                        <td>500.00 ₽</td>
+                        <td>
+                            <input type="number" class="form-control text-center" value="1" min="1">
+                        </td>
+                        <td>500.00 ₽</td>
+                        <td><button class="btn btn-danger btn-sm"><i class="ti-trash"></i></button></td>
+                    </tr>
+                    <tr>
+                        <td><img src="https://via.placeholder.com/50" alt="Product" class="img-fluid"></td>
+                        <td>Sample Product 2</td>
+                        <td>300.00 ₽</td>
+                        <td>
+                            <input type="number" class="form-control text-center" value="2" min="1">
+                        </td>
+                        <td>600.00 ₽</td>
+                        <td><button class="btn btn-danger btn-sm"><i class="ti-trash"></i></button></td>
+                    </tr>
                     </tbody>
                 </table>
             </div>
         </div>
-        <div class="row">
-            <div class="col-12">
-                <div class="total-amount">
-                    <div class="row">
-                        <div class="col-lg-8 col-md-5 col-12">
-                            <div class="left">
-                                <div class="coupon">
-                                    @using (Html.BeginForm("ApplyPromoCode", "Cart", FormMethod.Post))
-                                    {
-                                        <input name="Coupon" placeholder="Enter Your Coupon">
-                                        <button class="btn">Apply</button>
-                                    }
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-lg-4 col-md-7 col-12">
-                            <div class="right">
-                                <ul>
-                                    <li>Cart Subtotal<span>$330.00</span></li>
-                                    <li>You Save<span>$20.00</span></li>
-                                    <li class="last">You Pay<span>$310.00</span></li>
-                                </ul>
-                                <div class="button5">
-                                    <a href="#" class="btn">Checkout</a>
-                                    <a href="#" class="btn">Continue shopping</a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+
+        <!-- Колонка с Order Summary -->
+        <div class="col-md-4 order-md-last">
+            <div class="card shadow-sm border-0">
+                <div class="card-body">
+                    <h5 class="card-title text-center mb-3">Order Summary</h5>
+                    <table class="table table-borderless">
+                        <tr>
+                            <th>Cart Subtotal:</th>
+                            <td class="text-end">1,100.00 ₽</td>
+                        </tr>
+                        <tr>
+                            <th>You Save:</th>
+                            <td class="text-end text-success">-100.00 ₽</td>
+                        </tr>
+                        <tr class="border-top">
+                            <th class="pt-2">You Pay:</th>
+                            <td class="text-end fw-bold pt-2">1,000.00 ₽</td>
+                        </tr>
+                    </table>
+                    <button class="btn btn-primary w-100 mt-2">Proceed to Checkout</button>
                 </div>
             </div>
         </div>
     </div>
 </div>
 
-@Html.Partial("~/Views/Partials/StoreAdvantages.cshtml")
+<div class="mt-5"></div> 
+
+@Html.Partial("~/Views/Shared/Partials/StoreAdvantages.cshtml")
+
