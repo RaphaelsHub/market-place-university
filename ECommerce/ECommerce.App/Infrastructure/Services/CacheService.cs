@@ -8,23 +8,13 @@ namespace ECommerce.App.Infrastructure.Services
     {
         private readonly ObjectCache _cache = MemoryCache.Default;
 
-        public void SetCache(string key, object value, DateTimeOffset absoluteExpiration)
-        {
+        public void SetCache(string key, object value, DateTimeOffset absoluteExpiration) =>
             _cache.Set(key, value, absoluteExpiration);
-        }
+        
+        public object GetCache(string key) => 
+            _cache.Get(key);
 
-        public object GetCache(string key)
-        {
-            return _cache.Get(key);
-        }
-
-        public void RemoveCache(string key)
-        {
-            if (_cache.Contains(key))
-            {
-                _cache.Remove(key);
-                _cache.Remove(key);
-            }
-        }
+        public void RemoveCache(string key) => 
+            _cache.Remove(key);
     }
 }

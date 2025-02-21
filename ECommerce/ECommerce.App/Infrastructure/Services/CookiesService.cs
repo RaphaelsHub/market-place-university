@@ -1,5 +1,4 @@
 using System;
-using System.Threading.Tasks;
 using System.Web;
 using ECommerce.App.Infrastructure.Abstractions;
 
@@ -7,7 +6,7 @@ namespace ECommerce.App.Infrastructure.Services
 {
     public class CookiesService : ICookiesService
     {
-        public Task SetCookie(string key, string value, DateTime expires)
+        public void SetCookie(string key, string value, DateTime expires)
         {
             var cookie = new HttpCookie(key, value)
             {
@@ -16,17 +15,15 @@ namespace ECommerce.App.Infrastructure.Services
                 Expires = expires
             };
             HttpContext.Current.Response.Cookies.Add(cookie);
-            
-            return Task.CompletedTask;
         }
 
-        public Task<string> GetCookie(string key)
+        public string GetCookie(string key)
         {
             var cookie = HttpContext.Current.Request.Cookies[key];
-            return cookie?.Value != null ? Task.FromResult(cookie.Value) : Task.FromResult(string.Empty);
+            return cookie?.Value ?? string.Empty;
         }
 
-        public Task DeleteCookie(string key)
+        public void DeleteCookie(string key)
         {
             if (HttpContext.Current.Request.Cookies[key] != null)
             {
@@ -36,8 +33,6 @@ namespace ECommerce.App.Infrastructure.Services
                 };
                 HttpContext.Current.Response.Cookies.Add(cookie);
             }
-            
-            return Task.CompletedTask;
         }
     }
 }
