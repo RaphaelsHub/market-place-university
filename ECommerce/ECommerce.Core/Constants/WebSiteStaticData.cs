@@ -1,7 +1,7 @@
 using System.Configuration;
 using System.Web;
 using System.Web.Configuration;
-using ECommerce.Core.Models.ViewModels; // Import this namespace for WebConfigurationManager
+using ECommerce.Core.Models.ViewModels;
 
 namespace ECommerce.Core.Constants
 {
@@ -38,20 +38,23 @@ namespace ECommerce.Core.Constants
             Save();
         }
 
-        public static WebSiteDataViewModel GetData(WebSiteDataViewModel model)
+        public static WebSiteDataViewModel GetData()
         {
-            model.WorkingAddressShop = WorkingAddressShop;
-            model.WorkingNameShop = WorkingNameShop;
-            model.ShopDescription = ShopDescription;
-            model.InfoEmail = InfoEmail;
-            model.SupportEmail = SupportEmail;
-            model.WorkingEmail = WorkingEmail;
-            model.InfoNumber = InfoNumber;
-            model.SupportNumber = SupportNumber;
-            model.WorkingNumber = WorkingNumber;
-            model.InstagramLink = InstagramLink;
-            model.FacebookLink = FacebookLink;
-            model.XLink = XLink;
+            var model = new WebSiteDataViewModel
+            {
+                WorkingAddressShop = WorkingAddressShop,
+                WorkingNameShop = WorkingNameShop,
+                ShopDescription = ShopDescription,
+                InfoEmail = InfoEmail,
+                SupportEmail = SupportEmail,
+                WorkingEmail = WorkingEmail,
+                InfoNumber = InfoNumber,
+                SupportNumber = SupportNumber,
+                WorkingNumber = WorkingNumber,
+                InstagramLink = InstagramLink,
+                FacebookLink = FacebookLink,
+                XLink = XLink
+            };
 
             return model;
         }
