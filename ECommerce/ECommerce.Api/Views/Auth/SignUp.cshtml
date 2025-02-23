@@ -5,7 +5,7 @@
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-@model ECommerce.Core.Models.DTOs.Auth.SignUpDto
+@model ECommerce.Core.Models.DTOs.User.SignUpDto
 
 <div class="breadcrumbs" style="background-color: #ffffff;">
     <div class="container">
@@ -38,9 +38,9 @@
                         <div class="row">
                             <div class="col-12">
                                 <div class="form-group">
-                                    @Html.LabelFor(m => m.Name, new { @class = "label" })
-                                    @Html.TextBoxFor(m => m.Name, new { @class = "form-control", @placeholder = "Name", @required = "required" })
-                                    @Html.ValidationMessageFor(m => m.Name, "", new { @class = "text-danger" })
+                                    @Html.LabelFor(m => m.FullName, new { @class = "label" })
+                                    @Html.TextBoxFor(m => m.FullName, new { @class = "form-control", @placeholder = "Name", @required = "required" })
+                                    @Html.ValidationMessageFor(m => m.FullName, "", new { @class = "text-danger" })
                                 </div>
                             </div>
                             <div class="col-12">

@@ -1,14 +1,9 @@
 using System.ComponentModel.DataAnnotations;
 
-namespace ECommerce.Core.Models.DTOs.Auth
+namespace ECommerce.Core.Models.DTOs.User
 {
-    public class SignUpDto
+    public class SignInDto
     {
-        [Required(ErrorMessage = "Name is required")]
-        [StringLength(32, MinimumLength = 1, ErrorMessage = "Name must be between 1 and 32 characters")]
-        [RegularExpression(@"^[a-zA-Z\s'-]+$", ErrorMessage = "Name must contain only letters, spaces, apostrophes, or hyphens")]
-        public string Name { get; set; }
-        
         [Required(ErrorMessage = "Email is required")]
         [EmailAddress(ErrorMessage = "Invalid Email Address")]
         [StringLength(255, MinimumLength = 1, ErrorMessage = "Email must be less than 320 characters")]
@@ -20,10 +15,6 @@ namespace ECommerce.Core.Models.DTOs.Auth
         [DataType(DataType.Password, ErrorMessage = "Invalid Password")]
         public string Password { get; set; }
         
-        [Required(ErrorMessage = "Confirm Password is required")]
-        [Compare("Password", ErrorMessage = "The password and confirmation password do not match")]
-        public string ConfirmPassword { get; set; }
-
-        public bool SignUpForNewsletter { get; set; }
+        public bool RememberMe { get; set; }
     }
 }

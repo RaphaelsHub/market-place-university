@@ -1,14 +1,10 @@
 using System;
 using System.ComponentModel.DataAnnotations;
-using ECommerce.Core.Enums.Account;
 using ECommerce.Core.Enums.Entity;
 using ECommerce.Core.Enums.User;
 
 namespace ECommerce.Core.Models.DTOs.User
 {
-    /// <summary>
-    /// UserDTO - a dto to update user instance by admin.
-    /// </summary>
     public class UserDto
     {
         public int Id { get; set; }

@@ -16,7 +16,7 @@ namespace ECommerce.Dal.Configurations
 
             HasMany(x => x.Orders).WithRequired(x => x.User).HasForeignKey(x=>x.UserId).WillCascadeOnDelete(false);
 
-            HasMany(x => x.CartItems).WithRequired(x => x.User).HasForeignKey(x=>x.UserId);
+            HasMany(x => x.Cart).WithRequired(x => x.User).HasForeignKey(x=>x.UserId);
 
             #endregion
         }

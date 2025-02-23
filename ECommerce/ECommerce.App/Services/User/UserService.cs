@@ -1,98 +1,82 @@
 using System.Collections.Generic;
+using System.Linq;
 using System.Threading.Tasks;
-using ECommerce.App.Interfaces;
 using ECommerce.App.Interfaces.User;
 using ECommerce.Core.Entities.User;
+using ECommerce.Core.Enums.Request;
+using ECommerce.Core.Enums.User;
 using ECommerce.Core.Interfaces.User;
-using ECommerce.Core.Models;
-using ECommerce.Core.Models.DTOs.ContactUs;
+using ECommerce.Core.Models.DTOs.GenericResponses;
 using ECommerce.Core.Models.DTOs.User;
-using ECommerce.Core.Models.ViewModels;
+using ExpressMapper; 
 
 namespace ECommerce.App.Services.User
 {
     public class UserService : IUserService
     {
         private readonly IUsersRepository _usersRepository;
+        public UserService(IUsersRepository usersRepository) 
+            => _usersRepository = usersRepository;
         
-        public UserService(IUsersRepository usersRepository)
+        public async Task<BaseResponse<UserDto>> CreateUserAsync(SignUpDto signUpDto)
         {
-            _usersRepository = usersRepository;
-        }
-        
-        public Task<ResponseViewModel<UserDto>> GetUser(int id)
-        {
-            throw new System.NotImplementedException();
-        }
-
-        public Task<ResponseViewModel<UserDto>> GetUserByEmail(string email)
-        {
-            throw new System.NotImplementedException();
-        }
-
-        public Task<ResponseViewModel<UserDto>> GetUserByUserName(string userName)
-        {
-            throw new System.NotImplementedException();
-        }
-
-        public Task<ResponseViewModel<IEnumerable<UserDto>>> GetUsers()
-        {
-            throw new System.NotImplementedException();
-        }
-
-        public Task<bool> CreateUser(UserDto user)
-        {
-            throw new System.NotImplementedException();
-        }
-
-        public Task<bool> UpdateUser(UserDto user)
-        {
-            throw new System.NotImplementedException();
-        }
-
-        public Task<bool> DeleteUser(UserDto user)
-        {
-            throw new System.NotImplementedException();
+            var response = await GetUserByEmailAsync(signUpDto.Email);
+            
+            if(response.Data != null)
+                return new BaseResponse<UserDto>(null, OperationStatus.Error, "User with this email already exists");
+            
+            var userEf = Mapper.Map<SignUpDto, UserEf>(signUpDto);
+            
+            var userEfFromDb = await _usersRepository.CreateAsync(userEf);
+            
+            return userEfFromDb == null ?
+                new BaseResponse<UserDto>(null, OperationStatus.Error, "User not created") :
+                new BaseResponse<UserDto>(Mapper.Map<UserEf, UserDto>(userEfFromDb), OperationStatus.Success, "User Created");
         }
         
-        public Task<MessageViewModel> ContactUs(ContactUsDto contactUsDto)
+        public async Task<BaseResponse<UserDto>> GetUserByIdAsync(int id)
         {
-            throw new System.NotImplementedException();
+            var userEf = await _usersRepository.GetByIdAsync(id);
+            
+            return userEf == null ? 
+                new BaseResponse<UserDto>(null, OperationStatus.Error, "User not found") : 
+                new BaseResponse<UserDto>(Mapper.Map<UserEf, UserDto>(userEf), OperationStatus.Success, "User got by id");
         }
 
-        public Task<bool> CreateUserAsync(UserDto user)
+        public async Task<BaseResponse<UserDto>> GetUserByEmailAsync(string email)
         {
-            throw new System.NotImplementedException();
+            var userEf = await _usersRepository.GetByEmailAsync(email);
+            
+            return  userEf == null ? 
+                new BaseResponse<UserDto>(null, OperationStatus.Error, "User not found") : 
+                new BaseResponse<UserDto>(Mapper.Map<UserEf, UserDto>(userEf), OperationStatus.Success, "User got by email");
         }
 
-        public Task<ResponseViewModel<UserDto>> GetUserAsync(int id)
+        public async Task<BaseResponse<List<UserDto>>> GetUsersAsync(string searchByEmail, UserType userType, int currentPage, int amountOfUsers)
         {
-            throw new System.NotImplementedException();
+            var userEfs = (await _usersRepository.GetPaginatedUsersByEmailAndTypeAsync(searchByEmail, userType, currentPage, amountOfUsers)).ToList();
+            
+            return !userEfs.Any() ? 
+                new BaseResponse<List<UserDto>>(null, OperationStatus.Success, "Users not found") : 
+                new BaseResponse<List<UserDto>>(userEfs.Select(Mapper.Map<UserEf, UserDto>).ToList(), OperationStatus.Success, "Users got");
+        }
+        
+        public async Task<BaseResponse<UserDto>> UpdateUserAsync(UserDto userDto)
+        {
+            var userEf = Mapper.Map<UserDto, UserEf>(userDto);
+            
+            var userEfFromDb = await _usersRepository.UpdateAsync(userEf);
+            
+            return  userEfFromDb == null ? 
+                new BaseResponse<UserDto>(null, OperationStatus.Error, "User not Updated") :
+                new BaseResponse<UserDto>(Mapper.Map<UserEf, UserDto>(userEfFromDb), OperationStatus.Success, "User Updated");
         }
 
-        public Task<ResponseViewModel<UserDto>> FindUserByEmailAsync(string email)
+        public async Task<BaseResponse<bool>> DeleteUserByIdAsync(int id)
         {
-            throw new System.NotImplementedException();
-        }
-
-        public Task<ResponseViewModel<UserDto>> FindUserByUserNameAsync(string userName, int currentPage = 1, int amountOfUsers = 16)
-        {
-            throw new System.NotImplementedException();
-        }
-
-        public Task<ResponseViewModel<IEnumerable<UserDto>>> GetUsersAsync(int currentPage = 1, int amountOfUsers = 16)
-        {
-            throw new System.NotImplementedException();
-        }
-
-        public Task<bool> UpdateUserAsync(UserDto user)
-        {
-            throw new System.NotImplementedException();
-        }
-
-        public Task<bool> DeleteUserAsync(int id)
-        {
-            throw new System.NotImplementedException();
+            await _usersRepository.DeleteByIdAsync(id);
+            
+            return new BaseResponse<bool>(true, OperationStatus.Success, "User Deleted");
         }
     }
 }
