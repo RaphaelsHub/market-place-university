@@ -1,12 +1,15 @@
 using System;
+using System.Collections.Generic;
+using System.Linq;
 using System.Threading.Tasks;
 using ECommerce.App.Interfaces.User;
 using ECommerce.Core.Entities.User;
-using ECommerce.Core.Enums.Message;
+using ECommerce.Core.Enums.Request;
 using ECommerce.Core.Interfaces.User;
-using ECommerce.Core.Models;
-using ECommerce.Core.Models.DTOs.ContactUs;
+using ECommerce.Core.Models.DTOs.Contact;
+using ECommerce.Core.Models.DTOs.GenericResponses;
 using ECommerce.Core.Models.ViewModels;
+using ExpressMapper;
 
 namespace ECommerce.App.Services.User
 {
@@ -16,22 +19,33 @@ namespace ECommerce.App.Services.User
         
         public ContactUsService(IContactUsRepository contactUsRepository) => 
             _contactUsRepository = contactUsRepository;
-        
-        public async Task<MessageViewModel> SendContactUsRequestAsync(ContactUsDto contactUsDto)
+
+        public async Task<BaseResponse<List<ContactUsDto>>> GetContactUsRequestsAsync(string email, int page, int pageSize)
         {
-            var contactUsEntity = new ContactUsEf()
-            {
-                Email = contactUsDto.Email,
-                Message = contactUsDto.Message,
-                Name = contactUsDto.Name,
-                Subject = contactUsDto.Subject,
-                PhoneNumber = contactUsDto.PhoneNumber,
-                DateTime = DateTime.UtcNow
-            };
+           var listOfContactUsEfs = await _contactUsRepository.GetAllContactUsRequestsAsync(email, page, pageSize);
 
-            await _contactUsRepository.CreateAsync(contactUsEntity);
+           var listOfContactUsDtos = listOfContactUsEfs.Select(Mapper.Map<ContactUsEf, ContactUsDto>).ToList();
+           
+           return new BaseResponse<List<ContactUsDto>>(listOfContactUsDtos, OperationStatus.Success, "List of contact us requests");
+        }
 
-            return new MessageViewModel(0, "Your message has been sent successfully", RequestStatus.Success);
+        public async Task<BaseResponse<bool>> DeleteContactUsRequestByIdAsync(int id)
+        {
+            var response = await _contactUsRepository.DeleteContactUsRequestAsync(id);
+            return new BaseResponse<bool>(response, OperationStatus.Success, "Contact us request has been deleted successfully or not found");
+        }
+
+        public async Task<ConfirmationViewModel> CreateContactUsRequestAsync(ContactUsDto contactUsDto)
+        {
+            contactUsDto.DateTime = DateTime.UtcNow;
+            
+            var contactUsEf = Mapper.Map<ContactUsDto, ContactUsEf>(contactUsDto);
+            
+            var returnedContactUsEf = await _contactUsRepository.AddContactUsRequestAsync(contactUsEf);
+            
+            return returnedContactUsEf != null 
+                ? new ConfirmationViewModel(OperationStatus.Success, "Your message has been sent successfully") 
+                : new ConfirmationViewModel(OperationStatus.Error, "An error occurred while sending your message");
         }
     }
 }

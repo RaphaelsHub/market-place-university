@@ -1,9 +1,12 @@
+using System;
 using System.ComponentModel.DataAnnotations;
 
-namespace ECommerce.Core.Models.DTOs.ContactUs
+namespace ECommerce.Core.Models.DTOs.Contact
 {
     public class ContactUsDto
     {
+        public int Id { get; set; }
+        
         [Required(ErrorMessage = "Name is required")]
         [StringLength(32, MinimumLength = 3, ErrorMessage = "Name must be between 3 and 32 characters")]
         [RegularExpression(@"^[a-zA-Z\s'-]+$", ErrorMessage = "Name must contain only letters, spaces, apostrophes, or hyphens")]
@@ -28,5 +31,7 @@ namespace ECommerce.Core.Models.DTOs.ContactUs
         [Required(ErrorMessage = "Message is required")]
         [StringLength(500, MinimumLength = 10, ErrorMessage = "Message must be between 10 and 500 characters")]
         public string Message { get; set; }
+        
+        public DateTime DateTime { get; set; }
     }
 }
