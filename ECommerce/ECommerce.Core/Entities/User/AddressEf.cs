@@ -11,7 +11,9 @@ namespace ECommerce.Core.Entities.User
         public string City { get; set; } = "";
         public string Address1 { get; set; } = "";
         public string Address2 { get; set; } = "";
-        public string PostalCode { get; set; } = "";    
+        public string PostalCode { get; set; } = "";
+        public string OrderNote { get; set; } = "";
+
 
         public int UserId { get; set; }
         public UserEf User { get; set; }
