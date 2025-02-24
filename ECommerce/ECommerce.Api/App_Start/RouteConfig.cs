@@ -99,9 +99,9 @@ namespace ECommerce
             routes.MapRoute(
                 name: "ViewAllUsers_Admin",
                 url: "admin/users",
-                defaults: new { controller = "ManagementUsers", action = "Index" }
+                defaults: new { controller = "ManagementUsers", action = "Index"}
             );
-        
+
             routes.MapRoute(
                 name: "ViewSingleUser_Admin",
                 url: "admin/users/{id}",
