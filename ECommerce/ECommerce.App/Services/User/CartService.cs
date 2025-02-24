@@ -1,53 +1,99 @@
+using System.Linq;
 using System.Threading.Tasks;
+using ECommerce.App.Interfaces.JWT;
 using ECommerce.App.Interfaces.User;
 using ECommerce.Core.Entities.Product;
 using ECommerce.Core.Entities.User;
+using ECommerce.Core.Enums.Request;
 using ECommerce.Core.Interfaces.Product;
 using ECommerce.Core.Interfaces.User;
-using ECommerce.Core.Models;
-using ECommerce.Core.Models.ViewModels;
+using ECommerce.Core.Models.DTOs.Cart;
+using ECommerce.Core.Models.DTOs.GenericResponses;
+using ECommerce.Core.Models.DTOs.Product;
+using ExpressMapper;
 
 namespace ECommerce.App.Services.User
 {
     public class CartService : ICartService
     {
-        private readonly ICartItemsRepository<CartItemEf> _cartItemsRepository;
-        private readonly IProductsRepository<ProductEf> _productsRepository;
+        private readonly ICartRepository _cartRepository;
+        private readonly IProductsRepository _productsRepository;
+        private readonly IJwtService _jwtService;
+        private readonly IUsersRepository _usersRepository;
         
-        public CartService(ICartItemsRepository<CartItemEf> cartItemsRepository, IProductsRepository<ProductEf> productsRepository)
+        public CartService(ICartRepository cartRepository, IProductsRepository productsRepository, IUsersRepository usersRepository, IJwtService jwtService)
         {
-            _cartItemsRepository = cartItemsRepository;
+            _cartRepository = cartRepository;
             _productsRepository = productsRepository;
+            _jwtService = jwtService;
+            _usersRepository = usersRepository;
         }
         
-        public Task<ResponseViewModel<CartDto>> GetCart(int userId)
+        public async Task<BaseResponse<CartDto>> GetCart()
         {
-            throw new System.NotImplementedException();
+            var userId = await _jwtService.GetUserIdFromToken();
+            var cart = await _cartRepository.GetCartByUserIdAsync(userId);
+
+            if (cart == null)
+            {
+                return new BaseResponse<CartDto>(null, OperationStatus.Error, "Cart not found");
+            }
+
+            var cartItems = cart.Select(cartItem => new CartItemDto()
+            {
+                Product = Mapper.Map<ProductEf, ProductDto>(_productsRepository.GetByIdAsync(cartItem.ProductId).Result),
+                Quantity = cartItem.Quantity
+            }).ToList();
+
+            var cartDto = new CartDto(cartItems);
+            return new BaseResponse<CartDto>(cartDto, OperationStatus.Success, "Cart retrieved successfully");
         }
 
-        public Task<ResponseViewModel<bool>> AddToCart(int productId)
+        public async Task<BaseResponse<bool>> AddToCartByProductId(int productId)
         {
-            throw new System.NotImplementedException();
+            var userId = await _jwtService.GetUserIdFromToken();
+            var cartItem = GetCartItemEf(productId, userId);
+
+            var result = await _cartRepository.AddToCartAsync(userId, cartItem);
+
+            return new BaseResponse<bool>(result != null, OperationStatus.Success, "Product added to cart successfully");
         }
 
-        public Task<ResponseViewModel<bool>> RemoveFromCart(int productId)
+        public async Task<BaseResponse<bool>> RemoveFromCart(int productId)
         {
-            throw new System.NotImplementedException();
+            var userId = await _jwtService.GetUserIdFromToken();
+            var success = await _cartRepository.RemoveFromCartAsync(userId, productId);
+
+            return new BaseResponse<bool>(success, OperationStatus.Success, success ? "Product removed from cart successfully" : "Product not found in cart");
         }
 
-        public Task<ResponseViewModel<bool>> IncreaseQuantity(int productId)
+        public async Task<BaseResponse<bool>> IncreaseQuantity(int productId)
         {
-            throw new System.NotImplementedException();
+            var userId = await _jwtService.GetUserIdFromToken();
+            var cartItem = GetCartItemEf(productId, userId);
+            cartItem.Quantity = 1;
+
+            var result = await _cartRepository.UpdateCartAsync(userId, cartItem);
+            return new BaseResponse<bool>(result != null, OperationStatus.Success, "Quantity increased successfully");
         }
 
-        public Task<ResponseViewModel<bool>> DecreaseQuantity(int productId)
+        public async Task<BaseResponse<bool>> DecreaseQuantity(int productId)
         {
-            throw new System.NotImplementedException();
+            var userId = await _jwtService.GetUserIdFromToken();
+            var cartItem = GetCartItemEf(productId, userId);
+            cartItem.Quantity = -1;
+
+            var result = await _cartRepository.UpdateCartAsync(userId, cartItem);
+            return new BaseResponse<bool>(result != null, OperationStatus.Success, "Quantity decreased successfully");
         }
-        
-        public Task<ResponseViewModel<bool>> PromoCode(string code)
+
+        private CartItemEf GetCartItemEf(int productId, int userId)
         {
-            throw new System.NotImplementedException();
+            return new CartItemEf()
+            {
+                ProductId = productId,
+                UserId = userId
+            };
         }
     }
 }

@@ -1,22 +1,17 @@
 using System.Threading.Tasks;
-using ECommerce.Core.Models;
-using ECommerce.Core.Models.ViewModels;
+using ECommerce.Core.Models.DTOs.Cart;
+using ECommerce.Core.Models.DTOs.GenericResponses;
 
 namespace ECommerce.App.Interfaces.User
 {
     public interface ICartService 
     {
-        Task<ResponseViewModel<CartDto>> GetCart(int userId); 
+        Task<BaseResponse<CartDto>> GetCart(); 
         
-        // Add and remove from cart
-        Task<ResponseViewModel<bool>> AddToCart(int productId); 
-        Task<ResponseViewModel<bool>> RemoveFromCart(int productId);
+        Task<BaseResponse<bool>> AddToCartByProductId(int productId); 
+        Task<BaseResponse<bool>> RemoveFromCart(int productId);
         
-        // Increase and decrease quantity of product in cart
-        Task<ResponseViewModel<bool>> IncreaseQuantity(int productId);
-        Task<ResponseViewModel<bool>> DecreaseQuantity(int productId);
-        
-        // Apply promo code
-        Task<ResponseViewModel<bool>> PromoCode(string code);
+        Task<BaseResponse<bool>> IncreaseQuantity(int productId);
+        Task<BaseResponse<bool>> DecreaseQuantity(int productId);
     }
 }
