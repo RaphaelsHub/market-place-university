@@ -1,12 +1,13 @@
 using System;
 using System.Configuration;
 using System.IdentityModel.Tokens.Jwt;
+using System.Linq;
 using System.Security.Claims;
 using System.Text;
 using System.Threading.Tasks;
 using ECommerce.App.Infrastructure.Abstractions;
 using ECommerce.App.Interfaces.JWT;
-using ECommerce.Core.Entities.User;
+using ECommerce.Core.Models.DTOs.User;
 using Microsoft.IdentityModel.Tokens;
 
 namespace ECommerce.App.Services.JWT
@@ -15,12 +16,10 @@ namespace ECommerce.App.Services.JWT
     {
         private readonly ICookiesService _cookiesService;
 
-        public JwtService(ICookiesService cookiesService)
-        {
+        public JwtService(ICookiesService cookiesService) =>
             _cookiesService = cookiesService;
-        }
 
-        public string GenerateToken(UserEf user)
+        public async Task<string> GenerateToken(UserDto user)
         {
             var tokenHandler = new JwtSecurityTokenHandler(); // подключаем библиотеку System.IdentityModel.Tokens.Jwt
             var keyHashing = Encoding.UTF8.GetBytes(ConfigurationManager.AppSettings["JwtSecretKey"]); // получаем ключ из конфига по которому будем шифровать
@@ -30,7 +29,7 @@ namespace ECommerce.App.Services.JWT
                 // добавляем в токен данные о пользователе
                 Subject = new ClaimsIdentity(new[]
                 {
-                    new Claim("Id", user.UserId.ToString()),
+                    new Claim("Id", user.Id.ToString()),
                     new Claim("Email", user.Email), 
                     new Claim("RoleId", user.UserType.ToString()), 
                 }),
@@ -43,25 +42,45 @@ namespace ECommerce.App.Services.JWT
             };
 
             var token = tokenHandler.CreateToken(tokenDescriptor); // получаем токен
-            return tokenHandler.WriteToken(token); // преобразуем токен в удобную строку 
-
+            return  tokenHandler.WriteToken(token); // преобразуем токен в удобную строку 
         }
 
-        public int GetUserIdFromToken(string token)
+        public async Task<int> GetUserIdFromToken()
         {
-            throw new NotImplementedException();
+            var token = _cookiesService.GetCookie("jwt");
 
+            if (string.IsNullOrEmpty(token))
+                return 0;
+
+            var idClaim = GetClaim("Id", token);
+
+            return idClaim == null ? 0 : int.Parse(idClaim.Value);
         }
 
-        public int GetUserRoleIdFromToken(string token)
+        public async Task<int> GetUserRoleIdFromToken()
         {
-            throw new NotImplementedException();
+            var token = _cookiesService.GetCookie("jwt");
+
+            if (string.IsNullOrEmpty(token))
+                return 0;
+
+            var roleClaim = GetClaim("RoleId", token);
+
+            return roleClaim == null ? 0 : int.Parse(roleClaim.Value);
         }
 
-        public string GetUserEmailFromToken(string token)
+        public async Task<string> GetUserEmailFromToken()
         {
-            throw new NotImplementedException();
+            var token = _cookiesService.GetCookie("jwt");
+
+            if (string.IsNullOrEmpty(token))
+                return "";
+
+            var emailClaim = GetClaim("Email", token);
+
+            return emailClaim == null ? "" : emailClaim.Value;
         }
+        
         public Task<bool> IsTokenValid(string token)
         {
             if (string.IsNullOrEmpty(token))
@@ -93,6 +112,13 @@ namespace ECommerce.App.Services.JWT
         }
         
         public async Task<bool> IsTokenValid() 
-             => await IsTokenValid(await _cookiesService.GetCookie("jwt"));
+             => await IsTokenValid(_cookiesService.GetCookie("jwt"));
+        
+        private Claim GetClaim(string claimType, string token)
+        {
+            var tokenHandler = new JwtSecurityTokenHandler();
+            var jwtToken = tokenHandler.ReadJwtToken(token);
+            return jwtToken.Claims.FirstOrDefault(claim => claim.Type == claimType);
+        }
     }
 }

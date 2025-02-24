@@ -1,16 +1,14 @@
-using System;
 using System.Threading.Tasks;
-using ECommerce.Core.Entities.User;
+using ECommerce.Core.Models.DTOs.User;
 
 namespace ECommerce.App.Interfaces.JWT
 {
     public interface IJwtService
     {
-        string GenerateToken(UserEf user);
-        int GetUserIdFromToken(string token);
-        int GetUserRoleIdFromToken(string token);
-        string GetUserEmailFromToken(string token);
-        Task<bool> IsTokenValid(string token);
+        Task<string> GenerateToken(UserDto user);
+        Task<int> GetUserIdFromToken();
+        Task<int> GetUserRoleIdFromToken();
+        Task<string> GetUserEmailFromToken();
         Task<bool> IsTokenValid();
     }
 }
