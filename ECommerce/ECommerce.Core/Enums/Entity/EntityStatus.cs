@@ -2,8 +2,8 @@ namespace ECommerce.Core.Enums.Entity
 {
     public enum EntityStatus
     {
-        Active,
         Inactive,
+        Active,
         Blocked,
         Deleted
     }
