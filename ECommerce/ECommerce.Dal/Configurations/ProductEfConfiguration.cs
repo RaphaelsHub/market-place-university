@@ -15,7 +15,6 @@ namespace ECommerce.Dal.Configurations
             
             HasRequired(x => x.Category).WithMany().HasForeignKey(x => x.CategoryId);
             
-            HasMany(x => x.RateItems).WithRequired(x => x.Product).HasForeignKey(x => x.ProductId);
         }
 
         #endregion

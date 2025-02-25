@@ -1,51 +1,73 @@
 using System.Collections.Generic;
+using System.Linq;
 using System.Threading.Tasks;
 using ECommerce.App.Interfaces.Product;
 using ECommerce.Core.Entities.Product;
 using ECommerce.Core.Interfaces.Product;
-using ECommerce.Core.Models;
+using ECommerce.Core.Models.DTOs.GenericResponses;
 using ECommerce.Core.Models.DTOs.Product;
-using ECommerce.Core.Models.ViewModels;
+using ExpressMapper;
+using OperationStatus = ECommerce.Core.Enums.Request.OperationStatus;
 
 namespace ECommerce.App.Services.Product
 {
     public class ProductService : IProductService
     {
-        private readonly IProductsRepository<ProductEf> _productsRepository;
+        private readonly IProductsRepository _productsRepository;
         
-        public ProductService(IProductsRepository<ProductEf> productsRepository)
-        {
+        public ProductService(IProductsRepository productsRepository) =>
             _productsRepository = productsRepository;
+
+        public async Task<BaseResponse<ProductDto>> CreateProductAsync(ProductDto product)
+        {
+            var productEf = Mapper.Map<ProductDto, ProductEf>(product);
+
+            var returnedProductEf = await _productsRepository.CreateAsync(productEf);
+            
+            var returnedProductDto = Mapper.Map<ProductEf, ProductDto>(returnedProductEf);
+            
+            return returnedProductEf == null ? 
+                new BaseResponse<ProductDto>(null, OperationStatus.Error, "Product not created") : 
+                new BaseResponse<ProductDto>(returnedProductDto, OperationStatus.Success, "Product created");
         }
 
-        public Task<ResponseViewModel<bool>> CreateProductAsync(ProductDto product)
+        public async Task<BaseResponse<ProductDto>> GetProductByIdAsync(int id)
         {
-            throw new System.NotImplementedException();
+            var productEf = await _productsRepository.GetByIdAsync(id); 
+            
+            if (productEf == null)
+                return new BaseResponse<ProductDto>(null, OperationStatus.Success, "Product not found");
+            return new BaseResponse<ProductDto>(Mapper.Map<ProductEf, ProductDto>(productEf), OperationStatus.Success, "ok");
         }
 
-        public Task<ResponseViewModel<ProductDto>> GetProductAsync(int id)
+        public async Task<BaseResponse<List<ProductDto>>> GetProductsAsync(string productName, int categoryId, int page, int pageSize)
         {
-            throw new System.NotImplementedException();
+            var list = (await _productsRepository.GetPaginatedProductsByNameAndCategoryAsync(productName,categoryId, page, pageSize)).ToList();
+            return new BaseResponse<List<ProductDto>>( list.Select(Mapper.Map<ProductEf, ProductDto>).ToList(), OperationStatus.Success, "ok");
         }
 
-        public Task<ResponseViewModel<IEnumerable<ProductDto>>> GetProductsAsync(int categoryId, int currentPage = 1, int amountOfItemsPerPage = 16)
+        public async Task<BaseResponse<List<ProductDto>>> GetProductsByMostViewedAsync(int amount)
         {
-            throw new System.NotImplementedException();
+            var list = (await _productsRepository.GetProductsByMostViewedAsync(amount)).ToList();
+            return new BaseResponse<List<ProductDto>>( list.Select(Mapper.Map<ProductEf, ProductDto>).ToList(), OperationStatus.Success, "ok");
         }
 
-        public Task<ResponseViewModel<IEnumerable<ProductDto>>> GetProductsAsync(string search, int categoryId = 0, int currentPage = 1, int amountOfItemsPerPage = 16)
+
+        public async Task<BaseResponse<ProductDto>> UpdateProductAsync(ProductDto product)
         {
-            throw new System.NotImplementedException();
+            var productEf = Mapper.Map<ProductDto, ProductEf>(product);
+            
+            var returnedProductEf = await _productsRepository.UpdateAsync(productEf);
+            
+            if (returnedProductEf == null)
+                return new BaseResponse<ProductDto>(null, OperationStatus.Error, "Product not updated");
+            return new BaseResponse<ProductDto>(Mapper.Map<ProductEf, ProductDto>(returnedProductEf), OperationStatus.Success, "Product updated");
         }
 
-        public Task<ResponseViewModel<bool>> UpdateProductAsync(ProductDto product)
+        public async Task<BaseResponse<bool>> DeleteProductByIdAsync(int id)
         {
-            throw new System.NotImplementedException();
-        }
-
-        public Task<ResponseViewModel<bool>> DeleteProductAsync(int id)
-        {
-            throw new System.NotImplementedException();
+            await _productsRepository.DeleteByIdAsync(id);
+            return new BaseResponse<bool>(true, OperationStatus.Success, "Product deleted");
         }
     }
 }
