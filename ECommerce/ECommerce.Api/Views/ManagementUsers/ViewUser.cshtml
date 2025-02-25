@@ -2,13 +2,16 @@
     ViewBag.Title = "User Details";
     Layout = "~/Views/Shared/_AdminLayout.cshtml";
 }
+@using ECommerce.Core.Enums.Entity
+@using ECommerce.Core.Enums.User
+@model ECommerce.Core.Models.DTOs.GenericResponses.BaseResponse<ECommerce.Core.Models.DTOs.User.UserDto>
 
 <div class="container mt-5">
     <div class="d-flex justify-content-between align-items-center mb-3">
         <h2>User Details</h2>
         <div>
-            <button class="btn btn-success">Save</button>
-            <button class="btn btn-danger">Delete</button>
+            <button class="btn btn-success" onclick="updateUser()">Save</button>
+            <button class="btn btn-danger" onclick="deleteUser()">Delete</button>
         </div>
     </div>
 
@@ -19,21 +22,31 @@
                 <div class="col-md-6">
                     <div class="mb-3">
                         <label for="fullName" class="form-label">Full Name</label>
-                        <input type="text" class="form-control" id="fullName" value="John Doe">
+                        <input type="text" class="form-control" id="fullName" value="@Model.Data.FullName">
                     </div>
                     <div class="mb-3">
                         <label for="email" class="form-label">Email</label>
-                        <input type="email" class="form-control" id="email" value="johndoe@example.com">
+                        <input type="email" class="form-control" id="email" value="@Model.Data.Email">
                     </div>
                     <div class="mb-3">
                         <label for="dateRegistered" class="form-label">Date Registered</label>
-                        <input type="date" class="form-control" id="dateRegistered" value="2025-02-10">
+                        <input class="form-control" id="dateRegistered" value="@Model.Data.DateRegistered" readonly>
                     </div>
+
                     <div class="mb-3">
                         <label for="hasNewsletter" class="form-label">Newsletter Subscription</label>
                         <select class="form-select" id="hasNewsletter">
-                            <option selected>Yes</option>
-                            <option>No</option>
+                            @if (Model.Data.IsSignUpForLetters == SignUpForLettersStatus.Yes)
+                            {
+                                <option selected>Yes</option>
+                                <option>No</option>
+
+                            }
+                            else
+                            {
+                                <option>Yes</option>
+                                <option selected>No</option>
+                            }
                         </select>
                     </div>
                 </div>
@@ -41,24 +54,43 @@
                     <div class="mb-3">
                         <label for="userType" class="form-label">User Type</label>
                         <select class="form-select" id="userType">
-                            <option selected>Admin</option>
-                            <option>User</option>
-                            <option>Moderator</option>
+                            @foreach (var userType in Enum.GetValues(typeof(UserType)))
+                            {
+                                if (Model.Data.UserType.ToString() == userType.ToString())
+                                {
+                                    <option selected>@userType</option>
+                                    continue;
+                                }
+                                <option>@userType</option>
+                            }
                         </select>
                     </div>
                     <div class="mb-3">
                         <label for="userStatus" class="form-label">User Status</label>
                         <select class="form-select" id="userStatus">
-                            <option selected>Active</option>
-                            <option>Inactive</option>
-                            <option>Banned</option>
+                            @foreach(var userStatus in Enum.GetValues(typeof(EntityStatus)))
+                            {
+                                if (Model.Data.UserStatus.ToString() == userStatus.ToString())
+                                {
+                                    <option selected>@userStatus</option>
+                                    continue;
+                                }
+                                <option>@userStatus</option>
+                            }
                         </select>
                     </div>
                     <div class="mb-3">
                         <label for="verificationStatus" class="form-label">Account Verification Status</label>
                         <select class="form-select" id="verificationStatus">
-                            <option selected>Verified</option>
-                            <option>Unverified</option>
+                            @foreach(var verificationStatus in Enum.GetValues(typeof(AccountVerificationStatus)))
+                            {
+                                if (Model.Data.IsVerified.ToString() == verificationStatus.ToString())
+                                {
+                                    <option selected>@verificationStatus</option>
+                                    continue;
+                                }
+                                <option>@verificationStatus</option>
+                            }
                         </select>
                     </div>
                 </div>
@@ -97,5 +129,40 @@
             </div>
         </div>
     </div>
-
 </div>
+
+<script>
+    function updateUser() {
+        var user = {
+            Id: '@Model.Data.Id',
+            FullName: document.getElementById('fullName').value,
+            Email: document.getElementById('email').value,
+            UserType: document.getElementById('userType').value,
+            UserStatus: document.getElementById('userStatus').value,
+            IsVerified: document.getElementById('verificationStatus').value,
+            IsSignUpForLetters: document.getElementById('hasNewsletter').value
+        };
+
+        $.ajax({
+            url: '@Url.Action("UpdateUser", "ManagementUsers")',
+            type: 'POST',
+            data: user,
+            success: function () {
+                alert('User updated successfully');
+            }
+        });
+    }
+
+    function deleteUser() {
+        var id = '@Model.Data.Id';
+
+        $.ajax({
+            url: '@Url.Action("DeleteUser", "ManagementUsers")',
+            type: 'POST',
+            data: { id: id },
+            success: function () {
+                window.location.href = '@Url.Action("Index", "ManagementUsers")';
+            }
+        });
+    }
+</script>
