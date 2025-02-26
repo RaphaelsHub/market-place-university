@@ -24,6 +24,20 @@ namespace ECommerce.Controllers
             
             return View(model);
         }
-        [HttpGet] public ActionResult ContactUs() => View();
+
+        [HttpGet]
+        public async Task<ActionResult> ContactUs(string email = "", int page = 1, int pageSize=20)
+        {
+            var response = await _contactUsService.GetContactUsRequestsAsync(email,page,pageSize);
+            var list = response.Data;
+            return View(list);
+        }
+
+        [HttpPost]
+        public async Task<ActionResult> DeleteData(int id)
+        {
+           await _contactUsService.DeleteContactUsRequestByIdAsync(id);
+           return RedirectToAction("ContactUs", "ManagementWebSiteData");
+        }
     }
 }

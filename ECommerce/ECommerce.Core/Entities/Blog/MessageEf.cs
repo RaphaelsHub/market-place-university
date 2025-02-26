@@ -1,6 +1,6 @@
 using System;
 using ECommerce.Core.Entities.User;
-using ECommerce.Core.Enums.Message;
+using ECommerce.Core.Enums.Entity;
 
 namespace ECommerce.Core.Entities.Blog
 {
@@ -8,11 +8,11 @@ namespace ECommerce.Core.Entities.Blog
     {
         public int MessageId { get; set; }
         public string Content { get; set; } = "";
-        public DateTime DateSent { get; set; } = DateTime.Now;
-        public MessageStatus Status { get; set; } = MessageStatus.Active;
         public bool IsReplied { get; set; } = false;
+        public DateTime DateSent { get; set; } = DateTime.Now;
+        public EntityStatus Status { get; set; } = EntityStatus.Active;
         
-        public int? BlogId { get; set; }
+        public int BlogId { get; set; }
         public BlogEf Blog { get; set; }
         
         public int UserSenderId { get; set; }

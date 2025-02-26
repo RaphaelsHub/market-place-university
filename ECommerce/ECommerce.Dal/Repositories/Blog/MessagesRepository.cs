@@ -6,41 +6,35 @@ using ECommerce.Core.Interfaces.Blog;
 
 namespace ECommerce.Dal.Repositories.Blog
 {
-    public class MessagesRepository : IMessagesRepository<MessageEf>
+    public class MessagesRepository : IMessagesRepository
     {
         private readonly StoreContext _context;
 
-        public MessagesRepository(StoreContext context)
-        {
+        public MessagesRepository(StoreContext context) =>
             _context = context;
+
+        public async Task<List<MessageEf>> GetMessagesByIdAsync(int idBlog)
+        {
+            var result = await _context.Blogs.Include(x => x.Comments).FirstOrDefaultAsync(x => x.BlogId == idBlog);
+            return result?.Comments;
         }
 
-        public async Task<IEnumerable<MessageEf>> GetAllAsync() =>
-            await _context.Messages.ToListAsync();
-
-        public async Task<MessageEf> GetByIdAsync(int id) =>
-            await _context.Messages.FirstOrDefaultAsync(x => x.MessageId == id);
-
-        public async Task CreateAsync(MessageEf entity)
+        public async Task<MessageEf> AddMessageAsync(int idBlog, MessageEf message)
         {
-            _context.Messages.Add(entity);
+            var result = await _context.Blogs.FirstOrDefaultAsync(x => x.BlogId == idBlog);
+            result?.Comments.Add(message);
             await _context.SaveChangesAsync();
+            return message;
         }
 
-        public async Task UpdateAsync(MessageEf entity)
+        public async Task<bool> DeleteMessageByIdAsync(int idBlog, int idMessage)
         {
-            _context.Messages.Attach(entity);
+            var result = await _context.Blogs.Include(x => x.Comments).FirstOrDefaultAsync(x => x.BlogId == idBlog);
+            var message = result?.Comments.Find(x => x.MessageId == idMessage);
+            if (message == null) return false;
+            result.Comments.Remove(message);
             await _context.SaveChangesAsync();
-        }
-
-        public async Task DeleteByIdAsync(int id)
-        {
-            var message = await _context.Messages.FirstOrDefaultAsync(x => x.MessageId == id);
-            if (message != null)
-            {
-                _context.Messages.Remove(message);
-                await _context.SaveChangesAsync();
-            }
+            return true;
         }
     }
 }
