@@ -11,7 +11,7 @@ namespace ECommerce.Dal.Configurations
         {
             ToTable("Categories");
 
-            HasKey(x => x.ParentCategoryId);
+            HasKey(x => x.CategoryId);
 
             HasMany(x => x.Filters).WithRequired(x => x.Category)
                 .HasForeignKey(x => x.CategoryId);

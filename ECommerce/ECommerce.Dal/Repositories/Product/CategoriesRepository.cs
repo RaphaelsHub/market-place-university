@@ -6,7 +6,7 @@ using ECommerce.Core.Interfaces.Product;
 
 namespace ECommerce.Dal.Repositories.Product
 {
-    public class CategoriesRepository : ICategoriesRepository<CategoryEf>
+    public class CategoriesRepository : ICategoriesRepository
     {
         private readonly StoreContext _context;
 
@@ -19,23 +19,25 @@ namespace ECommerce.Dal.Repositories.Product
             await _context.Categories.ToListAsync();
 
         public async Task<CategoryEf> GetByIdAsync(int id) =>
-            await _context.Categories.FirstOrDefaultAsync(x => x.ParentCategoryId == id);
+            await _context.Categories.FirstOrDefaultAsync(x => x.CategoryId == id);
 
-        public async Task CreateAsync(CategoryEf entity)
+        public async Task<CategoryEf> CreateAsync(CategoryEf entity)
         {
             _context.Categories.Add(entity);
             await _context.SaveChangesAsync();
+            return entity;
         }
 
-        public async Task UpdateAsync(CategoryEf entity)
+        public async Task<CategoryEf> UpdateAsync(CategoryEf entity)
         {
             _context.Categories.Attach(entity);
             await _context.SaveChangesAsync();
+            return entity;  
         }
 
         public async Task DeleteByIdAsync(int id)
         {
-            var category = await _context.Categories.FirstOrDefaultAsync(x => x.ParentCategoryId == id);
+            var category = await _context.Categories.FirstOrDefaultAsync(x => x.CategoryId == id);
             if (category != null)
             {
                 _context.Categories.Remove(category);

@@ -1,0 +1,84 @@
+@{
+    ViewBag.Title = "Category Management";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+@using ECommerce.Core.Entities.Product
+
+<div class="container mt-5">
+    <div class="row mb-3">
+        <div class="col-md-4">
+            <select id="categorySelect" class="form-control">
+                <option value="">Select Existing Category</option>
+                @* $1$ @foreach (var category in ViewBag.Categories) #1# *@
+                @* $1$ { #1# *@
+                @*     <option value="@category.CategoryId">@category.Name</option> *@
+                @* } *@
+                <option value="new">Create New Category</option>
+            </select>
+        </div>
+    </div>
+
+    <div id="categoryForm" style="display:none;">
+        <div class="row mb-3">
+            <div class="col-md-6">
+                <input type="text" id="categoryName" class="form-control" placeholder="Category Name">
+            </div>
+        </div>
+
+        <div id="filtersContainer">
+            <h5>Filters</h5>
+            <div id="filtersList">
+            </div>
+            <button type="button" class="btn btn-secondary" onclick="addFilter()">Add Filter</button>
+        </div>
+
+        <button type="button" class="btn btn-primary mt-3" onclick="saveCategory()">Save Category</button>
+    </div>
+</div>
+
+<script>
+    document.getElementById('categorySelect').addEventListener('change', function() {
+        const selectedValue = this.value;
+        if (selectedValue === 'new' || selectedValue) {
+            document.getElementById('categoryForm').style.display = 'block';
+        } else {
+            document.getElementById('categoryForm').style.display = 'none';
+        }
+    });
+
+    function addFilter() {
+        const filterId = Date.now();
+        const filterHtml = `
+            <div id="filter-${filterId}" class="mb-3">
+                <input type="text" class="form-control mb-2" placeholder="Filter Name">
+                <div id="values-${filterId}"></div>
+                <button type="button" class="btn btn-sm btn-info" onclick="addFilterValue(${filterId})">Add Filter Value</button>
+                <button type="button" class="btn btn-sm btn-danger" onclick="removeFilter(${filterId})">Remove Filter</button>
+            </div>`;
+        document.getElementById('filtersList').insertAdjacentHTML('beforeend', filterHtml);
+    }
+
+    function addFilterValue(filterId) {
+        const valueId = Date.now();
+        const valueHtml = `
+            <div id="value-${valueId}" class="d-flex align-items-center mb-2">
+                <input type="text" class="form-control" placeholder="Filter Value">
+                <input type="checkbox" class="form-check-input ms-2" id="available-${valueId}">
+                <label for="available-${valueId}" class="ms-1">Is Available</label>
+                <button type="button" class="btn btn-sm btn-danger ms-2" onclick="removeFilterValue(${valueId})">Remove</button>
+            </div>`;
+        document.getElementById(`values-${filterId}`).insertAdjacentHTML('beforeend', valueHtml);
+    }
+
+    function removeFilter(filterId) {
+        document.getElementById(`filter-${filterId}`).remove();
+    }
+
+    function removeFilterValue(valueId) {
+        document.getElementById(`value-${valueId}`).remove();
+    }
+
+    function saveCategory() {
+        alert('Category saved (mock action)');
+    }
+</script>

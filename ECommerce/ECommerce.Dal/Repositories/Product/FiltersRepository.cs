@@ -6,7 +6,7 @@ using ECommerce.Core.Interfaces.Product;
 
 namespace ECommerce.Dal.Repositories.Product
 {
-    public class FiltersRepository : IFiltersRepository<FilterEf>
+    public class FiltersRepository : IFiltersRepository
     {
         private readonly StoreContext _context;
 
@@ -21,16 +21,18 @@ namespace ECommerce.Dal.Repositories.Product
         public async Task<FilterEf> GetByIdAsync(int id) =>
             await _context.Filters.FirstOrDefaultAsync(x => x.FilterId == id);
 
-        public async Task CreateAsync(FilterEf entity)
+        public async Task<FilterEf> CreateAsync(FilterEf entity)
         {
             _context.Filters.Add(entity);
             await _context.SaveChangesAsync();
+            return entity;
         }
 
-        public async Task UpdateAsync(FilterEf entity)
+        public async Task<FilterEf> UpdateAsync(FilterEf entity)
         {
             _context.Filters.Attach(entity);
             await _context.SaveChangesAsync();
+            return entity;
         }
 
         public async Task DeleteByIdAsync(int id)
