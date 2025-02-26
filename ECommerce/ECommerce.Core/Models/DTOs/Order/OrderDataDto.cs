@@ -42,5 +42,6 @@ namespace ECommerce.Core.Models.DTOs.Order
         [StringLength(100, MinimumLength = 10, ErrorMessage = "Message must be between 10 and 100 characters")]
         public string OrderNote { get; set; }
         
+        public PaymentType PaymentType { get; set; }
     }
 }

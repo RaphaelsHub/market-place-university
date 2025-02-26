@@ -3,7 +3,7 @@ using ECommerce.Core.Enums.Order;
 
 namespace ECommerce.Core.Models.DTOs.Order
 {
-    public class OrderStatusInfoDto
+    public class OrderStatusDto
     {
         public DateTime OrderDate { get; set; }
         public DateTime EstimatedDeliveryDate { get; set; }

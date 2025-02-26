@@ -2,7 +2,7 @@ using ECommerce.Core.Enums.Order;
 
 namespace ECommerce.Core.Models.DTOs.Order
 {
-    public class PaymentInfoDto
+    public class PaymentDto
     {
         public decimal SubTotalPrice { get; set; }
         
@@ -10,6 +10,6 @@ namespace ECommerce.Core.Models.DTOs.Order
         
         public decimal DiscountPrice { get; set; }
         
-        public PaymentType PaymentType { get; set; } = PaymentType.None;
+        public PaymentType PaymentType { get; set; }
     }
 }
