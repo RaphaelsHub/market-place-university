@@ -1,86 +1,67 @@
 ﻿using System;
 using System.Threading.Tasks;
 using System.Web.Mvc;
-using ECommerce.App.Interfaces.Auth;
-using ECommerce.App.Interfaces.JWT;
+using ECommerce.App.Interfaces.User;
 using ECommerce.Core.Constants;
-using ECommerce.Core.Models.DTOs.Auth;
-using ECommerce.Core.Models.ViewModels;
+using ECommerce.Core.Models.DTOs.GenericResponses;
+using ECommerce.Core.Models.DTOs.User;
 
 namespace ECommerce.Controllers
 {
-    /// <summary>
-    /// Controller for handling authentication operations
-    /// </summary>
     public class AuthController : BaseController
     {
         private readonly IAuthenticationService _authService;
-        private readonly IJwtService _jwtService;
 
-        public AuthController(IAuthenticationService authService, IJwtService jwtService)
-        {
+        public AuthController(IAuthenticationService authService) =>
             _authService = authService;
-            _jwtService = jwtService;
-        }
 
-        [HttpGet] public async Task<ActionResult> SignIn() => await _jwtService.IsTokenValid()
-            ? (ActionResult)RedirectToAction("Index", "Home")
-            : View();
+        [HttpGet]
+        public async Task<ActionResult> SignIn() => await CheckTokenValidity();
 
-        
-        [HttpGet] public async Task<ActionResult> SignUp() => await _jwtService.IsTokenValid()
-            ? (ActionResult)RedirectToAction("Index", "Home")  
-            : View();
-    
-        [HttpPost] public async Task<ActionResult> SignIn(SignInDto signInDto) => 
+        [HttpGet]
+        public async Task<ActionResult> SignUp() => await CheckTokenValidity();
+
+        [HttpPost]
+        public async Task<ActionResult> SignIn(SignInDto signInDto) =>
             await ProcessAuthentication(async () => await _authService.SignIn(signInDto), signInDto);
-        
-        [HttpPost] public async Task<ActionResult> SignUp(SignUpDto signUpDto) => 
+
+        [HttpPost]
+        public async Task<ActionResult> SignUp(SignUpDto signUpDto) =>
             await ProcessAuthentication(async () => await _authService.SignUp(signUpDto), signUpDto);
 
-        [HttpGet] public async Task<ActionResult> SignOut()
+        [HttpGet]
+        public async Task<ActionResult> SignOut()
         {
-            try
-            {
-                var response = await _authService.Logout();
-
-                if (!response.Data)
-                    return RedirectToErrorPage(500);
-
-                return RedirectToAction("SignIn", "Auth");
-            }
-            catch (Exception e)
-            {
-                Console.WriteLine($"Error has occured : {e.Message}");
-                return RedirectToErrorPage(500);
-            }
+            await _authService.Logout();
+            return Redirect("/Home/Index");
         }
 
         private async Task<ActionResult> ProcessAuthentication
-            (Func<Task<ResponseViewModel<bool>>> authServiceMethod, object dto)
+            (Func<Task<BaseResponse<bool>>> authServiceMethod, object dto)
         {
-            if (await _jwtService.IsTokenValid())
-                return RedirectToAction("Index", "Home");
+            var tokenResponse = await _authService.IsTokenValid();
 
-            if (!ModelState.IsValid)
+            if (tokenResponse.Data) return RedirectToAction("Index", "Home");
+
+            if (!ModelState.IsValid) return View(dto);
+
+            var authResponse = await authServiceMethod();
+
+            if (!authResponse.Data)
+            {
+                TempData[TempDataKeys.Error] = authResponse.Message;
                 return View(dto);
-
-            try
-            {
-                var response = await authServiceMethod();
-
-                if (!response.Data)
-                {
-                    TempData[TempDataKeys.Error] = response.Message;
-                    return View(dto);
-                }
-                return RedirectToAction("Index", "Home");
             }
-            catch (Exception e)
-            {
-                Console.WriteLine($"Error has occured : {e.Message}");
-                return RedirectToErrorPage(500);
-            }
+
+            return RedirectToAction("Index", "Home");
+        }
+
+        private async Task<ActionResult> CheckTokenValidity()
+        {
+            var response = await _authService.IsTokenValid();
+            if (response.Data)
+                return Redirect("/Home/Index");
+            return View();
         }
     }
 }

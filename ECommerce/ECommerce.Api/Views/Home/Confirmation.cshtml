@@ -2,7 +2,7 @@
     Layout = null;
 }
 
-@model ECommerce.Core.Models.ViewModels.MessageViewModel
+@model ECommerce.Core.Models.ViewModels.ConfirmationViewModel
 
 <!DOCTYPE html>
 <html lang="zxx">
@@ -51,7 +51,6 @@
                             <div class="error-inner">
                                     <h2>@Model.Status.ToString()</h2>
                                     <h5>@Model.Message</h5>
-                                    <p>Your track id is: @Model.IdTrack </p>
                                     <div class="button">
                                         <a href="@Url.Action("Index", "Home")" class="btn">Go to main page</a>
                                     </div>
@@ -74,8 +73,8 @@
     <script src="~/Asset/js/magnific-popup.js"></script>
     <script src="~/Asset/js/facnybox.min.js"></script>
     <script src="~/Asset/js/waypoints.min.js"></script>
-    <script src="~/Asset/js/finalcountdown.min.js"></script>
-    <script src="~/Asset/js/nicesellect.js"></script>
+    <script src="~/Asset/js/final-countdown.min.js"></script>
+    <script src="~/Asset/js/niceSelect.js"></script>
     <script src="~/Asset/js/flex-slider.js"></script>
     <script src="~/Asset/js/scrollup.js"></script>
     <script src="~/Asset/js/onepage-nav.min.js"></script>
