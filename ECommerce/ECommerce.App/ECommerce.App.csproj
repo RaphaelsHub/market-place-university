@@ -55,28 +55,21 @@
         <Compile Include="Infrastructure\Services\CacheService.cs" />
         <Compile Include="Infrastructure\Services\CookiesService.cs" />
         <Compile Include="Infrastructure\Services\SessionService.cs" />
-        <Compile Include="Interfaces\Admin\IAdminService.cs" />
-        <Compile Include="Interfaces\Auth\IAccountManagementService.cs" />
-        <Compile Include="Interfaces\Auth\IAuthenticationService.cs" />
-        <Compile Include="Interfaces\Auth\IAuthorizationService.cs" />
         <Compile Include="Interfaces\Blog\IBlogService.cs" />
         <Compile Include="Interfaces\JWT\IJwtService.cs" />
         <Compile Include="Interfaces\Product\ICategoryService.cs" />
         <Compile Include="Interfaces\Product\IProductService.cs" />
+        <Compile Include="Interfaces\User\IAuthenticationService.cs" />
         <Compile Include="Interfaces\User\ICartService.cs" />
         <Compile Include="Interfaces\User\IContactUsService.cs" />
         <Compile Include="Interfaces\User\IOrderService.cs" />
         <Compile Include="Interfaces\User\IUserService.cs" />
         <Compile Include="Properties\AssemblyInfo.cs"/>
-        <Compile Include="Services\Admin\AdminService.cs" />
-        <Compile Include="Services\Auth\AccountManagementService.cs" />
-        <Compile Include="Services\Auth\AuthenticationService.cs" />
-        <Compile Include="Services\Auth\AuthorizationService.cs" />
         <Compile Include="Services\Blog\BlogService.cs" />
         <Compile Include="Services\JWT\JwtService.cs" />
-        <Compile Include="Services\MapService\MapService.cs" />
         <Compile Include="Services\Product\CategoryService.cs" />
         <Compile Include="Services\Product\ProductService.cs" />
+        <Compile Include="Services\User\AuthenticationService.cs" />
         <Compile Include="Services\User\CartService.cs" />
         <Compile Include="Services\User\ContactUsService.cs" />
         <Compile Include="Services\User\OrderService.cs" />
@@ -103,6 +96,7 @@
       <None Include="App.config" />
     </ItemGroup>
     <ItemGroup>
+      <PackageReference Include="Expressmapper" Version="1.9.1" />
       <PackageReference Include="Newtonsoft.Json" Version="13.0.3" />
       <PackageReference Include="System.IdentityModel.Tokens.Jwt" Version="8.5.0" />
     </ItemGroup>

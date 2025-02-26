@@ -2,6 +2,7 @@
     ViewBag.Title = "Cart";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
+@model ECommerce.Core.Models.DTOs.Cart.CartDto
 
 <div class="breadcrumbs" style="background-color: #ffffff;">
     <div class="container">
@@ -10,84 +11,154 @@
                 <div class="bread-inner">
                     <ul class="bread-list">
                         <li><a href="@Url.Action("Index", "Home")">Home<i class="ti-arrow-right"></i></a></li>
-                        <li class="active"><a href="@Url.Action("Cart", "Shopping")">Cart</a></li>
+                        <li class="active"><a href="@Url.Action("Index", "Cart")">Cart</a></li>
                     </ul>
                 </div>
             </div>
         </div>
     </div>
 </div>
-<div class="container mt-4">
-    <h2 class="mb-3">Shopping Cart</h2>
 
-    <div class="row">
-        <!-- Колонка с таблицей товаров -->
-        <div class="col-md-8">
-            <div class="table-responsive">
-                <table class="table table-bordered table-striped text-center">
-                    <thead class="table-dark">
-                    <tr>
-                        <th style="width: 70px;">PHOTO</th>
-                        <th style="width: 300px;">NAME</th>
-                        <th style="width: 120px;">UNIT PRICE</th>
-                        <th style="width: 100px;">QUANTITY</th>
-                        <th style="width: 140px;">TOTAL</th>
-                        <th style="width: 100px;"><i class="ti-trash remove-icon"></i></th>
-                    </tr>
-                    </thead>
-                    <tbody>
-                    <tr>
-                        <td><img src="https://via.placeholder.com/50" alt="Product" class="img-fluid"></td>
-                        <td>Sample Product 1</td>
-                        <td>500.00 ₽</td>
-                        <td>
-                            <input type="number" class="form-control text-center" value="1" min="1">
-                        </td>
-                        <td>500.00 ₽</td>
-                        <td><button class="btn btn-danger btn-sm"><i class="ti-trash"></i></button></td>
-                    </tr>
-                    <tr>
-                        <td><img src="https://via.placeholder.com/50" alt="Product" class="img-fluid"></td>
-                        <td>Sample Product 2</td>
-                        <td>300.00 ₽</td>
-                        <td>
-                            <input type="number" class="form-control text-center" value="2" min="1">
-                        </td>
-                        <td>600.00 ₽</td>
-                        <td><button class="btn btn-danger btn-sm"><i class="ti-trash"></i></button></td>
-                    </tr>
-                    </tbody>
-                </table>
-            </div>
-        </div>
-
-        <!-- Колонка с Order Summary -->
-        <div class="col-md-4 order-md-last">
-            <div class="card shadow-sm border-0">
-                <div class="card-body">
-                    <h5 class="card-title text-center mb-3">Order Summary</h5>
-                    <table class="table table-borderless">
+@if (Model != null && Model.Products.Count > 0)
+{
+    <div class="container mt-4">
+        <h2 class="mb-3">Shopping Cart</h2>
+        <div class="row">
+            <div class="col-md-8">
+                <div class="table-responsive">
+                    <table class="table table-bordered table-striped text-center">
+                        <thead class="table-dark">
                         <tr>
-                            <th>Cart Subtotal:</th>
-                            <td class="text-end">1,100.00 ₽</td>
+                            <th style="width: 70px;">PHOTO</th>
+                            <th style="width: 300px;">NAME</th>
+                            <th style="width: 120px;">UNIT PRICE</th>
+                            <th style="width: 100px;">QUANTITY</th>
+                            <th style="width: 140px;">TOTAL</th>
+                            <th style="width: 100px;"><i class="ti-trash remove-icon"></i></th>
                         </tr>
-                        <tr>
-                            <th>You Save:</th>
-                            <td class="text-end text-success">-100.00 ₽</td>
-                        </tr>
-                        <tr class="border-top">
-                            <th class="pt-2">You Pay:</th>
-                            <td class="text-end fw-bold pt-2">1,000.00 ₽</td>
-                        </tr>
+                        </thead>
+                        <tbody>
+                        @foreach (var item in Model.Products)
+                        {
+                            <tr>
+                                <td><img src="@item.Product.Image" alt="Product" class="img-fluid"></td>
+                                <td>@item.Product.Name</td>
+                                <td>@item.Product.Price$"</td>
+                                <td>
+                                    <div class="input-group">
+                                        <button class="btn btn-warning btn-sm decrease-quantity" data-id="@item.Product.ProductId">-</button>
+                                        <input type="number" class="form-control text-center" value="@item.Quantity" min="1" readonly>
+                                        <button class="btn btn-success btn-sm increase-quantity" data-id="@item.Product.ProductId">+</button>
+                                    </div>
+                                </td>
+                                <td>@item.Quantity*@item.Product.PriceWithDiscount₽</td>
+                                <td><button class="btn btn-danger btn-sm remove-item" data-id="@item.Product.ProductId"><i class="ti-trash"></i></button></td>
+                            </tr>
+                        }
+                        </tbody>
                     </table>
-                    <button class="btn btn-primary w-100 mt-2">Proceed to Checkout</button>
+                </div>
+            </div>
+
+            <div class="col-md-4 order-md-last">
+                <div class="card shadow-sm border-0">
+                    <div class="card-body">
+                        <h5 class="card-title text-center mb-3">Order Summary</h5>
+                        <table class="table table-borderless">
+                            <tr>
+                                <th>Cart Subtotal:</th>
+                                <td class="text-end">@Model.SubTotalPrice$</td>
+                            </tr>
+                            <tr>
+                                <th>You Save:</th>
+                                <td class="text-end text-success">-@Model.Save$"</td>
+                            </tr>
+                            <tr class="border-top">
+                                <th class="pt-2">You Pay:</th>
+                                <td class="text-end fw-bold pt-2">@Model.FinalPrice$"</td>
+                            </tr>
+                        </table>
+                        <button class="btn btn-primary w-100 mt-2">Proceed to Checkout</button>
+                    </div>
                 </div>
             </div>
         </div>
     </div>
-</div>
+}
+else
+{
+    <div class="container mt-5">
+        <div class="alert alert-warning text-center" role="alert">
+            Your cart is empty!
+        </div>
+    </div>
+}
 
 <div class="mt-5"></div> 
 
 @Html.Partial("~/Views/Shared/Partials/StoreAdvantages.cshtml")
 
+<script>
+    $(document).ready(function() {
+        // Increase quantity
+        $('.increase-quantity').click(function() {
+            const productId = $(this).data('id');
+            $.ajax({
+                url: '/Cart/IncreaseQuantity',
+                type: 'POST',
+                data: { idProduct: productId },
+                success: function(response) {
+                    if (response) {
+                        location.reload();
+                    } else {
+                        alert('Failed to increase quantity.');
+                    }
+                },
+                error: function() {
+                    alert('An error occurred.');
+                }
+            });
+        });
+
+        // Decrease quantity
+        $('.decrease-quantity').click(function() {
+            const productId = $(this).data('id');
+            $.ajax({
+                url: '/Cart/DecreaseQuantity',
+                type: 'POST',
+                data: { idProduct: productId },
+                success: function(response) {
+                    if (response) {
+                        location.reload();
+                    } else {
+                        alert('Failed to decrease quantity.');
+                    }
+                },
+                error: function() {
+                    alert('An error occurred.');
+                }
+            });
+        });
+
+        // Remove item
+        $('.remove-item').click(function() {
+            const productId = $(this).data('id');
+            $.ajax({
+                url: '/Cart/RemoveItem',
+                type: 'POST',
+                data: { idProduct: productId },
+                success: function(response) {
+                    if (response) {
+                        location.reload();
+                    } else {
+                        alert('Failed to remove item.');
+                    }
+                },
+                error: function() {
+                    alert('An error occurred.');
+                }
+            });
+        });
+    });
+
+</script>

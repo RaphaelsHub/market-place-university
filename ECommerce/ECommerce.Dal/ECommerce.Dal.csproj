@@ -32,6 +32,9 @@
         <WarningLevel>4</WarningLevel>
     </PropertyGroup>
     <ItemGroup>
+        <Reference Include="ExpressMapper">
+          <HintPath>..\..\..\..\.nuget\packages\expressmapper\1.9.1\lib\net46\ExpressMapper.dll</HintPath>
+        </Reference>
         <Reference Include="System" />
         <Reference Include="System.ComponentModel.DataAnnotations" />
         <Reference Include="System.Configuration" />
@@ -51,21 +54,16 @@
         <Compile Include="Configurations\OrderEfConfiguration.cs" />
         <Compile Include="Configurations\OrderItemEfConfiguration.cs" />
         <Compile Include="Configurations\ProductEfConfiguration.cs" />
-        <Compile Include="Configurations\RateItemEfConfiguration.cs" />
         <Compile Include="Configurations\UserEfConfiguration.cs" />
         <Compile Include="Properties\AssemblyInfo.cs" />
-        <Compile Include="Repositories\Admin\WebSiteControl.cs" />
         <Compile Include="Repositories\Blog\BlogsRepository.cs" />
         <Compile Include="Repositories\Blog\MessagesRepository.cs" />
         <Compile Include="Repositories\Product\CategoriesRepository.cs" />
         <Compile Include="Repositories\Product\FiltersRepository.cs" />
         <Compile Include="Repositories\Product\FilterValuesRepository.cs" />
         <Compile Include="Repositories\Product\ProductsRepository.cs" />
-        <Compile Include="Repositories\Product\RateItemsRepository.cs" />
-        <Compile Include="Repositories\User\AddressesRepository.cs" />
-        <Compile Include="Repositories\User\CartItemsRepository.cs" />
+        <Compile Include="Repositories\User\CartRepository.cs" />
         <Compile Include="Repositories\User\ContactUsRepository.cs" />
-        <Compile Include="Repositories\User\OrderItemsRepository.cs" />
         <Compile Include="Repositories\User\OrdersRepository.cs" />
         <Compile Include="Repositories\User\UsersRepository.cs" />
         <Compile Include="StoreContext.cs" />
@@ -88,6 +86,7 @@
     </ItemGroup>
     <ItemGroup>
       <PackageReference Include="EntityFramework" Version="6.5.1" />
+      <PackageReference Include="Expressmapper" Version="1.9.1" />
       <PackageReference Include="System.Data.SqlClient" Version="4.9.0" />
     </ItemGroup>
     <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
