@@ -1,18 +1,48 @@
-﻿using System.Web.Mvc;
+﻿using System.Threading.Tasks;
+using System.Web.Mvc;
+using ECommerce.App.Services.User;
+using ECommerce.Core.Enums.Order;
+using ECommerce.Core.Models.DTOs.Order;
 using ECommerce.Core.Models.DTOs.User;
 
 namespace ECommerce.Controllers
 {
     public class ManagementOrdersController : Controller
     {
-        [HttpGet] public ActionResult Index(string searchByOrderName="", string time ="", string sort="", int page = 1, int usersPerPage= 100) => View();
+        private readonly OrderService _orderService;
+
+        public ManagementOrdersController(OrderService orderService)
+        {
+            _orderService = orderService;
+        }
+
+        [HttpGet]
+        public async Task<ActionResult> Index(string searchByOrderName = "", OrderStatus orderStatus = OrderStatus.Pending,
+            int page = 1, int usersPerPage = 20)
+        {
+            var response =await _orderService.GetOrdersAsync(null, orderStatus, page, usersPerPage);
+            return View(response.Data);
+        }
+
+        [HttpGet]
+        public async Task<ActionResult> ViewOrder(int id)
+        {
+            var response =await _orderService.GetOrderAsync(id);
+            return View(response);
+        }
+
+        [HttpPost]
+        public async Task<ActionResult> UpdateOrder(OrderStatusDto orderStatus)
+        {
+             var response = await _orderService.UpdateOrderAsync(orderStatus);
+             return RedirectToAction("Index", "ManagementOrders");
+        }
         
-        [HttpGet] public ActionResult ViewOrder(int id) => View();
-        
-        [HttpPost] public ActionResult AddOrder(UserDto userDto) => RedirectToAction("Index", "ManagementOrders");
-        
-        [HttpPost] public ActionResult UpdateOrder(UserDto userDto) => RedirectToAction("Index", "ManagementOrders");
-        
-        [HttpPost] public ActionResult DeleteOrder(int idUser) => RedirectToAction("Index", "ManagementOrders");
+        [HttpPost]
+        public async Task<ActionResult> DeleteOrder(int idUser)
+        {
+            await _orderService.DeleteOrderAsync(idUser);
+            return RedirectToAction("Index", "ManagementOrders");
+        }
     }
 }
