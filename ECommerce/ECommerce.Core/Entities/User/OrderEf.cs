@@ -7,14 +7,13 @@ namespace ECommerce.Core.Entities.User
     public class OrderEf
     {
         public int OrderId { get; set; }
-        public decimal SubTotalPrice { get; set; }
-        public decimal TotalPrice { get; set; }
+        public decimal SubFinalPrice { get; set; }
         public float Discount { get; set; } = 0;
+        public decimal FinalPrice { get; set; }
+        public OrderStatus Status { get; set; }
+        public PaymentType PaymentMethod { get; set; }
         public DateTime DateOrdered { get; set; } = DateTime.Now;
         public DateTime DateDelivered => Status == OrderStatus.Delivered ? DateTime.Now : new DateTime();
-        public OrderStatus Status { get; set; } = OrderStatus.Pending;
-        public PaymentType PaymentMethod { get; set; } = PaymentType.None;
-        
         public int UserId { get; set; }
         public UserEf User { get; set; }
         
