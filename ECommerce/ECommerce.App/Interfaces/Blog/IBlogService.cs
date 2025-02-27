@@ -11,8 +11,9 @@ namespace ECommerce.App.Interfaces.Blog
         Task<BaseResponse<BlogDto>> UpdateBlogAsync(BlogDto blogDto);
         Task<BaseResponse<bool>> DeleteBlogByIdAsync(int id);
         Task<BaseResponse<BlogDto>> GetBlogByIdAsync(int id);
-        Task<BaseResponse<IEnumerable<BlogDto>>> GetBlogsByTitleAsync(string title ,int currentPage, int amountOfItems);
-        Task<BaseResponse<IEnumerable<BlogDto>>> GetLatestBlogsAsync(int amountOfItems);
+        Task<BaseResponse<List<BlogDto>>> GetBlogsByTitleAsync(string title, int currentPage, int amountOfItems);
+        Task<BaseResponse<List<BlogDto>>> GetLatestBlogsAsync(int amountOfItems);
         Task<BaseResponse<bool>> AddMessageToBlogAsync(int idBlog, MessageDto message);
+        Task<BaseResponse<bool>> DeleteMessageFromBlogAsync(int idBlog, int idMessage);
     }
 }

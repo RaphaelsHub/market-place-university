@@ -90,20 +90,15 @@ namespace ECommerce
 
         private static void RegisterBlogMappings()
         {
-            Mapper.Register<BlogDto, BlogEf>()
-                .Member(dest => dest.Title, src => src.Title)
-                .Member(dest => dest.Content, src => src.Content)
-                .Member(dest => dest.EntityStatus, src => src.EntityStatus)
-                .Member(dest => dest.Image, src => src.Image);
-            
             Mapper.Register<BlogEf, BlogDto>()
                 .Member(dest => dest.BlogId, src => src.BlogId)
                 .Member(dest => dest.Title, src => src.Title)
+                .Member(dest => dest.Image, src => src.Image)
                 .Member(dest => dest.Content, src => src.Content)
                 .Member(dest => dest.DateTimePublished, src => src.DateTimePublished)
                 .Member(dest => dest.UserPublished, src => src.UserPublished)
                 .Member(dest => dest.EntityStatus, src => src.EntityStatus)
-                .Member(dest => dest.Image, src => src.Image);
+                .Member(dest => dest.Messages, src => src.Comments);
             
             Mapper.Register<BlogEf, BlogEf>()
                 .Member(dest => dest.BlogId, src => src.BlogId)

@@ -24,48 +24,53 @@ namespace ECommerce.App.Services.Blog
 
         public async Task<BaseResponse<BlogDto>> CreateBlogAsync(BlogDto blog)
         {
-            var blogEf = Mapper.Map<BlogDto,BlogEf>(blog);
-            
-            var createdBlog = await _blogsRepository.CreateAsync(blogEf);
-            
-            var createdBlogDto = Mapper.Map<BlogEf,BlogDto>(createdBlog);
-            
-            return new BaseResponse<BlogDto>(createdBlogDto);
+            var blogEf = await _blogsRepository.CreateAsync(new BlogEf(blog));
+            return new BaseResponse<BlogDto>(Mapper.Map<BlogEf,BlogDto>(blogEf));
         }
-
-        public async Task<BaseResponse<BlogDto>> GetBlogByIdAsync(int idBlog)
-        {
-            var blogEf =await _blogsRepository.GetByIdAsync(idBlog);
-            var messagesEf = await _messagesRepository.GetMessagesByIdAsync(idBlog);
-            var messagesDto = Mapper.Map<IEnumerable<MessageEf>,IEnumerable<MessageDto>>(messagesEf).OrderBy(x=>x.DateSent).ToList(); 
-            var blogDto = Mapper.Map<BlogEf,BlogDto>(blogEf);
-            blogDto.Messages = messagesDto;
-            return  new BaseResponse<BlogDto>(blogDto,OperationStatus.Success, "Blog found!");
-        }
-
-        public async Task<BaseResponse<IEnumerable<BlogDto>>> GetBlogsByTitleAsync(string searchByName, int currentPage, int amountOfItems)
-        {
-            var blogsEf =await _blogsRepository.GetPaginatedBlogsByNameAsync(searchByName, currentPage, amountOfItems);
-            return new BaseResponse<IEnumerable<BlogDto>>(Mapper.Map<IEnumerable<BlogEf>,IEnumerable<BlogDto>>(blogsEf),OperationStatus.Success, "Blogs found!");
-        }
-
-        public async Task<BaseResponse<IEnumerable<BlogDto>>> GetLatestBlogsAsync(int amountOfItems)
-        {
-            var blogsEf =await _blogsRepository.GetLatestBlogsAsync(amountOfItems);
-            return new BaseResponse<IEnumerable<BlogDto>>(Mapper.Map<IEnumerable<BlogEf>,IEnumerable<BlogDto>>(blogsEf),OperationStatus.Success, "Blogs found!");
-        }
-
+        
         public async Task<BaseResponse<BlogDto>> UpdateBlogAsync(BlogDto blog)
         {
-            var blogEf = Mapper.Map<BlogDto,BlogEf>(blog);
-            var blogEfUpdated = await _blogsRepository.UpdateAsync(blogEf);
-            return new BaseResponse<BlogDto>(Mapper.Map<BlogEf,BlogDto>(blogEfUpdated),OperationStatus.Success, "Blog has been successfully updated!");
+            var blogEf = await _blogsRepository.UpdateAsync(new BlogEf(blog));
+            return new BaseResponse<BlogDto>(Mapper.Map<BlogEf,BlogDto>(blogEf));
         }
-
+        
         public async Task<BaseResponse<bool>> DeleteBlogByIdAsync(int idBlog)
         {
             await _blogsRepository.DeleteByIdAsync(idBlog);
-            return new BaseResponse<bool>(true,OperationStatus.Success, "Blog has been successfully deleted!");
+            return new BaseResponse<bool>( await _blogsRepository.GetByIdAsync(idBlog) == null);
+        }
+        
+        public async Task<BaseResponse<BlogDto>> GetBlogByIdAsync(int idBlog)
+        {
+            var blogEf =await _blogsRepository.GetByIdAsync(idBlog); 
+            
+            if (blogEf == null) return new BaseResponse<BlogDto>(null,OperationStatus.Error, "Blog not found!");
+            
+            blogEf.SetComments(await _messagesRepository.GetMessagesByIdAsync(idBlog));
+            
+            var blogDto = Mapper.Map<BlogEf,BlogDto>(blogEf);
+            
+            blogDto.Messages  = Mapper.Map<IEnumerable<MessageEf>,IEnumerable<MessageDto>>(blogEf.GetComments()).OrderBy(x=>x.DateSent).ToList(); 
+            
+            return new BaseResponse<BlogDto>(blogDto);
+        }
+        
+        public async Task<BaseResponse<List<BlogDto>>> GetBlogsByTitleAsync(string searchByName, int currentPage, int amountOfItems)
+        {
+            var blogsEf =await _blogsRepository.GetPaginatedBlogsByNameAsync(searchByName, currentPage, amountOfItems);
+            
+            if (blogsEf == null) return new BaseResponse<List<BlogDto>>(null,OperationStatus.Error, "No blogs found!");
+            
+            return new BaseResponse<List<BlogDto>>(Mapper.Map<List<BlogEf>,List<BlogDto>>(blogsEf.ToList()));
+        }
+        
+        public async Task<BaseResponse<List<BlogDto>>> GetLatestBlogsAsync(int amountOfItems)
+        {
+            var blogsEf =await _blogsRepository.GetLatestBlogsAsync(amountOfItems);
+            
+            if (blogsEf == null) return new BaseResponse<List<BlogDto>>(null,OperationStatus.Error, "No blogs found!");
+            
+            return new BaseResponse<List<BlogDto>>(Mapper.Map<List<BlogEf>,List<BlogDto>>(blogsEf.ToList()));
         }
 
         public async Task<BaseResponse<bool>> AddMessageToBlogAsync(int idBlog, MessageDto message)
